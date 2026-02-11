@@ -8,18 +8,16 @@ interface SmoothScrollProps {
 }
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
-  const [isMobile, setIsMobile] = useState(false);
+  // Check mobile immediately (not in useState to avoid hydration delay)
+  const checkMobile = () => {
+    if (typeof window === 'undefined') return false;
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    return hasTouch || isMobileDevice;
+  };
 
   useEffect(() => {
-    // Detect if it's a touch device
-    const checkMobile = () => {
-      const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-      return hasTouch || isMobileDevice;
-    };
-
     const mobile = checkMobile();
-    setIsMobile(mobile);
 
     // Only initialize Lenis on desktop devices
     if (!mobile) {
@@ -33,19 +31,27 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
         touchMultiplier: 2,
         infinite: false,
         syncTouch: false, // Prevent touch delay
+        autoResize: true,
       });
 
+      // Explicitly start Lenis
+      lenis.start();
+
       // Animation frame loop
+      let rafId: number;
       function raf(time: number) {
         lenis.raf(time);
-        requestAnimationFrame(raf);
+        rafId = requestAnimationFrame(raf);
       }
 
-      requestAnimationFrame(raf);
+      // Start RAF immediately
+      rafId = requestAnimationFrame(raf);
 
       // Cleanup
       return () => {
+        lenis.stop();
         lenis.destroy();
+        if (rafId) cancelAnimationFrame(rafId);
       };
     }
     // On mobile, use native scrolling (no Lenis)

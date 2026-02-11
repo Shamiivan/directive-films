@@ -31,8 +31,9 @@ body {
 @media (hover: none) and (pointer: coarse) {
   html,
   body {
-    overflow-y: auto;
+    overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
+    height: auto !important;
   }
 }
 
@@ -54,7 +55,13 @@ body > * {
 /* Mobile scroll fixes */
 @media (hover: none) and (pointer: coarse) {
   body {
-    touch-action: pan-y;
+    touch-action: pan-y !important;
+    overscroll-behavior-y: none;
+  }
+
+  /* Ensure immediate scroll response */
+  * {
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
