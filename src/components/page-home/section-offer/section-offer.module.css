@@ -92,22 +92,6 @@
   flex-grow: 1;
 }
 
-/* Arrow */
-.arrow {
-  position: absolute;
-  bottom: 32px;
-  right: 32px;
-  width: 24px;
-  height: 24px;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-}
-
-.serviceCard:hover .arrow {
-  opacity: 1;
-  transform: translateX(4px);
-}
-
 /* CTA Card */
 .ctaCard {
   background: #fff;

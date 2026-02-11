@@ -17,28 +17,20 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 18px;
+  letter-spacing: -0.01em;
   color: #fff;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .logoIcon {
-  width: 40px;
-  height: 40px;
-  background: #FDB714;
-  transform: rotate(45deg);
-  position: relative;
-}
-
-.logoIcon::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  width: 20px;
-  height: 20px;
-  background: #000;
+  width: 56px;
+  height: 56px;
+  display: block;
+  object-fit: contain;
 }
 
 .navList {
@@ -50,10 +42,12 @@
 }
 
 .navList a {
-  color: #fff;
-  text-decoration: none;
+  font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
+  letter-spacing: 0.05em;
+  color: #fff;
+  text-decoration: none;
   transition: color 0.25s;
 }
 
@@ -62,20 +56,163 @@
 }
 
 .navBtn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.01em;
   background: #000;
   color: #fff;
   border: 2px solid #fff;
-  padding: 10px 24px;
+  padding: 16px 24px;
   border-radius: 24px;
   cursor: pointer;
   transition: all 0.25s;
-  font-weight: 600;
-  font-size: 14px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .navBtn:hover {
   background: #fff;
   color: #000;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.hamburger span.hamburgerOpen:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger span.hamburgerOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger span.hamburgerOpen:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Mobile Menu Backdrop */
+.mobileBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 400px;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(20px);
+  z-index: 1001;
+  overflow-y: auto;
+  box-shadow: -2px 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 36px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+.closeButton:hover {
+  transform: scale(1.1);
+}
+
+.mobileNav {
+  padding: 100px 40px 40px;
+}
+
+.mobileNavList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobileNavList li a {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: #fff;
+  text-decoration: none;
+  padding: 16px 0;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  transition: all 0.25s;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobileNavList li a:hover {
+  color: #FDB714;
+  padding-left: 8px;
+}
+
+.mobileContactItem {
+  margin-top: 24px;
+}
+
+.mobileContactBtn {
+  background: #fff !important;
+  color: #000 !important;
+  border-radius: 24px;
+  text-align: center;
+  border: none !important;
+  padding: 16px 24px !important;
+  justify-content: center;
+}
+
+.mobileContactBtn:hover {
+  background: #FDB714 !important;
+  color: #000 !important;
+  padding-left: 24px !important;
 }
 
 /* Responsive */
@@ -86,5 +223,13 @@
 
   .navList {
     display: none;
+  }
+
+  .navBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }

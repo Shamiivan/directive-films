@@ -6,13 +6,13 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  padding-top: 80px;
+  padding-top: 160px;
 }
 
 /* Photo Reel Background - Scrolling band of images */
 .photoReel {
   position: absolute;
-  top: 68%;
+  top: 47%;
   left: 0;
   right: 0;
   transform: translateY(-50%);
@@ -79,9 +79,11 @@
 }
 
 .heroTitle {
-  font-size: 56px;
-  font-weight: 700;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin-bottom: 24px;
   color: #fff;
 }
@@ -91,20 +93,25 @@
 }
 
 .heroSubtitle {
+  font-family: var(--font-body);
   font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   color: #ccc;
   margin-bottom: 32px;
   line-height: 1.6;
 }
 
 .ctaButton {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.01em;
   background: #FDB714;
   color: #000;
   border: none;
   padding: 14px 40px;
   border-radius: 24px;
-  font-weight: 600;
-  font-size: 16px;
   cursor: pointer;
   transition: all 0.3s;
   margin-bottom: 48px;
@@ -118,11 +125,58 @@
 
 /* Video Showcase with Frame Effect */
 .videoShowcase {
+  margin-top: 80px;
   margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.showreelLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #FDB714;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.labelDot {
+  width: 6px;
+  height: 6px;
+  background: #FDB714;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.3);
+  }
+}
+
+.showreelCaption {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #888;
+  font-style: italic;
 }
 
 .videoFrame {
   position: relative;
+  width: 100%;
   max-width: 900px;
   margin: 0 auto;
 }
@@ -133,7 +187,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  width: 80px;
+  width: 20px;
   background: rgba(255, 255, 255, 0.95);
   z-index: 10;
   backdrop-filter: blur(5px);
@@ -217,7 +271,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 36px;
+    font-size: 40px;
   }
 
   .heroSubtitle {
