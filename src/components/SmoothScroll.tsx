@@ -24,14 +24,16 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
     // Only initialize Lenis on desktop devices
     if (!mobile) {
       const lenis = new Lenis({
-        duration: 1.2,
+        duration: 0.8, // Reduced from 1.2 for faster response
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
         orientation: 'vertical',
         gestureOrientation: 'vertical',
         smoothWheel: true,
-        wheelMultiplier: 1,
+        wheelMultiplier: 1.5, // Increased for more responsive scrolling
         touchMultiplier: 2,
         infinite: false,
+        syncTouch: false, // Prevent touch delay
+        touchInertiaMultiplier: 10, // Faster deceleration
       });
 
       // Animation frame loop
