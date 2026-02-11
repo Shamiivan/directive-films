@@ -1,0 +1,246 @@
+/* Offer Section */
+.offerSection {
+  padding: 80px 40px;
+  background: #0a0a0a;
+  position: relative;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.gold {
+  color: #FDB714;
+}
+
+.subtitle {
+  font-size: 18px;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Packages Grid */
+.packagesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-bottom: 64px;
+}
+
+/* Package Card */
+.packageCard {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 16px;
+  padding: 40px 32px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  will-change: transform;
+}
+
+.packageCard.highlighted {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2a2010 100%);
+  border: 2px solid #FDB714;
+  box-shadow: 0 8px 32px rgba(253, 183, 20, 0.2);
+}
+
+.packageCard:hover {
+  border-color: #FDB714;
+  box-shadow: 0 12px 48px rgba(253, 183, 20, 0.3);
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 32px;
+  background: #FDB714;
+  color: #000;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Package Header */
+.packageHeader {
+  margin-bottom: 24px;
+}
+
+.packageName {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.packageTagline {
+  font-size: 14px;
+  color: #999;
+  font-weight: 500;
+}
+
+/* Pricing */
+.pricing {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #333;
+}
+
+.price {
+  font-size: 48px;
+  font-weight: 700;
+  color: #FDB714;
+  display: block;
+  line-height: 1;
+}
+
+.period {
+  font-size: 16px;
+  color: #999;
+  font-weight: 500;
+  margin-left: 4px;
+}
+
+/* Features List */
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  flex-grow: 1;
+}
+
+.feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-size: 15px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+/* CTA */
+.ctaWrapper {
+  margin-top: auto;
+}
+
+.ctaButton {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  border: 2px solid #FDB714;
+  padding: 14px 32px;
+  border-radius: 24px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.ctaButton:hover {
+  background: #FDB714;
+  color: #000;
+}
+
+.ctaButton.ctaHighlight {
+  background: #FDB714;
+  color: #000;
+  border-color: #FDB714;
+}
+
+.ctaButton.ctaHighlight:hover {
+  background: #e5a512;
+  border-color: #e5a512;
+  transform: scale(1.05);
+}
+
+/* Bottom CTA */
+.bottomCta {
+  text-align: center;
+  padding-top: 32px;
+  border-top: 1px solid #333;
+}
+
+.ctaText {
+  font-size: 18px;
+  color: #ccc;
+}
+
+.ctaLink {
+  color: #FDB714;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.ctaLink:hover {
+  color: #e5a512;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .packagesGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .offerSection {
+    padding: 60px 20px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .packagesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .packageCard {
+    padding: 32px 24px;
+  }
+
+  .price {
+    font-size: 40px;
+  }
+}
