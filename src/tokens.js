@@ -84,9 +84,11 @@ export const spacing = {
 };
 
 export const layout = {
-  containerMaxWidth: '1440px',
+  containerMaxWidth: '1400px',
   containerPadding: '40px',
   containerPaddingMobile: '20px',
+  sectionPadding: '60px',
+  sectionPaddingMobile: '40px',
 };
 
 export const borderRadius = {

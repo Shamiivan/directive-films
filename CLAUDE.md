@@ -55,24 +55,83 @@ pnpm start
 
 **Example Page Pattern**:
 ```typescript
-// Server Component fetches data
+// Server Component fetches data (src/app/page.tsx)
 import client from "../../tina/__generated__/client";
-import ClientPage from "./client-page";
+import HomePage from "../components/pages/home-page";
 
 export default async function Page() {
   const { data, query, variables } = await client.queries.page({
     relativePath: "home.md"
   });
-  return <ClientPage data={data} query={query} variables={variables} />;
+  return <HomePage data={data} query={query} variables={variables} />;
+}
+
+// Page component composes sections (src/components/pages/home-page.tsx)
+export default function HomePage(props: HomePageProps) {
+  const { data } = useTina({ ...props });
+  return (
+    <div className={styles.page}>
+      <NavSection />
+      <HeroSection />
+      <ResultsSection />
+      <OfferSection />
+    </div>
+  );
 }
 ```
 
 ### Design System
 
 - **Design tokens**: Centralized in `/src/tokens.js`
-- **Token categories**: colors, typography, spacing, borderRadius, shadows, transitions, zIndex, animations
-- **Usage**: Import tokens into components: `import { colors, typography, animations } from '@/tokens'`
+- **Token categories**: colors, typography, spacing, layout, borderRadius, shadows, transitions, zIndex, animations
+- **CSS Custom Properties**: Layout tokens exposed as CSS variables in `globals.css` for consistent spacing
+- **Usage**: Import tokens into components: `import { colors, typography, layout } from '@/tokens'`
 - **Design system page**: View at `/design-system` to see all tokens in use
+
+**Standardized Layout Tokens:**
+```javascript
+// src/tokens.js
+export const layout = {
+  containerMaxWidth: '1400px',      // Max content width
+  containerPadding: '40px',         // Horizontal padding (desktop)
+  containerPaddingMobile: '20px',   // Horizontal padding (mobile)
+  sectionPadding: '80px',           // Vertical section spacing (desktop)
+  sectionPaddingMobile: '60px',     // Vertical section spacing (mobile)
+};
+```
+
+**CSS Variables (globals.css):**
+```css
+:root {
+  --container-max-width: 1400px;
+  --container-padding: 40px;
+  --container-padding-mobile: 20px;
+  --section-padding: 80px;
+  --section-padding-mobile: 60px;
+}
+```
+
+**Standard Container Pattern:**
+```css
+.section {
+  padding: var(--section-padding) 0;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile) 0;
+  }
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+}
+```
 
 ### Animation System
 
@@ -88,12 +147,12 @@ This project uses **award-winning animation techniques** based on industry best 
 1. **Scroll Tracking** - Track scroll progress and transform it into animations
    - Uses `useScroll` + `useTransform` from Framer Motion
    - Parallax effects, scale/opacity transforms
-   - Files: `client-page.tsx`, `AnimatedNav.tsx`
+   - Files: `hero-section.tsx`, `AnimatedNav.tsx`
 
 2. **Viewport Detection** - Trigger animations when elements enter viewport
    - Uses `whileInView` (Intersection Observer API)
    - All scroll-triggered reveals
-   - Files: `ResultsSection.tsx`, animation variants
+   - Files: `results-section.tsx`, `offer-section.tsx`, animation variants
 
 3. **Sticky Position** - CSS sticky for pinned scroll effects
    - Native, bug-free, OP technique
@@ -105,7 +164,7 @@ This project uses **award-winning animation techniques** based on industry best 
 
 5. **Text Splitting** - Split text into lines/words/characters for animation
    - Library: `split-type`
-   - Files: `client-page.tsx` (hero title), `SplitText.tsx`
+   - Files: `hero-section.tsx` (hero title), `SplitText.tsx`
 
 **Bonus Techniques:**
 
@@ -193,20 +252,29 @@ src/
 ├── app/                    # Next.js App Router pages
 │   ├── layout.tsx         # Root layout (wraps all pages, includes smooth scroll + cursor)
 │   ├── page.tsx           # Homepage (fetches from TinaCMS)
-│   ├── client-page.tsx    # Client component for homepage (scroll effects, text splitting)
-│   ├── hero.module.css    # Hero section styles with animations
-│   ├── globals.css        # Global styles (smooth scroll, cursor hiding)
+│   ├── globals.css        # Global styles (smooth scroll, cursor hiding, CSS custom properties)
 │   ├── design-system/     # Design tokens showcase
 │   └── admin/             # TinaCMS admin route config
-├── components/            # Reusable components
+├── components/
+│   ├── pages/                      # Page-level components
+│   │   ├── home-page.tsx          # Homepage component (composes sections)
+│   │   ├── home-page.module.css   # Homepage styles
+│   │   └── sections/               # Reusable page sections
+│   │       ├── nav-section.tsx         # Navigation section
+│   │       ├── nav-section.module.css
+│   │       ├── hero-section.tsx        # Hero section with scroll effects
+│   │       ├── hero-section.module.css
+│   │       ├── results-section.tsx     # Results/services section
+│   │       ├── results-section.module.css
+│   │       ├── offer-section.tsx       # "How we help" section
+│   │       └── offer-section.module.css
 │   ├── SmoothScroll.tsx   # Lenis smooth scroll wrapper
 │   ├── SmoothCursor.tsx   # Custom cursor with lerp
 │   ├── SplitText.tsx      # Text splitting component
 │   ├── MagneticButton.tsx # Magnetic hover effect button
 │   ├── StickySection.tsx  # Sticky scroll section
-│   ├── AnimatedNav.tsx    # Nav with scroll-based blur
-│   ├── PageTransition.tsx # Page transition wrapper
-│   └── ResultsSection.tsx # Results section with scroll animations
+│   ├── AnimatedNav.tsx    # Nav with scroll-based blur (utility)
+│   └── PageTransition.tsx # Page transition wrapper
 ├── utils/
 │   └── animations.ts      # Animation variants, easings, utilities (mapRange, lerp, clamp)
 ├── pages/                 # Legacy pages router (if needed)
@@ -296,6 +364,94 @@ schema: {
   - Using browser-only APIs
   - Need interactivity
   - **Using animations** (Framer Motion requires client components)
+
+### Component Organization
+
+**Directory Structure:**
+```
+src/components/
+├── pages/                    # Page-level components
+│   ├── home-page.tsx        # Compose sections into pages
+│   └── sections/             # Reusable page sections
+│       ├── nav-section.tsx
+│       ├── hero-section.tsx
+│       ├── results-section.tsx
+│       └── offer-section.tsx
+└── [utility components]      # Shared utilities (MagneticButton, SplitText, etc.)
+```
+
+**Creating New Sections:**
+
+1. **Create section files** in `/components/pages/sections/`:
+   ```bash
+   touch src/components/pages/sections/my-section.tsx
+   touch src/components/pages/sections/my-section.module.css
+   ```
+
+2. **Use standard container pattern:**
+   ```tsx
+   // my-section.tsx
+   'use client';
+   import { motion } from 'framer-motion';
+   import { scrollReveal } from '@/utils/animations';
+   import styles from './my-section.module.css';
+
+   export default function MySection() {
+     return (
+       <section className={styles.mySection}>
+         <div className={styles.container}>
+           <motion.h2 {...scrollReveal}>Section Title</motion.h2>
+           {/* Content */}
+         </div>
+       </section>
+     );
+   }
+   ```
+
+3. **Use standardized CSS:**
+   ```css
+   /* my-section.module.css */
+   .mySection {
+     padding: var(--section-padding) 0;
+     background: #000;
+   }
+
+   .container {
+     max-width: var(--container-max-width);
+     margin: 0 auto;
+     padding: 0 var(--container-padding);
+   }
+
+   @media (max-width: 768px) {
+     .mySection {
+       padding: var(--section-padding-mobile) 0;
+     }
+     .container {
+       padding: 0 var(--container-padding-mobile);
+     }
+   }
+   ```
+
+4. **Add to page:**
+   ```tsx
+   // components/pages/home-page.tsx
+   import MySection from './sections/my-section';
+
+   return (
+     <div className={styles.page}>
+       {/* ... other sections */}
+       <MySection />
+     </div>
+   );
+   ```
+
+**Section Best Practices:**
+- Use CSS custom properties for all spacing (`var(--section-padding)`, etc.)
+- Keep sections self-contained with their own styles
+- Use descriptive section and container class names
+- Include responsive breakpoints for mobile
+- Use motion components from Framer Motion for animations
+- Import reusable utilities (MagneticButton, etc.) from parent components directory
 
 ### Animation Guidelines
 
