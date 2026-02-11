@@ -33,7 +33,6 @@ export default function SmoothScroll({ children }: SmoothScrollProps) {
         touchMultiplier: 2,
         infinite: false,
         syncTouch: false, // Prevent touch delay
-        touchInertiaMultiplier: 10, // Faster deceleration
       });
 
       // Animation frame loop
