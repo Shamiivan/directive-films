@@ -1,7 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Search, Target, FileText, TrendingUp, Users } from 'lucide-react';
+import { useState } from 'react';
 import MagneticButton from '../../MagneticButton';
 import { scrollReveal, gridStagger } from '../../../utils/animations';
 import styles from './section-offer.module.css';
@@ -38,6 +39,72 @@ export default function OfferSection() {
     },
   ];
 
+  // 3D Card Component with Tilt Effect
+  function ServiceCard3D({ service, IconComponent }: { service: any; IconComponent: any }) {
+    const [isHovered, setIsHovered] = useState(false);
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7.5deg', '-7.5deg']);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7.5deg', '7.5deg']);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      const width = rect.width;
+      const height = rect.height;
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      const xPct = mouseX / width - 0.5;
+      const yPct = mouseY / height - 0.5;
+      x.set(xPct);
+      y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+      setIsHovered(false);
+      x.set(0);
+      y.set(0);
+    };
+
+    return (
+      <motion.div
+        className={styles.serviceCard}
+        variants={scrollReveal}
+        onMouseMove={handleMouseMove}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={handleMouseLeave}
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: 'preserve-3d',
+        }}
+        whileHover={{
+          scale: 1.02,
+          borderColor: '#3b82f6',
+          boxShadow: '0 0 30px rgba(59, 130, 246, 0.4)',
+        }}
+        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        <motion.div
+          className={styles.icon}
+          animate={isHovered ? {
+            scale: [1, 1.2, 1.1],
+            rotate: [0, -10, 5, 0],
+            filter: ['brightness(1)', 'brightness(1.3)', 'brightness(1)'],
+          } : {}}
+          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+        >
+          <IconComponent size={48} strokeWidth={1.5} />
+        </motion.div>
+        <h3 className={styles.serviceTitle}>{service.title}</h3>
+        <p className={styles.serviceDescription}>{service.description}</p>
+      </motion.div>
+    );
+  }
+
   return (
     <section className={styles.offerSection}>
       <div className={styles.container}>
@@ -45,7 +112,7 @@ export default function OfferSection() {
         <motion.div className={styles.header} {...scrollReveal}>
           <h2 className={styles.title}>How we help businesses grow</h2>
           <p className={styles.subtitle}>
-            "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+            Compelling visual stories that connect with your audience, elevate your brand, and drive measurable results across every platform.
           </p>
         </motion.div>
 
@@ -60,23 +127,7 @@ export default function OfferSection() {
           {services.map((service, index) => {
             const IconComponent = iconComponents[index];
             return (
-              <motion.div
-                key={index}
-                className={styles.serviceCard}
-                variants={scrollReveal}
-                whileHover={{
-                  scale: 1.02,
-                  borderColor: '#3b82f6',
-                  boxShadow: '0 0 30px rgba(59, 130, 246, 0.4)',
-                }}
-                transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-              >
-                <div className={styles.icon}>
-                  <IconComponent size={48} strokeWidth={1.5} />
-                </div>
-                <h3 className={styles.serviceTitle}>{service.title}</h3>
-                <p className={styles.serviceDescription}>{service.description}</p>
-              </motion.div>
+              <ServiceCard3D key={index} service={service} IconComponent={IconComponent} />
             );
           })}
 

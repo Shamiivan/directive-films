@@ -3,12 +3,15 @@
 import { useEffect, useState } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
+type CursorState = 'default' | 'link' | 'button' | 'video';
+
 export default function SmoothCursor() {
   const [isVisible, setIsVisible] = useState(false);
+  const [cursorState, setCursorState] = useState<CursorState>('default');
   const cursorX = useMotionValue(0);
   const cursorY = useMotionValue(0);
 
-  // Use spring for smooth lerp-like interpolation (LERP technique from video)
+  // Use spring for smooth lerp-like interpolation (LERP technique)
   const springConfig = { damping: 25, stiffness: 150 };
   const cursorXSpring = useSpring(cursorX, springConfig);
   const cursorYSpring = useSpring(cursorY, springConfig);
@@ -23,6 +26,22 @@ export default function SmoothCursor() {
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX);
       cursorY.set(e.clientY);
+
+      // Detect cursor state based on element
+      const target = e.target as HTMLElement;
+      const isLink = target.tagName === 'A' || target.closest('a');
+      const isButton = target.tagName === 'BUTTON' || target.closest('button') || target.classList.contains('ctaButton');
+      const isVideo = target.tagName === 'VIDEO' || target.closest('video');
+
+      if (isButton) {
+        setCursorState('button');
+      } else if (isVideo) {
+        setCursorState('video');
+      } else if (isLink) {
+        setCursorState('link');
+      } else {
+        setCursorState('default');
+      }
     };
 
     window.addEventListener('mousemove', moveCursor);
@@ -30,6 +49,57 @@ export default function SmoothCursor() {
   }, [cursorX, cursorY]);
 
   if (!isVisible) return null;
+
+  // Cursor variants based on state
+  const variants = {
+    default: {
+      width: 12,
+      height: 12,
+      backgroundColor: '#FDB714',
+      border: 'none',
+    },
+    link: {
+      width: 80,
+      height: 80,
+      backgroundColor: 'rgba(253, 183, 20, 0.15)',
+      border: '2px solid #FDB714',
+    },
+    button: {
+      width: 60,
+      height: 60,
+      backgroundColor: '#FDB714',
+      boxShadow: '0 0 30px rgba(253, 183, 20, 0.6)',
+    },
+    video: {
+      width: 80,
+      height: 80,
+      backgroundColor: 'rgba(253, 183, 20, 0.2)',
+      border: '2px solid #FDB714',
+    },
+  };
+
+  const ringVariants = {
+    default: {
+      width: 40,
+      height: 40,
+      opacity: 0.5,
+    },
+    link: {
+      width: 100,
+      height: 100,
+      opacity: 0.3,
+    },
+    button: {
+      width: 80,
+      height: 80,
+      opacity: 0.7,
+    },
+    video: {
+      width: 100,
+      height: 100,
+      opacity: 0.4,
+    },
+  };
 
   return (
     <>
@@ -39,27 +109,66 @@ export default function SmoothCursor() {
           position: 'fixed',
           left: 0,
           top: 0,
-          width: 12,
-          height: 12,
           borderRadius: '50%',
-          backgroundColor: '#FDB714',
           pointerEvents: 'none',
           zIndex: 9999,
           x: cursorXSpring,
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          mixBlendMode: 'difference',
+          mixBlendMode: cursorState === 'default' ? 'difference' : 'normal',
         }}
-      />
+        animate={cursorState}
+        variants={variants}
+        transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      >
+        {/* Show text hint for links */}
+        {cursorState === 'link' && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '10px',
+              fontWeight: 600,
+              color: '#FDB714',
+              fontFamily: 'var(--font-mono)',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+            }}
+          >
+            View
+          </motion.div>
+        )}
+
+        {/* Show play icon for video */}
+        {cursorState === 'video' && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '12px',
+              color: '#FDB714',
+            }}
+          >
+            ▶
+          </motion.div>
+        )}
+      </motion.div>
+
       {/* Cursor trail ring - slower follow (LERP effect) */}
       <motion.div
         style={{
           position: 'fixed',
           left: 0,
           top: 0,
-          width: 40,
-          height: 40,
           borderRadius: '50%',
           border: '2px solid #FDB714',
           pointerEvents: 'none',
@@ -68,8 +177,9 @@ export default function SmoothCursor() {
           y: cursorYSpring,
           translateX: '-50%',
           translateY: '-50%',
-          opacity: 0.5,
         }}
+        animate={cursorState}
+        variants={ringVariants}
         transition={{ type: 'spring', damping: 30, stiffness: 80 }}
       />
     </>

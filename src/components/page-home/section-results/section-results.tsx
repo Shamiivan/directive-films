@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
+import AnimatedCounter from '../../AnimatedCounter';
 import { scrollReveal, gridStagger, imageZoom } from '../../../utils/animations';
 import styles from './section-results.module.css';
 
@@ -64,6 +65,40 @@ export default function ResultsSection() {
           Videos that generate measurable<br />
           <span className={styles.gold}>Results</span>
         </motion.h2>
+
+        {/* Stats Bar with Animated Counters */}
+        <motion.div
+          className={styles.statsBar}
+          variants={gridStagger}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div className={styles.statItem} variants={scrollReveal}>
+            <div className={styles.statNumber}>
+              <AnimatedCounter value={500} suffix="+" />
+            </div>
+            <div className={styles.statLabel}>Videos Produced</div>
+          </motion.div>
+          <motion.div className={styles.statItem} variants={scrollReveal}>
+            <div className={styles.statNumber}>
+              <AnimatedCounter value={98} suffix="%" />
+            </div>
+            <div className={styles.statLabel}>Client Satisfaction</div>
+          </motion.div>
+          <motion.div className={styles.statItem} variants={scrollReveal}>
+            <div className={styles.statNumber}>
+              <AnimatedCounter value={250} suffix="+" />
+            </div>
+            <div className={styles.statLabel}>Happy Clients</div>
+          </motion.div>
+          <motion.div className={styles.statItem} variants={scrollReveal}>
+            <div className={styles.statNumber}>
+              <AnimatedCounter value={3} suffix="M+" />
+            </div>
+            <div className={styles.statLabel}>Leads Generated</div>
+          </motion.div>
+        </motion.div>
 
         {/* Hero Image/Video */}
         <motion.div

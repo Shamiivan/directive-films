@@ -42,4 +42,5 @@ next-env.d.ts
 
 node_modules
 .env
-.agenttest-results/
+.agent
+test-results/

@@ -1,9 +1,48 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import AnimatedNav from '../../AnimatedNav';
 import styles from './section-nav.module.css';
+
+// Magnetic Nav Link Component
+function MagneticNavLink({ href, children }: { href: string; children: React.ReactNode }) {
+  const ref = useRef<HTMLAnchorElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const springConfig = { damping: 15, stiffness: 150 };
+  const xSpring = useSpring(x, springConfig);
+  const ySpring = useSpring(y, springConfig);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!ref.current) return;
+    const rect = ref.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    x.set((e.clientX - centerX) * 0.3);
+    y.set((e.clientY - centerY) * 0.3);
+  };
+
+  const handleMouseLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.a
+      ref={ref}
+      href={href}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      style={{ x: xSpring, y: ySpring }}
+      whileHover={{ scale: 1.1 }}
+      transition={{ duration: 0.2 }}
+    >
+      {children}
+    </motion.a>
+  );
+}
 
 export default function NavSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -46,43 +85,19 @@ export default function NavSection() {
           <span>DirectiveFilms</span>
         </motion.a>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - With Magnetic Effect */}
         <ul className={styles.navList}>
           <li>
-            <motion.a
-              href="/"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              HOME
-            </motion.a>
+            <MagneticNavLink href="/">HOME</MagneticNavLink>
           </li>
           <li>
-            <motion.a
-              href="/services"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              SERVICES
-            </motion.a>
+            <MagneticNavLink href="/services">SERVICES</MagneticNavLink>
           </li>
           <li>
-            <motion.a
-              href="/about"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              ABOUT US
-            </motion.a>
+            <MagneticNavLink href="/about">ABOUT US</MagneticNavLink>
           </li>
           <li>
-            <motion.a
-              href="/careers"
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.2 }}
-            >
-              CAREERS
-            </motion.a>
+            <MagneticNavLink href="/careers">CAREERS</MagneticNavLink>
           </li>
         </ul>
 

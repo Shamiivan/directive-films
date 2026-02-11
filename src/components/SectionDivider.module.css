@@ -1,0 +1,44 @@
+.divider {
+  height: 2px;
+  margin: 80px auto;
+  max-width: 400px;
+  transform-origin: center;
+}
+
+.gold {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #FDB714 20%,
+    #FDB714 80%,
+    transparent 100%
+  );
+}
+
+.white {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.6) 20%,
+    rgba(255, 255, 255, 0.6) 80%,
+    transparent 100%
+  );
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    #FDB714 10%,
+    #fff 50%,
+    #FDB714 90%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .divider {
+    margin: 60px auto;
+    max-width: 300px;
+  }
+}

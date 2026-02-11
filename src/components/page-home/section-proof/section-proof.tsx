@@ -6,14 +6,32 @@ import { scrollReveal, imageZoom } from '../../../utils/animations';
 import styles from './section-proof.module.css';
 
 export default function ProofSection() {
-  // Sample images - replace with actual portfolio images
+  // Portfolio images with descriptive alt text for accessibility
   const portfolioImages = [
-    'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop', // Video production
-    'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop', // Film crew
-    'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop', // Video editing
-    'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&h=400&fit=crop', // Behind scenes
-    'https://images.unsplash.com/photo-1524522173746-f628baad3644?w=600&h=400&fit=crop', // Production
-    'https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=600&h=400&fit=crop', // Creative work
+    {
+      url: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop',
+      alt: 'Video production crew filming corporate interview in professional studio',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop',
+      alt: 'Film crew setting up lighting equipment for commercial video shoot',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop',
+      alt: 'Video editor working on post-production timeline with color grading',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&h=400&fit=crop',
+      alt: 'Behind the scenes of brand video production with director and crew',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1524522173746-f628baad3644?w=600&h=400&fit=crop',
+      alt: 'Professional camera operator filming high-quality product video',
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=600&h=400&fit=crop',
+      alt: 'Creative team reviewing video footage and discussing production notes',
+    },
   ];
 
   return (
@@ -48,15 +66,15 @@ export default function ProofSection() {
             >
               <div className={styles.imageWrapper}>
                 <img
-                  src={image}
-                  alt={`Portfolio ${index + 1}`}
+                  src={image.url}
+                  alt={image.alt}
                   className={styles.gridImage}
                 />
                 {/* Play overlay for video thumbnails */}
                 {index % 2 === 0 && (
                   <div className={styles.playOverlay}>
                     <div className={styles.playButton}>
-                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
                         <circle cx="20" cy="20" r="20" fill="rgba(253, 183, 20, 0.9)" />
                         <path d="M16 12L28 20L16 28V12Z" fill="#000" />
                       </svg>

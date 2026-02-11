@@ -103,6 +103,30 @@ export const gridStagger = {
   viewport: { once: true, margin: "-50px" },
 };
 
+// Stagger with depth effect - creates 3D perception
+export const gridStaggerDepth = {
+  initial: {},
+  whileInView: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.15,
+    },
+  },
+  viewport: { once: true, margin: "-80px" },
+};
+
+// Scroll reveal with depth - for use with custom delays
+export const scrollRevealDepth = (index: number) => ({
+  initial: { opacity: 0, y: 60, scale: 0.92, rotateX: 10 },
+  whileInView: { opacity: 1, y: 0, scale: 1, rotateX: 0 },
+  viewport: { once: true, margin: "-100px" },
+  transition: {
+    duration: 0.8,
+    delay: (index % 3) * 0.15 + Math.floor(index / 3) * 0.1, // Diagonal stagger
+    ease: [0.25, 0.1, 0.25, 1] as any,
+  },
+});
+
 // Utility functions
 
 /**

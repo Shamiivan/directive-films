@@ -1,0 +1,86 @@
+.inputWrapper {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+.label {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  color: #999;
+  pointer-events: none;
+  transform-origin: left center;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  z-index: 1;
+}
+
+.required {
+  color: #FDB714;
+  margin-left: 4px;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 16px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: #fff;
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: transparent;
+}
+
+.input:focus::placeholder,
+.textarea:focus::placeholder {
+  color: #666;
+}
+
+.checkmark {
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FDB714;
+  color: #000;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: light) {
+  .input,
+  .textarea {
+    background: #fff;
+    color: #000;
+    border-color: #ddd;
+  }
+
+  .input:focus,
+  .textarea:focus {
+    border-color: #FDB714;
+  }
+}

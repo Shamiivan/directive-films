@@ -4,23 +4,27 @@ import { useRef, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { lerp } from '../utils/animations';
 
-interface Ripple {
-  id: number;
-  x: number;
-  y: number;
-}
-
-interface MagneticButtonProps {
+interface MagneticButtonArrowProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
   href?: string;
 }
 
-export default function MagneticButton({ children, className = '', onClick, href }: MagneticButtonProps) {
+/**
+ * Enhanced Magnetic Button with Arrow Reveal
+ * Magnetic effect + ripple + arrow reveal on hover
+ */
+export default function MagneticButtonArrow({
+  children,
+  className = '',
+  onClick,
+  href
+}: MagneticButtonArrowProps) {
   const elementRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [ripples, setRipples] = useState<Ripple[]>([]);
+  const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number }>>([]);
+  const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (!elementRef.current) return;
@@ -29,62 +33,36 @@ export default function MagneticButton({ children, className = '', onClick, href
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
 
-    // Use lerp for smooth magnetic effect
     setPosition({
       x: lerp(position.x, x * 0.3, 0.3),
       y: lerp(position.y, y * 0.3, 0.3),
     });
   };
 
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
   const handleMouseLeave = () => {
     setPosition({ x: 0, y: 0 });
+    setIsHovered(false);
   };
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (!elementRef.current) return;
 
-    // Create ripple effect
     const rect = elementRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const newRipple: Ripple = {
-      id: Date.now(),
-      x,
-      y,
-    };
-
+    const newRipple = { id: Date.now(), x, y };
     setRipples((prev) => [...prev, newRipple]);
 
-    // Remove ripple after animation
     setTimeout(() => {
       setRipples((prev) => prev.filter((r) => r.id !== newRipple.id));
     }, 600);
 
-    // Call original onClick handler
     if (onClick) onClick();
-  };
-
-  const sharedProps = {
-    className,
-    onMouseMove: handleMouseMove,
-    onMouseLeave: handleMouseLeave,
-    onClick: handleClick,
-    animate: {
-      x: position.x,
-      y: position.y,
-    },
-    transition: {
-      type: 'spring' as const,
-      stiffness: 200,
-      damping: 20,
-    },
-    whileHover: { scale: 1.05 },
-    whileTap: { scale: 0.95 },
-    style: {
-      position: 'relative' as const,
-      overflow: 'hidden' as const,
-    },
   };
 
   const rippleElements = (
@@ -112,7 +90,45 @@ export default function MagneticButton({ children, className = '', onClick, href
     </AnimatePresence>
   );
 
-  // Render as link if href is provided
+  const arrowElement = (
+    <motion.span
+      initial={{ x: -10, opacity: 0 }}
+      animate={isHovered ? { x: 0, opacity: 1 } : { x: -10, opacity: 0 }}
+      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+      style={{
+        display: 'inline-block',
+        marginLeft: '8px',
+      }}
+    >
+      →
+    </motion.span>
+  );
+
+  const sharedProps = {
+    className,
+    onMouseMove: handleMouseMove,
+    onMouseEnter: handleMouseEnter,
+    onMouseLeave: handleMouseLeave,
+    onClick: handleClick,
+    animate: {
+      x: position.x,
+      y: position.y,
+    },
+    transition: {
+      type: 'spring' as const,
+      stiffness: 200,
+      damping: 20,
+    },
+    whileHover: { scale: 1.05 },
+    whileTap: { scale: 0.95 },
+    style: {
+      position: 'relative' as const,
+      overflow: 'hidden' as const,
+      display: 'inline-flex' as const,
+      alignItems: 'center' as const,
+    },
+  };
+
   if (href) {
     return (
       <motion.a
@@ -122,11 +138,11 @@ export default function MagneticButton({ children, className = '', onClick, href
       >
         {rippleElements}
         {children}
+        {arrowElement}
       </motion.a>
     );
   }
 
-  // Otherwise render as button
   return (
     <motion.button
       ref={elementRef as React.RefObject<HTMLButtonElement>}
@@ -134,6 +150,7 @@ export default function MagneticButton({ children, className = '', onClick, href
     >
       {rippleElements}
       {children}
+      {arrowElement}
     </motion.button>
   );
 }

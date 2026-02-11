@@ -20,31 +20,43 @@ export default function HeroSection() {
   const photoReelY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
   const photoReelOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 0.3, 0]);
 
+  // Scroll-linked blur effect (Phase 3 enhancement)
+  const photoReelBlur = useTransform(scrollYProgress, [0, 0.5], [0, 10]);
+
   // Scale down hero content as you scroll
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.8, 0.5]);
 
-  // Text splitting for hero title
+  // Text splitting for hero title - LINE BY LINE reveal (Phase 3 enhancement)
   useEffect(() => {
     if (!titleRef.current) return;
 
     const split = new SplitType(titleRef.current, {
-      types: 'lines,words',
+      types: 'lines',
       tagName: 'span',
     });
 
-    // Animate words
-    const words = split.words;
-    if (words) {
-      words.forEach((word, i) => {
-        word.style.display = 'inline-block';
-        word.style.opacity = '0';
-        word.style.transform = 'translateY(20px)';
-        word.style.transition = `all 0.6s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.05}s`;
+    // Animate lines (not words) for more dramatic effect
+    const lines = split.lines;
+    if (lines) {
+      lines.forEach((line, i) => {
+        // Wrap line in overflow container
+        line.style.overflow = 'hidden';
+        line.style.display = 'block';
+
+        // Create inner span for animation
+        const inner = document.createElement('span');
+        inner.style.display = 'block';
+        inner.style.opacity = '0';
+        inner.style.transform = 'translateY(100%)';
+        inner.style.transition = `all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.15}s`;
+        inner.innerHTML = line.innerHTML;
+        line.innerHTML = '';
+        line.appendChild(inner);
 
         setTimeout(() => {
-          word.style.opacity = '1';
-          word.style.transform = 'translateY(0)';
+          inner.style.opacity = '1';
+          inner.style.transform = 'translateY(0)';
         }, 100);
       });
     }
@@ -71,12 +83,13 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero} ref={heroRef}>
-      {/* Background Photo Reel - Scrolling band of images */}
+      {/* Background Photo Reel - Scrolling band of images with progressive blur */}
       <motion.div
         className={styles.photoReel}
         style={{
           y: photoReelY,
           opacity: photoReelOpacity,
+          filter: useTransform(photoReelBlur, (v) => `blur(${v}px)`),
         }}
       >
         <div className={styles.reelTrack}>
@@ -111,7 +124,7 @@ export default function HeroSection() {
           className={styles.heroTitle}
         >
           <span className={styles.gold}>D</span>riven by <span className={styles.gold}>Purpose</span><br />
-          <span className={styles.gold}>D</span>efine by <span className={styles.gold}>Excellence</span>
+          <span className={styles.gold}>D</span>efined by <span className={styles.gold}>Excellence</span>
         </h1>
 
         <motion.p
