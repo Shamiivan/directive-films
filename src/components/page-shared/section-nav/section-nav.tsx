@@ -45,11 +45,11 @@ export default function NavSection() {
         </li>
         <li>
           <motion.a
-            href="#case-studies"
+            href="/careers"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
           >
-            CASE STUDIES
+            CAREERS
           </motion.a>
         </li>
         <li>
