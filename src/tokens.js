@@ -36,15 +36,19 @@ export const colors = {
 };
 
 export const typography = {
-  // Font Families
+  // Font Families - Premium pairing (Playfair Display + Inter + Space Mono)
   fontFamily: {
-    primary: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif",
+    display: 'var(--font-display, "Playfair Display", serif)',
+    body: 'var(--font-body, Inter, sans-serif)',
+    mono: 'var(--font-mono, "Space Mono", monospace)',
+    // Fallback for legacy usage
+    primary: 'var(--font-body, Inter, sans-serif)',
   },
 
-  // Font Sizes
+  // Font Sizes - Enhanced scale
   fontSize: {
-    display1: '56px',
-    display2: '48px',
+    display1: '64px',     // Increased from 56px for more impact
+    display2: '52px',     // Increased from 48px
     h1: '40px',
     h2: '32px',
     h3: '24px',
@@ -53,6 +57,7 @@ export const typography = {
     body: '16px',
     bodySm: '14px',
     caption: '12px',
+    label: '11px',        // New - for uppercase labels
   },
 
   // Font Weights
@@ -61,14 +66,25 @@ export const typography = {
     medium: 500,
     semibold: 600,
     bold: 700,
+    extrabold: 800,       // New - for display headlines
   },
 
   // Line Heights
   lineHeight: {
-    tight: 1.2,
+    tight: 1.1,           // Tighter for display text
     normal: 1.4,
     relaxed: 1.6,
     loose: 1.8,
+  },
+
+  // Letter Spacing - Critical for premium feel
+  letterSpacing: {
+    tight: '-0.02em',     // Display headlines
+    normal: '0',
+    wide: '0.01em',       // Body text
+    wider: '0.05em',      // Subheadings
+    widest: '0.1em',      // Uppercase labels
+    ultra: '0.2em',       // Ultra-wide labels
   },
 };
 
