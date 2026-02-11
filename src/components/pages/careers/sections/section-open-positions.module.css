@@ -1,0 +1,251 @@
+/* Open Positions Section */
+.openPositionsSection {
+  padding: var(--section-padding) 0;
+  background: #000;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Header */
+.header {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #fff;
+}
+
+/* Positions List */
+.positionsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Position Item */
+.positionItem {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.positionItem:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Position Header (Button) */
+.positionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 28px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.positionHeader:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.positionTitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  text-align: left;
+  letter-spacing: 0.3px;
+}
+
+.toggleIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+/* Position Content (Expanded) */
+.positionContent {
+  overflow: hidden;
+}
+
+.contentInner {
+  padding: 0 28px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.positionMeta {
+  margin: 24px 0 16px;
+}
+
+.positionType {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #FDB714;
+  background: rgba(253, 183, 20, 0.1);
+  padding: 4px 12px;
+  border-radius: 6px;
+}
+
+/* Position Description */
+.positionDescription {
+  font-size: 16px;
+  color: #ccc;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+/* Position Details */
+.positionDetails {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 32px;
+}
+
+.detailSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FDB714;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+}
+
+.detailList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.detailList li {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.detailList li::before {
+  content: '•';
+  position: absolute;
+  left: 6px;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Apply Button */
+.applyButton {
+  background: #FDB714;
+  color: #000;
+  border: none;
+  padding: 12px 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.applyButton:hover {
+  background: #e5a512;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(253, 183, 20, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .positionDetails {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .openPositionsSection {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+
+  .header {
+    margin-bottom: 40px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .positionsList {
+    gap: 12px;
+  }
+
+  .positionHeader {
+    padding: 20px;
+  }
+
+  .positionTitle {
+    font-size: 16px;
+  }
+
+  .toggleIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contentInner {
+    padding: 0 20px 24px;
+  }
+
+  .positionDescription {
+    font-size: 15px;
+    margin-bottom: 24px;
+  }
+
+  .positionDetails {
+    gap: 24px;
+  }
+
+  .detailTitle {
+    font-size: 13px;
+  }
+
+  .detailList {
+    gap: 10px;
+  }
+
+  .detailList li {
+    font-size: 13px;
+  }
+
+  .applyButton {
+    width: 100%;
+  }
+}

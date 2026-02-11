@@ -1,14 +1,16 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Film, Video, Lightbulb, FileText, Users } from 'lucide-react';
-import { scrollReveal, gridStagger } from '../../../../utils/animations';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Plus, X } from 'lucide-react';
+import { scrollReveal } from '../../../../utils/animations';
 import styles from './section-open-positions.module.css';
 
 export default function OpenPositionsSection() {
+  const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
   const positions = [
     {
-      icon: Film,
       title: 'Video Editor',
       type: 'Full-time',
       description: 'Transform raw footage into compelling sales-driven video content that converts viewers into customers.',
@@ -28,7 +30,6 @@ export default function OpenPositionsSection() {
       ],
     },
     {
-      icon: Video,
       title: 'Videographer/Camera Operator',
       type: 'Full-time',
       description: 'Capture high-quality footage that tells our clients\' stories and drives their business growth.',
@@ -48,7 +49,6 @@ export default function OpenPositionsSection() {
       ],
     },
     {
-      icon: Lightbulb,
       title: 'Creative Director',
       type: 'Full-time',
       description: 'Lead creative vision and strategy, ensuring every video aligns with client goals and drives measurable results.',
@@ -68,7 +68,6 @@ export default function OpenPositionsSection() {
       ],
     },
     {
-      icon: FileText,
       title: 'Content Strategist',
       type: 'Full-time',
       description: 'Map out video strategies that plug revenue leaks and turn prospects into paying customers.',
@@ -88,7 +87,6 @@ export default function OpenPositionsSection() {
       ],
     },
     {
-      icon: Users,
       title: 'Account Manager',
       type: 'Full-time',
       description: 'Be the trusted partner for our clients, ensuring smooth project execution and exceptional results.',
@@ -109,6 +107,10 @@ export default function OpenPositionsSection() {
     },
   ];
 
+  const togglePosition = (index: number) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   const scrollToForm = () => {
     const formSection = document.querySelector('form');
     if (formSection) {
@@ -121,72 +123,88 @@ export default function OpenPositionsSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
-          <h2 className={styles.title}>Open Positions</h2>
-          <p className={styles.subtitle}>
-            Join our team and help businesses grow through strategic video content
-          </p>
+          <h2 className={styles.title}>Positions</h2>
         </motion.div>
 
-        {/* Positions List */}
+        {/* Positions Accordion */}
         <motion.div
           className={styles.positionsList}
-          variants={gridStagger}
           initial="initial"
           whileInView="whileInView"
           viewport={{ once: true, margin: "-50px" }}
         >
-          {positions.map((position, index) => {
-            const IconComponent = position.icon;
-            return (
-              <motion.div
-                key={index}
-                className={styles.positionCard}
-                variants={scrollReveal}
+          {positions.map((position, index) => (
+            <motion.div
+              key={index}
+              className={styles.positionItem}
+              variants={scrollReveal}
+            >
+              <button
+                className={styles.positionHeader}
+                onClick={() => togglePosition(index)}
+                aria-expanded={expandedIndex === index}
               >
-                <div className={styles.positionHeader}>
-                  <div className={styles.iconWrapper}>
-                    <IconComponent size={28} strokeWidth={1.5} />
-                  </div>
-                  <div className={styles.positionMeta}>
-                    <h3 className={styles.positionTitle}>{position.title}</h3>
-                    <span className={styles.positionType}>{position.type}</span>
-                  </div>
-                </div>
-
-                <p className={styles.positionDescription}>{position.description}</p>
-
-                <div className={styles.positionDetails}>
-                  <div className={styles.detailSection}>
-                    <h4 className={styles.detailTitle}>Key Responsibilities</h4>
-                    <ul className={styles.detailList}>
-                      {position.responsibilities.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className={styles.detailSection}>
-                    <h4 className={styles.detailTitle}>Requirements</h4>
-                    <ul className={styles.detailList}>
-                      {position.requirements.map((item, i) => (
-                        <li key={i}>{item}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-
-                <motion.button
-                  className={styles.applyButton}
-                  onClick={scrollToForm}
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
+                <span className={styles.positionTitle}>{position.title}</span>
+                <motion.div
+                  className={styles.toggleIcon}
+                  animate={{ rotate: expandedIndex === index ? 45 : 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  Apply Now
-                </motion.button>
-              </motion.div>
-            );
-          })}
+                  <Plus size={20} strokeWidth={2} />
+                </motion.div>
+              </button>
+
+              <AnimatePresence>
+                {expandedIndex === index && (
+                  <motion.div
+                    className={styles.positionContent}
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  >
+                    <div className={styles.contentInner}>
+                      <div className={styles.positionMeta}>
+                        <span className={styles.positionType}>{position.type}</span>
+                      </div>
+
+                      <p className={styles.positionDescription}>{position.description}</p>
+
+                      <div className={styles.positionDetails}>
+                        <div className={styles.detailSection}>
+                          <h4 className={styles.detailTitle}>Key Responsibilities</h4>
+                          <ul className={styles.detailList}>
+                            {position.responsibilities.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className={styles.detailSection}>
+                          <h4 className={styles.detailTitle}>Requirements</h4>
+                          <ul className={styles.detailList}>
+                            {position.requirements.map((item, i) => (
+                              <li key={i}>{item}</li>
+                            ))}
+                          </ul>
+                        </div>
+                      </div>
+
+                      <motion.button
+                        className={styles.applyButton}
+                        onClick={scrollToForm}
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        Apply Now
+                      </motion.button>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>
