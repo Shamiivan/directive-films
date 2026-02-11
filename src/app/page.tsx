@@ -1,5 +1,5 @@
 import client from "../../tina/__generated__/client";
-import HomePage from "../components/pages/home-page";
+import HomePage from "../components/pages/home/home-page";
 
 export default async function Home() {
   const { data, query, variables } = await client.queries.page({

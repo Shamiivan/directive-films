@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
 import { scrollReveal, gridStagger, imageZoom } from '../../../utils/animations';
-import styles from './results-section.module.css';
+import styles from './section-results.module.css';
 
 export default function ResultsSection() {
   const VideoIcon = () => (

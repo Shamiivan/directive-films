@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import AnimatedNav from '../../AnimatedNav';
-import styles from './nav-section.module.css';
+import styles from './section-nav.module.css';
 
 export default function NavSection() {
   return (
@@ -18,16 +18,25 @@ export default function NavSection() {
       <ul className={styles.navList}>
         <li>
           <motion.a
-            href="#growth"
+            href="/"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
           >
-            GROWTH
+            HOME
           </motion.a>
         </li>
         <li>
           <motion.a
-            href="#about"
+            href="/services"
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.2 }}
+          >
+            SERVICES
+          </motion.a>
+        </li>
+        <li>
+          <motion.a
+            href="/about"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
           >
@@ -45,11 +54,11 @@ export default function NavSection() {
         </li>
         <li>
           <motion.a
-            href="#careers"
+            href="#contact"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.2 }}
           >
-            CAREERS
+            CONTACT
           </motion.a>
         </li>
       </ul>

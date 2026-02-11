@@ -1,13 +1,14 @@
-/* Offer Section */
-.offerSection {
-  padding: 80px 40px;
-  background: #0a0a0a;
+/* Pricing Section */
+.pricingSection {
+  padding: var(--section-padding) 0;
+  background: #fff;
   position: relative;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: var(--container-max-width);
   margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
 /* Header */
@@ -20,7 +21,7 @@
   font-size: 48px;
   font-weight: 700;
   line-height: 1.2;
-  color: #fff;
+  color: #000;
   margin-bottom: 24px;
 }
 
@@ -30,7 +31,7 @@
 
 .subtitle {
   font-size: 18px;
-  color: #ccc;
+  color: #666;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -39,33 +40,33 @@
 /* Packages Grid */
 .packagesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
   margin-bottom: 64px;
 }
 
 /* Package Card */
 .packageCard {
-  background: #1a1a1a;
-  border: 2px solid #333;
-  border-radius: 16px;
+  background: #fff;
+  border: 2px solid #e5e5e5;
+  border-radius: 20px;
   padding: 40px 32px;
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-  will-change: transform;
+  transition: all 0.2s ease;
 }
 
 .packageCard.highlighted {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2a2010 100%);
+  background: linear-gradient(135deg, #fff 0%, #fffbf0 100%);
   border: 2px solid #FDB714;
-  box-shadow: 0 8px 32px rgba(253, 183, 20, 0.2);
+  box-shadow: 0 4px 16px rgba(253, 183, 20, 0.15);
 }
 
 .packageCard:hover {
   border-color: #FDB714;
-  box-shadow: 0 12px 48px rgba(253, 183, 20, 0.3);
+  box-shadow: 0 8px 24px rgba(253, 183, 20, 0.2);
+  transform: translateY(-4px);
 }
 
 /* Badge */
@@ -91,13 +92,13 @@
 .packageName {
   font-size: 28px;
   font-weight: 700;
-  color: #fff;
+  color: #000;
   margin-bottom: 8px;
 }
 
 .packageTagline {
   font-size: 14px;
-  color: #999;
+  color: #666;
   font-weight: 500;
 }
 
@@ -105,20 +106,20 @@
 .pricing {
   margin-bottom: 32px;
   padding-bottom: 32px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .price {
   font-size: 48px;
   font-weight: 700;
-  color: #FDB714;
+  color: #000;
   display: block;
   line-height: 1;
 }
 
 .period {
   font-size: 16px;
-  color: #999;
+  color: #666;
   font-weight: 500;
   margin-left: 4px;
 }
@@ -137,7 +138,7 @@
   gap: 12px;
   margin-bottom: 16px;
   font-size: 15px;
-  color: #ccc;
+  color: #333;
   line-height: 1.5;
 }
 
@@ -158,8 +159,8 @@
 
 .ctaButton {
   width: 100%;
-  background: #000;
-  color: #fff;
+  background: #fff;
+  color: #000;
   border: 2px solid #FDB714;
   padding: 14px 32px;
   border-radius: 24px;
@@ -191,12 +192,12 @@
 .bottomCta {
   text-align: center;
   padding-top: 32px;
-  border-top: 1px solid #333;
+  border-top: 1px solid #e5e5e5;
 }
 
 .ctaText {
   font-size: 18px;
-  color: #ccc;
+  color: #666;
 }
 
 .ctaLink {
@@ -214,14 +215,21 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .packagesGrid {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr;
     gap: 24px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
 @media (max-width: 768px) {
-  .offerSection {
-    padding: 60px 20px;
+  .pricingSection {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
   }
 
   .title {
@@ -230,10 +238,6 @@
 
   .subtitle {
     font-size: 16px;
-  }
-
-  .packagesGrid {
-    grid-template-columns: 1fr;
   }
 
   .packageCard {

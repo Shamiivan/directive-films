@@ -1,0 +1,164 @@
+/* Footer Section */
+.footer {
+  padding: var(--section-padding) 0 32px 0;
+  background: #000;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Main Content */
+.content {
+  width: 100%;
+}
+
+.mainContent {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+
+/* Brand Column */
+.brandColumn {
+  max-width: 400px;
+}
+
+.brandName {
+  font-size: 24px;
+  font-weight: 700;
+  color: #FDB714;
+  margin-bottom: 16px;
+}
+
+.brandTagline {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #999;
+}
+
+/* Links Columns */
+.linksColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.columnTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.link {
+  font-size: 15px;
+  color: #999;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.link:hover {
+  color: #FDB714;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  width: 100%;
+}
+
+.divider {
+  height: 1px;
+  background: #333;
+  margin-bottom: 24px;
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #666;
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.legalLink {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.legalLink:hover {
+  color: #FDB714;
+}
+
+.separator {
+  color: #666;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mainContent {
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 32px;
+  }
+
+  .linksColumn:last-child {
+    grid-column: span 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: var(--section-padding-mobile) 0 24px 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+
+  .mainContent {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    margin-bottom: 32px;
+  }
+
+  .brandColumn {
+    max-width: 100%;
+  }
+
+  .bottomContent {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .legalLinks {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,229 @@
+/* Proof Section */
+.proofSection {
+  padding: var(--section-padding) 0;
+  background: #1a1a1a;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+/* Title */
+.title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 64px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Image Grid/Mosaic */
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-auto-rows: 140px;
+  gap: 20px;
+  margin-bottom: 64px;
+}
+
+/* Grid Items - Creating mosaic layout */
+.gridItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  will-change: transform;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Define grid areas for balanced mosaic effect */
+/* Large featured item - top left */
+.item1 {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+/* Medium horizontal - top middle */
+.item2 {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+/* Tall item - top right */
+.item3 {
+  grid-column: span 2;
+  grid-row: span 3;
+}
+
+/* Wide item - bottom left */
+.item4 {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+/* Medium square - bottom middle */
+.item5 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Medium square - bottom right */
+.item6 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.gridImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gridItem:hover .gridImage {
+  transform: scale(1.1);
+}
+
+/* Play Overlay */
+.playOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gridItem:hover .playOverlay {
+  opacity: 1;
+}
+
+.playButton {
+  transform: scale(0.8);
+  transition: transform 0.3s ease;
+}
+
+.gridItem:hover .playButton {
+  transform: scale(1);
+}
+
+/* CTA Button */
+.ctaContainer {
+  text-align: center;
+}
+
+.ctaButton {
+  background: #FDB714;
+  color: #000;
+  border: none;
+  padding: 16px 48px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(253, 183, 20, 0.3);
+}
+
+.ctaButton:hover {
+  background: #e5a512;
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(253, 183, 20, 0.5);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .imageGrid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 120px;
+    gap: 16px;
+  }
+
+  .item1 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .item2 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .item3 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .item4 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .item5 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  .item6 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .proofSection {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+
+  .title {
+    font-size: 36px;
+    margin-bottom: 48px;
+  }
+
+  .imageGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 140px;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+
+  /* Featured large item */
+  .item1 {
+    grid-column: span 2;
+    grid-row: span 2;
+  }
+
+  /* Rest are equal squares */
+  .item2,
+  .item3,
+  .item4,
+  .item5,
+  .item6 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}

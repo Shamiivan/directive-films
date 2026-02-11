@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import SplitType from 'split-type';
 import MagneticButton from '../../MagneticButton';
 import { fadeInUp, fadeInScale } from '../../../utils/animations';
-import styles from './hero-section.module.css';
+import styles from './section-hero.module.css';
 
 export default function HeroSection() {
   const heroRef = useRef(null);

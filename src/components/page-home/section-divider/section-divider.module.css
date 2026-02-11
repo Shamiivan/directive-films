@@ -1,0 +1,35 @@
+/* Divider Section */
+.dividerSection {
+  padding: 60px 0;
+  background: #fff;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.line {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #FDB714 20%,
+    #FDB714 80%,
+    transparent 100%
+  );
+  transform-origin: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dividerSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+}

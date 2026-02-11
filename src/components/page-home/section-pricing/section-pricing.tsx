@@ -2,10 +2,10 @@
 
 import { motion } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
-import { scrollReveal, gridStagger } from '../../../utils/animations';
-import styles from './offer-section.module.css';
+import { scrollReveal } from '../../../utils/animations';
+import styles from './section-pricing.module.css';
 
-export default function OfferSection() {
+export default function PricingSection() {
   const CheckIcon = () => (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M16.6668 5L7.50016 14.1667L3.3335 10" stroke="#FDB714" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -68,38 +68,29 @@ export default function OfferSection() {
   ];
 
   return (
-    <section className={styles.offerSection}>
+    <section className={styles.pricingSection}>
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
           <h2 className={styles.title}>
-            Transform Your Business with{' '}
-            <span className={styles.gold}>Video That Converts</span>
+            Investment in <span className={styles.gold}>Your Growth</span>
           </h2>
           <p className={styles.subtitle}>
-            Choose the package that fits your growth goals. All packages include our proven
+            Choose the package that fits your business goals. All packages include our proven
             framework for generating qualified leads through strategic video content.
           </p>
         </motion.div>
 
         {/* Pricing Cards */}
-        <motion.div
-          className={styles.packagesGrid}
-          variants={gridStagger}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true, margin: "-50px" }}
-        >
+        <div className={styles.packagesGrid}>
           {packages.map((pkg, index) => (
             <motion.div
               key={index}
               className={`${styles.packageCard} ${pkg.highlight ? styles.highlighted : ''}`}
-              variants={scrollReveal}
-              whileHover={{
-                scale: 1.03,
-                y: -8,
-              }}
-              transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
             >
               {pkg.highlight && (
                 <div className={styles.badge}>
@@ -137,7 +128,7 @@ export default function OfferSection() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Bottom CTA */}
         <motion.div className={styles.bottomCta} {...scrollReveal}>
