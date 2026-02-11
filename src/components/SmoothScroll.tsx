@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode, useEffect } from 'react';
 import Lenis from 'lenis';
 
 interface SmoothScrollProps {
@@ -8,53 +8,42 @@ interface SmoothScrollProps {
 }
 
 export default function SmoothScroll({ children }: SmoothScrollProps) {
-  // Check mobile immediately (not in useState to avoid hydration delay)
-  const checkMobile = () => {
-    if (typeof window === 'undefined') return false;
-    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-    const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    return hasTouch || isMobileDevice;
-  };
-
   useEffect(() => {
-    const mobile = checkMobile();
+    // Only run on desktop (not mobile/tablet)
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    const hasTouch = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    // Only initialize Lenis on desktop devices
-    if (!mobile) {
-      const lenis = new Lenis({
-        duration: 0.8, // Reduced from 1.2 for faster response
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easeOutExpo
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 1.5, // Increased for more responsive scrolling
-        touchMultiplier: 2,
-        infinite: false,
-        syncTouch: false, // Prevent touch delay
-        autoResize: true,
-      });
-
-      // Explicitly start Lenis
-      lenis.start();
-
-      // Animation frame loop
-      let rafId: number;
-      function raf(time: number) {
-        lenis.raf(time);
-        rafId = requestAnimationFrame(raf);
-      }
-
-      // Start RAF immediately
-      rafId = requestAnimationFrame(raf);
-
-      // Cleanup
-      return () => {
-        lenis.stop();
-        lenis.destroy();
-        if (rafId) cancelAnimationFrame(rafId);
-      };
+    // Skip Lenis entirely on mobile devices
+    if (isMobile || hasTouch) {
+      return; // Use native scrolling on mobile
     }
-    // On mobile, use native scrolling (no Lenis)
+
+    // Desktop only: Initialize Lenis smooth scroll
+    const lenis = new Lenis({
+      duration: 0.8,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.5,
+      infinite: false,
+      autoResize: true,
+    });
+
+    lenis.start();
+
+    let rafId: number;
+    function raf(time: number) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+
+    rafId = requestAnimationFrame(raf);
+
+    return () => {
+      lenis.stop();
+      lenis.destroy();
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return <>{children}</>;
