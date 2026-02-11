@@ -33,6 +33,8 @@
   grid-auto-rows: 140px;
   gap: 20px;
   margin-bottom: 64px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Grid Items - Creating mosaic layout */
@@ -43,6 +45,7 @@
   cursor: pointer;
   will-change: transform;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 /* Define grid areas for balanced mosaic effect */

@@ -27,6 +27,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Ensure mobile scrolling works */
+@media (hover: none) and (pointer: coarse) {
+  html,
+  body {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
@@ -34,6 +43,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: none; /* Hide default cursor for custom cursor */
+  position: relative;
+}
+
+/* Ensure cursor doesn't interfere with content */
+body > * {
+  position: relative;
+}
+
+/* Mobile scroll fixes */
+@media (hover: none) and (pointer: coarse) {
+  body {
+    touch-action: pan-y;
+  }
 }
 
 /* Show default cursor on touch devices */

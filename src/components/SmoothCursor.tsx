@@ -29,13 +29,15 @@ export default function SmoothCursor() {
 
       // Detect cursor state based on element
       const target = e.target as HTMLElement;
-      const isLink = target.tagName === 'A' || target.closest('a');
+
+      // Only show video cursor for actual video elements, not images
+      const isActualVideo = target.tagName === 'VIDEO' || (target.closest('video') && !target.closest('img'));
       const isButton = target.tagName === 'BUTTON' || target.closest('button') || target.classList.contains('ctaButton');
-      const isVideo = target.tagName === 'VIDEO' || target.closest('video');
+      const isLink = target.tagName === 'A' || target.closest('a');
 
       if (isButton) {
         setCursorState('button');
-      } else if (isVideo) {
+      } else if (isActualVideo) {
         setCursorState('video');
       } else if (isLink) {
         setCursorState('link');
