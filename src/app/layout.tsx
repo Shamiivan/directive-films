@@ -45,6 +45,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+            // Enable scroll immediately (before React hydration)
+            document.documentElement.style.overflowY = 'auto';
+            document.body.style.overflowY = 'auto';
+          `
+        }} />
+      </head>
       <body className={`${playfairDisplay.variable} ${inter.variable} ${spaceMono.variable}`}>
         <SmoothCursor />
         {children}

@@ -17,8 +17,14 @@ export default function SmoothCursor() {
   const cursorYSpring = useSpring(cursorY, springConfig);
 
   useEffect(() => {
-    // Only show on desktop (hover support)
+    // Only show on desktop (hover support) - skip on mobile
     const hasHover = window.matchMedia('(hover: hover)').matches;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile || !hasHover) {
+      return; // Don't initialize cursor on mobile at all
+    }
+
     setIsVisible(hasHover);
 
     if (!hasHover) return;
