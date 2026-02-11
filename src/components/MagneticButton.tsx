@@ -8,16 +8,17 @@ interface MagneticButtonProps {
   children: ReactNode;
   className?: string;
   onClick?: () => void;
+  href?: string;
 }
 
-export default function MagneticButton({ children, className = '', onClick }: MagneticButtonProps) {
-  const buttonRef = useRef<HTMLButtonElement>(null);
+export default function MagneticButton({ children, className = '', onClick, href }: MagneticButtonProps) {
+  const elementRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (!buttonRef.current) return;
+  const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+    if (!elementRef.current) return;
 
-    const rect = buttonRef.current.getBoundingClientRect();
+    const rect = elementRef.current.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
 
@@ -32,24 +33,42 @@ export default function MagneticButton({ children, className = '', onClick }: Ma
     setPosition({ x: 0, y: 0 });
   };
 
+  const sharedProps = {
+    className,
+    onMouseMove: handleMouseMove,
+    onMouseLeave: handleMouseLeave,
+    animate: {
+      x: position.x,
+      y: position.y,
+    },
+    transition: {
+      type: 'spring' as const,
+      stiffness: 200,
+      damping: 20,
+    },
+    whileHover: { scale: 1.05 },
+    whileTap: { scale: 0.95 },
+  };
+
+  // Render as link if href is provided
+  if (href) {
+    return (
+      <motion.a
+        ref={elementRef as React.RefObject<HTMLAnchorElement>}
+        href={href}
+        {...sharedProps}
+      >
+        {children}
+      </motion.a>
+    );
+  }
+
+  // Otherwise render as button
   return (
     <motion.button
-      ref={buttonRef}
-      className={className}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      ref={elementRef as React.RefObject<HTMLButtonElement>}
       onClick={onClick}
-      animate={{
-        x: position.x,
-        y: position.y,
-      }}
-      transition={{
-        type: 'spring',
-        stiffness: 200,
-        damping: 20,
-      }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      {...sharedProps}
     >
       {children}
     </motion.button>

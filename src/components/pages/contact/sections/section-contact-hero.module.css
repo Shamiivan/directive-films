@@ -149,7 +149,7 @@ a.infoValue:hover {
 
 .input,
 .textarea {
-  padding: 14px 18px;
+  padding: 16px 18px;
   border: 2px solid #e0e0e0;
   border-radius: 12px;
   font-size: 16px;
@@ -157,6 +157,7 @@ a.infoValue:hover {
   background: #fff;
   color: #000;
   font-family: inherit;
+  min-height: 48px;
 }
 
 .input:focus,
@@ -276,8 +277,8 @@ a.infoValue:hover {
 
   .input,
   .textarea {
-    padding: 12px 16px;
-    font-size: 14px;
+    padding: 16px;
+    font-size: 16px;
   }
 
   .submitButton {

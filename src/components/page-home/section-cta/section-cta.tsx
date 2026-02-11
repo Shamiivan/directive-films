@@ -27,7 +27,7 @@ export default function CtaSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <MagneticButton className={styles.ctaButton}>
+            <MagneticButton href="/contact" className={styles.ctaButton}>
               Book Your Strategy Call
             </MagneticButton>
           </motion.div>

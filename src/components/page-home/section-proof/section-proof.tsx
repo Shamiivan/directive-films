@@ -73,7 +73,7 @@ export default function ProofSection() {
           className={styles.ctaContainer}
           {...scrollReveal}
         >
-          <MagneticButton className={styles.ctaButton}>
+          <MagneticButton href="/contact" className={styles.ctaButton}>
             See our Work
           </MagneticButton>
         </motion.div>

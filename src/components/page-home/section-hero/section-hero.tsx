@@ -110,8 +110,8 @@ export default function HeroSection() {
           ref={titleRef}
           className={styles.heroTitle}
         >
-          Driven by <span className={styles.gold}>Purpose</span><br />
-          Define by <span className={styles.gold}>Excellence</span>
+          <span className={styles.gold}>D</span>riven by <span className={styles.gold}>Purpose</span><br />
+          <span className={styles.gold}>D</span>efine by <span className={styles.gold}>Excellence</span>
         </h1>
 
         <motion.p
@@ -123,7 +123,7 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.div variants={fadeInUp}>
-          <MagneticButton className={styles.ctaButton}>
+          <MagneticButton href="/contact" className={styles.ctaButton}>
             Get a Growth Plan
           </MagneticButton>
         </motion.div>
@@ -134,10 +134,6 @@ export default function HeroSection() {
           variants={fadeInScale}
         >
           <div className={styles.videoFrame}>
-            {/* Side cutouts/overlays */}
-            <div className={styles.frameLeft}></div>
-            <div className={styles.frameRight}></div>
-
             {/* Main video */}
             <motion.div
               className={styles.videoContainer}
@@ -151,7 +147,7 @@ export default function HeroSection() {
                 playsInline
                 className={styles.mainVideo}
               >
-                <source src={mainVideoUrl} type="video/mp4" />
+                <source src="/videos/showreel.mp4" type="video/mp4" />
               </video>
             </motion.div>
           </div>

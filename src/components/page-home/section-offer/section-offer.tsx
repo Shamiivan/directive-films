@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Search, Target, FileText, TrendingUp, Users, ArrowRight } from 'lucide-react';
+import { Search, Target, FileText, TrendingUp, Users } from 'lucide-react';
 import MagneticButton from '../../MagneticButton';
 import { scrollReveal, gridStagger } from '../../../utils/animations';
 import styles from './section-offer.module.css';
@@ -76,9 +76,6 @@ export default function OfferSection() {
                 </div>
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDescription}>{service.description}</p>
-                <div className={styles.arrow}>
-                  <ArrowRight size={24} strokeWidth={2} color="#666" />
-                </div>
               </motion.div>
             );
           })}
@@ -97,7 +94,7 @@ export default function OfferSection() {
               <br />
               your business today
             </p>
-            <MagneticButton className={styles.ctaButton}>
+            <MagneticButton href="/contact" className={styles.ctaButton}>
               See our Process
             </MagneticButton>
           </motion.div>
