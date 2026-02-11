@@ -52,24 +52,16 @@ export default function NavSection() {
             CAREERS
           </motion.a>
         </li>
-        <li>
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.1 }}
-            transition={{ duration: 0.2 }}
-          >
-            CONTACT
-          </motion.a>
-        </li>
       </ul>
-      <motion.button
+      <motion.a
+        href="/contact"
         className={styles.navBtn}
         whileHover={{ scale: 1.05, backgroundColor: '#fff', color: '#000' }}
         whileTap={{ scale: 0.95 }}
         transition={{ duration: 0.2 }}
       >
-        Get Started
-      </motion.button>
+        Contact Us
+      </motion.a>
     </AnimatedNav>
   );
 }
