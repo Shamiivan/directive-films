@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Space_Mono } from "next/font/google";
 import "./globals.css";
-import SmoothScroll from "../components/SmoothScroll";
+// import SmoothScroll from "../components/SmoothScroll"; // TEMPORARILY DISABLED
 import SmoothCursor from "../components/SmoothCursor";
 
 // Premium font pairing for DirectiveFilms
@@ -46,10 +46,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${playfairDisplay.variable} ${inter.variable} ${spaceMono.variable}`}>
-        <SmoothScroll>
-          <SmoothCursor />
-          {children}
-        </SmoothScroll>
+        <SmoothCursor />
+        {children}
       </body>
     </html>
   );
