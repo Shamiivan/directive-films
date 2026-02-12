@@ -39,8 +39,14 @@ body {
   font-family: var(--font-body, Inter, sans-serif);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  cursor: none; /* Hide default cursor for custom cursor */
   position: relative;
+}
+
+/* Only hide cursor on desktop */
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
 }
 
 /* Ensure cursor doesn't interfere with content */
@@ -48,10 +54,13 @@ body > * {
   position: relative;
 }
 
-/* Show default cursor on touch devices */
+/* Mobile: ensure scroll always works */
 @media (hover: none) and (pointer: coarse) {
-  body {
-    cursor: auto;
+  html, body {
+    cursor: auto !important;
+    overflow-y: scroll !important;
+    -webkit-overflow-scrolling: touch !important;
+    touch-action: pan-y pan-x !important;
   }
 }
 

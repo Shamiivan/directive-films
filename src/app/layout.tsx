@@ -44,18 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            // Enable scroll immediately (before React hydration)
-            document.documentElement.style.overflowY = 'auto';
-            document.body.style.overflowY = 'auto';
-          `
-        }} />
-      </head>
-      <body className={`${playfairDisplay.variable} ${inter.variable} ${spaceMono.variable}`}>
-        <SmoothCursor />
+    <html lang="en" style={{ overflowY: 'auto' }}>
+      <body className={`${playfairDisplay.variable} ${inter.variable} ${spaceMono.variable}`} style={{ overflowY: 'auto' }}>
+        {/* Only render cursor on desktop */}
+        {typeof window !== 'undefined' && !/Android|webOS|iPhone|iPad|iPod/i.test(navigator.userAgent) && <SmoothCursor />}
         {children}
       </body>
     </html>
