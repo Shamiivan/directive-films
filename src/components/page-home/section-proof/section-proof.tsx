@@ -16,19 +16,19 @@ export default function ProofSection() {
     },
     {
       url: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop',
-      alt: 'Video editor working on post-production timeline with color grading',
+      alt: 'Professional photographer with camera on set',
     },
     {
-      url: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&h=400&fit=crop',
-      alt: 'Behind the scenes of brand video production with director and crew',
+      url: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=600&h=400&fit=crop',
+      alt: 'Professional video camera on dolly track during film production',
     },
     {
-      url: 'https://images.unsplash.com/photo-1524522173746-f628baad3644?w=600&h=400&fit=crop',
-      alt: 'Professional camera operator filming high-quality product video',
+      url: 'https://images.unsplash.com/photo-1540655037529-dec987208707?w=600&h=400&fit=crop',
+      alt: 'Director reviewing footage on monitor during video shoot',
     },
     {
-      url: 'https://images.unsplash.com/photo-1579548122080-c35fd6820ecb?w=600&h=400&fit=crop',
-      alt: 'Creative team reviewing video footage and discussing production notes',
+      url: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop',
+      alt: 'Film production behind the scenes with cinema camera',
     },
   ];
 

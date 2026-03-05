@@ -37,7 +37,7 @@
 }
 
 .faqItem {
-  /* Borders removed for cleaner look */
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .faqItem.open .icon {

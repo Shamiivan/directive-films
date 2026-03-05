@@ -100,12 +100,18 @@
 
 .serviceCard {
   background: #fff;
-  padding: 0;
+  padding: 24px;
   text-align: left;
   cursor: pointer;
   will-change: transform;
   border-radius: 12px;
-  transition: box-shadow 0.3s ease;
+  border: 1px solid #e5e5e5;
+  transition: all 0.3s ease;
+}
+
+.serviceCard:hover {
+  border-color: #FDB714;
+  box-shadow: 0 8px 24px rgba(253, 183, 20, 0.1);
 }
 
 .iconBox {
@@ -168,19 +174,6 @@
   box-shadow: 0 8px 24px rgba(253, 183, 20, 0.4);
 }
 
-/* Premium Glow Animation */
-@keyframes pulseGlow {
-  0%, 100% {
-    box-shadow: 0 4px 12px rgba(253, 183, 20, 0.3);
-  }
-  50% {
-    box-shadow: 0 4px 24px rgba(253, 183, 20, 0.6);
-  }
-}
-
-.ctaButton {
-  animation: pulseGlow 3s ease-in-out infinite;
-}
 
 /* Responsive */
 @media (max-width: 1024px) {

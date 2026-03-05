@@ -1,19 +1,8 @@
 /* CTA Section */
 .ctaSection {
-  padding: 40px 0;
-  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 25%, #2a2a2a 50%, #1a1a1a 75%, #0a0a0a 100%);
-  background-size: 400% 400%;
-  animation: gradientShiftCTA 25s ease infinite;
+  padding: 100px 0;
+  background: #0a0a0a;
   position: relative;
-}
-
-@keyframes gradientShiftCTA {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
 }
 
 .container {
