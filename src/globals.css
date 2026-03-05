@@ -17,18 +17,8 @@
   }
 }
 
-html {
-  height: 100%;
-  width: 100%;
-}
-
 body {
-  width: 100%;
-  max-width: 100vw;
   min-height: 100vh;
-  -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
-  position: relative;
   color: var(--foreground);
   background: var(--background);
   font-family: var(--font-body, Inter, sans-serif);
@@ -36,48 +26,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Ensure scroll is never blocked - CRITICAL for mobile UX */
-html, body {
-  overflow-y: auto !important;
-}
-
-/* Prevent horizontal overflow without blocking scroll */
-body {
-  width: 100vw;
-}
-
-body > * {
-  max-width: 100%;
-}
-
-/* Mobile: Force scroll to always work */
-@media (hover: none) and (pointer: coarse) {
-  html, body {
-    overflow-y: scroll !important;
-    -webkit-overflow-scrolling: touch !important;
-    overscroll-behavior-y: contain;
-  }
-}
-
 /* Only hide cursor on desktop */
 @media (hover: hover) and (pointer: fine) {
   body {
     cursor: none;
-  }
-}
-
-/* Ensure cursor doesn't interfere with content */
-body > * {
-  position: relative;
-}
-
-/* Performance optimizations for animations */
-/* Disable smooth scroll on mobile to prevent scroll locking */
-@media (hover: hover) and (pointer: fine) {
-  @media (prefers-reduced-motion: no-preference) {
-    * {
-      scroll-behavior: smooth;
-    }
   }
 }
 
