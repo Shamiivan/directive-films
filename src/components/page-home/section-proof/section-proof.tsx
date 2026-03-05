@@ -40,7 +40,7 @@ export default function ProofSection() {
           className={styles.title}
           {...scrollReveal}
         >
-          500+ projects delivered.<br />
+          50+ projects delivered.<br />
           Here's what growth looks like.
         </motion.h2>
 
@@ -89,9 +89,6 @@ export default function ProofSection() {
           className={styles.ctaContainer}
           {...scrollReveal}
         >
-          <MagneticButton href="/contact" className={styles.ctaButton}>
-            Watch the Showreel
-          </MagneticButton>
         </motion.div>
       </div>
     </section>

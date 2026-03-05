@@ -50,7 +50,7 @@ export default function HowWeDoItSection() {
             {...scrollReveal}
           >
             <h2 className={styles.title}>
-              From audit to growth.
+              Growth Partner That Turns Content into <span className={styles.highlight}>Revenue</span>
             </h2>
             <div className={styles.divider}></div>
 

@@ -3,6 +3,7 @@ import MagneticButton from '../../MagneticButton';
 import { scrollReveal, gridStagger, imageZoom } from '../../../utils/animations';
 import styles from './section-results.module.css';
 
+
 export default function ResultsSection() {
   const SearchIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

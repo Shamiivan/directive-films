@@ -79,7 +79,7 @@ export default function PricingSection() {
       ],
       highlight: false,
       ctaText: 'Get Started',
-      hoverText: 'Start in 2 Weeks',
+      hoverText: 'Get Started',
     },
     {
       name: 'Growth Partner',

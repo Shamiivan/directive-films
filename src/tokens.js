@@ -16,6 +16,8 @@ export const colors = {
     primary: '#000000',
     secondary: '#1A1A1A',
     tertiary: '#2A2A2A',
+    light: '#ebe6e6ff',
+
   },
 
   // Text Colors

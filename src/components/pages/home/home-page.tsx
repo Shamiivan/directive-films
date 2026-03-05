@@ -19,9 +19,9 @@ export default function HomePage() {
     <div className={styles.page}>
       <NavSection />
       <HeroSection />
-      <ResultsSection />
-      <OfferSection />
       <HowWeDoItSection />
+      {/* <ResultsSection /> */}
+      <OfferSection />
       <ProofSection />
       <TestimonialsSection />
       <PricingSection />

@@ -16,18 +16,18 @@ const iconComponents = [
 
 const services = [
   {
-    title: 'Diagnose',
+    title: 'Audit',
     description: 'We look at your website, socials, and messaging and tell you what\'s actually working and what isn\'t. You get a clear plan — and we help you run it.',
     href: '/services/diagnose',
   },
   {
     title: 'Coach',
-    description: 'We set up your studio, train your team, and give them a playbook. After that, they make professional content on their own — every week.',
+    description: 'We set up your studio, train your team, and give them a playbook. After that, they make professional content on their own.',
     href: '/services/coach',
   },
   {
     title: 'Create',
-    description: 'We produce the videos. Scripted around your sales process — the objections your buyers have, the trust they need to feel. Not just pretty footage.',
+    description: 'We produce the videos. Scripted around your sales process.',
     href: '/services/create',
   },
   {
@@ -37,7 +37,7 @@ const services = [
   },
   {
     title: 'Build',
-    description: 'Fast websites that say what you do, capture leads, and book meetings. Not a brochure — a site that actually works for you.',
+    description: 'Fast websites that say what you do, capture leads, and book meetings.',
     href: '/services/build',
   },
 ];

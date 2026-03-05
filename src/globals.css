@@ -1,26 +1,26 @@
 :root {
-  --background: #ffffff;
+  --background: #fafafa;
   --foreground: #171717;
 
   /* Brand colors */
   --color-gold: #FDB714;
   --color-gold-hover: #e5a512;
-  --color-black: #000000;
-  --color-white: #FFFFFF;
+  --color-black: #0d0d0d;
+  --color-white: #f5f5f5;
 
   /* Background colors */
-  --color-bg-primary: #000000;
-  --color-bg-secondary: #1A1A1A;
-  --color-bg-tertiary: #2A2A2A;
-  --color-bg-dark: #0a0a0a;
-  --color-bg-deep: #0f0f0f;
+  --color-bg-primary: #0d0d0d;
+  --color-bg-secondary: #1a1a1a;
+  --color-bg-tertiary: #2a2a2a;
+  --color-bg-dark: #111111;
+  --color-bg-deep: #121212;
 
   /* Text colors */
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #CCCCCC;
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #cccccc;
   --color-text-tertiary: #999999;
   --color-text-muted: #666666;
-  --color-text-on-light: #000000;
+  --color-text-on-light: #111111;
   --color-text-dim: #888888;
 
   /* Border colors */
@@ -134,6 +134,7 @@ body {
 
 /* Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
