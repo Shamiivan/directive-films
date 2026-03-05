@@ -328,7 +328,7 @@
 
 .mobileSubLabel {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   font-weight: 600;
   color: var(--color-white);
 }

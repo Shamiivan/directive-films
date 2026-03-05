@@ -21,7 +21,7 @@ export default function FooterSection() {
             <motion.div className={styles.brandColumn} variants={scrollReveal}>
               <h3 className={styles.brandName}>DirectiveFilms</h3>
               <p className={styles.brandTagline}>
-                Growth systems for ambitious brands. Video, web, CRM, coaching, and strategy — all under one roof.
+                Video, web, CRM, coaching, and strategy — connected into one system that grows your business.
               </p>
             </motion.div>
 
