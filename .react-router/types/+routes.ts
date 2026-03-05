@@ -17,9 +17,6 @@ type Pages = {
   "/about": {
     params: {};
   };
-  "/services": {
-    params: {};
-  };
   "/careers": {
     params: {};
   };
@@ -29,12 +26,27 @@ type Pages = {
   "/design-system": {
     params: {};
   };
+  "/services/diagnose": {
+    params: {};
+  };
+  "/services/coach": {
+    params: {};
+  };
+  "/services/create": {
+    params: {};
+  };
+  "/services/optimize": {
+    params: {};
+  };
+  "/services/build": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/about" | "/services" | "/careers" | "/contact" | "/design-system";
+    page: "/" | "/about" | "/careers" | "/contact" | "/design-system" | "/services/diagnose" | "/services/coach" | "/services/create" | "/services/optimize" | "/services/build";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -43,10 +55,6 @@ type RouteFiles = {
   "routes/about.tsx": {
     id: "routes/about";
     page: "/about";
-  };
-  "routes/services.tsx": {
-    id: "routes/services";
-    page: "/services";
   };
   "routes/careers.tsx": {
     id: "routes/careers";
@@ -60,14 +68,38 @@ type RouteFiles = {
     id: "routes/design-system";
     page: "/design-system";
   };
+  "routes/services/diagnose.tsx": {
+    id: "routes/services/diagnose";
+    page: "/services/diagnose";
+  };
+  "routes/services/coach.tsx": {
+    id: "routes/services/coach";
+    page: "/services/coach";
+  };
+  "routes/services/create.tsx": {
+    id: "routes/services/create";
+    page: "/services/create";
+  };
+  "routes/services/optimize.tsx": {
+    id: "routes/services/optimize";
+    page: "/services/optimize";
+  };
+  "routes/services/build.tsx": {
+    id: "routes/services/build";
+    page: "/services/build";
+  };
 };
 
 type RouteModules = {
   "root": typeof import("./src/root.tsx");
   "routes/home": typeof import("./src/routes/home.tsx");
   "routes/about": typeof import("./src/routes/about.tsx");
-  "routes/services": typeof import("./src/routes/services.tsx");
   "routes/careers": typeof import("./src/routes/careers.tsx");
   "routes/contact": typeof import("./src/routes/contact.tsx");
   "routes/design-system": typeof import("./src/routes/design-system.tsx");
+  "routes/services/diagnose": typeof import("./src/routes/services/diagnose.tsx");
+  "routes/services/coach": typeof import("./src/routes/services/coach.tsx");
+  "routes/services/create": typeof import("./src/routes/services/create.tsx");
+  "routes/services/optimize": typeof import("./src/routes/services/optimize.tsx");
+  "routes/services/build": typeof import("./src/routes/services/build.tsx");
 };
