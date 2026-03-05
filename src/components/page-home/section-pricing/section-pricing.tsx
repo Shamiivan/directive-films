@@ -41,8 +41,8 @@ function PricingCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
       onMouseMove={onMouseMove}
-      onMouseLeave={(e) => {
-        onMouseLeave(e);
+      onMouseLeave={() => {
+        onMouseLeave();
         onHoverEnd();
       }}
       onMouseEnter={onHoverStart}
@@ -59,7 +59,7 @@ export default function PricingSection() {
 
   const CheckIcon = () => (
     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M16.6668 5L7.50016 14.1667L3.3335 10" stroke="#FDB714" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <path d="M16.6668 5L7.50016 14.1667L3.3335 10" stroke="#FDB714" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 

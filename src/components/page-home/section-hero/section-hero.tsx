@@ -87,9 +87,7 @@ export default function HeroSection() {
         >
           <span className={styles.gold}>D</span>riven By Purpose
           <br />
-          Defined By Excellence
-          We Make You<br />
-          <span className={styles.gold}>Impossible to Ignore</span>
+          <span className={styles.gold}>D</span>efined By Excellence
         </h1>
 
         <motion.p
