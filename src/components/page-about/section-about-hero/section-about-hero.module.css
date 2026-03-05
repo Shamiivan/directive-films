@@ -41,21 +41,21 @@
 
 /* Title */
 .title {
-  font-size: 24px;
+  font-size: var(--font-size-h3);
   font-weight: 400;
-  color: #fff;
-  margin-bottom: 16px;
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
 
 /* Subtitle with underlined "Excellence" */
 .subtitle {
-  font-size: 64px;
+  font-size: var(--font-size-display1);
   font-weight: 700;
-  color: #fff;
+  color: var(--color-white);
   line-height: 1.1;
-  margin-bottom: 32px;
+  margin-bottom: var(--space-xl);
 }
 
 .excellence {
@@ -70,15 +70,15 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: #FDB714;
+  background: var(--color-gold);
 }
 
 /* Description */
 .description {
-  font-size: 18px;
-  color: #ccc;
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-secondary);
   line-height: 1.6;
-  margin-bottom: 48px;
+  margin-bottom: var(--space-2xl);
 }
 
 /* CTA */
@@ -87,22 +87,22 @@
 }
 
 .ctaButton {
-  background: #FDB714;
-  color: #000;
+  background: var(--color-gold);
+  color: var(--color-black);
   border: none;
   padding: 18px 48px;
-  border-radius: 30px;
+  border-radius: var(--radius-pill);
   font-weight: 600;
-  font-size: 18px;
+  font-size: var(--font-size-body-lg);
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 20px rgba(253, 183, 20, 0.4);
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-gold-md);
 }
 
 .ctaButton:hover {
-  background: #e5a512;
+  background: var(--color-gold-hover);
   transform: scale(1.05);
-  box-shadow: 0 6px 30px rgba(253, 183, 20, 0.6);
+  box-shadow: var(--shadow-gold-hover);
 }
 
 /* Responsive */
@@ -116,13 +116,13 @@
   }
 
   .title {
-    font-size: 18px;
+    font-size: var(--font-size-body-lg);
     margin-bottom: 12px;
   }
 
   .subtitle {
     font-size: 42px;
-    margin-bottom: 24px;
+    margin-bottom: var(--space-lg);
   }
 
   .excellence::after {
@@ -130,8 +130,8 @@
   }
 
   .description {
-    font-size: 16px;
-    margin-bottom: 32px;
+    font-size: var(--font-size-body);
+    margin-bottom: var(--space-xl);
   }
 
   .description br {
@@ -139,7 +139,7 @@
   }
 
   .ctaButton {
-    padding: 16px 40px;
-    font-size: 16px;
+    padding: var(--space-md) 40px;
+    font-size: var(--font-size-body);
   }
 }

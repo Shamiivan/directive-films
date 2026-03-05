@@ -27,26 +27,26 @@
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: var(--space-4xl);
   align-items: center;
 }
 
 .leftSide {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .title {
   font-size: 72px;
   font-weight: 700;
   line-height: 1.1;
-  color: #fff;
-  margin-bottom: 32px;
+  color: var(--color-white);
+  margin-bottom: var(--space-xl);
 }
 
 .description {
-  font-size: 20px;
+  font-size: var(--font-size-h4);
   line-height: 1.6;
-  color: #ccc;
+  color: var(--color-text-secondary);
   max-width: 500px;
 }
 
@@ -54,81 +54,81 @@
 .formCard {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  border-radius: 24px;
-  padding: 48px;
+  border-radius: var(--radius-3xl);
+  padding: var(--space-2xl);
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .formTitle {
-  font-size: 32px;
+  font-size: var(--font-size-h2);
   font-weight: 700;
-  color: #000;
+  color: var(--color-black);
   margin-bottom: 12px;
 }
 
 .formSubtitle {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 32px;
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-xl);
   line-height: 1.5;
 }
 
 .form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: var(--space-lg);
 }
 
 .formGroup {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
 .label {
-  font-size: 14px;
+  font-size: var(--font-size-body-sm);
   font-weight: 600;
-  color: #333;
+  color: var(--color-border-light);
 }
 
 .input {
   padding: 14px 18px;
   border: 2px solid #e0e0e0;
-  border-radius: 12px;
-  font-size: 16px;
-  transition: all 0.3s;
-  background: #fff;
-  color: #000;
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-body);
+  transition: all var(--transition-slow);
+  background: var(--color-white);
+  color: var(--color-black);
 }
 
 .input:focus {
   outline: none;
-  border-color: #FDB714;
+  border-color: var(--color-gold);
   box-shadow: 0 0 0 3px rgba(253, 183, 20, 0.1);
 }
 
 .input::placeholder {
-  color: #999;
+  color: var(--color-text-tertiary);
 }
 
 .submitButton {
-  background: #FDB714;
-  color: #000;
+  background: var(--color-gold);
+  color: var(--color-black);
   border: none;
   padding: 16px 32px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--font-size-body);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all var(--transition-slow);
   margin-top: 8px;
   width: 100%;
 }
 
 .submitButton:hover {
-  background: #e5a512;
+  background: var(--color-gold-hover);
   transform: scale(1.02);
-  box-shadow: 0 8px 24px rgba(253, 183, 20, 0.4);
+  box-shadow: var(--shadow-gold-xl);
 }
 
 /* Responsive */
@@ -166,11 +166,11 @@
 
   .title {
     font-size: 42px;
-    margin-bottom: 24px;
+    margin-bottom: var(--space-lg);
   }
 
   .description {
-    font-size: 18px;
+    font-size: var(--font-size-body-lg);
   }
 
   .formCard {
@@ -182,8 +182,8 @@
   }
 
   .formSubtitle {
-    font-size: 14px;
-    margin-bottom: 24px;
+    font-size: var(--font-size-body-sm);
+    margin-bottom: var(--space-lg);
   }
 
   .form {
@@ -192,7 +192,7 @@
 
   .input {
     padding: 12px 16px;
-    font-size: 14px;
+    font-size: var(--font-size-body-sm);
   }
 
   .submitButton {

@@ -1,7 +1,7 @@
 /* FAQ Section */
 .faqSection {
   padding: 0 0 var(--section-padding) 0;
-  background: #fff;
+  background: var(--color-white);
   position: relative;
 }
 
@@ -14,20 +14,20 @@
 /* Header */
 .header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: var(--space-3xl);
 }
 
 .title {
   font-family: var(--font-display);
-  font-size: 52px;
+  font-size: clamp(32px, 4vw + 12px, 52px);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: #000;
+  color: var(--color-black);
 }
 
 .gold {
-  color: #FDB714;
+  color: var(--color-gold);
 }
 
 /* FAQ List */
@@ -37,16 +37,16 @@
 }
 
 .faqItem {
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .faqItem.open .icon {
   transform: rotate(180deg);
-  color: #FDB714;
+  color: var(--color-gold);
 }
 
 .faqItem.open .questionText {
-  color: #FDB714;
+  color: var(--color-gold);
 }
 
 /* Question Button */
@@ -60,20 +60,20 @@
   border: none;
   cursor: pointer;
   text-align: left;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .question:hover .questionText {
-  color: #FDB714;
+  color: var(--color-gold);
 }
 
 .questionText {
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: var(--font-size-h4);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: #000;
-  transition: color 0.2s ease;
+  color: var(--color-black);
+  transition: color var(--transition-fast);
   padding-right: 20px;
 }
 
@@ -81,8 +81,8 @@
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  color: #666;
-  transition: all 0.3s ease;
+  color: var(--color-text-muted);
+  transition: all var(--transition-slow);
 }
 
 /* Answer */
@@ -93,11 +93,11 @@
 .answer {
   padding: 0 0 24px 0;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--font-size-body);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
-  color: #666;
+  color: var(--color-text-muted);
   margin: 0;
 }
 
@@ -112,12 +112,11 @@
   }
 
   .title {
-    font-size: 36px;
-    margin-bottom: 48px;
+    margin-bottom: var(--space-2xl);
   }
 
   .questionText {
-    font-size: 18px;
+    font-size: var(--font-size-body-lg);
   }
 
   .answer {

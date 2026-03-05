@@ -2,7 +2,7 @@
 .section {
   position: relative;
   padding: var(--section-padding) 0;
-  background: #000;
+  background: var(--color-black);
   overflow: hidden;
 }
 
@@ -34,8 +34,8 @@
   padding: 0.5rem 1rem;
   background: rgba(253, 183, 20, 0.1);
   border: 1px solid rgba(253, 183, 20, 0.3);
-  border-radius: 20px;
-  color: #FDB714;
+  border-radius: var(--radius-2xl);
+  color: var(--color-gold);
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -47,7 +47,7 @@
   font-size: clamp(2rem, 4vw, 3.5rem);
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #fff;
+  color: var(--color-white);
   line-height: 1.2;
 }
 
@@ -68,13 +68,13 @@
 }
 
 .ctaButton {
-  background: #FDB714;
-  color: #000;
+  background: var(--color-gold);
+  color: var(--color-black);
   padding: 1rem 2.5rem;
   font-size: 1rem;
   font-weight: 700;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
 }
 
@@ -101,9 +101,9 @@
 
 /* Reason Title */
 .reasonTitle {
-  font-size: 32px;
+  font-size: var(--font-size-h2);
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
@@ -118,7 +118,7 @@
   font-weight: 700;
   line-height: 1;
   margin-bottom: 0.5rem;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .statLabel {
@@ -130,7 +130,7 @@
 
 /* Reason Description */
 .reasonDescription {
-  font-size: 16px;
+  font-size: var(--font-size-body);
   color: rgba(255, 255, 255, 0.7);
   line-height: 1.7;
   max-width: 500px;
@@ -190,7 +190,7 @@
   }
 
   .reasonTitle {
-    font-size: 24px;
+    font-size: var(--font-size-h3);
   }
 
   .statValue {

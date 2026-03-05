@@ -2,12 +2,111 @@
   --background: #ffffff;
   --foreground: #171717;
 
+  /* Brand colors */
+  --color-gold: #FDB714;
+  --color-gold-hover: #e5a512;
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+
+  /* Background colors */
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #1A1A1A;
+  --color-bg-tertiary: #2A2A2A;
+  --color-bg-dark: #0a0a0a;
+  --color-bg-deep: #0f0f0f;
+
+  /* Text colors */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #CCCCCC;
+  --color-text-tertiary: #999999;
+  --color-text-muted: #666666;
+  --color-text-on-light: #000000;
+  --color-text-dim: #888888;
+
+  /* Border colors */
+  --color-border-light: #333333;
+  --color-border-medium: #444444;
+  --color-border-dark: #1A1A1A;
+  --color-border-subtle: #e5e5e5;
+
+  /* Typography - Font sizes */
+  --font-size-display1: 64px;
+  --font-size-display2: 52px;
+  --font-size-h1: 40px;
+  --font-size-h2: 32px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --font-size-body-lg: 18px;
+  --font-size-body: 16px;
+  --font-size-body-sm: 14px;
+  --font-size-caption: 12px;
+  --font-size-label: 11px;
+
+  /* Typography - Font weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  /* Typography - Line heights */
+  --line-height-tight: 1.1;
+  --line-height-snug: 1.2;
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.8;
+
+  /* Typography - Letter spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.01em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+  --letter-spacing-ultra: 0.2em;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 80px;
+
   /* Layout tokens */
   --container-max-width: 1400px;
   --container-padding: 40px;
   --container-padding-mobile: 20px;
   --section-padding: 60px;
   --section-padding-mobile: 40px;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-pill: 30px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
+  --shadow-gold: 0 4px 12px rgba(253, 183, 20, 0.3);
+  --shadow-gold-md: 0 4px 20px rgba(253, 183, 20, 0.4);
+  --shadow-gold-lg: 0 6px 20px rgba(253, 183, 20, 0.5);
+  --shadow-gold-hover: 0 6px 30px rgba(253, 183, 20, 0.6);
+  --shadow-gold-xl: 0 8px 24px rgba(253, 183, 20, 0.2);
+
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 250ms ease-in-out;
+  --transition-slow: 350ms ease-in-out;
+  --transition-premium: 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -64,44 +163,44 @@ a {
 /* Typography Utility Classes */
 .display-text {
   font-family: var(--font-display);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
 }
 
 .heading-text {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: -0.01em;
-  line-height: 1.2;
+  line-height: var(--line-height-snug);
 }
 
 .body-text {
   font-family: var(--font-body);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.6;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-relaxed);
 }
 
 .body-text-medium {
   font-family: var(--font-body);
-  font-weight: 500;
-  letter-spacing: 0.01em;
-  line-height: 1.6;
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-relaxed);
 }
 
 .label-text {
   font-family: var(--font-mono);
-  font-weight: 400;
-  letter-spacing: 0.1em;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: var(--font-size-label);
 }
 
 .label-text-wide {
   font-family: var(--font-mono);
-  font-weight: 400;
-  letter-spacing: 0.2em;
+  font-weight: var(--font-weight-regular);
+  letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  font-size: 11px;
+  font-size: var(--font-size-label);
 }

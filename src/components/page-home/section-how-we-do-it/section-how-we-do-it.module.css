@@ -1,7 +1,7 @@
 /* How We Do It Section */
 .howWeDoItSection {
   padding: var(--section-padding) 0;
-  background: #0a0a0a;
+  background: var(--color-bg-dark);
   position: relative;
 }
 
@@ -11,7 +11,7 @@
   padding: 0 var(--container-padding);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: var(--space-4xl);
   align-items: center;
 }
 
@@ -22,19 +22,19 @@
 
 .title {
   font-family: var(--font-display);
-  font-size: 52px;
+  font-size: var(--font-size-display2);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: #fff;
-  margin-bottom: 24px;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-lg);
 }
 
 .divider {
   width: 280px;
   height: 2px;
-  background: #FDB714;
-  margin-bottom: 48px;
+  background: var(--color-gold);
+  margin-bottom: var(--space-2xl);
 }
 
 /* Steps List */
@@ -46,26 +46,26 @@
 
 .stepItem {
   padding: 24px 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--color-border-light);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
   will-change: transform;
 }
 
 .stepItem:first-child {
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--color-border-light);
 }
 
 .stepItem.active {
-  border-bottom-color: #FDB714;
+  border-bottom-color: var(--color-gold);
 }
 
 .stepItem.active .stepNumber {
-  color: #FDB714;
+  color: var(--color-gold);
 }
 
 .stepItem.active .stepTitle {
-  color: #FDB714;
+  color: var(--color-gold);
 }
 
 .stepHeader {
@@ -76,33 +76,33 @@
 
 .stepNumber {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: var(--font-size-body-sm);
   font-weight: 400;
   letter-spacing: 0.1em;
-  color: #999;
-  transition: color 0.3s ease;
+  color: var(--color-text-tertiary);
+  transition: color var(--transition-slow);
   min-width: 32px;
 }
 
 .stepTitle {
   font-family: var(--font-body);
-  font-size: 20px;
+  font-size: var(--font-size-h4);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: #fff;
+  color: var(--color-text-primary);
   margin: 0;
-  transition: color 0.3s ease;
+  transition: color var(--transition-slow);
 }
 
 .stepDescription {
-  margin-top: 16px;
+  margin-top: var(--space-md);
   margin-left: 44px;
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
-  color: #ccc;
+  color: var(--color-text-secondary);
   overflow: hidden;
 }
 
@@ -115,7 +115,7 @@
   position: relative;
   width: 100%;
   height: 500px;
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
@@ -152,7 +152,7 @@
   }
 
   .title {
-    font-size: 40px;
+    font-size: var(--font-size-h1);
   }
 
   .imageWrapper {
@@ -168,7 +168,7 @@
   .container {
     padding: 0 var(--container-padding-mobile);
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: var(--space-2xl);
   }
 
   .leftColumn {
@@ -176,13 +176,13 @@
   }
 
   .title {
-    font-size: 32px;
-    margin-bottom: 16px;
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--space-md);
   }
 
   .divider {
     width: 200px;
-    margin-bottom: 32px;
+    margin-bottom: var(--space-xl);
   }
 
   .stepItem {
@@ -190,12 +190,12 @@
   }
 
   .stepTitle {
-    font-size: 18px;
+    font-size: var(--font-size-body-lg);
   }
 
   .stepDescription {
     margin-left: 0;
-    font-size: 14px;
+    font-size: var(--font-size-body-sm);
   }
 
   .imageWrapper {

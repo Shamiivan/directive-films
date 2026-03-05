@@ -63,9 +63,32 @@ CSS variables: `--font-display`, `--font-body`, `--font-mono`
 
 ### Design System
 
-- **Design tokens**: `src/tokens.js` — colors, typography, spacing, layout, etc.
-- **CSS Custom Properties**: Layout tokens in `src/globals.css`
+Two sources of truth — use CSS custom properties in stylesheets, JS tokens in component logic:
+
+- **CSS Custom Properties**: `src/globals.css` `:root` block — the primary styling API
+- **JS tokens**: `src/tokens.js` — colors, typography, spacing, animations (for Framer Motion, inline styles)
 - **Design system page**: `/design-system` — Visual showcase of all tokens
+
+#### CSS Design Tokens (in `globals.css`)
+
+All CSS module files use these tokens. **Never hardcode hex colors, px font sizes, or spacing values — use the tokens.**
+
+| Category | Prefix | Examples |
+|----------|--------|---------|
+| Brand colors | `--color-gold`, `--color-black`, `--color-white` | `var(--color-gold)`, `var(--color-gold-hover)` |
+| Backgrounds | `--color-bg-*` | `var(--color-bg-primary)`, `var(--color-bg-secondary)`, `var(--color-bg-tertiary)` |
+| Text colors | `--color-text-*` | `var(--color-text-primary)`, `var(--color-text-secondary)`, `var(--color-text-muted)` |
+| Border colors | `--color-border-*` | `var(--color-border-light)`, `var(--color-border-subtle)` |
+| Font sizes | `--font-size-*` | `var(--font-size-h1)`, `var(--font-size-body)`, `var(--font-size-label)` |
+| Font weights | `--font-weight-*` | `var(--font-weight-bold)`, `var(--font-weight-medium)` |
+| Line heights | `--line-height-*` | `var(--line-height-tight)`, `var(--line-height-relaxed)` |
+| Letter spacing | `--letter-spacing-*` | `var(--letter-spacing-tight)`, `var(--letter-spacing-widest)` |
+| Spacing | `--space-*` | `var(--space-sm)` (8px), `var(--space-md)` (16px), `var(--space-xl)` (32px) |
+| Layout | `--container-*`, `--section-*` | `var(--container-padding)`, `var(--section-padding)` |
+| Border radius | `--radius-*` | `var(--radius-md)` (8px), `var(--radius-pill)` (30px), `var(--radius-full)` |
+| Shadows | `--shadow-*` | `var(--shadow-gold)`, `var(--shadow-gold-hover)`, `var(--shadow-lg)` |
+| Transitions | `--transition-*` | `var(--transition-fast)`, `var(--transition-slow)`, `var(--transition-premium)` |
+| Fonts | `--font-display`, `--font-body`, `--font-mono` | Set in `root.tsx` via @fontsource imports |
 
 ### Key Directories
 

@@ -1,6 +1,6 @@
 .inputWrapper {
   position: relative;
-  margin-bottom: 32px;
+  margin-bottom: var(--space-xl);
 }
 
 .label {
@@ -8,34 +8,34 @@
   left: 16px;
   top: 16px;
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--font-size-body);
   font-weight: 400;
-  color: #999;
+  color: var(--color-text-tertiary);
   pointer-events: none;
   transform-origin: left center;
-  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all var(--transition-premium);
   z-index: 1;
 }
 
 .required {
-  color: #FDB714;
+  color: var(--color-gold);
   margin-left: 4px;
 }
 
 .input,
 .textarea {
   width: 100%;
-  padding: 16px;
+  padding: var(--space-md);
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: var(--font-size-body);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: #fff;
-  background: #1a1a1a;
-  border: 2px solid #333;
-  border-radius: 8px;
+  color: var(--color-white);
+  background: var(--color-bg-secondary);
+  border: 2px solid var(--color-border-light);
+  border-radius: var(--radius-md);
   outline: none;
-  transition: all 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: all var(--transition-premium);
 }
 
 .textarea {
@@ -50,7 +50,7 @@
 
 .input:focus::placeholder,
 .textarea:focus::placeholder {
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 .checkmark {
@@ -62,10 +62,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #FDB714;
-  color: #000;
-  border-radius: 50%;
-  font-size: 14px;
+  background: var(--color-gold);
+  color: var(--color-black);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-body-sm);
   font-weight: 700;
   pointer-events: none;
 }
@@ -74,13 +74,13 @@
 @media (prefers-color-scheme: light) {
   .input,
   .textarea {
-    background: #fff;
-    color: #000;
-    border-color: #ddd;
+    background: var(--color-white);
+    color: var(--color-black);
+    border-color: var(--color-border-subtle);
   }
 
   .input:focus,
   .textarea:focus {
-    border-color: #FDB714;
+    border-color: var(--color-gold);
   }
 }

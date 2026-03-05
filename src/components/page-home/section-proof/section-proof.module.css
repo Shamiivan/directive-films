@@ -1,7 +1,7 @@
 /* Proof Section */
 .proofSection {
   padding: var(--section-padding) 0;
-  background: #1a1a1a;
+  background: var(--color-bg-secondary);
   position: relative;
 }
 
@@ -14,13 +14,13 @@
 /* Title */
 .title {
   font-family: var(--font-display);
-  font-size: 52px;
+  font-size: var(--font-size-display2);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: #fff;
+  color: var(--color-text-primary);
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: var(--space-3xl);
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
@@ -32,7 +32,7 @@
   grid-template-columns: repeat(8, 1fr);
   grid-auto-rows: 140px;
   gap: 20px;
-  margin-bottom: 64px;
+  margin-bottom: var(--space-3xl);
   position: relative;
   z-index: 1;
 }
@@ -41,7 +41,7 @@
 .gridItem {
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
+  border-radius: var(--radius-xl);
   cursor: pointer;
   will-change: transform;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -97,7 +97,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-slow);
 }
 
 .gridItem:hover .gridImage {
@@ -116,7 +116,7 @@
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity var(--transition-slow);
 }
 
 .gridItem:hover .playOverlay {
@@ -125,7 +125,7 @@
 
 .playButton {
   transform: scale(0.8);
-  transition: transform 0.3s ease;
+  transition: transform var(--transition-slow);
 }
 
 .gridItem:hover .playButton {
@@ -138,22 +138,22 @@
 }
 
 .ctaButton {
-  background: #FDB714;
-  color: #000;
+  background: var(--color-gold);
+  color: var(--color-black);
   border: none;
-  padding: 16px 48px;
-  border-radius: 30px;
+  padding: var(--space-md) var(--space-2xl);
+  border-radius: var(--radius-pill);
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--font-size-body);
   cursor: pointer;
-  transition: all 0.3s;
-  box-shadow: 0 4px 12px rgba(253, 183, 20, 0.3);
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-gold);
 }
 
 .ctaButton:hover {
-  background: #e5a512;
+  background: var(--color-gold-hover);
   transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(253, 183, 20, 0.5);
+  box-shadow: var(--shadow-gold-lg);
 }
 
 /* Responsive */
@@ -161,7 +161,7 @@
   .imageGrid {
     grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 120px;
-    gap: 16px;
+    gap: var(--space-md);
   }
 
   .item1 {
@@ -206,14 +206,14 @@
 
   .title {
     font-size: 36px;
-    margin-bottom: 48px;
+    margin-bottom: var(--space-2xl);
   }
 
   .imageGrid {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 140px;
+    grid-auto-rows: 160px;
     gap: 12px;
-    margin-bottom: 48px;
+    margin-bottom: var(--space-2xl);
   }
 
   /* Featured large item */

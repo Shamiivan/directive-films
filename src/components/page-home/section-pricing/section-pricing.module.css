@@ -1,7 +1,7 @@
 /* Pricing Section */
 .pricingSection {
   padding: var(--section-padding) 0;
-  background: #fff;
+  background: var(--color-white);
   position: relative;
 }
 
@@ -14,29 +14,29 @@
 /* Header */
 .header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: var(--space-3xl);
 }
 
 .title {
   font-family: var(--font-display);
-  font-size: 52px;
+  font-size: clamp(32px, 4vw + 12px, 52px);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: #000;
-  margin-bottom: 24px;
+  color: var(--color-black);
+  margin-bottom: var(--space-lg);
 }
 
 .gold {
-  color: #FDB714;
+  color: var(--color-gold);
 }
 
 .subtitle {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: var(--font-size-body-lg);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: #666;
+  color: var(--color-text-muted);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -46,31 +46,31 @@
 .packagesGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  margin-bottom: 64px;
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
 }
 
 /* Package Card */
 .packageCard {
-  background: #fff;
-  border: 2px solid #e5e5e5;
-  border-radius: 20px;
-  padding: 40px 32px;
+  background: var(--color-white);
+  border: 2px solid var(--color-border-subtle);
+  border-radius: var(--radius-2xl);
+  padding: 40px var(--space-xl);
   position: relative;
   display: flex;
   flex-direction: column;
-  transition: all 0.2s ease;
+  transition: all var(--transition-fast);
 }
 
 .packageCard.highlighted {
   background: linear-gradient(135deg, #fff 0%, #fffbf0 100%);
-  border: 2px solid #FDB714;
+  border: 2px solid var(--color-gold);
   box-shadow: 0 4px 16px rgba(253, 183, 20, 0.15);
 }
 
 .packageCard:hover {
-  border-color: #FDB714;
-  box-shadow: 0 8px 24px rgba(253, 183, 20, 0.2);
+  border-color: var(--color-gold);
+  box-shadow: var(--shadow-gold-xl);
   transform: translateY(-4px);
 }
 
@@ -80,11 +80,11 @@
   top: -12px;
   right: 32px;
   font-family: var(--font-mono);
-  background: #FDB714;
-  color: #000;
-  padding: 6px 16px;
-  border-radius: 20px;
-  font-size: 11px;
+  background: var(--color-gold);
+  color: var(--color-black);
+  padding: 6px var(--space-md);
+  border-radius: var(--radius-2xl);
+  font-size: var(--font-size-label);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -92,7 +92,7 @@
 
 /* Package Header */
 .packageHeader {
-  margin-bottom: 24px;
+  margin-bottom: var(--space-lg);
 }
 
 .packageName {
@@ -100,23 +100,23 @@
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: #000;
-  margin-bottom: 8px;
+  color: var(--color-black);
+  margin-bottom: var(--space-sm);
 }
 
 .packageTagline {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: var(--font-size-body-sm);
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: #666;
+  color: var(--color-text-muted);
 }
 
 /* Pricing */
 .pricing {
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-xl);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .price {
@@ -124,14 +124,14 @@
   font-size: 48px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: #000;
+  color: var(--color-black);
   display: block;
   line-height: 1;
 }
 
 .period {
-  font-size: 16px;
-  color: #666;
+  font-size: var(--font-size-body);
+  color: var(--color-text-muted);
   font-weight: 500;
   margin-left: 4px;
 }
@@ -140,7 +140,7 @@
 .featuresList {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px 0;
+  margin: 0 0 var(--space-xl) 0;
   flex-grow: 1;
 }
 
@@ -148,12 +148,12 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-  margin-bottom: 16px;
+  margin-bottom: var(--space-md);
   font-family: var(--font-body);
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: #333;
+  color: var(--color-border-light);
   line-height: 1.5;
 }
 
@@ -174,56 +174,56 @@
 
 .ctaButton {
   width: 100%;
-  background: #fff;
-  color: #000;
-  border: 2px solid #FDB714;
-  padding: 14px 32px;
-  border-radius: 24px;
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 2px solid var(--color-gold);
+  padding: 14px var(--space-xl);
+  border-radius: var(--radius-3xl);
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--font-size-body);
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all var(--transition-slow);
   text-align: center;
 }
 
 .ctaButton:hover {
-  background: #FDB714;
-  color: #000;
+  background: var(--color-gold);
+  color: var(--color-black);
 }
 
 .ctaButton.ctaHighlight {
-  background: #FDB714;
-  color: #000;
-  border-color: #FDB714;
+  background: var(--color-gold);
+  color: var(--color-black);
+  border-color: var(--color-gold);
 }
 
 .ctaButton.ctaHighlight:hover {
-  background: #e5a512;
-  border-color: #e5a512;
+  background: var(--color-gold-hover);
+  border-color: var(--color-gold-hover);
   transform: scale(1.05);
 }
 
 /* Bottom CTA */
 .bottomCta {
   text-align: center;
-  padding-top: 32px;
-  border-top: 1px solid #e5e5e5;
+  padding-top: var(--space-xl);
+  border-top: 1px solid var(--color-border-subtle);
 }
 
 .ctaText {
-  font-size: 18px;
-  color: #666;
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-muted);
 }
 
 .ctaLink {
-  color: #FDB714;
+  color: var(--color-gold);
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 .ctaLink:hover {
-  color: #e5a512;
+  color: var(--color-gold-hover);
   text-decoration: underline;
 }
 
@@ -231,7 +231,7 @@
 @media (max-width: 1024px) {
   .packagesGrid {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: var(--space-lg);
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -247,19 +247,29 @@
     padding: 0 var(--container-padding-mobile);
   }
 
-  .title {
-    font-size: 36px;
+  .subtitle {
+    font-size: var(--font-size-body);
   }
 
-  .subtitle {
-    font-size: 16px;
+  .header {
+    margin-bottom: var(--space-2xl);
   }
 
   .packageCard {
-    padding: 32px 24px;
+    padding: var(--space-lg) 20px;
+  }
+
+  .pricing {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+  }
+
+  .feature {
+    margin-bottom: 12px;
+    font-size: var(--font-size-body-sm);
   }
 
   .price {
-    font-size: 40px;
+    font-size: var(--font-size-h1);
   }
 }

@@ -28,44 +28,44 @@
   text-align: center;
   padding: 5rem 2rem;
   background: rgba(0, 0, 0, 0.3);
-  border-radius: 24px;
+  border-radius: var(--radius-3xl);
   border: 1px solid rgba(253, 183, 20, 0.15);
 }
 
 .title {
   font-size: 56px;
   font-weight: 700;
-  color: #fff;
+  color: var(--color-white);
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
 
 .highlight {
-  color: #FDB714;
+  color: var(--color-gold);
   font-style: italic;
 }
 
 .subtitle {
-  font-size: 20px;
+  font-size: var(--font-size-h4);
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 3rem;
   line-height: 1.6;
 }
 
 .ctaButton {
-  background: #FDB714;
-  color: #000;
+  background: var(--color-gold);
+  color: var(--color-black);
   padding: 1.25rem 3rem;
   font-size: 1.125rem;
   font-weight: 700;
   border: none;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all var(--transition-slow);
 }
 
 .ctaButton:hover {
-  background: #e5a512;
+  background: var(--color-gold-hover);
   transform: scale(1.05);
 }
 
@@ -89,7 +89,7 @@
   }
 
   .subtitle {
-    font-size: 16px;
+    font-size: var(--font-size-body);
     margin-bottom: 2rem;
   }
 

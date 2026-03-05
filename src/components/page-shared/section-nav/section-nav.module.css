@@ -22,9 +22,9 @@
   gap: 12px;
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 18px;
+  font-size: var(--font-size-body-lg);
   letter-spacing: -0.01em;
-  color: #fff;
+  color: var(--color-white);
   text-decoration: none;
   cursor: pointer;
 }
@@ -38,38 +38,120 @@
 
 .navList {
   display: flex;
-  gap: 32px;
+  gap: var(--space-xl);
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .navList a {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: var(--font-size-body-sm);
   font-weight: 500;
   letter-spacing: 0.05em;
-  color: #fff;
+  color: var(--color-white);
   text-decoration: none;
-  transition: color 0.25s;
+  transition: color var(--transition-base);
 }
 
 .navList a:hover {
-  color: #FDB714;
+  color: var(--color-gold);
+}
+
+/* Dropdown */
+.dropdownWrapper {
+  position: relative;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: color var(--transition-base);
+}
+
+.dropdownTrigger:hover {
+  color: var(--color-gold);
+}
+
+.chevron {
+  transition: transform var(--transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 16px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(10, 10, 10, 0.98);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-lg);
+  padding: var(--space-sm);
+  min-width: 260px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.dropdownItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px var(--space-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.dropdownItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.dropdownLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: 600;
+  color: var(--color-white);
+  letter-spacing: 0.01em;
+}
+
+.dropdownItem:hover .dropdownLabel {
+  color: var(--color-gold);
+}
+
+.dropdownDesc {
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  font-weight: 400;
+  color: var(--color-text-dim);
+  letter-spacing: 0.01em;
 }
 
 .navBtn {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 14px;
+  font-size: var(--font-size-body-sm);
   letter-spacing: 0.01em;
-  background: #000;
-  color: #fff;
-  border: 2px solid #fff;
-  padding: 16px 24px;
-  border-radius: 24px;
+  background: var(--color-black);
+  color: var(--color-white);
+  border: 2px solid var(--color-white);
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-3xl);
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all var(--transition-base);
   min-height: 44px;
   display: flex;
   align-items: center;
@@ -77,8 +159,8 @@
 }
 
 .navBtn:hover {
-  background: #fff;
-  color: #000;
+  background: var(--color-white);
+  color: var(--color-black);
 }
 
 /* Hamburger Menu Button */
@@ -99,8 +181,8 @@
   display: block;
   width: 24px;
   height: 2px;
-  background: #fff;
-  transition: all 0.3s ease;
+  background: var(--color-white);
+  transition: all var(--transition-slow);
   border-radius: 2px;
 }
 
@@ -151,13 +233,13 @@
   height: 44px;
   background: transparent;
   border: none;
-  color: #fff;
+  color: var(--color-white);
   font-size: 36px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s;
+  transition: transform var(--transition-fast);
 }
 
 .closeButton:hover {
@@ -174,47 +256,111 @@
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: var(--space-sm);
 }
 
-.mobileNavList li a {
+.mobileNavList > li > a {
   display: block;
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: var(--font-size-body-lg);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: #fff;
+  color: var(--color-white);
   text-decoration: none;
-  padding: 16px 0;
+  padding: var(--space-md) 0;
   min-height: 48px;
   display: flex;
   align-items: center;
-  transition: all 0.25s;
+  transition: all var(--transition-base);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.mobileNavList li a:hover {
-  color: #FDB714;
-  padding-left: 8px;
+.mobileNavList > li > a:hover {
+  color: var(--color-gold);
+  padding-left: var(--space-sm);
+}
+
+/* Mobile Services Toggle */
+.mobileServicesToggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-lg);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--color-white);
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  padding: var(--space-md) 0;
+  min-height: 48px;
+  transition: color var(--transition-base);
+}
+
+.mobileServicesToggle:hover {
+  color: var(--color-gold);
+}
+
+/* Mobile Sub Menu */
+.mobileSubMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.mobileSubMenu li a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 12px 0 12px 16px;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-fast);
+}
+
+.mobileSubMenu li a:hover {
+  padding-left: var(--space-lg);
+}
+
+.mobileSubLabel {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.mobileSubMenu li a:hover .mobileSubLabel {
+  color: var(--color-gold);
+}
+
+.mobileSubDesc {
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  font-weight: 400;
+  color: var(--color-text-dim);
 }
 
 .mobileContactItem {
-  margin-top: 24px;
+  margin-top: var(--space-lg);
 }
 
 .mobileContactBtn {
-  background: #fff !important;
-  color: #000 !important;
-  border-radius: 24px;
+  background: var(--color-white) !important;
+  color: var(--color-black) !important;
+  border-radius: var(--radius-3xl);
   text-align: center;
   border: none !important;
-  padding: 16px 24px !important;
+  padding: var(--space-md) var(--space-lg) !important;
   justify-content: center;
 }
 
 .mobileContactBtn:hover {
-  background: #FDB714 !important;
-  color: #000 !important;
+  background: var(--color-gold) !important;
+  color: var(--color-black) !important;
   padding-left: 24px !important;
 }
 
