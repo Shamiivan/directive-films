@@ -1,7 +1,6 @@
-/* Pricing Section */
 .pricingSection {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-primary);
+  background: var(--color-white);
   position: relative;
 }
 
@@ -23,7 +22,7 @@
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: var(--color-text-primary);
+  color: var(--color-black);
   margin-bottom: var(--space-lg);
 }
 
@@ -36,7 +35,7 @@
   font-size: var(--font-size-body-lg);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-muted);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -52,25 +51,26 @@
 
 /* Package Card */
 .packageCard {
-  background: var(--color-bg-secondary);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: var(--color-white);
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-2xl);
   padding: 40px var(--space-xl);
   position: relative;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-slow);
+  box-shadow: var(--shadow-sm);
 }
 
 .packageCard.highlighted {
-  background: linear-gradient(135deg, var(--color-bg-secondary) 0%, rgba(253, 183, 20, 0.05) 100%);
+  background: var(--color-white);
   border: 2px solid var(--color-gold);
-  box-shadow: 0 4px 16px rgba(253, 183, 20, 0.1);
+  box-shadow: 0 10px 30px rgba(253, 183, 20, 0.1);
 }
 
 .packageCard:hover {
   border-color: var(--color-gold);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   transform: translateY(-4px);
 }
 
@@ -100,7 +100,7 @@
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--color-text-primary);
+  color: var(--color-black);
   margin-bottom: var(--space-sm);
 }
 
@@ -109,14 +109,14 @@
   font-size: var(--font-size-body-sm);
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-muted);
 }
 
 /* Pricing */
 .pricing {
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-xl);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .price {
@@ -124,14 +124,14 @@
   font-size: 48px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--color-text-primary);
+  color: var(--color-black);
   display: block;
   line-height: 1;
 }
 
 .period {
   font-size: var(--font-size-body);
-  color: var(--color-text-tertiary);
+  color: var(--color-text-muted);
   font-weight: 500;
   margin-left: 4px;
 }
@@ -153,7 +153,7 @@
   font-size: var(--font-size-body-sm);
   font-weight: 400;
   letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-text-secondary);
+  color: var(--color-text-on-light);
   line-height: 1.5;
 }
 
@@ -175,7 +175,7 @@
 .ctaButton {
   width: 100%;
   background: transparent;
-  color: var(--color-text-primary);
+  color: var(--color-black);
   border: 1px solid var(--color-gold);
   padding: 14px var(--space-xl);
   border-radius: var(--radius-3xl);
@@ -220,12 +220,12 @@
 .bottomCta {
   text-align: center;
   padding-top: var(--space-xl);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid var(--color-border-subtle);
 }
 
 .ctaText {
   font-size: var(--font-size-body-lg);
-  color: var(--color-text-tertiary);
+  color: var(--color-text-muted);
 }
 
 .ctaLink {
