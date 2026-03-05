@@ -12,10 +12,10 @@ export default function CtaSection() {
           {...scrollReveal}
         >
           <h2 className={styles.title}>
-            Ready to Drive <span className={styles.highlight}>Real Growth</span>?
+            Ready to fix your <span className={styles.highlight}>pipeline</span>?
           </h2>
           <p className={styles.subtitle}>
-            Let's discuss how video can transform your business
+            30 minutes. We'll find where you're losing deals and map out the fix.
           </p>
           <MagneticButton className={styles.ctaButton}>
             Schedule a Strategy Call

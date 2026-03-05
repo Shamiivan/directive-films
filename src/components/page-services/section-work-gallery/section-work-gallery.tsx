@@ -71,7 +71,7 @@ export default function WorkGallerySection() {
         <motion.div className={styles.header} {...scrollReveal}>
           <h2 className={styles.title}>Our Work</h2>
           <p className={styles.subtitle}>
-            High-impact creative that drives measurable business results
+            Real projects. Real clients. Real results.
           </p>
         </motion.div>
 

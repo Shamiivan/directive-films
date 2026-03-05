@@ -27,17 +27,17 @@
 
 .testimonialCard {
   background: var(--color-black);
-  border: 1px solid #1e3a5f;
+  border: 1px solid var(--color-border-subtle);
   border-radius: var(--radius-2xl);
   padding: 2rem;
   transition: all var(--transition-slow);
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  box-shadow: 0 0 20px rgba(253, 183, 20, 0.05);
 }
 
 .testimonialCard:hover {
   transform: translateY(-4px);
-  border-color: #3b82f6;
-  box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  border-color: rgba(253, 183, 20, 0.4);
+  box-shadow: 0 0 30px rgba(253, 183, 20, 0.15);
 }
 
 .quoteIcon {

@@ -16,11 +16,11 @@ export default function GrowthSection() {
   const services = [
     {
       title: 'Video Sales Systems',
-      description: 'Complete video marketing system with sequences, objection-handling library, email campaigns, and strategic positioning. Packaged as a system, not scattered deliverables that sit unused.',
+      description: 'A full video library for your sales team — objection handlers, case studies, demos, and email sequences. One system, not scattered files that sit unused.',
     },
     {
       title: 'Performance Video Campaigns',
-      description: 'Hyper-focused campaigns designed to maximize a specific target: leads, demos, or closed deals. Includes creative, media buying consultation, and landing page strategy. Everything points to growth.',
+      description: 'Campaigns built around one goal: more leads, demos, or closed deals. Creative, media buying consultation, and landing page strategy — everything points to one number.',
     },
     {
       title: 'Sales Team Video Enablement',
@@ -28,11 +28,11 @@ export default function GrowthSection() {
     },
     {
       title: 'Growth Strategy Consulting',
-      description: 'Not sure where video fits in your funnel? We audit your sales process, identify gaps, and build a strategic roadmap. Know exactly what to create and when to deploy it.',
+      description: 'Not sure where video fits in your funnel? We audit your sales process, find the gaps, and tell you exactly what to create and when to deploy it.',
     },
     {
       title: 'Creative Problem Solving',
-      description: 'Stuck on how to explain something complex? Need to differentiate in a crowded market? We solve creative challenges that drive business results, not just make pretty videos.',
+      description: 'Stuck on how to explain something complex? Need to stand out in a crowded market? We solve the hard creative problems — the ones where "make it pretty" isn\'t enough.',
     },
   ];
 
@@ -41,9 +41,9 @@ export default function GrowthSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
-          <h2 className={styles.title}>How we help businesses grow</h2>
+          <h2 className={styles.title}>Where video meets your sales process</h2>
           <p className={styles.subtitle}>
-            Strategic video production that plugs directly into your sales process and drives measurable revenue
+            Every service is built to plug into your pipeline and move a specific number.
           </p>
         </motion.div>
 

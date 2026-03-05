@@ -45,16 +45,18 @@
   font-weight: 400;
   color: var(--color-white);
   margin-bottom: var(--space-md);
-  letter-spacing: 0.5px;
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
 }
 
 /* Subtitle with underlined "Growth" */
 .subtitle {
-  font-size: clamp(36px, 5vw + 16px, 64px);
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw + 16px, var(--font-size-display1));
   font-weight: 700;
+  letter-spacing: var(--letter-spacing-tight);
   color: var(--color-white);
-  line-height: 1.1;
+  line-height: var(--line-height-tight);
   margin-bottom: var(--space-xl);
 }
 

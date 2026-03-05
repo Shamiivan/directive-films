@@ -13,7 +13,7 @@ export default function WhyUsSection() {
     {
       icon: Rocket,
       title: 'Speed to Market',
-      description: 'Fast turnarounds without compromising quality. Get to market quickly and start seeing results sooner.',
+      description: 'Two-week average turnaround. You get to market fast without cutting corners.',
       stat: '2 weeks',
       label: 'avg turnaround',
       delay: 0
@@ -21,7 +21,7 @@ export default function WhyUsSection() {
     {
       icon: Heart,
       title: 'Partnership Mentality',
-      description: 'We don\'t just deliver videos and disappear. We become an extension of your team, invested in your long-term success.',
+      description: 'We don\'t deliver and disappear. 98% of our clients stay because we\'re invested in what happens after the video ships.',
       stat: '98%',
       label: 'retention rate',
       delay: 0.2
@@ -29,7 +29,7 @@ export default function WhyUsSection() {
     {
       icon: BarChart3,
       title: 'Proven Track Record',
-      description: 'Over 500 successful campaigns, generating $50M+ in revenue for our clients across industries.',
+      description: '500+ projects across 12 industries. Our clients have generated over $50M in revenue from the systems we built.',
       stat: '$50M+',
       label: 'generated',
       delay: 0.4
@@ -54,7 +54,7 @@ export default function WhyUsSection() {
                 Why Companies Keep <span className={styles.gold}>Coming Back</span>
               </h2>
               <p className={styles.subtitle}>
-                We deliver results, build relationships, and become an indispensable part of your growth engine
+                Fast turnarounds. Long-term partnerships. Numbers that prove it.
               </p>
               <div className={styles.ctaWrapper}>
                 <MagneticButton className={styles.ctaButton}>

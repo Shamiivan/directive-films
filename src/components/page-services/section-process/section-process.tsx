@@ -15,19 +15,19 @@ export default function ProcessSection() {
   const steps = [
     {
       title: 'Discovery',
-      description: 'We dive deep into your business, understanding your goals, audience, and what makes you unique. No cookie-cutter approaches—just a custom strategy built for your specific challenges.',
+      description: 'We learn your business, your audience, and what makes you different. No templates — just a plan built for your specific situation.',
     },
     {
       title: 'Strategy',
-      description: 'We craft a video strategy aligned with your sales process and designed to convert at every stage. Each video has a purpose, a place in your funnel, and measurable objectives.',
+      description: 'Every video gets mapped to a stage in your sales process. It has a purpose, a place in your funnel, and a number to hit.',
     },
     {
       title: 'Production',
-      description: 'Our award-winning team brings your story to life with cinematic quality and attention to detail. Professional production values that elevate your brand and command respect.',
+      description: 'Professional crew, cinema-grade gear, and attention to every detail. We handle the set — you focus on being yourself on camera.',
     },
     {
       title: 'Optimization',
-      description: 'We track, test, and refine to maximize performance and ensure your videos drive real results. Data-driven improvements that compound over time.',
+      description: 'After launch, we track performance and iterate. Better thumbnails, tighter hooks, stronger CTAs. Small improvements that compound.',
     },
   ];
 
@@ -36,9 +36,9 @@ export default function ProcessSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
-          <h2 className={styles.title}>A Proven Video Production Process</h2>
+          <h2 className={styles.title}>How Every Project Works</h2>
           <p className={styles.subtitle}>
-            From concept to conversion, our battle-tested process delivers videos that drive growth
+            Four steps. No surprises. You know what's happening at every stage.
           </p>
         </motion.div>
 
@@ -86,9 +86,9 @@ export default function ProcessSection() {
             transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <p className={styles.ctaText}>
-              Ready to <span className={styles.transform}>transform</span>
+              Ready to <span className={styles.transform}>start</span>?
               <br />
-              your business?
+              Let's talk about your project.
             </p>
             <MagneticButton className={styles.ctaButton}>
               Schedule a Call

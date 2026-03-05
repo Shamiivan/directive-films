@@ -86,9 +86,9 @@
 
 /* Description */
 .description {
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
   flex-grow: 1;
 }
 
