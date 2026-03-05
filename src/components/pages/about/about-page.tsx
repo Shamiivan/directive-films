@@ -1,5 +1,3 @@
-'use client';
-
 import NavSection from '../../page-shared/section-nav/section-nav';
 import AboutHeroSection from '../../page-about/section-about-hero/section-about-hero';
 import WhyWeCreateSection from '../../page-about/section-why-we-create/section-why-we-create';

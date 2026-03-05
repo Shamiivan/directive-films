@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { Calendar, DollarSign, Target, Users } from 'lucide-react';
 import { scrollReveal, gridStagger } from '../../../../utils/animations';

@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { scrollReveal, gridStagger } from '@/utils/animations';
 import styles from './section-process.module.css';

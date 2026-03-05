@@ -1,5 +1,3 @@
-'use client';
-
 import { useRef, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { lerp } from '../utils/animations';

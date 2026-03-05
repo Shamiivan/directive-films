@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { scrollReveal } from '../../../../utils/animations';
 import styles from './section-careers-hero.module.css';

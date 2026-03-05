@@ -1,5 +1,3 @@
-'use client';
-
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { Search, Target, FileText, TrendingUp, Users } from 'lucide-react';
 import { useState } from 'react';

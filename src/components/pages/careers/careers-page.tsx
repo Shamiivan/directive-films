@@ -1,5 +1,3 @@
-'use client';
-
 import NavSection from '../../../components/page-shared/section-nav/section-nav';
 import FooterSection from '../../../components/page-shared/section-footer/section-footer';
 import CareersHeroSection from './sections/section-careers-hero';

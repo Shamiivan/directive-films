@@ -1,5 +1,3 @@
-'use client';
-
 import NavSection from '../../page-shared/section-nav/section-nav';
 import ServicesHeroSection from '../../page-services/section-services-hero/section-services-hero';
 import WorkGallerySection from '../../page-services/section-work-gallery/section-work-gallery';

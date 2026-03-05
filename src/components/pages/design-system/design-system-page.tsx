@@ -1,5 +1,3 @@
-'use client';
-
 import React from 'react';
 import { colors, typography, spacing, borderRadius, shadows, transitions } from '@/tokens';
 

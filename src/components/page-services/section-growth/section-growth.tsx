@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import { Video, Target, Users, TrendingUp, Lightbulb, ArrowRight } from 'lucide-react';
 import MagneticButton from '../../MagneticButton';

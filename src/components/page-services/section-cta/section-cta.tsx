@@ -1,5 +1,3 @@
-'use client';
-
 import { motion } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
 import { scrollReveal } from '../../../utils/animations';
