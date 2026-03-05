@@ -13,8 +13,8 @@ export default function CareersHeroSection() {
           <div className={styles.leftSide}>
             <h1 className={styles.title}>Join our team</h1>
             <p className={styles.description}>
-              We're looking for talented individuals who are passionate about creating
-              compelling video content. Join us in shaping the future of video marketing.
+              We make videos that sell, build websites that convert, and set up systems that
+              close deals. If that sounds more interesting than "making content," keep reading.
             </p>
           </div>
 
@@ -25,9 +25,9 @@ export default function CareersHeroSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <h2 className={styles.formTitle}>Boost your career</h2>
+            <h2 className={styles.formTitle}>Interested? Let's talk.</h2>
             <p className={styles.formSubtitle}>
-              Send us your information and we'll get in touch about open positions.
+              Drop your info below. We'll reach out if there's a fit.
             </p>
 
             <form className={styles.form}>

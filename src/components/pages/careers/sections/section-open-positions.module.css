@@ -167,7 +167,7 @@
   padding: 12px 32px;
   border-radius: var(--radius-md);
   font-weight: 600;
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   cursor: pointer;
   transition: all var(--transition-slow);
 }
@@ -225,7 +225,7 @@
   }
 
   .positionDescription {
-    font-size: 15px;
+    font-size: var(--font-size-body-sm);
     margin-bottom: var(--space-lg);
   }
 

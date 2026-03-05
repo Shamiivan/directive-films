@@ -7,23 +7,23 @@ export default function WhatYouGetSection() {
   const benefits = [
     {
       icon: Calendar,
-      title: 'Clear Path Forward',
-      description: 'Most agencies teach you how to film pretty shots. We teach you how to make money. You\'ll sit in on client strategy sessions, learn what converts and why, understand how businesses actually grow.',
+      title: 'Learn What Actually Works',
+      description: 'Most agencies teach you to film pretty shots. Here you\'ll sit in on client strategy sessions, learn what converts and why, and understand how businesses actually grow.',
     },
     {
       icon: DollarSign,
       title: 'We Move Fast and Pay Well',
-      description: 'We are profitable, we pay competitively, and we respect your time. Build great work, make good money, have a life.',
+      description: 'Profitable company. Competitive pay. Respect for your time. Build great work, earn good money, have a life.',
     },
     {
       icon: Target,
       title: 'Autonomy With Accountability',
-      description: 'High performers earn flexibility in how they structure their time. Standards don\'t change only how you manage yourself does.',
+      description: 'High performers earn flexibility in how they structure their time. The standards don\'t change — only how you manage yourself does.',
     },
     {
       icon: Users,
-      title: 'Direct Exposure to Leadership',
-      description: 'We\'ve united creative strategy and production under one roof, ensuring your videos align perfectly with your goals and vision.',
+      title: 'Work Directly With Leadership',
+      description: 'Small team, flat structure. You\'ll work alongside founders and senior creatives — not get buried in a department.',
     },
   ];
 

@@ -61,9 +61,9 @@
 
 /* Benefit Description */
 .benefitDescription {
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   color: var(--color-text-tertiary);
-  line-height: 1.7;
+  line-height: var(--line-height-loose);
 }
 
 /* Responsive */
