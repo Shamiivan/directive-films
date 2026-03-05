@@ -14,7 +14,7 @@ import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
 import "@fontsource/space-mono/400.css";
 
-import "./app/globals.css";
+import "./globals.css";
 import ClientCursorWrapper from "./components/ClientCursorWrapper";
 
 export function Layout({ children }: { children: React.ReactNode }) {
