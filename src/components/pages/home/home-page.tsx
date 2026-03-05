@@ -2,9 +2,10 @@
 
 import NavSection from '../../page-shared/section-nav/section-nav';
 import HeroSection from '../../page-home/section-hero/section-hero';
-import ResultsSection from '../../page-home/section-results/section-results';
-import OfferSection from '../../page-home/section-offer/section-offer';
 import ProofSection from '../../page-home/section-proof/section-proof';
+import TestimonialsSection from '../../page-services/section-testimonials/section-testimonials';
+import OfferSection from '../../page-home/section-offer/section-offer';
+import ResultsSection from '../../page-home/section-results/section-results';
 import HowWeDoItSection from '../../page-home/section-how-we-do-it/section-how-we-do-it';
 import PricingSection from '../../page-home/section-pricing/section-pricing';
 import DividerSection from '../../page-home/section-divider/section-divider';
@@ -19,8 +20,9 @@ export default function HomePage() {
       <NavSection />
       <HeroSection />
       <ResultsSection />
-      <OfferSection />
       <ProofSection />
+      <TestimonialsSection />
+      <OfferSection />
       <HowWeDoItSection />
       <PricingSection />
       <DividerSection />

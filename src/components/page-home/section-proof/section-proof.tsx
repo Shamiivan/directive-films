@@ -40,8 +40,8 @@ export default function ProofSection() {
           className={styles.title}
           {...scrollReveal}
         >
-          High-impact creative, with a<br />
-          proven video production process.
+          500+ projects delivered.<br />
+          Here's what growth looks like.
         </motion.h2>
 
         {/* Image Grid/Mosaic */}
@@ -90,7 +90,7 @@ export default function ProofSection() {
           {...scrollReveal}
         >
           <MagneticButton href="/contact" className={styles.ctaButton}>
-            See our Work
+            Watch the Showreel
           </MagneticButton>
         </motion.div>
       </div>

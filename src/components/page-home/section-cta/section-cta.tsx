@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
+import RotatingProofLine from '../../RotatingProofLine';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-cta.module.css';
 
@@ -12,12 +13,12 @@ export default function CtaSection() {
           {...scrollReveal}
         >
           <h2 className={styles.title}>
-            Let's build your video strategy
+            Let's talk about your business
           </h2>
           <p className={styles.subtitle}>
-            30-minute call. We'll map your sales process, find where prospects ghost you,<br />
-            and show you exactly which videos close those gaps.
+            30 minutes. We'll look at what you've got, tell you what we'd do first, and you decide if it makes sense. No pitch deck.
           </p>
+          <RotatingProofLine />
           <motion.div
             className={styles.ctaWrapper}
             initial={{ opacity: 0, y: 20 }}

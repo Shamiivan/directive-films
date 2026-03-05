@@ -78,28 +78,27 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Creative Video Production
+          Video · Web · CRM · Coaching · Strategy
         </motion.span>
 
         <h1
           ref={titleRef}
           className={styles.heroTitle}
         >
-          <span className={styles.gold}>D</span>riven by <span className={styles.gold}>Purpose</span><br />
-          <span className={styles.gold}>D</span>efined by <span className={styles.gold}>Excellence</span>
+          We Make You<br />
+          <span className={styles.gold}>Impossible to Ignore</span>
         </h1>
 
         <motion.p
           className={styles.heroSubtitle}
           variants={fadeInUp}
         >
-          If your goal is to generate leads we have the perspective, passion, and
-          talent to make it happen.
+          We make your videos, build your site, set up your CRM, and train your team — so people find you, trust you, and buy from you.
         </motion.p>
 
         <motion.div variants={fadeInUp}>
           <MagneticButton href="/contact" className={styles.ctaButton}>
-            Get a Growth Plan
+            Book a Strategy Call
           </MagneticButton>
         </motion.div>
 

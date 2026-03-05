@@ -150,9 +150,9 @@
   gap: 12px;
   margin-bottom: var(--space-md);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   font-weight: 400;
-  letter-spacing: 0.01em;
+  letter-spacing: var(--letter-spacing-wide);
   color: var(--color-border-light);
   line-height: 1.5;
 }
@@ -184,6 +184,19 @@
   cursor: pointer;
   transition: all var(--transition-slow);
   text-align: center;
+}
+
+/* CTA Text Animation */
+.ctaTextWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ctaArrow {
+  display: inline-block;
 }
 
 .ctaButton:hover {

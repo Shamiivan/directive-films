@@ -8,28 +8,28 @@ export default function FaqSection() {
 
   const faqs = [
     {
-      question: 'How long does video production take?',
-      answer: 'Timeline varies by project complexity. A simple video typically takes 2-3 weeks from concept to delivery, while more complex productions with multiple locations and custom animations may take 4-6 weeks. We provide detailed timelines during consultation.',
+      question: 'Why do you do five things instead of just one?',
+      answer: 'Because they\'re connected. A great video doesn\'t help if your website can\'t capture the lead. A great website doesn\'t help if your CRM loses the follow-up. We do all five so nothing breaks the chain between someone finding you and becoming a customer.',
     },
     {
-      question: 'What\'s included in your video packages?',
-      answer: 'All packages include script development, professional filming, editing, color grading, and revisions. Higher tiers add on-location shooting, custom graphics, advanced VFX, and ongoing video content strategy. We tailor each package to your specific goals.',
+      question: 'Do I need all five?',
+      answer: 'No. We start by looking at your business and figuring out what will make the biggest difference right now. Sometimes that\'s a website. Sometimes it\'s your CRM. Sometimes it\'s video. We tell you where to start and you decide how far to go.',
     },
     {
-      question: 'Do you provide the equipment and crew?',
-      answer: 'Yes! We come fully equipped with professional cameras, lighting, audio equipment, and experienced crew members. From directors to cinematographers to editors, our team handles every aspect of production.',
+      question: 'How fast will I see results?',
+      answer: 'Sprint clients get a finished deliverable in 2 weeks. Growth Partner clients usually see real movement within 30-60 days — more leads, faster closes, higher conversion. It gets better over time as the pieces start working together.',
     },
     {
-      question: 'Can you help with video distribution and marketing?',
-      answer: 'Absolutely. Beyond production, we offer video SEO optimization, multi-platform distribution strategies, performance analytics, and ongoing consultation to ensure your videos reach the right audience and drive measurable results.',
+      question: 'Can you work with the tools and team I already have?',
+      answer: 'Yes. We plug into whatever CRM, platform, or setup you\'re already running. If you have a team that could be making content, our coaching gets them producing on their own.',
     },
     {
-      question: 'What if I need revisions?',
-      answer: 'Revisions are included in all packages. Starter includes 2 rounds, Growth includes unlimited revisions, and Enterprise includes priority revisions with expedited turnaround. We work closely with you to ensure the final product exceeds expectations.',
+      question: 'Who do you typically work with?',
+      answer: 'B2B companies, professional services, SaaS, and businesses that are growing but know their online presence and sales process aren\'t keeping up. If you sell something that takes trust to close, we\'re a good fit.',
     },
     {
-      question: 'Do you work with businesses in my industry?',
-      answer: 'We have experience across B2B, professional services, SaaS, e-commerce, and more. Our industry-specific playbooks provide proven frameworks and templates tailored to your sector, ensuring faster deployment and better results.',
+      question: 'How do we get started?',
+      answer: 'A 30-minute call. We learn what you\'re working on, look at where you are, and tell you what we\'d focus on first. No pitch deck — just a straight conversation about your business.',
     },
   ];
 

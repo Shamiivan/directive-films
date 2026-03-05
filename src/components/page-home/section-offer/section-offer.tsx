@@ -1,81 +1,68 @@
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
-import { Search, Target, FileText, TrendingUp, Users } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Search, Video, MonitorPlay, BarChart3, Globe } from 'lucide-react';
 import { useState } from 'react';
 import MagneticButton from '../../MagneticButton';
 import { scrollReveal } from '../../../utils/animations';
+import { useTilt } from '../../../hooks/useTilt';
 import styles from './section-offer.module.css';
 
 const iconComponents = [
   Search,
-  Target,
-  FileText,
-  TrendingUp,
-  Users,
+  Video,
+  MonitorPlay,
+  BarChart3,
+  Globe,
 ];
 
 const services = [
   {
-    title: 'Sales Process Diagnosis',
-    description: 'Most businesses are losing deals and don\'t even know why. We sit down, look at your sales process, and find the exact moment prospects ghost you. Is it after the first call? After they see pricing? We find the leak, then we plug it with video.',
+    title: 'Diagnose',
+    description: 'We look at your website, socials, and messaging and tell you what\'s actually working and what isn\'t. You get a clear plan — and we help you run it.',
+    href: '/services/diagnose',
   },
   {
-    title: 'Strategic Video Mapping',
-    description: 'We don\'t make "content." We make conversion tools. This video gets cold prospects to raise their hand. That video handles the "it\'s too expensive" objection. This one closes deals while you sleep. Each piece targets a specific moment in your pipeline where money\'s being left on the table.',
+    title: 'Coach',
+    description: 'We set up your studio, train your team, and give them a playbook. After that, they make professional content on their own — every week.',
+    href: '/services/coach',
   },
   {
-    title: 'Sales-Driven Scripting',
-    description: 'Our scripts use the same frameworks that work on sales calls. Hit the pain point. Show the solution. Handle objections before they come up, proven sales psychology adapted for video.',
+    title: 'Create',
+    description: 'We produce the videos. Scripted around your sales process — the objections your buyers have, the trust they need to feel. Not just pretty footage.',
+    href: '/services/create',
   },
   {
-    title: 'Conversion Optimization',
-    description: 'We track real metrics: how many viewers become leads, how many video-assisted deals close, how fast prospects move through your pipeline. Then we test and tweak. Better hooks. Stronger CTAs. We treat it like A/B testing a sales pitch until it converts.',
+    title: 'Optimize',
+    description: 'We set up your CRM properly — sequences, follow-ups, dashboards. So you always know what\'s working and leads don\'t fall through.',
+    href: '/services/optimize',
   },
   {
-    title: 'Sales Team Integration',
-    description: 'Video doesn\'t replace your closers—it clones them. Now they can follow up with 50 prospects in 10 minutes. Demos get reinforced automatically. Objections get handled before the call. Your reps spend time closing, not explaining the same thing 40 times a week.',
+    title: 'Build',
+    description: 'Fast websites that say what you do, capture leads, and book meetings. Not a brochure — a site that actually works for you.',
+    href: '/services/build',
   },
 ];
 
 function ServiceCard3D({ service, IconComponent, index }: { service: typeof services[0]; IconComponent: typeof Search; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
-
-  const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ['7.5deg', '-7.5deg']);
-  const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ['-7.5deg', '7.5deg']);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const xPct = (e.clientX - rect.left) / rect.width - 0.5;
-    const yPct = (e.clientY - rect.top) / rect.height - 0.5;
-    x.set(xPct);
-    y.set(yPct);
-  };
+  const { style: tiltStyle, onMouseMove, onMouseLeave: tiltLeave } = useTilt();
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    x.set(0);
-    y.set(0);
+    tiltLeave();
   };
 
   return (
-    <motion.div
+    <motion.a
+      href={service.href}
       className={styles.serviceCard}
       initial={{ opacity: 0, y: 40 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-      onMouseMove={handleMouseMove}
+      onMouseMove={onMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={handleMouseLeave}
-      style={{
-        rotateX,
-        rotateY,
-        transformStyle: 'preserve-3d',
-      }}
+      style={tiltStyle}
       whileHover={{
         scale: 1.02,
         borderColor: 'rgba(253, 183, 20, 0.5)',
@@ -95,7 +82,8 @@ function ServiceCard3D({ service, IconComponent, index }: { service: typeof serv
       </motion.div>
       <h3 className={styles.serviceTitle}>{service.title}</h3>
       <p className={styles.serviceDescription}>{service.description}</p>
-    </motion.div>
+      <span className={styles.learnMore}>Learn more &rarr;</span>
+    </motion.a>
   );
 }
 
@@ -105,9 +93,9 @@ export default function OfferSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
-          <h2 className={styles.title}>How we help businesses grow</h2>
+          <h2 className={styles.title}>How we get you there</h2>
           <p className={styles.subtitle}>
-            Compelling visual stories that connect with your audience, elevate your brand, and drive measurable results across every platform.
+            We do five things and we make sure they actually work together. Here's what that looks like.
           </p>
         </motion.div>
 
@@ -130,12 +118,12 @@ export default function OfferSection() {
             whileHover={{ scale: 1.02 }}
           >
             <p className={styles.ctaText}>
-              Start <span className={styles.growing}>growing</span>
+              Ready to <span className={styles.growing}>grow</span>?
               <br />
-              your business today
+              Let's figure out where to start.
             </p>
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              See our Process
+              Book a Free Strategy Call
             </MagneticButton>
           </motion.div>
         </div>

@@ -96,7 +96,7 @@
 /* Service Description */
 .serviceDescription {
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   font-weight: 400;
   letter-spacing: 0.01em;
   color: var(--color-text-secondary);

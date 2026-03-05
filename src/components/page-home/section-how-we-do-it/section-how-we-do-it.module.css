@@ -1,8 +1,17 @@
-/* How We Do It Section */
-.howWeDoItSection {
-  padding: var(--section-padding) 0;
-  background: var(--color-bg-dark);
+/* How We Do It Section - Scroll-Driven */
+.scrollContainer {
+  height: 300vh;
   position: relative;
+}
+
+.stickyContent {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-dark);
+  overflow: hidden;
 }
 
 .container {
@@ -13,6 +22,7 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-4xl);
   align-items: center;
+  width: 100%;
 }
 
 /* Left Column */
@@ -98,12 +108,20 @@
   margin-top: var(--space-md);
   margin-left: 44px;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   font-weight: 400;
-  letter-spacing: 0.01em;
-  line-height: 1.6;
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
   overflow: hidden;
+}
+
+/* Progress Bar */
+.progressBar {
+  height: 2px;
+  background: var(--color-gold);
+  transform-origin: left;
+  margin-top: var(--space-md);
 }
 
 /* Right Column */
@@ -161,8 +179,12 @@
 }
 
 @media (max-width: 768px) {
-  .howWeDoItSection {
-    padding: var(--section-padding-mobile) 0;
+  .scrollContainer {
+    height: 200vh;
+  }
+
+  .stickyContent {
+    padding: var(--space-2xl) 0;
   }
 
   .container {
