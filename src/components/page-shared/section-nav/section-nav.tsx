@@ -1,7 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import AnimatedNav from '../../AnimatedNav';
 import styles from './section-nav.module.css';
+
+const MotionLink = motion.create(Link);
 
 const serviceLinks = [
   { href: '/services/diagnose', label: 'Diagnose', desc: 'Online Presence Audit' },
@@ -12,7 +15,7 @@ const serviceLinks = [
 ];
 
 // Magnetic Nav Link Component
-function MagneticNavLink({ href, children }: { href: string; children: React.ReactNode }) {
+function MagneticNavLink({ to, children }: { to: string; children: React.ReactNode }) {
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -36,9 +39,10 @@ function MagneticNavLink({ href, children }: { href: string; children: React.Rea
   };
 
   return (
-    <motion.a
+    <MotionLink
       ref={ref}
-      href={href}
+      to={to}
+      data-sticky-cursor
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{ x: xSpring, y: ySpring }}
@@ -46,7 +50,7 @@ function MagneticNavLink({ href, children }: { href: string; children: React.Rea
       transition={{ duration: 0.2 }}
     >
       {children}
-    </motion.a>
+    </MotionLink>
   );
 }
 
@@ -55,7 +59,7 @@ export default function NavSection() {
   const [servicesOpen, setServicesOpen] = useState(false);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
-  const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>();
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   // Close menu on escape key
   useEffect(() => {
@@ -98,20 +102,21 @@ export default function NavSection() {
   return (
     <>
       <AnimatedNav className={styles.nav}>
-        <motion.a
-          href="/"
+        <MotionLink
+          to="/"
           className={styles.logo}
+          data-sticky-cursor
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
           <img src="/logos/logo-icon.svg" alt="DirectiveFilms" className={styles.logoIcon} />
           <span>DirectiveFilms</span>
-        </motion.a>
+        </MotionLink>
 
         {/* Desktop Navigation - With Magnetic Effect */}
         <ul className={styles.navList}>
           <li>
-            <MagneticNavLink href="/">HOME</MagneticNavLink>
+            <MagneticNavLink to="/">HOME</MagneticNavLink>
           </li>
           <li
             ref={dropdownRef}
@@ -135,32 +140,33 @@ export default function NavSection() {
                   transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                 >
                   {serviceLinks.map((link) => (
-                    <a key={link.href} href={link.href} className={styles.dropdownItem}>
+                    <Link key={link.href} to={link.href} className={styles.dropdownItem}>
                       <span className={styles.dropdownLabel}>{link.label}</span>
                       <span className={styles.dropdownDesc}>{link.desc}</span>
-                    </a>
+                    </Link>
                   ))}
                 </motion.div>
               )}
             </AnimatePresence>
           </li>
           <li>
-            <MagneticNavLink href="/about">ABOUT US</MagneticNavLink>
+            <MagneticNavLink to="/about">ABOUT US</MagneticNavLink>
           </li>
           <li>
-            <MagneticNavLink href="/careers">CAREERS</MagneticNavLink>
+            <MagneticNavLink to="/careers">CAREERS</MagneticNavLink>
           </li>
         </ul>
 
-        <motion.a
-          href="/contact"
+        <MotionLink
+          to="/contact"
           className={styles.navBtn}
+          data-sticky-cursor
           whileHover={{ scale: 1.05, backgroundColor: '#fff', color: '#000' }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.2 }}
         >
           Contact Us
-        </motion.a>
+        </MotionLink>
 
         {/* Hamburger Menu Button */}
         <button
@@ -208,9 +214,9 @@ export default function NavSection() {
               <nav className={styles.mobileNav}>
                 <ul className={styles.mobileNavList}>
                   <li>
-                    <a href="/" onClick={handleLinkClick}>
+                    <Link to="/" onClick={handleLinkClick}>
                       HOME
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <button
@@ -233,10 +239,10 @@ export default function NavSection() {
                         >
                           {serviceLinks.map((link) => (
                             <li key={link.href}>
-                              <a href={link.href} onClick={handleLinkClick}>
+                              <Link to={link.href} onClick={handleLinkClick}>
                                 <span className={styles.mobileSubLabel}>{link.label}</span>
                                 <span className={styles.mobileSubDesc}>{link.desc}</span>
-                              </a>
+                              </Link>
                             </li>
                           ))}
                         </motion.ul>
@@ -244,19 +250,19 @@ export default function NavSection() {
                     </AnimatePresence>
                   </li>
                   <li>
-                    <a href="/about" onClick={handleLinkClick}>
+                    <Link to="/about" onClick={handleLinkClick}>
                       ABOUT US
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="/careers" onClick={handleLinkClick}>
+                    <Link to="/careers" onClick={handleLinkClick}>
                       CAREERS
-                    </a>
+                    </Link>
                   </li>
                   <li className={styles.mobileContactItem}>
-                    <a href="/contact" onClick={handleLinkClick} className={styles.mobileContactBtn}>
+                    <Link to="/contact" onClick={handleLinkClick} className={styles.mobileContactBtn}>
                       Contact Us
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>

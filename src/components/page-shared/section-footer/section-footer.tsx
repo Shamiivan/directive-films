@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import { motion } from 'framer-motion';
 import { scrollReveal } from '@/utils/animations';
 import styles from './section-footer.module.css';
@@ -20,7 +21,7 @@ export default function FooterSection() {
             <motion.div className={styles.brandColumn} variants={scrollReveal}>
               <h3 className={styles.brandName}>DirectiveFilms</h3>
               <p className={styles.brandTagline}>
-                Creating compelling video content that drives results for businesses.
+                Growth systems for ambitious brands. Video, web, CRM, coaching, and strategy — all under one roof.
               </p>
             </motion.div>
 
@@ -28,20 +29,20 @@ export default function FooterSection() {
             <motion.div className={styles.linksColumn} variants={scrollReveal}>
               <h4 className={styles.columnTitle}>Services</h4>
               <ul className={styles.linkList}>
-                <li><a href="#" className={styles.link}>Brand Videos</a></li>
-                <li><a href="#" className={styles.link}>Product Videos</a></li>
-                <li><a href="#" className={styles.link}>Social Media Content</a></li>
-                <li><a href="#" className={styles.link}>Corporate Videos</a></li>
+                <li><Link to="/services/diagnose" className={styles.link}>Online Presence Audit</Link></li>
+                <li><Link to="/services/coach" className={styles.link}>Content Coaching</Link></li>
+                <li><Link to="/services/create" className={styles.link}>Video Production</Link></li>
+                <li><Link to="/services/optimize" className={styles.link}>CRM & Sales Systems</Link></li>
+                <li><Link to="/services/build" className={styles.link}>Web Development</Link></li>
               </ul>
             </motion.div>
 
             <motion.div className={styles.linksColumn} variants={scrollReveal}>
               <h4 className={styles.columnTitle}>Company</h4>
               <ul className={styles.linkList}>
-                <li><a href="#" className={styles.link}>About Us</a></li>
-                <li><a href="#" className={styles.link}>Our Work</a></li>
-                <li><a href="#" className={styles.link}>Process</a></li>
-                <li><a href="#" className={styles.link}>Contact</a></li>
+                <li><Link to="/about" className={styles.link}>About Us</Link></li>
+                <li><Link to="/careers" className={styles.link}>Careers</Link></li>
+                <li><Link to="/contact" className={styles.link}>Contact</Link></li>
               </ul>
             </motion.div>
 
@@ -61,11 +62,11 @@ export default function FooterSection() {
             <div className={styles.divider}></div>
             <div className={styles.bottomContent}>
               <p className={styles.copyright}>
-                © {currentYear} DirectiveFilms. All rights reserved.
+                &copy; {currentYear} DirectiveFilms. All rights reserved.
               </p>
               <div className={styles.legalLinks}>
                 <a href="#" className={styles.legalLink}>Privacy Policy</a>
-                <span className={styles.separator}>•</span>
+                <span className={styles.separator}>&bull;</span>
                 <a href="#" className={styles.legalLink}>Terms of Service</a>
               </div>
             </div>
