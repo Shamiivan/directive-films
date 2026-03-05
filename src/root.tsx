@@ -1,10 +1,4 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
 import "@fontsource/playfair-display/700.css";
 import "@fontsource/playfair-display/800.css";
@@ -30,9 +24,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <ClientCursorWrapper />
         {children}
-        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
