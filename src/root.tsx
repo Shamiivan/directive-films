@@ -10,6 +10,7 @@ import "@fontsource/space-mono/400.css";
 
 import "./globals.css";
 import ClientCursorWrapper from "./components/ClientCursorWrapper";
+import Preloader from "./components/Preloader";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -24,7 +25,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
+        <Preloader />
+        <ClientCursorWrapper />
         {children}
+        <ScrollRestoration />
         <Scripts />
       </body>
     </html>
