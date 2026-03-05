@@ -4,18 +4,18 @@ import styles from './section-process.module.css';
 
 const processSteps = [
   {
-    title: 'Pre-Production',
-    description: 'Craft a solid foundation with meticulous planning, scripting, and storyboarding to ensure your project starts on the right foot.',
+    title: 'Audit',
+    description: 'We dig into your sales ecosystem — website, CRM, content, pipeline. Find the gaps. Map the opportunities.',
     image: '/images/pre-production.jpg',
   },
   {
-    title: 'Production',
-    description: 'Watch your idea come to life as our expert crew captures every moment with precision and creativity on set.',
+    title: 'Build',
+    description: 'Web, CRM, coaching, content, strategy — one connected system. Not five separate invoices.',
     image: '/images/production.jpg',
   },
   {
-    title: 'Post-Production',
-    description: 'Polish your project to perfection with cutting-edge editing, color grading, and sound design that elevates your vision.',
+    title: 'Scale',
+    description: 'Systems that compound. Your team gets sharper, your pipeline gets fuller, and growth accelerates.',
     image: '/images/post-production.jpg',
   },
 ];
@@ -25,9 +25,9 @@ export default function ProcessSection() {
     <section className={styles.processSection}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <h2 className={styles.title}>From ideation to creation.</h2>
+          <h2 className={styles.title}>We built what we couldn't find.</h2>
           <p className={styles.subtitle}>
-            We take care of everything you need to bring your vision to life.
+            Agencies sell disconnected projects. We built one system that turns your content into revenue.
           </p>
         </motion.div>
 

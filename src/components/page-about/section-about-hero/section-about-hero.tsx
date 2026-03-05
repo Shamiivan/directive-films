@@ -14,15 +14,16 @@ export default function AboutHeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
+          <p className={styles.eyebrow}>About Us</p>
           <h1 className={styles.title}>
-            Driven By Purpose
+            We came from sales.
           </h1>
           <h2 className={styles.subtitle}>
-            Define by <span className={styles.excellence}>Excellence</span>
+            Not marketing <span className={styles.excellence}>school.</span>
           </h2>
           <p className={styles.description}>
-            We believe the best work, so you don't have to settle<br />
-            for anything less than exceptional.
+            We've closed deals, built pipelines, and generated revenue.<br />
+            Then we built the systems to do it at scale.
           </p>
           <motion.div
             className={styles.ctaWrapper}
@@ -31,7 +32,7 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <MagneticButton className={styles.ctaButton}>
-              Start Your Project
+              Get Your Free Audit
             </MagneticButton>
           </motion.div>
         </motion.div>

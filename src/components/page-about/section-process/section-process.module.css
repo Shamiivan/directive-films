@@ -123,6 +123,6 @@
   }
 
   .cardDescription {
-    font-size: 15px;
+    font-size: var(--font-size-body-sm);
   }
 }

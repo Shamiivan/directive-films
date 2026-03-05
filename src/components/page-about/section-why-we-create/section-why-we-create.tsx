@@ -5,23 +5,23 @@ import styles from './section-why-we-create.module.css';
 const features = [
   {
     icon: '01',
-    title: 'Audience-First Strategy',
-    description: 'We don\'t just create content — we craft strategic narratives designed to captivate your target audience and drive measurable results.',
+    title: 'Revenue is the metric.',
+    description: 'Work that doesn\'t convert is expensive decoration. We measure everything by what it puts in your pipeline.',
   },
   {
     icon: '02',
-    title: 'Data-Driven Production',
-    description: 'Every frame is intentional. We leverage analytics and market insights to ensure your video resonates and converts.',
+    title: 'Audit before you build.',
+    description: 'We don\'t prescribe before we understand. Every engagement starts with an audit of your sales ecosystem.',
   },
   {
     icon: '03',
-    title: 'Storytelling That Converts',
-    description: 'Compelling narratives combined with proven sales psychology to turn viewers into customers and customers into advocates.',
+    title: 'Systems beat one-offs.',
+    description: 'A redesigned homepage won\'t fix a broken funnel. We build systems that compound.',
   },
   {
     icon: '04',
-    title: 'Measurable Impact',
-    description: 'Track ROI with clarity. Our videos are designed with clear KPIs and performance metrics that matter to your bottom line.',
+    title: 'Your team gets better.',
+    description: 'We don\'t create dependency. We set your team up to create, publish, and optimize without us.',
   },
 ];
 
@@ -30,8 +30,8 @@ export default function WhyWeCreateSection() {
     <section className={styles.whyWeCreateSection}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <p className={styles.eyebrow}>Values</p>
-          <h2 className={styles.title}>Why We Create Videos That Sell</h2>
+          <p className={styles.eyebrow}>What Drives Us</p>
+          <h2 className={styles.title}>Principles, not platitudes.</h2>
         </motion.div>
 
         <motion.div
@@ -64,10 +64,10 @@ export default function WhyWeCreateSection() {
 
         <motion.div className={styles.cta} {...scrollReveal}>
           <p className={styles.ctaText}>
-            Get started now and see how simple video production can be with the right partner.
+            You're leaving money on the table. 30-minute call. We audit your setup and show you where the gaps are.
           </p>
           <button className={styles.ctaButton}>
-            Get Your Free Video Strategy Session
+            Get Your Free Audit
           </button>
         </motion.div>
       </div>

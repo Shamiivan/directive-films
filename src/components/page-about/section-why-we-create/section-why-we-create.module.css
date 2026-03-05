@@ -178,7 +178,7 @@
   }
 
   .ctaButton {
-    font-size: 15px;
+    font-size: var(--font-size-body-sm);
     padding: 14px 28px;
   }
 }
