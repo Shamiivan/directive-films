@@ -1,5 +1,3 @@
-'use client';
-
 import { useRef, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import SplitType from 'split-type';
@@ -16,100 +14,55 @@ export default function HeroSection() {
     offset: ["start start", "end start"]
   });
 
-  // Advanced scroll tracking with transforms (MAP function technique)
-  const photoReelY = useTransform(scrollYProgress, [0, 1], ['0%', '30%']);
-  const photoReelOpacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.5, 0.3, 0]);
-
-  // Scroll-linked blur effect (Phase 3 enhancement)
-  const photoReelBlur = useTransform(scrollYProgress, [0, 0.5], [0, 10]);
-
   // Scale down hero content as you scroll
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.8, 0.5]);
 
-  // Text splitting for hero title - LINE BY LINE reveal (Phase 3 enhancement)
+  // Text splitting for hero title - LINE BY LINE reveal
   useEffect(() => {
     if (!titleRef.current) return;
 
-    const split = new SplitType(titleRef.current, {
-      types: 'lines',
-      tagName: 'span',
-    });
-
-    // Animate lines (not words) for more dramatic effect
-    const lines = split.lines;
-    if (lines) {
-      lines.forEach((line, i) => {
-        // Wrap line in overflow container
-        line.style.overflow = 'hidden';
-        line.style.display = 'block';
-
-        // Create inner span for animation
-        const inner = document.createElement('span');
-        inner.style.display = 'block';
-        inner.style.opacity = '0';
-        inner.style.transform = 'translateY(100%)';
-        inner.style.transition = `all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.15}s`;
-        inner.innerHTML = line.innerHTML;
-        line.innerHTML = '';
-        line.appendChild(inner);
-
-        setTimeout(() => {
-          inner.style.opacity = '1';
-          inner.style.transform = 'translateY(0)';
-        }, 100);
+    const timer = setTimeout(() => {
+      const split = new SplitType(titleRef.current!, {
+        types: 'lines',
+        tagName: 'span',
       });
-    }
+
+      const lines = split.lines;
+      if (lines) {
+        lines.forEach((line, i) => {
+          line.style.overflow = 'hidden';
+          line.style.display = 'block';
+
+          const inner = document.createElement('span');
+          inner.style.display = 'block';
+          inner.style.opacity = '0';
+          inner.style.transform = 'translateY(100%)';
+          inner.style.transition = `all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.15}s`;
+          inner.innerHTML = line.innerHTML;
+          line.innerHTML = '';
+          line.appendChild(inner);
+
+          setTimeout(() => {
+            inner.style.opacity = '1';
+            inner.style.transform = 'translateY(0)';
+          }, 100);
+        });
+      }
+    }, 150);
 
     return () => {
-      split.revert();
+      clearTimeout(timer);
     };
   }, []);
 
-  // Main video URL - single video playing in the center
-  const mainVideoUrl = 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4';
-
-  // Background scrolling photos - portfolio/work samples
-  const backgroundPhotos = [
-    'https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&h=300&fit=crop', // Office
-    'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop', // Team meeting
-    'https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop', // People working
-    'https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop', // Product shot
-    'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&h=300&fit=crop', // Laptop work
-    'https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop', // Collaboration
-    'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400&h=300&fit=crop', // Tech work
-    'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=300&fit=crop', // Design work
-  ];
-
   return (
     <section className={styles.hero} ref={heroRef}>
-      {/* Background Photo Reel - Scrolling band of images with progressive blur */}
-      <motion.div
-        className={styles.photoReel}
-        style={{
-          y: photoReelY,
-          opacity: photoReelOpacity,
-          filter: useTransform(photoReelBlur, (v) => `blur(${v}px)`),
-        }}
-      >
-        <div className={styles.reelTrack}>
-          {/* Duplicate photos for seamless loop */}
-          {[...backgroundPhotos, ...backgroundPhotos].map((photo, index) => (
-            <motion.div
-              key={index}
-              className={styles.reelItem}
-              whileHover={{ scale: 1.05, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img
-                src={photo}
-                alt={`Portfolio ${index + 1}`}
-                className={styles.reelPhoto}
-              />
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
+      {/* Ambient background blobs for depth */}
+      <div className={styles.ambientBg}>
+        <div className={styles.blob1} />
+        <div className={styles.blob2} />
+      </div>
 
       {/* Hero Content */}
       <motion.div
@@ -119,6 +72,15 @@ export default function HeroSection() {
           opacity: heroOpacity,
         }}
       >
+        <motion.span
+          className={styles.eyebrow}
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          Creative Video Production
+        </motion.span>
+
         <h1
           ref={titleRef}
           className={styles.heroTitle}
@@ -131,7 +93,7 @@ export default function HeroSection() {
           className={styles.heroSubtitle}
           variants={fadeInUp}
         >
-          If your goal is to generate leads we have the perspective, passion, and<br />
+          If your goal is to generate leads we have the perspective, passion, and
           talent to make it happen.
         </motion.p>
 
@@ -141,13 +103,12 @@ export default function HeroSection() {
           </MagneticButton>
         </motion.div>
 
-        {/* Main Video Showcase with Frame */}
+        {/* Main Video Showcase */}
         <motion.div
           className={styles.videoShowcase}
           variants={fadeInScale}
         >
           <div className={styles.videoFrame}>
-            {/* Main video */}
             <motion.div
               className={styles.videoContainer}
               whileHover={{ scale: 1.02 }}
