@@ -1,0 +1,34 @@
+/* Rotating Social Proof */
+.proofLine {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-body-sm);
+  color: var(--color-gold);
+  text-align: center;
+  min-height: var(--space-lg);
+  margin: var(--space-lg) 0;
+}
+
+.cursor {
+  animation: blink 0.8s step-end infinite;
+  opacity: 1;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Reduced motion: show static text, no blinking cursor */
+@media (prefers-reduced-motion: reduce) {
+  .cursor {
+    animation: none;
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .proofLine {
+    font-size: var(--font-size-caption);
+  }
+}

@@ -1,0 +1,94 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: all;
+}
+
+/* Two halves that split apart */
+.half {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: var(--color-black);
+}
+
+.halfTop {
+  top: 0;
+}
+
+.halfBottom {
+  bottom: 0;
+}
+
+/* Center content layer */
+.center {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+/* The gold sweep line */
+.line {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--color-gold);
+  transform: translateY(-50%);
+  z-index: 3;
+  box-shadow: 0 0 20px rgba(253, 183, 20, 0.3);
+}
+
+/* Brand wordmark */
+.wordmark {
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  color: var(--color-white);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.letterGold {
+  color: var(--color-gold);
+}
+
+/* Tagline below */
+.tagline {
+  position: absolute;
+  top: calc(50% + 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono, "Space Mono", monospace);
+  font-size: var(--font-size-label);
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  white-space: nowrap;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .tagline {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    top: calc(50% + 32px);
+  }
+}
