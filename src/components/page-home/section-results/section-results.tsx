@@ -111,9 +111,6 @@ export default function ResultsSection() {
           className={styles.ctaContainer}
           {...scrollReveal}
         >
-          <MagneticButton href="/services" className={styles.ctaButton}>
-            See Our Services
-          </MagneticButton>
         </motion.div>
       </div>
     </section>

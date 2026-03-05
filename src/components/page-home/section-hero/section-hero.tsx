@@ -94,7 +94,7 @@ export default function HeroSection() {
           className={styles.heroSubtitle}
           variants={fadeInUp}
         >
-          We make your videos, build your site, set up your CRM, and train your team — so people find you, trust you, and buy from you.
+          Videos, Websites, CRMs, and Coaching that work together to grow your business.
         </motion.p>
 
         <motion.div variants={fadeInUp}>
@@ -132,14 +132,21 @@ export default function HeroSection() {
           className={styles.brandLogos}
           variants={fadeInUp}
         >
-          {[...Array(7)].map((_, i) => (
+          {[
+            { src: '/logos/momentum.svg', alt: 'Momentum' },
+            { src: '/logos/amazon.svg', alt: 'Amazon' },
+            { src: '/logos/rogers.svg', alt: 'Rogers' },
+            { src: '/logos/shopify.svg', alt: 'Shopify' },
+            { src: '/logos/telus.svg', alt: 'Telus' },
+            { src: '/logos/altitude.png', alt: 'Altitude' },
+          ].map((logo, i) => (
             <motion.div
               key={i}
               className={styles.brandLogo}
               whileHover={{ scale: 1.1, opacity: 1 }}
               transition={{ duration: 0.2 }}
             >
-              <img src="/logos/corona.svg" alt="Corona" />
+              <img src={logo.src} alt={logo.alt} />
             </motion.div>
           ))}
         </motion.div>

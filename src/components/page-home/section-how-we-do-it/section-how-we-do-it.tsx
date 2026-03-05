@@ -50,7 +50,7 @@ export default function HowWeDoItSection() {
             {...scrollReveal}
           >
             <h2 className={styles.title}>
-              From diagnosis to growth.
+              From audit to growth.
             </h2>
             <div className={styles.divider}></div>
 

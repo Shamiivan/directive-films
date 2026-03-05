@@ -19,9 +19,11 @@ export default function FooterSection() {
           <div className={styles.mainContent}>
             {/* Brand Column */}
             <motion.div className={styles.brandColumn} variants={scrollReveal}>
-              <h3 className={styles.brandName}>DirectiveFilms</h3>
+              <Link to="/" className={styles.footerLogoLink}>
+                <img src="/logos/logo_footer.png" alt="DirectiveFilms" className={styles.footerLogo} />
+              </Link>
               <p className={styles.brandTagline}>
-                Video, web, CRM, coaching, and strategy — connected into one system that grows your business.
+                Video, Websites, CRMs, and Coaching that work together to grow your business.
               </p>
             </motion.div>
 

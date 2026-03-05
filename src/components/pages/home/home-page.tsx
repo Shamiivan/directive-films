@@ -20,10 +20,10 @@ export default function HomePage() {
       <NavSection />
       <HeroSection />
       <ResultsSection />
-      <ProofSection />
-      <TestimonialsSection />
       <OfferSection />
       <HowWeDoItSection />
+      <ProofSection />
+      <TestimonialsSection />
       <PricingSection />
       <DividerSection />
       <FaqSection />
