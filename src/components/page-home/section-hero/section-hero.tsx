@@ -85,6 +85,9 @@ export default function HeroSection() {
           ref={titleRef}
           className={styles.heroTitle}
         >
+          <span className={styles.gold}>D</span>riven By Purpose
+          <br />
+          Defined By Excellence
           We Make You<br />
           <span className={styles.gold}>Impossible to Ignore</span>
         </h1>
