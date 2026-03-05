@@ -14,7 +14,7 @@ export default function ContactHeroSection() {
           <div className={styles.leftSide}>
             <h1 className={styles.title}>Get in touch</h1>
             <p className={styles.description}>
-              Ready to create video content that drives real business results? Let's talk about your project and how we can help you grow.
+              Tell us what you're working on. We'll get back to you within 24 hours with honest feedback on how we can help.
             </p>
 
             <div className={styles.contactInfo}>

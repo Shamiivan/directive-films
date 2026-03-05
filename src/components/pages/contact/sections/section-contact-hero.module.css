@@ -85,7 +85,7 @@
   font-weight: 600;
   color: var(--color-text-tertiary);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: var(--letter-spacing-wider);
   margin-bottom: var(--space-sm);
 }
 
@@ -283,6 +283,6 @@ a.infoValue:hover {
 
   .submitButton {
     padding: 14px 28px;
-    font-size: 15px;
+    font-size: var(--font-size-body-sm);
   }
 }
