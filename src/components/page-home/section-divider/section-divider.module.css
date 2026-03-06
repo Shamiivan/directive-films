@@ -13,11 +13,7 @@
 
 .line {
   height: 1px;
-  background: linear-gradient(to right,
-      transparent 0%,
-      #FDB714 20%,
-      #FDB714 80%,
-      transparent 100%);
+  background: var(--color-border-light);
   transform-origin: center;
 }
 

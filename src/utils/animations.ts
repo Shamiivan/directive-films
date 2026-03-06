@@ -42,7 +42,7 @@ export const staggerContainer = {
 export const scaleOnHover = {
   rest: { scale: 1 },
   hover: {
-    scale: 1.05,
+    scale: 1.02,
     transition: {
       duration: 0.4,
       ease: easings.expo,

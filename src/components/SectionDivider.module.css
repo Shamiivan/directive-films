@@ -1,44 +1,24 @@
 .divider {
-  height: 2px;
+  height: 1px;
   margin: var(--space-4xl) auto;
-  max-width: 400px;
+  max-width: 100%;
   transform-origin: center;
 }
 
 .gold {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #FDB714 20%,
-    #FDB714 80%,
-    transparent 100%
-  );
+  background: var(--color-border-light, #e5e7eb);
 }
 
 .white {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(255, 255, 255, 0.6) 20%,
-    rgba(255, 255, 255, 0.6) 80%,
-    transparent 100%
-  );
+  background: var(--color-border-light, #e5e7eb);
 }
 
 .gradient {
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    #FDB714 10%,
-    #fff 50%,
-    #FDB714 90%,
-    transparent 100%
-  );
+  background: var(--color-border-light, #e5e7eb);
 }
 
 @media (max-width: 768px) {
   .divider {
     margin: 60px auto;
-    max-width: 300px;
   }
 }

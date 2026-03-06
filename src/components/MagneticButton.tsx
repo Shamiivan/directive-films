@@ -77,7 +77,7 @@ export default function MagneticButton({ children, className = '', onClick, href
       stiffness: 200,
       damping: 20,
     },
-    whileHover: { scale: 1.05 },
+    whileHover: { scale: 1.02 },
     whileTap: { scale: 0.95 },
     style: {
       position: 'relative' as const,

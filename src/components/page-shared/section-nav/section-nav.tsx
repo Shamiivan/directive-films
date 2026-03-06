@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
-import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
 import AnimatedNav from '../../AnimatedNav';
 import styles from './section-nav.module.css';
 
@@ -38,6 +38,14 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
     y.set(0);
   };
 
+  // Scroll-driven text color: white on dark hero → dark on white bg
+  const { scrollY } = useScroll();
+  const color = useTransform(
+    scrollY,
+    [0, 100],
+    ['#ffffff', '#0f1729']
+  );
+
   return (
     <MotionLink
       ref={ref}
@@ -45,7 +53,7 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
       data-sticky-cursor
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ x: xSpring, y: ySpring }}
+      style={{ x: xSpring, y: ySpring, color }}
       whileHover={{ scale: 1.1 }}
       transition={{ duration: 0.2 }}
     >
@@ -60,6 +68,12 @@ export default function NavSection() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const dropdownRef = useRef<HTMLLIElement>(null);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  // Scroll-driven colors for elements that need to change
+  const { scrollY } = useScroll();
+  const logoColor = useTransform(scrollY, [0, 100], ['#ffffff', '#0a1628']);
+  const triggerColor = useTransform(scrollY, [0, 100], ['#ffffff', '#0f1729']);
+  const hamburgerBg = useTransform(scrollY, [0, 100], ['#ffffff', '#0a1628']);
 
   // Close menu on escape key
   useEffect(() => {
@@ -106,6 +120,7 @@ export default function NavSection() {
           to="/"
           className={styles.logo}
           data-sticky-cursor
+          style={{ color: logoColor }}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
         >
@@ -124,12 +139,12 @@ export default function NavSection() {
             onMouseEnter={handleDropdownEnter}
             onMouseLeave={handleDropdownLeave}
           >
-            <button className={styles.dropdownTrigger}>
+            <motion.button className={styles.dropdownTrigger} style={{ color: triggerColor }}>
               SERVICES
               <svg className={`${styles.chevron} ${servicesOpen ? styles.chevronOpen : ''}`} width="12" height="12" viewBox="0 0 12 12" fill="none">
                 <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-            </button>
+            </motion.button>
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
@@ -161,7 +176,7 @@ export default function NavSection() {
           to="/contact"
           className={styles.navBtn}
           data-sticky-cursor
-          whileHover={{ scale: 1.05, backgroundColor: '#fff', color: '#000' }}
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.2 }}
         >
@@ -175,9 +190,9 @@ export default function NavSection() {
           aria-label="Toggle mobile menu"
           aria-expanded={mobileMenuOpen}
         >
-          <span className={mobileMenuOpen ? styles.hamburgerOpen : ''}></span>
-          <span className={mobileMenuOpen ? styles.hamburgerOpen : ''}></span>
-          <span className={mobileMenuOpen ? styles.hamburgerOpen : ''}></span>
+          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} style={{ background: hamburgerBg }} />
+          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} style={{ background: hamburgerBg }} />
+          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} style={{ background: hamburgerBg }} />
         </button>
       </AnimatedNav>
 

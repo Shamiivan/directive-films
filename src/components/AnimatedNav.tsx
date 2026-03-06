@@ -9,11 +9,11 @@ interface AnimatedNavProps {
 export default function AnimatedNav({ children, className }: AnimatedNavProps) {
   const { scrollY } = useScroll();
 
-  // Transform scroll position to opacity and blur values
+  // Dark navy on hero → white glass on scroll
   const backgroundColor = useTransform(
     scrollY,
     [0, 100],
-    ['rgba(0, 0, 0, 0.7)', 'rgba(0, 0, 0, 0.95)']
+    ['rgba(10, 22, 40, 0.9)', 'rgba(255, 255, 255, 0.97)']
   );
 
   const blur = useTransform(

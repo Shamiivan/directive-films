@@ -1,7 +1,7 @@
-/* Footer Section */
+/* Footer Section - Dark navy */
 .footer {
   padding: var(--section-padding) 0 var(--space-xl) 0;
-  background: var(--color-black);
+  background: var(--color-bg-dark);
   position: relative;
 }
 
@@ -41,7 +41,7 @@
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-on-dark-secondary);
 }
 
 /* Links Columns */
@@ -54,7 +54,7 @@
   font-family: var(--font-mono);
   font-size: var(--font-size-label);
   font-weight: 400;
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
   text-transform: uppercase;
   letter-spacing: 0.1em;
   margin-bottom: var(--space-md);
@@ -74,14 +74,13 @@
   font-size: var(--font-size-body-sm);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-on-dark-secondary);
   text-decoration: none;
   transition: color var(--transition-fast);
-  display: inline-block;
-  padding: var(--space-sm) 0;
-  min-height: 44px;
   display: flex;
   align-items: center;
+  padding: var(--space-sm) 0;
+  min-height: 44px;
 }
 
 .link:hover {
@@ -95,7 +94,7 @@
 
 .divider {
   height: 1px;
-  background: var(--color-border-light);
+  background: rgba(255, 255, 255, 0.1);
   margin-bottom: var(--space-lg);
 }
 
@@ -107,7 +106,7 @@
 
 .copyright {
   font-size: var(--font-size-body-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
 }
 
 .legalLinks {
@@ -118,7 +117,7 @@
 
 .legalLink {
   font-size: var(--font-size-body-sm);
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
   text-decoration: none;
   transition: color var(--transition-fast);
   padding: 12px 8px;
@@ -132,7 +131,7 @@
 }
 
 .separator {
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
   font-size: var(--font-size-body-sm);
 }
 
