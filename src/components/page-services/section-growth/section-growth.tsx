@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Video, Target, Users, TrendingUp, Lightbulb, ArrowRight } from 'lucide-react';
+import { Video, Target, Users, TrendingUp, Lightbulb } from 'lucide-react';
 import MagneticButton from '../../MagneticButton';
 import { scrollReveal, gridStagger } from '../../../utils/animations';
 import styles from './section-growth.module.css';
@@ -64,8 +64,8 @@ export default function GrowthSection() {
                 variants={scrollReveal}
                 whileHover={{
                   scale: 1.02,
-                  borderColor: '#3b82f6',
-                  boxShadow: '0 0 30px rgba(59, 130, 246, 0.4)',
+                  borderColor: 'rgba(253, 183, 20, 0.5)',
+                  boxShadow: '0 0 30px rgba(253, 183, 20, 0.15)',
                 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               >
@@ -74,9 +74,7 @@ export default function GrowthSection() {
                 </div>
                 <h3 className={styles.serviceTitle}>{service.title}</h3>
                 <p className={styles.serviceDescription}>{service.description}</p>
-                <div className={styles.arrow}>
-                  <ArrowRight size={24} strokeWidth={2} color="#666" />
-                </div>
+                <span className={styles.learnMore}>Learn More →</span>
               </motion.div>
             );
           })}

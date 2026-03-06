@@ -2,6 +2,7 @@ import NavSection from '../../page-shared/section-nav/section-nav';
 import AboutHeroSection from '../../page-about/section-about-hero/section-about-hero';
 import WhyWeCreateSection from '../../page-about/section-why-we-create/section-why-we-create';
 import ProcessSection from '../../page-about/section-process/section-process';
+import FooterSection from '../../page-shared/section-footer/section-footer';
 import styles from './about-page.module.css';
 
 export default function AboutPage() {
@@ -11,6 +12,7 @@ export default function AboutPage() {
       <AboutHeroSection />
       <WhyWeCreateSection />
       <ProcessSection />
+      <FooterSection />
     </div>
   );
 }
