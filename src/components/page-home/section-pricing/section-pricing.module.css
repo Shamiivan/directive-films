@@ -1,7 +1,7 @@
-/* Pricing Section - White background */
+/* Pricing Section - Dark background */
 .pricingSection {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-primary);
+  background: var(--color-bg-dark);
   position: relative;
 }
 
@@ -23,7 +23,7 @@
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
   margin-bottom: var(--space-lg);
 }
 
@@ -36,7 +36,7 @@
   font-size: var(--font-size-body-lg);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.6;
@@ -52,26 +52,26 @@
 
 /* Package Card */
 .packageCard {
-  background: var(--color-bg-primary);
-  border: 1px solid var(--color-border-light);
+  background: var(--color-bg-dark-card);
+  border: 1px solid var(--color-border-dark-subtle);
   border-radius: var(--radius-2xl);
   padding: 40px var(--space-xl);
   position: relative;
   display: flex;
   flex-direction: column;
   transition: all var(--transition-slow);
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
 }
 
 .packageCard.highlighted {
-  background: var(--color-bg-primary);
+  background: var(--color-bg-dark-card);
   border: 2px solid var(--color-gold);
   box-shadow: var(--shadow-gold);
 }
 
 .packageCard:hover {
-  border-color: var(--color-border-medium);
-  box-shadow: var(--shadow-md);
+  border-color: var(--color-border-dark-medium);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
   transform: translateY(-4px);
 }
 
@@ -101,7 +101,7 @@
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
   margin-bottom: var(--space-sm);
 }
 
@@ -110,21 +110,21 @@
   font-size: var(--font-size-body-sm);
   font-weight: 500;
   letter-spacing: 0.01em;
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
 }
 
 /* Offer Description */
 .offerDescription {
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--color-border-light);
+  border-bottom: 1px solid var(--color-border-dark-subtle);
 }
 
 .description {
   font-family: var(--font-body);
   font-size: var(--font-size-body-sm);
   font-weight: 400;
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark-secondary);
   line-height: 1.6;
   margin-bottom: var(--space-md);
 }
@@ -133,7 +133,7 @@
   font-family: var(--font-body);
   font-size: var(--font-size-body-sm);
   font-weight: 400;
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
   line-height: 1.5;
 }
 
@@ -154,7 +154,7 @@
   font-size: var(--font-size-body-sm);
   font-weight: 400;
   letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark-secondary);
   line-height: 1.5;
 }
 
@@ -166,6 +166,7 @@
   align-items: center;
   justify-content: center;
   margin-top: 2px;
+  color: var(--color-text-on-dark-secondary);
 }
 
 /* CTA */
@@ -176,7 +177,7 @@
 .ctaButton {
   width: 100%;
   background: transparent;
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
   border: 1px solid var(--color-gold);
   padding: 14px var(--space-xl);
   border-radius: var(--radius-3xl);
@@ -221,12 +222,12 @@
 .bottomCta {
   text-align: center;
   padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-border-light);
+  border-top: 1px solid var(--color-border-dark-subtle);
 }
 
 .ctaText {
   font-size: var(--font-size-body-lg);
-  color: var(--color-text-muted);
+  color: var(--color-text-on-dark-muted);
 }
 
 .ctaLink {

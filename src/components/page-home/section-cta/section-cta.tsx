@@ -15,9 +15,6 @@ export default function CtaSection() {
           <h2 className={styles.title}>
             Let's talk about your business
           </h2>
-          <p className={styles.subtitle}>
-            30 minutes. We'll look at what you've got, tell you what we'd do first, and you decide if it makes sense. No pitch deck.
-          </p>
           <RotatingProofLine />
           <motion.div
             className={styles.ctaWrapper}

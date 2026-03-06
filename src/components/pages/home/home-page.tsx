@@ -8,7 +8,6 @@ import OfferSection from '../../page-home/section-offer/section-offer';
 import ResultsSection from '../../page-home/section-results/section-results';
 import HowWeDoItSection from '../../page-home/section-how-we-do-it/section-how-we-do-it';
 import PricingSection from '../../page-home/section-pricing/section-pricing';
-import DividerSection from '../../page-home/section-divider/section-divider';
 import FaqSection from '../../page-home/section-faq/section-faq';
 import CtaSection from '../../page-home/section-cta/section-cta';
 import FooterSection from '../../page-shared/section-footer/section-footer';
@@ -25,7 +24,6 @@ export default function HomePage() {
       <ProofSection />
       <TestimonialsSection />
       <PricingSection />
-      <DividerSection />
       <FaqSection />
       <CtaSection />
       <FooterSection />

@@ -28,11 +28,19 @@
   --color-text-on-dark-secondary: rgba(255, 255, 255, 0.7);
   --color-text-on-dark-muted: rgba(255, 255, 255, 0.4);
 
+  /* Dark section cards */
+  --color-bg-dark-card: #141e2e;
+  --color-bg-dark-elevated: #0f1d30;
+
   /* Borders - light theme */
   --color-border-light: #e5e7eb;
   --color-border-medium: #d1d5db;
   --color-border-dark: #f3f4f6;
   --color-border-subtle: #e5e7eb;
+
+  /* Borders - dark theme */
+  --color-border-dark-subtle: rgba(255, 255, 255, 0.08);
+  --color-border-dark-medium: rgba(255, 255, 255, 0.15);
 
   /* Typography - Font families */
   --font-display: Inter, sans-serif;

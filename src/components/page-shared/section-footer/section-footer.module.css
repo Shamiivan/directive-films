@@ -1,7 +1,7 @@
 /* Footer Section - Dark navy */
 .footer {
   padding: var(--section-padding) 0 var(--space-xl) 0;
-  background: var(--color-bg-dark);
+  background: var(--color-bg-deep);
   position: relative;
 }
 

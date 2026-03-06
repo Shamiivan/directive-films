@@ -18,6 +18,8 @@ export const colors = {
     tertiary: '#eef1f5',
     dark: '#0a1628',
     deep: '#071020',
+    darkCard: '#141e2e',
+    darkElevated: '#0f1d30',
   },
 
   // Text Colors
@@ -38,6 +40,8 @@ export const colors = {
     medium: '#d1d5db',
     dark: '#f3f4f6',
     subtle: '#e5e7eb',
+    darkSubtle: 'rgba(255, 255, 255, 0.08)',
+    darkMedium: 'rgba(255, 255, 255, 0.15)',
   },
 };
 

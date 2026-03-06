@@ -81,9 +81,7 @@ export default function HeroSection() {
           variants={fadeInUp}
         >
           Grow Partner That Turns Content into
-          <span className={styles.gold}>
-            <span className={styles.highlight}> Revenue</span>
-          </span>
+          <strong> Revenue</strong>
         </motion.p>
 
         <motion.div variants={fadeInUp}>

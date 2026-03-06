@@ -24,7 +24,7 @@
 }
 
 .gold {
-  color: var(--color-gold);
+  color: var(--color-text-primary);
 }
 
 /* Stats Bar */
@@ -47,7 +47,7 @@
   font-size: 56px;
   font-weight: 800;
   letter-spacing: -0.02em;
-  color: var(--color-gold);
+  color: var(--color-text-primary);
   line-height: 1;
   margin-bottom: 12px;
 }

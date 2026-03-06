@@ -44,7 +44,7 @@
 .divider {
   width: 280px;
   height: 2px;
-  background: var(--color-gold);
+  background: var(--color-text-primary);
   margin-bottom: var(--space-2xl);
 }
 
@@ -68,15 +68,15 @@
 }
 
 .stepItem.active {
-  border-bottom-color: var(--color-gold);
+  border-bottom-color: var(--color-text-primary);
 }
 
 .stepItem.active .stepNumber {
-  color: var(--color-gold);
+  color: var(--color-text-primary);
 }
 
 .stepItem.active .stepTitle {
-  color: var(--color-gold);
+  color: var(--color-text-primary);
 }
 
 .stepHeader {
@@ -120,7 +120,7 @@
 /* Progress Bar */
 .progressBar {
   height: 2px;
-  background: var(--color-gold);
+  background: var(--color-text-primary);
   transform-origin: left;
   margin-top: var(--space-md);
 }

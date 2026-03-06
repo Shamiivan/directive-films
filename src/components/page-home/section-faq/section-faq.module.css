@@ -1,7 +1,7 @@
 /* FAQ Section - Light gray background */
 .faqSection {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
   position: relative;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .gold {
-  color: var(--color-gold);
+  color: var(--color-text-primary);
 }
 
 /* FAQ List */
@@ -42,11 +42,11 @@
 
 .faqItem.open .icon {
   transform: rotate(180deg);
-  color: var(--color-gold);
+  color: var(--color-text-primary);
 }
 
 .faqItem.open .questionText {
-  color: var(--color-gold);
+  color: var(--color-text-primary);
 }
 
 /* Question Button */
@@ -64,7 +64,7 @@
 }
 
 .question:hover .questionText {
-  color: var(--color-gold);
+  color: var(--color-text-secondary);
 }
 
 .questionText {

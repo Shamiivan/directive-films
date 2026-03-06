@@ -18,7 +18,7 @@
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--color-text-on-dark-secondary);
   margin-bottom: var(--space-lg);
   opacity: 0.9;
 }
@@ -106,9 +106,9 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow:
-    0 0 0 1px rgba(253, 183, 20, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.08),
     0 20px 60px rgba(0, 0, 0, 0.6),
-    0 0 80px rgba(253, 183, 20, 0.08);
+    0 0 80px rgba(255, 255, 255, 0.08);
   will-change: transform;
   cursor: pointer;
 }

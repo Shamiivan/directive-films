@@ -2,7 +2,7 @@
 .proofLine {
   font-family: var(--font-mono);
   font-size: var(--font-size-body-sm);
-  color: var(--color-gold);
+  color: var(--color-text-on-dark-secondary);
   text-align: center;
   min-height: var(--space-lg);
   margin: var(--space-lg) 0;
