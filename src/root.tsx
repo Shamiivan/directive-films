@@ -1,15 +1,13 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
-import "@fontsource/playfair-display/700.css";
-import "@fontsource/playfair-display/800.css";
-import "@fontsource/playfair-display/900.css";
 import "@fontsource/inter/400.css";
 import "@fontsource/inter/500.css";
 import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/inter/800.css";
 import "@fontsource/space-mono/400.css";
 
 import "./globals.css";
-import ClientCursorWrapper from "./components/ClientCursorWrapper";
 import Preloader from "./components/Preloader";
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -26,7 +24,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Preloader />
-        <ClientCursorWrapper />
         {children}
         <ScrollRestoration />
         <Scripts />

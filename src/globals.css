@@ -1,33 +1,43 @@
 :root {
-  --background: #fafafa;
-  --foreground: #171717;
+  --background: #ffffff;
+  --foreground: #0f1729;
 
-  /* Brand colors */
+  /* Brand colors - gold stays */
   --color-gold: #FDB714;
   --color-gold-hover: #e5a512;
-  --color-black: #0d0d0d;
-  --color-white: #f5f5f5;
+  --color-black: #0a1628;
+  --color-white: #ffffff;
 
-  /* Background colors */
-  --color-bg-primary: #0d0d0d;
-  --color-bg-secondary: #1a1a1a;
-  --color-bg-tertiary: #2a2a2a;
-  --color-bg-dark: #111111;
-  --color-bg-deep: #121212;
+  /* Backgrounds - light body */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f7f8fa;
+  --color-bg-tertiary: #eef1f5;
+  --color-bg-dark: #0a1628;
+  --color-bg-deep: #071020;
 
-  /* Text colors */
-  --color-text-primary: #f5f5f5;
-  --color-text-secondary: #cccccc;
-  --color-text-tertiary: #999999;
-  --color-text-muted: #666666;
-  --color-text-on-light: #111111;
-  --color-text-dim: #888888;
+  /* Text - dark on light */
+  --color-text-primary: #0f1729;
+  --color-text-secondary: #374151;
+  --color-text-tertiary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-text-on-light: #0f1729;
+  --color-text-dim: #9ca3af;
 
-  /* Border colors */
-  --color-border-light: #333333;
-  --color-border-medium: #444444;
-  --color-border-dark: #1A1A1A;
-  --color-border-subtle: #e5e5e5;
+  /* Text on dark sections (hero, footer, CTA) */
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-secondary: rgba(255, 255, 255, 0.7);
+  --color-text-on-dark-muted: rgba(255, 255, 255, 0.4);
+
+  /* Borders - light theme */
+  --color-border-light: #e5e7eb;
+  --color-border-medium: #d1d5db;
+  --color-border-dark: #f3f4f6;
+  --color-border-subtle: #e5e7eb;
+
+  /* Typography - Font families */
+  --font-display: Inter, sans-serif;
+  --font-body: Inter, sans-serif;
+  --font-mono: "Space Mono", monospace;
 
   /* Typography - Font sizes */
   --font-size-display1: 64px;
@@ -91,15 +101,15 @@
   --radius-pill: 30px;
   --radius-full: 9999px;
 
-  /* Shadows */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.2);
-  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.3);
-  --shadow-gold: 0 4px 12px rgba(253, 183, 20, 0.3);
-  --shadow-gold-md: 0 4px 20px rgba(253, 183, 20, 0.4);
-  --shadow-gold-lg: 0 6px 20px rgba(253, 183, 20, 0.5);
-  --shadow-gold-hover: 0 6px 30px rgba(253, 183, 20, 0.6);
+  /* Shadows - neutral, no gold glow */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.1);
+  --shadow-gold: 0 4px 12px rgba(253, 183, 20, 0.2);
+  --shadow-gold-md: 0 4px 20px rgba(253, 183, 20, 0.25);
+  --shadow-gold-lg: 0 8px 24px rgba(253, 183, 20, 0.3);
+  --shadow-gold-hover: 0 8px 32px rgba(253, 183, 20, 0.35);
   --shadow-gold-xl: 0 8px 24px rgba(253, 183, 20, 0.2);
 
   /* Transitions */
@@ -107,13 +117,6 @@
   --transition-base: 250ms ease-in-out;
   --transition-slow: 350ms ease-in-out;
   --transition-premium: 600ms cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 @media (max-width: 768px) {
@@ -142,13 +145,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Only hide cursor on desktop */
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
-}
-
 /* Disable animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
@@ -170,12 +166,6 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
 /* Typography Utility Classes */

@@ -8,49 +8,52 @@ export const colors = {
   brand: {
     gold: '#FDB714',
     goldHover: '#e5a512',
-    black: '#000000',
+    black: '#0a1628',
   },
 
   // Background Colors
   bg: {
-    primary: '#000000',
-    secondary: '#1A1A1A',
-    tertiary: '#2A2A2A',
-    light: '#ebe6e6ff',
-
+    primary: '#ffffff',
+    secondary: '#f7f8fa',
+    tertiary: '#eef1f5',
+    dark: '#0a1628',
+    deep: '#071020',
   },
 
   // Text Colors
   text: {
-    primary: '#FFFFFF',
-    secondary: '#CCCCCC',
-    tertiary: '#999999',
-    muted: '#666666',
-    onLight: '#000000',
+    primary: '#0f1729',
+    secondary: '#374151',
+    tertiary: '#6b7280',
+    muted: '#9ca3af',
+    onLight: '#0f1729',
+    onDark: '#ffffff',
+    onDarkSecondary: 'rgba(255, 255, 255, 0.7)',
+    onDarkMuted: 'rgba(255, 255, 255, 0.4)',
   },
 
   // Border Colors
   border: {
-    light: '#333333',
-    medium: '#444444',
-    dark: '#1A1A1A',
+    light: '#e5e7eb',
+    medium: '#d1d5db',
+    dark: '#f3f4f6',
+    subtle: '#e5e7eb',
   },
 };
 
 export const typography = {
-  // Font Families - Premium pairing (Playfair Display + Inter + Space Mono)
+  // Font Families - Clean sans-serif (Inter + Space Mono)
   fontFamily: {
-    display: 'var(--font-display, "Playfair Display", serif)',
+    display: 'var(--font-display, Inter, sans-serif)',
     body: 'var(--font-body, Inter, sans-serif)',
     mono: 'var(--font-mono, "Space Mono", monospace)',
-    // Fallback for legacy usage
     primary: 'var(--font-body, Inter, sans-serif)',
   },
 
-  // Font Sizes - Enhanced scale
+  // Font Sizes
   fontSize: {
-    display1: '64px',     // Increased from 56px for more impact
-    display2: '52px',     // Increased from 48px
+    display1: '64px',
+    display2: '52px',
     h1: '40px',
     h2: '32px',
     h3: '24px',
@@ -59,7 +62,7 @@ export const typography = {
     body: '16px',
     bodySm: '14px',
     caption: '12px',
-    label: '11px',        // New - for uppercase labels
+    label: '11px',
   },
 
   // Font Weights
@@ -68,25 +71,25 @@ export const typography = {
     medium: 500,
     semibold: 600,
     bold: 700,
-    extrabold: 800,       // New - for display headlines
+    extrabold: 800,
   },
 
   // Line Heights
   lineHeight: {
-    tight: 1.1,           // Tighter for display text
+    tight: 1.1,
     normal: 1.4,
     relaxed: 1.6,
     loose: 1.8,
   },
 
-  // Letter Spacing - Critical for premium feel
+  // Letter Spacing
   letterSpacing: {
-    tight: '-0.02em',     // Display headlines
+    tight: '-0.02em',
     normal: '0',
-    wide: '0.01em',       // Body text
-    wider: '0.05em',      // Subheadings
-    widest: '0.1em',      // Uppercase labels
-    ultra: '0.2em',       // Ultra-wide labels
+    wide: '0.01em',
+    wider: '0.05em',
+    widest: '0.1em',
+    ultra: '0.2em',
   },
 };
 
@@ -118,11 +121,13 @@ export const borderRadius = {
 };
 
 export const shadows = {
-  sm: '0 1px 2px rgba(0, 0, 0, 0.05)',
-  md: '0 4px 6px rgba(0, 0, 0, 0.1)',
-  lg: '0 10px 15px rgba(0, 0, 0, 0.2)',
-  xl: '0 20px 25px rgba(0, 0, 0, 0.3)',
-  glowGold: '0 4px 20px rgba(253, 183, 20, 0.3)',
+  sm: '0 1px 2px rgba(0, 0, 0, 0.04)',
+  md: '0 4px 12px rgba(0, 0, 0, 0.06)',
+  lg: '0 12px 24px rgba(0, 0, 0, 0.08)',
+  xl: '0 24px 48px rgba(0, 0, 0, 0.1)',
+  gold: '0 4px 12px rgba(253, 183, 20, 0.2)',
+  goldMd: '0 4px 20px rgba(253, 183, 20, 0.25)',
+  goldLg: '0 8px 24px rgba(253, 183, 20, 0.3)',
 };
 
 export const transitions = {
@@ -135,7 +140,7 @@ export const transitions = {
 export const animations = {
   // Easing curves
   easing: {
-    premium: [0.25, 0.1, 0.25, 1], // For framer-motion
+    premium: [0.25, 0.1, 0.25, 1],
     smooth: [0.4, 0.0, 0.2, 1],
     bounce: [0.68, -0.55, 0.265, 1.55],
   },
