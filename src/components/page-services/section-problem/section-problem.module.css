@@ -1,0 +1,135 @@
+/* ═══════════════════════════════════════════
+   Problem — symptom recognition, split layout
+   ═══════════════════════════════════════════ */
+
+.section {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-primary);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.header {
+  margin-bottom: var(--space-3xl);
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-ultra);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  position: relative;
+  padding-left: var(--space-2xl);
+}
+
+.label::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 24px;
+  height: 1px;
+  background: var(--color-gold);
+}
+
+/* 2-column grid */
+
+.grid {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+.symptomsCol {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.symptom {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-lg);
+}
+
+.dash {
+  flex-shrink: 0;
+  width: 20px;
+  height: 1px;
+  background: var(--color-gold);
+  position: relative;
+  top: -4px;
+}
+
+.symptomText {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Reframe column */
+
+.reframeCol {
+  padding-top: var(--space-md);
+}
+
+.goldDivider {
+  width: 280px;
+  height: 2px;
+  background: var(--color-gold);
+  margin-bottom: var(--space-xl);
+}
+
+.reframeText {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-snug);
+  margin-bottom: var(--space-md);
+}
+
+.reframeText strong {
+  font-weight: var(--font-weight-bold);
+}
+
+.bridge {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ── Responsive ──────────────────────────── */
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3xl);
+  }
+
+  .symptomsCol {
+    gap: var(--space-md);
+  }
+
+  .symptomText {
+    font-size: var(--font-size-body);
+  }
+
+  .goldDivider {
+    width: 120px;
+  }
+}

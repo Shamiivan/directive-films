@@ -94,8 +94,32 @@
   font-size: var(--font-size-body-lg);
   color: var(--color-text-secondary);
   line-height: var(--line-height-relaxed);
-  margin-bottom: var(--space-2xl);
+  margin-bottom: var(--space-xl);
   max-width: 520px;
+}
+
+.outcomes {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-2xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.outcomes li {
+  font-size: var(--font-size-body);
+  color: var(--color-text-on-dark);
+  padding-left: var(--space-lg);
+  position: relative;
+  line-height: var(--line-height-relaxed);
+}
+
+.outcomes li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+  color: var(--color-gold);
 }
 
 .ctaWrapper {

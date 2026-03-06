@@ -16,15 +16,18 @@ export default function ServicesHeroSection() {
         >
           <span className={styles.label}>Our Services</span>
           <h1 className={styles.title}>
-            Your business looks like a{' '}
-            <em className={styles.titleAccent}>$10M operation</em>
-            <br />
-            in 30 days
+            We fix how you{' '}
+            <em className={styles.titleAccent}>sell online</em>
           </h1>
           <p className={styles.description}>
-            Audit, video, websites, CRM, and coaching — five services
-            engineered to turn your pipeline into a revenue machine.
+            Five services. One method. For businesses that are good at what they do
+            but know their online presence isn't pulling its weight.
           </p>
+          <ul className={styles.outcomes}>
+            <li>More qualified leads from your website</li>
+            <li>Content that actually moves deals forward</li>
+            <li>A pipeline you can see and control</li>
+          </ul>
           <motion.div
             className={styles.ctaWrapper}
             initial={{ opacity: 0, y: 20 }}

@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import { scrollReveal } from '@/utils/animations';
-import { services } from '../services-data';
+import { servicePhases } from '../services-data';
+
+const services = servicePhases.flatMap((p) => p.services);
 import styles from './section-service-map.module.css';
 
 export default function ServiceMapSection() {
@@ -39,8 +41,8 @@ export default function ServiceMapSection() {
                 {String(i + 1).padStart(2, '0')}
               </span>
               <span className={styles.cardDot} />
-              <h3 className={styles.cardTitle}>{service.eyebrow}</h3>
-              <p className={styles.cardDesc}>{service.subtitle}</p>
+              <h3 className={styles.cardTitle}>{service.name}</h3>
+              <p className={styles.cardDesc}>{service.outcome}</p>
               <span className={styles.cardArrow}>&darr;</span>
             </motion.button>
           ))}

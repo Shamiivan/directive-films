@@ -12,13 +12,13 @@ export default function CtaSection() {
           {...scrollReveal}
         >
           <h2 className={styles.title}>
-            Ready to fix your <span className={styles.highlight}>pipeline</span>?
+            Know what to <span className={styles.highlight}>fix first</span>
           </h2>
           <p className={styles.subtitle}>
-            30 minutes. We'll find where you're losing deals and map out the fix.
+            30 minutes. We'll look at your pipeline, find the gaps, and tell you where to start.
           </p>
-          <MagneticButton className={styles.ctaButton}>
-            Schedule a Strategy Call
+          <MagneticButton href="/contact" className={styles.ctaButton}>
+            Book a Strategy Call
           </MagneticButton>
         </motion.div>
       </div>

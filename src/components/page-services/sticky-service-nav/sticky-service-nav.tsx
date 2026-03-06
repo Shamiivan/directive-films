@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { services } from '../services-data';
+import { servicePhases } from '../services-data';
+
+const services = servicePhases.flatMap((p) => p.services);
 import styles from './sticky-service-nav.module.css';
 
 export default function StickyServiceNav() {
@@ -68,7 +70,7 @@ export default function StickyServiceNav() {
                 className={`${styles.link} ${activeId === service.id ? styles.active : ''}`}
                 onClick={() => handleClick(service.id)}
               >
-                {service.eyebrow}
+                {service.name}
               </button>
             ))}
           </div>

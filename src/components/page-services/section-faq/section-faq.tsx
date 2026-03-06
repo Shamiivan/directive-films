@@ -1,34 +1,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { scrollReveal } from '@/utils/animations';
+import { faqItems } from '../services-data';
 import styles from './section-faq.module.css';
-
-const faqs = [
-  {
-    question: 'How do I know which service I need?',
-    answer: "Start with a strategy call. We'll look at where you are, where the gaps are, and recommend the right starting point. Most clients start with Diagnose — because you need to know what's broken before you fix it.",
-  },
-  {
-    question: 'Can I bundle multiple services?',
-    answer: "Yes — and most clients do. The five services are designed to work together as a growth system. We'll build a package around what actually moves the needle for your business.",
-  },
-  {
-    question: 'What does pricing look like?',
-    answer: "It depends on scope. An audit starts in the low four figures. Full production or CRM buildouts are higher. We'll give you a clear quote after our strategy call — no surprises, no hidden fees.",
-  },
-  {
-    question: 'How long does each service take?',
-    answer: 'Audits take 1-2 weeks. Video production averages 2-3 weeks from script to delivery. CRM setup is typically 2 weeks. Coaching programs run 4-6 weeks. Web builds are 3-4 weeks. We move fast without cutting corners.',
-  },
-  {
-    question: 'Do you work with businesses outside of video production?',
-    answer: "Absolutely. Video is one piece. We also build websites, set up CRMs, coach teams on content, and audit your entire online presence. The goal is a connected growth system — not just a nice video.",
-  },
-  {
-    question: 'What if I already have a website / CRM / content team?',
-    answer: "Great — we'll work with what you have. We don't rip and replace unless it's necessary. If your existing tools just need optimization, that's what we do.",
-  },
-];
 
 function FaqItem({
   question,
@@ -114,7 +88,7 @@ export default function FaqSection() {
           </motion.div>
 
           <div className={styles.right}>
-            {faqs.map((faq, i) => (
+            {faqItems.map((faq, i) => (
               <FaqItem
                 key={i}
                 question={faq.question}

@@ -1,0 +1,224 @@
+/* ═══════════════════════════════════════════
+   Services — Ramp-style image cards
+   ═══════════════════════════════════════════ */
+
+.section {
+  padding: var(--section-padding) 0;
+  background: var(--color-bg-secondary);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.header {
+  margin-bottom: var(--space-4xl);
+}
+
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-ultra);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-lg);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: clamp(32px, 3.5vw + 8px, 48px);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-bottom: var(--space-md);
+}
+
+.titleAccent {
+  font-style: italic;
+  color: var(--color-text-secondary);
+}
+
+.subtitle {
+  font-size: var(--font-size-body-lg);
+  color: var(--color-text-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+/* Phase groups */
+
+.phaseGroup {
+  margin-bottom: var(--space-4xl);
+}
+
+.phaseGroup:last-child {
+  margin-bottom: 0;
+}
+
+.phaseHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.phaseName {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-ultra);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: var(--font-weight-medium);
+  flex-shrink: 0;
+}
+
+.phaseDivider {
+  flex-grow: 1;
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.phaseLabel {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+/* Cards */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: var(--space-xl);
+}
+
+.card {
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-slow), transform var(--transition-slow), border-color var(--transition-slow);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--color-gold);
+}
+
+.cardImage {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-premium);
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.03);
+}
+
+.cardContent {
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardName {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-sm);
+}
+
+.cardOutcome {
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-sm);
+}
+
+.cardDescription {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-tertiary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-xl);
+  flex-grow: 1;
+}
+
+.cardFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-border-light);
+}
+
+.timeline {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+  letter-spacing: var(--letter-spacing-wider);
+}
+
+.cardCta {
+  background: var(--color-gold);
+  color: var(--color-black);
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-slow);
+  box-shadow: var(--shadow-gold);
+}
+
+.cardCta:hover {
+  background: var(--color-gold-hover);
+  transform: scale(1.02);
+  box-shadow: var(--shadow-gold-md);
+}
+
+/* ── Responsive ──────────────────────────── */
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .phaseHeader {
+    gap: var(--space-md);
+  }
+
+  .cardFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .cardCta {
+    width: 100%;
+    text-align: center;
+  }
+}

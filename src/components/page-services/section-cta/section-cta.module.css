@@ -21,7 +21,7 @@
 }
 
 .title {
-  font-size: 56px;
+  font-size: clamp(36px, 5vw + 12px, 56px);
   font-weight: 700;
   color: var(--color-text-primary);
   margin-bottom: 1.5rem;
@@ -50,6 +50,7 @@
   border-radius: var(--radius-lg);
   cursor: pointer;
   transition: all var(--transition-slow);
+  box-shadow: var(--shadow-gold);
 }
 
 .ctaButton:hover {
