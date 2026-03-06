@@ -94,7 +94,10 @@ export default function HeroSection() {
           className={styles.heroSubtitle}
           variants={fadeInUp}
         >
-          Videos, Websites, CRMs, and Coaching that work together to grow your business.
+          Grow Partner That Turns Content into
+          <span className={styles.gold}>
+            <span className={styles.highlight}>Revenue</span>
+          </span>
         </motion.p>
 
         <motion.div variants={fadeInUp}>

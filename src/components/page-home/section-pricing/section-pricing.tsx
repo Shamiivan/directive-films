@@ -5,26 +5,26 @@ import { scrollReveal } from '../../../utils/animations';
 import { useTilt } from '../../../hooks/useTilt';
 import styles from './section-pricing.module.css';
 
-interface PkgType {
+interface OfferType {
   name: string;
-  tagline: string;
-  price: string;
-  period: string;
-  features: string[];
+  headline: string;
+  description: string;
+  bestFor: string;
+  includes: string[];
   highlight: boolean;
   ctaText: string;
   hoverText: string;
 }
 
-function PricingCard({
-  pkg,
+function OfferCard({
+  offer,
   index,
   isHovered,
   onHoverStart,
   onHoverEnd,
   children,
 }: {
-  pkg: PkgType;
+  offer: OfferType;
   index: number;
   isHovered: boolean;
   onHoverStart: () => void;
@@ -35,7 +35,7 @@ function PricingCard({
 
   return (
     <motion.div
-      className={`${styles.packageCard} ${pkg.highlight ? styles.highlighted : ''}`}
+      className={`${styles.packageCard} ${offer.highlight ? styles.highlighted : ''}`}
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
@@ -63,63 +63,61 @@ export default function PricingSection() {
     </svg>
   );
 
-  const packages = [
+  const offers: OfferType[] = [
     {
-      name: 'Sprint',
-      tagline: 'One problem. Two weeks. Done.',
-      price: '$2,500',
-      period: 'one-time',
-      features: [
+      name: 'Growth',
+      headline: 'One problem. Two weeks. Done.',
+      description: 'You know what\'s broken — you just need someone to fix it. We take one thing off your plate and deliver it fast.',
+      bestFor: 'A single deliverable: a video, a landing page, a CRM setup, or an audit with a clear action plan.',
+      includes: [
         'Online presence audit',
         'Prioritized recommendations report',
-        'One deliverable (video, landing page, or CRM setup)',
+        'One deliverable of your choice',
         'Implementation guidance',
         '2 rounds of revisions',
         'Delivered in 2 weeks',
       ],
       highlight: false,
       ctaText: 'Get Started',
-      hoverText: 'Get Started',
+      hoverText: 'Let\'s Talk →',
     },
     {
-      name: 'Growth Partner',
-      tagline: 'Ongoing systems that compound',
-      price: '$7,500',
-      period: '/month',
-      features: [
+      name: 'Scaling',
+      headline: 'Ongoing systems that compound.',
+      description: 'You want consistent content, a real sales system, and someone who actually owns it month to month. That\'s us.',
+      bestFor: 'Businesses ready to build a content engine, optimize their pipeline, and grow without guessing.',
+      includes: [
         'Full audit & growth strategy',
-        'Content production (3 videos/month)',
+        'Monthly content production (3 videos)',
         'CRM & sales system optimization',
         'Website updates & conversion testing',
-        'In-house content coaching sessions',
+        'In-house content coaching',
         'Monthly performance reviews',
         'Unlimited revisions',
-        'Priority support & rush delivery',
         'Dedicated growth strategist',
       ],
       highlight: true,
-      ctaText: 'Get Started',
-      hoverText: 'Book Strategy Call',
+      ctaText: 'Start Scaling',
+      hoverText: 'Book Strategy Call →',
     },
     {
       name: 'Enterprise',
-      tagline: 'Your growth team, on demand',
-      price: 'Custom',
-      period: 'pricing',
-      features: [
-        'Everything in Growth Partner',
+      headline: 'Your growth team, on demand.',
+      description: 'You need creative, dev, and strategy working together — without hiring six people. We embed with your team and scale with you.',
+      bestFor: 'Companies running multi-platform campaigns who need a dedicated team that moves fast.',
+      includes: [
+        'Everything in Scaling',
         'Dedicated creative & dev team',
         'Multi-platform campaign strategy',
         'Advanced analytics & A/B testing',
         'Quarterly strategy sessions',
         'Custom integrations & workflows',
         'Dedicated account manager',
-        'Priority 24/7 support',
-        'Scales as you grow',
+        'Priority support',
       ],
       highlight: false,
-      ctaText: 'Contact Sales',
-      hoverText: 'Talk to Our Team',
+      ctaText: 'Contact Us',
+      hoverText: 'Meet the Team →',
     },
   ];
 
@@ -129,55 +127,55 @@ export default function PricingSection() {
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
           <h2 className={styles.title}>
-            Pick your <span className={styles.gold}>level</span>
+            Ways to <span className={styles.gold}>work together</span>
           </h2>
           <p className={styles.subtitle}>
-            Pick where you are. We'll figure out the rest together.
+            Pick what fits. We'll figure out the rest on a call.
           </p>
         </motion.div>
 
-        {/* Pricing Cards */}
+        {/* Offer Cards */}
         <div className={styles.packagesGrid}>
-          {packages.map((pkg, index) => (
-            <PricingCard
+          {offers.map((offer, index) => (
+            <OfferCard
               key={index}
-              pkg={pkg}
+              offer={offer}
               index={index}
               isHovered={hoveredCard === index}
               onHoverStart={() => setHoveredCard(index)}
               onHoverEnd={() => setHoveredCard(null)}
             >
 
-              {pkg.highlight && (
+              {offer.highlight && (
                 <div className={styles.badge}>
                   <span>Most Popular</span>
                 </div>
               )}
 
               <div className={styles.packageHeader}>
-                <h3 className={styles.packageName}>{pkg.name}</h3>
-                <p className={styles.packageTagline}>{pkg.tagline}</p>
+                <h3 className={styles.packageName}>{offer.name}</h3>
+                <p className={styles.packageTagline}>{offer.headline}</p>
               </div>
 
-              <div className={styles.pricing}>
-                <span className={styles.price}>{pkg.price}</span>
-                <span className={styles.period}>{pkg.period}</span>
+              <div className={styles.offerDescription}>
+                <p className={styles.description}>{offer.description}</p>
+                <p className={styles.bestFor}><strong>Best for:</strong> {offer.bestFor}</p>
               </div>
 
               <ul className={styles.featuresList}>
-                {pkg.features.map((feature, i) => (
+                {offer.includes.map((item, i) => (
                   <li key={i} className={styles.feature}>
                     <span className={styles.checkIcon}>
                       <CheckIcon />
                     </span>
-                    <span>{feature}</span>
+                    <span>{item}</span>
                   </li>
                 ))}
               </ul>
 
               <div className={styles.ctaWrapper}>
                 <MagneticButton
-                  className={`${styles.ctaButton} ${pkg.highlight ? styles.ctaHighlight : ''}`}
+                  className={`${styles.ctaButton} ${offer.highlight ? styles.ctaHighlight : ''}`}
                   href="/contact"
                 >
                   <span className={styles.ctaTextWrapper}>
@@ -190,7 +188,7 @@ export default function PricingSection() {
                           exit={{ y: -8, opacity: 0 }}
                           transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
                         >
-                          {pkg.hoverText}
+                          {offer.hoverText}
                         </motion.span>
                       ) : (
                         <motion.span
@@ -200,7 +198,7 @@ export default function PricingSection() {
                           exit={{ y: -8, opacity: 0 }}
                           transition={{ duration: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
                         >
-                          {pkg.ctaText}
+                          {offer.ctaText}
                         </motion.span>
                       )}
                     </AnimatePresence>
@@ -218,17 +216,18 @@ export default function PricingSection() {
                   </span>
                 </MagneticButton>
               </div>
-            </PricingCard>
+            </OfferCard>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <motion.div className={styles.bottomCta} {...scrollReveal}>
           <p className={styles.ctaText}>
-            Not sure where to start?{' '}
+            Not sure which fits?{' '}
             <a href="/contact" className={styles.ctaLink}>
               Book a free strategy call
-            </a>
+            </a>{' '}
+            — we'll figure it out together.
           </p>
         </motion.div>
       </div>

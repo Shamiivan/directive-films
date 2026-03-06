@@ -112,28 +112,28 @@
   color: var(--color-text-muted);
 }
 
-/* Pricing */
-.pricing {
+/* Offer Description */
+.offerDescription {
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-xl);
   border-bottom: 1px solid var(--color-border-subtle);
 }
 
-.price {
-  font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: var(--color-black);
-  display: block;
-  line-height: 1;
+.description {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: 400;
+  color: var(--color-text-on-light);
+  line-height: 1.6;
+  margin-bottom: var(--space-md);
 }
 
-.period {
-  font-size: var(--font-size-body);
+.bestFor {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: 400;
   color: var(--color-text-muted);
-  font-weight: 500;
-  margin-left: 4px;
+  line-height: 1.5;
 }
 
 /* Features List */
@@ -269,7 +269,7 @@
     padding: var(--space-lg) 20px;
   }
 
-  .pricing {
+  .offerDescription {
     margin-bottom: var(--space-lg);
     padding-bottom: var(--space-lg);
   }
@@ -277,10 +277,6 @@
   .feature {
     margin-bottom: 12px;
     font-size: var(--font-size-body-sm);
-  }
-
-  .price {
-    font-size: var(--font-size-h1);
   }
 }
 
