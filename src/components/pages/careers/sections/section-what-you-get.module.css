@@ -105,6 +105,11 @@
     height: 24px;
   }
 
+  .iconWrapper svg {
+    width: 100%;
+    height: 100%;
+  }
+
   .benefitTitle {
     font-size: var(--font-size-body-lg);
   }

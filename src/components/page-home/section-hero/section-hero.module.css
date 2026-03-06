@@ -193,6 +193,10 @@
     min-height: auto;
   }
 
+  .heroTitle {
+    font-size: 32px;
+  }
+
   .heroSubtitle {
     font-size: var(--font-size-body);
   }
