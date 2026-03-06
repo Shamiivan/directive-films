@@ -133,6 +133,10 @@
 
 /* Responsive */
 @media (max-width: 1024px) {
+  .careersHero {
+    min-height: auto;
+  }
+
   .content {
     grid-template-columns: 1fr;
     gap: 60px;

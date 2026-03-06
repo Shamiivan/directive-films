@@ -222,3 +222,10 @@
     height: 250px;
   }
 }
+
+@media (max-width: 480px) {
+  .ctaButton {
+    padding: 12px 28px;
+    font-size: var(--font-size-body-sm);
+  }
+}

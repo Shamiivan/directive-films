@@ -187,11 +187,6 @@
     font-size: var(--font-size-body);
   }
 
-  .servicesGrid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
   .serviceCard {
     padding: var(--space-lg);
     min-height: auto;
@@ -212,5 +207,17 @@
 
   .ctaText {
     font-size: var(--font-size-h2);
+  }
+}
+
+@media (max-width: 600px) {
+  .servicesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .serviceCard {
+    padding: var(--space-lg);
+    min-height: auto;
   }
 }

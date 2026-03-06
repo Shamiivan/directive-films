@@ -243,11 +243,8 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .packagesGrid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--space-lg);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
@@ -284,5 +281,14 @@
 
   .price {
     font-size: var(--font-size-h1);
+  }
+}
+
+@media (max-width: 600px) {
+  .packagesGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
