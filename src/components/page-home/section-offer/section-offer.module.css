@@ -201,6 +201,11 @@
     font-size: var(--font-size-h4);
   }
 
+  .icon {
+    width: 32px;
+    height: 32px;
+  }
+
   .serviceDescription {
     font-size: var(--font-size-body-sm);
   }

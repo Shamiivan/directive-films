@@ -738,6 +738,16 @@
     font-size: 14px;
   }
 
+  .proofReasonIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .proofReasonIcon svg {
+    width: 32px;
+    height: 32px;
+  }
+
   .proofReasonItem {
     margin-bottom: 3rem;
   }

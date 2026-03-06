@@ -201,6 +201,16 @@
     gap: var(--space-xl);
   }
 
+  .iconBox {
+    width: 32px;
+    height: 32px;
+  }
+
+  .iconBox svg {
+    width: 20px;
+    height: 20px;
+  }
+
   .heroMedia {
     margin-bottom: var(--space-xl);
   }
