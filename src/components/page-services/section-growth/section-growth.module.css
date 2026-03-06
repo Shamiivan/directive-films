@@ -1,7 +1,7 @@
-/* Growth Section - Inspired by Offer Section */
+/* Growth Section */
 .section {
   padding: var(--section-padding) 0;
-  background: var(--color-black);
+  background: var(--color-bg-primary);
   position: relative;
 }
 
@@ -17,12 +17,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(32px, 4vw + 12px, 52px);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: var(--color-white);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-lg);
   text-align: left;
 }
@@ -44,8 +44,8 @@
 
 /* Service Card */
 .serviceCard {
-  background: var(--color-black);
-  border: 1px solid rgba(253, 183, 20, 0.15);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
   padding: var(--space-xl);
   position: relative;
@@ -54,12 +54,12 @@
   min-height: 320px;
   transition: all var(--transition-slow);
   will-change: transform, border-color, box-shadow;
-  box-shadow: 0 0 20px rgba(253, 183, 20, 0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .serviceCard:hover {
-  border-color: rgba(253, 183, 20, 0.5);
-  box-shadow: 0 0 30px rgba(253, 183, 20, 0.15);
+  border-color: var(--color-border-medium);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Icon */
@@ -79,11 +79,11 @@
 
 /* Service Title */
 .serviceTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--font-size-h3);
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--color-white);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-md);
   line-height: 1.3;
 }

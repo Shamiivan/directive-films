@@ -10,7 +10,7 @@
 }
 
 .sectionAlt {
-  background: #080808;
+  background: var(--color-bg-secondary);
 }
 
 .container {
@@ -60,7 +60,7 @@
 }
 
 .headerNumber {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(80px, 10vw, 140px);
   font-weight: 700;
   line-height: 0.85;
@@ -87,7 +87,7 @@
 }
 
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(32px, 3.5vw + 8px, 52px);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
@@ -153,7 +153,7 @@
 }
 
 .blockTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--font-size-h3);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
@@ -216,7 +216,7 @@
 }
 
 .sectionAlt .processDot {
-  background: #080808;
+  background: var(--color-bg-secondary);
 }
 
 .processDotInner {
@@ -264,7 +264,7 @@
 }
 
 .proofStat {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(36px, 4vw, 56px);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);

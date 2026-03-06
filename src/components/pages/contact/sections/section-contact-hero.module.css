@@ -2,7 +2,7 @@
 .contactHero {
   min-height: 100vh;
   padding: 120px 0 80px;
-  background: linear-gradient(135deg, #000000 0%, #0a0a0a 100%);
+  background: linear-gradient(135deg, var(--color-bg-dark) 0%, var(--color-bg-deep) 100%);
   position: relative;
   display: flex;
   align-items: center;

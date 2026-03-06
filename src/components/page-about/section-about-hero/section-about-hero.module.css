@@ -51,7 +51,7 @@
 
 /* Subtitle with underlined "Excellence" */
 .subtitle {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(36px, 5vw + 16px, var(--font-size-display1));
   font-weight: 700;
   letter-spacing: var(--letter-spacing-tight);

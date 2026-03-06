@@ -1,7 +1,7 @@
-/* CTA Section - Dark navy (contrast sandwich) */
+/* CTA Section - Soft warm tint */
 .ctaSection {
   padding: calc(var(--section-padding) * 1.5) 0;
-  background: var(--color-bg-dark);
+  background: #fdf8ed;
   position: relative;
   overflow: hidden;
 }
@@ -24,7 +24,7 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  color: var(--color-text-on-dark);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-lg);
 }
 
@@ -33,7 +33,7 @@
   font-size: var(--font-size-h4);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: var(--color-text-on-dark-secondary);
+  color: var(--color-text-secondary);
   line-height: 1.6;
   margin-bottom: var(--space-lg);
 }

@@ -64,8 +64,6 @@ export default function GrowthSection() {
                 variants={scrollReveal}
                 whileHover={{
                   scale: 1.02,
-                  borderColor: 'rgba(253, 183, 20, 0.5)',
-                  boxShadow: '0 0 30px rgba(253, 183, 20, 0.15)',
                 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               >

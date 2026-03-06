@@ -1,7 +1,7 @@
 /* Testimonials Section */
 .section {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-deep);
+  background: var(--color-bg-secondary);
   position: relative;
 }
 
@@ -14,7 +14,7 @@
 .title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-text-primary);
   text-align: center;
   margin-bottom: 3rem;
 }
@@ -26,18 +26,18 @@
 }
 
 .testimonialCard {
-  background: var(--color-black);
-  border: 1px solid rgba(253, 183, 20, 0.15);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
   padding: 2rem;
   transition: all var(--transition-slow);
-  box-shadow: 0 0 20px rgba(253, 183, 20, 0.05);
+  box-shadow: var(--shadow-sm);
 }
 
 .testimonialCard:hover {
   transform: translateY(-4px);
-  border-color: rgba(253, 183, 20, 0.4);
-  box-shadow: 0 0 30px rgba(253, 183, 20, 0.15);
+  border-color: var(--color-border-medium);
+  box-shadow: var(--shadow-lg);
 }
 
 .quoteIcon {
@@ -51,7 +51,7 @@
 .quote {
   font-size: 1.125rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-secondary);
   margin-bottom: 1.5rem;
   font-style: italic;
 }
@@ -77,13 +77,13 @@
 .authorName {
   font-size: 0.9375rem;
   font-weight: 700;
-  color: var(--color-white);
+  color: var(--color-text-primary);
   margin-bottom: 0.25rem;
 }
 
 .authorRole {
   font-size: 0.8125rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--color-text-tertiary);
 }
 
 /* Responsive */

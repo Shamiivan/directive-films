@@ -1,4 +1,4 @@
 .page {
-  background: var(--color-bg-dark);
+  background: var(--color-bg-primary);
   min-height: 100vh;
 }

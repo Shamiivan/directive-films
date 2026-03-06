@@ -29,7 +29,7 @@
 }
 
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(32px, 3.5vw + 8px, 48px);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
@@ -95,7 +95,7 @@
 }
 
 .cardNumber {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--font-size-h2);
   font-weight: var(--font-weight-bold);
   color: transparent;

@@ -1,7 +1,7 @@
 /* What You Get Section */
 .whatYouGetSection {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-dark);
+  background: var(--color-bg-secondary);
   position: relative;
 }
 
@@ -21,7 +21,7 @@
   font-size: 56px;
   font-weight: 700;
   line-height: 1.2;
-  color: var(--color-white);
+  color: var(--color-text-primary);
   text-align: center;
 }
 
@@ -54,7 +54,7 @@
 .benefitTitle {
   font-size: var(--font-size-body-lg);
   font-weight: 600;
-  color: var(--color-white);
+  color: var(--color-text-primary);
   margin-bottom: 12px;
   line-height: 1.3;
 }
