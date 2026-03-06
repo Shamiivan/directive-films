@@ -96,7 +96,7 @@ export default function HeroSection() {
         >
           Grow Partner That Turns Content into
           <span className={styles.gold}>
-            <span className={styles.highlight}>Revenue</span>
+            <span className={styles.highlight}> Revenue</span>
           </span>
         </motion.p>
 
