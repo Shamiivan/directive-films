@@ -3,6 +3,13 @@
   "framework": null,
   "buildCommand": "pnpm build",
   "outputDirectory": "build/client",
+  "redirects": [
+    { "source": "/services/diagnose", "destination": "/services#diagnose", "statusCode": 301 },
+    { "source": "/services/coach", "destination": "/services#coach", "statusCode": 301 },
+    { "source": "/services/create", "destination": "/services#create", "statusCode": 301 },
+    { "source": "/services/optimize", "destination": "/services#optimize", "statusCode": 301 },
+    { "source": "/services/build", "destination": "/services#build", "statusCode": 301 }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

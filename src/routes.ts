@@ -6,9 +6,5 @@ export default [
   route("/careers", "routes/careers.tsx"),
   route("/contact", "routes/contact.tsx"),
   route("/design-system", "routes/design-system.tsx"),
-  route("/services/diagnose", "routes/services/diagnose.tsx"),
-  route("/services/coach", "routes/services/coach.tsx"),
-  route("/services/create", "routes/services/create.tsx"),
-  route("/services/optimize", "routes/services/optimize.tsx"),
-  route("/services/build", "routes/services/build.tsx"),
+  route("/services", "routes/services.tsx"),
 ] satisfies RouteConfig;

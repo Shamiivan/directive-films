@@ -7,11 +7,11 @@ import styles from './section-nav.module.css';
 const MotionLink = motion.create(Link);
 
 const serviceLinks = [
-  { href: '/services/diagnose', label: 'Diagnose', desc: 'Online Presence Audit' },
-  { href: '/services/coach', label: 'Coach', desc: 'Film & Content Setup' },
-  { href: '/services/create', label: 'Create', desc: 'Video Production' },
-  { href: '/services/optimize', label: 'Optimize', desc: 'CRM & Sales' },
-  { href: '/services/build', label: 'Build', desc: 'Web Development' },
+  { href: '/services#diagnose', label: 'Diagnose', desc: 'Online Presence Audit' },
+  { href: '/services#coach', label: 'Coach', desc: 'Film & Content Setup' },
+  { href: '/services#create', label: 'Create', desc: 'Video Production' },
+  { href: '/services#optimize', label: 'Optimize', desc: 'CRM & Sales' },
+  { href: '/services#build', label: 'Build', desc: 'Web Development' },
 ];
 
 // Magnetic Nav Link Component
