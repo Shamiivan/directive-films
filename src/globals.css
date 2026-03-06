@@ -1,27 +1,27 @@
 :root {
   --background: #ffffff;
-  --foreground: #0f1729;
+  --foreground: #111111;
 
   /* Brand colors - gold stays */
   --color-gold: #FDB714;
   --color-gold-hover: #e5a512;
-  --color-black: #0a1628;
+  --color-black: #0d0d0d;
   --color-white: #ffffff;
 
   /* Backgrounds - light body */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f7f8fa;
-  --color-bg-tertiary: #eef1f5;
-  --color-bg-dark: #0a1628;
-  --color-bg-deep: #071020;
+  --color-bg-secondary: #f5f5f5;
+  --color-bg-tertiary: #eeeeee;
+  --color-bg-dark: #111111;
+  --color-bg-deep: #0d0d0d;
 
   /* Text - dark on light */
-  --color-text-primary: #0f1729;
-  --color-text-secondary: #374151;
-  --color-text-tertiary: #6b7280;
-  --color-text-muted: #9ca3af;
-  --color-text-on-light: #0f1729;
-  --color-text-dim: #9ca3af;
+  --color-text-primary: #111111;
+  --color-text-secondary: #333333;
+  --color-text-tertiary: #666666;
+  --color-text-muted: #999999;
+  --color-text-on-light: #111111;
+  --color-text-dim: #999999;
 
   /* Text on dark sections (hero, footer, CTA) */
   --color-text-on-dark: #ffffff;
@@ -29,14 +29,14 @@
   --color-text-on-dark-muted: rgba(255, 255, 255, 0.4);
 
   /* Dark section cards */
-  --color-bg-dark-card: #141e2e;
-  --color-bg-dark-elevated: #0f1d30;
+  --color-bg-dark-card: #1a1a1a;
+  --color-bg-dark-elevated: #141414;
 
   /* Borders - light theme */
-  --color-border-light: #e5e7eb;
-  --color-border-medium: #d1d5db;
-  --color-border-dark: #f3f4f6;
-  --color-border-subtle: #e5e7eb;
+  --color-border-light: #e5e5e5;
+  --color-border-medium: #d1d1d1;
+  --color-border-dark: #f3f3f3;
+  --color-border-subtle: #e5e5e5;
 
   /* Borders - dark theme */
   --color-border-dark-subtle: rgba(255, 255, 255, 0.08);

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
-import { motion, AnimatePresence, useMotionValue, useSpring, useScroll, useTransform } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import AnimatedNav from '../../AnimatedNav';
 import styles from './section-nav.module.css';
 
@@ -38,14 +38,6 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
     y.set(0);
   };
 
-  // Scroll-driven text color: white on dark hero → dark on white bg
-  const { scrollY } = useScroll();
-  const color = useTransform(
-    scrollY,
-    [0, 100],
-    ['#ffffff', '#0f1729']
-  );
-
   return (
     <MotionLink
       ref={ref}
@@ -53,7 +45,7 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
       data-sticky-cursor
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      style={{ x: xSpring, y: ySpring, color }}
+      style={{ x: xSpring, y: ySpring }}
       whileHover={{ scale: 1.1 }}
       transition={{ duration: 0.2 }}
     >
@@ -69,11 +61,10 @@ export default function NavSection() {
   const dropdownRef = useRef<HTMLLIElement>(null);
   const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  // Scroll-driven colors for elements that need to change
-  const { scrollY } = useScroll();
-  const logoColor = useTransform(scrollY, [0, 100], ['#ffffff', '#0a1628']);
-  const triggerColor = useTransform(scrollY, [0, 100], ['#ffffff', '#0f1729']);
-  const hamburgerBg = useTransform(scrollY, [0, 100], ['#ffffff', '#0a1628']);
+  // Static colors — nav stays dark throughout
+  const logoColor = '#ffffff';
+  const triggerColor = '#ffffff';
+  const hamburgerBg = '#ffffff';
 
   // Close menu on escape key
   useEffect(() => {

@@ -46,7 +46,7 @@
 .description {
   font-size: var(--font-size-h4);
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: var(--color-text-on-dark-secondary);
   max-width: 500px;
 }
 
@@ -93,7 +93,7 @@
 
 .input {
   padding: 14px 18px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   font-size: var(--font-size-body);
   transition: all var(--transition-slow);

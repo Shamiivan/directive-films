@@ -11,7 +11,7 @@
   width: 100%;
   margin: 0;
   z-index: 1000;
-  background: rgba(10, 22, 40, 0.9);
+  background: rgba(12, 15, 22, 0.92);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   transition: box-shadow var(--transition-slow);
@@ -98,7 +98,7 @@
   top: calc(100% + 16px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(10, 22, 40, 0.98);
+  background: rgba(12, 15, 22, 0.98);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-lg);
@@ -219,7 +219,7 @@
   bottom: 0;
   width: 80%;
   max-width: 400px;
-  background: rgba(10, 22, 40, 0.98);
+  background: rgba(12, 15, 22, 0.98);
   backdrop-filter: blur(20px);
   z-index: 1001;
   overflow-y: auto;

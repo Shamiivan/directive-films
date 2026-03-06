@@ -78,7 +78,7 @@
 /* Description */
 .description {
   font-size: var(--font-size-body-lg);
-  color: var(--color-text-secondary);
+  color: var(--color-text-on-dark-secondary);
   line-height: 1.6;
   margin-bottom: var(--space-2xl);
 }

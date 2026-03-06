@@ -46,7 +46,7 @@
 .description {
   font-size: var(--font-size-h4);
   line-height: 1.6;
-  color: var(--color-text-secondary);
+  color: var(--color-text-on-dark-secondary);
   margin-bottom: var(--space-3xl);
   max-width: 500px;
 }
@@ -83,7 +83,7 @@
 .infoLabel {
   font-size: var(--font-size-body-sm);
   font-weight: 600;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-on-dark-muted);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-wider);
   margin-bottom: var(--space-sm);
@@ -118,7 +118,7 @@ a.infoValue:hover {
 
 .formSubtitle {
   font-size: var(--font-size-body);
-  color: var(--color-text-muted);
+  color: var(--color-text-tertiary);
   margin-bottom: var(--space-xl);
   line-height: 1.5;
 }
@@ -150,7 +150,7 @@ a.infoValue:hover {
 .input,
 .textarea {
   padding: 16px 18px;
-  border: 2px solid #e0e0e0;
+  border: 2px solid var(--color-border-light);
   border-radius: var(--radius-lg);
   font-size: var(--font-size-body);
   transition: all var(--transition-slow);
@@ -169,7 +169,7 @@ a.infoValue:hover {
 
 .input::placeholder,
 .textarea::placeholder {
-  color: var(--color-text-tertiary);
+  color: var(--color-text-muted);
 }
 
 .textarea {

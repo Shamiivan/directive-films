@@ -1,7 +1,7 @@
 /* CTA Section - Soft warm tint */
 .section {
   padding: calc(var(--section-padding) * 1.5) 0;
-  background: #fdf8ed;
+  background: var(--color-bg-dark-elevated);
   position: relative;
 }
 
@@ -23,7 +23,7 @@
 .title {
   font-size: clamp(36px, 5vw + 12px, 56px);
   font-weight: 700;
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
   margin-bottom: 1.5rem;
   line-height: 1.2;
 }
@@ -35,7 +35,7 @@
 
 .subtitle {
   font-size: var(--font-size-h4);
-  color: var(--color-text-secondary);
+  color: var(--color-text-on-dark-secondary);
   margin-bottom: 3rem;
   line-height: 1.6;
 }

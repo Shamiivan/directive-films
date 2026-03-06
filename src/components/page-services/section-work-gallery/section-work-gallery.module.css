@@ -58,7 +58,7 @@
 }
 
 .scrollContainer::-webkit-scrollbar-thumb:hover {
-  background: #ffc73d;
+  background: var(--color-gold);
 }
 
 .gallery {

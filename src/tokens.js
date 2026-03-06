@@ -8,27 +8,27 @@ export const colors = {
   brand: {
     gold: '#FDB714',
     goldHover: '#e5a512',
-    black: '#0a1628',
+    black: '#0d0d0d',
   },
 
   // Background Colors
   bg: {
     primary: '#ffffff',
-    secondary: '#f7f8fa',
-    tertiary: '#eef1f5',
-    dark: '#0a1628',
-    deep: '#071020',
-    darkCard: '#141e2e',
-    darkElevated: '#0f1d30',
+    secondary: '#f5f5f5',
+    tertiary: '#eeeeee',
+    dark: '#111111',
+    deep: '#0d0d0d',
+    darkCard: '#1a1a1a',
+    darkElevated: '#141414',
   },
 
   // Text Colors
   text: {
-    primary: '#0f1729',
-    secondary: '#374151',
-    tertiary: '#6b7280',
-    muted: '#9ca3af',
-    onLight: '#0f1729',
+    primary: '#111111',
+    secondary: '#333333',
+    tertiary: '#666666',
+    muted: '#999999',
+    onLight: '#111111',
     onDark: '#ffffff',
     onDarkSecondary: 'rgba(255, 255, 255, 0.7)',
     onDarkMuted: 'rgba(255, 255, 255, 0.4)',
@@ -36,10 +36,10 @@ export const colors = {
 
   // Border Colors
   border: {
-    light: '#e5e7eb',
-    medium: '#d1d5db',
-    dark: '#f3f4f6',
-    subtle: '#e5e7eb',
+    light: '#e5e5e5',
+    medium: '#d1d1d1',
+    dark: '#f3f3f3',
+    subtle: '#e5e5e5',
     darkSubtle: 'rgba(255, 255, 255, 0.08)',
     darkMedium: 'rgba(255, 255, 255, 0.15)',
   },
