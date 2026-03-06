@@ -58,12 +58,6 @@ export default function HeroSection() {
 
   return (
     <section className={styles.hero} ref={heroRef}>
-      {/* Ambient background blobs for depth */}
-      <div className={styles.ambientBg}>
-        <div className={styles.blob1} />
-        <div className={styles.blob2} />
-      </div>
-
       {/* Hero Content */}
       <motion.div
         className={styles.heroContent}

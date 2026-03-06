@@ -1,7 +1,7 @@
-/* Proof Section */
+/* Proof Section - White background */
 .proofSection {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-secondary);
+  background: var(--color-bg-primary);
   position: relative;
 }
 
@@ -13,7 +13,7 @@
 
 /* Title */
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--font-size-display2);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -37,49 +37,43 @@
   z-index: 1;
 }
 
-/* Grid Items - Creating mosaic layout */
+/* Grid Items */
 .gridItem {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-xl);
   cursor: pointer;
   will-change: transform;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-md);
   z-index: 1;
 }
 
-/* Define grid areas for balanced mosaic effect */
-/* Large featured item - top left */
+/* Grid areas for mosaic */
 .item1 {
   grid-column: span 3;
   grid-row: span 3;
 }
 
-/* Medium horizontal - top middle */
 .item2 {
   grid-column: span 3;
   grid-row: span 2;
 }
 
-/* Tall item - top right */
 .item3 {
   grid-column: span 2;
   grid-row: span 3;
 }
 
-/* Wide item - bottom left */
 .item4 {
   grid-column: span 4;
   grid-row: span 2;
 }
 
-/* Medium square - bottom middle */
 .item5 {
   grid-column: span 2;
   grid-row: span 2;
 }
 
-/* Medium square - bottom right */
 .item6 {
   grid-column: span 2;
   grid-row: span 2;
@@ -101,7 +95,7 @@
 }
 
 .gridItem:hover .gridImage {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* Play Overlay */
@@ -152,7 +146,7 @@
 
 .ctaButton:hover {
   background: var(--color-gold-hover);
-  transform: scale(1.05);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-gold-lg);
 }
 

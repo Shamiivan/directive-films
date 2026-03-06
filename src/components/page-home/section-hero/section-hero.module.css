@@ -7,37 +7,7 @@
   overflow: hidden;
   padding-top: 160px;
   padding-bottom: 80px;
-  background: radial-gradient(circle at 50% 50%, #111111 0%, #0d0d0d 100%);
-}
-
-/* Ambient background blobs for depth */
-.ambientBg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.blob1 {
-  position: absolute;
-  top: 10%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(253, 183, 20, 0.06) 0%, transparent 70%);
-  border-radius: var(--radius-full);
-  filter: blur(80px);
-}
-
-.blob2 {
-  position: absolute;
-  bottom: 5%;
-  right: -10%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(253, 183, 20, 0.04) 0%, transparent 70%);
-  border-radius: var(--radius-full);
-  filter: blur(80px);
+  background: radial-gradient(circle at 50% 50%, #111827 0%, #0a1628 100%);
 }
 
 /* Eyebrow Label */
@@ -68,13 +38,13 @@
 }
 
 .heroTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(28px, 5vw + 16px, 64px);
   font-weight: 800;
   line-height: 1.1;
   letter-spacing: -0.02em;
   margin-bottom: var(--space-lg);
-  color: var(--color-text-primary);
+  color: var(--color-text-on-dark);
 }
 
 .gold {
@@ -86,7 +56,7 @@
   font-size: var(--font-size-body-lg);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-on-dark-secondary);
   margin-bottom: var(--space-xl);
   line-height: 1.6;
   max-width: 520px;
@@ -111,7 +81,7 @@
 
 .ctaButton:hover {
   background: var(--color-gold-hover);
-  box-shadow: 0 6px 28px rgba(253, 183, 20, 0.4);
+  box-shadow: var(--shadow-gold-hover);
 }
 
 /* Video Showcase */
@@ -182,7 +152,7 @@
 
 .brandLogo:hover img {
   opacity: 1;
-  filter: grayscale(0%) brightness(1) invert(0);
+  filter: grayscale(0%) brightness(1);
 }
 
 /* Responsive */
@@ -214,16 +184,6 @@
   .brandLogo {
     width: 44px;
     height: 30px;
-  }
-
-  .blob1 {
-    width: 300px;
-    height: 300px;
-  }
-
-  .blob2 {
-    width: 250px;
-    height: 250px;
   }
 }
 

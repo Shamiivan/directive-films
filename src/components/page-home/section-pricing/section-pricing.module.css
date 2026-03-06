@@ -1,6 +1,7 @@
+/* Pricing Section - White background */
 .pricingSection {
   padding: var(--section-padding) 0;
-  background: var(--color-white);
+  background: var(--color-bg-primary);
   position: relative;
 }
 
@@ -17,12 +18,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(32px, 4vw + 12px, 52px);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-lg);
 }
 
@@ -51,8 +52,8 @@
 
 /* Package Card */
 .packageCard {
-  background: var(--color-white);
-  border: 1px solid var(--color-border-subtle);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
   padding: 40px var(--space-xl);
   position: relative;
@@ -63,14 +64,14 @@
 }
 
 .packageCard.highlighted {
-  background: var(--color-white);
+  background: var(--color-bg-primary);
   border: 2px solid var(--color-gold);
-  box-shadow: 0 10px 30px rgba(253, 183, 20, 0.1);
+  box-shadow: var(--shadow-gold);
 }
 
 .packageCard:hover {
-  border-color: var(--color-gold);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+  border-color: var(--color-border-medium);
+  box-shadow: var(--shadow-md);
   transform: translateY(-4px);
 }
 
@@ -96,11 +97,11 @@
 }
 
 .packageName {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: 28px;
   font-weight: 700;
   letter-spacing: -0.01em;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   margin-bottom: var(--space-sm);
 }
 
@@ -116,14 +117,14 @@
 .offerDescription {
   margin-bottom: var(--space-xl);
   padding-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .description {
   font-family: var(--font-body);
   font-size: var(--font-size-body-sm);
   font-weight: 400;
-  color: var(--color-text-on-light);
+  color: var(--color-text-primary);
   line-height: 1.6;
   margin-bottom: var(--space-md);
 }
@@ -153,7 +154,7 @@
   font-size: var(--font-size-body-sm);
   font-weight: 400;
   letter-spacing: var(--letter-spacing-wide);
-  color: var(--color-text-on-light);
+  color: var(--color-text-primary);
   line-height: 1.5;
 }
 
@@ -175,7 +176,7 @@
 .ctaButton {
   width: 100%;
   background: transparent;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   border: 1px solid var(--color-gold);
   padding: 14px var(--space-xl);
   border-radius: var(--radius-3xl);
@@ -213,14 +214,14 @@
 .ctaButton.ctaHighlight:hover {
   background: var(--color-gold-hover);
   border-color: var(--color-gold-hover);
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 /* Bottom CTA */
 .bottomCta {
   text-align: center;
   padding-top: var(--space-xl);
-  border-top: 1px solid var(--color-border-subtle);
+  border-top: 1px solid var(--color-border-light);
 }
 
 .ctaText {

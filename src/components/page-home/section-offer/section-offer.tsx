@@ -65,8 +65,7 @@ function ServiceCard3D({ service, IconComponent, index }: { service: typeof serv
       style={tiltStyle}
       whileHover={{
         scale: 1.02,
-        borderColor: 'rgba(253, 183, 20, 0.5)',
-        boxShadow: '0 0 30px rgba(253, 183, 20, 0.15)',
+        y: -2,
       }}
     >
       <motion.div

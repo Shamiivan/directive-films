@@ -1,21 +1,9 @@
+/* CTA Section - Dark navy (contrast sandwich) */
 .ctaSection {
   padding: calc(var(--section-padding) * 1.5) 0;
-  background: #0d0d0d;
-  background-image:
-    radial-gradient(circle at 50% 110%, rgba(253, 183, 20, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 10% 10%, rgba(253, 183, 20, 0.03) 0%, transparent 30%);
+  background: var(--color-bg-dark);
   position: relative;
   overflow: hidden;
-}
-
-.ctaSection::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(253, 183, 20, 0.2), transparent);
 }
 
 .container {
@@ -31,12 +19,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(32px, 5vw + 12px, 64px);
   font-weight: 800;
   letter-spacing: -0.02em;
   line-height: 1.1;
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
   margin-bottom: var(--space-lg);
 }
 
@@ -45,7 +33,7 @@
   font-size: var(--font-size-h4);
   font-weight: 400;
   letter-spacing: 0.01em;
-  color: var(--color-text-secondary);
+  color: var(--color-text-on-dark-secondary);
   line-height: 1.6;
   margin-bottom: var(--space-lg);
 }
@@ -80,7 +68,7 @@
 
 .ctaButton:hover {
   background: var(--color-gold-hover);
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: var(--shadow-gold-hover);
 }
 

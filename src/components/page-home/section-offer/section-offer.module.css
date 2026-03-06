@@ -1,7 +1,7 @@
-/* Offer Section */
+/* Offer Section - Light gray background */
 .offerSection {
   padding: var(--section-padding) 0;
-  background: var(--color-bg-primary);
+  background: var(--color-bg-secondary);
   position: relative;
 }
 
@@ -17,7 +17,7 @@
 }
 
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(32px, 4vw + 12px, 52px);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -45,26 +45,27 @@
   gap: var(--space-lg);
 }
 
-/* Service Card */
+/* Service Card - White on light gray */
 .serviceCard {
   background: var(--color-bg-primary);
-  border: 1px solid rgba(253, 183, 20, 0.15);
-  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
   padding: var(--space-xl);
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: 320px;
   transition: all var(--transition-slow);
-  will-change: transform, border-color, box-shadow;
-  box-shadow: 0 0 20px rgba(253, 183, 20, 0.05);
+  will-change: transform, box-shadow;
+  box-shadow: var(--shadow-sm);
   text-decoration: none;
   cursor: pointer;
 }
 
 .serviceCard:hover {
-  border-color: rgba(253, 183, 20, 0.5);
-  box-shadow: 0 0 30px rgba(253, 183, 20, 0.15);
+  border-color: var(--color-border-medium);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
 }
 
 /* Icon */
@@ -79,12 +80,11 @@
 
 .serviceCard:hover .icon {
   opacity: 1;
-  filter: brightness(1.2);
 }
 
 /* Service Title */
 .serviceTitle {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: var(--font-size-h3);
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -123,8 +123,9 @@
 
 /* CTA Card */
 .ctaCard {
-  background: var(--color-bg-secondary);
-  border-radius: var(--radius-2xl);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xl);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -163,7 +164,7 @@
 
 .ctaButton:hover {
   background: var(--color-gold-hover);
-  transform: scale(1.05);
+  transform: scale(1.02);
   box-shadow: var(--shadow-gold-lg);
 }
 

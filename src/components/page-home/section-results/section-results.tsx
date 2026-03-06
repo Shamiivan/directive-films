@@ -88,9 +88,8 @@ export default function ResultsSection() {
               className={styles.serviceCard}
               variants={scrollReveal}
               whileHover={{
-                scale: 1.05,
-                y: -8,
-                boxShadow: "0 12px 32px rgba(253, 183, 20, 0.2)"
+                scale: 1.02,
+                y: -4,
               }}
               transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
             >

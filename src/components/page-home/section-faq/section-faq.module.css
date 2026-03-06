@@ -1,6 +1,7 @@
+/* FAQ Section - Light gray background */
 .faqSection {
   padding: var(--section-padding) 0;
-  background: var(--color-white);
+  background: var(--color-bg-secondary);
   position: relative;
 }
 
@@ -17,12 +18,12 @@
 }
 
 .title {
-  font-family: var(--font-display);
+  font-family: var(--font-body);
   font-size: clamp(32px, 4vw + 12px, 52px);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
-  color: var(--color-black);
+  color: var(--color-text-primary);
 }
 
 .gold {
@@ -36,7 +37,7 @@
 }
 
 .faqItem {
-  border-bottom: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .faqItem.open .icon {
@@ -71,7 +72,7 @@
   font-size: var(--font-size-h4);
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--color-black);
+  color: var(--color-text-primary);
   transition: color var(--transition-fast);
   padding-right: 20px;
 }
@@ -80,7 +81,7 @@
   flex-shrink: 0;
   width: 24px;
   height: 24px;
-  color: var(--color-text-tertiary);
+  color: var(--color-text-muted);
   transition: all var(--transition-slow);
 }
 
@@ -96,7 +97,7 @@
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
-  color: var(--color-text-on-light);
+  color: var(--color-text-secondary);
   margin: 0;
 }
 
