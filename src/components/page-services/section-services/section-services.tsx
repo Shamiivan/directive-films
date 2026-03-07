@@ -9,6 +9,7 @@ import styles from './section-services.module.css';
 function ServiceCardComponent({ service, index }: { service: ServiceCard; index: number }) {
   return (
     <motion.div
+      id={service.id}
       className={styles.card}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}

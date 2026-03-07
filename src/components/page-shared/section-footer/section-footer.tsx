@@ -31,11 +31,11 @@ export default function FooterSection() {
             <motion.div className={styles.linksColumn} variants={scrollReveal}>
               <h4 className={styles.columnTitle}>Services</h4>
               <ul className={styles.linkList}>
-                <li><Link to="/services" className={styles.link}>Online Presence Audit</Link></li>
-                <li><Link to="/services" className={styles.link}>Content Coaching</Link></li>
-                <li><Link to="/services" className={styles.link}>Video Production</Link></li>
-                <li><Link to="/services" className={styles.link}>CRM & Sales Systems</Link></li>
-                <li><Link to="/services" className={styles.link}>Web Development</Link></li>
+                <li><Link to="/services#audit" className={styles.link}>Online Presence Audit</Link></li>
+                <li><Link to="/services#coaching" className={styles.link}>Content Coaching</Link></li>
+                <li><Link to="/services#video" className={styles.link}>Video Production</Link></li>
+                <li><Link to="/services#crm" className={styles.link}>CRM & Sales Systems</Link></li>
+                <li><Link to="/services#web" className={styles.link}>Web Development</Link></li>
               </ul>
             </motion.div>
 
