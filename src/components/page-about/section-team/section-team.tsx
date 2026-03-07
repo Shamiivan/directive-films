@@ -3,25 +3,26 @@ import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal, gridStagger } from '@/utils/animations';
 import styles from './section-team.module.css';
 
+// TODO: Replace with real team members and headshots
 const teamMembers = [
   {
-    name: 'Alex Rivera',
-    role: 'Founder & Strategy Lead',
+    name: 'Founder',
+    role: 'Strategy & Sales',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
   },
   {
-    name: 'Sarah Chen',
-    role: 'Head of Web & CRM',
+    name: 'Web & CRM Lead',
+    role: 'Development & Systems',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
   },
   {
-    name: 'Marcus Johnson',
-    role: 'Sales Systems Architect',
+    name: 'Creative Director',
+    role: 'Video & Content',
     image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
   },
   {
-    name: 'Elena Vasquez',
-    role: 'Content & Coaching Lead',
+    name: 'Coach',
+    role: 'Content & Training',
     image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
   },
 ];
@@ -36,7 +37,7 @@ export default function TeamSection() {
             The people behind the <em className={styles.titleAccent}>system.</em>
           </h2>
           <p className={styles.subtitle}>
-            Sales operators, builders, and strategists who got tired of watching good businesses lose deals to bad funnels.
+            A small team that builds, shoots, codes, and coaches. We've all sold something before. That's why this works.
           </p>
         </motion.div>
 

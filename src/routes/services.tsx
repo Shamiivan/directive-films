@@ -7,7 +7,7 @@ export function meta(_args: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Five specialized services — audit, coaching, video production, web development, and CRM systems — connected into one growth system that drives revenue.",
+        "Five specialized services: audit, coaching, video production, web development, and CRM systems. Connected into one growth system that drives revenue.",
     },
   ];
 }

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import SectionEyebrow from '../../SectionEyebrow';
-import MagneticButton from '../../MagneticButton';
 import { scrollReveal, gridStagger } from '@/utils/animations';
 import styles from './section-why-we-create.module.css';
 
@@ -8,22 +7,22 @@ const features = [
   {
     icon: '01',
     title: 'Revenue is the metric.',
-    description: 'Work that doesn\'t convert is expensive decoration. We measure everything by what it puts in your pipeline.',
+    description: 'If it doesn\'t help you close deals, we don\'t do it.',
   },
   {
     icon: '02',
     title: 'Audit before you build.',
-    description: 'We don\'t prescribe before we understand. Every engagement starts with an audit of your sales ecosystem.',
+    description: 'We don\'t start building until we understand what\'s actually going on.',
   },
   {
     icon: '03',
     title: 'Systems beat one-offs.',
-    description: 'A redesigned homepage won\'t fix a broken funnel. We build systems that compound.',
+    description: 'A single video or landing page won\'t fix everything. We connect the pieces so they work together.',
   },
   {
     icon: '04',
-    title: 'Your team gets better.',
-    description: 'We don\'t create dependency. We set your team up to create, publish, and optimize without us.',
+    title: 'Your team should get better, not more dependent.',
+    description: 'We set your team up to keep going without us.',
   },
 ];
 
@@ -64,14 +63,6 @@ export default function WhyWeCreateSection() {
           />
         </motion.div>
 
-        <motion.div className={styles.cta} {...scrollReveal}>
-          <p className={styles.ctaText}>
-            You're leaving money on the table. 30-minute call. We audit your setup and show you where the gaps are.
-          </p>
-          <MagneticButton href="/contact" className={styles.ctaButton}>
-            Get Your Free Audit
-          </MagneticButton>
-        </motion.div>
       </div>
     </section>
   );

@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     question: 'How fast will I see results?',
-    answer: 'Sprint clients get a finished deliverable in 2 weeks. Growth Partner clients usually see real movement within 30-60 days — more leads, faster closes, higher conversion. It gets better over time as the pieces start working together.',
+    answer: 'Sprint clients get a finished deliverable in two weeks. Monthly clients usually see real movement in 30-60 days.',
   },
   {
     question: 'Can you work with the tools and team I already have?',
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     question: 'How do we get started?',
-    answer: 'A 30-minute call. We learn what you\'re working on, look at where you are, and tell you what we\'d focus on first. No pitch deck — just a straight conversation about your business.',
+    answer: 'A 30-minute call. We listen to what you\'re working on and tell you what we\'d focus on first. No deck, no pitch.',
   },
 ];
 

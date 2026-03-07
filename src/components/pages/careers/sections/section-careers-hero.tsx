@@ -11,10 +11,9 @@ export default function CareersHeroSection() {
           {...scrollReveal}
         >
           <div className={styles.leftSide}>
-            <h1 className={styles.title}>Join our team</h1>
+            <h1 className={styles.title}>Come build things that actually work.</h1>
             <p className={styles.description}>
-              We make videos that sell, build websites that convert, and set up systems that
-              close deals. If that sounds more interesting than "making content," keep reading.
+              Small team. Real clients. Your work ships and you see the results.
             </p>
           </div>
 

@@ -46,6 +46,16 @@
   font-weight: 500;
 }
 
+.riskReversal {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text-on-dark-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-lg);
+  font-style: italic;
+  opacity: 0.85;
+}
+
 .ctaWrapper {
   display: flex;
   justify-content: center;

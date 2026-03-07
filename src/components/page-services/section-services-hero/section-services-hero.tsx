@@ -20,13 +20,12 @@ export default function ServicesHeroSection() {
             <em className={styles.titleAccent}>sell online</em>
           </h1>
           <p className={styles.description}>
-            Five services. One method. For businesses that are good at what they do
-            but know their online presence isn't pulling its weight.
+            You're good at what you do. Your online presence just doesn't show it yet. We fix that.
           </p>
           <ul className={styles.outcomes}>
-            <li>More qualified leads from your website</li>
-            <li>Content that actually moves deals forward</li>
-            <li>A pipeline you can see and control</li>
+            <li>A website that actually represents your work</li>
+            <li>Content built around how you sell</li>
+            <li>A system you can see working</li>
           </ul>
           <motion.div
             className={styles.ctaWrapper}
@@ -39,9 +38,8 @@ export default function ServicesHeroSection() {
             }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              Book a Strategy Call
+              Tell us what you need
             </MagneticButton>
-            <span className={styles.ctaNote}>30 min. No commitment.</span>
           </motion.div>
         </motion.div>
 

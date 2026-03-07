@@ -23,20 +23,20 @@ export default function HowWeDoItSection() {
   const steps = [
     {
       number: '01',
-      title: 'Audit & Strategy',
-      description: 'We look at your website, CRM, content, and sales process. We figure out what\'s working, what\'s not, and what to focus on first.',
+      title: 'Look at what you have',
+      description: 'We go through your site, content, CRM, and sales process. You get a clear picture of what\'s working and what isn\'t.',
       image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=800&fit=crop',
     },
     {
       number: '02',
-      title: 'Build & Create',
-      description: 'We build what you need — the website, the videos, the CRM, the content setup. Whatever the audit says will make the biggest difference.',
+      title: 'Fix the gaps',
+      description: 'We build or rebuild the pieces that matter most. A page, a video, an email sequence. Whatever moves the needle first.',
       image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&h=800&fit=crop',
     },
     {
       number: '03',
-      title: 'Optimize & Scale',
-      description: 'We track leads generated, deals closed, and pipeline velocity. Then we iterate — tighter sequences, stronger content, better conversion. Growth compounds when every piece improves together.',
+      title: 'Track what matters',
+      description: 'We set up dashboards so you can see what\'s actually driving results. No vanity metrics.',
       image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop',
     },
   ];
@@ -50,9 +50,9 @@ export default function HowWeDoItSection() {
             className={styles.leftColumn}
             {...scrollReveal}
           >
-            <SectionEyebrow label="Our Offer" description="" />
+            <SectionEyebrow label="How it works" description="" />
             <h2 className={styles.title}>
-              Growth Partner That Turns Content into <span className={styles.highlight}>Revenue</span>
+              Three steps. Nothing <span className={styles.highlight}>complicated.</span>
             </h2>
             <div className={styles.divider}></div>
 

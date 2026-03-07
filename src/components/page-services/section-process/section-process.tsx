@@ -15,7 +15,7 @@ export default function ProcessSection() {
   const steps = [
     {
       title: 'Discovery',
-      description: 'We learn your business, your audience, and what makes you different. No templates — just a plan built for your specific situation.',
+      description: 'We learn your business, your audience, and what makes you different. No templates. Just a plan built for your specific situation.',
     },
     {
       title: 'Strategy',
@@ -23,7 +23,7 @@ export default function ProcessSection() {
     },
     {
       title: 'Production',
-      description: 'Professional crew, cinema-grade gear, and attention to every detail. We handle the set — you focus on being yourself on camera.',
+      description: 'Professional crew, cinema-grade gear, and attention to every detail. We handle the set. You focus on being yourself on camera.',
     },
     {
       title: 'Optimization',

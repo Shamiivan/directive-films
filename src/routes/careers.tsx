@@ -6,7 +6,7 @@ export function meta(_args: Route.MetaArgs) {
     { title: "Careers - DirectiveFilms" },
     {
       name: "description",
-      content: "Join the DirectiveFilms team - explore career opportunities",
+      content: "Small team, real clients, real results. Come build things that actually work.",
     },
   ];
 }

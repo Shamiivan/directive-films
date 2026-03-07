@@ -7,7 +7,7 @@ export function meta(_args: Route.MetaArgs) {
     {
       name: "description",
       content:
-        "Award-winning video production and marketing that generates measurable results",
+        "We connect your content, website, and sales process so they work together. Video production, web dev, CRM, and coaching for B2B teams.",
     },
   ];
 }

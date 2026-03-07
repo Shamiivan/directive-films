@@ -2,7 +2,6 @@ import NavSection from '../../page-shared/section-nav/section-nav';
 import ServicesHeroSection from '../../page-services/section-services-hero/section-services-hero';
 import SectionMethod from '../../page-services/section-method/section-method';
 import SectionServices from '../../page-services/section-services/section-services';
-import SectionProof from '../../page-services/section-proof/section-proof';
 import FaqSection from '../../page-services/section-faq/section-faq';
 import CtaSection from '../../page-services/section-cta/section-cta';
 import FooterSection from '../../page-shared/section-footer/section-footer';
@@ -15,7 +14,6 @@ export default function ServicesPage() {
       <ServicesHeroSection />
       <SectionMethod />
       <SectionServices />
-      <SectionProof />
       <FaqSection />
       <CtaSection />
       <FooterSection />

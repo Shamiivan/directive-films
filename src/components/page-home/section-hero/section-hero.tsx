@@ -81,13 +81,12 @@ export default function HeroSection() {
           className={styles.heroSubtitle}
           variants={fadeInUp}
         >
-          Grow Partner That Turns Content into
-          <strong> Revenue</strong>
+          We connect your videos, website, and sales process so they actually work together.
         </motion.p>
 
         <motion.div variants={fadeInUp}>
-          <MagneticButton href="/contact" className={styles.ctaButton}>
-            Book a Strategy Call
+          <MagneticButton href="/services" className={styles.ctaButton}>
+            See how it works
           </MagneticButton>
         </motion.div>
 
@@ -118,6 +117,9 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Brand Logos */}
+        <motion.p className={styles.logoContext} variants={fadeInUp}>
+          We've worked with teams at
+        </motion.p>
         <motion.div
           className={styles.brandLogos}
           variants={fadeInUp}

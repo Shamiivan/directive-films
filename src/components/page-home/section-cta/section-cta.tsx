@@ -13,8 +13,11 @@ export default function CtaSection() {
           {...scrollReveal}
         >
           <h2 className={styles.title}>
-            Let's talk about your business
+            Want to see what we'd focus on first?
           </h2>
+          <p className={styles.riskReversal}>
+            The first conversation is free. If we're not the right fit, we'll tell you. And we'll point you to someone who is.
+          </p>
           <RotatingProofLine />
           <motion.div
             className={styles.ctaWrapper}
@@ -24,7 +27,7 @@ export default function CtaSection() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              Book Your Strategy Call
+              Let's talk
             </MagneticButton>
           </motion.div>
         </motion.div>

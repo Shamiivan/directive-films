@@ -6,7 +6,7 @@ export function meta(_args: Route.MetaArgs) {
     { title: "About - DirectiveFilms" },
     {
       name: "description",
-      content: "Learn about DirectiveFilms and our mission",
+      content: "We came from sales, not marketing school. We built one system that connects your content to how you actually sell.",
     },
   ];
 }

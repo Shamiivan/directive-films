@@ -66,9 +66,9 @@ export default function PricingSection() {
 
   const offers: OfferType[] = [
     {
-      name: 'Growth',
-      headline: 'One problem. Two weeks. Done.',
-      description: 'You know what\'s broken — you just need someone to fix it. We take one thing off your plate and deliver it fast.',
+      name: 'Sprint',
+      headline: 'One thing, done right.',
+      description: 'You know what needs fixing. We take it on, deliver it in two weeks, and hand it back.',
       bestFor: 'A single deliverable: a video, a landing page, a CRM setup, or an audit with a clear action plan.',
       includes: [
         'Online presence audit',
@@ -83,10 +83,10 @@ export default function PricingSection() {
       hoverText: 'Let\'s Talk →',
     },
     {
-      name: 'Scaling',
-      headline: 'Ongoing systems that compound.',
-      description: 'You want consistent content, a real sales system, and someone who actually owns it month to month. That\'s us.',
-      bestFor: 'Businesses ready to build a content engine, optimize their pipeline, and grow without guessing.',
+      name: 'Growth',
+      headline: 'The full setup, month to month.',
+      description: 'Content, CRM, website. We keep it all moving. Monthly check-ins, real numbers.',
+      bestFor: 'Businesses that want consistent content, a real sales system, and someone who owns it.',
       includes: [
         'Full audit & growth strategy',
         'Monthly content production (3 videos)',
@@ -98,16 +98,16 @@ export default function PricingSection() {
         'Dedicated growth strategist',
       ],
       highlight: true,
-      ctaText: 'Start Scaling',
-      hoverText: 'Book Strategy Call →',
+      ctaText: 'Get Started',
+      hoverText: 'Let\'s Talk →',
     },
     {
-      name: 'Enterprise',
-      headline: 'Your growth team, on demand.',
-      description: 'You need creative, dev, and strategy working together — without hiring six people. We embed with your team and scale with you.',
-      bestFor: 'Companies running multi-platform campaigns who need a dedicated team that moves fast.',
+      name: 'Scale',
+      headline: 'Your team, without the hiring.',
+      description: 'We work alongside your people. Strategy, creative, and dev. As much or as little as you need.',
+      bestFor: 'Companies that need a dedicated team without the overhead of hiring.',
       includes: [
-        'Everything in Scaling',
+        'Everything in Growth',
         'Dedicated creative & dev team',
         'Multi-platform campaign strategy',
         'Advanced analytics & A/B testing',
@@ -118,7 +118,7 @@ export default function PricingSection() {
       ],
       highlight: false,
       ctaText: 'Contact Us',
-      hoverText: 'Meet the Team →',
+      hoverText: 'Let\'s Talk →',
     },
   ];
 
@@ -225,11 +225,11 @@ export default function PricingSection() {
         {/* Bottom CTA */}
         <motion.div className={styles.bottomCta} {...scrollReveal}>
           <p className={styles.ctaText}>
-            Not sure which fits?{' '}
+            Not sure?{' '}
+            That's fine. We'll figure it out on a call.{' '}
             <a href="/contact" className={styles.ctaLink}>
-              Book a free strategy call
-            </a>{' '}
-            — we'll figure it out together.
+              Let's talk
+            </a>
           </p>
         </motion.div>
       </div>

@@ -6,17 +6,17 @@ import styles from './section-process.module.css';
 const processSteps = [
   {
     title: 'Audit',
-    description: 'We dig into your sales ecosystem — website, CRM, content, pipeline. Find the gaps. Map the opportunities.',
+    description: 'We start by listening. What are you selling? What\'s your site saying? Where do leads go after they show up?',
     image: '/images/pre-production.jpg',
   },
   {
     title: 'Build',
-    description: 'Web, CRM, coaching, content, strategy — one connected system. Not five separate invoices.',
+    description: 'We make the things you need. The site, the videos, the CRM setup. One team, not five vendors.',
     image: '/images/production.jpg',
   },
   {
     title: 'Scale',
-    description: 'Systems that compound. Your team gets sharper, your pipeline gets fuller, and growth accelerates.',
+    description: 'We make sure it keeps working. Your team learns the system. Results get tracked. Things get better over time.',
     image: '/images/post-production.jpg',
   },
 ];
@@ -29,7 +29,7 @@ export default function ProcessSection() {
           <SectionEyebrow label="Our Story" description="How we got here" />
           <h2 className={styles.title}>We built what we <em className={styles.titleAccent}>couldn't find.</em></h2>
           <p className={styles.subtitle}>
-            Agencies sell disconnected projects. We built one system that turns your content into revenue.
+            We spent years in sales watching good companies lose deals because their online presence didn't reflect how good they actually were. Agencies would charge a fortune for content that looked great and did nothing. So we built the thing we kept wishing existed. One team that connects your content to how you actually sell.
           </p>
         </motion.div>
 

@@ -36,10 +36,6 @@ export default function SectionMethod() {
                 <div className={styles.stepNumber}>{step.number}</div>
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDescription}>{step.description}</p>
-                <div className={styles.stepDeliverable}>
-                  <span className={styles.deliverableLabel}>Deliverable:</span>{' '}
-                  {step.deliverable}
-                </div>
                 {i < methodSteps.length - 1 && (
                   <div className={styles.connector} />
                 )}

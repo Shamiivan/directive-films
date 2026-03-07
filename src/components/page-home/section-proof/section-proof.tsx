@@ -37,13 +37,12 @@ export default function ProofSection() {
     <section className={styles.proofSection}>
       <div className={styles.container}>
         {/* Title */}
-        <SectionEyebrow label="Our Work" description="See the results" />
+        <SectionEyebrow label="Our Work" description="See what we've built" />
         <motion.h2
           className={styles.title}
           {...scrollReveal}
         >
-          50+ projects delivered.<br />
-          Here's what growth looks like.
+          Some of what we've built.
         </motion.h2>
 
         {/* Image Grid/Mosaic */}

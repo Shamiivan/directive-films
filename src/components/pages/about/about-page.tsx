@@ -11,9 +11,9 @@ export default function AboutPage() {
     <div className={styles.page}>
       <NavSection />
       <AboutHeroSection />
-      <TeamSection />
-      <WhyWeCreateSection />
       <ProcessSection />
+      <WhyWeCreateSection />
+      <TeamSection />
       <FooterSection />
     </div>
   );

@@ -18,27 +18,27 @@ const iconComponents = [
 const services = [
   {
     title: 'Audit',
-    description: 'We look at your website, socials, and messaging and tell you what\'s actually working and what isn\'t. You get a clear plan — and we help you run it.',
+    description: 'We look at your online presence and tell you what\'s actually working. Honest assessment, clear next steps.',
     href: '/services',
   },
   {
     title: 'Coach',
-    description: 'We set up your studio, train your team, and give them a playbook. After that, they make professional content on their own.',
+    description: 'We set up your team to make their own content. Studio, playbook, training. Then they\'re on their own.',
     href: '/services',
   },
   {
     title: 'Create',
-    description: 'We produce the videos. Scripted around your sales process.',
+    description: 'We make the videos. Scripted around how you actually sell.',
     href: '/services',
   },
   {
     title: 'Optimize',
-    description: 'We set up your CRM properly — sequences, follow-ups, dashboards. So you always know what\'s working and leads don\'t fall through.',
+    description: 'We set up your CRM so leads don\'t fall through the cracks. Sequences, follow-ups, dashboards.',
     href: '/services',
   },
   {
     title: 'Build',
-    description: 'Fast websites that say what you do, capture leads, and book meetings.',
+    description: 'Websites that say what you do, load fast, and capture leads.',
     href: '/services',
   },
 ];
@@ -94,9 +94,9 @@ export default function OfferSection() {
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
           <SectionEyebrow label="Services" description="What we do" />
-          <h2 className={styles.title}>How we get you there</h2>
+          <h2 className={styles.title}>What we actually do</h2>
           <p className={styles.subtitle}>
-            We do five things and we make sure they actually work together. Here's what that looks like.
+            Five things. They're designed to connect, but you don't need all of them.
           </p>
         </motion.div>
 
@@ -119,12 +119,12 @@ export default function OfferSection() {
             whileHover={{ scale: 1.02 }}
           >
             <p className={styles.ctaText}>
-              Ready to <span className={styles.growing}>grow</span>?
+              Not sure where to start?
               <br />
-              Let's figure out where to start.
+              We can help you figure that out.
             </p>
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              Book a Free Strategy Call
+              Let's talk
             </MagneticButton>
           </motion.div>
         </div>

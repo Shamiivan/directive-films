@@ -6,7 +6,7 @@ export function meta(_args: Route.MetaArgs) {
     { title: "Contact - DirectiveFilms" },
     {
       name: "description",
-      content: "Get in touch with DirectiveFilms for your next project",
+      content: "Tell us what you're working on. We'll get back within 24 hours with honest thoughts on how we might help.",
     },
   ];
 }

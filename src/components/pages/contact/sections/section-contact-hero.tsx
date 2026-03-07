@@ -14,9 +14,9 @@ export default function ContactHeroSection() {
         >
           <div className={styles.leftSide}>
             <span className={styles.heroLabel}>Contact</span>
-            <h1 className={styles.title}>Get in <em className={styles.titleAccent}>touch</em></h1>
+            <h1 className={styles.title}>Tell us what you're <em className={styles.titleAccent}>working on.</em></h1>
             <p className={styles.description}>
-              Tell us what you're working on. We'll get back to you within 24 hours with honest feedback on how we can help.
+              We'll get back within 24 hours with honest thoughts on how we might help.
             </p>
 
             <div className={styles.contactInfo}>

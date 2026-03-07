@@ -20,8 +20,7 @@ export default function AboutHeroSection() {
             <em className={styles.titleAccent}>school.</em>
           </h1>
           <p className={styles.description}>
-            We've closed deals, built pipelines, and generated revenue.<br />
-            Then we built the systems to do it at scale.
+            We know what it's like to lose a deal because your website didn't show how good you actually are. That's why we built this.
           </p>
           <motion.div
             className={styles.ctaWrapper}
@@ -30,7 +29,7 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              Get Your Free Audit
+              Let's talk
             </MagneticButton>
           </motion.div>
         </motion.div>

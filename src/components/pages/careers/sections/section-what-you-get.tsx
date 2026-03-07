@@ -18,12 +18,12 @@ export default function WhatYouGetSection() {
     {
       icon: Target,
       title: 'Autonomy With Accountability',
-      description: 'High performers earn flexibility in how they structure their time. The standards don\'t change — only how you manage yourself does.',
+      description: 'High performers earn flexibility in how they structure their time. The standards don\'t change, only how you manage yourself does.',
     },
     {
       icon: Users,
       title: 'Work Directly With Leadership',
-      description: 'Small team, flat structure. You\'ll work alongside founders and senior creatives — not get buried in a department.',
+      description: 'Small team, flat structure. You\'ll work alongside founders and senior creatives, not buried in a department.',
     },
   ];
 

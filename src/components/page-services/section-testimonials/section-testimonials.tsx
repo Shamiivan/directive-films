@@ -3,26 +3,15 @@ import SectionEyebrow from '../../SectionEyebrow';
 import styles from './section-testimonials.module.css';
 
 export default function TestimonialsSection() {
-  const testimonials = [
-    {
-      quote: 'Our close rate went from 18% to 34% in three months. They made the videos, plugged them into our sales process, and it just started working.',
-      author: 'Sarah Chen',
-      role: 'VP of Sales, TechCorp',
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop'
-    },
-    {
-      quote: 'They looked at everything — site, CRM, content — told us what to fix first, then actually fixed it. Qualified leads tripled in four months.',
-      author: 'Michael Rodriguez',
-      role: 'CEO, GrowthLabs',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop'
-    },
-    {
-      quote: 'New CRM, new site, trained our sales team on video outreach. For the first time everything\'s connected and our sales cycle dropped by 40%.',
-      author: 'Emily Watson',
-      role: 'CMO, Scale Ventures',
-      image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=100&h=100&fit=crop'
-    },
-  ];
+  // TODO: Replace with real client testimonials when available
+  const testimonials: {
+    quote: string;
+    author: string;
+    role: string;
+    image: string;
+  }[] = [];
+
+  if (testimonials.length === 0) return null;
 
   return (
     <section className={styles.section}>

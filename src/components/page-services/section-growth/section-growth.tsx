@@ -16,11 +16,11 @@ export default function GrowthSection() {
   const services = [
     {
       title: 'Video Sales Systems',
-      description: 'A full video library for your sales team — objection handlers, case studies, demos, and email sequences. One system, not scattered files that sit unused.',
+      description: 'A full video library for your sales team. Objection handlers, case studies, demos, and email sequences. One system, not scattered files that sit unused.',
     },
     {
       title: 'Performance Video Campaigns',
-      description: 'Campaigns built around one goal: more leads, demos, or closed deals. Creative, media buying consultation, and landing page strategy — everything points to one number.',
+      description: 'Campaigns built around one goal: more leads, demos, or closed deals. Creative, media buying consultation, and landing page strategy. Everything points to one number.',
     },
     {
       title: 'Sales Team Video Enablement',
@@ -32,7 +32,7 @@ export default function GrowthSection() {
     },
     {
       title: 'Creative Problem Solving',
-      description: 'Stuck on how to explain something complex? Need to stand out in a crowded market? We solve the hard creative problems — the ones where "make it pretty" isn\'t enough.',
+      description: 'Stuck on how to explain something complex? Need to stand out in a crowded market? We solve the hard creative problems, the ones where "make it pretty" isn\'t enough.',
     },
   ];
 
