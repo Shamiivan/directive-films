@@ -1,48 +1,42 @@
 import { motion } from 'framer-motion';
-import MagneticButton from '../../MagneticButton';
+import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
-import { scrollReveal, imageZoom } from '../../../utils/animations';
+import { scrollReveal } from '../../../utils/animations';
 import styles from './section-proof.module.css';
 
+interface PortfolioItem {
+  alt: string;
+}
+
+const portfolioImageUrls = [
+  'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1540655037529-dec987208707?w=600&h=400&fit=crop',
+  'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop',
+];
+
 export default function ProofSection() {
-  // Portfolio images with descriptive alt text for accessibility
-  const portfolioImages = [
-    {
-      url: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=600&h=400&fit=crop',
-      alt: 'Video production crew filming corporate interview in professional studio',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=600&h=400&fit=crop',
-      alt: 'Film crew setting up lighting equipment for commercial video shoot',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600&h=400&fit=crop',
-      alt: 'Professional photographer with camera on set',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?w=600&h=400&fit=crop',
-      alt: 'Professional video camera on dolly track during film production',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1540655037529-dec987208707?w=600&h=400&fit=crop',
-      alt: 'Director reviewing footage on monitor during video shoot',
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1485846234645-a62644f84728?w=600&h=400&fit=crop',
-      alt: 'Film production behind the scenes with cinema camera',
-    },
-  ];
+  const { t } = useTranslation('home');
+  const localizedItems = t('proof.items', { returnObjects: true }) as PortfolioItem[];
+
+  // Combine localized alt text with URLs
+  const portfolioImages = localizedItems.map((item, i) => ({
+    ...item,
+    url: portfolioImageUrls[i] || portfolioImageUrls[0],
+  }));
 
   return (
     <section className={styles.proofSection}>
       <div className={styles.container}>
         {/* Title */}
-        <SectionEyebrow label="Our Work" description="See what we've built" />
+        <SectionEyebrow label={t('proof.eyebrow')} description={t('proof.description')} />
         <motion.h2
           className={styles.title}
           {...scrollReveal}
         >
-          Some of what we've built.
+          {t('proof.title')}
         </motion.h2>
 
         {/* Image Grid/Mosaic */}

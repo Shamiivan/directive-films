@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
 import styles from './section-services-hero.module.css';
 
 export default function ServicesHeroSection() {
+  const { t } = useTranslation('services');
+  const outcomes = t('hero.outcomes', { returnObjects: true }) as string[];
+
   return (
     <section className={styles.heroSection}>
       <div className={styles.overlay} />
@@ -14,18 +18,18 @@ export default function ServicesHeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <span className={styles.label}>Our Services</span>
+          <span className={styles.label}>{t('hero.label')}</span>
           <h1 className={styles.title}>
-            We fix how you{' '}
-            <em className={styles.titleAccent}>sell online</em>
+            {t('hero.title')}{' '}
+            <em className={styles.titleAccent}>{t('hero.accent')}</em>
           </h1>
           <p className={styles.description}>
-            You're good at what you do. Your online presence just doesn't show it yet. We fix that.
+            {t('hero.description')}
           </p>
           <ul className={styles.outcomes}>
-            <li>A website that actually represents your work</li>
-            <li>Content built around how you sell</li>
-            <li>A system you can see working</li>
+            {outcomes.map((outcome, i) => (
+              <li key={i}>{outcome}</li>
+            ))}
           </ul>
           <motion.div
             className={styles.ctaWrapper}
@@ -38,7 +42,7 @@ export default function ServicesHeroSection() {
             }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              Tell us what you need
+              {t('hero.cta')}
             </MagneticButton>
           </motion.div>
         </motion.div>

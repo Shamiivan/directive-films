@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
 import RotatingProofLine from '../../RotatingProofLine';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-cta.module.css';
 
 export default function CtaSection() {
+  const { t } = useTranslation('home');
+
   return (
     <section className={styles.ctaSection}>
       <div className={styles.container}>
@@ -13,10 +16,10 @@ export default function CtaSection() {
           {...scrollReveal}
         >
           <h2 className={styles.title}>
-            Want to see what we'd focus on first?
+            {t('ctaSection.title')}
           </h2>
           <p className={styles.riskReversal}>
-            The first conversation is free. If we're not the right fit, we'll tell you. And we'll point you to someone who is.
+            {t('ctaSection.riskReversal')}
           </p>
           <RotatingProofLine />
           <motion.div
@@ -27,7 +30,7 @@ export default function CtaSection() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              Let's talk
+              {t('ctaSection.button')}
             </MagneticButton>
           </motion.div>
         </motion.div>

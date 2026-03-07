@@ -1,0 +1,49 @@
+{
+    "hero": {
+        "label": "Contact",
+        "title": "Dites-nous ce que vous",
+        "accent": "préparez.",
+        "description": "Nous vous répondrons dans les 24 heures avec des réflexions honnêtes sur la façon dont nous pourrions vous aider.",
+        "info": {
+            "email": {
+                "label": "Email",
+                "value": "info@directivefilms.com"
+            },
+            "phone": {
+                "label": "Téléphone",
+                "value": "+1 514-555-0100"
+            },
+            "location": {
+                "label": "Localisation",
+                "value": "Montréal, QC"
+            }
+        },
+        "form": {
+            "title": "Envoyez-nous un message",
+            "subtitle": "Parlez-nous de votre projet et nous vous répondrons dans les 24 heures.",
+            "fields": {
+                "name": {
+                    "label": "Nom *",
+                    "placeholder": "Votre nom"
+                },
+                "email": {
+                    "label": "Email *",
+                    "placeholder": "votre@email.com"
+                },
+                "company": {
+                    "label": "Entreprise",
+                    "placeholder": "Votre entreprise"
+                },
+                "phone": {
+                    "label": "Téléphone",
+                    "placeholder": "+1 (555) 000-0000"
+                },
+                "message": {
+                    "label": "Message *",
+                    "placeholder": "Parlez-nous de votre projet..."
+                }
+            },
+            "submit": "Envoyer le message"
+        }
+    }
+}

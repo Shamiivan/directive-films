@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { useLocalePath } from '../../../hooks/useLocalePath';
+import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
 import AnimatedNav from '../../AnimatedNav';
 import styles from './section-nav.module.css';
 
@@ -11,6 +14,7 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
+  const l = useLocalePath();
 
   const springConfig = { damping: 15, stiffness: 150 };
   const xSpring = useSpring(x, springConfig);
@@ -33,7 +37,7 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
   return (
     <MotionLink
       ref={ref}
-      to={to}
+      to={l(to)}
       data-sticky-cursor
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -49,6 +53,8 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
 export default function NavSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const l = useLocalePath();
+  const { t } = useTranslation();
 
   // Static colors — nav stays dark throughout
   const logoColor = '#ffffff';
@@ -95,7 +101,7 @@ export default function NavSection() {
     <>
       <AnimatedNav className={`${styles.nav} ${scrolled ? styles.navVisible : styles.navHidden}`}>
         <MotionLink
-          to="/"
+          to={l("/")}
           className={styles.logo}
           data-sticky-cursor
           style={{ color: logoColor }}
@@ -109,28 +115,31 @@ export default function NavSection() {
         {/* Desktop Navigation - With Magnetic Effect */}
         <ul className={styles.navList}>
           <li>
-            <MagneticNavLink to="/">HOME</MagneticNavLink>
+            <MagneticNavLink to="/">{t('nav.home')}</MagneticNavLink>
           </li>
           <li>
-            <MagneticNavLink to="/services">SERVICES</MagneticNavLink>
+            <MagneticNavLink to="/services">{t('nav.services')}</MagneticNavLink>
           </li>
           <li>
-            <MagneticNavLink to="/about">ABOUT US</MagneticNavLink>
+            <MagneticNavLink to="/about">{t('nav.about')}</MagneticNavLink>
           </li>
           <li>
-            <MagneticNavLink to="/careers">CAREERS</MagneticNavLink>
+            <MagneticNavLink to="/careers">{t('nav.careers')}</MagneticNavLink>
+          </li>
+          <li className={styles.langSwitcherDesktop}>
+            <LanguageSwitcher />
           </li>
         </ul>
 
         <MotionLink
-          to="/contact"
+          to={l("/contact")}
           className={styles.navBtn}
           data-sticky-cursor
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.2 }}
         >
-          Contact Us
+          {t('nav.contact')}
         </MotionLink>
 
         {/* Hamburger Menu Button */}
@@ -179,28 +188,31 @@ export default function NavSection() {
               <nav className={styles.mobileNav}>
                 <ul className={styles.mobileNavList}>
                   <li>
-                    <Link to="/" onClick={handleLinkClick}>
-                      HOME
+                    <Link to={l("/")} onClick={handleLinkClick}>
+                      {t('nav.home')}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/services" onClick={handleLinkClick}>
-                      SERVICES
+                    <Link to={l("/services")} onClick={handleLinkClick}>
+                      {t('nav.services')}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/about" onClick={handleLinkClick}>
-                      ABOUT US
+                    <Link to={l("/about")} onClick={handleLinkClick}>
+                      {t('nav.about')}
                     </Link>
                   </li>
                   <li>
-                    <Link to="/careers" onClick={handleLinkClick}>
-                      CAREERS
+                    <Link to={l("/careers")} onClick={handleLinkClick}>
+                      {t('nav.careers')}
                     </Link>
+                  </li>
+                  <li className={styles.mobileLangSwitcher}>
+                    <LanguageSwitcher />
                   </li>
                   <li className={styles.mobileContactItem}>
-                    <Link to="/contact" onClick={handleLinkClick} className={styles.mobileContactBtn}>
-                      Contact Us
+                    <Link to={l("/contact")} onClick={handleLinkClick} className={styles.mobileContactBtn}>
+                      {t('nav.contact')}
                     </Link>
                   </li>
                 </ul>

@@ -4,16 +4,41 @@
   "buildCommand": "pnpm build",
   "outputDirectory": "build/client",
   "redirects": [
-    { "source": "/services/diagnose", "destination": "/services#diagnose", "statusCode": 301 },
-    { "source": "/services/coach", "destination": "/services#coach", "statusCode": 301 },
-    { "source": "/services/create", "destination": "/services#create", "statusCode": 301 },
-    { "source": "/services/optimize", "destination": "/services#optimize", "statusCode": 301 },
-    { "source": "/services/build", "destination": "/services#build", "statusCode": 301 }
+    {
+      "source": "/",
+      "destination": "/en",
+      "permanent": false
+    },
+    {
+      "source": "/services/diagnose",
+      "destination": "/en/services#diagnose",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/coach",
+      "destination": "/en/services#coach",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/create",
+      "destination": "/en/services#create",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/optimize",
+      "destination": "/en/services#optimize",
+      "statusCode": 301
+    },
+    {
+      "source": "/services/build",
+      "destination": "/en/services#build",
+      "statusCode": 301
+    }
   ],
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/index.html"
+      "destination": "/__spa-fallback.html"
     }
   ]
 }

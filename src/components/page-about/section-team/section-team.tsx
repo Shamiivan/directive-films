@@ -1,43 +1,41 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal, gridStagger } from '@/utils/animations';
 import styles from './section-team.module.css';
 
-// TODO: Replace with real team members and headshots
-const teamMembers = [
-  {
-    name: 'Founder',
-    role: 'Strategy & Sales',
-    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'Web & CRM Lead',
-    role: 'Development & Systems',
-    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'Creative Director',
-    role: 'Video & Content',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
-  },
-  {
-    name: 'Coach',
-    role: 'Content & Training',
-    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
-  },
+interface TeamMember {
+  name: string;
+  role: string;
+}
+
+const teamMemberImages = [
+  'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=face',
+  'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=face',
+  'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face',
+  'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=face',
 ];
 
 export default function TeamSection() {
+  const { t } = useTranslation('about');
+  const localizedMembers = t('team.members', { returnObjects: true }) as TeamMember[];
+
+  const teamMembers = localizedMembers.map((member, i) => ({
+    ...member,
+    image: teamMemberImages[i] || teamMemberImages[0],
+  }));
+
   return (
     <section className={styles.teamSection}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label="The Team" description="Who we are" />
+          <SectionEyebrow label={t('team.eyebrow')} description={t('team.description')} />
           <h2 className={styles.title}>
-            The people behind the <em className={styles.titleAccent}>system.</em>
+            {t('team.title')}{' '}
+            <em className={styles.titleAccent}>{t('team.accent')}</em>
           </h2>
           <p className={styles.subtitle}>
-            A small team that builds, shoots, codes, and coaches. We've all sold something before. That's why this works.
+            {t('team.subtitle')}
           </p>
         </motion.div>
 

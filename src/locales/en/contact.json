@@ -1,0 +1,49 @@
+{
+    "hero": {
+        "label": "Contact",
+        "title": "Tell us what you're",
+        "accent": "working on.",
+        "description": "We'll get back within 24 hours with honest thoughts on how we might help.",
+        "info": {
+            "email": {
+                "label": "Email",
+                "value": "info@directivefilms.com"
+            },
+            "phone": {
+                "label": "Phone",
+                "value": "+1 514-555-0100"
+            },
+            "location": {
+                "label": "Location",
+                "value": "Montreal, QC"
+            }
+        },
+        "form": {
+            "title": "Send us a message",
+            "subtitle": "Tell us about your project and we'll get back to you within 24 hours.",
+            "fields": {
+                "name": {
+                    "label": "Name *",
+                    "placeholder": "Your name"
+                },
+                "email": {
+                    "label": "Email *",
+                    "placeholder": "your@email.com"
+                },
+                "company": {
+                    "label": "Company",
+                    "placeholder": "Your company"
+                },
+                "phone": {
+                    "label": "Phone",
+                    "placeholder": "+1 (555) 000-0000"
+                },
+                "message": {
+                    "label": "Message *",
+                    "placeholder": "Tell us about your project..."
+                }
+            },
+            "submit": "Send Message"
+        }
+    }
+}

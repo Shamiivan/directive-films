@@ -1,14 +1,14 @@
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import SplitType from 'split-type';
+import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
 import { fadeInUp, fadeInScale } from '../../../utils/animations';
 import VideoStrip from './video-strip';
 import styles from './section-hero.module.css';
 
 export default function HeroSection() {
+  const { t } = useTranslation('home');
   const heroRef = useRef(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -18,44 +18,6 @@ export default function HeroSection() {
   // Scale down hero content as you scroll
   const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.8, 0.5]);
-
-  // Text splitting for hero title - LINE BY LINE reveal
-  useEffect(() => {
-    if (!titleRef.current) return;
-
-    const timer = setTimeout(() => {
-      const split = new SplitType(titleRef.current!, {
-        types: 'lines',
-        tagName: 'span',
-      });
-
-      const lines = split.lines;
-      if (lines) {
-        lines.forEach((line, i) => {
-          line.style.overflow = 'hidden';
-          line.style.display = 'block';
-
-          const inner = document.createElement('span');
-          inner.style.display = 'block';
-          inner.style.opacity = '0';
-          inner.style.transform = 'translateY(100%)';
-          inner.style.transition = `all 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) ${i * 0.15}s`;
-          inner.innerHTML = line.innerHTML;
-          line.innerHTML = '';
-          line.appendChild(inner);
-
-          setTimeout(() => {
-            inner.style.opacity = '1';
-            inner.style.transform = 'translateY(0)';
-          }, 100);
-        });
-      }
-    }, 150);
-
-    return () => {
-      clearTimeout(timer);
-    };
-  }, []);
 
   return (
     <section className={styles.hero} ref={heroRef}>
@@ -68,25 +30,35 @@ export default function HeroSection() {
         }}
       >
 
-        <h1
-          ref={titleRef}
-          className={styles.heroTitle}
-        >
-          <span className={styles.gold}>D</span>riven By Purpose
-          <br />
-          <span className={styles.gold}>D</span>efined By Excellence
+        <h1 className={styles.heroTitle}>
+          {t('hero.title').split('\n').map((line, i) => {
+            const firstChar = line.charAt(0);
+            const rest = line.slice(1);
+            return (
+              <span key={i} style={{ display: 'block', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                <motion.span
+                  initial={{ opacity: 0, y: '100%' }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.15 + 0.15 }}
+                  style={{ display: 'block' }}
+                >
+                  <span className={styles.gold}>{firstChar}</span>{rest}
+                </motion.span>
+              </span>
+            );
+          })}
         </h1>
 
         <motion.p
           className={styles.heroSubtitle}
           variants={fadeInUp}
         >
-          We connect your videos, website, and sales process so they actually work together.
+          {t('hero.subtitle')}
         </motion.p>
 
         <motion.div variants={fadeInUp}>
           <MagneticButton href="/services" className={styles.ctaButton}>
-            See how it works
+            {t('hero.cta')}
           </MagneticButton>
         </motion.div>
 
@@ -118,7 +90,7 @@ export default function HeroSection() {
 
         {/* Brand Logos */}
         <motion.p className={styles.logoContext} variants={fadeInUp}>
-          We've worked with teams at
+          {t('hero.workedWith')}
         </motion.p>
         <motion.div
           className={styles.brandLogos}

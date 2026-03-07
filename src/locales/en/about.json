@@ -1,0 +1,83 @@
+{
+    "hero": {
+        "label": "About Us",
+        "title": "We came from sales. Not marketing",
+        "accent": "school.",
+        "description": "We know what it's like to lose a deal because your website didn't show how good you actually are. That's why we built this.",
+        "cta": "Let's talk"
+    },
+    "why": {
+        "eyebrow": "What Drives Us",
+        "description": "Principles, not platitudes",
+        "title": "Principles, not",
+        "accent": "platitudes.",
+        "features": [
+            {
+                "icon": "01",
+                "title": "Revenue is the metric.",
+                "description": "If it doesn't help you close deals, we don't do it."
+            },
+            {
+                "icon": "02",
+                "title": "Audit before you build.",
+                "description": "We don't start building until we understand what's actually going on."
+            },
+            {
+                "icon": "03",
+                "title": "Systems beat one-offs.",
+                "description": "A single video or landing page won't fix everything. We connect the pieces so they work together."
+            },
+            {
+                "icon": "04",
+                "title": "Your team should get better, not more dependent.",
+                "description": "We set your team up to keep going without us."
+            }
+        ]
+    },
+    "process": {
+        "eyebrow": "Our Story",
+        "description": "How we got here",
+        "title": "We built what we",
+        "accent": "couldn't find.",
+        "subtitle": "We spent years in sales watching good companies lose deals because their online presence didn't reflect how good they actually were. Agencies would charge a fortune for content that looked great and did nothing. So we built the thing we kept wishing existed. One team that connects your content to how you actually sell.",
+        "steps": [
+            {
+                "title": "Audit",
+                "description": "We start by listening. What are you selling? What's your site saying? Where do leads go after they show up?"
+            },
+            {
+                "title": "Build",
+                "description": "We make the things you need. The site, the videos, the CRM setup. One team, not five vendors."
+            },
+            {
+                "title": "Scale",
+                "description": "We make sure it keeps working. Your team learns the system. Results get tracked. Things get better over time."
+            }
+        ]
+    },
+    "team": {
+        "eyebrow": "The Team",
+        "description": "Who we are",
+        "title": "The people behind the",
+        "accent": "system.",
+        "subtitle": "A small team that builds, shoots, codes, and coaches. We've all sold something before. That's why this works.",
+        "members": [
+            {
+                "name": "Founder",
+                "role": "Strategy & Sales"
+            },
+            {
+                "name": "Web & CRM Lead",
+                "role": "Development & Systems"
+            },
+            {
+                "name": "Creative Director",
+                "role": "Video & Content"
+            },
+            {
+                "name": "Coach",
+                "role": "Content & Training"
+            }
+        ]
+    }
+}

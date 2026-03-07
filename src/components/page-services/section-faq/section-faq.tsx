@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '@/utils/animations';
-import { faqItems } from '../services-data';
 import styles from './section-faq.module.css';
+
+interface FaqItemData {
+  question: string;
+  answer: string;
+}
 
 function FaqItem({
   question,
@@ -73,18 +78,21 @@ function FaqItem({
 }
 
 export default function FaqSection() {
+  const { t } = useTranslation('services');
+  const faqItems = t('faq.items', { returnObjects: true }) as FaqItemData[];
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.layout}>
           <motion.div className={styles.left} {...scrollReveal}>
-            <SectionEyebrow label="FAQ" description="Common questions" />
+            <SectionEyebrow label={t('faq.eyebrow')} description={t('faq.description')} />
             <h2 className={styles.title}>
-              Common{' '}
-              <em className={styles.titleAccent}>Questions</em>
+              {t('faq.title')}{' '}
+              <em className={styles.titleAccent}>{t('faq.accent')}</em>
             </h2>
             <p className={styles.subtitle}>
-              Everything you need to know before we start working together.
+              {t('faq.subtitle')}
             </p>
           </motion.div>
 

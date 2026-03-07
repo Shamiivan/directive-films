@@ -30,7 +30,7 @@ export default function SplitText({
     return () => {
       split.revert();
     };
-  }, [type]);
+  }, [type, children]);
 
   // Animation variants for staggering
   const containerVariants = {

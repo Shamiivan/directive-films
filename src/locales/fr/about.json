@@ -1,0 +1,83 @@
+{
+    "hero": {
+        "label": "À propos de nous",
+        "title": "Nous venons de la vente. Pas d'une école de",
+        "accent": "marketing.",
+        "description": "Nous savons ce que c'est que de perdre un contrat parce que votre site web ne montrait pas à quel point vous êtes réellement bon. C'est pourquoi nous avons créé ceci.",
+        "cta": "Discutons"
+    },
+    "why": {
+        "eyebrow": "Ce qui nous motive",
+        "description": "Des principes, pas des banalités",
+        "title": "Des principes, pas des",
+        "accent": "banalités.",
+        "features": [
+            {
+                "icon": "01",
+                "title": "Le revenu est la mesure.",
+                "description": "Si cela ne vous aide pas à conclure des contrats, nous ne le faisons pas."
+            },
+            {
+                "icon": "02",
+                "title": "Auditer avant de construire.",
+                "description": "Nous ne commençons pas à construire avant de comprendre ce qui se passe réellement."
+            },
+            {
+                "icon": "03",
+                "title": "Les systèmes battent les actions ponctuelles.",
+                "description": "Une seule vidéo ou une seule page de destination ne résoudra pas tout. Nous connectons les pièces pour qu'elles travaillent ensemble."
+            },
+            {
+                "icon": "04",
+                "title": "Votre équipe doit s'améliorer, pas devenir plus dépendante.",
+                "description": "Nous préparons votre équipe à continuer sans nous."
+            }
+        ]
+    },
+    "process": {
+        "eyebrow": "Notre histoire",
+        "description": "Comment nous en sommes arrivés là",
+        "title": "Nous avons construit ce que nous ne",
+        "accent": "trouvions pas.",
+        "subtitle": "Nous avons passé des années dans la vente à regarder de bonnes entreprises perdre des contrats parce que leur présence en ligne ne reflétait pas leur véritable valeur. Les agences facturaient une fortune pour du contenu superbe qui ne servait à rien. Nous avons donc créé ce que nous aurions aimé voir exister : une équipe unique qui connecte votre contenu à votre façon de vendre.",
+        "steps": [
+            {
+                "title": "Audit",
+                "description": "Nous commençons par vous écouter. Que vendez-vous ? Que dit votre site ? Où vont les prospects une fois qu'ils arrivent ?"
+            },
+            {
+                "title": "Construction",
+                "description": "Nous créons ce dont vous avez besoin : le site, les vidéos, le CRM. Une seule équipe, pas cinq prestataires."
+            },
+            {
+                "title": "Mise à l'échelle",
+                "description": "Nous nous assurons que tout continue de fonctionner. Votre équipe apprend le système. Les résultats sont suivis. Les choses s'améliorent avec le temps."
+            }
+        ]
+    },
+    "team": {
+        "eyebrow": "L'équipe",
+        "description": "Qui nous sommes",
+        "title": "Les personnes derrière le",
+        "accent": "système.",
+        "subtitle": "Une petite équipe qui construit, filme, code et coache. Nous avons tous déjà vendu quelque chose. C'est pourquoi ça marche.",
+        "members": [
+            {
+                "name": "Fondateur",
+                "role": "Stratégie et Vente"
+            },
+            {
+                "name": "Responsable Web et CRM",
+                "role": "Développement et Systèmes"
+            },
+            {
+                "name": "Directeur Créatif",
+                "role": "Vidéo et Contenu"
+            },
+            {
+                "name": "Coach",
+                "role": "Contenu et Formation"
+            }
+        ]
+    }
+}

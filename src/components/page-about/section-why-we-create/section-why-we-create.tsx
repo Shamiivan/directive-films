@@ -1,38 +1,28 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal, gridStagger } from '@/utils/animations';
 import styles from './section-why-we-create.module.css';
 
-const features = [
-  {
-    icon: '01',
-    title: 'Revenue is the metric.',
-    description: 'If it doesn\'t help you close deals, we don\'t do it.',
-  },
-  {
-    icon: '02',
-    title: 'Audit before you build.',
-    description: 'We don\'t start building until we understand what\'s actually going on.',
-  },
-  {
-    icon: '03',
-    title: 'Systems beat one-offs.',
-    description: 'A single video or landing page won\'t fix everything. We connect the pieces so they work together.',
-  },
-  {
-    icon: '04',
-    title: 'Your team should get better, not more dependent.',
-    description: 'We set your team up to keep going without us.',
-  },
-];
+interface Feature {
+  icon: string;
+  title: string;
+  description: string;
+}
 
 export default function WhyWeCreateSection() {
+  const { t } = useTranslation('about');
+  const features = t('why.features', { returnObjects: true }) as Feature[];
+
   return (
     <section className={styles.whyWeCreateSection}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label="What Drives Us" description="Principles, not platitudes" />
-          <h2 className={styles.title}>Principles, not <em className={styles.titleAccent}>platitudes.</em></h2>
+          <SectionEyebrow label={t('why.eyebrow')} description={t('why.description')} />
+          <h2 className={styles.title}>
+            {t('why.title')}{' '}
+            <em className={styles.titleAccent}>{t('why.accent')}</em>
+          </h2>
         </motion.div>
 
         <motion.div
@@ -54,8 +44,6 @@ export default function WhyWeCreateSection() {
             </motion.div>
           ))}
         </motion.div>
-
-
       </div>
     </section>
   );

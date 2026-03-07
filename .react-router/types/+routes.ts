@@ -14,19 +14,32 @@ type Pages = {
   "/": {
     params: {};
   };
-  "/about": {
-    params: {};
+  "/:lang": {
+    params: {
+      "lang": string;
+    };
   };
-  "/careers": {
-    params: {};
+  "/:lang/about": {
+    params: {
+      "lang": string;
+    };
   };
-  "/contact": {
-    params: {};
+  "/:lang/careers": {
+    params: {
+      "lang": string;
+    };
+  };
+  "/:lang/contact": {
+    params: {
+      "lang": string;
+    };
+  };
+  "/:lang/services": {
+    params: {
+      "lang": string;
+    };
   };
   "/design-system": {
-    params: {};
-  };
-  "/services": {
     params: {};
   };
 };
@@ -34,40 +47,45 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/about" | "/careers" | "/contact" | "/design-system" | "/services";
+    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/design-system";
+  };
+  "routes/locale-layout.tsx": {
+    id: "routes/locale-layout";
+    page: "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services";
   };
   "routes/home.tsx": {
     id: "routes/home";
-    page: "/";
+    page: "/:lang";
   };
   "routes/about.tsx": {
     id: "routes/about";
-    page: "/about";
+    page: "/:lang/about";
   };
   "routes/careers.tsx": {
     id: "routes/careers";
-    page: "/careers";
+    page: "/:lang/careers";
   };
   "routes/contact.tsx": {
     id: "routes/contact";
-    page: "/contact";
+    page: "/:lang/contact";
+  };
+  "routes/services.tsx": {
+    id: "routes/services";
+    page: "/:lang/services";
   };
   "routes/design-system.tsx": {
     id: "routes/design-system";
     page: "/design-system";
   };
-  "routes/services.tsx": {
-    id: "routes/services";
-    page: "/services";
-  };
 };
 
 type RouteModules = {
   "root": typeof import("./src/root.tsx");
+  "routes/locale-layout": typeof import("./src/routes/locale-layout.tsx");
   "routes/home": typeof import("./src/routes/home.tsx");
   "routes/about": typeof import("./src/routes/about.tsx");
   "routes/careers": typeof import("./src/routes/careers.tsx");
   "routes/contact": typeof import("./src/routes/contact.tsx");
-  "routes/design-system": typeof import("./src/routes/design-system.tsx");
   "routes/services": typeof import("./src/routes/services.tsx");
+  "routes/design-system": typeof import("./src/routes/design-system.tsx");
 };

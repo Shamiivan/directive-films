@@ -1,11 +1,18 @@
 import { motion } from 'framer-motion';
-import MagneticButton from '../../MagneticButton';
+import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
-import { scrollReveal, gridStagger, imageZoom } from '../../../utils/animations';
+import { scrollReveal, imageZoom, gridStagger } from '../../../utils/animations';
 import styles from './section-results.module.css';
 
+interface ResultStep {
+  title: string;
+  description: string;
+}
 
 export default function ResultsSection() {
+  const { t } = useTranslation('home');
+  const stepsData = t('results.steps', { returnObjects: true }) as ResultStep[];
+
   const SearchIcon = () => (
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
       <circle cx="11" cy="11" r="8" stroke="#FDB714" strokeWidth="2" />
@@ -27,39 +34,36 @@ export default function ResultsSection() {
     </svg>
   );
 
-  const steps = [
-    {
-      icon: <SearchIcon />,
-      title: 'Audit',
-      description: 'We audit your online presence, messaging, and competitive landscape. You get a clear report with what\'s working, what\'s not, and what to fix first.',
-      link: '/services',
-    },
-    {
-      icon: <VideoIcon />,
-      title: 'Create & Build',
-      description: 'We produce video content mapped to your sales process and build websites that convert. Every asset earns its place in your pipeline.',
-      link: '/services',
-    },
-    {
-      icon: <ChartIcon />,
-      title: 'Optimize',
-      description: 'We set up your CRM, automate follow-ups, and build dashboards so you can see what\'s working. Systems that sell while you sleep.',
-      link: '/services',
-    },
-  ];
+  const stepIcons = [<SearchIcon />, <VideoIcon />, <ChartIcon />];
+
+  const steps = stepsData.map((step, i) => ({
+    ...step,
+    icon: stepIcons[i],
+  }));
+
+  const goldText = t('results.gold');
+  const titleParts = t('results.title').split(goldText);
 
   return (
     <section className={styles.resultsSection}>
       <div className={styles.container}>
         {/* Title */}
-        <SectionEyebrow label="Results" description="What growth looks like" />
+        <SectionEyebrow label={t('results.eyebrow')} description={t('results.description')} />
         <motion.h2
           className={styles.title}
           {...scrollReveal}
         >
-          Growth Partner That Turns Content into
-          <br />
-          <span className={styles.gold}>Revenue</span>
+          {titleParts.map((part, i) => (
+            <span key={i}>
+              {part}
+              {i < titleParts.length - 1 && (
+                <>
+                  <br />
+                  <span className={styles.gold}>{goldText}</span>
+                </>
+              )}
+            </span>
+          ))}
         </motion.h2>
 
         {/* Hero Image/Video */}

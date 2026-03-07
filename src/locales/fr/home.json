@@ -1,0 +1,211 @@
+{
+    "hero": {
+        "title": "Propulsé Par La Mission\nDéfini Par L'Excellence",
+        "subtitle": "Partenaire de croissance qui transforme le contenu en revenus",
+        "cta": "Découvrez comment ça marche",
+        "workedWith": "Nous avons travaillé avec les équipes de"
+    },
+    "offer": {
+        "eyebrow": "Services",
+        "tagline": "Ce que nous faisons",
+        "title": "Ce que nous faisons réellement",
+        "subtitle": "Cinq choses. Elles sont conçues pour se connecter, mais vous n'avez pas besoin de toutes.",
+        "services": [
+            {
+                "title": "Auditer",
+                "description": "Nous examinons votre présence en ligne et vous disons ce qui fonctionne réellement. Évaluation honnête, prochaines étapes claires.",
+                "href": "/services#audit"
+            },
+            {
+                "title": "Coacher",
+                "description": "Nous préparons votre équipe à créer son propre contenu. Studio, guide, formation. Ensuite, ils sont autonomes.",
+                "href": "/services#coaching"
+            },
+            {
+                "title": "Créer",
+                "description": "Nous réalisons les vidéos. Scénarisées selon la façon dont vous vendez réellement.",
+                "href": "/services#video"
+            },
+            {
+                "title": "Optimiser",
+                "description": "Nous configurons votre CRM pour que les prospects ne passent pas à travers les mailles du filet. Séquences, suivis, tableaux de bord.",
+                "href": "/services#crm"
+            },
+            {
+                "title": "Bâtir",
+                "description": "Des sites web qui disent ce que vous faites, se chargent rapidement et capturent des prospects.",
+                "href": "/services#web"
+            }
+        ],
+        "learnMore": "En savoir plus",
+        "cta": {
+            "text": "Vous ne savez pas par où commencer ?\nNous pouvons vous aider à le découvrir.",
+            "button": "Discutons"
+        }
+    },
+    "ctaSection": {
+        "title": "Vous voulez voir sur quoi nous nous concentrerions en premier ?",
+        "riskReversal": "Le premier appel est gratuit. Si nous ne sommes pas la bonne solution, nous vous le dirons. Et nous vous orienterons vers quelqu'un qui l'est.",
+        "button": "Discutons"
+    },
+    "faq": {
+        "eyebrow": "FAQ",
+        "title": "Des questions ?",
+        "accent": "Nous avons des réponses",
+        "items": [
+            {
+                "question": "Pourquoi faites-vous cinq choses au lieu d'une seule ?",
+                "answer": "Parce qu'elles sont connectées. Une excellente vidéo n'aide pas si votre site web ne peut pas capturer le prospect. Un excellent site web n'aide pas si votre CRM perd le suivi. Nous faisons les cinq pour que rien ne brise la chaîne entre le moment où quelqu'un vous trouve et celui où il devient client."
+            },
+            {
+                "question": "Ai-je besoin des cinq ?",
+                "answer": "Non. Nous commençons par examiner votre entreprise et déterminer ce qui fera la plus grande différence dès maintenant. Parfois, c'est un site web. Parfois, c'est votre CRM. Parfois, c'est de la vidéo. Nous vous disons par où commencer et vous décidez du chemin à parcourir."
+            },
+            {
+                "question": "À quelle vitesse verrai-je des résultats ?",
+                "answer": "Les clients Sprint reçoivent un livrable fini en deux semaines. Les clients mensuels voient généralement un réel mouvement en 30 à 60 jours."
+            },
+            {
+                "question": "Pouvez-vous travailler avec les outils et l'équipe que j'ai déjà ?",
+                "answer": "Oui. Nous nous connectons à n'importe quel CRM, plateforme ou configuration que vous utilisez déjà. Si vous avez une équipe qui pourrait créer du contenu, notre coaching les rend autonomes."
+            },
+            {
+                "question": "Avec qui travaillez-vous généralement ?",
+                "answer": "Entreprises B2B, services professionnels, SaaS et entreprises en croissance qui savent que leur présence en ligne et leur processus de vente ne suivent pas. Si vous vendez quelque chose qui demande de la confiance pour conclure, nous sommes un bon choix."
+            },
+            {
+                "question": "Comment commencer ?",
+                "answer": "Un appel de 30 minutes. Nous écoutons vos projets et vous disons ce sur quoi nous nous concentrerions en premier. Pas de présentation, pas d'argumentaire de vente."
+            }
+        ]
+    },
+    "process": {
+        "eyebrow": "Comment ça marche",
+        "title": "Trois étapes. Rien de compliqué.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Analyser ce que vous avez",
+                "description": "Nous passons en revue votre site, votre contenu, votre CRM et votre processus de vente. Vous obtenez une image claire de ce qui fonctionne et de ce qui ne fonctionne pas."
+            },
+            {
+                "number": "02",
+                "title": "Combler les lacunes",
+                "description": "Nous construisons ou reconstruisons les pièces qui comptent le plus. Une page, une vidéo, une séquence d'e-mails. Tout ce qui fait bouger l'aiguille en premier."
+            },
+            {
+                "number": "03",
+                "title": "Suivre ce qui compte",
+                "description": "Nous mettons en place des tableaux de bord pour que vous puissiez voir ce qui génère réellement des résultats. Pas de mesures de vanité."
+            }
+        ]
+    },
+    "proof": {
+        "eyebrow": "Notre travail",
+        "description": "Découvrez nos réalisations",
+        "title": "Une partie de ce que nous avons bâti.",
+        "items": [
+            {
+                "alt": "Équipe de production vidéo filmant une interview d'entreprise dans un studio professionnel"
+            },
+            {
+                "alt": "Équipe de tournage installant l'équipement d'éclairage pour un tournage vidéo commercial"
+            },
+            {
+                "alt": "Photographe professionnel avec caméra sur le plateau"
+            },
+            {
+                "alt": "Caméra vidéo professionnelle sur rail de travelling pendant une production cinématographique"
+            },
+            {
+                "alt": "Réalisateur examinant les séquences sur un moniteur pendant un tournage vidéo"
+            },
+            {
+                "alt": "Coulisses d'une production cinématographique avec une caméra de cinéma"
+            }
+        ]
+    },
+    "results": {
+        "eyebrow": "Résultats",
+        "description": "Ce à quoi ressemble la croissance",
+        "title": "Un partenaire de croissance qui transforme le contenu en revenus",
+        "gold": "revenus",
+        "steps": [
+            {
+                "title": "Audit",
+                "description": "Nous auditons votre présence en ligne, votre message et votre paysage concurrentiel. Vous obtenez un rapport clair sur ce qui fonctionne, ce qui ne fonctionne pas et ce qu'il faut corriger en premier."
+            },
+            {
+                "title": "Créer et Construire",
+                "description": "Nous produisons du contenu vidéo adapté à votre processus de vente et construisons des sites web qui convertissent. Chaque actif gagne sa place dans votre pipeline."
+            },
+            {
+                "title": "Optimiser",
+                "description": "Nous configurons votre CRM, automatisons les suivis et construisons des tableaux de bord pour que vous puissiez voir ce qui fonctionne. Des systèmes qui vendent pendant que vous dormez."
+            }
+        ]
+    },
+    "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Façons de travailler ensemble",
+        "subtitle": "Choisissez ce qui vous convient. Nous réglerons le reste lors d'un appel.",
+        "popular": "Le plus populaire",
+        "bestFor": "Idéal pour :",
+        "notSure": "Pas certain ? Ce n'est pas grave. Nous réglerons le reste lors d'un appel.",
+        "talk": "Discutons",
+        "offers": [
+            {
+                "name": "Sprint",
+                "headline": "Une chose, bien faite.",
+                "description": "Vous savez ce qui doit être corrigé. Nous nous en chargeons, le livrons en deux semaines et vous le remettons.",
+                "bestFor": "Un seul livrable : une vidéo, une page de destination, une configuration CRM ou un audit avec un plan d'action clair.",
+                "includes": [
+                    "Audit de présence en ligne",
+                    "Rapport de recommandations prioritaires",
+                    "Un livrable de votre choix",
+                    "Accompagnement à l'intégration",
+                    "2 cycles de révisions",
+                    "Livré en 2 semaines"
+                ],
+                "ctaText": "Commencer",
+                "hoverText": "Discutons →"
+            },
+            {
+                "name": "Croissance",
+                "headline": "La configuration complète, mois après mois.",
+                "description": "Contenu, CRM, site web. Nous gardons tout en mouvement. Points mensuels, chiffres réels.",
+                "bestFor": "Les entreprises qui veulent du contenu constant, un vrai système de vente et quelqu'un qui le gère.",
+                "includes": [
+                    "Audit complet et stratégie de croissance",
+                    "Production de contenu mensuelle (3 vidéos)",
+                    "Optimisation du CRM et du système de vente",
+                    "Mises à jour du site web et tests de conversion",
+                    "Coaching de contenu interne",
+                    "Revues de performance mensuelles",
+                    "Révisions illimitées",
+                    "Stratège de croissance dédié"
+                ],
+                "ctaText": "Commencer",
+                "hoverText": "Discutons →"
+            },
+            {
+                "name": "Scale",
+                "headline": "Votre équipe, sans l'embauche.",
+                "description": "Nous travaillons aux côtés de vos employés. Stratégie, création et développement. Autant ou aussi peu que vous le souhaitez.",
+                "bestFor": "Les entreprises qui ont besoin d'une équipe dédiée sans les frais fixes d'une embauche.",
+                "includes": [
+                    "Tout ce qui est inclus dans Croissance",
+                    "Équipe de création et de développement dédiée",
+                    "Stratégie de campagne multi-plateforme",
+                    "Analytique avancée et tests A/B",
+                    "Sessions stratégiques trimestrielles",
+                    "Intégrations et flux de travail personnalisés",
+                    "Gestionnaire de compte dédié",
+                    "Support prioritaire"
+                ],
+                "ctaText": "Contactez-nous",
+                "hoverText": "Discutons →"
+            }
+        ]
+    }
+}

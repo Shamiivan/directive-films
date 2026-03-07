@@ -1,0 +1,203 @@
+{
+    "hero": {
+        "label": "Nos Services",
+        "title": "Nous réparons votre façon de",
+        "accent": "vendre en ligne",
+        "description": "Vous êtes bon dans ce que vous faites. Votre présence en ligne ne le montre tout simplement pas encore. Nous réparons cela.",
+        "outcomes": [
+            "Un site web qui représente réellement votre travail",
+            "Un contenu construit autour de votre façon de vendre",
+            "Un système dont vous pouvez voir les résultats"
+        ],
+        "cta": "Dites-nous ce dont vous avez besoin"
+    },
+    "list": {
+        "eyebrow": "Nos Services",
+        "description": "Même méthode, point de départ différent",
+        "title": "Même méthode.",
+        "accent": "Point de départ différent.",
+        "subtitle": "Choisissez celui qui correspond à votre situation."
+    },
+    "phases": [
+        {
+            "phase": "Audit",
+            "label": "Voyez ce qui fonctionne et ce qui ne fonctionne pas",
+            "services": [
+                {
+                    "id": "audit",
+                    "name": "Audit de présence en ligne",
+                    "outcome": "Une image claire de ce que votre présence en ligne dit à vos clients potentiels.",
+                    "description": "Nous analysons votre site, votre contenu et vos concurrents sur plus de 50 points de données. Vous obtenez une feuille de route prioritisée des corrections à apporter.",
+                    "ctaLabel": "En savoir plus"
+                },
+                {
+                    "id": "competitor",
+                    "name": "Intelligence concurrentielle",
+                    "outcome": "Sachez ce que font vos concurrents et où ils sont vulnérables.",
+                    "description": "Analyse de 5 à 10 concurrents couvrant le SEO, le contenu, les publicités et la conversion. Vous découvrez les failles qu'ils ignorent avoir.",
+                    "ctaLabel": "En savoir plus"
+                },
+                {
+                    "id": "conversion",
+                    "name": "Cartographie de conversion",
+                    "outcome": "Identifiez où les visiteurs décrochent et pourquoi ils ne convertissent pas.",
+                    "description": "Cartes de chaleur, enregistrements de sessions et analyse de l'entonnoir. Nous cartographions chaque fuite et priorisons les solutions.",
+                    "ctaLabel": "En savoir plus"
+                }
+            ]
+        },
+        {
+            "phase": "Construction",
+            "label": "Réparer ce qui doit l'être",
+            "services": [
+                {
+                    "id": "video",
+                    "name": "Production vidéo",
+                    "outcome": "Des vidéos qui font avancer les transactions, pas seulement de belles images.",
+                    "description": "Scripts adaptés à votre processus de vente, production 4K, diffusion multi-plateforme. Chaque image gagne sa place.",
+                    "ctaLabel": "En savoir plus"
+                },
+                {
+                    "id": "web",
+                    "name": "Développement web",
+                    "outcome": "Un site rapide qui exprime votre valeur et capture des prospects.",
+                    "description": "Rédaction axée sur la conversion, conception adaptative sur mesure, temps de chargement rapides et 30 jours d'analyses post-lancement.",
+                    "ctaLabel": "En savoir plus"
+                },
+                {
+                    "id": "coaching",
+                    "name": "Coaching de contenu",
+                    "outcome": "Votre équipe produit du contenu professionnel chaque semaine, sans agence.",
+                    "description": "Installation de studio interne, sessions de formation pratiques et modèles reproductibles. Nous donnons un guide à votre équipe.",
+                    "ctaLabel": "En savoir plus"
+                }
+            ]
+        },
+        {
+            "phase": "Croissance",
+            "label": "Développer ce qui fonctionne",
+            "services": [
+                {
+                    "id": "crm",
+                    "name": "Systèmes CRM et vente",
+                    "outcome": "Votre CRM conclut des transactions au lieu de simplement stocker des contacts.",
+                    "description": "Configuration adaptée à votre processus de vente avec séquences de suivi automatisées et tableaux de bord de pipeline.",
+                    "ctaLabel": "En savoir plus"
+                },
+                {
+                    "id": "automation",
+                    "name": "Automatisation marketing",
+                    "outcome": "Des séquences qui nourrissent les prospects selon le comportement réel de l'acheteur.",
+                    "description": "Séquences e-mail et SMS déclenchées par les actions réelles. Campagnes de goutte-à-goutte, flux de réengagement et scoring de prospects.",
+                    "ctaLabel": "En savoir plus"
+                },
+                {
+                    "id": "analytics",
+                    "name": "Tableaux de bord de performance",
+                    "outcome": "Voyez ce qui fonctionne, ce qui ne fonctionne pas et où vous concentrer.",
+                    "description": "Tableaux de bord personnalisés connectant votre site, CRM, publicités et contenu en une seule vue.",
+                    "ctaLabel": "En savoir plus"
+                }
+            ]
+        }
+    ],
+    "method": {
+        "eyebrow": "Notre Méthode",
+        "description": "Une méthode, chaque service",
+        "title": "Une méthode.",
+        "accent": "Chaque service.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Évaluer",
+                "description": "Nous examinons ce que vous avez et ce qui ne fonctionne pas."
+            },
+            {
+                "number": "02",
+                "title": "Stratégie",
+                "description": "Nous construisons le plan autour de vos chiffres spécifiques."
+            },
+            {
+                "number": "03",
+                "title": "Exécuter",
+                "description": "Nous construisons, produisons et configurons. Vous examinez et approuvez."
+            },
+            {
+                "number": "04",
+                "title": "Soutien",
+                "description": "Nous formons votre équipe, surveillons les résultats et itérons."
+            }
+        ]
+    },
+    "proof": {
+        "eyebrow": "Résultats",
+        "description": "Des chiffres, pas des promesses",
+        "title": "Des chiffres, pas des",
+        "accent": "promesses",
+        "results": [
+            {
+                "clientType": "Entreprise B2B SaaS",
+                "problem": "Taux de clôture bloqué à 18%",
+                "change": "Vidéos de vente adaptées aux objections + séquences CRM",
+                "metric": "Taux de clôture : de 18% à 34% en 3 mois"
+            },
+            {
+                "clientType": "Cabinet de services professionnels",
+                "problem": "Trafic sur le site mais aucun prospect",
+                "change": "Audit complet, nouveau site, refonte du CRM",
+                "metric": "Prospects qualifiés triplés en 4 mois"
+            },
+            {
+                "clientType": "Startup en phase de croissance",
+                "problem": "Outils déconnectés, cycle de vente long",
+                "change": "Nouveau CRM + site + formation à la prospection vidéo",
+                "metric": "Cycle de vente réduit de 40%"
+            }
+        ],
+        "labels": {
+            "problem": "Problème",
+            "change": "Changement"
+        },
+        "stats": [],
+        "testimonials": []
+    },
+    "cta": {
+        "title": "Sachez quoi",
+        "highlight": "corriger en premier",
+        "subtitle": "30 minutes. Nous vous dirons sur quoi nous nous concentrerions en premier.",
+        "button": "C'est parti"
+    },
+    "faq": {
+        "eyebrow": "FAQ",
+        "description": "Questions fréquemment posées",
+        "title": "Questions",
+        "accent": "courantes",
+        "subtitle": "Tout ce que vous devez savoir avant de commencer à travailler ensemble.",
+        "items": [
+            {
+                "question": "Par où commencer ?",
+                "answer": "Un appel rapide. Nous verrons où vous en êtes, identifierons les lacunes et vous dirons par où commencer. La plupart des clients commencent par un Audit."
+            },
+            {
+                "question": "Avons-nous besoin de tous les services ?",
+                "answer": "Non. La plupart des clients commencent par un ou deux et en ajoutent au fur et à mesure de leur croissance. Nous vous recommanderons ce qui fait réellement bouger les choses."
+            },
+            {
+                "question": "À quoi ressemble la tarification ?",
+                "answer": "Cela dépend de l'étendue. Un audit commence dans le bas des quatre chiffres. Nous vous donnerons un devis clair après notre appel stratégique. Pas de surprises."
+            },
+            {
+                "question": "À quelle vitesse verrai-je des résultats ?",
+                "answer": "Les clients en mode sprint obtiennent un livrable fini en deux semaines. Les clients mensuels voient généralement un mouvement réel en 30 à 60 jours."
+            },
+            {
+                "question": "Pouvez-vous travailler avec les outils que j'ai déjà ?",
+                "answer": "Oui. Nous nous connectons à n'importe quel CRM, plateforme ou configuration que vous utilisez déjà."
+            },
+            {
+                "question": "Comment commencer ?",
+                "answer": "Un appel de 30 minutes. Nous écoutons vos projets et vous disons sur quoi nous nous concentrerions en premier. Pas de présentation, pas d'argumentaire."
+            }
+        ]
+    }
+}

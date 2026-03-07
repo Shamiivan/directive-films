@@ -1,0 +1,23 @@
+{
+    "nav": {
+        "home": "ACCUEIL",
+        "services": "SERVICES",
+        "about": "À PROPOS",
+        "careers": "CARRIÈRES",
+        "contact": "Contactez-nous"
+    },
+    "footer": {
+        "tagline": "Vidéo, sites web, CRM et coaching qui travaillent ensemble pour faire croître votre entreprise.",
+        "services": "Services",
+        "company": "Entreprise",
+        "connect": "Réseaux",
+        "rights": "Tous droits réservés.",
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation"
+    },
+    "rotatingProof": [
+        "Les clients voient des résultats en 30 jours en moyenne",
+        "Plus de 500 projets livrés",
+        "98 % des clients restent après la première année"
+    ]
+}

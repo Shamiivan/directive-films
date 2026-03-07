@@ -1,0 +1,211 @@
+{
+    "hero": {
+        "title": "Driven By Purpose\nDefined By Excellence",
+        "subtitle": "Growth Partner That Turns Content into Revenue",
+        "cta": "See how it works",
+        "workedWith": "We've worked with teams at"
+    },
+    "offer": {
+        "eyebrow": "Services",
+        "tagline": "What we do",
+        "title": "What we actually do",
+        "subtitle": "Five things. They're designed to connect, but you don't need all of them.",
+        "services": [
+            {
+                "title": "Audit",
+                "description": "We look at your online presence and tell you what's actually working. Honest assessment, clear next steps.",
+                "href": "/services#audit"
+            },
+            {
+                "title": "Coach",
+                "description": "We set up your team to make their own content. Studio, playbook, training. Then they're on their own.",
+                "href": "/services#coaching"
+            },
+            {
+                "title": "Create",
+                "description": "We make the videos. Scripted around how you actually sell.",
+                "href": "/services#video"
+            },
+            {
+                "title": "Optimize",
+                "description": "We set up your CRM so leads don't fall through the cracks. Sequences, follow-ups, dashboards.",
+                "href": "/services#crm"
+            },
+            {
+                "title": "Build",
+                "description": "Websites that say what you do, load fast, and capture leads.",
+                "href": "/services#web"
+            }
+        ],
+        "learnMore": "Learn more",
+        "cta": {
+            "text": "Not sure where to start?\nWe can help you figure that out.",
+            "button": "Let's talk"
+        }
+    },
+    "ctaSection": {
+        "title": "Want to see what we'd focus on first?",
+        "riskReversal": "The first conversation is free. If we're not the right fit, we'll tell you. And we'll point you to someone who is.",
+        "button": "Let's talk"
+    },
+    "faq": {
+        "eyebrow": "FAQ",
+        "title": "Questions?",
+        "accent": "We have answers",
+        "items": [
+            {
+                "question": "Why do you do five things instead of just one?",
+                "answer": "Because they're connected. A great video doesn't help if your website can't capture the lead. A great website doesn't help if your CRM loses the follow-up. We do all five so nothing breaks the chain between someone finding you and becoming a customer."
+            },
+            {
+                "question": "Do I need all five?",
+                "answer": "No. We start by looking at your business and figuring out what will make the biggest difference right now. Sometimes that's a website. Sometimes it's your CRM. Sometimes it's video. We tell you where to start and you decide how far to go."
+            },
+            {
+                "question": "How fast will I see results?",
+                "answer": "Sprint clients get a finished deliverable in two weeks. Monthly clients usually see real movement in 30-60 days."
+            },
+            {
+                "question": "Can you work with the tools and team I already have?",
+                "answer": "Yes. We plug into whatever CRM, platform, or setup you're already running. If you have a team that could be making content, our coaching gets them producing on their own."
+            },
+            {
+                "question": "Who do you typically work with?",
+                "answer": "B2B companies, professional services, SaaS, and businesses that are growing but know their online presence and sales process aren't keeping up. If you sell something that takes trust to close, we're a good fit."
+            },
+            {
+                "question": "How do we get started?",
+                "answer": "A 30-minute call. We listen to what you're working on and tell you what we'd focus on first. No deck, no pitch."
+            }
+        ]
+    },
+    "process": {
+        "eyebrow": "How it works",
+        "title": "Three steps. Nothing complicated.",
+        "steps": [
+            {
+                "number": "01",
+                "title": "Look at what you have",
+                "description": "We go through your site, content, CRM, and sales process. You get a clear picture of what's working and what isn't."
+            },
+            {
+                "number": "02",
+                "title": "Fix the gaps",
+                "description": "We build or rebuild the pieces that matter most. A page, a video, an email sequence. Whatever moves the needle first."
+            },
+            {
+                "number": "03",
+                "title": "Track what matters",
+                "description": "We set up dashboards so you can see what's actually driving results. No vanity metrics."
+            }
+        ]
+    },
+    "proof": {
+        "eyebrow": "Our Work",
+        "description": "See what we've built",
+        "title": "Some of what we've built.",
+        "items": [
+            {
+                "alt": "Video production crew filming corporate interview in professional studio"
+            },
+            {
+                "alt": "Film crew setting up lighting equipment for commercial video shoot"
+            },
+            {
+                "alt": "Professional photographer with camera on set"
+            },
+            {
+                "alt": "Professional video camera on dolly track during film production"
+            },
+            {
+                "alt": "Director reviewing footage on monitor during video shoot"
+            },
+            {
+                "alt": "Film production behind the scenes with cinema camera"
+            }
+        ]
+    },
+    "results": {
+        "eyebrow": "Results",
+        "description": "What growth looks like",
+        "title": "Growth Partner That Turns Content into Revenue",
+        "gold": "Revenue",
+        "steps": [
+            {
+                "title": "Audit",
+                "description": "We audit your online presence, messaging, and competitive landscape. You get a clear report with what's working, what's not, and what to fix first."
+            },
+            {
+                "title": "Create & Build",
+                "description": "We produce video content mapped to your sales process and build websites that convert. Every asset earns its place in your pipeline."
+            },
+            {
+                "title": "Optimize",
+                "description": "We set up your CRM, automate follow-ups, and build dashboards so you can see what's working. Systems that sell while you sleep."
+            }
+        ]
+    },
+    "pricing": {
+        "eyebrow": "Packages",
+        "title": "Ways to work together",
+        "subtitle": "Pick what fits. We'll figure out the rest on a call.",
+        "popular": "Most Popular",
+        "bestFor": "Best for:",
+        "notSure": "Not sure? That's fine. We'll figure it out on a call.",
+        "talk": "Let's talk",
+        "offers": [
+            {
+                "name": "Sprint",
+                "headline": "One thing, done right.",
+                "description": "You know what needs fixing. We take it on, deliver it in two weeks, and hand it back.",
+                "bestFor": "A single deliverable: a video, a landing page, a CRM setup, or an audit with a clear action plan.",
+                "includes": [
+                    "Online presence audit",
+                    "Prioritized recommendations report",
+                    "One deliverable of your choice",
+                    "Implementation guidance",
+                    "2 rounds of revisions",
+                    "Delivered in 2 weeks"
+                ],
+                "ctaText": "Get Started",
+                "hoverText": "Let's Talk →"
+            },
+            {
+                "name": "Growth",
+                "headline": "The full setup, month to month.",
+                "description": "Content, CRM, website. We keep it all moving. Monthly check-ins, real numbers.",
+                "bestFor": "Businesses that want consistent content, a real sales system, and someone who owns it.",
+                "includes": [
+                    "Full audit & growth strategy",
+                    "Monthly content production (3 videos)",
+                    "CRM & sales system optimization",
+                    "Website updates & conversion testing",
+                    "In-house content coaching",
+                    "Monthly performance reviews",
+                    "Unlimited revisions",
+                    "Dedicated growth strategist"
+                ],
+                "ctaText": "Get Started",
+                "hoverText": "Let's Talk →"
+            },
+            {
+                "name": "Scale",
+                "headline": "Your team, without the hiring.",
+                "description": "We work alongside your people. Strategy, creative, and dev. As much or as little as you need.",
+                "bestFor": "Companies that need a dedicated team without the overhead of hiring.",
+                "includes": [
+                    "Everything in Growth",
+                    "Dedicated creative & dev team",
+                    "Multi-platform campaign strategy",
+                    "Advanced analytics & A/B testing",
+                    "Quarterly strategy sessions",
+                    "Custom integrations & workflows",
+                    "Dedicated account manager",
+                    "Priority support"
+                ],
+                "ctaText": "Contact Us",
+                "hoverText": "Let's Talk →"
+            }
+        ]
+    }
+}

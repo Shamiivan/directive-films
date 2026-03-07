@@ -1,35 +1,14 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-faq.module.css';
 
-const faqs = [
-  {
-    question: 'Why do you do five things instead of just one?',
-    answer: 'Because they\'re connected. A great video doesn\'t help if your website can\'t capture the lead. A great website doesn\'t help if your CRM loses the follow-up. We do all five so nothing breaks the chain between someone finding you and becoming a customer.',
-  },
-  {
-    question: 'Do I need all five?',
-    answer: 'No. We start by looking at your business and figuring out what will make the biggest difference right now. Sometimes that\'s a website. Sometimes it\'s your CRM. Sometimes it\'s video. We tell you where to start and you decide how far to go.',
-  },
-  {
-    question: 'How fast will I see results?',
-    answer: 'Sprint clients get a finished deliverable in two weeks. Monthly clients usually see real movement in 30-60 days.',
-  },
-  {
-    question: 'Can you work with the tools and team I already have?',
-    answer: 'Yes. We plug into whatever CRM, platform, or setup you\'re already running. If you have a team that could be making content, our coaching gets them producing on their own.',
-  },
-  {
-    question: 'Who do you typically work with?',
-    answer: 'B2B companies, professional services, SaaS, and businesses that are growing but know their online presence and sales process aren\'t keeping up. If you sell something that takes trust to close, we\'re a good fit.',
-  },
-  {
-    question: 'How do we get started?',
-    answer: 'A 30-minute call. We listen to what you\'re working on and tell you what we\'d focus on first. No deck, no pitch.',
-  },
-];
+interface FaqItemType {
+  question: string;
+  answer: string;
+}
 
 function FaqItem({
   question,
@@ -102,16 +81,18 @@ function FaqItem({
 
 export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const { t } = useTranslation('home');
+  const faqs = t('faq.items', { returnObjects: true }) as FaqItemType[];
 
   return (
     <section className={styles.faqSection}>
       <div className={styles.container}>
         <div className={styles.layout}>
           <motion.div className={styles.left} {...scrollReveal}>
-            <SectionEyebrow label="FAQ" description="" />
+            <SectionEyebrow label={t('faq.eyebrow')} description="" />
             <h2 className={styles.title}>
-              Questions?{' '}
-              <em className={styles.titleAccent}>We have answers</em>
+              {t('faq.title')}{' '}
+              <em className={styles.titleAccent}>{t('faq.accent')}</em>
             </h2>
           </motion.div>
 

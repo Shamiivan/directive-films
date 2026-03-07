@@ -1,18 +1,19 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import styles from './RotatingProofLine.module.css';
-
-const messages = [
-  'Clients see results in 30 days on average',
-  '500+ projects delivered',
-  '98% of clients stay past year one',
-];
 
 type Phase = 'typing' | 'holding' | 'erasing' | 'waiting';
 
 export default function RotatingProofLine() {
+  const { t, i18n } = useTranslation();
+  const messages = t('rotatingProof', { returnObjects: true }) as string[];
+
   const [displayText, setDisplayText] = useState('');
-  const [cursorVisible, setCursorVisible] = useState(true);
+  // cursorVisible is unused in the original code? Wait, it's defined but not used.
+  // I'll keep it as is if it was there, but maybe original had CSS for it.
+  // Actually, original code has <span className={styles.cursor}>|</span>
+
   const stateRef = useRef({ messageIndex: 0, charIndex: 0, phase: 'typing' as Phase });
   const prefersReducedMotion = useRef(false);
   const [isReduced, setIsReduced] = useState(false);
@@ -31,6 +32,9 @@ export default function RotatingProofLine() {
     function tick() {
       const s = stateRef.current;
       const msg = messages[s.messageIndex];
+
+      // Safety check if messages is not an array or empty
+      if (!Array.isArray(messages) || messages.length === 0) return;
 
       switch (s.phase) {
         case 'typing':
@@ -70,7 +74,7 @@ export default function RotatingProofLine() {
 
     tick();
     return () => clearTimeout(timer);
-  }, []);
+  }, [messages]); // Restart if messages change (language change)
 
   if (isReduced) {
     return (

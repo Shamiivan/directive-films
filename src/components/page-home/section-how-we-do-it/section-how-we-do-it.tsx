@@ -1,12 +1,27 @@
 import { useRef, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-how-we-do-it.module.css';
 
+interface Step {
+  number: string;
+  title: string;
+  description: string;
+}
+
+const stepImages = [
+  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&h=800&fit=crop',
+  'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop',
+];
+
 export default function HowWeDoItSection() {
   const [activeStep, setActiveStep] = useState(0);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { t } = useTranslation('home');
+  const localizedSteps = t('process.steps', { returnObjects: true }) as Step[];
 
   const { scrollYProgress } = useScroll({
     target: scrollContainerRef,
@@ -20,26 +35,11 @@ export default function HowWeDoItSection() {
     setActiveStep(rounded);
   });
 
-  const steps = [
-    {
-      number: '01',
-      title: 'Look at what you have',
-      description: 'We go through your site, content, CRM, and sales process. You get a clear picture of what\'s working and what isn\'t.',
-      image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=1200&h=800&fit=crop',
-    },
-    {
-      number: '02',
-      title: 'Fix the gaps',
-      description: 'We build or rebuild the pieces that matter most. A page, a video, an email sequence. Whatever moves the needle first.',
-      image: 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1200&h=800&fit=crop',
-    },
-    {
-      number: '03',
-      title: 'Track what matters',
-      description: 'We set up dashboards so you can see what\'s actually driving results. No vanity metrics.',
-      image: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop',
-    },
-  ];
+  // Combine localized text with images
+  const steps = localizedSteps.map((step, i) => ({
+    ...step,
+    image: stepImages[i] || stepImages[0],
+  }));
 
   return (
     <div ref={scrollContainerRef} className={styles.scrollContainer}>
@@ -50,9 +50,25 @@ export default function HowWeDoItSection() {
             className={styles.leftColumn}
             {...scrollReveal}
           >
-            <SectionEyebrow label="How it works" description="" />
+            <SectionEyebrow label={t('process.eyebrow')} description="" />
             <h2 className={styles.title}>
-              Three steps. Nothing <span className={styles.highlight}>complicated.</span>
+              {t('process.title').split('complicated.').map((part, i, arr) => (
+                <span key={i}>
+                  {part}
+                  {i < arr.length - 1 && <span className={styles.highlight}>complicated.</span>}
+                </span>
+              ))}
+              {/* Fallback for French where "compliqué." is used */}
+              {t('process.title').includes('compliqué.') &&
+                t('process.title').split('compliqué.').map((part, i, arr) => (
+                  <span key={i}>
+                    {part}
+                    {i < arr.length - 1 && <span className={styles.highlight}>compliqué.</span>}
+                  </span>
+                ))
+              }
+              {/* Better way: wrap highlight in JSON or just handle both */}
+              {!t('process.title').includes('complicated.') && !t('process.title').includes('compliqué.') && t('process.title')}
             </h2>
             <div className={styles.divider}></div>
 
@@ -106,8 +122,8 @@ export default function HowWeDoItSection() {
               <AnimatePresence mode="wait">
                 <motion.img
                   key={activeStep}
-                  src={steps[activeStep].image}
-                  alt={steps[activeStep].title}
+                  src={steps[activeStep]?.image}
+                  alt={steps[activeStep]?.title}
                   className={styles.processImage}
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}

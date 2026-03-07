@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
 import styles from './section-about-hero.module.css';
 
 export default function AboutHeroSection() {
+  const { t } = useTranslation('about');
+
   return (
     <section className={styles.heroSection}>
       <div className={styles.overlay} />
@@ -14,13 +17,13 @@ export default function AboutHeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <span className={styles.label}>About Us</span>
+          <span className={styles.label}>{t('hero.label')}</span>
           <h1 className={styles.title}>
-            We came from sales. Not marketing{' '}
-            <em className={styles.titleAccent}>school.</em>
+            {t('hero.title')}{' '}
+            <em className={styles.titleAccent}>{t('hero.accent')}</em>
           </h1>
           <p className={styles.description}>
-            We know what it's like to lose a deal because your website didn't show how good you actually are. That's why we built this.
+            {t('hero.description')}
           </p>
           <motion.div
             className={styles.ctaWrapper}
@@ -29,7 +32,7 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              Let's talk
+              {t('hero.cta')}
             </MagneticButton>
           </motion.div>
         </motion.div>

@@ -1,0 +1,164 @@
+{
+    "hero": {
+        "title": "Venez construire des choses qui fonctionnent vraiment.",
+        "description": "Petite équipe. Vrais clients. Votre travail est publié et vous voyez les résultats.",
+        "form": {
+            "title": "Intéressé ? Parlons-en.",
+            "subtitle": "Laissez vos coordonnées ci-dessous. Nous vous contacterons s'il y a une adéquation.",
+            "fields": {
+                "name": {
+                    "label": "Nom *",
+                    "placeholder": "Votre nom complet"
+                },
+                "email": {
+                    "label": "Email *",
+                    "placeholder": "votre.email@exemple.com"
+                },
+                "phone": {
+                    "label": "Numéro de téléphone",
+                    "placeholder": "+1 (555) 123-4567"
+                },
+                "linkedin": {
+                    "label": "Lien LinkedIn",
+                    "placeholder": "linkedin.com/in/votreprofil"
+                }
+            },
+            "submit": "Postuler maintenant"
+        }
+    },
+    "benefits": {
+        "title": "Ce que vous obtiendrez",
+        "items": [
+            {
+                "id": "learn",
+                "title": "Apprenez ce qui fonctionne vraiment",
+                "description": "La plupart des agences vous apprennent à filmer de jolis plans. Ici, vous participerez aux sessions stratégiques des clients, apprendrez ce qui convertit et pourquoi, et comprendrez comment les entreprises croissent réellement."
+            },
+            {
+                "id": "fast",
+                "title": "Nous avançons vite et payons bien",
+                "description": "Entreprise rentable. Rémunération compétitive. Respect de votre temps. Construisez un excellent travail, gagnez bien votre vie, ayez une vie."
+            },
+            {
+                "id": "autonomy",
+                "title": "Autonomie avec responsabilité",
+                "description": "Les performants gagnent en flexibilité dans la structuration de leur temps. Les standards ne changent pas, seule la façon dont vous vous gérez change."
+            },
+            {
+                "id": "leadership",
+                "title": "Travaillez directement avec la direction",
+                "description": "Petite équipe, structure plate. Vous travaillerez aux côtés des fondateurs et des créatifs seniors, pas enterré dans un département."
+            }
+        ]
+    },
+    "positions": {
+        "title": "Postes ouverts",
+        "apply": "Postuler maintenant",
+        "sections": {
+            "responsibilities": "Responsabilités clés",
+            "requirements": "Exigences"
+        },
+        "list": [
+            {
+                "id": "video-editor",
+                "title": "Monteur Vidéo",
+                "type": "Temps plein",
+                "description": "Transformez des images brutes en contenus vidéo percutants axés sur la vente qui convertissent les spectateurs en clients.",
+                "responsibilities": [
+                    "Monter du contenu vidéo pour plusieurs plateformes et cas d'utilisation",
+                    "Travailler avec l'équipe créative pour maintenir la cohérence de la marque",
+                    "Optimiser les vidéos pour les métriques de conversion et d'engagement",
+                    "Collaborer avec les stratégistes pour aligner les montages avec les objectifs de vente",
+                    "Gérer plusieurs projets avec des délais serrés"
+                ],
+                "requirements": [
+                    "3+ ans d'expérience professionnelle en montage vidéo",
+                    "Expert en Adobe Premiere Pro, After Effects ou DaVinci Resolve",
+                    "Forte compréhension du rythme, de la narration et de la composition visuelle",
+                    "Portfolio démontrant des travaux vidéo commerciaux/marketing",
+                    "Capacité à travailler de manière indépendante et à suivre une direction créative"
+                ]
+            },
+            {
+                "id": "videographer",
+                "title": "Vidéaste / Cadreur",
+                "type": "Temps plein",
+                "description": "Capturez des images de haute qualité qui racontent les histoires de nos clients et stimulent la croissance de leur entreprise.",
+                "responsibilities": [
+                    "Planifier et exécuter des tournages vidéo pour divers clients et industries",
+                    "Utiliser du matériel de caméra professionnel, de l'éclairage et du matériel audio",
+                    "Travailler avec les réalisateurs et producteurs pour concrétiser la vision créative",
+                    "Repérer des lieux et planifier des listes de plans",
+                    "Assurer la qualité technique et la cohérence visuelle sur tous les projets"
+                ],
+                "requirements": [
+                    "3+ ans d'expérience professionnelle en vidéographie",
+                    "Maîtrise des caméras de cinéma (RED, ARRI, Sony FX, etc.)",
+                    "Forte connaissance de l'éclairage, de la composition et de la cinématographie",
+                    "Expérience du tournage d'interviews, de B-roll et de contenu commercial",
+                    "Fiable, ponctuel et professionnel sur le plateau"
+                ]
+            },
+            {
+                "id": "creative-director",
+                "title": "Directeur Créatif",
+                "type": "Temps plein",
+                "description": "Dirigez la vision créative et la stratégie, en veillant à ce que chaque vidéo s'aligne sur les objectifs du client et génère des résultats mesurables.",
+                "responsibilities": [
+                    "Superviser la direction créative de tous les projets vidéo",
+                    "Collaborer avec l'équipe stratégique pour traduire les objectifs commerciaux en concepts créatifs",
+                    "Animer des sessions de remue-méninges et présenter des idées créatives aux clients",
+                    "Mentorer et guider les membres de l'équipe créative",
+                    "Assurer la cohérence de la marque et la qualité sur tous les livrables"
+                ],
+                "requirements": [
+                    "5+ ans dans un rôle de leadership créatif",
+                    "Expérience prouvée dans la création de contenu vidéo axé sur la conversion",
+                    "Forte compréhension de la psychologie de la vente et des fondamentaux du marketing",
+                    "Excellentes capacités de présentation et de communication avec les clients",
+                    "Portfolio présentant un travail créatif stratégique"
+                ]
+            },
+            {
+                "id": "content-strategist",
+                "title": "Stratégiste de Contenu",
+                "type": "Temps plein",
+                "description": "Élaborez des stratégies vidéo qui comblent les fuites de revenus et transforment les prospects en clients payants.",
+                "responsibilities": [
+                    "Analyser les processus de vente des clients pour identifier les opportunités de contenu",
+                    "Développer des feuilles de route vidéo stratégiques alignées sur les objectifs commerciaux",
+                    "Créer des briefs de contenu et des cadres de messagerie",
+                    "Suivre la performance vidéo et optimiser en fonction des données de conversion",
+                    "Collaborer avec les équipes créatives et de production sur l'exécution"
+                ],
+                "requirements": [
+                    "3+ ans en stratégie de contenu, marketing ou aide à la vente",
+                    "Compréhension approfondie des entonnoirs de vente et des parcours clients",
+                    "Expérience du marketing vidéo et de l'analyse de performance de contenu",
+                    "Fortes capacités de réflexion stratégique et de résolution de problèmes",
+                    "Excellente communication écrite et verbale"
+                ]
+            },
+            {
+                "id": "account-manager",
+                "title": "Gestionnaire de Compte",
+                "type": "Temps plein",
+                "description": "Soyez le partenaire de confiance de nos clients, en assurant une exécution fluide du projet et des résultats exceptionnels.",
+                "responsibilities": [
+                    "Servir de point de contact principal pour les comptes clients assignés",
+                    "Gérer les délais, les budgets et les livrables du projet",
+                    "Coordonner entre les clients et les équipes de production internes",
+                    "Identifier les opportunités de croissance de compte et de vente incitative",
+                    "Assurer la satisfaction et la fidélisation des clients"
+                ],
+                "requirements": [
+                    "2+ ans en gestion de compte ou service client",
+                    "Expérience dans l'industrie créative/production vidéo préférée",
+                    "Excellentes compétences organisationnelles et gestion de projet",
+                    "Fortes capacités de création de relations et de communication",
+                    "Confortable à gérer plusieurs clients et projets simultanément"
+                ]
+            }
+        ]
+    }
+}

@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 import { scrollReveal } from '../../../../utils/animations';
 import styles from './section-careers-hero.module.css';
 
 export default function CareersHeroSection() {
+  const { t } = useTranslation('careers');
+
   return (
     <section className={styles.careersHero}>
       <div className={styles.container}>
@@ -11,9 +14,9 @@ export default function CareersHeroSection() {
           {...scrollReveal}
         >
           <div className={styles.leftSide}>
-            <h1 className={styles.title}>Come build things that actually work.</h1>
+            <h1 className={styles.title}>{t('hero.title')}</h1>
             <p className={styles.description}>
-              Small team. Real clients. Your work ships and you see the results.
+              {t('hero.description')}
             </p>
           </div>
 
@@ -24,55 +27,55 @@ export default function CareersHeroSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <h2 className={styles.formTitle}>Interested? Let's talk.</h2>
+            <h2 className={styles.formTitle}>{t('hero.form.title')}</h2>
             <p className={styles.formSubtitle}>
-              Drop your info below. We'll reach out if there's a fit.
+              {t('hero.form.subtitle')}
             </p>
 
             <form className={styles.form}>
               <div className={styles.formGroup}>
-                <label htmlFor="name" className={styles.label}>Name *</label>
+                <label htmlFor="name" className={styles.label}>{t('hero.form.fields.name.label')}</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
                   className={styles.input}
-                  placeholder="Your full name"
+                  placeholder={t('hero.form.fields.name.placeholder')}
                   required
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="email" className={styles.label}>Email *</label>
+                <label htmlFor="email" className={styles.label}>{t('hero.form.fields.email.label')}</label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   className={styles.input}
-                  placeholder="your.email@example.com"
+                  placeholder={t('hero.form.fields.email.placeholder')}
                   required
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="phone" className={styles.label}>Phone number</label>
+                <label htmlFor="phone" className={styles.label}>{t('hero.form.fields.phone.label')}</label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   className={styles.input}
-                  placeholder="+1 (555) 123-4567"
+                  placeholder={t('hero.form.fields.phone.placeholder')}
                 />
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="linkedin" className={styles.label}>LinkedIn link</label>
+                <label htmlFor="linkedin" className={styles.label}>{t('hero.form.fields.linkedin.label')}</label>
                 <input
                   type="url"
                   id="linkedin"
                   name="linkedin"
                   className={styles.input}
-                  placeholder="linkedin.com/in/yourprofile"
+                  placeholder={t('hero.form.fields.linkedin.placeholder')}
                 />
               </div>
 
@@ -83,7 +86,7 @@ export default function CareersHeroSection() {
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
               >
-                Apply now
+                {t('hero.form.submit')}
               </motion.button>
             </form>
           </motion.div>

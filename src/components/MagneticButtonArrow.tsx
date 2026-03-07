@@ -1,6 +1,7 @@
 import { useRef, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { lerp } from '../utils/animations';
+import { useLocalePath } from '../hooks/useLocalePath';
 
 interface MagneticButtonArrowProps {
   children: ReactNode;
@@ -23,6 +24,7 @@ export default function MagneticButtonArrow({
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [ripples, setRipples] = useState<Array<{ id: number; x: number; y: number }>>([]);
   const [isHovered, setIsHovered] = useState(false);
+  const l = useLocalePath();
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (!elementRef.current) return;
@@ -131,7 +133,7 @@ export default function MagneticButtonArrow({
     return (
       <motion.a
         ref={elementRef as React.RefObject<HTMLAnchorElement>}
-        href={href}
+        href={l(href)}
         {...sharedProps}
       >
         {rippleElements}

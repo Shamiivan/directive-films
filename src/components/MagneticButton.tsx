@@ -1,6 +1,7 @@
 import { useRef, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { lerp } from '../utils/animations';
+import { useLocalePath } from '../hooks/useLocalePath';
 
 interface Ripple {
   id: number;
@@ -19,6 +20,7 @@ export default function MagneticButton({ children, className = '', onClick, href
   const elementRef = useRef<HTMLButtonElement | HTMLAnchorElement>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [ripples, setRipples] = useState<Ripple[]>([]);
+  const l = useLocalePath();
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (!elementRef.current) return;
@@ -115,7 +117,7 @@ export default function MagneticButton({ children, className = '', onClick, href
     return (
       <motion.a
         ref={elementRef as React.RefObject<HTMLAnchorElement>}
-        href={href}
+        href={l(href)}
         {...sharedProps}
       >
         {rippleElements}
