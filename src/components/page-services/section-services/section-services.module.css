@@ -159,18 +159,8 @@
 }
 
 .cardFooter {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   padding-top: var(--space-lg);
   border-top: 1px solid var(--color-border-light);
-}
-
-.timeline {
-  font-family: var(--font-mono);
-  font-size: var(--font-size-body-sm);
-  color: var(--color-text-muted);
-  letter-spacing: var(--letter-spacing-wider);
 }
 
 .cardCta {

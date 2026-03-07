@@ -28,7 +28,6 @@ function ServiceCardComponent({ service, index }: { service: ServiceCard; index:
         <p className={styles.cardDescription}>{service.description}</p>
 
         <div className={styles.cardFooter}>
-          <span className={styles.timeline}>{service.timeline}</span>
           <MagneticButton href="/contact" className={styles.cardCta}>
             {service.ctaLabel}
           </MagneticButton>
