@@ -6,14 +6,6 @@ import styles from './section-nav.module.css';
 
 const MotionLink = motion.create(Link);
 
-const serviceLinks = [
-  { href: '/services#diagnose', label: 'Diagnose', desc: 'Online Presence Audit' },
-  { href: '/services#coach', label: 'Coach', desc: 'Film & Content Setup' },
-  { href: '/services#create', label: 'Create', desc: 'Video Production' },
-  { href: '/services#optimize', label: 'Optimize', desc: 'CRM & Sales' },
-  { href: '/services#build', label: 'Build', desc: 'Web Development' },
-];
-
 // Magnetic Nav Link Component
 function MagneticNavLink({ to, children }: { to: string; children: React.ReactNode }) {
   const ref = useRef<HTMLAnchorElement>(null);
@@ -56,28 +48,33 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
 
 export default function NavSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const dropdownRef = useRef<HTMLLIElement>(null);
-  const dropdownTimeout = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const [scrolled, setScrolled] = useState(false);
 
   // Static colors — nav stays dark throughout
   const logoColor = '#ffffff';
-  const triggerColor = '#ffffff';
   const hamburgerBg = '#ffffff';
+
+  // Show nav after scrolling past hero area on mobile
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   // Close menu on escape key
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         if (mobileMenuOpen) setMobileMenuOpen(false);
-        if (servicesOpen) setServicesOpen(false);
       }
     };
 
     document.addEventListener('keydown', handleEscape);
     return () => document.removeEventListener('keydown', handleEscape);
-  }, [mobileMenuOpen, servicesOpen]);
+  }, [mobileMenuOpen]);
 
   // Prevent body scroll when menu is open
   useEffect(() => {
@@ -92,16 +89,6 @@ export default function NavSection() {
 
   const handleLinkClick = () => {
     setMobileMenuOpen(false);
-    setMobileServicesOpen(false);
-  };
-
-  const handleDropdownEnter = () => {
-    clearTimeout(dropdownTimeout.current);
-    setServicesOpen(true);
-  };
-
-  const handleDropdownLeave = () => {
-    dropdownTimeout.current = setTimeout(() => setServicesOpen(false), 150);
   };
 
   return (
@@ -124,36 +111,8 @@ export default function NavSection() {
           <li>
             <MagneticNavLink to="/">HOME</MagneticNavLink>
           </li>
-          <li
-            ref={dropdownRef}
-            className={styles.dropdownWrapper}
-            onMouseEnter={handleDropdownEnter}
-            onMouseLeave={handleDropdownLeave}
-          >
-            <motion.button className={styles.dropdownTrigger} style={{ color: triggerColor }}>
-              SERVICES
-              <svg className={`${styles.chevron} ${servicesOpen ? styles.chevronOpen : ''}`} width="12" height="12" viewBox="0 0 12 12" fill="none">
-                <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </motion.button>
-            <AnimatePresence>
-              {servicesOpen && (
-                <motion.div
-                  className={styles.dropdown}
-                  initial={{ opacity: 0, y: 8 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: 8 }}
-                  transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                >
-                  {serviceLinks.map((link) => (
-                    <Link key={link.href} to={link.href} className={styles.dropdownItem}>
-                      <span className={styles.dropdownLabel}>{link.label}</span>
-                      <span className={styles.dropdownDesc}>{link.desc}</span>
-                    </Link>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
+          <li>
+            <MagneticNavLink to="/services">SERVICES</MagneticNavLink>
           </li>
           <li>
             <MagneticNavLink to="/about">ABOUT US</MagneticNavLink>
@@ -225,35 +184,9 @@ export default function NavSection() {
                     </Link>
                   </li>
                   <li>
-                    <button
-                      className={styles.mobileServicesToggle}
-                      onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    >
-                      <span>SERVICES</span>
-                      <svg className={`${styles.chevron} ${mobileServicesOpen ? styles.chevronOpen : ''}`} width="16" height="16" viewBox="0 0 12 12" fill="none">
-                        <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                    </button>
-                    <AnimatePresence>
-                      {mobileServicesOpen && (
-                        <motion.ul
-                          className={styles.mobileSubMenu}
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-                        >
-                          {serviceLinks.map((link) => (
-                            <li key={link.href}>
-                              <Link to={link.href} onClick={handleLinkClick}>
-                                <span className={styles.mobileSubLabel}>{link.label}</span>
-                                <span className={styles.mobileSubDesc}>{link.desc}</span>
-                              </Link>
-                            </li>
-                          ))}
-                        </motion.ul>
-                      )}
-                    </AnimatePresence>
+                    <Link to="/services" onClick={handleLinkClick}>
+                      SERVICES
+                    </Link>
                   </li>
                   <li>
                     <Link to="/about" onClick={handleLinkClick}>

@@ -1,5 +1,6 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-how-we-do-it.module.css';
 
@@ -49,6 +50,7 @@ export default function HowWeDoItSection() {
             className={styles.leftColumn}
             {...scrollReveal}
           >
+            <SectionEyebrow label="Our Offer" description="" />
             <h2 className={styles.title}>
               Growth Partner That Turns Content into <span className={styles.highlight}>Revenue</span>
             </h2>

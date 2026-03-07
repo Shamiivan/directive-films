@@ -17,16 +17,6 @@
   margin-bottom: var(--space-4xl);
 }
 
-.label {
-  display: block;
-  font-family: var(--font-mono);
-  font-size: var(--font-size-label);
-  letter-spacing: var(--letter-spacing-ultra);
-  text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-lg);
-}
-
 .title {
   font-family: var(--font-body);
   font-size: clamp(32px, 3.5vw + 8px, 48px);

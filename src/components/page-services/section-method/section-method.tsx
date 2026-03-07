@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Search, Lightbulb, Wrench, HeartHandshake } from 'lucide-react';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '@/utils/animations';
 import { methodSteps } from '../services-data';
 import styles from './section-method.module.css';
@@ -11,7 +12,7 @@ export default function SectionMethod() {
     <section className={styles.section}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <span className={styles.label}>How we work</span>
+          <SectionEyebrow label="How We Work" description="One method, every service" />
           <h2 className={styles.title}>
             One method. <em className={styles.titleAccent}>Every service.</em>
           </h2>

@@ -10,25 +10,23 @@
 }
 
 .header {
-  text-align: center;
+  text-align: left;
   margin-bottom: var(--space-3xl);
 }
 
-.eyebrow {
-  font-size: var(--font-size-caption);
-  font-weight: 600;
-  color: var(--color-gold);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0 0 var(--space-md) 0;
-}
-
 .title {
-  font-size: 48px;
+  font-size: clamp(32px, 3.5vw + 8px, 48px);
+  font-family: var(--font-body);
   font-weight: 700;
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
   color: var(--color-text-primary);
   margin: 0;
-  line-height: 1.2;
+}
+
+.titleAccent {
+  font-style: italic;
+  color: var(--color-text-secondary);
 }
 
 .featuresGrid {
@@ -105,7 +103,7 @@
   font-size: var(--font-size-body);
   font-weight: 600;
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-pill);
   cursor: pointer;
   transition: background var(--transition-slow), transform var(--transition-fast);
 }
@@ -137,11 +135,6 @@
 
   .header {
     margin-bottom: var(--space-2xl);
-  }
-
-  .eyebrow {
-    font-size: var(--font-size-label);
-    margin-bottom: 12px;
   }
 
   .title {

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '@/utils/animations';
 import { proofResults, testimonials, aggregateStats } from '../services-data';
 import styles from './section-proof.module.css';
@@ -8,7 +9,7 @@ export default function SectionProof() {
     <section className={styles.section}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <span className={styles.label}>Results</span>
+          <SectionEyebrow label="Results" description="Numbers, not promises" />
           <h2 className={styles.title}>
             Numbers, not <em className={styles.titleAccent}>promises</em>
           </h2>
@@ -31,27 +32,6 @@ export default function SectionProof() {
           ))}
         </div>
 
-        {/* Case results */}
-        <div className={styles.results}>
-          {proofResults.map((result, i) => (
-            <motion.div
-              key={i}
-              className={styles.resultCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.5, delay: i * 0.12 }}
-            >
-              <span className={styles.clientType}>{result.clientType}</span>
-              <div className={styles.resultFlow}>
-                <span className={styles.resultProblem}>{result.problem}</span>
-                <span className={styles.resultArrow}>&rarr;</span>
-                <span className={styles.resultChange}>{result.change}</span>
-              </div>
-              <div className={styles.resultMetric}>{result.metric}</div>
-            </motion.div>
-          ))}
-        </div>
 
         {/* Testimonial quotes */}
         <div className={styles.quotes}>

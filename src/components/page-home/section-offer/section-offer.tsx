@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Search, Video, MonitorPlay, BarChart3, Globe } from 'lucide-react';
 import { useState } from 'react';
 import MagneticButton from '../../MagneticButton';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '../../../utils/animations';
 import { useTilt } from '../../../hooks/useTilt';
 import styles from './section-offer.module.css';
@@ -18,27 +19,27 @@ const services = [
   {
     title: 'Audit',
     description: 'We look at your website, socials, and messaging and tell you what\'s actually working and what isn\'t. You get a clear plan — and we help you run it.',
-    href: '/services/diagnose',
+    href: '/services',
   },
   {
     title: 'Coach',
     description: 'We set up your studio, train your team, and give them a playbook. After that, they make professional content on their own.',
-    href: '/services/coach',
+    href: '/services',
   },
   {
     title: 'Create',
     description: 'We produce the videos. Scripted around your sales process.',
-    href: '/services/create',
+    href: '/services',
   },
   {
     title: 'Optimize',
     description: 'We set up your CRM properly — sequences, follow-ups, dashboards. So you always know what\'s working and leads don\'t fall through.',
-    href: '/services/optimize',
+    href: '/services',
   },
   {
     title: 'Build',
     description: 'Fast websites that say what you do, capture leads, and book meetings.',
-    href: '/services/build',
+    href: '/services',
   },
 ];
 
@@ -92,6 +93,7 @@ export default function OfferSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
+          <SectionEyebrow label="Services" description="What we do" />
           <h2 className={styles.title}>How we get you there</h2>
           <p className={styles.subtitle}>
             We do five things and we make sure they actually work together. Here's what that looks like.

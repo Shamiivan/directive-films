@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal, gridStagger, imageZoom } from '../../../utils/animations';
 import styles from './section-results.module.css';
 
@@ -31,19 +32,19 @@ export default function ResultsSection() {
       icon: <SearchIcon />,
       title: 'Audit',
       description: 'We audit your online presence, messaging, and competitive landscape. You get a clear report with what\'s working, what\'s not, and what to fix first.',
-      link: '/services/diagnose',
+      link: '/services',
     },
     {
       icon: <VideoIcon />,
       title: 'Create & Build',
       description: 'We produce video content mapped to your sales process and build websites that convert. Every asset earns its place in your pipeline.',
-      link: '/services/create',
+      link: '/services',
     },
     {
       icon: <ChartIcon />,
       title: 'Optimize',
       description: 'We set up your CRM, automate follow-ups, and build dashboards so you can see what\'s working. Systems that sell while you sleep.',
-      link: '/services/optimize',
+      link: '/services',
     },
   ];
 
@@ -51,6 +52,7 @@ export default function ResultsSection() {
     <section className={styles.resultsSection}>
       <div className={styles.container}>
         {/* Title */}
+        <SectionEyebrow label="Results" description="What growth looks like" />
         <motion.h2
           className={styles.title}
           {...scrollReveal}

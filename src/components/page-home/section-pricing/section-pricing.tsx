@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '../../../utils/animations';
 import { useTilt } from '../../../hooks/useTilt';
 import styles from './section-pricing.module.css';
@@ -126,6 +127,7 @@ export default function PricingSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
+          <SectionEyebrow label="Packages" description="" />
           <h2 className={styles.title}>
             Ways to <span className={styles.gold}>work together</span>
           </h2>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import MagneticButton from '@/components/MagneticButton';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '@/utils/animations';
 import { servicePhases } from '../services-data';
 import type { ServiceCard } from '../services-data';
@@ -42,7 +43,7 @@ export default function SectionServices() {
     <section className={styles.section}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <span className={styles.label}>Our services</span>
+          <SectionEyebrow label="Our Services" description="Same method, different starting point" />
           <h2 className={styles.title}>
             Same method. <em className={styles.titleAccent}>Different starting point.</em>
           </h2>

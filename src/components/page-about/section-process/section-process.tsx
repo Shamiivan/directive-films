@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal, gridStagger } from '@/utils/animations';
 import styles from './section-process.module.css';
 
@@ -25,7 +26,8 @@ export default function ProcessSection() {
     <section className={styles.processSection}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <h2 className={styles.title}>We built what we couldn't find.</h2>
+          <SectionEyebrow label="Our Story" description="How we got here" />
+          <h2 className={styles.title}>We built what we <em className={styles.titleAccent}>couldn't find.</em></h2>
           <p className={styles.subtitle}>
             Agencies sell disconnected projects. We built one system that turns your content into revenue.
           </p>

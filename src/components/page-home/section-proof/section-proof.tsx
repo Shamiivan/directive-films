@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import MagneticButton from '../../MagneticButton';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal, imageZoom } from '../../../utils/animations';
 import styles from './section-proof.module.css';
 
@@ -36,6 +37,7 @@ export default function ProofSection() {
     <section className={styles.proofSection}>
       <div className={styles.container}>
         {/* Title */}
+        <SectionEyebrow label="Our Work" description="See the results" />
         <motion.h2
           className={styles.title}
           {...scrollReveal}

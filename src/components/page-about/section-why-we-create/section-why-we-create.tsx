@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import SectionEyebrow from '../../SectionEyebrow';
+import MagneticButton from '../../MagneticButton';
 import { scrollReveal, gridStagger } from '@/utils/animations';
 import styles from './section-why-we-create.module.css';
 
@@ -30,8 +32,8 @@ export default function WhyWeCreateSection() {
     <section className={styles.whyWeCreateSection}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <p className={styles.eyebrow}>What Drives Us</p>
-          <h2 className={styles.title}>Principles, not platitudes.</h2>
+          <SectionEyebrow label="What Drives Us" description="Principles, not platitudes" />
+          <h2 className={styles.title}>Principles, not <em className={styles.titleAccent}>platitudes.</em></h2>
         </motion.div>
 
         <motion.div
@@ -66,9 +68,9 @@ export default function WhyWeCreateSection() {
           <p className={styles.ctaText}>
             You're leaving money on the table. 30-minute call. We audit your setup and show you where the gaps are.
           </p>
-          <button className={styles.ctaButton}>
+          <MagneticButton href="/contact" className={styles.ctaButton}>
             Get Your Free Audit
-          </button>
+          </MagneticButton>
         </motion.div>
       </div>
     </section>

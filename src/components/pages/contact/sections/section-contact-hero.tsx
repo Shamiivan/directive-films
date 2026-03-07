@@ -6,13 +6,15 @@ import styles from './section-contact-hero.module.css';
 export default function ContactHeroSection() {
   return (
     <section className={styles.contactHero}>
+      <div className={styles.grain} />
       <div className={styles.container}>
         <motion.div
           className={styles.content}
           {...scrollReveal}
         >
           <div className={styles.leftSide}>
-            <h1 className={styles.title}>Get in touch</h1>
+            <span className={styles.heroLabel}>Contact</span>
+            <h1 className={styles.title}>Get in <em className={styles.titleAccent}>touch</em></h1>
             <p className={styles.description}>
               Tell us what you're working on. We'll get back to you within 24 hours with honest feedback on how we can help.
             </p>

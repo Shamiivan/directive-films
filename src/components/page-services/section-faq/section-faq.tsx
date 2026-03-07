@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '@/utils/animations';
 import { faqItems } from '../services-data';
 import styles from './section-faq.module.css';
@@ -77,7 +78,7 @@ export default function FaqSection() {
       <div className={styles.container}>
         <div className={styles.layout}>
           <motion.div className={styles.left} {...scrollReveal}>
-            <span className={styles.label}>FAQ</span>
+            <SectionEyebrow label="FAQ" description="Common questions" />
             <h2 className={styles.title}>
               Common{' '}
               <em className={styles.titleAccent}>Questions</em>

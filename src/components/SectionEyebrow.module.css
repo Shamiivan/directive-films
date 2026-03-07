@@ -1,0 +1,38 @@
+.sectionDivider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.dividerLabel {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-ultra);
+  text-transform: uppercase;
+  color: var(--color-gold);
+  font-weight: var(--font-weight-medium);
+  flex-shrink: 0;
+}
+
+.dividerLine {
+  flex-grow: 1;
+  height: 1px;
+  background: var(--color-border-light);
+}
+
+.dividerDesc {
+  font-size: var(--font-size-body-sm);
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .sectionDivider {
+    gap: var(--space-md);
+  }
+
+  .dividerDesc {
+    display: none;
+  }
+}

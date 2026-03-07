@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import SectionEyebrow from '../../SectionEyebrow';
 import styles from './section-testimonials.module.css';
 
 export default function TestimonialsSection() {
@@ -26,6 +27,7 @@ export default function TestimonialsSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
+        <SectionEyebrow label="Testimonials" description="What clients say" />
         <motion.h2
           className={styles.title}
           initial={{ opacity: 0, y: 30 }}
