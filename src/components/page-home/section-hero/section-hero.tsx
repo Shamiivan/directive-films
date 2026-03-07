@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import SplitType from 'split-type';
 import MagneticButton from '../../MagneticButton';
 import { fadeInUp, fadeInScale } from '../../../utils/animations';
+import VideoStrip from './video-strip';
 import styles from './section-hero.module.css';
 
 export default function HeroSection() {
@@ -95,6 +96,8 @@ export default function HeroSection() {
           className={styles.videoShowcase}
           variants={fadeInScale}
         >
+          {/* Scrolling strip behind the video */}
+          <VideoStrip />
           <div className={styles.videoFrame}>
             <motion.div
               className={styles.videoContainer}
