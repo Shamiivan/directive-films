@@ -16,20 +16,20 @@
   font-weight: 700;
   color: var(--color-text-primary);
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-3xl);
 }
 
 .testimonialsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: var(--space-2xl);
 }
 
 .testimonialCard {
   background: var(--color-bg-primary);
   border: 1px solid var(--color-border-light);
   border-radius: var(--radius-2xl);
-  padding: 2rem;
+  padding: var(--space-2xl);
   transition: all var(--transition-slow);
   box-shadow: var(--shadow-sm);
 }
@@ -45,21 +45,21 @@
   font-weight: 700;
   color: rgba(17, 17, 17, 0.08);
   line-height: 1;
-  margin-bottom: 1rem;
+  margin-bottom: var(--space-md);
 }
 
 .quote {
   font-size: 1.125rem;
   line-height: 1.7;
   color: var(--color-text-secondary);
-  margin-bottom: 1.5rem;
+  margin-bottom: var(--space-lg);
   font-style: italic;
 }
 
 .author {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-md);
 }
 
 .authorImage {
@@ -97,16 +97,16 @@
   }
 
   .title {
-    margin-bottom: 2rem;
+    margin-bottom: var(--space-xl);
   }
 
   .testimonialsGrid {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: var(--space-lg);
   }
 
   .testimonialCard {
-    padding: 1.5rem;
+    padding: var(--space-lg);
   }
 
   .quoteIcon {

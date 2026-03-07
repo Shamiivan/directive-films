@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useState } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import SectionEyebrow from '../../SectionEyebrow';
 import { scrollReveal } from '../../../utils/animations';

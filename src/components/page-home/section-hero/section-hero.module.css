@@ -158,17 +158,23 @@
 /* Responsive */
 @media (max-width: 768px) {
   .hero {
-    padding-top: 100px;
+    padding-top: 80px;
     padding-bottom: 48px;
     min-height: auto;
   }
 
   .heroTitle {
     font-size: clamp(28px, 7.5vw, 36px);
+    margin-bottom: var(--space-md);
   }
 
   .heroSubtitle {
     font-size: var(--font-size-body);
+    margin-bottom: var(--space-lg);
+  }
+
+  .ctaButton {
+    margin-bottom: var(--space-lg);
   }
 
   .videoContainer {

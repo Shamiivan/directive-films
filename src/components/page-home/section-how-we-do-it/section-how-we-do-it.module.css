@@ -179,10 +179,12 @@
 
 @media (max-width: 768px) {
   .scrollContainer {
-    height: 200vh;
+    height: auto;
   }
 
   .stickyContent {
+    position: relative;
+    height: auto;
     padding: var(--space-2xl) 0;
   }
 

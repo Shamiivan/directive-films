@@ -93,7 +93,7 @@ export default function NavSection() {
 
   return (
     <>
-      <AnimatedNav className={styles.nav}>
+      <AnimatedNav className={`${styles.nav} ${scrolled ? styles.navVisible : styles.navHidden}`}>
         <MotionLink
           to="/"
           className={styles.logo}
