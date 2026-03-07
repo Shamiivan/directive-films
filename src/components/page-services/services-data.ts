@@ -110,7 +110,7 @@ export const servicePhases: ServicePhase[] = [
         name: 'Marketing Automation',
         outcome: 'Nurture leads on autopilot with sequences that actually convert.',
         description: 'Email and SMS sequences triggered by real buyer behavior. Drip campaigns, re-engagement flows, and lead scoring that keeps your pipeline warm.',
-        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f2?w=800&h=500&fit=crop',
+        image: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=500&fit=crop',
         ctaLabel: 'Automate Growth',
       },
       {
