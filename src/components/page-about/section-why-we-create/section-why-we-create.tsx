@@ -55,13 +55,6 @@ export default function WhyWeCreateSection() {
           ))}
         </motion.div>
 
-        <motion.div className={styles.imageWrapper} {...scrollReveal}>
-          <img
-            src="/images/video-editing-workspace.jpg"
-            alt="Professional video editing workspace"
-            className={styles.heroImage}
-          />
-        </motion.div>
 
       </div>
     </section>
