@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useSyncExternalStore } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
@@ -17,11 +17,64 @@ const stepImages = [
   'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=800&fit=crop',
 ];
 
-export default function HowWeDoItSection() {
-  const [activeStep, setActiveStep] = useState(0);
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
+// SSR-safe mobile detection using useSyncExternalStore
+const mobileQuery = '(max-width: 768px)';
+
+function subscribeToMedia(callback: () => void) {
+  const mql = window.matchMedia(mobileQuery);
+  mql.addEventListener('change', callback);
+  return () => mql.removeEventListener('change', callback);
+}
+
+function getIsMobile() {
+  return window.matchMedia(mobileQuery).matches;
+}
+
+function getServerSnapshot() {
+  return false;
+}
+
+function useIsMobile() {
+  return useSyncExternalStore(subscribeToMedia, getIsMobile, getServerSnapshot);
+}
+
+function useSteps() {
   const { t } = useTranslation('home');
   const localizedSteps = t('process.steps', { returnObjects: true }) as Step[];
+  return {
+    t,
+    steps: localizedSteps.map((step, i) => ({
+      ...step,
+      image: stepImages[i] || stepImages[0],
+    })),
+  };
+}
+
+function TitleWithHighlight({ title }: { title: string }) {
+  const highlightWords = ['complicated.', 'compliqué.'];
+  for (const word of highlightWords) {
+    if (title.includes(word)) {
+      const parts = title.split(word);
+      return (
+        <>
+          {parts.map((part, i, arr) => (
+            <span key={i}>
+              {part}
+              {i < arr.length - 1 && <span className={styles.highlight}>{word}</span>}
+            </span>
+          ))}
+        </>
+      );
+    }
+  }
+  return <>{title}</>;
+}
+
+// --- Desktop: scroll-driven sticky layout ---
+function HowWeDoItDesktop() {
+  const [activeStep, setActiveStep] = useState(0);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const { t, steps } = useSteps();
 
   const { scrollYProgress } = useScroll({
     target: scrollContainerRef,
@@ -31,44 +84,17 @@ export default function HowWeDoItSection() {
   const rawStep = useTransform(scrollYProgress, [0, 0.33, 0.66], [0, 1, 2]);
 
   useMotionValueEvent(rawStep, 'change', (latest) => {
-    const rounded = Math.round(latest);
-    setActiveStep(rounded);
+    setActiveStep(Math.round(latest));
   });
-
-  // Combine localized text with images
-  const steps = localizedSteps.map((step, i) => ({
-    ...step,
-    image: stepImages[i] || stepImages[0],
-  }));
 
   return (
     <div ref={scrollContainerRef} className={styles.scrollContainer}>
       <section className={styles.stickyContent}>
         <div className={styles.container}>
-          {/* Left Column - Process Steps */}
-          <motion.div
-            className={styles.leftColumn}
-            {...scrollReveal}
-          >
+          <motion.div className={styles.leftColumn} {...scrollReveal}>
             <SectionEyebrow label={t('process.eyebrow')} description="" />
             <h2 className={styles.title}>
-              {t('process.title').split('complicated.').map((part, i, arr) => (
-                <span key={i}>
-                  {part}
-                  {i < arr.length - 1 && <span className={styles.highlight}>complicated.</span>}
-                </span>
-              ))}
-              {/* Fallback for French where "compliqué." is used */}
-              {t('process.title').includes('compliqué.') &&
-                t('process.title').split('compliqué.').map((part, i, arr) => (
-                  <span key={i}>
-                    {part}
-                    {i < arr.length - 1 && <span className={styles.highlight}>compliqué.</span>}
-                  </span>
-                ))
-              }
-              {/* Better way: wrap highlight in JSON or just handle both */}
-              {!t('process.title').includes('complicated.') && !t('process.title').includes('compliqué.') && t('process.title')}
+              <TitleWithHighlight title={t('process.title')} />
             </h2>
             <div className={styles.divider}></div>
 
@@ -103,14 +129,12 @@ export default function HowWeDoItSection() {
               ))}
             </div>
 
-            {/* Progress bar */}
             <motion.div
               className={styles.progressBar}
               style={{ scaleX: scrollYProgress }}
             />
           </motion.div>
 
-          {/* Right Column - Image */}
           <motion.div
             className={styles.rightColumn}
             initial={{ opacity: 0, x: 50 }}
@@ -131,7 +155,6 @@ export default function HowWeDoItSection() {
                   transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
                 />
               </AnimatePresence>
-              {/* Overlay gradient */}
               <div className={styles.imageOverlay}></div>
             </div>
           </motion.div>
@@ -139,4 +162,53 @@ export default function HowWeDoItSection() {
       </section>
     </div>
   );
+}
+
+// --- Mobile: simple stacked cards ---
+function HowWeDoItMobile() {
+  const { t, steps } = useSteps();
+
+  return (
+    <section className={styles.mobileSection}>
+      <div className={styles.mobileHeader}>
+        <SectionEyebrow label={t('process.eyebrow')} description="" />
+        <h2 className={styles.title}>
+          <TitleWithHighlight title={t('process.title')} />
+        </h2>
+      </div>
+
+      <div className={styles.mobileCards}>
+        {steps.map((step, index) => (
+          <motion.div
+            key={index}
+            className={styles.mobileCard}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+          >
+            <div className={styles.mobileCardImage}>
+              <img
+                src={step.image}
+                alt={step.title}
+                loading="lazy"
+              />
+              <div className={styles.imageOverlay}></div>
+            </div>
+            <div className={styles.mobileCardBody}>
+              <span className={styles.stepNumber}>{step.number}.</span>
+              <h3 className={styles.stepTitle}>{step.title}</h3>
+              <p className={styles.mobileCardDescription}>{step.description}</p>
+            </div>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+// --- Parent: switches between mobile and desktop ---
+export default function HowWeDoItSection() {
+  const isMobile = useIsMobile();
+  return isMobile ? <HowWeDoItMobile /> : <HowWeDoItDesktop />;
 }

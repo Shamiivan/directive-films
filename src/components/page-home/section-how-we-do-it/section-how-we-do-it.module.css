@@ -177,51 +177,69 @@
   }
 }
 
-@media (max-width: 768px) {
-  .scrollContainer {
-    height: auto;
-  }
+/* Mobile: stacked cards layout */
+.mobileSection {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  padding: var(--space-3xl) var(--container-padding-mobile);
+}
 
-  .stickyContent {
-    position: relative;
-    height: auto;
-    padding: var(--space-2xl) 0;
-  }
+.mobileHeader {
+  margin-bottom: var(--space-2xl);
+}
 
-  .container {
-    padding: 0 var(--container-padding-mobile);
-    grid-template-columns: 1fr;
-    gap: var(--space-2xl);
-  }
+.mobileHeader .title {
+  font-size: var(--font-size-h2);
+  margin-bottom: 0;
+}
 
-  .leftColumn {
-    padding-right: 0;
-  }
+.mobileCards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
 
-  .title {
-    font-size: var(--font-size-h2);
-    margin-bottom: var(--space-md);
-  }
+.mobileCard {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+  box-shadow: var(--shadow-lg);
+}
 
-  .divider {
-    width: 200px;
-    margin-bottom: var(--space-xl);
-  }
+.mobileCardImage {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
 
-  .stepItem {
-    padding: 20px 0;
-  }
+.mobileCardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-  .stepTitle {
-    font-size: var(--font-size-body-lg);
-  }
+.mobileCardBody {
+  padding: var(--space-lg);
+}
 
-  .stepDescription {
-    margin-left: 0;
-    font-size: var(--font-size-body-sm);
-  }
+.mobileCardBody .stepNumber {
+  display: block;
+  margin-bottom: var(--space-xs);
+}
 
-  .imageWrapper {
-    height: 300px;
-  }
+.mobileCardBody .stepTitle {
+  font-size: var(--font-size-body-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.mobileCardDescription {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: 400;
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-secondary);
+  margin: 0;
 }
