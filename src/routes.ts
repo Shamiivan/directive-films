@@ -8,6 +8,7 @@ export default [
     route("careers", "routes/careers.tsx"),
     route("contact", "routes/contact.tsx"),
     route("services", "routes/services.tsx"),
+    route("privacy", "routes/privacy.tsx"),
   ]),
   route("/design-system", "routes/design-system.tsx"),
 ] satisfies RouteConfig;

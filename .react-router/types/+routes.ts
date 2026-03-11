@@ -39,6 +39,11 @@ type Pages = {
       "lang": string;
     };
   };
+  "/:lang/privacy": {
+    params: {
+      "lang": string;
+    };
+  };
   "/design-system": {
     params: {};
   };
@@ -47,7 +52,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/design-system";
+    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/design-system";
   };
   "routes/root-redirect.tsx": {
     id: "routes/root-redirect";
@@ -55,7 +60,7 @@ type RouteFiles = {
   };
   "routes/locale-layout.tsx": {
     id: "routes/locale-layout";
-    page: "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services";
+    page: "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -77,6 +82,10 @@ type RouteFiles = {
     id: "routes/services";
     page: "/:lang/services";
   };
+  "routes/privacy.tsx": {
+    id: "routes/privacy";
+    page: "/:lang/privacy";
+  };
   "routes/design-system.tsx": {
     id: "routes/design-system";
     page: "/design-system";
@@ -92,5 +101,6 @@ type RouteModules = {
   "routes/careers": typeof import("./src/routes/careers.tsx");
   "routes/contact": typeof import("./src/routes/contact.tsx");
   "routes/services": typeof import("./src/routes/services.tsx");
+  "routes/privacy": typeof import("./src/routes/privacy.tsx");
   "routes/design-system": typeof import("./src/routes/design-system.tsx");
 };

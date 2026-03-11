@@ -73,7 +73,7 @@ export default function FooterSection() {
                 &copy; {currentYear} DirectiveFilms. {t('footer.rights')}
               </p>
               <div className={styles.legalLinks}>
-                <a href="#" className={styles.legalLink}>{t('footer.privacy')}</a>
+                <Link to={l("/privacy")} className={styles.legalLink}>{t('footer.privacy')}</Link>
                 <span className={styles.separator}>&bull;</span>
                 <a href="#" className={styles.legalLink}>{t('footer.terms')}</a>
               </div>
