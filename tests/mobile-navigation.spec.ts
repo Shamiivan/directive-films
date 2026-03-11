@@ -29,7 +29,7 @@ test.describe('Mobile Navigation', () => {
     // All navigation links should be visible
     await expect(page.locator('text=HOME').last()).toBeVisible();
     await expect(page.locator('text=SERVICES').last()).toBeVisible();
-    await expect(page.locator('text=ABOUT US').last()).toBeVisible();
+    await expect(page.locator('text=MEET THE TEAM').last()).toBeVisible();
     await expect(page.locator('text=CAREERS').last()).toBeVisible();
     await expect(page.locator('text=Contact Us').last()).toBeVisible();
   });
