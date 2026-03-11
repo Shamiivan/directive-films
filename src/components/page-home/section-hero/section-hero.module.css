@@ -123,24 +123,29 @@
 }
 
 .logoContext {
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: var(--font-size-label);
-  letter-spacing: 0.1em;
+  letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  color: var(--color-text-on-dark-secondary);
-  opacity: 0.5;
-  margin-top: var(--space-2xl);
-  margin-bottom: var(--space-sm);
+  color: var(--color-gold);
+  opacity: 0.6;
+  margin-top: var(--space-3xl);
+  margin-bottom: var(--space-md);
 }
 
-/* Brand Logos */
+/* Brand Logos — frosted glass card */
 .brandLogos {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--space-2xl);
-  margin-top: var(--space-md);
-  opacity: 0.6;
+  margin-top: 0;
+  padding: var(--space-lg) var(--space-2xl);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--color-border-dark-subtle);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .brandLogo {
@@ -156,14 +161,14 @@
 .brandLogo img {
   max-width: 100%;
   max-height: 100%;
-  opacity: 0.5;
-  filter: grayscale(100%) brightness(0) invert(1);
-  transition: all var(--transition-slow);
+  opacity: 0.4;
+  filter: grayscale(100%) brightness(0) invert(1) sepia(30%) hue-rotate(10deg);
+  transition: opacity var(--transition-slow), filter var(--transition-slow);
 }
 
 .brandLogo:hover img {
   opacity: 1;
-  filter: grayscale(0%) brightness(1);
+  filter: grayscale(0%) brightness(1) drop-shadow(0 0 8px rgba(253, 183, 20, 0.3));
 }
 
 /* Responsive */
@@ -195,7 +200,7 @@
   .brandLogos {
     flex-wrap: wrap;
     gap: var(--space-md);
-    margin-top: var(--space-xl);
+    padding: var(--space-md) var(--space-lg);
   }
 
   .brandLogo {
