@@ -49,6 +49,10 @@ type RouteFiles = {
     id: "root";
     page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/design-system";
   };
+  "routes/root-redirect.tsx": {
+    id: "routes/root-redirect";
+    page: "/";
+  };
   "routes/locale-layout.tsx": {
     id: "routes/locale-layout";
     page: "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services";
@@ -81,6 +85,7 @@ type RouteFiles = {
 
 type RouteModules = {
   "root": typeof import("./src/root.tsx");
+  "routes/root-redirect": typeof import("./src/routes/root-redirect.tsx");
   "routes/locale-layout": typeof import("./src/routes/locale-layout.tsx");
   "routes/home": typeof import("./src/routes/home.tsx");
   "routes/about": typeof import("./src/routes/about.tsx");
