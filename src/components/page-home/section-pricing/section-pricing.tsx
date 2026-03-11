@@ -61,7 +61,7 @@ function OfferCard({
 
 export default function PricingSection() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-  const { t } = useTranslation('home');
+  const { t } = useTranslation('services');
   const l = useLocalePath();
 
   const CheckIcon = () => (

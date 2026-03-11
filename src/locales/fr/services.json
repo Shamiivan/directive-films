@@ -167,6 +167,69 @@
         "subtitle": "30 minutes. Nous vous dirons sur quoi nous nous concentrerions en premier.",
         "button": "C'est parti"
     },
+    "pricing": {
+        "eyebrow": "Forfaits",
+        "title": "Façons de travailler ensemble",
+        "subtitle": "Choisissez ce qui vous convient. Nous réglerons le reste lors d'un appel.",
+        "popular": "Le plus populaire",
+        "bestFor": "Idéal pour :",
+        "notSure": "Pas certain ? Ce n'est pas grave. Nous réglerons le reste lors d'un appel.",
+        "talk": "Discutons",
+        "offers": [
+            {
+                "name": "Sprint",
+                "headline": "Une chose, bien faite.",
+                "description": "Vous savez ce qui doit être corrigé. Nous nous en chargeons, le livrons en deux semaines et vous le remettons.",
+                "bestFor": "Un seul livrable : une vidéo, une page de destination, une configuration CRM ou un audit avec un plan d'action clair.",
+                "includes": [
+                    "Audit de présence en ligne",
+                    "Rapport de recommandations prioritaires",
+                    "Un livrable de votre choix",
+                    "Accompagnement à l'intégration",
+                    "2 cycles de révisions",
+                    "Livré en 2 semaines"
+                ],
+                "ctaText": "Commencer",
+                "hoverText": "Discutons →"
+            },
+            {
+                "name": "Croissance",
+                "headline": "La configuration complète, mois après mois.",
+                "description": "Contenu, CRM, site web. Nous gardons tout en mouvement. Points mensuels, chiffres réels.",
+                "bestFor": "Les entreprises qui veulent du contenu constant, un vrai système de vente et quelqu'un qui le gère.",
+                "includes": [
+                    "Audit complet et stratégie de croissance",
+                    "Production de contenu mensuelle (3 vidéos)",
+                    "Optimisation du CRM et du système de vente",
+                    "Mises à jour du site web et tests de conversion",
+                    "Coaching de contenu interne",
+                    "Revues de performance mensuelles",
+                    "Révisions illimitées",
+                    "Stratège de croissance dédié"
+                ],
+                "ctaText": "Commencer",
+                "hoverText": "Discutons →"
+            },
+            {
+                "name": "Scale",
+                "headline": "Votre équipe, sans l'embauche.",
+                "description": "Nous travaillons aux côtés de vos employés. Stratégie, création et développement. Autant ou aussi peu que vous le souhaitez.",
+                "bestFor": "Les entreprises qui ont besoin d'une équipe dédiée sans les frais fixes d'une embauche.",
+                "includes": [
+                    "Tout ce qui est inclus dans Croissance",
+                    "Équipe de création et de développement dédiée",
+                    "Stratégie de campagne multi-plateforme",
+                    "Analytique avancée et tests A/B",
+                    "Sessions stratégiques trimestrielles",
+                    "Intégrations et flux de travail personnalisés",
+                    "Gestionnaire de compte dédié",
+                    "Support prioritaire"
+                ],
+                "ctaText": "Contactez-nous",
+                "hoverText": "Discutons →"
+            }
+        ]
+    },
     "faq": {
         "eyebrow": "FAQ",
         "description": "Questions fréquemment posées",
