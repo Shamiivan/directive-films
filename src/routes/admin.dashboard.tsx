@@ -29,11 +29,11 @@ function fmtRelative(ts: number | undefined) {
 }
 
 export default function AdminDashboard() {
-  const pages = useQuery(isConvexConfigured ? api.cms.listPagesDraft : null as any, {});
-  const projects = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listProjectsDraft : null as any, {});
-  const team = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listTeamMembersDraft : null as any, {});
-  const testimonials = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listTestimonialsDraft : null as any, {});
-  const positions = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listOpenPositionsDraft : null as any, {});
+  const pages = useQuery(api.cms.listPagesDraft, isConvexConfigured ? {} : "skip");
+  const projects = useQuery(api.cms.listProjectsDraft, isConvexConfigured && SHOW_COLLECTIONS ? {} : "skip");
+  const team = useQuery(api.cms.listTeamMembersDraft, isConvexConfigured && SHOW_COLLECTIONS ? {} : "skip");
+  const testimonials = useQuery(api.cms.listTestimonialsDraft, isConvexConfigured && SHOW_COLLECTIONS ? {} : "skip");
+  const positions = useQuery(api.cms.listOpenPositionsDraft, isConvexConfigured && SHOW_COLLECTIONS ? {} : "skip");
 
   const bootstrap = useMutation(api.cms.seedCurrentSiteContent);
 

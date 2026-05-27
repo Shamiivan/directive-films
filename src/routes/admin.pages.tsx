@@ -16,7 +16,7 @@ const STATUS_COPY = {
 } as const;
 
 export default function AdminPages() {
-  const pages = useQuery(isConvexConfigured ? api.cms.listPagesDraft : (null as any), isConvexConfigured ? {} : "skip");
+  const pages = useQuery(api.cms.listPagesDraft, isConvexConfigured ? {} : "skip");
   const pageCards = pages ?? [];
 
   return (
