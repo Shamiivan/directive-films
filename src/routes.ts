@@ -10,6 +10,7 @@ export default [
     route("services", "routes/services.tsx"),
     route("privacy", "routes/privacy.tsx"),
   ]),
+  route("/admin/login", "routes/admin.login.tsx"),
   route("/admin", "routes/admin.tsx", [
     index("routes/admin.dashboard.tsx"),
     route("pages", "routes/admin.pages.tsx"),

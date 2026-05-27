@@ -1,0 +1,116 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-secondary, #fafafa);
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 360px;
+  background: #ffffff;
+  border: 1px solid var(--color-border-light, #e5e5e5);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.title {
+  font-family: var(--font-display, "Playfair Display", serif);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.dot {
+  color: var(--color-gold, #FDB714);
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: var(--color-text-muted, #666);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--color-text-muted, #666);
+}
+
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  border-radius: 8px;
+  border: 1px solid var(--color-border-light, #e5e5e5);
+  background: #fafafa;
+  color: var(--color-text-primary, #111);
+  transition: border-color 180ms, box-shadow 180ms;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--color-gold, #FDB714);
+  box-shadow: 0 0 0 3px rgba(253, 183, 20, 0.18);
+}
+
+.error {
+  margin: 0;
+  font-size: 13px;
+  color: #cc3b3b;
+}
+
+.submit {
+  margin-top: 8px;
+  background: var(--color-gold, #FDB714);
+  color: #0d0d0d;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 180ms, transform 180ms;
+}
+
+.submit:hover:not(:disabled) {
+  background: var(--color-gold-hover, #e5a512);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+[data-theme="dark"] .page {
+  background: #0d0d0d;
+}
+
+[data-theme="dark"] .card {
+  background: #1a1a1a;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+[data-theme="dark"] .input {
+  background: #1f1f1f;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}

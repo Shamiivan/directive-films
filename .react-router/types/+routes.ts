@@ -44,6 +44,9 @@ type Pages = {
       "lang": string;
     };
   };
+  "/admin/login": {
+    params: {};
+  };
   "/admin": {
     params: {};
   };
@@ -84,7 +87,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media" | "/design-system";
+    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/admin/login" | "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media" | "/design-system";
   };
   "routes/root-redirect.tsx": {
     id: "routes/root-redirect";
@@ -117,6 +120,10 @@ type RouteFiles = {
   "routes/privacy.tsx": {
     id: "routes/privacy";
     page: "/:lang/privacy";
+  };
+  "routes/admin.login.tsx": {
+    id: "routes/admin.login";
+    page: "/admin/login";
   };
   "routes/admin.tsx": {
     id: "routes/admin";
@@ -178,6 +185,7 @@ type RouteModules = {
   "routes/contact": typeof import("./src/routes/contact.tsx");
   "routes/services": typeof import("./src/routes/services.tsx");
   "routes/privacy": typeof import("./src/routes/privacy.tsx");
+  "routes/admin.login": typeof import("./src/routes/admin.login.tsx");
   "routes/admin": typeof import("./src/routes/admin.tsx");
   "routes/admin.dashboard": typeof import("./src/routes/admin.dashboard.tsx");
   "routes/admin.pages": typeof import("./src/routes/admin.pages.tsx");

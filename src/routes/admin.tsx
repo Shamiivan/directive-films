@@ -1,7 +1,9 @@
-import { NavLink, Outlet, Link } from "react-router";
+import { useEffect, useState } from "react";
+import { NavLink, Outlet, Link, useNavigate } from "react-router";
 
 import { useEditMode } from "@/cms/EditModeProvider";
 import { isConvexConfigured } from "@/cms/convex";
+import { isAdminUnlocked, lockAdmin } from "@/cms/adminAuth";
 import styles from "@/cms/admin.module.css";
 
 const PAGES = [
@@ -11,6 +13,9 @@ const PAGES = [
   { slug: "contact", label: "Contact" },
   { slug: "careers", label: "Careers" },
 ];
+
+// Flip to true to re-expose the Collections nav group.
+const SHOW_COLLECTIONS = false;
 
 const COLLECTIONS = [
   { slug: "projects", label: "Projects" },
@@ -43,6 +48,21 @@ export function meta() {
 
 export default function AdminLayout() {
   const { theme, toggleTheme } = useEditMode();
+  const navigate = useNavigate();
+  const [authed, setAuthed] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const ok = isAdminUnlocked();
+    setAuthed(ok);
+    if (!ok) navigate("/admin/login", { replace: true });
+  }, [navigate]);
+
+  if (authed !== true) return null;
+
+  const onSignOut = () => {
+    lockAdmin();
+    navigate("/admin/login", { replace: true });
+  };
 
   return (
     <div className={styles.layout}>
@@ -59,6 +79,13 @@ export default function AdminLayout() {
             aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
           >
             {theme === "light" ? <MoonIcon /> : <SunIcon />}
+          </button>
+          <button
+            type="button"
+            className={styles.viewSite}
+            onClick={onSignOut}
+          >
+            Sign out
           </button>
         </div>
       </header>
@@ -87,18 +114,20 @@ export default function AdminLayout() {
           ))}
         </div>
 
-        <div className={styles.navSection}>
-          <span className={styles.navLabel}>Collections</span>
-          {COLLECTIONS.map((col) => (
-            <NavLink
-              key={col.slug}
-              to={`/admin/${col.slug}`}
-              className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ""}`}
-            >
-              <span>{col.label}</span>
-            </NavLink>
-          ))}
-        </div>
+        {SHOW_COLLECTIONS && (
+          <div className={styles.navSection}>
+            <span className={styles.navLabel}>Collections</span>
+            {COLLECTIONS.map((col) => (
+              <NavLink
+                key={col.slug}
+                to={`/admin/${col.slug}`}
+                className={({ isActive }) => `${styles.navItem} ${isActive ? styles.active : ""}`}
+              >
+                <span>{col.label}</span>
+              </NavLink>
+            ))}
+          </div>
+        )}
 
         <div className={styles.navSection}>
           <span className={styles.navLabel}>System</span>

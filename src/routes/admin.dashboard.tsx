@@ -5,6 +5,9 @@ import { api } from "../../convex/_generated/api";
 import { isConvexConfigured } from "@/cms/convex";
 import styles from "@/cms/admin.module.css";
 
+// Flip to true to re-expose collection stats / quick actions on the dashboard.
+const SHOW_COLLECTIONS = false;
+
 export function meta() {
   return [{ title: "Dashboard · Admin · DirectiveFilms" }];
 }
@@ -27,10 +30,10 @@ function fmtRelative(ts: number | undefined) {
 
 export default function AdminDashboard() {
   const pages = useQuery(isConvexConfigured ? api.cms.listPagesDraft : null as any, {});
-  const projects = useQuery(isConvexConfigured ? api.cms.listProjectsDraft : null as any, {});
-  const team = useQuery(isConvexConfigured ? api.cms.listTeamMembersDraft : null as any, {});
-  const testimonials = useQuery(isConvexConfigured ? api.cms.listTestimonialsDraft : null as any, {});
-  const positions = useQuery(isConvexConfigured ? api.cms.listOpenPositionsDraft : null as any, {});
+  const projects = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listProjectsDraft : null as any, {});
+  const team = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listTeamMembersDraft : null as any, {});
+  const testimonials = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listTestimonialsDraft : null as any, {});
+  const positions = useQuery(isConvexConfigured && SHOW_COLLECTIONS ? api.cms.listOpenPositionsDraft : null as any, {});
 
   const bootstrap = useMutation(api.cms.seedCurrentSiteContent);
 
@@ -44,37 +47,45 @@ export default function AdminDashboard() {
       sub: cmsInitialized ? "5 pages configured" : "Run bootstrap to seed",
       to: "/admin/pages",
     },
-    {
-      label: "Projects",
-      value: projects?.length,
-      sub: projects?.length ? `${projects.length} in the studio` : "Add your first project",
-      to: "/admin/projects",
-    },
-    {
-      label: "Team",
-      value: team?.length,
-      sub: team?.length ? `${team.length} members` : "Add team members",
-      to: "/admin/team",
-    },
-    {
-      label: "Testimonials",
-      value: testimonials?.length,
-      sub: testimonials?.length ? `${testimonials.length} quotes` : "Collect social proof",
-      to: "/admin/testimonials",
-    },
-    {
-      label: "Open Positions",
-      value: positions?.length,
-      sub: positions?.length ? `${positions.length} open` : "None open",
-      to: "/admin/positions",
-    },
+    ...(SHOW_COLLECTIONS
+      ? [
+          {
+            label: "Projects",
+            value: projects?.length,
+            sub: projects?.length ? `${projects.length} in the studio` : "Add your first project",
+            to: "/admin/projects",
+          },
+          {
+            label: "Team",
+            value: team?.length,
+            sub: team?.length ? `${team.length} members` : "Add team members",
+            to: "/admin/team",
+          },
+          {
+            label: "Testimonials",
+            value: testimonials?.length,
+            sub: testimonials?.length ? `${testimonials.length} quotes` : "Collect social proof",
+            to: "/admin/testimonials",
+          },
+          {
+            label: "Open Positions",
+            value: positions?.length,
+            sub: positions?.length ? `${positions.length} open` : "None open",
+            to: "/admin/positions",
+          },
+        ]
+      : []),
   ];
 
   const allDocs = [
     ...(pages ?? []).map((d: any) => ({ kind: "page", label: d.slug, ts: d.updatedAt })),
-    ...(projects ?? []).map((d: any) => ({ kind: "project", label: d.slug, ts: d.updatedAt })),
-    ...(team ?? []).map((d: any) => ({ kind: "team member", label: d.slug, ts: d.updatedAt })),
-    ...(testimonials ?? []).map((d: any) => ({ kind: "testimonial", label: d.slug, ts: d.updatedAt })),
+    ...(SHOW_COLLECTIONS
+      ? [
+          ...(projects ?? []).map((d: any) => ({ kind: "project", label: d.slug, ts: d.updatedAt })),
+          ...(team ?? []).map((d: any) => ({ kind: "team member", label: d.slug, ts: d.updatedAt })),
+          ...(testimonials ?? []).map((d: any) => ({ kind: "testimonial", label: d.slug, ts: d.updatedAt })),
+        ]
+      : []),
   ]
     .filter((e) => e.ts)
     .sort((a, b) => b.ts - a.ts)
@@ -139,13 +150,17 @@ export default function AdminDashboard() {
         </div>
       )}
 
-      <div className={styles.sectionLabel} style={{ marginTop: 40 }}>Quick actions</div>
-      <div className={styles.actionRow}>
-        <Link to="/admin/projects" className={`${styles.actionBtn} ${styles.primary}`}>+ New project</Link>
-        <Link to="/admin/team" className={styles.actionBtn}>+ Add team member</Link>
-        <Link to="/admin/testimonials" className={styles.actionBtn}>+ Add testimonial</Link>
-        <Link to="/admin/positions" className={styles.actionBtn}>+ Open a position</Link>
-      </div>
+      {SHOW_COLLECTIONS && (
+        <>
+          <div className={styles.sectionLabel} style={{ marginTop: 40 }}>Quick actions</div>
+          <div className={styles.actionRow}>
+            <Link to="/admin/projects" className={`${styles.actionBtn} ${styles.primary}`}>+ New project</Link>
+            <Link to="/admin/team" className={styles.actionBtn}>+ Add team member</Link>
+            <Link to="/admin/testimonials" className={styles.actionBtn}>+ Add testimonial</Link>
+            <Link to="/admin/positions" className={styles.actionBtn}>+ Open a position</Link>
+          </div>
+        </>
+      )}
     </div>
   );
 }

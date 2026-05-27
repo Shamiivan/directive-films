@@ -8,6 +8,7 @@
  * @module
  */
 
+import type * as auth from "../auth.js";
 import type * as cliHelpers from "../cliHelpers.js";
 import type * as cms from "../cms.js";
 import type * as cmsModel from "../cmsModel.js";
@@ -20,6 +21,7 @@ import type {
 } from "convex/server";
 
 declare const fullApi: ApiFromModules<{
+  auth: typeof auth;
   cliHelpers: typeof cliHelpers;
   cms: typeof cms;
   cmsModel: typeof cmsModel;
