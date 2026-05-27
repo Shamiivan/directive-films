@@ -18,6 +18,155 @@
         "accent": "Point de départ différent.",
         "subtitle": "Choisissez celui qui correspond à votre situation."
     },
+    "serviceMap": {
+        "systemLabel": "Le Système",
+        "title": "Cinq services.",
+        "accent": "Un seul moteur de croissance."
+    },
+    "problem": {
+        "label": "Ça vous parle ?",
+        "symptoms": [
+            "Votre site a l'air bien mais ne déclenche pas de rendez-vous",
+            "Le contenu arrive quand quelqu'un pense à publier",
+            "Les prospects entrent mais le suivi est manuel et inconstant",
+            "Vous ne savez pas quel marketing fonctionne vraiment",
+            "La présence en ligne de vos concurrents semble meilleure que la vôtre",
+            "Votre équipe de vente explique la même chose à chaque appel"
+        ],
+        "reframeLead": "Ce ne sont pas des problèmes d'effort.",
+        "reframeEmphasis": "Ce sont des problèmes de système.",
+        "bridge": "Nous les corrigeons de la même façon à chaque fois."
+    },
+    "whyUs": {
+        "badge": "Pourquoi Nous Choisir",
+        "title": "Pourquoi les entreprises",
+        "titleAccent": "reviennent",
+        "subtitle": "Délais rapides. Partenariats durables. Des chiffres pour le prouver.",
+        "cta": "Planifier un appel",
+        "reasons": [
+            {
+                "title": "Rapidité de mise en marché",
+                "description": "Délai moyen de deux semaines. Vous arrivez sur le marché rapidement sans rogner sur la qualité.",
+                "stat": "2 semaines",
+                "label": "délai moyen"
+            },
+            {
+                "title": "Esprit de partenariat",
+                "description": "Nous ne livrons pas et disparaissons. 98 % de nos clients restent parce que nous sommes investis dans ce qui se passe après la livraison.",
+                "stat": "98 %",
+                "label": "taux de rétention"
+            },
+            {
+                "title": "Bilan éprouvé",
+                "description": "Plus de 500 projets dans 12 secteurs. Nos clients ont généré plus de 50 M$ de revenus grâce aux systèmes que nous avons construits.",
+                "stat": "50 M$+",
+                "label": "générés"
+            }
+        ]
+    },
+    "processSection": {
+        "title": "Comment chaque projet se déroule",
+        "subtitle": "Quatre étapes. Sans surprise. Vous savez ce qui se passe à chaque étape.",
+        "learnMore": "En savoir plus →",
+        "ctaLead": "Prêt à",
+        "ctaHighlight": "commencer",
+        "ctaTrail": " ?",
+        "ctaSubtitle": "Parlons de votre projet.",
+        "ctaButton": "Planifier un appel",
+        "steps": [
+            {
+                "title": "Découverte",
+                "description": "Nous apprenons votre activité, votre audience et ce qui vous distingue. Pas de modèles. Juste un plan conçu pour votre situation précise."
+            },
+            {
+                "title": "Stratégie",
+                "description": "Chaque vidéo est associée à une étape de votre processus de vente. Elle a un but, une place dans votre tunnel et un chiffre à atteindre."
+            },
+            {
+                "title": "Production",
+                "description": "Équipe professionnelle, matériel de cinéma et attention à chaque détail. Nous gérons le plateau. Vous restez vous-même devant la caméra."
+            },
+            {
+                "title": "Optimisation",
+                "description": "Après le lancement, nous suivons les performances et itérons. Meilleures vignettes, accroches plus serrées, CTA plus forts. De petites améliorations qui s'accumulent."
+            }
+        ]
+    },
+    "workGallery": {
+        "title": "Nos Projets",
+        "subtitle": "Vrais projets. Vrais clients. Vrais résultats.",
+        "viewProject": "Voir le projet →",
+        "scrollHint": "Faites défiler pour explorer →",
+        "items": [
+            {
+                "title": "Lancement de startup tech",
+                "category": "Histoire de marque",
+                "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Croissance e-commerce",
+                "category": "Présentation produit",
+                "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Innovation en santé",
+                "category": "Vidéo explicative",
+                "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Services financiers",
+                "category": "Témoignage client",
+                "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Agence immobilière",
+                "category": "Visites de propriétés",
+                "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Plateforme SaaS",
+                "category": "Vidéo de démo",
+                "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Manufacture",
+                "category": "Vidéo de processus",
+                "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Chaîne de restaurants",
+                "category": "Publicité",
+                "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop"
+            }
+        ]
+    },
+    "growth": {
+        "title": "Là où la vidéo rencontre votre processus de vente",
+        "subtitle": "Chaque service est conçu pour s'intégrer à votre pipeline et faire bouger un chiffre précis.",
+        "learnMore": "En savoir plus →",
+        "services": [
+            {
+                "title": "Systèmes de vente vidéo",
+                "description": "Une bibliothèque vidéo complète pour votre équipe de vente. Réponses aux objections, études de cas, démos et séquences e-mail. Un seul système, pas des fichiers éparpillés inutilisés."
+            },
+            {
+                "title": "Campagnes vidéo à la performance",
+                "description": "Des campagnes construites autour d'un seul objectif : plus de prospects, de démos ou de ventes. Création, conseil en achat média et stratégie de page de destination."
+            },
+            {
+                "title": "Habilitation vidéo des équipes de vente",
+                "description": "Donnez à vos représentants des super-pouvoirs vidéo. Modèles personnalisés pour la prospection, les suivis et le traitement des objections. Inclut formation, scripts et bibliothèque de contenu."
+            },
+            {
+                "title": "Conseil en stratégie de croissance",
+                "description": "Vous ne savez pas où la vidéo s'intègre dans votre tunnel ? Nous auditons votre processus de vente, identifions les lacunes et vous indiquons quoi créer et quand le déployer."
+            },
+            {
+                "title": "Résolution créative de problèmes",
+                "description": "Bloqué sur la façon d'expliquer quelque chose de complexe ? Besoin de vous démarquer sur un marché saturé ? Nous résolvons les problèmes créatifs difficiles."
+            }
+        ]
+    },
     "phases": [
         {
             "phase": "Audit",

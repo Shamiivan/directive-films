@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { scrollReveal } from '@/utils/animations';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { servicePhases } from '../services-data';
 
 const services = servicePhases.flatMap((p) => p.services);
@@ -17,10 +18,29 @@ export default function ServiceMapSection() {
     <section className={styles.section}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <span className={styles.label}>The System</span>
+          <EditableTranslation
+            pageSlug="services"
+            namespace="services"
+            path="serviceMap.systemLabel"
+            label="System label"
+            as="span"
+            className={styles.label}
+          />
           <h2 className={styles.title}>
-            Five services.{' '}
-            <em className={styles.titleAccent}>One growth engine.</em>
+            <EditableTranslation
+              pageSlug="services"
+              namespace="services"
+              path="serviceMap.title"
+              label="Service map title"
+            />{' '}
+            <em className={styles.titleAccent}>
+              <EditableTranslation
+                pageSlug="services"
+                namespace="services"
+                path="serviceMap.accent"
+                label="Service map accent"
+              />
+            </em>
           </h2>
         </motion.div>
 

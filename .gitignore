@@ -47,3 +47,10 @@ test-results/
 .env*.local
 docs/Momentum Management Privacy Policy.docx
 .gstack/
+
+# local tooling / scratch
+.agents/
+.claude/
+.playwright-mcp/
+skills-lock.json
+admin-*.png

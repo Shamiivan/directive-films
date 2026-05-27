@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
 import { EditableTranslation } from '@/cms/EditableTranslation';
+import { useIsEditing } from '@/cms/EditModeProvider';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-faq.module.css';
 
@@ -82,7 +83,8 @@ function FaqItem({
 }
 
 export default function FaqSection() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const editMode = useIsEditing();
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
   const { t } = useTranslation('home');
   const faqs = t('faq.items', { returnObjects: true }) as FaqItemType[];
 
@@ -117,8 +119,8 @@ export default function FaqSection() {
                   <EditableTranslation pageSlug="home" namespace="home" path={`faq.items.${i}.answer`} label={`FAQ answer ${i + 1}`} kind="text" />
                 )}
                 index={i}
-                isOpen={openIndex === i}
-                onToggle={() => setOpenIndex(openIndex === i ? null : i)}
+                isOpen={editMode || openIndex === i}
+                onToggle={editMode ? () => {} : () => setOpenIndex(openIndex === i ? null : i)}
               />
             ))}
           </div>

@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useLocalePath } from '../../../hooks/useLocalePath';
+import { useIsEditing } from '@/cms/EditModeProvider';
 import LanguageSwitcher from '../../LanguageSwitcher/LanguageSwitcher';
 import AnimatedNav from '../../AnimatedNav';
 import styles from './section-nav.module.css';
@@ -51,10 +52,13 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
 }
 
 export default function NavSection() {
+  const editMode = useIsEditing();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const l = useLocalePath();
   const { t } = useTranslation();
+
+  if (editMode) return null;
 
   // Static colors — nav stays dark throughout
   const logoColor = '#ffffff';

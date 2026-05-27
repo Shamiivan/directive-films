@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { scrollReveal } from '../../../../utils/animations';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import styles from './section-open-positions.module.css';
 
 interface PositionData {
@@ -35,7 +36,7 @@ export default function OpenPositionsSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
-          <h2 className={styles.title}>{t('positions.title')}</h2>
+          <EditableTranslation pageSlug="careers" namespace="careers" path="positions.title" label="Positions title" as="h2" className={styles.title} />
         </motion.div>
 
         {/* Positions Accordion */}
@@ -47,7 +48,7 @@ export default function OpenPositionsSection() {
         >
           {positions.map((position, index) => (
             <motion.div
-              key={index}
+              key={position.id ?? index}
               className={styles.positionItem}
               variants={scrollReveal}
             >
@@ -56,7 +57,14 @@ export default function OpenPositionsSection() {
                 onClick={() => togglePosition(index)}
                 aria-expanded={expandedIndex === index}
               >
-                <span className={styles.positionTitle}>{position.title}</span>
+                <span className={styles.positionTitle}>
+                  <EditableTranslation
+                    pageSlug="careers"
+                    namespace="careers"
+                    path={`positions.list.${index}.title`}
+                    label={`Position ${index + 1} title`}
+                  />
+                </span>
                 <motion.div
                   className={styles.toggleIcon}
                   animate={{ rotate: expandedIndex === index ? 45 : 0 }}
@@ -77,26 +85,71 @@ export default function OpenPositionsSection() {
                   >
                     <div className={styles.contentInner}>
                       <div className={styles.positionMeta}>
-                        <span className={styles.positionType}>{position.type}</span>
+                        <span className={styles.positionType}>
+                          <EditableTranslation
+                            pageSlug="careers"
+                            namespace="careers"
+                            path={`positions.list.${index}.type`}
+                            label={`Position ${index + 1} type`}
+                          />
+                        </span>
                       </div>
 
-                      <p className={styles.positionDescription}>{position.description}</p>
+                      <EditableTranslation
+                        pageSlug="careers"
+                        namespace="careers"
+                        path={`positions.list.${index}.description`}
+                        label={`Position ${index + 1} description`}
+                        kind="text"
+                        as="p"
+                        className={styles.positionDescription}
+                      />
 
                       <div className={styles.positionDetails}>
                         <div className={styles.detailSection}>
-                          <h4 className={styles.detailTitle}>{t('positions.sections.responsibilities')}</h4>
+                          <EditableTranslation
+                            pageSlug="careers"
+                            namespace="careers"
+                            path="positions.sections.responsibilities"
+                            label="Responsibilities heading"
+                            as="h4"
+                            className={styles.detailTitle}
+                          />
                           <ul className={styles.detailList}>
-                            {position.responsibilities.map((item, i) => (
-                              <li key={i}>{item}</li>
+                            {position.responsibilities.map((_, i) => (
+                              <li key={i}>
+                                <EditableTranslation
+                                  pageSlug="careers"
+                                  namespace="careers"
+                                  path={`positions.list.${index}.responsibilities.${i}`}
+                                  label={`Position ${index + 1} responsibility ${i + 1}`}
+                                  kind="text"
+                                />
+                              </li>
                             ))}
                           </ul>
                         </div>
 
                         <div className={styles.detailSection}>
-                          <h4 className={styles.detailTitle}>{t('positions.sections.requirements')}</h4>
+                          <EditableTranslation
+                            pageSlug="careers"
+                            namespace="careers"
+                            path="positions.sections.requirements"
+                            label="Requirements heading"
+                            as="h4"
+                            className={styles.detailTitle}
+                          />
                           <ul className={styles.detailList}>
-                            {position.requirements.map((item, i) => (
-                              <li key={i}>{item}</li>
+                            {position.requirements.map((_, i) => (
+                              <li key={i}>
+                                <EditableTranslation
+                                  pageSlug="careers"
+                                  namespace="careers"
+                                  path={`positions.list.${index}.requirements.${i}`}
+                                  label={`Position ${index + 1} requirement ${i + 1}`}
+                                  kind="text"
+                                />
+                              </li>
                             ))}
                           </ul>
                         </div>
@@ -109,7 +162,12 @@ export default function OpenPositionsSection() {
                         whileTap={{ scale: 0.98 }}
                         transition={{ duration: 0.2 }}
                       >
-                        {t('positions.apply')}
+                        <EditableTranslation
+                          pageSlug="careers"
+                          namespace="careers"
+                          path="positions.apply"
+                          label="Apply button"
+                        />
                       </motion.button>
                     </div>
                   </motion.div>

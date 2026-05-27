@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Search, Lightbulb, Wrench, HeartHandshake } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '@/utils/animations';
 import styles from './section-method.module.css';
 
@@ -23,7 +24,20 @@ export default function SectionMethod() {
         <motion.div className={styles.header} {...scrollReveal}>
           <SectionEyebrow label={t('method.eyebrow')} description={t('method.description')} />
           <h2 className={styles.title}>
-            {t('method.title')} <em className={styles.titleAccent}>{t('method.accent')}</em>
+            <EditableTranslation
+              pageSlug="services"
+              namespace="services"
+              path="method.title"
+              label="Method title"
+            />{' '}
+            <em className={styles.titleAccent}>
+              <EditableTranslation
+                pageSlug="services"
+                namespace="services"
+                path="method.accent"
+                label="Method accent"
+              />
+            </em>
           </h2>
         </motion.div>
 
@@ -42,9 +56,31 @@ export default function SectionMethod() {
                 <div className={styles.stepIcon}>
                   <Icon size={40} strokeWidth={1.5} />
                 </div>
-                <div className={styles.stepNumber}>{step.number}</div>
-                <h3 className={styles.stepTitle}>{step.title}</h3>
-                <p className={styles.stepDescription}>{step.description}</p>
+                <EditableTranslation
+                  pageSlug="services"
+                  namespace="services"
+                  path={`method.steps.${i}.number`}
+                  label={`Step ${i + 1} number`}
+                  as="div"
+                  className={styles.stepNumber}
+                />
+                <EditableTranslation
+                  pageSlug="services"
+                  namespace="services"
+                  path={`method.steps.${i}.title`}
+                  label={`Step ${i + 1} title`}
+                  as="h3"
+                  className={styles.stepTitle}
+                />
+                <EditableTranslation
+                  pageSlug="services"
+                  namespace="services"
+                  path={`method.steps.${i}.description`}
+                  label={`Step ${i + 1} description`}
+                  kind="text"
+                  as="p"
+                  className={styles.stepDescription}
+                />
                 {i < methodSteps.length - 1 && (
                   <div className={styles.connector} />
                 )}

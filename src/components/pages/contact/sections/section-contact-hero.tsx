@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
 import { scrollReveal } from '../../../../utils/animations';
 import { EditableTranslation, useEditableTranslationField } from '@/cms/EditableTranslation';
 import styles from './section-contact-hero.module.css';
 
 export default function ContactHeroSection() {
-  const { t } = useTranslation('contact');
   const emailField = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.info.email.value" });
   const phoneField = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.info.phone.value" });
+  const namePlaceholder = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.form.fields.name.placeholder" });
+  const emailPlaceholder = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.form.fields.email.placeholder" });
+  const companyPlaceholder = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.form.fields.company.placeholder" });
+  const phonePlaceholder = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.form.fields.phone.placeholder" });
+  const messagePlaceholder = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.form.fields.message.placeholder" });
 
   return (
     <section className={styles.contactHero}>
@@ -87,7 +90,7 @@ export default function ContactHeroSection() {
                     id="name"
                     name="name"
                     className={styles.input}
-                    placeholder={t('hero.form.fields.name.placeholder')}
+                    placeholder={namePlaceholder.value}
                     required
                   />
                 </div>
@@ -101,7 +104,7 @@ export default function ContactHeroSection() {
                     id="email"
                     name="email"
                     className={styles.input}
-                    placeholder={t('hero.form.fields.email.placeholder')}
+                    placeholder={emailPlaceholder.value}
                     required
                   />
                 </div>
@@ -117,7 +120,7 @@ export default function ContactHeroSection() {
                     id="company"
                     name="company"
                     className={styles.input}
-                    placeholder={t('hero.form.fields.company.placeholder')}
+                    placeholder={companyPlaceholder.value}
                   />
                 </div>
 
@@ -130,7 +133,7 @@ export default function ContactHeroSection() {
                     id="phone"
                     name="phone"
                     className={styles.input}
-                    placeholder={t('hero.form.fields.phone.placeholder')}
+                    placeholder={phonePlaceholder.value}
                   />
                 </div>
               </div>
@@ -143,7 +146,7 @@ export default function ContactHeroSection() {
                   id="message"
                   name="message"
                   className={styles.textarea}
-                  placeholder={t('hero.form.fields.message.placeholder')}
+                  placeholder={messagePlaceholder.value}
                   rows={5}
                   required
                 ></textarea>

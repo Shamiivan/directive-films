@@ -3,6 +3,7 @@ import { useSearchParams } from "react-router";
 import { ConvexProvider } from "convex/react";
 
 import { convexClient } from "./convex";
+import { InlineToolbar } from "./InlineToolbar";
 import type { Locale, Theme } from "./types";
 
 type EditModeContextValue = {
@@ -71,7 +72,12 @@ function InnerProvider({ children }: { children: React.ReactNode }) {
     [editMode, locale, theme],
   );
 
-  return <EditModeContext.Provider value={value}>{children}</EditModeContext.Provider>;
+  return (
+    <EditModeContext.Provider value={value}>
+      {children}
+      <InlineToolbar />
+    </EditModeContext.Provider>
+  );
 }
 
 export function EditModeProvider({ children }: { children: React.ReactNode }) {

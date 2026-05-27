@@ -12,7 +12,6 @@ type Props = {
   changeCount?: number;
   onPublish?: () => void;
   onDiscard?: () => void;
-  onHistory?: () => void;
   status?: string;
 };
 
@@ -20,7 +19,6 @@ export function EditorBar({
   changeCount = 0,
   onPublish,
   onDiscard,
-  onHistory,
   status = "Editing",
 }: Props) {
   const { editMode, locale, setLocale } = useEditMode();
@@ -35,7 +33,6 @@ export function EditorBar({
         changeCount={changeCount}
         onPublish={onPublish}
         onDiscard={onDiscard}
-        onHistory={onHistory}
         status={status}
       />
     );
@@ -48,7 +45,6 @@ export function EditorBar({
       changeCount={changeCount}
       onPublish={onPublish}
       onDiscard={onDiscard}
-      onHistory={onHistory}
       status={status}
     />
   );
@@ -60,7 +56,6 @@ function ConnectedEditorBar({
   changeCount = 0,
   onPublish,
   onDiscard,
-  onHistory,
   status,
 }: {
   locale: "en" | "fr";
@@ -77,7 +72,6 @@ function ConnectedEditorBar({
         changeCount={changeCount}
         onPublish={onPublish}
         onDiscard={onDiscard}
-        onHistory={onHistory}
         status={status}
       />
     );
@@ -92,7 +86,12 @@ function ConnectedEditorBar({
   const totalChangeCount = changeCount || computedChangeCount;
   const hasChanges = totalChangeCount > 0;
   const effectivePublish = onPublish ?? (() => publishPage({ slug: pageSlug }));
-  const effectiveDiscard = onDiscard ?? (() => discardPageDraft({ slug: pageSlug }));
+  const effectiveDiscard =
+    onDiscard ??
+    (async () => {
+      await discardPageDraft({ slug: pageSlug });
+      if (typeof window !== "undefined") window.location.reload();
+    });
 
   return (
     <EditorBarView
@@ -101,7 +100,6 @@ function ConnectedEditorBar({
       changeCount={totalChangeCount}
       onPublish={effectivePublish}
       onDiscard={effectiveDiscard}
-      onHistory={onHistory}
       status={status}
       hasChanges={hasChanges}
     />
@@ -114,7 +112,6 @@ function EditorBarView({
   changeCount,
   onPublish,
   onDiscard,
-  onHistory,
   status,
   hasChanges,
 }: {
@@ -123,7 +120,6 @@ function EditorBarView({
   changeCount: number;
   onPublish?: () => void;
   onDiscard?: () => void;
-  onHistory?: () => void;
   status: string;
   hasChanges?: boolean;
 }) {
@@ -135,13 +131,6 @@ function EditorBarView({
       role="toolbar"
       aria-label="Editor actions"
     >
-      <div className={styles.status}>
-        <span className={styles.statusDot} aria-hidden="true" />
-        <span>{status}</span>
-      </div>
-
-      <div className={styles.divider} aria-hidden="true" />
-
       <div
         className={styles.localeGroup}
         role="radiogroup"
@@ -172,14 +161,6 @@ function EditorBarView({
       <button
         type="button"
         className={styles.btn}
-        onClick={onHistory}
-        disabled={!onHistory}
-      >
-        History
-      </button>
-      <button
-        type="button"
-        className={styles.btn}
         onClick={onDiscard}
         disabled={!onDiscard || !dirty}
       >
@@ -189,10 +170,10 @@ function EditorBarView({
         type="button"
         className={`${styles.btn} ${styles.primary}`}
         onClick={onPublish}
-        disabled={!onPublish || !dirty}
+        disabled={!onPublish}
         aria-label={dirty ? `Publish ${changeCount} change${changeCount === 1 ? "" : "s"}` : "Publish"}
       >
-        <span className={styles.badge}>{changeCount}</span>
+        {dirty && <span className={styles.badge}>{changeCount}</span>}
         Publish
       </button>
     </div>

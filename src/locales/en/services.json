@@ -18,6 +18,155 @@
         "accent": "Different starting point.",
         "subtitle": "Pick the one that matches where you are."
     },
+    "serviceMap": {
+        "systemLabel": "The System",
+        "title": "Five services.",
+        "accent": "One growth engine."
+    },
+    "problem": {
+        "label": "Sound familiar?",
+        "symptoms": [
+            "Your site looks fine but doesn't book meetings",
+            "Content happens when someone remembers to post",
+            "Leads come in but follow-up is manual and inconsistent",
+            "You can't tell which marketing is actually working",
+            "Your competitors' online presence looks better than yours",
+            "Your sales team explains the same thing on every call"
+        ],
+        "reframeLead": "These aren't effort problems.",
+        "reframeEmphasis": "They're system problems.",
+        "bridge": "We fix them the same way every time."
+    },
+    "whyUs": {
+        "badge": "Why Choose Us",
+        "title": "Why Companies Keep",
+        "titleAccent": "Coming Back",
+        "subtitle": "Fast turnarounds. Long-term partnerships. Numbers that prove it.",
+        "cta": "Schedule a Call",
+        "reasons": [
+            {
+                "title": "Speed to Market",
+                "description": "Two-week average turnaround. You get to market fast without cutting corners.",
+                "stat": "2 weeks",
+                "label": "avg turnaround"
+            },
+            {
+                "title": "Partnership Mentality",
+                "description": "We don't deliver and disappear. 98% of our clients stay because we're invested in what happens after the video ships.",
+                "stat": "98%",
+                "label": "retention rate"
+            },
+            {
+                "title": "Proven Track Record",
+                "description": "500+ projects across 12 industries. Our clients have generated over $50M in revenue from the systems we built.",
+                "stat": "$50M+",
+                "label": "generated"
+            }
+        ]
+    },
+    "processSection": {
+        "title": "How Every Project Works",
+        "subtitle": "Four steps. No surprises. You know what's happening at every stage.",
+        "learnMore": "Learn More →",
+        "ctaLead": "Ready to",
+        "ctaHighlight": "start",
+        "ctaTrail": "?",
+        "ctaSubtitle": "Let's talk about your project.",
+        "ctaButton": "Schedule a Call",
+        "steps": [
+            {
+                "title": "Discovery",
+                "description": "We learn your business, your audience, and what makes you different. No templates. Just a plan built for your specific situation."
+            },
+            {
+                "title": "Strategy",
+                "description": "Every video gets mapped to a stage in your sales process. It has a purpose, a place in your funnel, and a number to hit."
+            },
+            {
+                "title": "Production",
+                "description": "Professional crew, cinema-grade gear, and attention to every detail. We handle the set. You focus on being yourself on camera."
+            },
+            {
+                "title": "Optimization",
+                "description": "After launch, we track performance and iterate. Better thumbnails, tighter hooks, stronger CTAs. Small improvements that compound."
+            }
+        ]
+    },
+    "workGallery": {
+        "title": "Our Work",
+        "subtitle": "Real projects. Real clients. Real results.",
+        "viewProject": "View Project →",
+        "scrollHint": "Scroll to explore →",
+        "items": [
+            {
+                "title": "Tech Startup Launch",
+                "category": "Brand Story",
+                "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "E-commerce Growth",
+                "category": "Product Showcase",
+                "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Healthcare Innovation",
+                "category": "Explainer Video",
+                "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Financial Services",
+                "category": "Client Testimonial",
+                "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Real Estate Agency",
+                "category": "Property Tours",
+                "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "SaaS Platform",
+                "category": "Demo Video",
+                "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Manufacturing",
+                "category": "Process Video",
+                "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=800&h=600&fit=crop"
+            },
+            {
+                "title": "Restaurant Chain",
+                "category": "Commercial",
+                "image": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop"
+            }
+        ]
+    },
+    "growth": {
+        "title": "Where video meets your sales process",
+        "subtitle": "Every service is built to plug into your pipeline and move a specific number.",
+        "learnMore": "Learn More →",
+        "services": [
+            {
+                "title": "Video Sales Systems",
+                "description": "A full video library for your sales team. Objection handlers, case studies, demos, and email sequences. One system, not scattered files that sit unused."
+            },
+            {
+                "title": "Performance Video Campaigns",
+                "description": "Campaigns built around one goal: more leads, demos, or closed deals. Creative, media buying consultation, and landing page strategy. Everything points to one number."
+            },
+            {
+                "title": "Sales Team Video Enablement",
+                "description": "Give your reps video superpowers. Custom templates for outreach, follow-ups, and objection handling. Includes training, scripts, and a content library they'll actually use."
+            },
+            {
+                "title": "Growth Strategy Consulting",
+                "description": "Not sure where video fits in your funnel? We audit your sales process, find the gaps, and tell you exactly what to create and when to deploy it."
+            },
+            {
+                "title": "Creative Problem Solving",
+                "description": "Stuck on how to explain something complex? Need to stand out in a crowded market? We solve the hard creative problems, the ones where \"make it pretty\" isn't enough."
+            }
+        ]
+    },
     "phases": [
         {
             "phase": "Audit",

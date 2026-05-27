@@ -1,27 +1,30 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '@/utils/animations';
 import styles from './section-problem.module.css';
 
-const symptoms = [
-  'Your site looks fine but doesn\'t book meetings',
-  'Content happens when someone remembers to post',
-  'Leads come in but follow-up is manual and inconsistent',
-  'You can\'t tell which marketing is actually working',
-  'Your competitors\' online presence looks better than yours',
-  'Your sales team explains the same thing on every call',
-];
-
 export default function SectionProblem() {
+  const { t } = useTranslation('services');
+  const symptoms = t('problem.symptoms', { returnObjects: true }) as string[];
+
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <span className={styles.label}>Sound familiar?</span>
+          <EditableTranslation
+            pageSlug="services"
+            namespace="services"
+            path="problem.label"
+            label="Problem label"
+            as="span"
+            className={styles.label}
+          />
         </motion.div>
 
         <div className={styles.grid}>
           <div className={styles.symptomsCol}>
-            {symptoms.map((symptom, i) => (
+            {symptoms.map((_symptom, i) => (
               <motion.div
                 key={i}
                 className={styles.symptom}
@@ -31,7 +34,15 @@ export default function SectionProblem() {
                 transition={{ duration: 0.4, delay: i * 0.08 }}
               >
                 <span className={styles.dash} />
-                <p className={styles.symptomText}>{symptom}</p>
+                <EditableTranslation
+                  pageSlug="services"
+                  namespace="services"
+                  path={`problem.symptoms.${i}`}
+                  label={`Symptom ${i + 1}`}
+                  kind="text"
+                  as="p"
+                  className={styles.symptomText}
+                />
               </motion.div>
             ))}
           </div>
@@ -39,9 +50,30 @@ export default function SectionProblem() {
           <motion.div className={styles.reframeCol} {...scrollReveal}>
             <div className={styles.goldDivider} />
             <p className={styles.reframeText}>
-              These aren't effort problems. <strong>They're system problems.</strong>
+              <EditableTranslation
+                pageSlug="services"
+                namespace="services"
+                path="problem.reframeLead"
+                label="Reframe lead"
+              />{' '}
+              <strong>
+                <EditableTranslation
+                  pageSlug="services"
+                  namespace="services"
+                  path="problem.reframeEmphasis"
+                  label="Reframe emphasis"
+                />
+              </strong>
             </p>
-            <p className={styles.bridge}>We fix them the same way every time.</p>
+            <EditableTranslation
+              pageSlug="services"
+              namespace="services"
+              path="problem.bridge"
+              label="Bridge"
+              kind="text"
+              as="p"
+              className={styles.bridge}
+            />
           </motion.div>
         </div>
       </div>

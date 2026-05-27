@@ -1,8 +1,9 @@
 import { useRef, useState, useSyncExternalStore } from 'react';
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
+import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
 import { EditableTranslation, EditableTranslationStatic } from '@/cms/EditableTranslation';
+import { useIsEditing } from '@/cms/EditModeProvider';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-how-we-do-it.module.css';
 
@@ -71,22 +72,20 @@ function TitleWithHighlight({ title }: { title: string }) {
   return <>{title}</>;
 }
 
-// --- Desktop: scroll-driven sticky layout ---
+// --- Desktop: sticky layout with click-to-toggle steps ---
 function HowWeDoItDesktop() {
-  const [activeStep, setActiveStep] = useState(0);
+  const editMode = useIsEditing();
+  const [activeStep, setActiveStep] = useState<number | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const { t, steps } = useSteps();
+  const { steps } = useSteps();
 
   const { scrollYProgress } = useScroll({
     target: scrollContainerRef,
     offset: ['start start', 'end end'],
   });
 
-  const rawStep = useTransform(scrollYProgress, [0, 0.33, 0.66], [0, 1, 2]);
-
-  useMotionValueEvent(rawStep, 'change', (latest) => {
-    setActiveStep(Math.round(latest));
-  });
+  const toggle = (index: number) =>
+    setActiveStep((current) => (current === index ? null : index));
 
   return (
     <div ref={scrollContainerRef} className={styles.scrollContainer}>
@@ -126,12 +125,14 @@ function HowWeDoItDesktop() {
             <div className={styles.divider}></div>
 
             <div className={styles.stepsList}>
-              {steps.map((_, index) => (
+              {steps.map((_, index) => {
+                const expanded = editMode || activeStep === index;
+                return (
                 <motion.div
                   key={index}
-                  className={`${styles.stepItem} ${activeStep === index ? styles.active : ''}`}
-                  onClick={() => setActiveStep(index)}
-                  whileHover={{ x: 8 }}
+                  className={`${styles.stepItem} ${expanded ? styles.active : ''}`}
+                  onClick={editMode ? undefined : () => toggle(index)}
+                  whileHover={editMode ? undefined : { x: 8 }}
                   transition={{ duration: 0.2 }}
                 >
                   <div className={styles.stepHeader}>
@@ -154,7 +155,7 @@ function HowWeDoItDesktop() {
                   </div>
 
                   <AnimatePresence>
-                    {activeStep === index && (
+                    {expanded && (
                       <motion.p
                         className={styles.stepDescription}
                         initial={{ height: 0, opacity: 0 }}
@@ -173,7 +174,8 @@ function HowWeDoItDesktop() {
                     )}
                   </AnimatePresence>
                 </motion.div>
-              ))}
+                );
+              })}
             </div>
 
             <motion.div
@@ -192,9 +194,9 @@ function HowWeDoItDesktop() {
             <div className={styles.imageWrapper}>
               <AnimatePresence mode="wait">
                 <motion.img
-                  key={activeStep}
-                  src={steps[activeStep]?.image}
-                  alt={steps[activeStep]?.title}
+                  key={activeStep ?? 'none'}
+                  src={steps[activeStep ?? 0]?.image}
+                  alt={steps[activeStep ?? 0]?.title}
                   className={styles.processImage}
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -213,7 +215,11 @@ function HowWeDoItDesktop() {
 
 // --- Mobile: simple stacked cards ---
 function HowWeDoItMobile() {
+  const editMode = useIsEditing();
   const { steps } = useSteps();
+  const [activeStep, setActiveStep] = useState<number | null>(null);
+  const toggle = (index: number) =>
+    setActiveStep((current) => (current === index ? null : index));
 
   return (
     <section className={styles.mobileSection}>
@@ -251,52 +257,66 @@ function HowWeDoItMobile() {
       </div>
 
       <div className={styles.mobileCards}>
-        {steps.map((step, index) => (
-          <motion.div
-            key={index}
-            className={styles.mobileCard}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-40px" }}
-            transition={{ duration: 0.4, delay: index * 0.1 }}
-          >
-            <div className={styles.mobileCardImage}>
-              <img
-                src={step.image}
-                alt={step.title}
-                loading="lazy"
-              />
-              <div className={styles.imageOverlay}></div>
-            </div>
-            <div className={styles.mobileCardBody}>
-              <span className={styles.stepNumber}>
+        {steps.map((step, index) => {
+          const isOpen = editMode || activeStep === index;
+          return (
+            <motion.div
+              key={index}
+              className={`${styles.mobileCard} ${isOpen ? styles.active : ''}`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              onClick={editMode ? undefined : () => toggle(index)}
+              role={editMode ? undefined : "button"}
+              aria-expanded={editMode ? undefined : isOpen}
+            >
+              {isOpen && (
+                <div className={styles.mobileCardImage}>
+                  <img src={step.image} alt={step.title} loading="lazy" />
+                  <div className={styles.imageOverlay}></div>
+                </div>
+              )}
+              <div className={styles.mobileCardBody}>
+                <span className={styles.stepNumber}>
+                  <EditableTranslation
+                    pageSlug="home"
+                    namespace="home"
+                    path={`process.steps.${index}.number`}
+                    label={`Step ${index + 1} number`}
+                  />.
+                </span>
                 <EditableTranslation
                   pageSlug="home"
                   namespace="home"
-                  path={`process.steps.${index}.number`}
-                  label={`Step ${index + 1} number`}
-                />.
-              </span>
-              <EditableTranslation
-                pageSlug="home"
-                namespace="home"
-                path={`process.steps.${index}.title`}
-                label={`Step ${index + 1} title`}
-                as="h3"
-                className={styles.stepTitle}
-              />
-              <EditableTranslation
-                pageSlug="home"
-                namespace="home"
-                path={`process.steps.${index}.description`}
-                label={`Step ${index + 1} description`}
-                kind="text"
-                as="p"
-                className={styles.mobileCardDescription}
-              />
-            </div>
-          </motion.div>
-        ))}
+                  path={`process.steps.${index}.title`}
+                  label={`Step ${index + 1} title`}
+                  as="h3"
+                  className={styles.stepTitle}
+                />
+                <AnimatePresence>
+                  {isOpen && (
+                    <motion.p
+                      className={styles.mobileCardDescription}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    >
+                      <EditableTranslation
+                        pageSlug="home"
+                        namespace="home"
+                        path={`process.steps.${index}.description`}
+                        label={`Step ${index + 1} description`}
+                        kind="text"
+                      />
+                    </motion.p>
+                  )}
+                </AnimatePresence>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

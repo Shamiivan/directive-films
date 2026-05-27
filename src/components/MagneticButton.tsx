@@ -2,6 +2,7 @@ import { useRef, useState, ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { lerp } from '../utils/animations';
 import { useLocalePath } from '../hooks/useLocalePath';
+import { useIsEditing } from '@/cms/EditModeProvider';
 
 interface Ripple {
   id: number;
@@ -21,6 +22,7 @@ export default function MagneticButton({ children, className = '', onClick, href
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [ripples, setRipples] = useState<Ripple[]>([]);
   const l = useLocalePath();
+  const editMode = useIsEditing();
 
   const handleMouseMove = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
     if (!elementRef.current) return;
@@ -41,6 +43,11 @@ export default function MagneticButton({ children, className = '', onClick, href
   };
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
+    if (editMode) {
+      // In edit mode, prevent navigation so users can edit the button text without leaving the page.
+      e.preventDefault();
+      return;
+    }
     if (!elementRef.current) return;
 
     // Create ripple effect

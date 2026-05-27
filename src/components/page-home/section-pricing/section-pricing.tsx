@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 import MagneticButton from '../../MagneticButton';
 import SectionEyebrow from '../../SectionEyebrow';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '../../../utils/animations';
 import { useTilt } from '../../../hooks/useTilt';
 import { useLocalePath } from '../../../hooks/useLocalePath';
@@ -80,7 +81,12 @@ export default function PricingSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label={t('pricing.eyebrow')} description="" />
+          <SectionEyebrow
+            label={
+              <EditableTranslation pageSlug="services" namespace="services" path="pricing.eyebrow" label="Pricing eyebrow" />
+            }
+            description=""
+          />
           <h2 className={styles.title}>
             {t('pricing.title').split('work together').map((part, i, arr) => (
               <span key={i}>
@@ -89,9 +95,15 @@ export default function PricingSection() {
               </span>
             ))}
           </h2>
-          <p className={styles.subtitle}>
-            {t('pricing.subtitle')}
-          </p>
+          <EditableTranslation
+            pageSlug="services"
+            namespace="services"
+            path="pricing.subtitle"
+            label="Pricing subtitle"
+            kind="text"
+            as="p"
+            className={styles.subtitle}
+          />
         </motion.div>
 
         {/* Offer Cards */}
@@ -111,7 +123,12 @@ export default function PricingSection() {
 
                 {highlight && (
                   <div className={styles.badge}>
-                    <span>{t('pricing.popular')}</span>
+                    <EditableTranslation
+                      pageSlug="services"
+                      namespace="services"
+                      path="pricing.popular"
+                      label="Pricing popular badge"
+                    />
                   </div>
                 )}
 
@@ -122,7 +139,17 @@ export default function PricingSection() {
 
                 <div className={styles.offerDescription}>
                   <p className={styles.description}>{offer.description}</p>
-                  <p className={styles.bestFor}><strong>{t('pricing.bestFor')}</strong> {offer.bestFor}</p>
+                  <p className={styles.bestFor}>
+                    <strong>
+                      <EditableTranslation
+                        pageSlug="services"
+                        namespace="services"
+                        path="pricing.bestFor"
+                        label="Pricing best-for label"
+                      />
+                    </strong>{' '}
+                    {offer.bestFor}
+                  </p>
                 </div>
 
                 <ul className={styles.featuresList}>
@@ -187,9 +214,20 @@ export default function PricingSection() {
         {/* Bottom CTA */}
         <motion.div className={styles.bottomCta} {...scrollReveal}>
           <p className={styles.ctaText}>
-            {t('pricing.notSure')}{' '}
+            <EditableTranslation
+              pageSlug="services"
+              namespace="services"
+              path="pricing.notSure"
+              label="Pricing not-sure prompt"
+              kind="text"
+            />{' '}
             <Link to={l("/contact")} className={styles.ctaLink}>
-              {t('pricing.talk')}
+              <EditableTranslation
+                pageSlug="services"
+                namespace="services"
+                path="pricing.talk"
+                label="Pricing talk link"
+              />
             </Link>
           </p>
         </motion.div>

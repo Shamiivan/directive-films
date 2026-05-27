@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal, imageZoom, gridStagger } from '../../../utils/animations';
 import styles from './section-results.module.css';
 
@@ -48,7 +49,14 @@ export default function ResultsSection() {
     <section className={styles.resultsSection}>
       <div className={styles.container}>
         {/* Title */}
-        <SectionEyebrow label={t('results.eyebrow')} description={t('results.description')} />
+        <SectionEyebrow
+          label={
+            <EditableTranslation pageSlug="home" namespace="home" path="results.eyebrow" label="Results eyebrow" />
+          }
+          description={
+            <EditableTranslation pageSlug="home" namespace="home" path="results.description" label="Results description" kind="text" />
+          }
+        />
         <motion.h2
           className={styles.title}
           {...scrollReveal}
@@ -59,7 +67,9 @@ export default function ResultsSection() {
               {i < titleParts.length - 1 && (
                 <>
                   <br />
-                  <span className={styles.gold}>{goldText}</span>
+                  <span className={styles.gold}>
+                    <EditableTranslation pageSlug="home" namespace="home" path="results.gold" label="Results gold accent" />
+                  </span>
                 </>
               )}
             </span>
@@ -106,8 +116,23 @@ export default function ResultsSection() {
               >
                 {step.icon}
               </motion.div>
-              <h3 className={styles.serviceTitle}>{step.title}</h3>
-              <p className={styles.serviceDescription}>{step.description}</p>
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path={`results.steps.${index}.title`}
+                label={`Step ${index + 1} title`}
+                as="h3"
+                className={styles.serviceTitle}
+              />
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path={`results.steps.${index}.description`}
+                label={`Step ${index + 1} description`}
+                kind="text"
+                as="p"
+                className={styles.serviceDescription}
+              />
             </motion.div>
           ))}
         </motion.div>

@@ -1,12 +1,11 @@
 import { motion } from 'framer-motion';
 import { Search, Video, MonitorPlay, BarChart3, Globe } from 'lucide-react';
-import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
 import SectionEyebrow from '../../SectionEyebrow';
 import { EditableTranslation } from '@/cms/EditableTranslation';
+import { useIsEditing } from '@/cms/EditModeProvider';
 import { scrollReveal } from '../../../utils/animations';
-import { useTilt } from '../../../hooks/useTilt';
 import styles from './section-offer.module.css';
 
 const iconComponents = [
@@ -24,42 +23,16 @@ interface Service {
 }
 
 function ServiceCard3D({ service, IconComponent, index }: { service: Service; IconComponent: typeof Search; index: number }) {
-  const [isHovered, setIsHovered] = useState(false);
-  const { style: tiltStyle, onMouseMove, onMouseLeave: tiltLeave } = useTilt();
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-    tiltLeave();
-  };
-
+  const editMode = useIsEditing();
   return (
-    <motion.a
+    <a
       href={service.href}
       className={styles.serviceCard}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-      onMouseMove={onMouseMove}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={handleMouseLeave}
-      style={tiltStyle}
-      whileHover={{
-        scale: 1.02,
-        y: -2,
-      }}
+      onClick={editMode ? (e) => e.preventDefault() : undefined}
     >
-      <motion.div
-        className={styles.icon}
-        animate={isHovered ? {
-          scale: [1, 1.2, 1.1],
-          rotate: [0, -10, 5, 0],
-          filter: ['brightness(1)', 'brightness(1.3)', 'brightness(1)'],
-        } : {}}
-        transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-      >
+      <div className={styles.icon}>
         <IconComponent size={48} strokeWidth={1.5} />
-      </motion.div>
+      </div>
       <EditableTranslation
         pageSlug="home"
         namespace="home"
@@ -86,7 +59,7 @@ function ServiceCard3D({ service, IconComponent, index }: { service: Service; Ic
         />
         {' '}&rarr;
       </span>
-    </motion.a>
+    </a>
   );
 }
 
@@ -136,14 +109,7 @@ export default function OfferSection() {
           })}
 
           {/* CTA Card */}
-          <motion.div
-            className={styles.ctaCard}
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
-            transition={{ duration: 0.6, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-            whileHover={{ scale: 1.02 }}
-          >
+          <div className={styles.ctaCard}>
             <EditableTranslation
               pageSlug="home"
               namespace="home"
@@ -161,7 +127,7 @@ export default function OfferSection() {
                 label="Offer CTA button"
               />
             </MagneticButton>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

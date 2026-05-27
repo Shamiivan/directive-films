@@ -6,7 +6,7 @@ import styles from './RotatingProofLine.module.css';
 type Phase = 'typing' | 'holding' | 'erasing' | 'waiting';
 
 export default function RotatingProofLine() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation('home');
   const messages = t('rotatingProof', { returnObjects: true }) as string[];
 
   const [displayText, setDisplayText] = useState('');
