@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
 import SectionEyebrow from '../../SectionEyebrow';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '../../../utils/animations';
 import { useTilt } from '../../../hooks/useTilt';
 import styles from './section-offer.module.css';
@@ -22,7 +23,7 @@ interface Service {
   href: string;
 }
 
-function ServiceCard3D({ service, IconComponent, index, learnMoreText }: { service: Service; IconComponent: typeof Search; index: number; learnMoreText: string }) {
+function ServiceCard3D({ service, IconComponent, index }: { service: Service; IconComponent: typeof Search; index: number }) {
   const [isHovered, setIsHovered] = useState(false);
   const { style: tiltStyle, onMouseMove, onMouseLeave: tiltLeave } = useTilt();
 
@@ -59,9 +60,32 @@ function ServiceCard3D({ service, IconComponent, index, learnMoreText }: { servi
       >
         <IconComponent size={48} strokeWidth={1.5} />
       </motion.div>
-      <h3 className={styles.serviceTitle}>{service.title}</h3>
-      <p className={styles.serviceDescription}>{service.description}</p>
-      <span className={styles.learnMore}>{learnMoreText} &rarr;</span>
+      <EditableTranslation
+        pageSlug="home"
+        namespace="home"
+        path={`offer.services.${index}.title`}
+        label={`Service ${index + 1} title`}
+        as="h3"
+        className={styles.serviceTitle}
+      />
+      <EditableTranslation
+        pageSlug="home"
+        namespace="home"
+        path={`offer.services.${index}.description`}
+        label={`Service ${index + 1} description`}
+        kind="text"
+        as="p"
+        className={styles.serviceDescription}
+      />
+      <span className={styles.learnMore}>
+        <EditableTranslation
+          pageSlug="home"
+          namespace="home"
+          path="offer.learnMore"
+          label="Learn more label"
+        />
+        {' '}&rarr;
+      </span>
     </motion.a>
   );
 }
@@ -75,11 +99,26 @@ export default function OfferSection() {
       <div className={styles.container}>
         {/* Header */}
         <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label={t('offer.eyebrow')} description={t('offer.tagline')} />
-          <h2 className={styles.title}>{t('offer.title')}</h2>
-          <p className={styles.subtitle}>
-            {t('offer.subtitle')}
-          </p>
+          <SectionEyebrow
+            label={
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path="offer.eyebrow"
+                label="Offer eyebrow"
+              />
+            }
+            description={
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path="offer.tagline"
+                label="Offer tagline"
+              />
+            }
+          />
+          <EditableTranslation pageSlug="home" namespace="home" path="offer.title" label="Offer title" as="h2" className={styles.title} />
+          <EditableTranslation pageSlug="home" namespace="home" path="offer.subtitle" label="Offer subtitle" kind="text" as="p" className={styles.subtitle} />
         </motion.div>
 
         {/* Services Grid */}
@@ -92,7 +131,6 @@ export default function OfferSection() {
                 service={service}
                 IconComponent={IconComponent}
                 index={index}
-                learnMoreText={t('offer.learnMore')}
               />
             );
           })}
@@ -106,16 +144,22 @@ export default function OfferSection() {
             transition={{ duration: 0.6, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
             whileHover={{ scale: 1.02 }}
           >
-            <p className={styles.ctaText}>
-              {t('offer.cta.text').split('\n').map((line, i) => (
-                <span key={i}>
-                  {i > 0 && <br />}
-                  {line}
-                </span>
-              ))}
-            </p>
+            <EditableTranslation
+              pageSlug="home"
+              namespace="home"
+              path="offer.cta.text"
+              label="Offer CTA copy"
+              kind="text"
+              as="p"
+              className={styles.ctaText}
+            />
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              {t('offer.cta.button')}
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path="offer.cta.button"
+                label="Offer CTA button"
+              />
             </MagneticButton>
           </motion.div>
         </div>

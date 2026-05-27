@@ -2,6 +2,7 @@ import { useRef, useState, useSyncExternalStore } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
+import { EditableTranslation, EditableTranslationStatic } from '@/cms/EditableTranslation';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-how-we-do-it.module.css';
 
@@ -92,14 +93,40 @@ function HowWeDoItDesktop() {
       <section className={styles.stickyContent}>
         <div className={styles.container}>
           <motion.div className={styles.leftColumn} {...scrollReveal}>
-            <SectionEyebrow label={t('process.eyebrow')} description="" />
-            <h2 className={styles.title}>
-              <TitleWithHighlight title={t('process.title')} />
-            </h2>
+            <SectionEyebrow
+              label={
+                <EditableTranslation
+                  pageSlug="home"
+                  namespace="home"
+                  path="process.eyebrow"
+                  label="Process eyebrow"
+                />
+              }
+              description=""
+            />
+            <EditableTranslationStatic pageSlug="home" namespace="home" path="process.title">
+              {({ value, editMode }) =>
+                editMode ? (
+                  <EditableTranslation
+                    pageSlug="home"
+                    namespace="home"
+                    path="process.title"
+                    label="Process title"
+                    kind="text"
+                    as="h2"
+                    className={styles.title}
+                  />
+                ) : (
+                  <h2 className={styles.title}>
+                    <TitleWithHighlight title={value} />
+                  </h2>
+                )
+              }
+            </EditableTranslationStatic>
             <div className={styles.divider}></div>
 
             <div className={styles.stepsList}>
-              {steps.map((step, index) => (
+              {steps.map((_, index) => (
                 <motion.div
                   key={index}
                   className={`${styles.stepItem} ${activeStep === index ? styles.active : ''}`}
@@ -108,8 +135,22 @@ function HowWeDoItDesktop() {
                   transition={{ duration: 0.2 }}
                 >
                   <div className={styles.stepHeader}>
-                    <span className={styles.stepNumber}>{step.number}.</span>
-                    <h3 className={styles.stepTitle}>{step.title}</h3>
+                    <span className={styles.stepNumber}>
+                      <EditableTranslation
+                        pageSlug="home"
+                        namespace="home"
+                        path={`process.steps.${index}.number`}
+                        label={`Step ${index + 1} number`}
+                      />.
+                    </span>
+                    <EditableTranslation
+                      pageSlug="home"
+                      namespace="home"
+                      path={`process.steps.${index}.title`}
+                      label={`Step ${index + 1} title`}
+                      as="h3"
+                      className={styles.stepTitle}
+                    />
                   </div>
 
                   <AnimatePresence>
@@ -121,7 +162,13 @@ function HowWeDoItDesktop() {
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
                       >
-                        {step.description}
+                        <EditableTranslation
+                          pageSlug="home"
+                          namespace="home"
+                          path={`process.steps.${index}.description`}
+                          label={`Step ${index + 1} description`}
+                          kind="text"
+                        />
                       </motion.p>
                     )}
                   </AnimatePresence>
@@ -166,15 +213,41 @@ function HowWeDoItDesktop() {
 
 // --- Mobile: simple stacked cards ---
 function HowWeDoItMobile() {
-  const { t, steps } = useSteps();
+  const { steps } = useSteps();
 
   return (
     <section className={styles.mobileSection}>
       <div className={styles.mobileHeader}>
-        <SectionEyebrow label={t('process.eyebrow')} description="" />
-        <h2 className={styles.title}>
-          <TitleWithHighlight title={t('process.title')} />
-        </h2>
+        <SectionEyebrow
+          label={
+            <EditableTranslation
+              pageSlug="home"
+              namespace="home"
+              path="process.eyebrow"
+              label="Process eyebrow"
+            />
+          }
+          description=""
+        />
+        <EditableTranslationStatic pageSlug="home" namespace="home" path="process.title">
+          {({ value, editMode }) =>
+            editMode ? (
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path="process.title"
+                label="Process title"
+                kind="text"
+                as="h2"
+                className={styles.title}
+              />
+            ) : (
+              <h2 className={styles.title}>
+                <TitleWithHighlight title={value} />
+              </h2>
+            )
+          }
+        </EditableTranslationStatic>
       </div>
 
       <div className={styles.mobileCards}>
@@ -196,9 +269,31 @@ function HowWeDoItMobile() {
               <div className={styles.imageOverlay}></div>
             </div>
             <div className={styles.mobileCardBody}>
-              <span className={styles.stepNumber}>{step.number}.</span>
-              <h3 className={styles.stepTitle}>{step.title}</h3>
-              <p className={styles.mobileCardDescription}>{step.description}</p>
+              <span className={styles.stepNumber}>
+                <EditableTranslation
+                  pageSlug="home"
+                  namespace="home"
+                  path={`process.steps.${index}.number`}
+                  label={`Step ${index + 1} number`}
+                />.
+              </span>
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path={`process.steps.${index}.title`}
+                label={`Step ${index + 1} title`}
+                as="h3"
+                className={styles.stepTitle}
+              />
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path={`process.steps.${index}.description`}
+                label={`Step ${index + 1} description`}
+                kind="text"
+                as="p"
+                className={styles.mobileCardDescription}
+              />
             </div>
           </motion.div>
         ))}

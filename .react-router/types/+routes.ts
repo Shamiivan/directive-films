@@ -44,6 +44,38 @@ type Pages = {
       "lang": string;
     };
   };
+  "/admin": {
+    params: {};
+  };
+  "/admin/pages": {
+    params: {};
+  };
+  "/admin/pages/:slug": {
+    params: {
+      "slug": string;
+    };
+  };
+  "/admin/projects": {
+    params: {};
+  };
+  "/admin/services": {
+    params: {};
+  };
+  "/admin/team": {
+    params: {};
+  };
+  "/admin/testimonials": {
+    params: {};
+  };
+  "/admin/positions": {
+    params: {};
+  };
+  "/admin/settings": {
+    params: {};
+  };
+  "/admin/media": {
+    params: {};
+  };
   "/design-system": {
     params: {};
   };
@@ -52,7 +84,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/design-system";
+    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media" | "/design-system";
   };
   "routes/root-redirect.tsx": {
     id: "routes/root-redirect";
@@ -86,6 +118,50 @@ type RouteFiles = {
     id: "routes/privacy";
     page: "/:lang/privacy";
   };
+  "routes/admin.tsx": {
+    id: "routes/admin";
+    page: "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media";
+  };
+  "routes/admin.dashboard.tsx": {
+    id: "routes/admin.dashboard";
+    page: "/admin";
+  };
+  "routes/admin.pages.tsx": {
+    id: "routes/admin.pages";
+    page: "/admin/pages";
+  };
+  "routes/admin.pages.$slug.tsx": {
+    id: "routes/admin.pages.$slug";
+    page: "/admin/pages/:slug";
+  };
+  "routes/admin.projects.tsx": {
+    id: "routes/admin.projects";
+    page: "/admin/projects";
+  };
+  "routes/admin.services.tsx": {
+    id: "routes/admin.services";
+    page: "/admin/services";
+  };
+  "routes/admin.team.tsx": {
+    id: "routes/admin.team";
+    page: "/admin/team";
+  };
+  "routes/admin.testimonials.tsx": {
+    id: "routes/admin.testimonials";
+    page: "/admin/testimonials";
+  };
+  "routes/admin.positions.tsx": {
+    id: "routes/admin.positions";
+    page: "/admin/positions";
+  };
+  "routes/admin.settings.tsx": {
+    id: "routes/admin.settings";
+    page: "/admin/settings";
+  };
+  "routes/admin.media.tsx": {
+    id: "routes/admin.media";
+    page: "/admin/media";
+  };
   "routes/design-system.tsx": {
     id: "routes/design-system";
     page: "/design-system";
@@ -102,5 +178,16 @@ type RouteModules = {
   "routes/contact": typeof import("./src/routes/contact.tsx");
   "routes/services": typeof import("./src/routes/services.tsx");
   "routes/privacy": typeof import("./src/routes/privacy.tsx");
+  "routes/admin": typeof import("./src/routes/admin.tsx");
+  "routes/admin.dashboard": typeof import("./src/routes/admin.dashboard.tsx");
+  "routes/admin.pages": typeof import("./src/routes/admin.pages.tsx");
+  "routes/admin.pages.$slug": typeof import("./src/routes/admin.pages.$slug.tsx");
+  "routes/admin.projects": typeof import("./src/routes/admin.projects.tsx");
+  "routes/admin.services": typeof import("./src/routes/admin.services.tsx");
+  "routes/admin.team": typeof import("./src/routes/admin.team.tsx");
+  "routes/admin.testimonials": typeof import("./src/routes/admin.testimonials.tsx");
+  "routes/admin.positions": typeof import("./src/routes/admin.positions.tsx");
+  "routes/admin.settings": typeof import("./src/routes/admin.settings.tsx");
+  "routes/admin.media": typeof import("./src/routes/admin.media.tsx");
   "routes/design-system": typeof import("./src/routes/design-system.tsx");
 };

@@ -2,10 +2,13 @@ import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import { scrollReveal } from '../../../../utils/animations';
+import { EditableTranslation, useEditableTranslationField } from '@/cms/EditableTranslation';
 import styles from './section-contact-hero.module.css';
 
 export default function ContactHeroSection() {
   const { t } = useTranslation('contact');
+  const emailField = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.info.email.value" });
+  const phoneField = useEditableTranslationField({ pageSlug: "contact", namespace: "contact", path: "hero.info.phone.value" });
 
   return (
     <section className={styles.contactHero}>
@@ -16,13 +19,15 @@ export default function ContactHeroSection() {
           {...scrollReveal}
         >
           <div className={styles.leftSide}>
-            <span className={styles.heroLabel}>{t('hero.label')}</span>
+            <EditableTranslation pageSlug="contact" namespace="contact" path="hero.label" label="Hero label" as="span" className={styles.heroLabel} />
             <h1 className={styles.title}>
-              {t('hero.title')} <em className={styles.titleAccent}>{t('hero.accent')}</em>
+              <EditableTranslation pageSlug="contact" namespace="contact" path="hero.title" label="Hero title" />
+              {' '}
+              <em className={styles.titleAccent}>
+                <EditableTranslation pageSlug="contact" namespace="contact" path="hero.accent" label="Hero accent" />
+              </em>
             </h1>
-            <p className={styles.description}>
-              {t('hero.description')}
-            </p>
+            <EditableTranslation pageSlug="contact" namespace="contact" path="hero.description" label="Hero description" kind="text" as="p" className={styles.description} />
 
             <div className={styles.contactInfo}>
               <div className={styles.infoItem}>
@@ -30,9 +35,9 @@ export default function ContactHeroSection() {
                   <Mail size={24} strokeWidth={1.5} />
                 </div>
                 <div className={styles.infoText}>
-                  <h3 className={styles.infoLabel}>{t('hero.info.email.label')}</h3>
-                  <a href={`mailto:${t('hero.info.email.value')}`} className={styles.infoValue}>
-                    {t('hero.info.email.value')}
+                  <EditableTranslation pageSlug="contact" namespace="contact" path="hero.info.email.label" label="Email label" as="h3" className={styles.infoLabel} />
+                  <a href={`mailto:${emailField.value}`} className={styles.infoValue}>
+                    <EditableTranslation pageSlug="contact" namespace="contact" path="hero.info.email.value" label="Email value" />
                   </a>
                 </div>
               </div>
@@ -42,9 +47,9 @@ export default function ContactHeroSection() {
                   <Phone size={24} strokeWidth={1.5} />
                 </div>
                 <div className={styles.infoText}>
-                  <h3 className={styles.infoLabel}>{t('hero.info.phone.label')}</h3>
-                  <a href={`tel:${t('hero.info.phone.value').replace(/\s/g, '')}`} className={styles.infoValue}>
-                    {t('hero.info.phone.value')}
+                  <EditableTranslation pageSlug="contact" namespace="contact" path="hero.info.phone.label" label="Phone label" as="h3" className={styles.infoLabel} />
+                  <a href={`tel:${phoneField.value.replace(/\s/g, '')}`} className={styles.infoValue}>
+                    <EditableTranslation pageSlug="contact" namespace="contact" path="hero.info.phone.value" label="Phone value" />
                   </a>
                 </div>
               </div>
@@ -54,10 +59,8 @@ export default function ContactHeroSection() {
                   <MapPin size={24} strokeWidth={1.5} />
                 </div>
                 <div className={styles.infoText}>
-                  <h3 className={styles.infoLabel}>{t('hero.info.location.label')}</h3>
-                  <p className={styles.infoValue}>
-                    {t('hero.info.location.value')}
-                  </p>
+                  <EditableTranslation pageSlug="contact" namespace="contact" path="hero.info.location.label" label="Location label" as="h3" className={styles.infoLabel} />
+                  <EditableTranslation pageSlug="contact" namespace="contact" path="hero.info.location.value" label="Location value" kind="text" as="p" className={styles.infoValue} />
                 </div>
               </div>
             </div>
@@ -70,15 +73,15 @@ export default function ContactHeroSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
-            <h2 className={styles.formTitle}>{t('hero.form.title')}</h2>
-            <p className={styles.formSubtitle}>
-              {t('hero.form.subtitle')}
-            </p>
+            <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.title" label="Form title" as="h2" className={styles.formTitle} />
+            <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.subtitle" label="Form subtitle" kind="text" as="p" className={styles.formSubtitle} />
 
             <form className={styles.form}>
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
-                  <label htmlFor="name" className={styles.label}>{t('hero.form.fields.name.label')}</label>
+                  <span className={styles.label}>
+                    <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.fields.name.label" label="Name label" />
+                  </span>
                   <input
                     type="text"
                     id="name"
@@ -90,7 +93,9 @@ export default function ContactHeroSection() {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label htmlFor="email" className={styles.label}>{t('hero.form.fields.email.label')}</label>
+                  <span className={styles.label}>
+                    <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.fields.email.label" label="Email label" />
+                  </span>
                   <input
                     type="email"
                     id="email"
@@ -104,7 +109,9 @@ export default function ContactHeroSection() {
 
               <div className={styles.formRow}>
                 <div className={styles.formGroup}>
-                  <label htmlFor="company" className={styles.label}>{t('hero.form.fields.company.label')}</label>
+                  <span className={styles.label}>
+                    <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.fields.company.label" label="Company label" />
+                  </span>
                   <input
                     type="text"
                     id="company"
@@ -115,7 +122,9 @@ export default function ContactHeroSection() {
                 </div>
 
                 <div className={styles.formGroup}>
-                  <label htmlFor="phone" className={styles.label}>{t('hero.form.fields.phone.label')}</label>
+                  <span className={styles.label}>
+                    <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.fields.phone.label" label="Phone label" />
+                  </span>
                   <input
                     type="tel"
                     id="phone"
@@ -127,7 +136,9 @@ export default function ContactHeroSection() {
               </div>
 
               <div className={styles.formGroup}>
-                <label htmlFor="message" className={styles.label}>{t('hero.form.fields.message.label')}</label>
+                <span className={styles.label}>
+                  <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.fields.message.label" label="Message label" />
+                </span>
                 <textarea
                   id="message"
                   name="message"
@@ -145,7 +156,7 @@ export default function ContactHeroSection() {
                 whileTap={{ scale: 0.98 }}
                 transition={{ duration: 0.2 }}
               >
-                {t('hero.form.submit')}
+                <EditableTranslation pageSlug="contact" namespace="contact" path="hero.form.submit" label="Submit button" />
               </motion.button>
             </form>
           </motion.div>

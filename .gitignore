@@ -46,3 +46,4 @@ node_modules
 test-results/
 .env*.local
 docs/Momentum Management Privacy Policy.docx
+.gstack/

@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import styles from './section-about-hero.module.css';
 
 export default function AboutHeroSection() {
-  const { t } = useTranslation('about');
-
   return (
     <section className={styles.heroSection}>
       <div className={styles.overlay} />
@@ -17,14 +15,15 @@ export default function AboutHeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
         >
-          <span className={styles.label}>{t('hero.label')}</span>
+          <EditableTranslation pageSlug="about" namespace="about" path="hero.label" label="Hero label" as="span" className={styles.label} />
           <h1 className={styles.title}>
-            {t('hero.title')}{' '}
-            <em className={styles.titleAccent}>{t('hero.accent')}</em>
+            <EditableTranslation pageSlug="about" namespace="about" path="hero.title" label="Hero title" />
+            {' '}
+            <em className={styles.titleAccent}>
+              <EditableTranslation pageSlug="about" namespace="about" path="hero.accent" label="Hero accent" />
+            </em>
           </h1>
-          <p className={styles.description}>
-            {t('hero.description')}
-          </p>
+          <EditableTranslation pageSlug="about" namespace="about" path="hero.description" label="Hero description" kind="text" as="p" className={styles.description} />
           <motion.div
             className={styles.ctaWrapper}
             initial={{ opacity: 0, y: 20 }}
@@ -32,7 +31,7 @@ export default function AboutHeroSection() {
             transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              {t('hero.cta')}
+              <EditableTranslation pageSlug="about" namespace="about" path="hero.cta" label="Hero button" />
             </MagneticButton>
           </motion.div>
         </motion.div>

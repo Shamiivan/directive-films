@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-proof.module.css';
 
@@ -31,12 +32,36 @@ export default function ProofSection() {
     <section className={styles.proofSection}>
       <div className={styles.container}>
         {/* Title */}
-        <SectionEyebrow label={t('proof.eyebrow')} description={t('proof.description')} />
+        <SectionEyebrow
+          label={
+            <EditableTranslation
+              pageSlug="home"
+              namespace="home"
+              path="proof.eyebrow"
+              label="Proof eyebrow"
+            />
+          }
+          description={
+            <EditableTranslation
+              pageSlug="home"
+              namespace="home"
+              path="proof.description"
+              label="Proof description"
+            />
+          }
+        />
         <motion.h2
           className={styles.title}
           {...scrollReveal}
         >
-          {t('proof.title')}
+          <EditableTranslation
+            pageSlug="home"
+            namespace="home"
+            path="proof.title"
+            label="Proof title"
+            kind="text"
+            as="span"
+          />
         </motion.h2>
 
         {/* Image Grid/Mosaic */}

@@ -1,0 +1,95 @@
+.editable {
+  position: relative;
+  outline: 1.5px dashed transparent;
+  outline-offset: 8px;
+  border-radius: 2px;
+  transition: outline-color 200ms ease-in-out;
+}
+
+.editable:hover {
+  outline-color: var(--color-gold);
+  cursor: text;
+}
+
+.editable:hover::before {
+  content: attr(data-label);
+  position: absolute;
+  top: -22px;
+  left: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-black);
+  background: var(--color-gold);
+  padding: 3px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.active,
+.active:hover {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 8px;
+}
+
+.active:focus {
+  outline: 2px solid var(--color-gold);
+}
+
+.active:hover::before {
+  content: none;
+}
+
+.editable[data-needs-translation="true"]::after {
+  content: "Needs translation";
+  position: absolute;
+  top: -22px;
+  right: 0;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #cc3b3b;
+  background: rgba(204, 59, 59, 0.1);
+  padding: 3px 8px;
+  border-radius: 3px;
+  pointer-events: none;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.pending {
+  position: relative;
+}
+
+.pending::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold) 50%,
+    transparent
+  );
+  animation: pending-pulse 1.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes pending-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.6); }
+  50%      { opacity: 1;   transform: scaleX(1); }
+}
+
+.placeholder {
+  color: var(--color-text-dim);
+  font-style: italic;
+}

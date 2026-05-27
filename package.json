@@ -4,6 +4,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "convex:codegen": "convex codegen",
+    "convex:dev": "convex dev",
     "dev": "react-router dev --port 3001",
     "build": "react-router build",
     "start": "npx serve build/client -l 3001",
@@ -17,6 +19,7 @@
     "@fontsource/playfair-display": "^5.2.8",
     "@fontsource/space-mono": "^5.2.9",
     "@react-router/node": "^7.13.1",
+    "convex": "^1.39.1",
     "framer-motion": "^12.34.0",
     "i18next": "^25.8.14",
     "isbot": "^5",

@@ -1,9 +1,10 @@
+import type { ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import styles from './SectionEyebrow.module.css';
 
 interface SectionEyebrowProps {
-  label: string;
-  description?: string;
+  label: ReactNode;
+  description?: ReactNode;
 }
 
 export default function SectionEyebrow({ label, description }: SectionEyebrowProps) {

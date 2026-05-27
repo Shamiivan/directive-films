@@ -5,6 +5,9 @@ import "./i18n";
 // ... (imports remain same)
 import "./globals.css";
 import Preloader from "./components/Preloader";
+import { EditModeProvider } from "./cms/EditModeProvider";
+import { ModeToggle } from "./cms/ModeToggle";
+import { EditorBar } from "./cms/EditorBar";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { i18n } = useTranslation();
@@ -37,7 +40,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <Preloader />
-        {children}
+        <EditModeProvider>
+          {children}
+          <ModeToggle />
+          <EditorBar status="Editing as Shami" />
+        </EditModeProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

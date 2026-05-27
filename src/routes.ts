@@ -10,5 +10,17 @@ export default [
     route("services", "routes/services.tsx"),
     route("privacy", "routes/privacy.tsx"),
   ]),
+  route("/admin", "routes/admin.tsx", [
+    index("routes/admin.dashboard.tsx"),
+    route("pages", "routes/admin.pages.tsx"),
+    route("pages/:slug", "routes/admin.pages.$slug.tsx"),
+    route("projects", "routes/admin.projects.tsx"),
+    route("services", "routes/admin.services.tsx"),
+    route("team", "routes/admin.team.tsx"),
+    route("testimonials", "routes/admin.testimonials.tsx"),
+    route("positions", "routes/admin.positions.tsx"),
+    route("settings", "routes/admin.settings.tsx"),
+    route("media", "routes/admin.media.tsx"),
+  ]),
   route("/design-system", "routes/design-system.tsx"),
 ] satisfies RouteConfig;

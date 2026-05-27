@@ -1,6 +1,6 @@
 import { redirect } from "react-router";
 
-export function clientLoader() {
+export function clientLoader({ request }: { request: Request }) {
     let lang = "en";
     if (typeof navigator !== "undefined" && navigator.languages) {
         const preferredLang = navigator.languages.find(l => l.startsWith('en') || l.startsWith('fr'));
@@ -10,5 +10,6 @@ export function clientLoader() {
     } else if (typeof navigator !== "undefined" && navigator.language && navigator.language.startsWith("fr")) {
         lang = "fr";
     }
-    return redirect(`/${lang}`);
+    const url = new URL(request.url);
+    return redirect(`/${lang}${url.search}`);
 }

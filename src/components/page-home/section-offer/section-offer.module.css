@@ -144,6 +144,7 @@
   color: var(--color-text-on-dark);
   margin-bottom: var(--space-xl);
   line-height: 1.2;
+  white-space: pre-line;
 }
 
 .growing {

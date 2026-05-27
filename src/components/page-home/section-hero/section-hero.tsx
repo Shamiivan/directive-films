@@ -1,14 +1,38 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
+import { useQuery } from 'convex/react';
 import MagneticButton from '../../MagneticButton';
 import { fadeInUp, fadeInScale } from '../../../utils/animations';
 import VideoStrip from './video-strip';
+import { api } from '../../../../convex/_generated/api';
+import { isConvexConfigured } from '@/cms/convex';
+import { useIsEditing } from '@/cms/EditModeProvider';
+import { EditableTranslation, EditableTranslationStatic } from '@/cms/EditableTranslation';
+import { STATIC_COMPANY_LOGOS } from '@/cms/staticContent';
 import styles from './section-hero.module.css';
 
+type DisplayLogo = {
+  src: string;
+  alt: string;
+};
+
 export default function HeroSection() {
-  const { t } = useTranslation('home');
   const heroRef = useRef(null);
+  const editMode = useIsEditing();
+  const cmsLogos = !isConvexConfigured
+    ? null
+    : useQuery(editMode ? api.cms.listCompanyLogosDraft : api.cms.listPublishedCompanyLogos, {});
+
+  const logos: DisplayLogo[] = cmsLogos && cmsLogos.length > 0
+    ? cmsLogos.map((logo: any) => {
+        const content = editMode ? logo.draft : logo.content;
+        const image = content?.image ?? {};
+        return {
+          src: image.url || image.src || "",
+          alt: image.alt?.en || content?.name || "Company logo",
+        };
+      }).filter((logo: { src: string }) => Boolean(logo.src))
+    : STATIC_COMPANY_LOGOS.map((logo) => ({ src: logo.src, alt: logo.name }));
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -29,36 +53,63 @@ export default function HeroSection() {
           opacity: heroOpacity,
         }}
       >
+        <EditableTranslationStatic pageSlug="home" namespace="home" path="hero.title">
+          {({ value, editMode: fieldEditMode }) =>
+            fieldEditMode ? (
+              <div style={{ width: "100%" }}>
+                <EditableTranslation
+                  pageSlug="home"
+                  namespace="home"
+                  path="hero.title"
+                  label="Hero headline"
+                  kind="text"
+                  as="h1"
+                  className={styles.heroTitle}
+                />
+              </div>
+            ) : (
+              <h1 className={styles.heroTitle}>
+                {value.split('\n').map((line, i) => {
+                  const firstChar = line.charAt(0);
+                  const rest = line.slice(1);
+                  return (
+                    <span key={i} style={{ display: 'block', overflow: 'hidden', whiteSpace: 'nowrap' }}>
+                      <motion.span
+                        initial={{ opacity: 0, y: '100%' }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.15 + 0.15 }}
+                        style={{ display: 'block' }}
+                      >
+                        <span className={styles.gold}>{firstChar}</span>{rest}
+                      </motion.span>
+                    </span>
+                  );
+                })}
+              </h1>
+            )
+          }
+        </EditableTranslationStatic>
 
-        <h1 className={styles.heroTitle}>
-          {t('hero.title').split('\n').map((line, i) => {
-            const firstChar = line.charAt(0);
-            const rest = line.slice(1);
-            return (
-              <span key={i} style={{ display: 'block', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                <motion.span
-                  initial={{ opacity: 0, y: '100%' }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.15 + 0.15 }}
-                  style={{ display: 'block' }}
-                >
-                  <span className={styles.gold}>{firstChar}</span>{rest}
-                </motion.span>
-              </span>
-            );
-          })}
-        </h1>
-
-        <motion.p
-          className={styles.heroSubtitle}
-          variants={fadeInUp}
-        >
-          {t('hero.subtitle')}
-        </motion.p>
+        <motion.div variants={fadeInUp}>
+          <EditableTranslation
+            pageSlug="home"
+            namespace="home"
+            path="hero.subtitle"
+            label="Hero subtitle"
+            kind="text"
+            as="p"
+            className={styles.heroSubtitle}
+          />
+        </motion.div>
 
         <motion.div variants={fadeInUp}>
           <MagneticButton href="/services" className={styles.ctaButton}>
-            {t('hero.cta')}
+            <EditableTranslation
+              pageSlug="home"
+              namespace="home"
+              path="hero.cta"
+              label="Hero button"
+            />
           </MagneticButton>
         </motion.div>
 
@@ -89,21 +140,21 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Brand Logos */}
-        <motion.p className={styles.logoContext} variants={fadeInUp}>
-          {t('hero.workedWith')}
-        </motion.p>
+        <motion.div variants={fadeInUp}>
+          <EditableTranslation
+            pageSlug="home"
+            namespace="home"
+            path="hero.workedWith"
+            label="Worked with label"
+            as="p"
+            className={styles.logoContext}
+          />
+        </motion.div>
         <motion.div
           className={styles.brandLogos}
           variants={fadeInUp}
         >
-          {[
-            { src: '/logos/momentum.svg', alt: 'Momentum' },
-            { src: '/logos/amazon.svg', alt: 'Amazon' },
-            { src: '/logos/rogers.svg', alt: 'Rogers' },
-            { src: '/logos/shopify.svg', alt: 'Shopify' },
-            { src: '/logos/telus.svg', alt: 'Telus' },
-            { src: '/logos/altitude.png', alt: 'Altitude' },
-          ].map((logo, i) => (
+          {logos.map((logo: DisplayLogo, i: number) => (
             <motion.div
               key={i}
               className={styles.brandLogo}

@@ -1,14 +1,21 @@
 import { useEffect } from "react";
 import { useParams, useNavigate, Outlet, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
+import { useCmsLocaleBundles } from "@/cms/useCmsLocaleBundles";
+import { useIsEditing, useLocale } from "@/cms/EditModeProvider";
 
 export default function LocaleLayout() {
-    const { lang } = useParams();
-    const navigate = useNavigate();
-    const { i18n } = useTranslation();
-    const location = useLocation();
+  const { lang } = useParams();
+  const navigate = useNavigate();
+  const { i18n } = useTranslation();
+  const location = useLocation();
+  const editMode = useIsEditing();
+  const editorLocale = useLocale();
 
     const supportedLanguages = ['en', 'fr'];
+    const activeLocale = editMode ? editorLocale : (lang === "fr" ? "fr" : "en");
+
+    useCmsLocaleBundles(activeLocale);
 
     useEffect(() => {
         if (!lang || !supportedLanguages.includes(lang)) {
@@ -29,10 +36,10 @@ export default function LocaleLayout() {
             return;
         }
 
-        if (i18n.language !== lang) {
-            i18n.changeLanguage(lang);
+        if (i18n.language !== activeLocale) {
+            i18n.changeLanguage(activeLocale);
         }
-    }, [lang, i18n, navigate, location.pathname]);
+    }, [activeLocale, lang, i18n, navigate, location.pathname]);
 
     // Prevent rendering if language is invalid to avoid English flash while redirecting
     if (!lang || !supportedLanguages.includes(lang)) {

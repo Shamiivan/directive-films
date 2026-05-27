@@ -42,17 +42,23 @@ i18n
                 about: frAbout,
                 services: frServices,
                 careers: frCareers
+                ,
+                contact: frContact
             },
         },
         lng: initialLng,
         fallbackLng: 'en',
         defaultNS: 'common',
-        ns: ['common', 'home', 'about', 'services', 'careers'],
+        ns: ['common', 'home', 'about', 'services', 'careers', 'contact'],
         interpolation: {
             escapeValue: false, // react already safes from xss
         },
         react: {
             useSuspense: false, // prevent hydration issues with nested async
+            // `added` is fired on i18n.store (not i18n), so it needs bindI18nStore.
+            // Without this, addResourceBundle calls from useCmsLocaleBundles
+            // update the i18n store but don't trigger useTranslation re-renders.
+            bindI18nStore: 'added removed',
         }
     });
 

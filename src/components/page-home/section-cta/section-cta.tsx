@@ -1,13 +1,11 @@
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 import MagneticButton from '../../MagneticButton';
 import RotatingProofLine from '../../RotatingProofLine';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-cta.module.css';
 
 export default function CtaSection() {
-  const { t } = useTranslation('home');
-
   return (
     <section className={styles.ctaSection}>
       <div className={styles.container}>
@@ -15,12 +13,24 @@ export default function CtaSection() {
           className={styles.content}
           {...scrollReveal}
         >
-          <h2 className={styles.title}>
-            {t('ctaSection.title')}
-          </h2>
-          <p className={styles.riskReversal}>
-            {t('ctaSection.riskReversal')}
-          </p>
+          <EditableTranslation
+            pageSlug="home"
+            namespace="home"
+            path="ctaSection.title"
+            label="CTA title"
+            kind="text"
+            as="h2"
+            className={styles.title}
+          />
+          <EditableTranslation
+            pageSlug="home"
+            namespace="home"
+            path="ctaSection.riskReversal"
+            label="Risk reversal"
+            kind="text"
+            as="p"
+            className={styles.riskReversal}
+          />
           <RotatingProofLine />
           <motion.div
             className={styles.ctaWrapper}
@@ -30,7 +40,12 @@ export default function CtaSection() {
             transition={{ duration: 0.6, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
           >
             <MagneticButton href="/contact" className={styles.ctaButton}>
-              {t('ctaSection.button')}
+              <EditableTranslation
+                pageSlug="home"
+                namespace="home"
+                path="ctaSection.button"
+                label="CTA button"
+              />
             </MagneticButton>
           </motion.div>
         </motion.div>

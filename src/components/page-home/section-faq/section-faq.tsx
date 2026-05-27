@@ -1,7 +1,9 @@
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
+import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '../../../utils/animations';
 import styles from './section-faq.module.css';
 
@@ -17,8 +19,8 @@ function FaqItem({
   isOpen,
   onToggle,
 }: {
-  question: string;
-  answer: string;
+  question: ReactNode;
+  answer: ReactNode;
   index: number;
   isOpen: boolean;
   onToggle: () => void;
@@ -89,10 +91,18 @@ export default function FaqSection() {
       <div className={styles.container}>
         <div className={styles.layout}>
           <motion.div className={styles.left} {...scrollReveal}>
-            <SectionEyebrow label={t('faq.eyebrow')} description="" />
+            <SectionEyebrow
+              label={
+                <EditableTranslation pageSlug="home" namespace="home" path="faq.eyebrow" label="FAQ eyebrow" />
+              }
+              description=""
+            />
             <h2 className={styles.title}>
-              {t('faq.title')}{' '}
-              <em className={styles.titleAccent}>{t('faq.accent')}</em>
+              <EditableTranslation pageSlug="home" namespace="home" path="faq.title" label="FAQ title" />
+              {' '}
+              <em className={styles.titleAccent}>
+                <EditableTranslation pageSlug="home" namespace="home" path="faq.accent" label="FAQ accent" />
+              </em>
             </h2>
           </motion.div>
 
@@ -100,8 +110,12 @@ export default function FaqSection() {
             {faqs.map((faq, i) => (
               <FaqItem
                 key={i}
-                question={faq.question}
-                answer={faq.answer}
+                question={(
+                  <EditableTranslation pageSlug="home" namespace="home" path={`faq.items.${i}.question`} label={`FAQ question ${i + 1}`} />
+                )}
+                answer={(
+                  <EditableTranslation pageSlug="home" namespace="home" path={`faq.items.${i}.answer`} label={`FAQ answer ${i + 1}`} kind="text" />
+                )}
                 index={i}
                 isOpen={openIndex === i}
                 onToggle={() => setOpenIndex(openIndex === i ? null : i)}
