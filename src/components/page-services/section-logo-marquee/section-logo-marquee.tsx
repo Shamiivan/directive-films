@@ -33,9 +33,13 @@ function LogoRow() {
 export default function LogoMarqueeSection() {
   return (
     <section className={styles.section} aria-label="Client logos">
-      <div className={styles.track}>
-        <LogoRow />
-        <LogoRow />
+      <div className={styles.container}>
+        <div className={styles.overlay}>
+          <div className={styles.track}>
+            <LogoRow />
+            <LogoRow />
+          </div>
+        </div>
       </div>
     </section>
   );

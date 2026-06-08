@@ -1,11 +1,38 @@
 .section {
   box-sizing: border-box;
+  width: 100%;
   overflow: hidden;
-  background: #ffffff;
+  background: #000000;
   padding: 60px 0;
 }
 
+.container {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  height: 280px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0;
+  background: #000000;
+}
+
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: transparent;
+  border-radius: 0;
+}
+
 .track {
+  position: relative;
+  z-index: 1;
   box-sizing: border-box;
   display: flex;
   gap: 0;
@@ -52,6 +79,16 @@
 @media (min-width: 768px) {
   .row {
     gap: 48px;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .container {
+    height: 220px;
   }
 }
 

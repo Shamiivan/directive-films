@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import styles from './section-how-it-works.module.css';
 
 function CheckIcon() {
@@ -78,14 +80,23 @@ const steps = [
 
 type Step = typeof steps[number];
 
-function ProcessStep({ step }: { step: Step }) {
+function ProcessStep({ step, index }: { step: Step; index: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start end', 'start 0.35'],
+  });
+
+  const rawScaleX = useTransform(scrollYProgress, [0, 1], [0.84, 1]);
+  const scaleX = index === 0 ? 1 : rawScaleX;
+
   const cardClassName = [
     styles.card,
     step.imageSide === 'left' ? styles.imageLeft : styles.imageRight,
   ].join(' ');
 
   return (
-    <div className={cardClassName}>
+    <motion.div ref={ref} className={cardClassName} style={{ scaleX, zIndex: index + 1 }}>
       <div className={styles.content}>
         <div className={styles.stepNumber}>{step.stepNumber}</div>
         <h4 className={styles.cardTitle}>{step.title}</h4>
@@ -107,7 +118,7 @@ function ProcessStep({ step }: { step: Step }) {
       <div className={styles.imageWrap}>
         <img src={step.imageSrc} sizes={step.imageSizes} alt="" className={styles.image} />
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -121,8 +132,8 @@ export default function HowItWorksSection() {
         </h3>
         <div className={styles.spacer} />
         <div className={styles.steps}>
-          {steps.map((step) => (
-            <ProcessStep key={step.stepNumber} step={step} />
+          {steps.map((step, index) => (
+            <ProcessStep key={step.stepNumber} step={step} index={index} />
           ))}
         </div>
       </div>
