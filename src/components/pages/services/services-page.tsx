@@ -1,35 +1,17 @@
-import { useEffect } from 'react';
 import NavSection from '../../page-shared/section-nav/section-nav';
 import ServicesHeroSection from '../../page-services/section-services-hero/section-services-hero';
-import SectionMethod from '../../page-services/section-method/section-method';
 import SectionServices from '../../page-services/section-services/section-services';
-import PricingSection from '../../page-home/section-pricing/section-pricing';
-import FaqSection from '../../page-services/section-faq/section-faq';
-import CtaSection from '../../page-services/section-cta/section-cta';
+import ServicesCta from '../../page-services/section-cta/section-cta';
 import FooterSection from '../../page-shared/section-footer/section-footer';
 import styles from './services-page.module.css';
 
 export default function ServicesPage() {
-  useEffect(() => {
-    const hash = window.location.hash;
-    if (hash) {
-      // Small delay to let the page render
-      setTimeout(() => {
-        const el = document.getElementById(hash.slice(1));
-        el?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 100);
-    }
-  }, []);
-
   return (
     <div className={styles.page}>
       <NavSection />
       <ServicesHeroSection />
-      <SectionMethod />
       <SectionServices />
-      <PricingSection />
-      <FaqSection />
-      <CtaSection />
+      <ServicesCta />
       <FooterSection />
     </div>
   );

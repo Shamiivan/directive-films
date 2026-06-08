@@ -60,10 +60,6 @@ export default function NavSection() {
 
   if (editMode) return null;
 
-  // Static colors — nav stays dark throughout
-  const logoColor = '#ffffff';
-  const hamburgerBg = '#ffffff';
-
   // Show nav after scrolling past hero area on mobile
   useEffect(() => {
     const handleScroll = () => {
@@ -103,13 +99,13 @@ export default function NavSection() {
 
   return (
     <>
-      <AnimatedNav className={`${styles.nav} ${scrolled ? styles.navVisible : styles.navHidden}`}>
+      <AnimatedNav className={styles.nav}>
+        <div className={styles.wrap}>
         <MotionLink
           to={l("/")}
           className={styles.logo}
           data-sticky-cursor
-          style={{ color: logoColor }}
-          whileHover={{ scale: 1.05 }}
+          whileHover={{ scale: 1.03 }}
           transition={{ duration: 0.2 }}
         >
           <img src="/logos/logo-icon.svg" alt="DirectiveFilms" className={styles.logoIcon} />
@@ -153,10 +149,11 @@ export default function NavSection() {
           aria-label="Toggle mobile menu"
           aria-expanded={mobileMenuOpen}
         >
-          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} style={{ background: hamburgerBg }} />
-          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} style={{ background: hamburgerBg }} />
-          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} style={{ background: hamburgerBg }} />
+          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} />
+          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} />
+          <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} />
         </button>
+        </div>
       </AnimatedNav>
 
       {/* Mobile Menu Overlay */}

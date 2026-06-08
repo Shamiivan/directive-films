@@ -35,6 +35,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <link rel="alternate" hrefLang="fr" href={frLink} />
         <link rel="alternate" hrefLang="x-default" href={enLink} />
 
+        {/* Fonts — Fraunces (serif display), Archivo (body), Archivo Expanded (brand caps), JetBrains Mono */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,ital,wght@9..144,0,400;9..144,0,600;9..144,0,700;9..144,1,400;9..144,1,600&family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Expanded:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
         <Meta />
         <Links />
       </head>
@@ -43,7 +47,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <EditModeProvider>
           {children}
           <ModeToggle />
-          <EditorBar status="Editing as Shami" />
+          <EditorBar status="Editing" />
         </EditModeProvider>
         <ScrollRestoration />
         <Scripts />

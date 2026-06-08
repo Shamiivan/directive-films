@@ -1,51 +1,66 @@
 :root {
-  --background: #ffffff;
-  --foreground: #111111;
+  /* ── Mockup design tokens ─────────────────────────────── */
+  --ink:        #0a0a0d;
+  --ink2:       #111218;
+  --panel:      #16171f;
+  --line:       rgba(255, 255, 255, 0.09);
+  --line2:      rgba(255, 255, 255, 0.16);
+  --paper:      #f5f1e8;
+  --paper-dim:  #cfc9ba;
+  --muted:      #8b8d99;
+  --gold:       #e8b04b;
+  --gold2:      #f6c869;
+  --gold-deep:  #b9842b;
+  --accent:     #3dd7c0;
+  --maxw:       1180px;
+  --rad:        18px;
 
-  /* Brand colors - gold stays */
-  --color-gold: #FDB714;
-  --color-gold-hover: #e5a512;
-  --color-black: #0d0d0d;
+  /* ── Legacy aliases (keep existing components working) ── */
+  --background: var(--ink);
+  --foreground: var(--paper);
+
+  /* Brand colors */
+  --color-gold: var(--gold2);
+  --color-gold-hover: var(--gold);
+  --color-black: var(--ink);
   --color-white: #ffffff;
 
-  /* Backgrounds - light body */
-  --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f5f5f5;
-  --color-bg-tertiary: #eeeeee;
-  --color-bg-dark: #111111;
-  --color-bg-deep: #0d0d0d;
+  /* Backgrounds */
+  --color-bg-primary: var(--ink);
+  --color-bg-secondary: var(--ink2);
+  --color-bg-tertiary: var(--panel);
+  --color-bg-dark: var(--ink2);
+  --color-bg-deep: var(--ink);
 
-  /* Text - dark on light */
-  --color-text-primary: #111111;
-  --color-text-secondary: #333333;
-  --color-text-tertiary: #666666;
-  --color-text-muted: #999999;
-  --color-text-on-light: #111111;
-  --color-text-dim: #999999;
+  /* Text */
+  --color-text-primary: var(--paper);
+  --color-text-secondary: var(--paper-dim);
+  --color-text-tertiary: var(--paper-dim);
+  --color-text-muted: var(--muted);
+  --color-text-on-light: var(--ink);
+  --color-text-dim: var(--muted);
 
-  /* Text on dark sections (hero, footer, CTA) */
-  --color-text-on-dark: #ffffff;
-  --color-text-on-dark-secondary: rgba(255, 255, 255, 0.7);
-  --color-text-on-dark-muted: rgba(255, 255, 255, 0.4);
+  --color-text-on-dark: var(--paper);
+  --color-text-on-dark-secondary: var(--paper-dim);
+  --color-text-on-dark-muted: var(--muted);
 
-  /* Dark section cards */
-  --color-bg-dark-card: #1a1a1a;
-  --color-bg-dark-elevated: #141414;
+  /* Cards */
+  --color-bg-dark-card: var(--ink2);
+  --color-bg-dark-elevated: var(--panel);
 
-  /* Borders - light theme */
-  --color-border-light: #e5e5e5;
-  --color-border-medium: #d1d1d1;
-  --color-border-dark: #f3f3f3;
-  --color-border-subtle: #e5e5e5;
-
-  /* Borders - dark theme */
-  --color-border-dark-subtle: rgba(255, 255, 255, 0.08);
-  --color-border-dark-medium: rgba(255, 255, 255, 0.15);
+  /* Borders */
+  --color-border-light: var(--line);
+  --color-border-medium: var(--line2);
+  --color-border-dark: var(--line);
+  --color-border-subtle: var(--line);
+  --color-border-dark-subtle: var(--line);
+  --color-border-dark-medium: var(--line2);
 
   /* Typography - Font families */
-  --font-display: Inter, sans-serif;
-  --font-body: Inter, sans-serif;
-  --font-mono: "Space Mono", monospace;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Archivo", sans-serif;
+  --font-brand: "Archivo Expanded", "Archivo", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 
   /* Typography - Font sizes */
   --font-size-display1: 64px;
@@ -146,9 +161,11 @@
 
 body {
   min-height: 100vh;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: var(--font-body, Inter, sans-serif);
+  color: var(--paper);
+  background: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

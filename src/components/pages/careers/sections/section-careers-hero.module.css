@@ -1,206 +1,83 @@
-/* Careers Hero Section */
-.careersHero {
-  min-height: 100vh;
-  padding: 120px 0 80px;
-  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(26, 26, 26, 0.8)),
-              url('/images/careers-bg.png') center/cover no-repeat;
-  position: relative;
-  display: flex;
-  align-items: center;
+.banner {
+  background:
+    radial-gradient(110% 120% at 20% -20%, rgba(61, 215, 192, 0.12), transparent 55%),
+    radial-gradient(120% 120% at 90% 0%, rgba(232, 176, 75, 0.16), transparent 55%),
+    var(--ink);
+  padding: 110px 0 70px;
 }
 
-.careersHero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 30% 50%, rgba(253, 183, 20, 0.1) 0%, transparent 50%);
-  pointer-events: none;
-}
-
-.container {
-  max-width: var(--container-max-width);
+.wrap {
+  max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
-  width: 100%;
+  padding: 0 28px;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-4xl);
+.eyebrow {
+  display: inline-flex;
   align-items: center;
+  gap: 9px;
+  color: var(--gold2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.leftSide {
-  color: var(--color-white);
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--gold2);
+  display: inline-block;
 }
 
-.title {
-  font-size: 72px;
-  font-weight: 700;
-  line-height: 1.1;
-  color: var(--color-white);
-  margin-bottom: var(--space-xl);
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 84px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin-top: 18px;
+  color: var(--paper);
 }
 
-.description {
-  font-size: var(--font-size-h4);
+.serifIt {
+  font-style: italic;
+  color: var(--gold2);
+}
+
+.lead {
+  color: var(--paper-dim);
+  font-size: 20px;
+  max-width: 640px;
+  margin-top: 22px;
   line-height: 1.6;
-  color: var(--color-text-on-dark-secondary);
-  max-width: 500px;
 }
 
-/* Form Card */
-.formCard {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: var(--radius-3xl);
-  padding: var(--space-2xl);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+.ctarow {
+  display: flex;
+  gap: 14px;
+  margin-top: 26px;
 }
 
-.formTitle {
-  font-size: var(--font-size-h2);
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
   font-weight: 700;
-  color: var(--color-black);
-  margin-bottom: 12px;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--gold2), var(--gold-deep));
+  color: #180f00;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-decoration: none;
 }
 
-.formSubtitle {
-  font-size: var(--font-size-body);
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-xl);
-  line-height: 1.5;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-lg);
-}
-
-.formGroup {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.label {
-  font-size: var(--font-size-body-sm);
-  font-weight: 600;
-  color: var(--color-border-light);
-}
-
-.input {
-  padding: 14px 18px;
-  border: 2px solid var(--color-border-light);
-  border-radius: var(--radius-lg);
-  font-size: var(--font-size-body);
-  transition: all var(--transition-slow);
-  background: var(--color-white);
-  color: var(--color-black);
-}
-
-.input:focus {
-  outline: none;
-  border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(253, 183, 20, 0.1);
-}
-
-.input::placeholder {
-  color: var(--color-text-tertiary);
-}
-
-.submitButton {
-  background: var(--color-gold);
-  color: var(--color-black);
-  border: none;
-  padding: 16px 32px;
-  border-radius: var(--radius-lg);
-  font-weight: 600;
-  font-size: var(--font-size-body);
-  cursor: pointer;
-  transition: all var(--transition-slow);
-  margin-top: 8px;
-  width: 100%;
-}
-
-.submitButton:hover {
-  background: var(--color-gold-hover);
-  transform: scale(1.02);
-  box-shadow: var(--shadow-gold-xl);
-}
-
-/* Responsive */
-@media (max-width: 1024px) {
-  .careersHero {
-    min-height: auto;
-  }
-
-  .content {
-    grid-template-columns: 1fr;
-    gap: 60px;
-  }
-
-  .leftSide {
-    text-align: center;
-  }
-
-  .description {
-    margin: 0 auto;
-  }
-
-  .title {
-    font-size: 56px;
-  }
-}
-
-@media (max-width: 768px) {
-  .careersHero {
-    padding: 100px 0 60px;
-  }
-
-  .container {
-    padding: 0 var(--container-padding-mobile);
-  }
-
-  .content {
-    gap: 40px;
-  }
-
-  .title {
-    font-size: 42px;
-    margin-bottom: var(--space-lg);
-  }
-
-  .description {
-    font-size: var(--font-size-body-lg);
-  }
-
-  .formCard {
-    padding: 32px 24px;
-  }
-
-  .formTitle {
-    font-size: 28px;
-  }
-
-  .formSubtitle {
-    font-size: var(--font-size-body-sm);
-    margin-bottom: var(--space-lg);
-  }
-
-  .form {
-    gap: 20px;
-  }
-
-  .input {
-    padding: 12px 16px;
-    font-size: var(--font-size-body-sm);
-  }
-
-  .submitButton {
-    padding: 14px 28px;
-    font-size: var(--font-size-body-sm);
-  }
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 34px -10px rgba(232, 176, 75, 0.6);
 }

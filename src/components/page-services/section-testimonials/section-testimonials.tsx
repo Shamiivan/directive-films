@@ -1,55 +1,46 @@
-import { motion } from 'framer-motion';
-import SectionEyebrow from '../../SectionEyebrow';
 import styles from './section-testimonials.module.css';
 
+const testimonials = [
+  {
+    quote: '"They brought our business to the next level. The system pays for itself every month."',
+    name: 'Mehdi A.',
+    role: 'Founder, Services Co.',
+    initials: 'MA',
+  },
+  {
+    quote: '"Best content we\'ve ever had — and the sales team actually closes the leads it brings in."',
+    name: 'Shawn S.',
+    role: 'CEO, Retail Brand',
+    initials: 'SS',
+  },
+  {
+    quote: '"Clear, professional, and the AI automations saved us 20+ hours a week instantly."',
+    name: 'Marie-Eve T.',
+    role: 'Director, B2B SaaS',
+    initials: 'MT',
+  },
+];
+
 export default function TestimonialsSection() {
-  // TODO: Replace with real client testimonials when available
-  const testimonials: {
-    quote: string;
-    author: string;
-    role: string;
-    image: string;
-  }[] = [];
-
-  if (testimonials.length === 0) return null;
-
   return (
     <section className={styles.section}>
-      <div className={styles.container}>
-        <SectionEyebrow label="Testimonials" description="What clients say" />
-        <motion.h2
-          className={styles.title}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6 }}
-        >
-          What our clients say
-        </motion.h2>
-        <div className={styles.testimonialsGrid}>
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              className={styles.testimonialCard}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
-            >
-              <div className={styles.quoteIcon}>"</div>
-              <p className={styles.quote}>{testimonial.quote}</p>
-              <div className={styles.author}>
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.author}
-                  className={styles.authorImage}
-                />
-                <div className={styles.authorInfo}>
-                  <div className={styles.authorName}>{testimonial.author}</div>
-                  <div className={styles.authorRole}>{testimonial.role}</div>
+      <div className={styles.wrap}>
+        <span className={styles.eyebrow}>What clients say</span>
+        <h2 className={styles.heading}>Don't take our word for it.</h2>
+
+        <div className={styles.quotes}>
+          {testimonials.map((t, i) => (
+            <div key={i} className={styles.quote}>
+              <div className={styles.stars}>★★★★★</div>
+              <p>{t.quote}</p>
+              <div className={styles.who}>
+                <div className={styles.av}>{t.initials}</div>
+                <div>
+                  <b>{t.name}</b>
+                  <span>{t.role}</span>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

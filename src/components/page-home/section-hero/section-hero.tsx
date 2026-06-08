@@ -1,171 +1,68 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { useQuery } from 'convex/react';
-import MagneticButton from '../../MagneticButton';
-import { fadeInUp, fadeInScale } from '../../../utils/animations';
-import VideoStrip from './video-strip';
-import { api } from '../../../../convex/_generated/api';
-import { isConvexConfigured } from '@/cms/convex';
-import { useIsEditing } from '@/cms/EditModeProvider';
-import { EditableTranslation, EditableTranslationStatic } from '@/cms/EditableTranslation';
-import { STATIC_COMPANY_LOGOS } from '@/cms/staticContent';
+import { Link } from 'react-router';
+import { useLocalePath } from '../../../hooks/useLocalePath';
 import styles from './section-hero.module.css';
 
-type DisplayLogo = {
-  src: string;
-  alt: string;
-};
-
 export default function HeroSection() {
-  const heroRef = useRef(null);
-  const editMode = useIsEditing();
-  const cmsLogos = !isConvexConfigured
-    ? null
-    : useQuery(editMode ? api.cms.listCompanyLogosDraft : api.cms.listPublishedCompanyLogos, {});
-
-  const logos: DisplayLogo[] = cmsLogos && cmsLogos.length > 0
-    ? cmsLogos.map((logo: any) => {
-        const content = editMode ? logo.draft : logo.content;
-        const image = content?.image ?? {};
-        return {
-          src: image.url || image.src || "",
-          alt: image.alt?.en || content?.name || "Company logo",
-        };
-      }).filter((logo: { src: string }) => Boolean(logo.src))
-    : STATIC_COMPANY_LOGOS.map((logo) => ({ src: logo.src, alt: logo.name }));
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["start start", "end start"]
-  });
-
-  // Scale down hero content as you scroll
-  const heroScale = useTransform(scrollYProgress, [0, 0.5], [1, 0.95]);
-  const heroOpacity = useTransform(scrollYProgress, [0, 0.3, 0.5], [1, 0.8, 0.5]);
+  const l = useLocalePath();
 
   return (
-    <section className={styles.hero} ref={heroRef}>
-      {/* Hero Content */}
-      <motion.div
-        className={styles.heroContent}
-        style={{
-          scale: heroScale,
-          opacity: heroOpacity,
-        }}
-      >
-        <EditableTranslationStatic pageSlug="home" namespace="home" path="hero.title">
-          {({ value, editMode: fieldEditMode }) =>
-            fieldEditMode ? (
-              <div style={{ width: "100%" }}>
-                <EditableTranslation
-                  pageSlug="home"
-                  namespace="home"
-                  path="hero.title"
-                  label="Hero headline"
-                  kind="text"
-                  as="h1"
-                  className={styles.heroTitle}
-                />
-              </div>
-            ) : (
-              <h1 className={styles.heroTitle}>
-                {value.split('\n').map((line, i) => {
-                  const firstChar = line.charAt(0);
-                  const rest = line.slice(1);
-                  return (
-                    <span key={i} style={{ display: 'block', overflow: 'hidden', whiteSpace: 'nowrap' }}>
-                      <motion.span
-                        initial={{ opacity: 0, y: '100%' }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: i * 0.15 + 0.15 }}
-                        style={{ display: 'block' }}
-                      >
-                        <span className={styles.gold}>{firstChar}</span>{rest}
-                      </motion.span>
-                    </span>
-                  );
-                })}
-              </h1>
-            )
-          }
-        </EditableTranslationStatic>
+    <section className={styles.hero}>
+      {/* Animated background (stand-in; swap for <video> when showreel is ready) */}
+      <div className={styles.herobg}>
+        <div className={`${styles.hbLayer} ${styles.hb1}`} />
+        <div className={`${styles.hbLayer} ${styles.hb2}`} />
+        <div className={styles.hbSweep} />
+        <div className={styles.hbBokeh}>
+          <span /><span /><span /><span /><span /><span />
+        </div>
+      </div>
+      <div className={styles.heroveil} />
+      <div className={styles.grain} />
 
-        <motion.div variants={fadeInUp}>
-          <EditableTranslation
-            pageSlug="home"
-            namespace="home"
-            path="hero.subtitle"
-            label="Hero subtitle"
-            kind="text"
-            as="p"
-            className={styles.heroSubtitle}
-          />
-        </motion.div>
-
-        <motion.div variants={fadeInUp}>
-          <MagneticButton href="/services" className={styles.ctaButton}>
-            <EditableTranslation
-              pageSlug="home"
-              namespace="home"
-              path="hero.cta"
-              label="Hero button"
-            />
-          </MagneticButton>
-        </motion.div>
-
-        {/* Main Video Showcase */}
-        <motion.div
-          className={styles.videoShowcase}
-          variants={fadeInScale}
-        >
-          {/* Scrolling strip behind the video */}
-          <VideoStrip />
-          <div className={styles.videoFrame}>
-            <motion.div
-              className={styles.videoContainer}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4 }}
-            >
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className={styles.mainVideo}
-              >
-                <source src="/videos/showreel.mp4" type="video/mp4" />
-              </video>
-            </motion.div>
+      <div className={styles.wrap}>
+        <div className={styles.heroflex}>
+          {/* Left — copy */}
+          <div>
+            <span className={styles.eyebrow}>10 years · 430+ businesses · $100M+ generated</span>
+            <h1 className={styles.heroTitle}>
+              Driven By Purpose.<br />
+              <span className={styles.exSerif}>Defined</span> By Excellence.
+            </h1>
+            <p className={styles.lead}>
+              Video, ads, AI and closers — wired into one engine that brings you customers.{' '}
+              <b className={styles.gold}>430+ businesses, $100M+ generated, 10 years.</b>
+            </p>
+            <div className={styles.herocta}>
+              <Link to={l('/contact')} className={styles.btn}>Book a call →</Link>
+              <a className={styles.btnGhost} href="#work">▶&nbsp;&nbsp;Watch the reel</a>
+            </div>
           </div>
-        </motion.div>
 
-        {/* Brand Logos */}
-        <motion.div variants={fadeInUp}>
-          <EditableTranslation
-            pageSlug="home"
-            namespace="home"
-            path="hero.workedWith"
-            label="Worked with label"
-            as="p"
-            className={styles.logoContext}
-          />
-        </motion.div>
-        <motion.div
-          className={styles.brandLogos}
-          variants={fadeInUp}
-        >
-          {logos.map((logo: DisplayLogo, i: number) => (
-            <motion.div
-              key={i}
-              className={styles.brandLogo}
-              whileHover={{ scale: 1.1, opacity: 1 }}
-              transition={{ duration: 0.2 }}
-            >
-              <img src={logo.src} alt={logo.alt} />
-            </motion.div>
-          ))}
-        </motion.div>
-      </motion.div>
+          {/* Right — stats */}
+          <div className={styles.herometa}>
+            <div className={styles.statline}>
+              <div>
+                <div className={styles.statN}><span className={styles.gold}>430+</span></div>
+                <div className={styles.statL}>Businesses served</div>
+              </div>
+              <div>
+                <div className={styles.statN}>10<span className={styles.gold}>yrs</span></div>
+                <div className={styles.statL}>In the trenches</div>
+              </div>
+            </div>
+            <div className={styles.statlineNoBorder}>
+              <div>
+                <div className={styles.statN}>$100M<span className={styles.gold}>+</span></div>
+                <div className={styles.statL}>Revenue generated for clients</div>
+              </div>
+              <div>
+                <div className={styles.statN}>70</div>
+                <div className={styles.statL}>People on the team</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

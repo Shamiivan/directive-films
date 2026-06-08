@@ -1,216 +1,138 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import MagneticButton from '@/components/MagneticButton';
-import SectionEyebrow from '../../SectionEyebrow';
-import { CardEditPanel } from '@/cms/CardEditPanel';
-import { PanelImageField, PanelTextField, PanelTextareaField } from '@/cms/PanelField';
-import { useIsEditing } from '@/cms/EditModeProvider';
-import cardStyles from '@/cms/CardEditPanel.module.css';
-import { scrollReveal } from '@/utils/animations';
+import { Search, Target, PenLine, Clapperboard, Scissors, TrendingUp, Smartphone, Settings2, Bot, Handshake } from 'lucide-react';
 import styles from './section-services.module.css';
 
-interface ServiceCardData {
-  id: string;
-  name: string;
-  outcome: string;
-  description: string;
-  ctaLabel: string;
-  image?: string;
-}
-
-interface ServicePhaseData {
-  phase: string;
-  label: string;
-  services: ServiceCardData[];
-}
-
-const fallbackImages: Record<string, string> = {
-  audit: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
-  competitor: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=500&fit=crop',
-  conversion: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&h=500&fit=crop',
-  video: 'https://images.unsplash.com/photo-1579566346927-c68383817a25?w=800&h=500&fit=crop',
-  web: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=500&fit=crop',
-  coaching: 'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=500&fit=crop',
-  crm: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&h=500&fit=crop',
-  automation: 'https://images.unsplash.com/photo-1596526131083-e8c633c948d2?w=800&h=500&fit=crop',
-  analytics: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop&q=80',
-};
-
-function resolveImage(service: ServiceCardData) {
-  return service.image || fallbackImages[service.id] || fallbackImages.audit;
-}
-
-type EditingTarget = { phaseIndex: number; serviceIndex: number };
-
-function ServiceCardComponent({
-  service,
-  index,
-  editMode,
-  onEdit,
-}: {
-  service: ServiceCardData;
-  index: number;
-  editMode: boolean;
-  onEdit: () => void;
-}) {
-  const cardContent = (
-    <>
-      <div className={styles.cardImage}>
-        <img src={resolveImage(service)} alt={service.name} loading="lazy" />
-      </div>
-
-      <div className={styles.cardContent}>
-        <h3 className={styles.cardName}>{service.name}</h3>
-        <p className={styles.cardOutcome}>{service.outcome}</p>
-        <p className={styles.cardDescription}>{service.description}</p>
-
-        <div className={styles.cardFooter}>
-          <MagneticButton href="/contact" className={styles.cardCta}>
-            {service.ctaLabel}
-          </MagneticButton>
-        </div>
-      </div>
-    </>
-  );
-
-  if (!editMode) {
-    return (
-      <motion.div
-        id={service.id}
-        className={styles.card}
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-50px' }}
-        transition={{ duration: 0.5, delay: index * 0.1 }}
-      >
-        {cardContent}
-      </motion.div>
-    );
-  }
-
-  return (
-    <motion.button
-      id={service.id}
-      type="button"
-      onClick={onEdit}
-      className={`${styles.card} ${cardStyles.cardHoverable}`}
-      data-edit-label="Edit service"
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      style={{
-        background: 'transparent',
-        border: 0,
-        padding: 0,
-        textAlign: 'left',
-        font: 'inherit',
-        color: 'inherit',
-        cursor: 'pointer',
-        width: '100%',
-      }}
-    >
-      {cardContent}
-    </motion.button>
-  );
-}
-
 export default function SectionServices() {
-  const { t } = useTranslation('services');
-  const editMode = useIsEditing();
-  const servicePhases = t('phases', { returnObjects: true }) as ServicePhaseData[];
-  const [editing, setEditing] = useState<EditingTarget | null>(null);
-
-  const currentService =
-    editing != null ? servicePhases[editing.phaseIndex]?.services[editing.serviceIndex] : null;
-
-  const pathPrefix =
-    editing != null ? `phases.${editing.phaseIndex}.services.${editing.serviceIndex}` : '';
-
   return (
     <section className={styles.section}>
-      <div className={styles.container}>
-        <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label={t('list.eyebrow')} description={t('list.description')} />
-          <h2 className={styles.title}>
-            {t('list.title')} <em className={styles.titleAccent}>{t('list.accent')}</em>
-          </h2>
-          <p className={styles.subtitle}>
-            {t('list.subtitle')}
-          </p>
-        </motion.div>
+      <div className={styles.wrap}>
+        <div className={styles.svc}>
 
-        {servicePhases.map((phase, phaseIndex) => (
-          <div key={phase.phase} className={styles.phaseGroup}>
-            <motion.div
-              className={styles.phaseHeader}
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.4 }}
-            >
-              <span className={styles.phaseName}>{phase.phase}</span>
-              <span className={styles.phaseDivider} />
-              <span className={styles.phaseLabel}>{phase.label}</span>
-            </motion.div>
-
-            <div className={styles.cards}>
-              {phase.services.map((service, i) => (
-                <ServiceCardComponent
-                  key={service.id}
-                  service={service}
-                  index={i}
-                  editMode={editMode}
-                  onEdit={() => setEditing({ phaseIndex, serviceIndex: i })}
-                />
-              ))}
-            </div>
+          <div className={styles.card}>
+            <span className={styles.tag}>Free</span>
+            <div className={styles.ico}><Search size={22} strokeWidth={1.5} /></div>
+            <h3>Growth Audit</h3>
+            <p>Straight talk on what's holding you back — at no charge.</p>
+            <ul>
+              <li>We pull apart your funnel</li>
+              <li>Show where rivals beat you</li>
+              <li>Ranked, do-this-first plan</li>
+              <li>Costs you nothing</li>
+            </ul>
           </div>
-        ))}
-      </div>
 
-      <CardEditPanel
-        open={editing !== null}
-        onClose={() => setEditing(null)}
-        eyebrow="Service"
-        title={currentService?.name || 'Service'}
-      >
-        {editing !== null && (
-          <>
-            <PanelImageField
-              pageSlug="services"
-              namespace="services"
-              path={`${pathPrefix}.image`}
-              label="Cover image"
-            />
-            <PanelTextField
-              pageSlug="services"
-              namespace="services"
-              path={`${pathPrefix}.name`}
-              label="Title"
-            />
-            <PanelTextField
-              pageSlug="services"
-              namespace="services"
-              path={`${pathPrefix}.outcome`}
-              label="Outcome"
-            />
-            <PanelTextareaField
-              pageSlug="services"
-              namespace="services"
-              path={`${pathPrefix}.description`}
-              label="Description"
-            />
-            <PanelTextField
-              pageSlug="services"
-              namespace="services"
-              path={`${pathPrefix}.ctaLabel`}
-              label="CTA label"
-            />
-          </>
-        )}
-      </CardEditPanel>
+          <div className={styles.card}>
+            <div className={styles.ico}><Target size={22} strokeWidth={1.5} /></div>
+            <h3>Offer Validation & Restructure</h3>
+            <p>We make sure the offer sells before we spend a dollar on it.</p>
+            <ul>
+              <li>Test it against the market</li>
+              <li>Reshape pricing & promise</li>
+              <li>Kill what doesn't land</li>
+              <li>Lock in what converts</li>
+            </ul>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><PenLine size={22} strokeWidth={1.5} /></div>
+            <h3>Scripting</h3>
+            <p>Words written to sell, not to sound clever.</p>
+            <ul>
+              <li>Hooks that stop the scroll</li>
+              <li>Built around how you close</li>
+              <li>For ads and organic alike</li>
+              <li>You approve before we roll</li>
+            </ul>
+          </div>
+
+          <div className={`${styles.card} ${styles.cardFeature}`}>
+            <span className={styles.tag}>Flagship</span>
+            <div className={styles.ico}><Clapperboard size={22} strokeWidth={1.5} /></div>
+            <h3>Filming & On-Camera Coaching</h3>
+            <p>We shoot it on cinema cameras — and coach you so you actually look good and sound natural on camera.</p>
+            <ul>
+              <li>Cinema-camera crews</li>
+              <li>On-camera coaching for you & your team</li>
+              <li>On set in days, not months</li>
+              <li>Confident, natural delivery</li>
+            </ul>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><Scissors size={22} strokeWidth={1.5} /></div>
+            <h3>Editing</h3>
+            <p>Cut for attention and for the platform it lives on.</p>
+            <ul>
+              <li>Ad-ready & short-form cuts</li>
+              <li>Captions, motion, sound</li>
+              <li>Multiple variants to test</li>
+              <li>Fast turnarounds</li>
+            </ul>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><TrendingUp size={22} strokeWidth={1.5} /></div>
+            <h3>Ad Campaigns & Organic Content</h3>
+            <p>Paid and organic, pulling in the same direction.</p>
+            <ul>
+              <li>Meta & Google, managed daily</li>
+              <li>Organic content that compounds</li>
+              <li>Creative tested fast</li>
+              <li>Reporting in dollars</li>
+            </ul>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><Smartphone size={22} strokeWidth={1.5} /></div>
+            <h3>Posting On All Platforms</h3>
+            <p>We handle the calendar and hit publish everywhere.</p>
+            <ul>
+              <li>Instagram, TikTok, YouTube, LinkedIn & more</li>
+              <li>Consistent posting schedule</li>
+              <li>Platform-native formatting</li>
+              <li>Hands off your plate</li>
+            </ul>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><Settings2 size={22} strokeWidth={1.5} /></div>
+            <h3>CRM & Sales Systems</h3>
+            <p>So no lead ever slips through the cracks again.</p>
+            <ul>
+              <li>Built around your workflow</li>
+              <li>Auto follow-ups & reminders</li>
+              <li>Revenue you can actually see</li>
+              <li>We train your team to run it</li>
+            </ul>
+          </div>
+
+          <div className={styles.card}>
+            <span className={styles.tag}>AI</span>
+            <div className={styles.ico}><Bot size={22} strokeWidth={1.5} /></div>
+            <h3>AI & Automation</h3>
+            <p>The work your team dreads, handled around the clock.</p>
+            <ul>
+              <li>Leads answered 24/7</li>
+              <li>Follow-ups written for you</li>
+              <li>Pipeline scored automatically</li>
+              <li>Hours of admin, gone</li>
+            </ul>
+          </div>
+
+          <div className={styles.card}>
+            <span className={styles.tag}>Performance-based</span>
+            <div className={styles.ico}><Handshake size={22} strokeWidth={1.5} /></div>
+            <h3>Commission Sales Team</h3>
+            <p>Closers who only earn when you do.</p>
+            <ul>
+              <li>Trained, vetted, ready</li>
+              <li>They work your inbound leads</li>
+              <li>Performance-based — no retainer risk</li>
+              <li>Wired straight into your CRM</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
     </section>
   );
 }

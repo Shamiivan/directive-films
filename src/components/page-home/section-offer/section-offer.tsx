@@ -1,132 +1,61 @@
-import { motion } from 'framer-motion';
-import { Search, Video, MonitorPlay, BarChart3, Globe } from 'lucide-react';
-import { useTranslation } from 'react-i18next';
-import MagneticButton from '../../MagneticButton';
-import SectionEyebrow from '../../SectionEyebrow';
-import { EditableTranslation } from '@/cms/EditableTranslation';
-import { useIsEditing } from '@/cms/EditModeProvider';
-import { scrollReveal } from '../../../utils/animations';
+import { Link } from 'react-router';
+import { Search, Clapperboard, TrendingUp, Settings2, Bot, Handshake } from 'lucide-react';
+import { useLocalePath } from '../../../hooks/useLocalePath';
 import styles from './section-offer.module.css';
 
-const iconComponents = [
-  Search,
-  Video,
-  MonitorPlay,
-  BarChart3,
-  Globe,
-];
-
-interface Service {
-  title: string;
-  description: string;
-  href: string;
-}
-
-function ServiceCard3D({ service, IconComponent, index }: { service: Service; IconComponent: typeof Search; index: number }) {
-  const editMode = useIsEditing();
-  return (
-    <a
-      href={service.href}
-      className={styles.serviceCard}
-      onClick={editMode ? (e) => e.preventDefault() : undefined}
-    >
-      <div className={styles.icon}>
-        <IconComponent size={48} strokeWidth={1.5} />
-      </div>
-      <EditableTranslation
-        pageSlug="home"
-        namespace="home"
-        path={`offer.services.${index}.title`}
-        label={`Service ${index + 1} title`}
-        as="h3"
-        className={styles.serviceTitle}
-      />
-      <EditableTranslation
-        pageSlug="home"
-        namespace="home"
-        path={`offer.services.${index}.description`}
-        label={`Service ${index + 1} description`}
-        kind="text"
-        as="p"
-        className={styles.serviceDescription}
-      />
-      <span className={styles.learnMore}>
-        <EditableTranslation
-          pageSlug="home"
-          namespace="home"
-          path="offer.learnMore"
-          label="Learn more label"
-        />
-        {' '}&rarr;
-      </span>
-    </a>
-  );
-}
-
 export default function OfferSection() {
-  const { t } = useTranslation('home');
-  const services = t('offer.services', { returnObjects: true }) as Service[];
+  const l = useLocalePath();
 
   return (
-    <section className={styles.offerSection}>
-      <div className={styles.container}>
-        {/* Header */}
-        <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow
-            label={
-              <EditableTranslation
-                pageSlug="home"
-                namespace="home"
-                path="offer.eyebrow"
-                label="Offer eyebrow"
-              />
-            }
-            description={
-              <EditableTranslation
-                pageSlug="home"
-                namespace="home"
-                path="offer.tagline"
-                label="Offer tagline"
-              />
-            }
-          />
-          <EditableTranslation pageSlug="home" namespace="home" path="offer.title" label="Offer title" as="h2" className={styles.title} />
-          <EditableTranslation pageSlug="home" namespace="home" path="offer.subtitle" label="Offer subtitle" kind="text" as="p" className={styles.subtitle} />
-        </motion.div>
+    <section className={styles.section} id="services-preview">
+      <div className={styles.wrap}>
+        <span className={styles.eyebrow}>What we do</span>
+        <h2 className={styles.heading}>The whole journey, one team.</h2>
+        <p className={styles.lead}>From a free audit to the closed deal — take one piece or hand us the whole machine.</p>
 
-        {/* Services Grid */}
-        <div className={styles.servicesGrid}>
-          {services.map((service, index) => {
-            const IconComponent = iconComponents[index];
-            return (
-              <ServiceCard3D
-                key={index}
-                service={service}
-                IconComponent={IconComponent}
-                index={index}
-              />
-            );
-          })}
+        <div className={styles.svc}>
+          <div className={`${styles.card} ${styles.cardFeature}`}>
+            <span className={styles.tag}>Free to start</span>
+            <div className={styles.ico}><Search size={22} strokeWidth={1.5} /></div>
+            <h3>Audit · Offer · Strategy</h3>
+            <p>A no-charge growth audit, then we validate and restructure your offer so it actually sells before a dollar goes out the door.</p>
+            <Link to={l('/services')} className={styles.more}>Learn more →</Link>
+          </div>
 
-          {/* CTA Card */}
-          <div className={styles.ctaCard}>
-            <EditableTranslation
-              pageSlug="home"
-              namespace="home"
-              path="offer.cta.text"
-              label="Offer CTA copy"
-              kind="text"
-              as="p"
-              className={styles.ctaText}
-            />
-            <MagneticButton href="/contact" className={styles.ctaButton}>
-              <EditableTranslation
-                pageSlug="home"
-                namespace="home"
-                path="offer.cta.button"
-                label="Offer CTA button"
-              />
-            </MagneticButton>
+          <div className={styles.card}>
+            <div className={styles.ico}><Clapperboard size={22} strokeWidth={1.5} /></div>
+            <h3>Script · Film · Coach · Edit</h3>
+            <p>We write it, shoot it on cinema cameras, coach you to shine on camera, and cut it for every platform.</p>
+            <Link to={l('/services')} className={styles.more}>Learn more →</Link>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><TrendingUp size={22} strokeWidth={1.5} /></div>
+            <h3>Ads · Organic · Posting</h3>
+            <p>Paid campaigns and organic content, posted across every platform on a schedule we run for you.</p>
+            <Link to={l('/services')} className={styles.more}>Learn more →</Link>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><Settings2 size={22} strokeWidth={1.5} /></div>
+            <h3>CRM & Sales Systems</h3>
+            <p>A CRM built around your workflow so no lead ever slips away. Follow-ups, reminders, real dashboards.</p>
+            <Link to={l('/services')} className={styles.more}>Learn more →</Link>
+          </div>
+
+          <div className={styles.card}>
+            <span className={styles.tag}>AI</span>
+            <div className={styles.ico}><Bot size={22} strokeWidth={1.5} /></div>
+            <h3>AI & Automation</h3>
+            <p>Custom AI that answers leads 24/7, writes the follow-ups and kills the busywork your team hates.</p>
+            <Link to={l('/services')} className={styles.more}>Learn more →</Link>
+          </div>
+
+          <div className={styles.card}>
+            <div className={styles.ico}><Handshake size={22} strokeWidth={1.5} /></div>
+            <h3>Commission Sales Team</h3>
+            <p>Trained closers who work your leads and earn when a deal closes — not before.</p>
+            <Link to={l('/services')} className={styles.more}>Learn more →</Link>
           </div>
         </div>
       </div>

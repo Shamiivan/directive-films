@@ -1,148 +1,43 @@
-import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
-import SectionEyebrow from '../../SectionEyebrow';
-import { EditableTranslation } from '@/cms/EditableTranslation';
-import { scrollReveal, imageZoom, gridStagger } from '../../../utils/animations';
 import styles from './section-results.module.css';
 
-interface ResultStep {
-  title: string;
-  description: string;
-}
-
 export default function ResultsSection() {
-  const { t } = useTranslation('home');
-  const stepsData = t('results.steps', { returnObjects: true }) as ResultStep[];
-
-  const SearchIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="11" cy="11" r="8" stroke="#FDB714" strokeWidth="2" />
-      <line x1="21" y1="21" x2="16.65" y2="16.65" stroke="#FDB714" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-
-  const VideoIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M15 10L19.5528 7.72361C20.2177 7.39116 21 7.87465 21 8.61803V15.382C21 16.1253 20.2177 16.6088 19.5528 16.2764L15 14M5 18H13C14.1046 18 15 17.1046 15 16V8C15 6.89543 14.1046 6 13 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18Z" stroke="#FDB714" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  );
-
-  const ChartIcon = () => (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="18" y1="20" x2="18" y2="10" stroke="#FDB714" strokeWidth="2" strokeLinecap="round" />
-      <line x1="12" y1="20" x2="12" y2="4" stroke="#FDB714" strokeWidth="2" strokeLinecap="round" />
-      <line x1="6" y1="20" x2="6" y2="14" stroke="#FDB714" strokeWidth="2" strokeLinecap="round" />
-    </svg>
-  );
-
-  const stepIcons = [<SearchIcon />, <VideoIcon />, <ChartIcon />];
-
-  const steps = stepsData.map((step, i) => ({
-    ...step,
-    icon: stepIcons[i],
-  }));
-
-  const goldText = t('results.gold');
-  const titleParts = t('results.title').split(goldText);
-
   return (
-    <section className={styles.resultsSection}>
-      <div className={styles.container}>
-        {/* Title */}
-        <SectionEyebrow
-          label={
-            <EditableTranslation pageSlug="home" namespace="home" path="results.eyebrow" label="Results eyebrow" />
-          }
-          description={
-            <EditableTranslation pageSlug="home" namespace="home" path="results.description" label="Results description" kind="text" />
-          }
-        />
-        <motion.h2
-          className={styles.title}
-          {...scrollReveal}
-        >
-          {titleParts.map((part, i) => (
-            <span key={i}>
-              {part}
-              {i < titleParts.length - 1 && (
-                <>
-                  <br />
-                  <span className={styles.gold}>
-                    <EditableTranslation pageSlug="home" namespace="home" path="results.gold" label="Results gold accent" />
-                  </span>
-                </>
-              )}
-            </span>
-          ))}
-        </motion.h2>
+    <section className={styles.results}>
+      <div className={styles.wrap}>
+        <div className={styles.sectionH}>
+          <span className={styles.eyebrow}>The numbers</span>
+          <h2 className={styles.heading}>
+            We don't get paid for footage.<br />
+            We get paid for <span className={styles.serifIt}>results.</span>
+          </h2>
+          <p className={styles.lead}>
+            Pretty videos are easy. Ten years in, what we're actually measured on is the money
+            that lands in your account — so that's what we build for.
+          </p>
+        </div>
 
-        {/* Hero Image/Video */}
-        <motion.div
-          className={styles.heroMedia}
-          {...imageZoom}
-        >
-          <motion.img
-            src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=1200&h=600&fit=crop"
-            alt="Film production crew"
-            className={styles.heroImage}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-          />
-        </motion.div>
-
-        {/* 3-Step Cards */}
-        <motion.div
-          className={styles.servicesGrid}
-          variants={gridStagger}
-          initial="initial"
-          whileInView="whileInView"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {steps.map((step, index) => (
-            <motion.div
-              key={index}
-              className={styles.serviceCard}
-              variants={scrollReveal}
-              whileHover={{
-                scale: 1.02,
-                y: -4,
-              }}
-              transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
-            >
-              <motion.div
-                className={styles.iconBox}
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ duration: 0.2 }}
-              >
-                {step.icon}
-              </motion.div>
-              <EditableTranslation
-                pageSlug="home"
-                namespace="home"
-                path={`results.steps.${index}.title`}
-                label={`Step ${index + 1} title`}
-                as="h3"
-                className={styles.serviceTitle}
-              />
-              <EditableTranslation
-                pageSlug="home"
-                namespace="home"
-                path={`results.steps.${index}.description`}
-                label={`Step ${index + 1} description`}
-                kind="text"
-                as="p"
-                className={styles.serviceDescription}
-              />
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* CTA Button */}
-        <motion.div
-          className={styles.ctaContainer}
-          {...scrollReveal}
-        >
-        </motion.div>
+        <div className={styles.metrics}>
+          <div className={styles.metric}>
+            <div className={styles.big}><span className={styles.gold}>430+</span></div>
+            <div className={styles.cap}>Businesses served</div>
+            <div className={styles.sub}>B2B and B2C, every industry</div>
+          </div>
+          <div className={styles.metric}>
+            <div className={styles.big}>$100M+</div>
+            <div className={styles.cap}>Revenue generated for clients</div>
+            <div className={styles.sub}>Tracked, not guessed</div>
+          </div>
+          <div className={styles.metric}>
+            <div className={styles.big}>10 <span className={styles.gold}>yrs</span></div>
+            <div className={styles.cap}>Doing only this</div>
+            <div className={styles.sub}>A decade, compounded</div>
+          </div>
+          <div className={styles.metric}>
+            <div className={styles.big}>4.2×</div>
+            <div className={styles.cap}>Average return on ad spend</div>
+            <div className={styles.sub}>Across active campaigns</div>
+          </div>
+        </div>
       </div>
     </section>
   );

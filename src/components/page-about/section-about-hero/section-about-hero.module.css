@@ -1,179 +1,54 @@
-/* ═══════════════════════════════════════════
-   About Hero — Dark Cinema Editorial
-   ═══════════════════════════════════════════ */
-
-.heroSection {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  background-image: url('/images/about-hero-bg.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.overlay {
-  position: absolute;
-  inset: 0;
+.banner {
   background:
-    radial-gradient(ellipse 500px 350px at 12% 55%, rgba(253, 183, 20, 0.06) 0%, transparent 70%),
-    linear-gradient(
-      to right,
-      rgba(13, 13, 13, 0.95) 0%,
-      rgba(13, 13, 13, 0.82) 45%,
-      rgba(13, 13, 13, 0.5) 100%
-    );
-  z-index: 1;
+    radial-gradient(110% 120% at 20% -20%, rgba(61, 215, 192, 0.12), transparent 55%),
+    radial-gradient(120% 120% at 90% 0%, rgba(232, 176, 75, 0.16), transparent 55%),
+    var(--ink);
+  padding: 110px 0 70px;
 }
 
-.grain {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  opacity: 0.03;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  background-repeat: repeat;
-  background-size: 256px 256px;
-}
-
-.container {
-  position: relative;
-  max-width: var(--container-max-width);
+.wrap {
+  max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 var(--container-padding);
-  width: 100%;
-  z-index: 3;
-  display: flex;
+  padding: 0 28px;
+}
+
+.eyebrow {
+  display: inline-flex;
   align-items: center;
-}
-
-.content {
-  max-width: 720px;
-}
-
-.label {
-  display: inline-block;
+  gap: 9px;
+  color: var(--gold2);
   font-family: var(--font-mono);
-  font-size: var(--font-size-label);
-  letter-spacing: var(--letter-spacing-ultra);
+  font-size: 12px;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-gold);
-  margin-bottom: var(--space-xl);
-  position: relative;
-  padding-left: var(--space-2xl);
 }
 
-.label::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 24px;
+.eyebrow::before {
+  content: "";
+  width: 26px;
   height: 1px;
-  background: var(--color-gold);
+  background: var(--gold2);
+  display: inline-block;
 }
 
-.title {
+.heading {
   font-family: var(--font-display);
-  font-size: clamp(36px, 5vw + 12px, var(--font-size-display1));
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tight);
-  color: var(--color-text-on-dark);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--space-xl);
+  font-size: clamp(40px, 6vw, 84px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin-top: 18px;
+  color: var(--paper);
 }
 
-.titleAccent {
+.serifIt {
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--gold2);
 }
 
-.description {
-  font-size: var(--font-size-body-lg);
-  color: var(--color-text-on-dark-secondary);
-  line-height: var(--line-height-relaxed);
-  margin-bottom: var(--space-2xl);
-  max-width: 520px;
-}
-
-.ctaWrapper {
-  display: flex;
-}
-
-.ctaButton {
-  background: var(--color-gold);
-  color: var(--color-black);
-  border: none;
-  padding: 18px 48px;
-  border-radius: var(--radius-pill);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-body-lg);
-  cursor: pointer;
-  transition: all var(--transition-slow);
-  box-shadow: var(--shadow-gold-md);
-}
-
-.ctaButton:hover {
-  background: var(--color-gold-hover);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-gold-hover);
-}
-
-/* Decorative vertical gold line on the right */
-.verticalLine {
-  position: absolute;
-  right: 120px;
-  top: 30%;
-  height: 40%;
-  width: 1px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(253, 183, 20, 0.3) 30%,
-    rgba(253, 183, 20, 0.3) 70%,
-    transparent 100%
-  );
-  transform-origin: top;
-}
-
-/* ── Responsive ──────────────────────────── */
-
-@media (max-width: 1024px) {
-  .verticalLine {
-    display: none;
-  }
-}
-
-@media (max-width: 768px) {
-  .heroSection {
-    min-height: 85vh;
-  }
-
-  .container {
-    padding: 0 var(--container-padding-mobile);
-  }
-
-  .label {
-    margin-bottom: var(--space-lg);
-  }
-
-  .title {
-    margin-bottom: var(--space-lg);
-  }
-
-  .description {
-    font-size: var(--font-size-body);
-    margin-bottom: var(--space-xl);
-  }
-
-  .description br {
-    display: none;
-  }
-
-  .ctaButton {
-    padding: var(--space-md) 40px;
-    font-size: var(--font-size-body);
-  }
+.lead {
+  color: var(--paper-dim);
+  font-size: 20px;
+  max-width: 640px;
+  margin-top: 22px;
 }

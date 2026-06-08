@@ -3,11 +3,10 @@
 import NavSection from '../../page-shared/section-nav/section-nav';
 import HeroSection from '../../page-home/section-hero/section-hero';
 import ProofSection from '../../page-home/section-proof/section-proof';
-import TestimonialsSection from '../../page-services/section-testimonials/section-testimonials';
-import OfferSection from '../../page-home/section-offer/section-offer';
 import ResultsSection from '../../page-home/section-results/section-results';
 import HowWeDoItSection from '../../page-home/section-how-we-do-it/section-how-we-do-it';
-import FaqSection from '../../page-home/section-faq/section-faq';
+import OfferSection from '../../page-home/section-offer/section-offer';
+import TestimonialsSection from '../../page-services/section-testimonials/section-testimonials';
 import CtaSection from '../../page-home/section-cta/section-cta';
 import FooterSection from '../../page-shared/section-footer/section-footer';
 import styles from './home-page.module.css';
@@ -17,12 +16,11 @@ export default function HomePage() {
     <div className={styles.page}>
       <NavSection />
       <HeroSection />
-      <HowWeDoItSection />
-      {/* <ResultsSection /> */}
-      <OfferSection />
       <ProofSection />
+      <ResultsSection />
+      <HowWeDoItSection />
+      <OfferSection />
       <TestimonialsSection />
-      <FaqSection />
       <CtaSection />
       <FooterSection />
     </div>
