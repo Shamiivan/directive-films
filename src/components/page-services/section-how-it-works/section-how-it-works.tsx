@@ -1,6 +1,13 @@
 import styles from './section-how-it-works.module.css';
 
-const CHECK_ICON = 'https://c.animaapp.com/mq5orz0l4TJdHl/assets/68fbce944c40350a9031acec_Group_54_(1).png';
+function CheckIcon() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.checkIcon} aria-hidden="true">
+      <circle cx="9" cy="9" r="8.5" stroke="#999999" />
+      <path d="M5.5 9L7.8 11.5L12.5 6.5" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 const steps = [
   {
@@ -86,7 +93,7 @@ function ProcessStep({ step }: { step: Step }) {
         <div className={styles.featureList}>
           {step.features.map((feature) => (
             <div className={styles.feature} key={feature}>
-              <img src={CHECK_ICON} alt="" className={styles.checkIcon} />
+              <CheckIcon />
               <div>{feature}</div>
             </div>
           ))}
@@ -110,7 +117,7 @@ export default function HowItWorksSection() {
       <div className={styles.inner}>
         <h2 className={styles.heading}>How it works</h2>
         <h3 className={styles.subheading}>
-          From storytelling to automation to sales execution, the Benjy Growth System helps brands scale faster and smarter.
+          From storytelling to automation to sales execution, the helps brands scale faster and smarter.
         </h3>
         <div className={styles.spacer} />
         <div className={styles.steps}>
