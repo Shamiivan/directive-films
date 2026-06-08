@@ -1,0 +1,263 @@
+.section {
+  background: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
+  padding: 40px 20px;
+}
+
+.inner {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.heading {
+  box-sizing: border-box;
+  color: #000000;
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 38px;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.subheading {
+  box-sizing: border-box;
+  color: #000000;
+  font-family: var(--font-body);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+.spacer {
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+}
+
+.steps {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.card {
+  position: relative;
+  top: auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 400px;
+  margin: 0 auto;
+  background: #f8fafc;
+  border: 1px solid rgba(79, 70, 229, 0.4);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+
+
+.imageRight,
+.imageLeft {
+  flex-direction: column;
+}
+
+.imageRight {
+  flex-direction: column-reverse;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  min-height: auto;
+  min-width: auto;
+  padding: 40px 10px;
+}
+
+.stepNumber {
+  position: absolute;
+  top: -10px;
+  z-index: 1;
+  box-sizing: border-box;
+  color: rgba(12, 10, 9, 0.2);
+  font-family: var(--font-body);
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 74px;
+}
+
+.cardTitle {
+  box-sizing: border-box;
+  color: #000000;
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 40px;
+  margin: 10px 0;
+}
+
+.cardDesc {
+  box-sizing: border-box;
+  color: #000000;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27.2px;
+  margin: 0 0 10px;
+}
+
+.featureList {
+  box-sizing: border-box;
+}
+
+.feature {
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #000000;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 27.2px;
+  margin: 10px 0;
+}
+
+.checkIcon {
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  max-width: 100%;
+  border-radius: 16px;
+}
+
+.ctaWrap {
+  box-sizing: border-box;
+  display: flex;
+  margin-top: 20px;
+}
+
+.cta {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+  overflow: hidden;
+  color: #ffffff;
+  background: #4f46e5;
+  background-clip: content-box;
+  border-radius: 16px;
+  padding: 1px;
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -10%;
+  display: block;
+  width: 120%;
+  height: 100%;
+  background: #000000;
+}
+
+.cta span {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  color: #ffffff;
+  padding: 8px 16px;
+}
+
+.imageWrap {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: auto;
+  min-width: auto;
+  padding: 10px;
+}
+
+.image {
+  box-sizing: border-box;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .inner {
+    max-width: 1800px;
+  }
+
+  .heading {
+    font-size: 48px;
+    line-height: 62px;
+  }
+
+  .subheading {
+    font-size: 28px;
+    line-height: 39px;
+  }
+
+  .card {
+    position: sticky;
+    top: 120px;
+  }
+
+  .imageRight {
+    flex-direction: row;
+  }
+
+  .imageLeft {
+    flex-direction: row-reverse;
+  }
+
+  .content {
+    width: 50%;
+    padding: 100px 30px;
+  }
+
+  .stepNumber {
+    line-height: 100px;
+  }
+
+  .cardTitle {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  .cta span {
+    padding: 12px 24px 11.2px;
+  }
+
+  .imageWrap {
+    width: 50%;
+  }
+}

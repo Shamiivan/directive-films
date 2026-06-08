@@ -1,6 +1,8 @@
 import NavSection from '../../page-shared/section-nav/section-nav';
 import ServicesHeroSection from '../../page-services/section-services-hero/section-services-hero';
-import SectionServices from '../../page-services/section-services/section-services';
+import VideoReelSection from '../../page-services/section-video-reel/section-video-reel';
+import HowItWorksSection from '../../page-services/section-how-it-works/section-how-it-works';
+import TestimonialsSection from '../../page-services/section-testimonials/section-testimonials';
 import ServicesCta from '../../page-services/section-cta/section-cta';
 import FooterSection from '../../page-shared/section-footer/section-footer';
 import styles from './services-page.module.css';
@@ -10,7 +12,9 @@ export default function ServicesPage() {
     <div className={styles.page}>
       <NavSection />
       <ServicesHeroSection />
-      <SectionServices />
+      <VideoReelSection />
+      <HowItWorksSection />
+      <TestimonialsSection />
       <ServicesCta />
       <FooterSection />
     </div>
