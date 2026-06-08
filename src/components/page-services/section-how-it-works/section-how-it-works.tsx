@@ -11,74 +11,152 @@ function CheckIcon() {
   );
 }
 
-const steps = [
+type Step = {
+  marker: string;
+  tag?: string;
+  title: string;
+  description: string;
+  features: string[];
+  imageSrc: string;
+  imageSide: 'left' | 'right';
+};
+
+const steps: Step[] = [
   {
-    stepNumber: '1',
-    title: 'Offer validation',
-    description: 'Before investing in creative production and advertising, we make sure your offer will resonate with your target market.',
+    marker: '1',
+    tag: 'Free',
+    title: 'Growth Audit',
+    description: "Straight talk on what's holding you back — at no charge.",
     features: [
-      'Value proposition assessment',
-      'Pricing strategy',
-      'Competitive positioning and messaging to drive conversions',
+      'We pull apart your funnel',
+      'Show where rivals beat you',
+      'Ranked, do-this-first plan',
+      'Costs you nothing',
     ],
-    imageSrc: 'https://c.animaapp.com/mq5orz0l4TJdHl/assets/6877b8fa0337379217b541fd_8818f8_622cfe3b2caa4ed09f559c3a0d942c42~mv2-min.jpg',
-    imageSizes: '(max-width: 767px) 100vw, (max-width: 991px) 728px, 800px',
+    imageSrc: '/images/svc/svc-audit.jpg',
     imageSide: 'right',
   },
   {
-    stepNumber: '2',
-    title: 'Shooting & editing',
-    description: 'Our production team captures high-quality video content designed specifically for performance marketing.',
+    marker: '2',
+    title: 'Offer Validation & Restructure',
+    description: 'We make sure the offer sells before we spend a dollar on it.',
     features: [
-      'Between 10-20 capsules per shooting day',
-      'Shot-for-shot planning for conversions',
-      'Conversion-driven editing to capture attention and drive sales',
+      'Test it against the market',
+      'Reshape pricing & promise',
+      "Kill what doesn't land",
+      'Lock in what converts',
     ],
-    imageSrc: 'https://c.animaapp.com/mq5orz0l4TJdHl/assets/68680d2a2efe8066bd03f461_A04I5535-2_(1).jpg',
-    imageSizes: '(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 940px',
+    imageSrc: '/images/svc/svc-offer-validation.jpg',
     imageSide: 'left',
   },
   {
-    stepNumber: '3',
-    title: 'Paid ads',
-    description: 'We design, launch, and optimize Meta ad campaigns engineered for performance. Our team continuously tests variations, audience segments, and bidding strategies to lower your cost per acquisition while scaling reach.',
+    marker: '3',
+    title: 'Scripting',
+    description: 'Words written to sell, not to sound clever.',
     features: [
-      'Optimized for qualified leads & cost per lead',
-      'A/B testing with video content',
+      'Hooks that stop the scroll',
+      'Built around how you close',
+      'For ads and organic alike',
+      'You approve before we roll',
     ],
-    imageSrc: 'https://c.animaapp.com/mq5orz0l4TJdHl/assets/690b9026719776aa3034aea1_Mask_group_(4)-min.jpg',
-    imageSizes: '(max-width: 767px) 100vw, (max-width: 991px) 728px, 940px',
+    imageSrc: '/images/svc/svc-scripting.jpg',
     imageSide: 'right',
   },
   {
-    stepNumber: '4',
-    title: 'CRM automation',
-    description: 'We implement and configure a comprehensive CRM system tailored to your business workflows.',
+    marker: '4',
+    tag: 'Flagship',
+    title: 'Filming & On-Camera Coaching',
+    description: 'We shoot it on cinema cameras — and coach you so you actually look good and sound natural on camera.',
     features: [
-      'Lead tracking and pipeline management',
-      'Automated follow-up sequences',
-      'Email campaigns',
+      'Cinema-camera crews',
+      'On-camera coaching for you & your team',
+      'On set in days, not months',
+      'Confident, natural delivery',
     ],
-    imageSrc: 'https://c.animaapp.com/mq5orz0l4TJdHl/assets/6903a9b63a33ff8b1e07deaf_Group_44.jpg',
-    imageSizes: '(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 939.984375px',
+    imageSrc: '/images/svc/svc-filming.jpg',
     imageSide: 'left',
   },
   {
-    stepNumber: '5',
-    title: 'Sales team',
-    description: "Our sales team qualifies prospects to ensure they're the right fit and close deals on your behalf.",
+    marker: '5',
+    title: 'Editing',
+    description: 'Cut for attention and for the platform it lives on.',
     features: [
-      'Time-sensitive closing of hot leads coming from paid ads campaigns',
-      'Dedicated sales team working on your behalf',
-      'Quebec-based sales team, available 7/7 days',
+      'Ad-ready & short-form cuts',
+      'Captions, motion, sound',
+      'Multiple variants to test',
+      'Fast turnarounds',
     ],
-    imageSrc: 'https://c.animaapp.com/mq5orz0l4TJdHl/assets/69111f670dc7f93e801612ce_A7401981-min.jpg',
-    imageSizes: '(max-width: 767px) 100vw, (max-width: 991px) 727.984375px, 939.984375px',
+    imageSrc: '/images/svc/svc-editing.jpg',
     imageSide: 'right',
+  },
+  {
+    marker: '6',
+    title: 'Ad Campaigns & Organic Content',
+    description: 'Paid and organic, pulling in the same direction.',
+    features: [
+      'Meta & Google, managed daily',
+      'Organic content that compounds',
+      'Creative tested fast',
+      'Reporting in dollars',
+    ],
+    imageSrc: '/images/svc/svc-ads.jpg',
+    imageSide: 'left',
+  },
+  {
+    marker: '7',
+    title: 'Posting On All Platforms',
+    description: 'We handle the calendar and hit publish everywhere.',
+    features: [
+      'Instagram, TikTok, YouTube, LinkedIn & more',
+      'Consistent posting schedule',
+      'Platform-native formatting',
+      'Hands off your plate',
+    ],
+    imageSrc: '/images/svc/svc-posting.jpg',
+    imageSide: 'right',
+  },
+  {
+    marker: '8',
+    title: 'CRM & Sales Systems',
+    description: 'So no lead ever slips through the cracks again.',
+    features: [
+      'Built around your workflow',
+      'Auto follow-ups & reminders',
+      'Revenue you can actually see',
+      'We train your team to run it',
+    ],
+    imageSrc: '/images/svc/svc-crm.jpg',
+    imageSide: 'left',
+  },
+  {
+    marker: '9',
+    tag: 'AI',
+    title: 'AI & Automation',
+    description: 'The work your team dreads, handled around the clock.',
+    features: [
+      'Leads answered 24/7',
+      'Follow-ups written for you',
+      'Pipeline scored automatically',
+      'Hours of admin, gone',
+    ],
+    imageSrc: '/images/svc/svc-ai.jpg',
+    imageSide: 'right',
+  },
+  {
+    marker: '10',
+    tag: 'Performance-based',
+    title: 'Commission Sales Team',
+    description: 'Closers who only earn when you do.',
+    features: [
+      'Trained, vetted, ready',
+      'They work your inbound leads',
+      'Performance-based — no retainer risk',
+      'Wired straight into your CRM',
+    ],
+    imageSrc: '/images/svc/svc-sales-team.jpg',
+    imageSide: 'left',
   },
 ];
-
-type Step = typeof steps[number];
 
 function ProcessStep({ step, index }: { step: Step; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -98,7 +176,8 @@ function ProcessStep({ step, index }: { step: Step; index: number }) {
   return (
     <motion.div ref={ref} className={cardClassName} style={{ scaleX, zIndex: index + 1 }}>
       <div className={styles.content}>
-        <div className={styles.stepNumber}>{step.stepNumber}</div>
+        <div className={styles.stepNumber}>{step.marker}</div>
+        {step.tag ? <span className={styles.tag}>{step.tag}</span> : null}
         <h4 className={styles.cardTitle}>{step.title}</h4>
         <p className={styles.cardDesc}>{step.description}</p>
         <div className={styles.featureList}>
@@ -116,7 +195,7 @@ function ProcessStep({ step, index }: { step: Step; index: number }) {
         </div>
       </div>
       <div className={styles.imageWrap}>
-        <img src={step.imageSrc} sizes={step.imageSizes} alt="" className={styles.image} />
+        <img src={step.imageSrc} alt="" className={styles.image} />
       </div>
     </motion.div>
   );
@@ -128,12 +207,12 @@ export default function HowItWorksSection() {
       <div className={styles.inner}>
         <h2 className={styles.heading}>How it works</h2>
         <h3 className={styles.subheading}>
-          From storytelling to automation to sales execution, the helps brands scale faster and smarter.
+          From the first audit to a closed deal — one team, the whole journey.
         </h3>
         <div className={styles.spacer} />
         <div className={styles.steps}>
           {steps.map((step, index) => (
-            <ProcessStep key={step.stepNumber} step={step} index={index} />
+            <ProcessStep key={step.title} step={step} index={index} />
           ))}
         </div>
       </div>

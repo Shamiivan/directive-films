@@ -101,6 +101,23 @@
   line-height: 74px;
 }
 
+.tag {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 8px;
+  padding: 5px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.16);
+  border-radius: 999px;
+  color: #333333;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
 .cardTitle {
   box-sizing: border-box;
   color: #000000;

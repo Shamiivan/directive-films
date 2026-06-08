@@ -4,17 +4,15 @@ export default function VideoReelSection() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <img
-          src="/images/website_landing_bg.jpg"
-          alt=""
-          className={styles.bg}
+        <video
+          className={styles.video}
+          src="/showcase_reel.mp4"
+          autoPlay
+          muted
+          loop
+          playsInline
         />
-        <div className={styles.overlay}>
-          <p className={styles.stat}>$50M+</p>
-          <h2 className={styles.headline}>
-            Generated for our clients through the systems we built.
-          </h2>
-        </div>
+
       </div>
     </section>
   );
