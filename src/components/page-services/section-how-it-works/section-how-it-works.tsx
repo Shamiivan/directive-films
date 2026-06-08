@@ -195,7 +195,21 @@ function ProcessStep({ step, index }: { step: Step; index: number }) {
         </div>
       </div>
       <div className={styles.imageWrap}>
-        <img src={step.imageSrc} alt="" className={styles.image} />
+        <picture>
+          <source
+            type="image/webp"
+            srcSet={`${step.imageSrc.replace('.jpg', '-720.webp')} 720w, ${step.imageSrc.replace('.jpg', '-1100.webp')} 1100w`}
+            sizes="(max-width: 767px) calc(100vw - 40px), 700px"
+          />
+          <img
+            src={step.imageSrc}
+            alt=""
+            className={styles.image}
+            loading="lazy"
+            decoding="async"
+            sizes="(max-width: 767px) calc(100vw - 40px), 700px"
+          />
+        </picture>
       </div>
     </motion.div>
   );
