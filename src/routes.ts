@@ -24,4 +24,5 @@ export default [
     route("media", "routes/admin.media.tsx"),
   ]),
   route("/design-system", "routes/design-system.tsx"),
+  route("/sandbox/home", "routes/sandbox.home.tsx"),
 ] satisfies RouteConfig;

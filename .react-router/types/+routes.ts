@@ -82,12 +82,15 @@ type Pages = {
   "/design-system": {
     params: {};
   };
+  "/sandbox/home": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/admin/login" | "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media" | "/design-system";
+    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/admin/login" | "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media" | "/design-system" | "/sandbox/home";
   };
   "routes/root-redirect.tsx": {
     id: "routes/root-redirect";
@@ -173,6 +176,10 @@ type RouteFiles = {
     id: "routes/design-system";
     page: "/design-system";
   };
+  "routes/sandbox.home.tsx": {
+    id: "routes/sandbox.home";
+    page: "/sandbox/home";
+  };
 };
 
 type RouteModules = {
@@ -198,4 +205,5 @@ type RouteModules = {
   "routes/admin.settings": typeof import("./src/routes/admin.settings.tsx");
   "routes/admin.media": typeof import("./src/routes/admin.media.tsx");
   "routes/design-system": typeof import("./src/routes/design-system.tsx");
+  "routes/sandbox.home": typeof import("./src/routes/sandbox.home.tsx");
 };
