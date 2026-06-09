@@ -1,9 +1,36 @@
 {
   "hero": {
-    "title": "Driven By Purpose\nDefined By Excellence",
-    "subtitle": "Growth Partner That Turns Content into Revenue",
-    "cta": "See how it works",
-    "workedWith": "We've worked with teams at"
+    "eyebrow": "10 years - 430+ businesses - $100M+ generated",
+    "title": {
+      "line1": "Driven By Purpose.",
+      "accent": "Defined",
+      "line2": "By Excellence."
+    },
+    "lead": "Video, ads, AI and closers - wired into one engine that brings you customers.",
+    "leadStrong": "430+ businesses, $100M+ generated, 10 years.",
+    "ctaPrimary": "Book a call",
+    "ctaSecondary": "Watch the reel",
+    "stats": [
+      {
+        "value": "430+",
+        "label": "Businesses served",
+        "gold": true
+      },
+      {
+        "value": "10",
+        "accent": "yrs",
+        "label": "In the trenches"
+      },
+      {
+        "value": "$100M",
+        "accent": "+",
+        "label": "Revenue generated for clients"
+      },
+      {
+        "value": "70",
+        "label": "People on the team"
+      }
+    ]
   },
   "offer": {
     "eyebrow": "Services",
@@ -81,22 +108,19 @@
   },
   "process": {
     "eyebrow": "How it works",
-    "title": "Three steps. Nothing complicated.",
+    "title": "Three steps. No jargon.",
     "steps": [
       {
-        "number": "01",
-        "title": "Look at what you have",
-        "description": "We go through your site, content, CRM, and sales process. You get a clear picture of what's working and what isn't."
+        "title": "We find the leak",
+        "description": "We go through your content, funnel and sales process and show you exactly where you're losing money. No fluff, no 40-slide deck."
       },
       {
-        "number": "02",
-        "title": "Fix the gaps",
-        "description": "We build or rebuild the pieces that matter most. A page, a video, an email sequence. Whatever moves the needle first."
+        "title": "We plug it",
+        "description": "Video, website, CRM, AI and ads - built and wired together so each one feeds the next instead of sitting in its own silo."
       },
       {
-        "number": "03",
-        "title": "Track what matters",
-        "description": "We set up dashboards so you can see what's actually driving results. No vanity metrics."
+        "title": "You watch it pay off",
+        "description": "Dashboards that show pipeline and revenue, not likes. And a sales team that turns the leads into signed deals."
       }
     ]
   },
@@ -123,25 +147,37 @@
       {
         "alt": "Film production behind the scenes with cinema camera"
       }
-    ]
+    ],
+    "label": "A few of the 430+ we've worked with"
   },
   "results": {
-    "eyebrow": "Results",
-    "description": "What growth looks like",
-    "title": "Growth Partner That Turns Content into Revenue",
-    "gold": "Revenue",
-    "steps": [
+    "eyebrow": "The numbers",
+    "headingLine1": "We don't get paid for footage.",
+    "headingLine2": "We get paid for",
+    "headingAccent": "results.",
+    "lead": "Pretty videos are easy. Ten years in, what we're actually measured on is the money that lands in your account - so that's what we build for.",
+    "metrics": [
       {
-        "title": "Audit",
-        "description": "We audit your online presence, messaging, and competitive landscape. You get a clear report with what's working, what's not, and what to fix first."
+        "value": "430+",
+        "label": "Businesses served",
+        "sub": "B2B and B2C, every industry",
+        "gold": true
       },
       {
-        "title": "Create & Build",
-        "description": "We produce video content mapped to your sales process and build websites that convert. Every asset earns its place in your pipeline."
+        "value": "$100M+",
+        "label": "Revenue generated for clients",
+        "sub": "Tracked, not guessed"
       },
       {
-        "title": "Optimize",
-        "description": "We set up your CRM, automate follow-ups, and build dashboards so you can see what's working. Systems that sell while you sleep."
+        "value": "10",
+        "suffix": "yrs",
+        "label": "Doing only this",
+        "sub": "A decade, compounded"
+      },
+      {
+        "value": "4.2x",
+        "label": "Average return on ad spend",
+        "sub": "Across active campaigns"
       }
     ]
   },
@@ -149,5 +185,47 @@
     "Clients see results in 30 days on average",
     "500+ projects delivered",
     "98% of clients stay past year one"
-  ]
+  ],
+  "offerPreview": {
+    "eyebrow": "What we do",
+    "title": "The whole journey, one team.",
+    "lead": "From a free audit to the closed deal - take one piece or hand us the whole machine.",
+    "learnMore": "Learn more",
+    "cards": [
+      {
+        "tag": "Free to start",
+        "title": "Audit - Offer - Strategy",
+        "description": "A no-charge growth audit, then we validate and restructure your offer so it actually sells before a dollar goes out the door."
+      },
+      {
+        "title": "Script - Film - Coach - Edit",
+        "description": "We write it, shoot it on cinema cameras, coach you to shine on camera, and cut it for every platform."
+      },
+      {
+        "title": "Ads - Organic - Posting",
+        "description": "Paid campaigns and organic content, posted across every platform on a schedule we run for you."
+      },
+      {
+        "title": "CRM & Sales Systems",
+        "description": "A CRM built around your workflow so no lead ever slips away. Follow-ups, reminders, real dashboards."
+      },
+      {
+        "tag": "AI",
+        "title": "AI & Automation",
+        "description": "Custom AI that answers leads 24/7, writes the follow-ups and kills the busywork your team hates."
+      },
+      {
+        "title": "Commission Sales Team",
+        "description": "Trained closers who work your leads and earn when a deal closes - not before."
+      }
+    ]
+  },
+  "finalCta": {
+    "titleLine1": "Curious what we'd",
+    "titleLine2": "fix",
+    "accent": "first?",
+    "lead": "The first call is free and straight-talking. If we're not the right fit, we'll say so - and tell you who is.",
+    "primary": "Book a call",
+    "secondary": "See what we do"
+  }
 }

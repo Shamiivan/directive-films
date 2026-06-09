@@ -1,83 +1,94 @@
 {
-    "hero": {
-        "label": "Meet the Team",
-        "title": "We came from sales. Not marketing",
-        "accent": "school.",
-        "description": "We know what it's like to lose a deal because your website didn't show how good you actually are. That's why we built this.",
-        "cta": "Let's talk"
-    },
-    "why": {
-        "eyebrow": "What Drives Us",
-        "description": "Principles, not platitudes",
-        "title": "Principles, not",
-        "accent": "platitudes.",
-        "features": [
-            {
-                "icon": "01",
-                "title": "Revenue is the metric.",
-                "description": "If it doesn't help you close deals, we don't do it."
-            },
-            {
-                "icon": "02",
-                "title": "Audit before you build.",
-                "description": "We don't start building until we understand what's actually going on."
-            },
-            {
-                "icon": "03",
-                "title": "Systems beat one-offs.",
-                "description": "A single video or landing page won't fix everything. We connect the pieces so they work together."
-            },
-            {
-                "icon": "04",
-                "title": "Your team should get better, not more dependent.",
-                "description": "We set your team up to keep going without us."
-            }
-        ]
-    },
-    "process": {
-        "eyebrow": "Our Story",
-        "description": "How we got here",
-        "title": "We built what we",
-        "accent": "couldn't find.",
-        "subtitle": "We spent years in sales watching good companies lose deals because their online presence didn't reflect how good they actually were. Agencies would charge a fortune for content that looked great and did nothing. So we built the thing we kept wishing existed. One team that connects your content to how you actually sell.",
-        "steps": [
-            {
-                "title": "Audit",
-                "description": "We start by listening. What are you selling? What's your site saying? Where do leads go after they show up?"
-            },
-            {
-                "title": "Build",
-                "description": "We make the things you need. The site, the videos, the CRM setup. One team, not five vendors."
-            },
-            {
-                "title": "Scale",
-                "description": "We make sure it keeps working. Your team learns the system. Results get tracked. Things get better over time."
-            }
-        ]
-    },
-    "team": {
-        "eyebrow": "The Team",
-        "description": "Who we are",
-        "title": "The people behind the",
-        "accent": "system.",
-        "subtitle": "A small team that builds, shoots, codes, and coaches. We've all sold something before. That's why this works.",
-        "members": [
-            {
-                "name": "Founder",
-                "role": "Strategy & Sales"
-            },
-            {
-                "name": "Web & CRM Lead",
-                "role": "Development & Systems"
-            },
-            {
-                "name": "Creative Director",
-                "role": "Video & Content"
-            },
-            {
-                "name": "Coach",
-                "role": "Content & Training"
-            }
-        ]
-    }
+  "hero": {
+    "label": "Meet the team",
+    "title": "The people behind",
+    "accent": "the results.",
+    "description": "Seventy of us - shooters, editors, marketers, engineers and closers - who have spent a decade getting good at one thing: growing your business.",
+    "cta": "Let's talk"
+  },
+  "why": {
+    "eyebrow": "How we operate",
+    "description": "How we operate",
+    "title": "What \"excellence\" means around here.",
+    "accent": "",
+    "features": [
+      {
+        "icon": "01",
+        "title": "Money over likes",
+        "description": "If something does not move your pipeline, we do not ship it. Every project ties back to a real number."
+      },
+      {
+        "icon": "02",
+        "title": "Everything connects",
+        "description": "Video feeds the ads, the ads feed the CRM, the AI feeds the closers. No piece works alone."
+      },
+      {
+        "icon": "03",
+        "title": "Skin in the game",
+        "description": "Our closers earn base or commission, whichever is higher - so they are motivated to actually close, and we win when you win."
+      }
+    ]
+  },
+  "process": {
+    "eyebrow": "Our Story",
+    "description": "How we got here",
+    "title": "We built what we",
+    "accent": "couldn't find.",
+    "subtitle": "We spent years in sales watching good companies lose deals because their online presence didn't reflect how good they actually were. Agencies would charge a fortune for content that looked great and did nothing. So we built the thing we kept wishing existed. One team that connects your content to how you actually sell.",
+    "steps": [
+      {
+        "title": "Audit",
+        "description": "We start by listening. What are you selling? What's your site saying? Where do leads go after they show up?"
+      },
+      {
+        "title": "Build",
+        "description": "We make the things you need. The site, the videos, the CRM setup. One team, not five vendors."
+      },
+      {
+        "title": "Scale",
+        "description": "We make sure it keeps working. Your team learns the system. Results get tracked. Things get better over time."
+      }
+    ]
+  },
+  "team": {
+    "eyebrow": "The Team",
+    "description": "Who we are",
+    "title": "The people behind the",
+    "accent": "system.",
+    "subtitle": "A small team that builds, shoots, codes, and coaches. We've all sold something before. That's why this works.",
+    "members": [
+      {
+        "name": "The Founder",
+        "title": "Chief Executive Officer"
+      },
+      {
+        "name": "COO",
+        "title": "Chief Operating Officer"
+      },
+      {
+        "name": "Head of Video",
+        "title": "Production Lead"
+      },
+      {
+        "name": "Head of AI",
+        "title": "Automation Director"
+      },
+      {
+        "name": "Sales Director",
+        "title": "Revenue & Closing"
+      },
+      {
+        "name": "Marketing Director",
+        "title": "Paid Growth"
+      },
+      {
+        "name": "Operations",
+        "title": "Coordinator"
+      },
+      {
+        "name": "...and 63 more",
+        "title": "Across 6 cities"
+      }
+    ]
+  }
 }

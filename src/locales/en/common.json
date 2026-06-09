@@ -7,12 +7,60 @@
     "contact": "Contact Us"
   },
   "footer": {
-    "tagline": "Video, Websites, CRMs, and Coaching that work together to grow your business.",
+    "tagline": "Ten years, 430+ businesses, $100M+ generated. Video, AI, websites, CRMs and a commission sales team - working together to grow what you've built.",
     "services": "Services",
     "company": "Company",
     "connect": "Connect",
     "rights": "All rights reserved.",
     "privacy": "Privacy Policy",
-    "terms": "Terms of Service"
+    "terms": "Terms of Service",
+    "locations": "Montreal - Toronto - Vancouver - Miami - New York - London",
+    "copyright": "© {{year}} DirectiveFilms. All rights reserved.",
+    "serviceLinks": [
+      {
+        "label": "Growth Audit",
+        "href": "/services"
+      },
+      {
+        "label": "Offer & Strategy",
+        "href": "/services"
+      },
+      {
+        "label": "Film - Coach - Edit",
+        "href": "/services"
+      },
+      {
+        "label": "Ads & Organic",
+        "href": "/services"
+      },
+      {
+        "label": "CRM & AI",
+        "href": "/services"
+      },
+      {
+        "label": "Sales Team",
+        "href": "/services"
+      }
+    ],
+    "companyLinks": [
+      {
+        "label": "Meet the Team",
+        "href": "/about"
+      },
+      {
+        "label": "Careers",
+        "href": "/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "connectLinks": [
+      "Instagram",
+      "LinkedIn",
+      "YouTube",
+      "TikTok"
+    ]
   }
 }

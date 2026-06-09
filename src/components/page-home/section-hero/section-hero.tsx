@@ -1,13 +1,21 @@
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { useLocalePath } from '../../../hooks/useLocalePath';
 import styles from './section-hero.module.css';
 
+type HeroStat = {
+  value: string;
+  accent?: string;
+  label: string;
+};
+
 export default function HeroSection() {
   const l = useLocalePath();
+  const { t } = useTranslation('home');
+  const stats = t('hero.stats', { returnObjects: true }) as HeroStat[];
 
   return (
     <section className={styles.hero}>
-      {/* Animated background (stand-in; swap for <video> when showreel is ready) */}
       <div className={styles.herobg}>
         <div className={`${styles.hbLayer} ${styles.hb1}`} />
         <div className={`${styles.hbLayer} ${styles.hb2}`} />
@@ -21,44 +29,38 @@ export default function HeroSection() {
 
       <div className={styles.wrap}>
         <div className={styles.heroflex}>
-          {/* Left — copy */}
           <div>
-            <span className={styles.eyebrow}>10 years · 430+ businesses · $100M+ generated</span>
+            <span className={styles.eyebrow}>{t('hero.eyebrow')}</span>
             <h1 className={styles.heroTitle}>
-              Driven By Purpose.<br />
-              <span className={styles.exSerif}>Defined</span> By Excellence.
+              {t('hero.title.line1')}<br />
+              <span className={styles.exSerif}>{t('hero.title.accent')}</span> {t('hero.title.line2')}
             </h1>
             <p className={styles.lead}>
-              Video, ads, AI and closers — wired into one engine that brings you customers.{' '}
-              <b className={styles.gold}>430+ businesses, $100M+ generated, 10 years.</b>
+              {t('hero.lead')}{' '}
+              <b className={styles.gold}>{t('hero.leadStrong')}</b>
             </p>
             <div className={styles.herocta}>
-              <Link to={l('/contact')} className={styles.btn}>Book a call →</Link>
-              <a className={styles.btnGhost} href="#work">▶&nbsp;&nbsp;Watch the reel</a>
+              <Link to={l('/contact')} className={styles.btn}>{t('hero.ctaPrimary')}</Link>
+              <a className={styles.btnGhost} href="#work">{t('hero.ctaSecondary')}</a>
             </div>
           </div>
 
-          {/* Right — stats */}
           <div className={styles.herometa}>
             <div className={styles.statline}>
-              <div>
-                <div className={styles.statN}><span className={styles.gold}>430+</span></div>
-                <div className={styles.statL}>Businesses served</div>
-              </div>
-              <div>
-                <div className={styles.statN}>10<span className={styles.gold}>yrs</span></div>
-                <div className={styles.statL}>In the trenches</div>
-              </div>
+              {stats.slice(0, 2).map((stat) => (
+                <div key={stat.label}>
+                  <div className={styles.statN}>{stat.accent ? <><span className={styles.gold}>{stat.value}</span>{stat.accent}</> : stat.value}</div>
+                  <div className={styles.statL}>{stat.label}</div>
+                </div>
+              ))}
             </div>
             <div className={styles.statlineNoBorder}>
-              <div>
-                <div className={styles.statN}>$100M<span className={styles.gold}>+</span></div>
-                <div className={styles.statL}>Revenue generated for clients</div>
-              </div>
-              <div>
-                <div className={styles.statN}>70</div>
-                <div className={styles.statL}>People on the team</div>
-              </div>
+              {stats.slice(2).map((stat) => (
+                <div key={stat.label}>
+                  <div className={styles.statN}>{stat.accent ? <>{stat.value}<span className={styles.gold}>{stat.accent}</span></> : stat.value}</div>
+                  <div className={styles.statL}>{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -66,3 +68,4 @@ export default function HeroSection() {
     </section>
   );
 }
+

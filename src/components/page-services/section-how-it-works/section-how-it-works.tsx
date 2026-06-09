@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
+import { useLocalePath } from '../../../hooks/useLocalePath';
 import styles from './section-how-it-works.module.css';
 
 function CheckIcon() {
@@ -11,154 +13,34 @@ function CheckIcon() {
   );
 }
 
-type Step = {
-  marker: string;
+type StepCopy = {
   tag?: string;
   title: string;
   description: string;
   features: string[];
+};
+
+type Step = StepCopy & {
+  marker: string;
   imageSrc: string;
   imageSide: 'left' | 'right';
 };
 
-const steps: Step[] = [
-  {
-    marker: '1',
-    tag: 'Free',
-    title: 'Growth Audit',
-    description: "Straight talk on what's holding you back — at no charge.",
-    features: [
-      'We pull apart your funnel',
-      'Show where rivals beat you',
-      'Ranked, do-this-first plan',
-      'Costs you nothing',
-    ],
-    imageSrc: '/images/svc/svc-audit.jpg',
-    imageSide: 'right',
-  },
-  {
-    marker: '2',
-    title: 'Offer Validation & Restructure',
-    description: 'We make sure the offer sells before we spend a dollar on it.',
-    features: [
-      'Test it against the market',
-      'Reshape pricing & promise',
-      "Kill what doesn't land",
-      'Lock in what converts',
-    ],
-    imageSrc: '/images/svc/svc-offer-validation.jpg',
-    imageSide: 'left',
-  },
-  {
-    marker: '3',
-    title: 'Scripting',
-    description: 'Words written to sell, not to sound clever.',
-    features: [
-      'Hooks that stop the scroll',
-      'Built around how you close',
-      'For ads and organic alike',
-      'You approve before we roll',
-    ],
-    imageSrc: '/images/svc/svc-scripting.jpg',
-    imageSide: 'right',
-  },
-  {
-    marker: '4',
-    tag: 'Flagship',
-    title: 'Filming & On-Camera Coaching',
-    description: 'We shoot it on cinema cameras — and coach you so you actually look good and sound natural on camera.',
-    features: [
-      'Cinema-camera crews',
-      'On-camera coaching for you & your team',
-      'On set in days, not months',
-      'Confident, natural delivery',
-    ],
-    imageSrc: '/images/svc/svc-filming.jpg',
-    imageSide: 'left',
-  },
-  {
-    marker: '5',
-    title: 'Editing',
-    description: 'Cut for attention and for the platform it lives on.',
-    features: [
-      'Ad-ready & short-form cuts',
-      'Captions, motion, sound',
-      'Multiple variants to test',
-      'Fast turnarounds',
-    ],
-    imageSrc: '/images/svc/svc-editing.jpg',
-    imageSide: 'right',
-  },
-  {
-    marker: '6',
-    title: 'Ad Campaigns & Organic Content',
-    description: 'Paid and organic, pulling in the same direction.',
-    features: [
-      'Meta & Google, managed daily',
-      'Organic content that compounds',
-      'Creative tested fast',
-      'Reporting in dollars',
-    ],
-    imageSrc: '/images/svc/svc-ads.jpg',
-    imageSide: 'left',
-  },
-  {
-    marker: '7',
-    title: 'Posting On All Platforms',
-    description: 'We handle the calendar and hit publish everywhere.',
-    features: [
-      'Instagram, TikTok, YouTube, LinkedIn & more',
-      'Consistent posting schedule',
-      'Platform-native formatting',
-      'Hands off your plate',
-    ],
-    imageSrc: '/images/svc/svc-posting.jpg',
-    imageSide: 'right',
-  },
-  {
-    marker: '8',
-    title: 'CRM & Sales Systems',
-    description: 'So no lead ever slips through the cracks again.',
-    features: [
-      'Built around your workflow',
-      'Auto follow-ups & reminders',
-      'Revenue you can actually see',
-      'We train your team to run it',
-    ],
-    imageSrc: '/images/svc/svc-crm.jpg',
-    imageSide: 'left',
-  },
-  {
-    marker: '9',
-    tag: 'AI',
-    title: 'AI & Automation',
-    description: 'The work your team dreads, handled around the clock.',
-    features: [
-      'Leads answered 24/7',
-      'Follow-ups written for you',
-      'Pipeline scored automatically',
-      'Hours of admin, gone',
-    ],
-    imageSrc: '/images/svc/svc-ai.jpg',
-    imageSide: 'right',
-  },
-  {
-    marker: '10',
-    tag: 'Performance-based',
-    title: 'Commission Sales Team',
-    description: 'Closers who only earn when you do.',
-    features: [
-      'Trained, vetted, ready',
-      'They work your inbound leads',
-      'Performance-based — no retainer risk',
-      'Wired straight into your CRM',
-    ],
-    imageSrc: '/images/svc/svc-sales-team.jpg',
-    imageSide: 'left',
-  },
+const stepMeta = [
+  { marker: '1', imageSrc: '/images/svc/svc-audit.jpg', imageSide: 'right' as const },
+  { marker: '2', imageSrc: '/images/svc/svc-offer-validation.jpg', imageSide: 'left' as const },
+  { marker: '3', imageSrc: '/images/svc/svc-scripting.jpg', imageSide: 'right' as const },
+  { marker: '4', imageSrc: '/images/svc/svc-filming.jpg', imageSide: 'left' as const },
+  { marker: '5', imageSrc: '/images/svc/svc-editing.jpg', imageSide: 'right' as const },
+  { marker: '6', imageSrc: '/images/svc/svc-ads.jpg', imageSide: 'left' as const },
+  { marker: '7', imageSrc: '/images/svc/svc-posting.jpg', imageSide: 'right' as const },
+  { marker: '8', imageSrc: '/images/svc/svc-crm.jpg', imageSide: 'left' as const },
+  { marker: '9', imageSrc: '/images/svc/svc-ai.jpg', imageSide: 'right' as const },
+  { marker: '10', imageSrc: '/images/svc/svc-sales-team.jpg', imageSide: 'left' as const },
 ];
 
-function ProcessStep({ step, index }: { step: Step; index: number }) {
+function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: string }) {
+  const l = useLocalePath();
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -189,8 +71,8 @@ function ProcessStep({ step, index }: { step: Step; index: number }) {
           ))}
         </div>
         <div className={styles.ctaWrap}>
-          <a href="/start-your-project" className={styles.cta}>
-            <span>Book a call</span>
+          <a href={l('/contact')} className={styles.cta}>
+            <span>{cta}</span>
           </a>
         </div>
       </div>
@@ -216,20 +98,23 @@ function ProcessStep({ step, index }: { step: Step; index: number }) {
 }
 
 export default function HowItWorksSection() {
+  const { t } = useTranslation('services');
+  const stepCopy = t('howItWorks.steps', { returnObjects: true }) as StepCopy[];
+  const steps = stepMeta.map((meta, index) => ({ ...meta, ...stepCopy[index] }));
+
   return (
     <section className={styles.section}>
       <div className={styles.inner}>
-        <h2 className={styles.heading}>How it works</h2>
-        <h3 className={styles.subheading}>
-          From the first audit to a closed deal — one team, the whole journey.
-        </h3>
+        <h2 className={styles.heading}>{t('howItWorks.heading')}</h2>
+        <h3 className={styles.subheading}>{t('howItWorks.subheading')}</h3>
         <div className={styles.spacer} />
         <div className={styles.steps}>
           {steps.map((step, index) => (
-            <ProcessStep key={step.title} step={step} index={index} />
+            <ProcessStep key={step.title} step={step} index={index} cta={t('howItWorks.cta')} />
           ))}
         </div>
       </div>
     </section>
   );
 }
+

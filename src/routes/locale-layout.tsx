@@ -15,6 +15,10 @@ export default function LocaleLayout() {
     const supportedLanguages = ['en', 'fr'];
     const activeLocale = editMode ? editorLocale : (lang === "fr" ? "fr" : "en");
 
+    if (lang && supportedLanguages.includes(lang) && i18n.language !== activeLocale) {
+        void i18n.changeLanguage(activeLocale);
+    }
+
     useCmsLocaleBundles(activeLocale);
 
     useEffect(() => {
@@ -37,7 +41,7 @@ export default function LocaleLayout() {
         }
 
         if (i18n.language !== activeLocale) {
-            i18n.changeLanguage(activeLocale);
+            void i18n.changeLanguage(activeLocale);
         }
     }, [activeLocale, lang, i18n, navigate, location.pathname]);
 

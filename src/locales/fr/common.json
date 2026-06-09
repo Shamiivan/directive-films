@@ -7,12 +7,60 @@
     "contact": "Contactez-nous"
   },
   "footer": {
-    "tagline": "Vidéo, sites web, CRM et coaching qui travaillent ensemble pour faire croître votre entreprise.",
+    "tagline": "Dix ans, 430+ entreprises, 100 M$+ générés. Vidéo, IA, sites web, CRM et équipe de vente à commission - ensemble pour faire grandir ce que vous avez construit.",
     "services": "Services",
     "company": "Entreprise",
     "connect": "Réseaux",
     "rights": "Tous droits réservés.",
     "privacy": "Politique de confidentialité",
-    "terms": "Conditions d'utilisation"
+    "terms": "Conditions d'utilisation",
+    "locations": "Montréal - Toronto - Vancouver - Miami - New York - London",
+    "copyright": "© {{year}} DirectiveFilms. Tous droits réservés.",
+    "serviceLinks": [
+      {
+        "label": "Audit de croissance",
+        "href": "/services"
+      },
+      {
+        "label": "Offre et stratégie",
+        "href": "/services"
+      },
+      {
+        "label": "Filmer - coacher - monter",
+        "href": "/services"
+      },
+      {
+        "label": "Publicités et organique",
+        "href": "/services"
+      },
+      {
+        "label": "CRM et IA",
+        "href": "/services"
+      },
+      {
+        "label": "Équipe de vente",
+        "href": "/services"
+      }
+    ],
+    "companyLinks": [
+      {
+        "label": "Rencontrer l'équipe",
+        "href": "/about"
+      },
+      {
+        "label": "Carrières",
+        "href": "/careers"
+      },
+      {
+        "label": "Contact",
+        "href": "/contact"
+      }
+    ],
+    "connectLinks": [
+      "Instagram",
+      "LinkedIn",
+      "YouTube",
+      "TikTok"
+    ]
   }
 }

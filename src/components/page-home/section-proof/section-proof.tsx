@@ -1,4 +1,5 @@
 import { useQuery } from 'convex/react';
+import { useTranslation } from 'react-i18next';
 import { api } from '../../../../convex/_generated/api';
 import { isConvexConfigured } from '@/cms/convex';
 import { useIsEditing } from '@/cms/EditModeProvider';
@@ -8,6 +9,7 @@ import styles from './section-proof.module.css';
 type Logo = { src: string; alt: string };
 
 export default function ProofSection() {
+  const { t } = useTranslation('home');
   const editMode = useIsEditing();
   const cmsLogos = !isConvexConfigured
     ? null
@@ -27,7 +29,7 @@ export default function ProofSection() {
   return (
     <div className={styles.trust}>
       <div className={styles.wrap}>
-        <span className={styles.lbl}>A few of the 430+ we've worked with</span>
+        <span className={styles.lbl}>{t('proof.label')}</span>
         {logos.map((logo, i) => (
           <img key={i} src={logo.src} alt={logo.alt} className={styles.logo} />
         ))}

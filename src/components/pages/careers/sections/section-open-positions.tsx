@@ -1,27 +1,30 @@
+import { useTranslation } from 'react-i18next';
 import styles from './section-open-positions.module.css';
 
-const jobs = [
-  { title: "Sales Closer",             meta: "Remote / Montreal · Base or commission, whichever's higher", tag: "Sales" },
-  { title: "AI Automation Engineer",   meta: "Hybrid · Full-time",                                          tag: "Engineering" },
-  { title: "Videographer / Editor",    meta: "On-site · Full-time",                                         tag: "Production" },
-  { title: "Paid Media Strategist",    meta: "Remote · Full-time",                                          tag: "Growth" },
-];
+type Job = {
+  title: string;
+  meta: string;
+  tag: string;
+};
 
 export default function OpenPositionsSection() {
+  const { t } = useTranslation('careers');
+  const jobs = t('openRoles.jobs', { returnObjects: true }) as Job[];
+
   return (
     <section className={styles.section} id="apply">
       <div className={styles.wrap}>
-        <span className={styles.eyebrow}>Open roles</span>
+        <span className={styles.eyebrow}>{t('openRoles.eyebrow')}</span>
         <div className={styles.jobs}>
-          {jobs.map((j) => (
-            <div key={j.title} className={styles.job}>
+          {jobs.map((job) => (
+            <div key={job.title} className={styles.job}>
               <div>
-                <h3>{j.title}</h3>
-                <div className={styles.meta}>{j.meta}</div>
+                <h3>{job.title}</h3>
+                <div className={styles.meta}>{job.meta}</div>
               </div>
               <div className={styles.jobRight}>
-                <span className={styles.pill}>{j.tag}</span>
-                <a href="mailto:info@directivefilms.com" className={styles.btn}>Apply</a>
+                <span className={styles.pill}>{job.tag}</span>
+                <a href="mailto:info@directivefilms.com" className={styles.btn}>{t('openRoles.apply')}</a>
               </div>
             </div>
           ))}
@@ -30,3 +33,4 @@ export default function OpenPositionsSection() {
     </section>
   );
 }
+

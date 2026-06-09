@@ -1,9 +1,19 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { MapPin, Globe, Mail, Zap } from 'lucide-react';
 import styles from './section-contact-hero.module.css';
 
+type ContactInfo = {
+  title: string;
+  text: string;
+};
+
 export default function ContactHeroSection() {
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useTranslation('contact');
+  const needs = t('hero.form.needs.options', { returnObjects: true }) as string[];
+  const info = t('hero.infoCards', { returnObjects: true }) as ContactInfo[];
+  const icons = [MapPin, Globe, Mail, Zap];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,96 +22,65 @@ export default function ContactHeroSection() {
 
   return (
     <>
-      {/* Banner */}
       <section className={styles.banner}>
         <div className={styles.wrap}>
-          <span className={styles.eyebrow}>Contact</span>
+          <span className={styles.eyebrow}>{t('hero.label')}</span>
           <h1 className={styles.heading}>
-            Let's grow your<br />
-            business <span className={styles.serifIt}>together.</span>
+            {t('hero.titleLine1')}<br />
+            {t('hero.titleLine2')} <span className={styles.serifIt}>{t('hero.accent')}</span>
           </h1>
-          <p className={styles.lead}>
-            Tell us where you're at. The first call is free, and we'll give it to you straight — whether or not we're the ones to help.
-          </p>
+          <p className={styles.lead}>{t('hero.description')}</p>
         </div>
       </section>
 
-      {/* Form + Info */}
       <section className={styles.section}>
         <div className={styles.wrap}>
           <div className={styles.grid}>
-            {/* Left — form */}
             <form onSubmit={handleSubmit}>
               <div className={styles.field}>
-                <label>Full name</label>
-                <input type="text" placeholder="Jane Doe" required />
+                <label>{t('hero.form.fields.name.label')}</label>
+                <input type="text" placeholder={t('hero.form.fields.name.placeholder')} required />
               </div>
               <div className={styles.field}>
-                <label>Work email</label>
-                <input type="email" placeholder="jane@company.com" required />
+                <label>{t('hero.form.fields.email.label')}</label>
+                <input type="email" placeholder={t('hero.form.fields.email.placeholder')} required />
               </div>
               <div className={styles.field}>
-                <label>Company & monthly revenue</label>
-                <input type="text" placeholder="Acme Inc — $50k/mo" />
+                <label>{t('hero.form.fields.companyRevenue.label')}</label>
+                <input type="text" placeholder={t('hero.form.fields.companyRevenue.placeholder')} />
               </div>
               <div className={styles.field}>
-                <label>What do you need most?</label>
+                <label>{t('hero.form.needs.label')}</label>
                 <select>
-                  <option>Free growth audit</option>
-                  <option>Offer validation & restructure</option>
-                  <option>Scripting, filming & coaching</option>
-                  <option>Editing</option>
-                  <option>Ad campaigns & organic content</option>
-                  <option>Posting on all platforms</option>
-                  <option>CRM & sales systems</option>
-                  <option>AI & automation</option>
-                  <option>Commission sales team</option>
-                  <option>Not sure — audit me</option>
+                  {needs.map((need) => <option key={need}>{need}</option>)}
                 </select>
               </div>
               <div className={styles.field}>
-                <label>Tell us about your goal</label>
-                <textarea placeholder="We want to add $X in revenue over the next 6 months…" />
+                <label>{t('hero.form.fields.goal.label')}</label>
+                <textarea placeholder={t('hero.form.fields.goal.placeholder')} />
               </div>
               <button type="submit" className={styles.submitBtn}>
-                {submitted ? "We'll be in touch soon!" : "Book my free call →"}
+                {submitted ? t('hero.form.submitted') : t('hero.form.submit')}
               </button>
             </form>
 
-            {/* Right — info */}
             <div>
-              <div className={styles.item}>
-                <div className={styles.ico}><MapPin size={20} strokeWidth={1.5} /></div>
-                <div>
-                  <h3>Montreal · Toronto · Vancouver</h3>
-                  <p>Canadian HQ & production studios</p>
-                </div>
-              </div>
-              <div className={styles.item}>
-                <div className={styles.ico}><Globe size={20} strokeWidth={1.5} /></div>
-                <div>
-                  <h3>Miami · New York · London</h3>
-                  <p>Serving B2B & B2C clients globally</p>
-                </div>
-              </div>
-              <div className={styles.item}>
-                <div className={styles.ico}><Mail size={20} strokeWidth={1.5} /></div>
-                <div>
-                  <h3>info@directivefilms.com</h3>
-                  <p>We get back to you within a business day</p>
-                </div>
-              </div>
-              <div className={styles.item}>
-                <div className={styles.ico}><Zap size={20} strokeWidth={1.5} /></div>
-                <div>
-                  <h3>10 years in</h3>
-                  <p>430+ businesses and counting</p>
-                </div>
-              </div>
+              {info.map((item, index) => {
+                const Icon = icons[index];
+                return (
+                  <div className={styles.item} key={item.title}>
+                    <div className={styles.ico}><Icon size={20} strokeWidth={1.5} /></div>
+                    <div>
+                      <h3>{item.title}</h3>
+                      <p>{item.text}</p>
+                    </div>
+                  </div>
+                );
+              })}
 
               <div className={styles.metricCard}>
                 <div className={styles.metricBig}>$100M+</div>
-                <div className={styles.metricCap}>generated for the businesses we've worked with. Yours could be next.</div>
+                <div className={styles.metricCap}>{t('hero.metric')}</div>
               </div>
             </div>
           </div>
@@ -110,3 +89,4 @@ export default function ContactHeroSection() {
     </>
   );
 }
+

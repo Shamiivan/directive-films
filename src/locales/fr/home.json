@@ -1,9 +1,36 @@
 {
   "hero": {
-    "title": "Propulsé Par La Mission\nDéfini Par L'Excellence",
-    "subtitle": "Partenaire de croissance qui transforme le contenu en revenus",
-    "cta": "Découvrez comment ça marche",
-    "workedWith": "Nous avons travaillé avec les équipes de"
+    "eyebrow": "10 ans - 430+ entreprises - 100 M$+ générés",
+    "title": {
+      "line1": "Motivés par la mission.",
+      "accent": "Définis",
+      "line2": "par l'excellence."
+    },
+    "lead": "Vidéo, publicités, IA et closers - connectés dans un seul moteur qui vous apporte des clients.",
+    "leadStrong": "430+ entreprises, 100 M$+ générés, 10 ans.",
+    "ctaPrimary": "Réserver un appel",
+    "ctaSecondary": "Voir la démo",
+    "stats": [
+      {
+        "value": "430+",
+        "label": "Entreprises accompagnées",
+        "gold": true
+      },
+      {
+        "value": "10",
+        "accent": "ans",
+        "label": "Sur le terrain"
+      },
+      {
+        "value": "100 M$",
+        "accent": "+",
+        "label": "Revenus générés pour les clients"
+      },
+      {
+        "value": "70",
+        "label": "Personnes dans l'équipe"
+      }
+    ]
   },
   "offer": {
     "eyebrow": "Services",
@@ -81,22 +108,19 @@
   },
   "process": {
     "eyebrow": "Comment ça marche",
-    "title": "Trois étapes. Rien de compliqué.",
+    "title": "Trois étapes. Sans jargon.",
     "steps": [
       {
-        "number": "01",
-        "title": "Analyser ce que vous avez",
-        "description": "Nous passons en revue votre site, votre contenu, votre CRM et votre processus de vente. Vous obtenez une image claire de ce qui fonctionne et de ce qui ne fonctionne pas."
+        "title": "Nous trouvons la fuite",
+        "description": "Nous analysons votre contenu, votre tunnel et votre processus de vente pour vous montrer exactement où vous perdez de l'argent. Pas de remplissage, pas de deck de 40 slides."
       },
       {
-        "number": "02",
-        "title": "Combler les lacunes",
-        "description": "Nous construisons ou reconstruisons les pièces qui comptent le plus. Une page, une vidéo, une séquence d'e-mails. Tout ce qui fait bouger l'aiguille en premier."
+        "title": "Nous la bouchons",
+        "description": "Vidéo, site web, CRM, IA et publicités - construits et reliés pour que chaque pièce alimente la suivante au lieu de rester isolée."
       },
       {
-        "number": "03",
-        "title": "Suivre ce qui compte",
-        "description": "Nous mettons en place des tableaux de bord pour que vous puissiez voir ce qui génère réellement des résultats. Pas de mesures de vanité."
+        "title": "Vous regardez les résultats arriver",
+        "description": "Des tableaux de bord qui montrent le pipeline et le revenu, pas les likes. Et une équipe de vente qui transforme les leads en contrats signés."
       }
     ]
   },
@@ -123,25 +147,37 @@
       {
         "alt": "Coulisses d'une production cinématographique avec une caméra de cinéma"
       }
-    ]
+    ],
+    "label": "Quelques-unes des 430+ entreprises accompagnées"
   },
   "results": {
-    "eyebrow": "Résultats",
-    "description": "Ce à quoi ressemble la croissance",
-    "title": "Un partenaire de croissance qui transforme le contenu en revenus",
-    "gold": "revenus",
-    "steps": [
+    "eyebrow": "Les chiffres",
+    "headingLine1": "Nous ne sommes pas payés pour des images.",
+    "headingLine2": "Nous sommes payés pour des",
+    "headingAccent": "résultats.",
+    "lead": "Les belles vidéos sont faciles. Après dix ans, ce qui compte vraiment, c'est l'argent qui arrive dans votre compte - donc c'est pour ça que nous construisons.",
+    "metrics": [
       {
-        "title": "Audit",
-        "description": "Nous auditons votre présence en ligne, votre message et votre paysage concurrentiel. Vous obtenez un rapport clair sur ce qui fonctionne, ce qui ne fonctionne pas et ce qu'il faut corriger en premier."
+        "value": "430+",
+        "label": "Entreprises accompagnées",
+        "sub": "B2B et B2C, tous secteurs",
+        "gold": true
       },
       {
-        "title": "Créer et Construire",
-        "description": "Nous produisons du contenu vidéo adapté à votre processus de vente et construisons des sites web qui convertissent. Chaque actif gagne sa place dans votre pipeline."
+        "value": "100 M$+",
+        "label": "Revenus générés pour les clients",
+        "sub": "Suivis, pas estimés"
       },
       {
-        "title": "Optimiser",
-        "description": "Nous configurons votre CRM, automatisons les suivis et construisons des tableaux de bord pour que vous puissiez voir ce qui fonctionne. Des systèmes qui vendent pendant que vous dormez."
+        "value": "10",
+        "suffix": "ans",
+        "label": "À ne faire que ça",
+        "sub": "Une décennie composée"
+      },
+      {
+        "value": "4.2x",
+        "label": "Retour moyen sur dépenses publicitaires",
+        "sub": "Sur les campagnes actives"
       }
     ]
   },
@@ -149,5 +185,47 @@
     "Les clients voient des résultats en 30 jours en moyenne",
     "Plus de 500 projets livrés",
     "98 % des clients restent après la première année"
-  ]
+  ],
+  "offerPreview": {
+    "eyebrow": "Ce que nous faisons",
+    "title": "Tout le parcours, une seule équipe.",
+    "lead": "De l'audit gratuit jusqu'au contrat signé - prenez une pièce ou confiez-nous toute la machine.",
+    "learnMore": "En savoir plus",
+    "cards": [
+      {
+        "tag": "Gratuit pour commencer",
+        "title": "Audit - Offre - Stratégie",
+        "description": "Un audit de croissance sans frais, puis nous validons et restructurons votre offre pour qu'elle vende avant de dépenser un dollar."
+      },
+      {
+        "title": "Script - Tournage - Coaching - Montage",
+        "description": "Nous écrivons, filmons avec des caméras cinéma, vous coachons devant caméra et montons pour chaque plateforme."
+      },
+      {
+        "title": "Publicités - Organique - Publication",
+        "description": "Campagnes payantes et contenu organique, publiés sur chaque plateforme selon un calendrier que nous gérons."
+      },
+      {
+        "title": "CRM et systèmes de vente",
+        "description": "Un CRM bâti autour de votre flux de travail pour qu'aucun lead ne disparaisse. Suivis, rappels, vrais tableaux de bord."
+      },
+      {
+        "tag": "IA",
+        "title": "IA et automatisation",
+        "description": "Une IA sur mesure qui répond aux leads 24/7, écrit les suivis et élimine le travail chargé que votre équipe déteste."
+      },
+      {
+        "title": "Équipe de vente à commission",
+        "description": "Des closers formés qui travaillent vos leads et gagnent quand un contrat se ferme - pas avant."
+      }
+    ]
+  },
+  "finalCta": {
+    "titleLine1": "Curieux de savoir ce que nous",
+    "titleLine2": "corrigerions",
+    "accent": "en premier?",
+    "lead": "Le premier appel est gratuit et direct. Si nous ne sommes pas le bon partenaire, nous vous le dirons - et nous vous dirons vers qui aller.",
+    "primary": "Réserver un appel",
+    "secondary": "Voir nos services"
+  }
 }

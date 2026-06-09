@@ -1,67 +1,66 @@
 import { Link } from 'react-router';
+import { useTranslation } from 'react-i18next';
 import { useLocalePath } from '../../../hooks/useLocalePath';
 import styles from './section-footer.module.css';
 
+type FooterLink = {
+  label: string;
+  href: string;
+};
+
 export default function FooterSection() {
   const l = useLocalePath();
+  const { t } = useTranslation('common');
   const year = new Date().getFullYear();
+  const services = t('footer.serviceLinks', { returnObjects: true }) as FooterLink[];
+  const company = t('footer.companyLinks', { returnObjects: true }) as FooterLink[];
+  const connect = t('footer.connectLinks', { returnObjects: true }) as string[];
 
   return (
     <footer className={styles.footer}>
       <div className={styles.wrap}>
         <div className={styles.fgrid}>
-          {/* Brand */}
           <div>
             <Link to={l('/')} className={styles.brand}>
               <img src="/logos/logo-icon.svg" alt="DirectiveFilms" className={styles.logoIcon} />
               <span>DirectiveFilms</span>
             </Link>
-            <p className={styles.tagline}>
-              Ten years, 430+ businesses, $100M+ generated. Video, AI, websites, CRMs and a commission sales team — working together to grow what you've built.
-            </p>
-            <div className={styles.loc}>
-              Montreal · Toronto · Vancouver · Miami · New York · London
-            </div>
+            <p className={styles.tagline}>{t('footer.tagline')}</p>
+            <div className={styles.loc}>{t('footer.locations')}</div>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className={styles.colTitle}>Services</h4>
-            <Link to={l('/services')} className={styles.colLink}>Growth Audit</Link>
-            <Link to={l('/services')} className={styles.colLink}>Offer & Strategy</Link>
-            <Link to={l('/services')} className={styles.colLink}>Film · Coach · Edit</Link>
-            <Link to={l('/services')} className={styles.colLink}>Ads & Organic</Link>
-            <Link to={l('/services')} className={styles.colLink}>CRM & AI</Link>
-            <Link to={l('/services')} className={styles.colLink}>Sales Team</Link>
+            <h4 className={styles.colTitle}>{t('footer.services')}</h4>
+            {services.map((item) => (
+              <Link key={item.label} to={l(item.href)} className={styles.colLink}>{item.label}</Link>
+            ))}
           </div>
 
-          {/* Company */}
           <div>
-            <h4 className={styles.colTitle}>Company</h4>
-            <Link to={l('/about')} className={styles.colLink}>Meet the Team</Link>
-            <Link to={l('/careers')} className={styles.colLink}>Careers</Link>
-            <Link to={l('/contact')} className={styles.colLink}>Contact</Link>
+            <h4 className={styles.colTitle}>{t('footer.company')}</h4>
+            {company.map((item) => (
+              <Link key={item.label} to={l(item.href)} className={styles.colLink}>{item.label}</Link>
+            ))}
           </div>
 
-          {/* Connect */}
           <div>
-            <h4 className={styles.colTitle}>Connect</h4>
-            <a href="#" className={styles.colLink}>Instagram</a>
-            <a href="#" className={styles.colLink}>LinkedIn</a>
-            <a href="#" className={styles.colLink}>YouTube</a>
-            <a href="#" className={styles.colLink}>TikTok</a>
+            <h4 className={styles.colTitle}>{t('footer.connect')}</h4>
+            {connect.map((item) => (
+              <a key={item} href="#" className={styles.colLink}>{item}</a>
+            ))}
           </div>
         </div>
 
         <div className={styles.fbar}>
-          <span>© {year} DirectiveFilms. All rights reserved.</span>
+          <span>{t('footer.copyright', { year })}</span>
           <div className={styles.legal}>
-            <a href="#">Privacy Policy</a>
-            <span>·</span>
-            <a href="#">Terms of Service</a>
+            <Link to={l('/privacy')}>{t('footer.privacy')}</Link>
+            <span>.</span>
+            <a href="#">{t('footer.terms')}</a>
           </div>
         </div>
       </div>
     </footer>
   );
 }
+
