@@ -35,33 +35,40 @@
   "offer": {
     "eyebrow": "Services",
     "tagline": "Ce que nous faisons",
-    "title": "Ce que nous faisons réellement",
-    "subtitle": "Cinq choses. Elles sont conçues pour se connecter, mais vous n'avez pas besoin de toutes.",
+    "title": "Tout le parcours, une seule équipe.",
+    "subtitle": "De l’audit gratuit à la vente conclue - prenez une pièce ou confiez-nous toute la machine.",
     "services": [
       {
-        "title": "Auditer",
-        "description": "Nous examinons votre présence en ligne et vous disons ce qui fonctionne réellement. Évaluation honnête, prochaines étapes claires.",
+        "tag": "Gratuit pour commencer",
+        "title": "Audit · Offre · Stratégie",
+        "description": "Un audit de croissance sans frais, puis nous validons et restructurons votre offre pour qu’elle vende vraiment avant qu’un dollar soit dépensé.",
         "href": "/services#audit"
       },
       {
-        "title": "Coacher",
-        "description": "Nous préparons votre équipe à créer son propre contenu. Studio, guide, formation. Ensuite, ils sont autonomes.",
-        "href": "/services#coaching"
-      },
-      {
-        "title": "Créer",
-        "description": "Nous réalisons les vidéos. Scénarisées selon la façon dont vous vendez réellement.",
+        "title": "Script · Tournage · Coaching · Montage",
+        "description": "Nous écrivons, filmons avec des caméras cinéma, vous coachons pour être naturel à l’écran, puis adaptons les montages à chaque plateforme.",
         "href": "/services#video"
       },
       {
-        "title": "Optimiser",
-        "description": "Nous configurons votre CRM pour que les prospects ne passent pas à travers les mailles du filet. Séquences, suivis, tableaux de bord.",
+        "title": "Publicités · Organique · Publication",
+        "description": "Campagnes payantes et contenu organique, publiés sur chaque plateforme selon un calendrier que nous gérons.",
+        "href": "/services#ads"
+      },
+      {
+        "title": "CRM et systèmes de vente",
+        "description": "Un CRM bâti autour de votre façon de travailler pour qu’aucun prospect ne se perde. Suivis, rappels, vrais tableaux de bord.",
         "href": "/services#crm"
       },
       {
-        "title": "Bâtir",
-        "description": "Des sites web qui disent ce que vous faites, se chargent rapidement et capturent des prospects.",
-        "href": "/services#web"
+        "tag": "IA",
+        "title": "IA et automatisation",
+        "description": "Une IA sur mesure qui répond aux prospects 24/7, rédige les suivis et élimine le travail répétitif que votre équipe déteste.",
+        "href": "/services#ai"
+      },
+      {
+        "title": "Équipe de vente à commission",
+        "description": "Des closers formés qui travaillent vos prospects et gagnent quand une vente se conclut - pas avant.",
+        "href": "/services#sales-team"
       }
     ],
     "learnMore": "En savoir plus",

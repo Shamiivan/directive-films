@@ -35,33 +35,40 @@
   "offer": {
     "eyebrow": "Services",
     "tagline": "What we do",
-    "title": "What we actually do",
-    "subtitle": "Five things. They're designed to connect, but you don't need all of them.",
+    "title": "The whole journey, one team.",
+    "subtitle": "From a free audit to the closed deal - take one piece or hand us the whole machine.",
     "services": [
       {
-        "title": "Audit",
-        "description": "We look at your online presence and tell you what's actually working. Honest assessment, clear next steps.",
+        "tag": "Free to start",
+        "title": "Audit · Offer · Strategy",
+        "description": "A no-charge growth audit, then we validate and restructure your offer so it actually sells before a dollar goes out the door.",
         "href": "/services#audit"
       },
       {
-        "title": "Coach",
-        "description": "We set up your team to make their own content. Studio, playbook, training. Then they're on their own.",
-        "href": "/services#coaching"
-      },
-      {
-        "title": "Create",
-        "description": "We make the videos. Scripted around how you actually sell.",
+        "title": "Script · Film · Coach · Edit",
+        "description": "We write it, shoot it on cinema cameras, coach you to shine on camera, and cut it for every platform.",
         "href": "/services#video"
       },
       {
-        "title": "Optimize",
-        "description": "We set up your CRM so leads don't fall through the cracks. Sequences, follow-ups, dashboards.",
+        "title": "Ads · Organic · Posting",
+        "description": "Paid campaigns and organic content, posted across every platform on a schedule we run for you.",
+        "href": "/services#ads"
+      },
+      {
+        "title": "CRM & Sales Systems",
+        "description": "A CRM built around your workflow so no lead ever slips away. Follow-ups, reminders, real dashboards.",
         "href": "/services#crm"
       },
       {
-        "title": "Build",
-        "description": "Websites that say what you do, load fast, and capture leads.",
-        "href": "/services#web"
+        "tag": "AI",
+        "title": "AI & Automation",
+        "description": "Custom AI that answers leads 24/7, writes the follow-ups and kills the busywork your team hates.",
+        "href": "/services#ai"
+      },
+      {
+        "title": "Commission Sales Team",
+        "description": "Trained closers who work your leads and earn when a deal closes - not before.",
+        "href": "/services#sales-team"
       }
     ],
     "learnMore": "Learn more",

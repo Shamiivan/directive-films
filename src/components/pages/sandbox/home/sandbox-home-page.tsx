@@ -1,34 +1,7 @@
 import NavSection from "@/components/page-shared/section-nav/section-nav";
+import HomeServicesSection from "@/components/sections/home-services/home-services";
 import LogoMarqueeSection from "@/components/shared/logo-row/logo-row";
 import styles from "./sandbox-home-page.module.css";
-
-const services = [
-  {
-    title: "Offer Validation",
-    body: "Before investing in creative production and advertising, we make sure your offer will resonate with your target market.",
-    image: "https://c.animaapp.com/mq5pf53jFiTmD6/assets/6903aef55f63324fdef98ca9_Frame_(6).png",
-  },
-  {
-    title: "Shooting & editing",
-    body: "Our production team captures high-quality video content designed specifically for performance marketing.",
-    image: "https://c.animaapp.com/mq5pf53jFiTmD6/assets/6903aef59f2ef23c048cc1e1_Frame_(5).png",
-  },
-  {
-    title: "Paid ads",
-    body: "We design, launch, and optimize Meta ad campaigns engineered for performance.",
-    image: "https://c.animaapp.com/mq5pf53jFiTmD6/assets/6903aef59688c83871c80a4a_Frame_(4).png",
-  },
-  {
-    title: "CRM automation",
-    body: "We implement and configure a comprehensive CRM system tailored to your business workflows.",
-    image: "https://c.animaapp.com/mq5pf53jFiTmD6/assets/6903aef5e1a2b9bc77a4d18f_Frame_(2).png",
-  },
-  {
-    title: "Sales team",
-    body: "Our sales team qualifies prospects to ensure they're the right fit and close deals on your behalf.",
-    image: "https://c.animaapp.com/mq5pf53jFiTmD6/assets/6903aef5733e13c1a9c8abfe_Frame_(3).png",
-  },
-];
 
 const adVideos = ["1171040145", "1145069446", "1144141000", "1142037166", "1141935607", "1141924603"];
 const testimonialVideos = ["1199097531", "1196985086", "1196080273", "1194874494", "1192024292", "1186532088"];
@@ -125,16 +98,17 @@ export default function SandboxHomePage() {
         </div>
         <div className={styles.heroPanel}>
           <div className={styles.tags}>
-            <span>Paid ads</span>
-            <span>CRM & automations</span>
-            <span>Sales process</span>
-            <span>AI solutions</span>
+            <span>10 years · 430+ businesses · $100M+ generated</span>
           </div>
-          <h1>We make businesses grow by building predictable client acquisition systems.</h1>
+          <h1>
+            Driven By Purpose.
+            <br />
+            Defined By Excellence.
+          </h1>
           <p>
-            Benjy Films is your single partner for video production, paid ads management, CRM automation and for closing more sales.
+            Video, ads, AI and closers — wired into one engine that brings you customers. 430+ businesses, $100M+ generated, 10 years.
           </p>
-          <a className={styles.primaryButton} href="#contact">Start your project</a>
+          <a className={styles.primaryButton} href="#contact">Book a call →</a>
         </div>
       </section>
 
@@ -161,31 +135,7 @@ export default function SandboxHomePage() {
         <a className={styles.darkButton} href="#services">See our process</a>
       </section>
 
-      <section className={styles.section} id="services">
-        <div className={styles.sectionHeader}>
-          <h2>How we help businesses grow</h2>
-          <p>Benjy Films helped customers generate over 50M$ in additional revenue.</p>
-        </div>
-        <div className={styles.serviceGrid}>
-          {services.map((service) => (
-            <article className={styles.serviceCard} key={service.title}>
-              <img src={service.image} alt="" loading="lazy" />
-              <div>
-                <h3>{service.title}</h3>
-                <p>{service.body}</p>
-              </div>
-            </article>
-          ))}
-          <article className={styles.serviceCta}>
-            <h3>Start growing your business today</h3>
-            <a className={styles.primaryButton} href="#contact">Book a call</a>
-          </article>
-        </div>
-        <aside className={styles.caseStudy}>
-          <span>Case study</span>
-          <p>See how content, ads, CRM, and sales support connect into one acquisition system.</p>
-        </aside>
-      </section>
+      <HomeServicesSection />
 
       <section className={styles.lightSection} id="ads">
         <div className={styles.sectionHeader}>
