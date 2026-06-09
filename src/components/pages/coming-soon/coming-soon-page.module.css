@@ -1,0 +1,94 @@
+.root {
+  min-height: 100dvh;
+  background: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle radial glow behind content */
+.root::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(232, 176, 75, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-xl, 32px);
+  padding: var(--space-xl, 32px) var(--container-padding, 24px);
+  max-width: 640px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  opacity: 0.9;
+}
+
+.label {
+  font-family: var(--font-mono, "JetBrains Mono", monospace);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(232, 176, 75, 0.3);
+  border-radius: 999px;
+  padding: 6px 18px;
+}
+
+.heading {
+  font-family: var(--font-display, "Fraunces", serif);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--paper);
+  margin: 0;
+}
+
+.heading em {
+  font-style: italic;
+  color: var(--gold2);
+}
+
+.sub {
+  font-family: var(--font-body, "Archivo", sans-serif);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 0;
+}
+
+.email {
+  color: var(--gold2);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(246, 200, 105, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.email:hover {
+  color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* Film-grain overlay */
+.grain {
+  position: fixed;
+  inset: -50%;
+  width: 200%;
+  height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 0;
+}
