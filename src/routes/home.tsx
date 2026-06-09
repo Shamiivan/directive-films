@@ -1,17 +1,17 @@
 import type { Route } from "./+types/home";
-import HomePage from "@/components/pages/home/home-page";
+import ComingSoonPage from "@/components/pages/coming-soon/coming-soon-page";
 
 export function meta({ params }: Route.MetaArgs) {
   const lang = params.lang || "en";
 
   const translations = {
     en: {
-      title: "DirectiveFilms - Driven by Purpose, Defined by Excellence",
-      description: "We connect your content, website, and sales process so they work together. Video production, web dev, CRM, and coaching for B2B teams.",
+      title: "DirectiveFilms - Coming Soon",
+      description: "DirectiveFilms is putting the finishing touches on something great.",
     },
     fr: {
-      title: "DirectiveFilms - Motivés par la mission, définis par l'excellence",
-      description: "Nous connectons votre contenu, votre site web et votre processus de vente pour qu'ils travaillent ensemble. Production vidéo, développement web, CRM et coaching pour les équipes B2B.",
+      title: "DirectiveFilms - Bientôt disponible",
+      description: "DirectiveFilms met la touche finale à quelque chose de grand.",
     }
   };
 
@@ -27,5 +27,5 @@ export function meta({ params }: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <HomePage />;
+  return <ComingSoonPage />;
 }
