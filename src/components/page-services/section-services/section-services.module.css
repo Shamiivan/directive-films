@@ -31,11 +31,6 @@
   background: #191a22;
 }
 
-.cardFeature {
-  grid-column: span 2;
-  background: radial-gradient(120% 130% at 100% 0%, rgba(232, 176, 75, 0.12), transparent 50%), var(--ink2);
-}
-
 .tag {
   position: absolute;
   top: 22px;
@@ -89,5 +84,4 @@
 
 @media (max-width: 920px) {
   .svc { grid-template-columns: 1fr; }
-  .cardFeature { grid-column: span 1; }
 }

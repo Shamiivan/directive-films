@@ -424,7 +424,7 @@
         ]
       },
       {
-        "title": "Offer Validation & Restructure",
+        "title": "Offer Validation",
         "description": "We make sure the offer sells before we spend a dollar on it.",
         "features": [
           "Test it against the market",
@@ -434,32 +434,13 @@
         ]
       },
       {
-        "title": "Scripting",
-        "description": "Words written to sell, not to sound clever.",
+        "title": "Scripting, Shooting & Editing",
+        "description": "Scripts, production, coaching, and edits built to sell across ads and organic.",
         "features": [
           "Hooks that stop the scroll",
-          "Built around how you close",
-          "For ads and organic alike",
-          "You approve before we roll"
-        ]
-      },
-      {
-        "tag": "Flagship",
-        "title": "Filming & On-Camera Coaching",
-        "description": "We shoot it on cinema cameras - and coach you so you actually look good and sound natural on camera.",
-        "features": [
-          "Cinema-camera crews",
-          "On-camera coaching for you & your team",
-          "On set in days, not months",
-          "Confident, natural delivery"
-        ]
-      },
-      {
-        "title": "Editing",
-        "description": "Cut for attention and for the platform it lives on.",
-        "features": [
-          "Ad-ready & short-form cuts",
-          "Captions, motion, sound",
+          "Cinema-camera shooting",
+          "On-camera coaching when needed",
+          "Ad-ready and short-form edits",
           "Multiple variants to test",
           "Fast turnarounds"
         ]
@@ -472,16 +453,6 @@
           "Organic content that compounds",
           "Creative tested fast",
           "Reporting in dollars"
-        ]
-      },
-      {
-        "title": "Posting On All Platforms",
-        "description": "We handle the calendar and hit publish everywhere.",
-        "features": [
-          "Instagram, TikTok, YouTube, LinkedIn & more",
-          "Consistent posting schedule",
-          "Platform-native formatting",
-          "Hands off your plate"
         ]
       },
       {

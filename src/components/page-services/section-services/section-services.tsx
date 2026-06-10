@@ -1,4 +1,4 @@
-import { Search, Target, PenLine, Clapperboard, Scissors, TrendingUp, Smartphone, Settings2, Bot, Handshake } from 'lucide-react';
+import { Search, Target, PenLine, TrendingUp, Settings2, Bot, Handshake } from 'lucide-react';
 import styles from './section-services.module.css';
 
 export default function SectionServices() {
@@ -22,7 +22,7 @@ export default function SectionServices() {
 
           <div className={styles.card}>
             <div className={styles.ico}><Target size={22} strokeWidth={1.5} /></div>
-            <h3>Offer Validation & Restructure</h3>
+            <h3>Offer Validation</h3>
             <p>We make sure the offer sells before we spend a dollar on it.</p>
             <ul>
               <li>Test it against the market</li>
@@ -34,36 +34,13 @@ export default function SectionServices() {
 
           <div className={styles.card}>
             <div className={styles.ico}><PenLine size={22} strokeWidth={1.5} /></div>
-            <h3>Scripting</h3>
-            <p>Words written to sell, not to sound clever.</p>
+            <h3>Scripting, Shooting & Editing</h3>
+            <p>Scripts, production, coaching, and edits built to sell across ads and organic.</p>
             <ul>
               <li>Hooks that stop the scroll</li>
-              <li>Built around how you close</li>
-              <li>For ads and organic alike</li>
-              <li>You approve before we roll</li>
-            </ul>
-          </div>
-
-          <div className={`${styles.card} ${styles.cardFeature}`}>
-            <span className={styles.tag}>Flagship</span>
-            <div className={styles.ico}><Clapperboard size={22} strokeWidth={1.5} /></div>
-            <h3>Filming & On-Camera Coaching</h3>
-            <p>We shoot it on cinema cameras — and coach you so you actually look good and sound natural on camera.</p>
-            <ul>
-              <li>Cinema-camera crews</li>
-              <li>On-camera coaching for you & your team</li>
-              <li>On set in days, not months</li>
-              <li>Confident, natural delivery</li>
-            </ul>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.ico}><Scissors size={22} strokeWidth={1.5} /></div>
-            <h3>Editing</h3>
-            <p>Cut for attention and for the platform it lives on.</p>
-            <ul>
-              <li>Ad-ready & short-form cuts</li>
-              <li>Captions, motion, sound</li>
+              <li>Cinema-camera shooting</li>
+              <li>On-camera coaching when needed</li>
+              <li>Ad-ready and short-form edits</li>
               <li>Multiple variants to test</li>
               <li>Fast turnarounds</li>
             </ul>
@@ -78,18 +55,6 @@ export default function SectionServices() {
               <li>Organic content that compounds</li>
               <li>Creative tested fast</li>
               <li>Reporting in dollars</li>
-            </ul>
-          </div>
-
-          <div className={styles.card}>
-            <div className={styles.ico}><Smartphone size={22} strokeWidth={1.5} /></div>
-            <h3>Posting On All Platforms</h3>
-            <p>We handle the calendar and hit publish everywhere.</p>
-            <ul>
-              <li>Instagram, TikTok, YouTube, LinkedIn & more</li>
-              <li>Consistent posting schedule</li>
-              <li>Platform-native formatting</li>
-              <li>Hands off your plate</li>
             </ul>
           </div>
 

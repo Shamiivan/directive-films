@@ -57,3 +57,8 @@ skills-lock.json
 !public/logos/benjy-clients/*.png
 directive-films-mockups.html
 reference/
+feedback/
+
+# root-level screenshot artifacts
+/*.jpeg
+/*.jpg

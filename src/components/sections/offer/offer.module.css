@@ -40,7 +40,7 @@
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
   line-height: 0.95;
-  color: var(--color-gold-deep);
+  color: var(--gold-deep);
   margin-bottom: var(--space-lg);
 }
 
