@@ -85,12 +85,24 @@ type Pages = {
   "/sandbox/home": {
     params: {};
   };
+  "/sandbox/services": {
+    params: {};
+  };
+  "/sandbox/team": {
+    params: {};
+  };
+  "/sandbox/careers": {
+    params: {};
+  };
+  "/sandbox/contact": {
+    params: {};
+  };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/admin/login" | "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media" | "/design-system" | "/sandbox/home";
+    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/admin/login" | "/admin" | "/admin/pages" | "/admin/pages/:slug" | "/admin/projects" | "/admin/services" | "/admin/team" | "/admin/testimonials" | "/admin/positions" | "/admin/settings" | "/admin/media" | "/design-system" | "/sandbox/home" | "/sandbox/services" | "/sandbox/team" | "/sandbox/careers" | "/sandbox/contact";
   };
   "routes/root-redirect.tsx": {
     id: "routes/root-redirect";
@@ -180,6 +192,22 @@ type RouteFiles = {
     id: "routes/sandbox.home";
     page: "/sandbox/home";
   };
+  "routes/sandbox.services.tsx": {
+    id: "routes/sandbox.services";
+    page: "/sandbox/services";
+  };
+  "routes/sandbox.team.tsx": {
+    id: "routes/sandbox.team";
+    page: "/sandbox/team";
+  };
+  "routes/sandbox.careers.tsx": {
+    id: "routes/sandbox.careers";
+    page: "/sandbox/careers";
+  };
+  "routes/sandbox.contact.tsx": {
+    id: "routes/sandbox.contact";
+    page: "/sandbox/contact";
+  };
 };
 
 type RouteModules = {
@@ -206,4 +234,8 @@ type RouteModules = {
   "routes/admin.media": typeof import("./src/routes/admin.media.tsx");
   "routes/design-system": typeof import("./src/routes/design-system.tsx");
   "routes/sandbox.home": typeof import("./src/routes/sandbox.home.tsx");
+  "routes/sandbox.services": typeof import("./src/routes/sandbox.services.tsx");
+  "routes/sandbox.team": typeof import("./src/routes/sandbox.team.tsx");
+  "routes/sandbox.careers": typeof import("./src/routes/sandbox.careers.tsx");
+  "routes/sandbox.contact": typeof import("./src/routes/sandbox.contact.tsx");
 };

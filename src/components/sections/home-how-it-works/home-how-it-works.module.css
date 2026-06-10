@@ -10,21 +10,6 @@
   padding: 0 var(--container-padding);
 }
 
-.header {
-  margin-bottom: var(--space-3xl);
-}
-
-.title {
-  font-family: var(--font-body);
-  font-size: clamp(32px, 4vw + 8px, 52px);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.14;
-  color: var(--color-text-on-dark);
-  margin: 0;
-  text-wrap: balance;
-}
-
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -52,7 +37,7 @@
   bottom: 0;
   left: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--gold2), transparent);
+  background: linear-gradient(90deg, var(--color-gold), transparent);
   opacity: 0.9;
 }
 
@@ -68,7 +53,7 @@
   font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 0.82;
-  color: rgba(232, 176, 75, 0.28);
+  color: color-mix(in srgb, var(--color-gold) 28%, transparent);
   margin-bottom: var(--space-xl);
 }
 
@@ -105,14 +90,6 @@
 
   .container {
     padding: 0 var(--container-padding-mobile);
-  }
-
-  .header {
-    margin-bottom: var(--space-2xl);
-  }
-
-  .title {
-    font-size: clamp(32px, 8vw, 46px);
   }
 
   .step {

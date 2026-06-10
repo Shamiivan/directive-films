@@ -1,6 +1,6 @@
 .offerSection {
   padding: var(--section-padding) 0;
-  background: #f6f3ec;
+  background: var(--color-bg-light);
   position: relative;
 }
 
@@ -10,34 +10,6 @@
   padding: 0 var(--container-padding);
 }
 
-.header {
-  margin-bottom: var(--space-3xl);
-}
-
-.title {
-  font-family: var(--font-body);
-  font-size: clamp(34px, 4.4vw + 10px, 58px);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.12;
-  color: #090909;
-  margin: 0 0 var(--space-lg);
-  max-width: 980px;
-  text-wrap: balance;
-}
-
-.subtitle {
-  font-family: var(--font-body);
-  font-size: var(--font-size-body-lg);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  color: rgba(9, 9, 9, 0.72);
-  max-width: 760px;
-  line-height: 1.65;
-  margin: 0;
-  text-wrap: pretty;
-}
-
 .metricsGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -45,8 +17,8 @@
 }
 
 .metricCard {
-  background: rgba(255, 255, 255, 0.42);
-  border: 1px solid rgba(9, 9, 9, 0.12);
+  background: var(--color-bg-light-card);
+  border: 1px solid var(--color-border-on-light);
   border-radius: var(--radius-xl);
   padding: var(--space-xl);
   min-height: 220px;
@@ -57,38 +29,37 @@
 }
 
 .metricCard:hover {
-  border-color: rgba(9, 9, 9, 0.28);
+  border-color: var(--color-border-on-light-strong);
   transform: translateY(-2px);
 }
 
 .metricValue {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(42px, 5vw, 72px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
   line-height: 0.95;
-  color: #090909;
+  color: var(--color-gold-deep);
   margin-bottom: var(--space-lg);
 }
 
 .metricLabel {
   font-family: var(--font-body);
   font-size: var(--font-size-h4);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   letter-spacing: -0.01em;
   line-height: 1.25;
-  color: #090909;
+  color: var(--color-text-on-light);
   margin: 0 0 var(--space-sm);
 }
 
 .metricDetail {
   font-family: var(--font-body);
   font-size: var(--font-size-body-sm);
-  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.55;
-  color: rgba(9, 9, 9, 0.68);
+  color: var(--color-text-on-light-secondary);
   margin: 0;
 }
 
@@ -107,18 +78,6 @@
     padding: 0 var(--container-padding-mobile);
   }
 
-  .header {
-    margin-bottom: var(--space-2xl);
-  }
-
-  .title {
-    font-size: clamp(32px, 8vw, 48px);
-  }
-
-  .subtitle {
-    font-size: var(--font-size-body);
-  }
-
   .metricCard {
     min-height: 190px;
     padding: var(--space-lg);
@@ -128,7 +87,7 @@
 @media (max-width: 600px) {
   .metricsGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--space-lg);
   }
 
   .metricCard {

@@ -25,4 +25,8 @@ export default [
   ]),
   route("/design-system", "routes/design-system.tsx"),
   route("/sandbox/home", "routes/sandbox.home.tsx"),
+  route("/sandbox/services", "routes/sandbox.services.tsx"),
+  route("/sandbox/team", "routes/sandbox.team.tsx"),
+  route("/sandbox/careers", "routes/sandbox.careers.tsx"),
+  route("/sandbox/contact", "routes/sandbox.contact.tsx"),
 ] satisfies RouteConfig;
