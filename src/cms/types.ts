@@ -1,32 +1,5 @@
-export type {
-  Block,
-  ButtonBlock,
-  CardGridBlock,
-  CollectionSection,
-  ContentSection,
-  CtaSection,
-  DraftPublished,
-  EmbedCollectionBlock,
-  HeadingBlock,
-  HeroSection,
-  ImageBlock,
-  ImageRef,
-  LocalizedString,
-  LocalizedText,
-  OpenPositionContent,
-  PageContent,
-  PageSlug,
-  ParagraphBlock,
-  ProjectContent,
-  QuoteBlock,
-  Section,
-  ServiceContent,
-  SiteSettingsContent,
-  TeamMemberContent,
-  TestimonialContent,
-} from "../../convex/cmsModel";
+export const PAGE_SLUGS = ["home", "about", "services", "contact", "careers", "privacy"] as const;
 
-export { PAGE_SLUGS } from "../../convex/cmsModel";
-
+export type PageSlug = (typeof PAGE_SLUGS)[number];
 export type Locale = "en" | "fr";
 export type Theme = "light" | "dark";

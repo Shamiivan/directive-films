@@ -1,11 +1,8 @@
-import { useCallback, useState, type ReactNode } from "react";
-import { useMutation } from "convex/react";
+import { createElement, type ReactNode } from "react";
 import { useTranslation } from "react-i18next";
 
-import { api } from "../../convex/_generated/api";
-import { isConvexConfigured } from "./convex";
-import { EditableText } from "./EditableText";
-import { useIsEditing, useLocale } from "./EditModeProvider";
+import { fieldIdForTranslation, useCmsPublishedValue } from "./AvantechCms";
+import { useIsEditing } from "./EditModeProvider";
 import type { PageSlug } from "./types";
 
 type EditableTranslationProps = {
@@ -26,51 +23,23 @@ type UseEditableTranslationFieldArgs = {
 };
 
 export function useEditableTranslationField({
-  pageSlug,
   namespace,
   path,
 }: UseEditableTranslationFieldArgs) {
   const { t } = useTranslation(namespace);
-  const locale = useLocale();
   const editMode = useIsEditing();
-  const [pending, setPending] = useState(false);
-
-  const value = t(path, { defaultValue: "" }) as string;
-
-  if (!isConvexConfigured) {
-    return {
-      value,
-      onCommit: async () => {},
-      pending: false,
-      editMode,
-    };
-  }
-
-  const patchField = useMutation(api.cms.patchPageResourceField);
-
-  const onCommit = useCallback(
-    async (next: string) => {
-      if (!editMode || !isConvexConfigured || next === value) return;
-      setPending(true);
-      try {
-        await patchField({
-          slug: pageSlug,
-          locale,
-          path,
-          value: next,
-        });
-      } finally {
-        setPending(false);
-      }
-    },
-    [editMode, locale, pageSlug, patchField, path, value],
-  );
+  const fieldId = fieldIdForTranslation(namespace, path);
+  const publishedValue = useCmsPublishedValue(fieldId);
+  const sourceValue = t(path, { defaultValue: "" }) as string;
+  const value = !editMode && publishedValue !== undefined ? publishedValue : sourceValue;
 
   return {
-    value,
-    onCommit,
-    pending,
     editMode,
+    fieldId,
+    onCommit: async () => {},
+    pending: false,
+    sourceValue,
+    value,
   };
 }
 
@@ -86,17 +55,15 @@ export function EditableTranslation({
 }: EditableTranslationProps) {
   const field = useEditableTranslationField({ pageSlug, namespace, path });
 
-  return (
-    <EditableText
-      as={as}
-      kind={kind}
-      label={label}
-      className={className}
-      placeholder={placeholder}
-      pending={field.pending}
-      value={field.value}
-      onCommit={field.onCommit}
-    />
+  return createElement(
+    as,
+    {
+      className,
+      "data-cms-field": field.fieldId,
+      "data-cms-type": kind === "text" ? "paragraph" : undefined,
+      title: placeholder,
+    },
+    field.value || placeholder || label,
   );
 }
 
@@ -105,7 +72,9 @@ export function EditableTranslationStatic({
   namespace,
   path,
   children,
-}: UseEditableTranslationFieldArgs & { children: (field: ReturnType<typeof useEditableTranslationField>) => ReactNode }) {
+}: UseEditableTranslationFieldArgs & {
+  children: (field: ReturnType<typeof useEditableTranslationField>) => ReactNode;
+}) {
   const field = useEditableTranslationField({ pageSlug, namespace, path });
   return <>{children(field)}</>;
 }

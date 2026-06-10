@@ -1,9 +1,13 @@
 import { createContext, useContext, useEffect, useMemo, useState } from "react";
-import { useSearchParams } from "react-router";
+import { useLocation } from "react-router";
 import { ConvexProvider } from "convex/react";
 
+import {
+  AvantechCmsRuntime,
+  normalizeLanguage,
+  pageSlugFromPathname,
+} from "./AvantechCms";
 import { convexClient } from "./convex";
-import { InlineToolbar } from "./InlineToolbar";
 import type { Locale, Theme } from "./types";
 
 type EditModeContextValue = {
@@ -17,14 +21,7 @@ type EditModeContextValue = {
 
 const EditModeContext = createContext<EditModeContextValue | null>(null);
 
-const LS_LOCALE_KEY = "cms.locale";
 const LS_THEME_KEY = "cms.theme";
-
-function readStoredLocale(): Locale {
-  if (typeof window === "undefined") return "en";
-  const stored = window.localStorage.getItem(LS_LOCALE_KEY);
-  return stored === "fr" ? "fr" : "en";
-}
 
 function readStoredTheme(): Theme {
   if (typeof window === "undefined") return "light";
@@ -32,31 +29,48 @@ function readStoredTheme(): Theme {
   return stored === "dark" ? "dark" : "light";
 }
 
+function languageFromLocation(pathname: string, search: string): Locale {
+  const params = new URLSearchParams(search);
+  return params.get("cmsLanguage")
+    ? normalizeLanguage(params.get("cmsLanguage"))
+    : normalizeLanguage(pathname.split("/").filter(Boolean)[0]);
+}
+
 function InnerProvider({ children }: { children: React.ReactNode }) {
-  const [searchParams] = useSearchParams();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
   const editMode = searchParams.get("edit") === "1";
 
-  const [locale, setLocaleState] = useState<Locale>(readStoredLocale);
+  const [locale, setLocaleState] = useState<Locale>(() =>
+    languageFromLocation(location.pathname, location.search),
+  );
   const [theme, setThemeState] = useState<Theme>(readStoredTheme);
 
-  // Mirror theme onto <html data-theme> so CSS modules can scope dark surfaces.
+  useEffect(() => {
+    setLocaleState(languageFromLocation(location.pathname, location.search));
+  }, [location.pathname, location.search]);
+
+  useEffect(() => {
+    const onCmsLanguageChanged = (event: Event) => {
+      const nextLanguage = (event as CustomEvent<{ language?: string }>).detail?.language;
+      setLocaleState(normalizeLanguage(nextLanguage));
+    };
+
+    window.addEventListener("cms:language-changed", onCmsLanguageChanged);
+    return () => window.removeEventListener("cms:language-changed", onCmsLanguageChanged);
+  }, []);
+
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.documentElement.dataset.theme = theme;
   }, [theme]);
 
-  // Mirror editMode for selector-based styling (hover affordances, etc.).
   useEffect(() => {
     if (typeof document === "undefined") return;
     document.documentElement.dataset.cmsEdit = editMode ? "on" : "off";
   }, [editMode]);
 
-  const setLocale = (next: Locale) => {
-    setLocaleState(next);
-    if (typeof window !== "undefined") {
-      window.localStorage.setItem(LS_LOCALE_KEY, next);
-    }
-  };
+  const setLocale = (next: Locale) => setLocaleState(next);
 
   const setTheme = (next: Theme) => {
     setThemeState(next);
@@ -72,23 +86,25 @@ function InnerProvider({ children }: { children: React.ReactNode }) {
     [editMode, locale, theme],
   );
 
-  return (
-    <EditModeContext.Provider value={value}>
-      {children}
-      <InlineToolbar />
-    </EditModeContext.Provider>
-  );
+  return <EditModeContext.Provider value={value}>{children}</EditModeContext.Provider>;
 }
 
 export function EditModeProvider({ children }: { children: React.ReactNode }) {
-  if (convexClient) {
-    return (
-      <ConvexProvider client={convexClient}>
-        <InnerProvider>{children}</InnerProvider>
-      </ConvexProvider>
-    );
-  }
-  return <InnerProvider>{children}</InnerProvider>;
+  const location = useLocation();
+  const language = languageFromLocation(location.pathname, location.search);
+  const pageSlug = pageSlugFromPathname(location.pathname);
+
+  const content = <InnerProvider>{children}</InnerProvider>;
+
+  if (!convexClient) return content;
+
+  return (
+    <ConvexProvider client={convexClient}>
+      <AvantechCmsRuntime language={language} pageSlug={pageSlug}>
+        {content}
+      </AvantechCmsRuntime>
+    </ConvexProvider>
+  );
 }
 
 export function useEditMode(): EditModeContextValue {

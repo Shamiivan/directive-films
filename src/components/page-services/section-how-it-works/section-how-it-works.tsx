@@ -17,7 +17,7 @@ type StepCopy = {
   tag?: string;
   title: string;
   description: string;
-  features: string[];
+  features?: string[];
 };
 
 type Step = StepCopy & {
@@ -63,7 +63,7 @@ function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: str
         <h4 className={styles.cardTitle}>{step.title}</h4>
         <p className={styles.cardDesc}>{step.description}</p>
         <div className={styles.featureList}>
-          {step.features.map((feature) => (
+          {(step.features ?? []).map((feature) => (
             <div className={styles.feature} key={feature}>
               <CheckIcon />
               <div>{feature}</div>
@@ -99,8 +99,11 @@ function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: str
 
 export default function HowItWorksSection() {
   const { t } = useTranslation('services');
-  const stepCopy = t('howItWorks.steps', { returnObjects: true }) as StepCopy[];
-  const steps = stepMeta.map((meta, index) => ({ ...meta, ...stepCopy[index] }));
+  const rawStepCopy = t('howItWorks.steps', { returnObjects: true });
+  const stepCopy = Array.isArray(rawStepCopy) ? rawStepCopy as StepCopy[] : [];
+  const steps = stepMeta
+    .map((meta, index) => ({ ...meta, ...stepCopy[index] }))
+    .filter((step): step is Step => Boolean(step.title && step.description));
 
   return (
     <section className={styles.section}>
@@ -117,4 +120,3 @@ export default function HowItWorksSection() {
     </section>
   );
 }
-

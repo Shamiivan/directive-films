@@ -28,13 +28,9 @@ export default function LocaleLayout() {
             const pathParts = location.pathname.split('/').filter(Boolean);
             const firstPart = pathParts[0];
 
-            let newPath = '';
-            if (supportedLanguages.includes(firstPart)) {
-                // Already has a lang but maybe it's invalid? (Shouldn't happen with routes.ts match)
-                newPath = `/en/${pathParts.slice(1).join('/')}`;
-            } else {
-                newPath = `/en/${pathParts.join('/')}`;
-            }
+            const newPath = supportedLanguages.includes(firstPart)
+                ? `/en/${pathParts.slice(1).join('/')}`
+                : `/en/${pathParts.join('/')}`;
 
             navigate(newPath, { replace: true });
             return;
