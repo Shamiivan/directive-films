@@ -48,6 +48,14 @@
   --color-bg-dark-card: var(--ink2);
   --color-bg-dark-elevated: var(--panel);
 
+  /* Light sections (cream paper background) */
+  --color-bg-light: var(--paper);
+  --color-bg-light-card: color-mix(in srgb, var(--ink) 4%, var(--paper));
+  --color-text-on-light-secondary: color-mix(in srgb, var(--ink) 72%, transparent);
+  --color-text-on-light-muted: color-mix(in srgb, var(--ink) 55%, transparent);
+  --color-border-on-light: color-mix(in srgb, var(--ink) 12%, transparent);
+  --color-border-on-light-strong: color-mix(in srgb, var(--ink) 28%, transparent);
+
   /* Borders */
   --color-border-light: var(--line);
   --color-border-medium: var(--line2);

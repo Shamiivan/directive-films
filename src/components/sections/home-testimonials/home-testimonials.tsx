@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
-import SectionEyebrow from "../../SectionEyebrow";
-import { scrollReveal } from "../../../utils/animations";
+import SectionHeader from "@/components/shared/section-header/section-header";
 import styles from "./home-testimonials.module.css";
 
 const testimonials = [
@@ -170,10 +168,7 @@ export default function HomeTestimonialsSection({ id = "testimonials" }: { id?: 
   return (
     <section className={styles.section} id={id}>
       <div className={styles.container}>
-        <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label="What clients say" />
-          <h2 className={styles.title}>Don't take our word for it.</h2>
-        </motion.div>
+        <SectionHeader eyebrow="What clients say" title="Don't take our word for it." />
 
         <div className={styles.quotes} aria-label="Public review placeholders">
           {testimonials.map((testimonial) => (

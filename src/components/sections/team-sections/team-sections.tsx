@@ -1,3 +1,4 @@
+import SectionHeader from '@/components/shared/section-header/section-header';
 import styles from './team-sections.module.css';
 
 const teamMembers = [
@@ -17,11 +18,11 @@ export default function TeamSections() {
   return (
     <section className={styles.section} id="team">
       <div className={styles.container}>
-        <div className={styles.header}>
-          <span className={styles.eyebrow}>Leadership</span>
-          <h2>The people behind the results</h2>
-          <p>Two operators leading the strategy, production, and systems that move each project from idea to measurable growth.</p>
-        </div>
+        <SectionHeader
+          eyebrow="Leadership"
+          title="The people behind the results"
+          intro="Two operators leading the strategy, production, and systems that move each project from idea to measurable growth."
+        />
 
         <div className={styles.grid}>
           {teamMembers.map((member) => (

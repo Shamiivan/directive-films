@@ -1,0 +1,48 @@
+.cta {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 620px;
+  margin: 0 clamp(18px, 4vw, 56px) var(--space-4xl);
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+  isolation: isolate;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 20%, var(--ink) 78%);
+}
+
+.cta video {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inner {
+  display: grid;
+  justify-items: center;
+  gap: var(--space-xl);
+  padding: var(--space-lg);
+  text-align: center;
+}
+
+.title {
+  max-width: 920px;
+  font-family: var(--font-display);
+  font-size: clamp(42px, 7vw, 88px);
+  line-height: 1;
+  color: var(--color-text-on-dark);
+}
+
+.title em {
+  font-style: italic;
+  color: var(--color-gold);
+}

@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
-import SectionEyebrow from "../../SectionEyebrow";
-import { scrollReveal } from "../../../utils/animations";
+import SectionHeader from "@/components/shared/section-header/section-header";
 import styles from "./offer.module.css";
 
 const metrics = [
@@ -30,18 +28,18 @@ export default function OfferSection({ id = "offer" }: { id?: string } = {}) {
   return (
     <section className={styles.offerSection} id={id}>
       <div className={styles.container}>
-        <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label="The numbers" />
-          <h2 className={styles.title}>
-            We don't get paid for footage.
-            <br />
-            We get paid for results.
-          </h2>
-          <p className={styles.subtitle}>
-            Pretty videos are easy. Ten years in, what we're actually measured on is the money that
-            lands in your account — so that's what we build for.
-          </p>
-        </motion.div>
+        <SectionHeader
+          tone="light"
+          eyebrow="The numbers"
+          title={
+            <>
+              We don&apos;t get paid for footage.
+              <br />
+              We get paid for results.
+            </>
+          }
+          intro="Pretty videos are easy. Ten years in, what we're actually measured on is the money that lands in your account — so that's what we build for."
+        />
 
         <div className={styles.metricsGrid}>
           {metrics.map((metric) => (

@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router';
+import { Link, useLocation } from 'react-router';
 import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useLocalePath } from '../../../hooks/useLocalePath';
@@ -15,7 +15,6 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
   const ref = useRef<HTMLAnchorElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);
-  const l = useLocalePath();
 
   const springConfig = { damping: 15, stiffness: 150 };
   const xSpring = useSpring(x, springConfig);
@@ -38,7 +37,7 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
   return (
     <MotionLink
       ref={ref}
-      to={l(to)}
+      to={to}
       data-sticky-cursor
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
@@ -54,21 +53,19 @@ function MagneticNavLink({ to, children }: { to: string; children: React.ReactNo
 export default function NavSection() {
   const editMode = useIsEditing();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
   const l = useLocalePath();
+  const location = useLocation();
   const { t } = useTranslation();
+  const isSandbox = location.pathname.startsWith('/sandbox');
+  const navLinks = {
+    home: isSandbox ? '/sandbox/home' : l('/'),
+    services: isSandbox ? '/sandbox/services' : l('/services'),
+    team: isSandbox ? '/sandbox/team' : l('/about'),
+    careers: isSandbox ? '/sandbox/careers' : l('/careers'),
+    contact: isSandbox ? '/sandbox/contact' : l('/contact'),
+  };
 
   if (editMode) return null;
-
-  // Show nav after scrolling past hero area on mobile
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 80);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Close menu on escape key
   useEffect(() => {
@@ -102,7 +99,7 @@ export default function NavSection() {
       <AnimatedNav className={styles.nav}>
         <div className={styles.wrap}>
         <MotionLink
-          to={l("/")}
+          to={navLinks.home}
           className={styles.logo}
           data-sticky-cursor
           whileHover={{ scale: 1.03 }}
@@ -115,24 +112,26 @@ export default function NavSection() {
         {/* Desktop Navigation - With Magnetic Effect */}
         <ul className={styles.navList}>
           <li>
-            <MagneticNavLink to="/">{t('nav.home')}</MagneticNavLink>
+            <MagneticNavLink to={navLinks.home}>{t('nav.home')}</MagneticNavLink>
           </li>
           <li>
-            <MagneticNavLink to="/services">{t('nav.services')}</MagneticNavLink>
+            <MagneticNavLink to={navLinks.services}>{t('nav.services')}</MagneticNavLink>
           </li>
           <li>
-            <MagneticNavLink to="/about">{t('nav.about')}</MagneticNavLink>
+            <MagneticNavLink to={navLinks.team}>{isSandbox ? 'Team' : t('nav.about')}</MagneticNavLink>
           </li>
           <li>
-            <MagneticNavLink to="/careers">{t('nav.careers')}</MagneticNavLink>
+            <MagneticNavLink to={navLinks.careers}>{t('nav.careers')}</MagneticNavLink>
           </li>
-          <li className={styles.langSwitcherDesktop}>
-            <LanguageSwitcher />
-          </li>
+          {!isSandbox && (
+            <li className={styles.langSwitcherDesktop}>
+              <LanguageSwitcher />
+            </li>
+          )}
         </ul>
 
         <MotionLink
-          to={l("/contact")}
+          to={navLinks.contact}
           className={styles.navBtn}
           data-sticky-cursor
           whileHover={{ scale: 1.05 }}
@@ -189,30 +188,32 @@ export default function NavSection() {
               <nav className={styles.mobileNav}>
                 <ul className={styles.mobileNavList}>
                   <li>
-                    <Link to={l("/")} onClick={handleLinkClick}>
+                    <Link to={navLinks.home} onClick={handleLinkClick}>
                       {t('nav.home')}
                     </Link>
                   </li>
                   <li>
-                    <Link to={l("/services")} onClick={handleLinkClick}>
+                    <Link to={navLinks.services} onClick={handleLinkClick}>
                       {t('nav.services')}
                     </Link>
                   </li>
                   <li>
-                    <Link to={l("/about")} onClick={handleLinkClick}>
-                      {t('nav.about')}
+                    <Link to={navLinks.team} onClick={handleLinkClick}>
+                      {isSandbox ? 'Team' : t('nav.about')}
                     </Link>
                   </li>
                   <li>
-                    <Link to={l("/careers")} onClick={handleLinkClick}>
+                    <Link to={navLinks.careers} onClick={handleLinkClick}>
                       {t('nav.careers')}
                     </Link>
                   </li>
-                  <li className={styles.mobileLangSwitcher}>
-                    <LanguageSwitcher />
-                  </li>
+                  {!isSandbox && (
+                    <li className={styles.mobileLangSwitcher}>
+                      <LanguageSwitcher />
+                    </li>
+                  )}
                   <li className={styles.mobileContactItem}>
-                    <Link to={l("/contact")} onClick={handleLinkClick} className={styles.mobileContactBtn}>
+                    <Link to={navLinks.contact} onClick={handleLinkClick} className={styles.mobileContactBtn}>
                       {t('nav.contact')}
                     </Link>
                   </li>

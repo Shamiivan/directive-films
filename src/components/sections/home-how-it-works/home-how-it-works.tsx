@@ -1,6 +1,4 @@
-import { motion } from "framer-motion";
-import SectionEyebrow from "../../SectionEyebrow";
-import { scrollReveal } from "../../../utils/animations";
+import SectionHeader from "@/components/shared/section-header/section-header";
 import styles from "./home-how-it-works.module.css";
 
 const steps = [
@@ -28,10 +26,11 @@ export default function HomeHowItWorksSection({ id = "how-it-works" }: { id?: st
   return (
     <section className={styles.section} id={id}>
       <div className={styles.container}>
-        <motion.div className={styles.header} {...scrollReveal}>
-          <SectionEyebrow label="How it works" description="Three steps from leak to revenue" />
-          <h2 className={styles.title}>Three steps. No jargon.</h2>
-        </motion.div>
+        <SectionHeader
+          eyebrow="How it works"
+          eyebrowDescription="Three steps from leak to revenue"
+          title="Three steps. No jargon."
+        />
 
         <div className={styles.steps}>
           {steps.map((step) => (

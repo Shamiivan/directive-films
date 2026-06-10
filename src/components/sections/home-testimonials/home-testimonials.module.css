@@ -1,6 +1,6 @@
 .section {
   padding: var(--section-padding) 0;
-  background: #0c0c10;
+  background: var(--color-bg-deep);
   position: relative;
 }
 
@@ -8,21 +8,6 @@
   max-width: var(--container-max-width);
   margin: 0 auto;
   padding: 0 var(--container-padding);
-}
-
-.header {
-  margin-bottom: var(--space-3xl);
-}
-
-.title {
-  font-family: var(--font-body);
-  font-size: clamp(32px, 4vw + 8px, 46px);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.16;
-  color: var(--color-text-on-dark);
-  margin: 14px 0 0;
-  text-wrap: balance;
 }
 
 .quotes {
@@ -38,7 +23,7 @@
   scroll-padding-inline: var(--container-padding);
   scroll-snap-type: x mandatory;
   scrollbar-width: thin;
-  scrollbar-color: rgba(232, 176, 75, 0.55) rgba(255, 255, 255, 0.08);
+  scrollbar-color: color-mix(in srgb, var(--color-gold) 55%, transparent) var(--color-border-light);
 }
 
 .quotes::-webkit-scrollbar {
@@ -46,12 +31,12 @@
 }
 
 .quotes::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--color-border-light);
 }
 
 .quotes::-webkit-scrollbar-thumb {
-  background: rgba(232, 176, 75, 0.55);
-  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-gold) 55%, transparent);
+  border-radius: var(--radius-pill);
 }
 
 .quote {
@@ -93,22 +78,22 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold2), var(--gold-deep));
-  color: #180f00;
+  background: linear-gradient(135deg, var(--color-gold), var(--gold-deep));
+  color: var(--ink);
   display: grid;
   place-items: center;
   flex: 0 0 auto;
   font-family: var(--font-body);
-  font-size: 12px;
-  font-weight: 800;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-extrabold);
   letter-spacing: 0.04em;
 }
 
 .author strong {
   display: block;
   font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 700;
+  font-size: var(--font-size-body-sm);
+  font-weight: var(--font-weight-bold);
   line-height: 1.25;
   color: var(--color-text-on-dark);
 }
@@ -117,7 +102,7 @@
   display: block;
   margin-top: 3px;
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: var(--font-size-caption);
   line-height: 1.35;
   color: var(--color-text-on-dark-secondary);
 }
