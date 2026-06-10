@@ -5,7 +5,17 @@ export default tseslint.config(
   js.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: ["build/**", ".react-router/**", "node_modules/**", "tests/**"],
+    ignores: [
+      ".agents/**",
+      ".claude/**",
+      ".react-router/**",
+      "build/**",
+      "directive-films-website/**",
+      "node_modules/**",
+      "public/bridge.js",
+      "reference/**",
+      "tests/**",
+    ],
   },
   {
     rules: {

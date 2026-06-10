@@ -131,16 +131,12 @@ src/
 - CSS modules typed via `vite/client` reference
 - React Router types generated in `.react-router/types/`
 
-<!-- convex-ai-start -->
+## Avantech CMS
 
-This project uses [Convex](https://convex.dev) as its backend.
+This repo no longer owns a Convex CMS backend. It uses Avantech CMS as an
+external authoring system and keeps `convex` only as the public-site client used
+to read Avantech CMS content.
 
-When working on Convex code, **always read
-`convex/_generated/ai/guidelines.md` first** for important guidelines on
-how to correctly use Convex APIs and patterns. The file contains rules that
-override what you may have learned about Convex from training data.
-
-Convex agent skills for common tasks can be installed by running
-`npx convex ai-files install`.
-
-<!-- convex-ai-end -->
+Read `CMS_AUTHORING_FOR_LLMS.md` before changing CMS integration code. Do not
+add local CMS schemas, generated Convex API imports, seeding scripts, or `/admin`
+editor routes here.
