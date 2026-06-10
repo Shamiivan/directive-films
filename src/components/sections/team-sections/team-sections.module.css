@@ -76,6 +76,15 @@
   line-height: var(--line-height-tight);
 }
 
+.content .role {
+  color: var(--color-gold);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-caption);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: calc(-1 * var(--space-sm)) 0 var(--space-xs);
+}
+
 .content p {
   max-width: 520px;
   color: var(--color-text-on-dark-secondary);

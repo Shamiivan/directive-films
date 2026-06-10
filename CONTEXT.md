@@ -95,3 +95,54 @@ Keep route/page composition imports readable. For shared reusable sections, pref
 ```tsx
 import HomeServicesSection from '@/components/sections/home-services/home-services';
 ```
+
+## Current State — Sandbox Home Reassembly
+
+The sandbox home (`/sandbox/home`) is the **client-shareable design preview**. The
+production homepage stays on **coming-soon**; the sandbox is the link sent to the client
+to review the design. Approved sections later migrate into the real homepage shell.
+
+Decisions driving the current work:
+
+- **Content is static for now** — sections hardcode their data (no Convex/i18n wiring yet),
+  except `home-services` which is already CMS/i18n-wired and left as-is.
+- **Gold is the only accent. Zero indigo.** The earlier `#4f46e5` indigo drift was removed
+  everywhere in favor of `var(--color-gold)` / `var(--gold-deep)`.
+- **Everything is tokenized.** Raw hex/px were replaced with design tokens. New light-section
+  tokens live in `globals.css`: `--color-bg-light`, `--color-bg-light-card`,
+  `--color-text-on-light-secondary`, `--color-text-on-light-muted`, `--color-border-on-light`,
+  `--color-border-on-light-strong`.
+
+### Shared primitives (`src/components/shared/`)
+
+- `cta-button/` — gold pill button, the single source for all CTAs (`variant`: gold | outline).
+- `video-card/` — 9:16 Vimeo card used by the video reels.
+- `section-header/` — the one header treatment (eyebrow + title + optional intro + scroll-reveal
+  motion). Props: `eyebrow`, `eyebrowDescription?`, `title`, `intro?`, `align` (left|center),
+  `tone` (dark|light). **All sections use this** — do not hand-roll section headers.
+- `logo-row/` — client logo marquee (pre-existing).
+
+### Sandbox home composition (`pages/sandbox/home/sandbox-home-page.tsx`)
+
+Clean section list, in order (background rhythm in brackets):
+
+1. `home-hero` [dark] — bg video + glass panel + gold CTA
+2. `logo-row` [strip]
+3. `offer` [**light**] — metrics, gold-deep numbers
+4. `home-how-it-works` [dark]
+5. `home-services` [dark] — CMS/i18n-wired (untouched)
+6. `home-video-reel` [**light**] — `tone="light"`, the produced-ads rail
+7. `home-video-reel` [dark] — `align="center"`, the client-story rail (same component, reused)
+8. `home-testimonials` [dark] — text quote cards
+9. `team-sections` [dark]
+10. `home-cta` [dark] — bg video + gold CTA
+
+`sandbox-home-page.module.css` is intentionally a ~6-line `.page` shell only; all section
+styling lives in the section folders.
+
+### Left alone deliberately
+
+- `page-about/section-team/` — the about page's localized team section. Different component for a
+  different page, not a duplicate of the sandbox `team-sections`.
+- `page-home/`, `page-services/`, `page-about/` legacy sections — the hidden/legacy homepage set.
+  Untouched while the design is explored in sandbox.
