@@ -11,8 +11,10 @@
 
 .team {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 18px;
+  max-width: 760px;
+  margin: 0 auto;
 }
 
 .member {
@@ -85,5 +87,9 @@
 }
 
 @media (max-width: 920px) {
-  .team { grid-template-columns: repeat(2, 1fr); }
+  .team { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .team { grid-template-columns: 1fr; }
 }

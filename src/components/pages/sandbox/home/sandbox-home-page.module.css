@@ -179,8 +179,7 @@
 }
 
 .serviceCard,
-.serviceCta,
-.testimonialCard {
+.serviceCta {
   border-radius: 18px;
   background: #fff;
   color: #090909;
@@ -194,8 +193,7 @@
 }
 
 .serviceCard div,
-.serviceCta,
-.testimonialCard {
+.serviceCta {
   padding: 24px;
 }
 
@@ -205,8 +203,7 @@
   font-size: 24px;
 }
 
-.serviceCard p,
-.testimonialCard p {
+.serviceCard p {
   color: rgba(9, 9, 9, 0.68);
 }
 
@@ -237,8 +234,7 @@
   letter-spacing: 0.12em;
 }
 
-.videoRail,
-.teamRail {
+.videoRail {
   display: grid;
   grid-auto-flow: column;
   grid-auto-columns: minmax(220px, 320px);
@@ -250,8 +246,7 @@
   scroll-snap-type: x mandatory;
 }
 
-.videoCard,
-.teamCard {
+.videoCard {
   scroll-snap-align: start;
 }
 
@@ -267,46 +262,6 @@
   width: 100%;
   height: 100%;
   border: 0;
-}
-
-.testimonials {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 22px;
-  padding: 0 clamp(18px, 4vw, 56px) clamp(64px, 8vw, 110px);
-}
-
-.testimonialCard {
-  min-height: 230px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  border: 3px solid #e7e3ff;
-}
-
-.testimonialCard strong {
-  margin-top: 22px;
-}
-
-.teamCard {
-  overflow: hidden;
-  border-radius: 18px;
-}
-
-.teamCard img {
-  width: 100%;
-  aspect-ratio: 2 / 3;
-  border-radius: 18px;
-  object-fit: cover;
-}
-
-.teamCard h3 {
-  margin-top: 16px;
-  font-size: 24px;
-}
-
-.teamCard p {
-  color: rgba(247, 244, 237, 0.62);
 }
 
 .finalCta {
@@ -349,27 +304,6 @@
   line-height: 1;
 }
 
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 40px clamp(18px, 4vw, 56px);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.footer img {
-  width: 150px;
-}
-
-.footer div {
-  display: flex;
-  gap: 20px;
-}
-
-.footer p {
-  color: rgba(247, 244, 237, 0.58);
-}
 
 @media (max-width: 980px) {
   .heroMedia {
@@ -380,8 +314,7 @@
     margin-top: -56px;
   }
 
-  .serviceGrid,
-  .testimonials {
+  .serviceGrid {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -391,18 +324,11 @@
     padding-top: 14px;
   }
 
-  .serviceGrid,
-  .testimonials {
+  .serviceGrid {
     grid-template-columns: 1fr;
   }
 
-  .videoRail,
-  .teamRail {
+  .videoRail {
     grid-auto-columns: minmax(210px, 82vw);
-  }
-
-  .footer {
-    align-items: flex-start;
-    flex-direction: column;
   }
 }

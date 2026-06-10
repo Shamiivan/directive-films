@@ -1,0 +1,137 @@
+.offerSection {
+  padding: var(--section-padding) 0;
+  background: #f6f3ec;
+  position: relative;
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
+}
+
+.header {
+  margin-bottom: var(--space-3xl);
+}
+
+.title {
+  font-family: var(--font-body);
+  font-size: clamp(34px, 4.4vw + 10px, 58px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.12;
+  color: #090909;
+  margin: 0 0 var(--space-lg);
+  max-width: 980px;
+  text-wrap: balance;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-lg);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  color: rgba(9, 9, 9, 0.72);
+  max-width: 760px;
+  line-height: 1.65;
+  margin: 0;
+  text-wrap: pretty;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.metricCard {
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(9, 9, 9, 0.12);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: border-color var(--transition-slow), transform var(--transition-slow);
+}
+
+.metricCard:hover {
+  border-color: rgba(9, 9, 9, 0.28);
+  transform: translateY(-2px);
+}
+
+.metricValue {
+  display: block;
+  font-family: var(--font-body);
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  color: #090909;
+  margin-bottom: var(--space-lg);
+}
+
+.metricLabel {
+  font-family: var(--font-body);
+  font-size: var(--font-size-h4);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  color: #090909;
+  margin: 0 0 var(--space-sm);
+}
+
+.metricDetail {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  color: rgba(9, 9, 9, 0.68);
+  margin: 0;
+}
+
+@media (max-width: 1200px) {
+  .metricsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .offerSection {
+    padding: var(--section-padding-mobile) 0;
+  }
+
+  .container {
+    padding: 0 var(--container-padding-mobile);
+  }
+
+  .header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .title {
+    font-size: clamp(32px, 8vw, 48px);
+  }
+
+  .subtitle {
+    font-size: var(--font-size-body);
+  }
+
+  .metricCard {
+    min-height: 190px;
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 600px) {
+  .metricsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .metricCard {
+    min-height: auto;
+  }
+}
