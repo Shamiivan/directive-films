@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import SectionHeader from "@/components/shared/section-header/section-header";
+import { gridStagger, scrollRevealDepth } from "@/utils/animations";
 import styles from "./home-how-it-works.module.css";
 
 const steps = [
@@ -27,20 +29,25 @@ export default function HomeHowItWorksSection({ id = "how-it-works" }: { id?: st
     <section className={styles.section} id={id}>
       <div className={styles.container}>
         <SectionHeader
+          tone="dark"
           eyebrow="How it works"
           eyebrowDescription="Three steps from leak to revenue"
           title="Three steps. No jargon."
         />
 
-        <div className={styles.steps}>
-          {steps.map((step) => (
-            <article className={styles.step} key={step.number}>
-              <span className={styles.number}>{step.number}</span>
-              <h3 className={styles.stepTitle}>{step.title}</h3>
-              <p className={styles.stepDescription}>{step.description}</p>
-            </article>
+        <motion.ol className={styles.steps} {...gridStagger}>
+          {steps.map((step, index) => (
+            <motion.li className={styles.step} key={step.number} {...scrollRevealDepth(index)}>
+              <span className={styles.number} aria-hidden="true">
+                {step.number}
+              </span>
+              <div className={styles.body}>
+                <h3 className={styles.stepTitle}>{step.title}</h3>
+                <p className={styles.stepDescription}>{step.description}</p>
+              </div>
+            </motion.li>
           ))}
-        </div>
+        </motion.ol>
       </div>
     </section>
   );

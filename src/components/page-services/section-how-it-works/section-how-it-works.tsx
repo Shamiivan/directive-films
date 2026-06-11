@@ -1,12 +1,34 @@
+import type { RefObject } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useLocalePath } from '../../../hooks/useLocalePath';
+import {
+  maskWipeIn,
+  staggerListContainer,
+  staggerListItem,
+  useParallax,
+} from '../../../utils/animations';
 import styles from './section-how-it-works.module.css';
 
 function CheckIcon() {
   return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.checkIcon} aria-hidden="true">
-      <circle cx="9" cy="9" r="8.5" stroke="currentColor" />
-      <path d="M5.5 9L7.8 11.5L12.5 6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    <svg
+      width="26"
+      height="26"
+      viewBox="0 0 26 26"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.checkIcon}
+      aria-hidden="true"
+    >
+      <circle cx="13" cy="13" r="13" fill="currentColor" fillOpacity="0.12" />
+      <path
+        d="M8 13.2L11.4 16.6L18 9.6"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   );
 }
@@ -24,6 +46,9 @@ type Step = StepCopy & {
   imageSide: 'left' | 'right';
 };
 
+// TODO(asset): real client stills for each service — current /images/svc/*.jpg
+// look like stock/AI placeholders. Swap each imageSrc below for a real still
+// (dashboards, results, team on set) once provided. References kept as-is for now.
 const stepMeta = [
   { marker: '1', imageSrc: '/images/svc/svc-audit.jpg', imageSide: 'right' as const },
   { marker: '2', imageSrc: '/images/svc/svc-offer-validation.jpg', imageSide: 'left' as const },
@@ -37,52 +62,82 @@ const stepMeta = [
   { marker: '10', imageSrc: '/images/svc/svc-sales-team.jpg', imageSide: 'left' as const },
 ];
 
-function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: string }) {
+function ProcessRow({ step, cta }: { step: Step; cta: string }) {
   const l = useLocalePath();
+  const reduce = useReducedMotion();
+  const { ref, y } = useParallax(48);
 
-  const cardClassName = [
-    styles.card,
+  // Reduced motion: skip the clip-path wipe + scale settle, just fade the image in.
+  const imageReveal = reduce
+    ? {
+        initial: { opacity: 0 },
+        whileInView: { opacity: 1 },
+        viewport: maskWipeIn.viewport,
+        transition: { duration: 0.4 },
+      }
+    : maskWipeIn;
+
+  const rowClassName = [
+    styles.row,
     step.imageSide === 'left' ? styles.imageLeft : styles.imageRight,
   ].join(' ');
 
+  const webpSrcSet = `${step.imageSrc.replace('.jpg', '-720.webp')} 720w, ${step.imageSrc.replace('.jpg', '-1100.webp')} 1100w`;
+
   return (
-    <div className={cardClassName} style={{ zIndex: index + 1 }}>
+    <div className={rowClassName}>
       <div className={styles.content}>
         <div className={styles.stepNumber}>{step.marker.padStart(2, '0')}</div>
         {step.tag ? <span className={styles.tag}>{step.tag}</span> : null}
-        <h4 className={styles.cardTitle}>{step.title}</h4>
+        <h3 className={styles.cardTitle}>{step.title}</h3>
         <p className={styles.cardDesc}>{step.description}</p>
-        <div className={styles.featureList}>
+        <motion.ul
+          className={styles.featureList}
+          variants={staggerListContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={staggerListContainer.viewport}
+        >
           {(step.features ?? []).map((feature) => (
-            <div className={styles.feature} key={feature}>
+            <motion.li className={styles.feature} key={feature} variants={staggerListItem}>
               <CheckIcon />
-              <div>{feature}</div>
-            </div>
+              <span>{feature}</span>
+            </motion.li>
           ))}
-        </div>
+        </motion.ul>
         <div className={styles.ctaWrap}>
-          <a href={l('/contact')} className={styles.cta}>
+          <a href={l('/audit')} className={styles.cta}>
             <span>{cta}</span>
           </a>
         </div>
       </div>
-      <div className={styles.imageWrap}>
-        <picture>
-          <source
-            type="image/webp"
-            srcSet={`${step.imageSrc.replace('.jpg', '-720.webp')} 720w, ${step.imageSrc.replace('.jpg', '-1100.webp')} 1100w`}
-            sizes="(max-width: 767px) calc(100vw - 40px), 700px"
-          />
-          <img
-            src={step.imageSrc}
-            alt=""
-            className={styles.image}
-            loading="lazy"
-            decoding="async"
-            sizes="(max-width: 767px) calc(100vw - 40px), 700px"
-          />
-        </picture>
-      </div>
+
+      <motion.div
+        ref={ref as RefObject<HTMLDivElement>}
+        className={styles.imageWrap}
+        variants={imageReveal}
+        initial="initial"
+        whileInView="whileInView"
+        viewport={imageReveal.viewport}
+      >
+        <motion.div className={styles.imageDrift} style={{ y }}>
+          <picture>
+            <source
+              type="image/webp"
+              srcSet={webpSrcSet}
+              sizes="(max-width: 767px) 100vw, 50vw"
+            />
+            <img
+              src={step.imageSrc}
+              alt=""
+              className={styles.image}
+              loading="lazy"
+              decoding="async"
+              sizes="(max-width: 767px) 100vw, 50vw"
+            />
+          </picture>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }
@@ -90,22 +145,21 @@ function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: str
 export default function HowItWorksSection() {
   const { t } = useTranslation('services');
   const rawStepCopy = t('howItWorks.steps', { returnObjects: true });
-  const stepCopy = Array.isArray(rawStepCopy) ? rawStepCopy as StepCopy[] : [];
+  const stepCopy = Array.isArray(rawStepCopy) ? (rawStepCopy as StepCopy[]) : [];
   const steps = stepMeta
     .map((meta, index) => ({ ...meta, ...stepCopy[index] }))
     .filter((step): step is Step => Boolean(step.title && step.description));
 
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
+      <div className={styles.intro}>
         <h2 className={styles.heading}>{t('howItWorks.heading')}</h2>
-        <h3 className={styles.subheading}>{t('howItWorks.subheading')}</h3>
-        <div className={styles.spacer} />
-        <div className={styles.steps}>
-          {steps.map((step, index) => (
-            <ProcessStep key={step.title} step={step} index={index} cta={t('howItWorks.cta')} />
-          ))}
-        </div>
+        <p className={styles.subheading}>{t('howItWorks.subheading')}</p>
+      </div>
+      <div className={styles.steps}>
+        {steps.map((step) => (
+          <ProcessRow key={step.title} step={step} cta="Get your free growth audit" />
+        ))}
       </div>
     </section>
   );
