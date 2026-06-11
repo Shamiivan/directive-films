@@ -19,10 +19,15 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 var(--container-padding);
 }
 
-/* Each leader is a full-bleed 50/50 split row, alternating sides, echoing the
-   services rows. On mobile the portrait stacks above the story text. */
+/* Each leader is a contained 50/50 split row, alternating sides, with the same
+   outer padding rhythm as the section intro. On mobile the portrait stacks
+   above the story text. */
 .row {
   box-sizing: border-box;
   display: flex;
@@ -37,7 +42,7 @@
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  padding: var(--space-3xl) var(--container-padding);
+  padding: var(--space-3xl) 0;
 }
 
 .index {
@@ -148,12 +153,13 @@
 }
 
 @media (max-width: 640px) {
-  .intro {
+  .intro,
+  .rows {
     padding: 0 var(--container-padding-mobile);
   }
 
   .content {
-    padding: var(--space-2xl) var(--container-padding-mobile);
+    padding: var(--space-2xl) 0;
   }
 }
 

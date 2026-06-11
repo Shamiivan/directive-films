@@ -158,7 +158,7 @@ export default function HowItWorksSection() {
       </div>
       <div className={styles.steps}>
         {steps.map((step) => (
-          <ProcessRow key={step.title} step={step} cta="Get your free growth audit" />
+          <ProcessRow key={step.title} step={step} cta={t('howItWorks.cta')} />
         ))}
       </div>
     </section>

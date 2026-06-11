@@ -13,7 +13,7 @@ export default function ServicesCta() {
         <h2 className={styles.heading}>{t('pageCta.title')}</h2>
         <p className={styles.lead}>{t('pageCta.lead')}</p>
         <div className={styles.ctarow}>
-          <Link to={l('/contact')} className={styles.btn}>{t('pageCta.button')}</Link>
+          <Link to={l('/audit')} className={styles.btn}>{t('pageCta.button')}</Link>
         </div>
       </div>
     </section>
