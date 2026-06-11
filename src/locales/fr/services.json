@@ -337,7 +337,7 @@
         "hoverText": "Discutons →"
       },
       {
-        "name": "Croissance",
+        "name": "Scale",
         "headline": "La configuration complète, mois après mois.",
         "description": "Contenu, CRM, site web. Nous gardons tout en mouvement. Points mensuels, chiffres réels.",
         "bestFor": "Les entreprises qui veulent du contenu constant, un vrai système de vente et quelqu'un qui le gère.",
@@ -355,12 +355,12 @@
         "hoverText": "Discutons →"
       },
       {
-        "name": "Scale",
+        "name": "Custom",
         "headline": "Votre équipe, sans l'embauche.",
         "description": "Nous travaillons aux côtés de vos employés. Stratégie, création et développement. Autant ou aussi peu que vous le souhaitez.",
         "bestFor": "Les entreprises qui ont besoin d'une équipe dédiée sans les frais fixes d'une embauche.",
         "includes": [
-          "Tout ce qui est inclus dans Croissance",
+          "Tout ce qui est inclus dans Scale",
           "Équipe de création et de développement dédiée",
           "Stratégie de campagne multi-plateforme",
           "Analytique avancée et tests A/B",

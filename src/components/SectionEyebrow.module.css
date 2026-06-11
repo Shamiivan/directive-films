@@ -10,7 +10,7 @@
   font-size: var(--font-size-label);
   letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   font-weight: var(--font-weight-medium);
   flex-shrink: 0;
 }

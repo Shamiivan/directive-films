@@ -54,7 +54,7 @@
 }
 
 .stepIcon {
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   margin-bottom: var(--space-lg);
   opacity: 0.8;
   transition: opacity var(--transition-slow);
@@ -68,7 +68,7 @@
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
   letter-spacing: var(--letter-spacing-widest);
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   margin-bottom: var(--space-sm);
 }
 

@@ -8,9 +8,9 @@
   --paper:      #f5f1e8;
   --paper-dim:  #cfc9ba;
   --muted:      #8b8d99;
-  --gold:       #e8b04b;
-  --gold2:      #f6c869;
-  --gold-deep:  #b9842b;
+  --gold:       #e8a92b;   /* mid accent — numbers, eyebrows */
+  --gold2:      #fbd305;   /* brightest — matches logo; fills/CTA/glow on dark */
+  --gold-deep:  #d79022;   /* amber/bronze — logo stroke */
   --accent:     #3dd7c0;
   --maxw:       1180px;
   --rad:        18px;
@@ -24,6 +24,19 @@
   --color-gold-hover: var(--gold);
   --color-black: var(--ink);
   --color-white: #ffffff;
+
+  /* Semantic gold roles (match logo; legible per surface).
+     Use -fill/-accent on DARK; use -text-on-light for gold text/thin
+     lines on cream + white so they don't wash out. */
+  --gold-fill:          var(--gold2);   /* solid CTAs, glow, large fills on dark */
+  --gold-accent:        var(--gold);    /* numbers, eyebrows, mid accents on dark */
+  --gold-text-on-light: #a8650a;        /* gold text/thin lines on cream + white */
+  --gold-border:        color-mix(in srgb, var(--gold-deep) 55%, transparent);
+
+  /* Surface-aware gold for TEXT + thin rules. Defaults to bright (correct on
+     dark). Light-surface section roots override this to --gold-text-on-light.
+     Solid gold FILLS keep using --color-gold and stay bright on any surface. */
+  --gold-on-surface:    var(--color-gold);
 
   /* Backgrounds */
   --color-bg-primary: var(--ink);
@@ -70,18 +83,34 @@
   --font-brand: "Archivo Expanded", "Archivo", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
 
-  /* Typography - Font sizes */
-  --font-size-display1: 64px;
-  --font-size-display2: 52px;
-  --font-size-h1: 40px;
-  --font-size-h2: 32px;
-  --font-size-h3: 24px;
-  --font-size-h4: 20px;
-  --font-size-body-lg: 18px;
-  --font-size-body: 16px;
-  --font-size-body-sm: 14px;
-  --font-size-caption: 12px;
-  --font-size-label: 11px;
+  /* Typography - Font sizes.
+     rem-based so text respects user zoom / browser font-size (1rem = 16px).
+     Display + H1/H2 are fluid (marketing headings); body+down stay fixed for
+     predictable reading. Fluid ranges hit their old fixed max on desktop, so
+     no desktop regression — they just scale down gracefully on small screens. */
+  --font-size-display1: clamp(2.75rem, 1.9rem + 4.2vw, 4rem);    /* 44 → 64 */
+  --font-size-display2: clamp(2.25rem, 1.7rem + 2.7vw, 3.25rem); /* 36 → 52 */
+  --font-size-h1: clamp(1.875rem, 1.4rem + 2.4vw, 2.5rem);       /* 30 → 40 */
+  --font-size-h2: clamp(1.5rem, 1.2rem + 1.5vw, 2rem);           /* 24 → 32 */
+  --font-size-h3: 1.5rem;     /* 24 */
+  --font-size-h4: 1.25rem;    /* 20 */
+  --font-size-body-lg: 1.25rem;     /* 20 — lead / section intros */
+  --font-size-body: 1.0625rem;      /* 17 — primary body copy */
+  --font-size-body-sm: 0.9375rem;   /* 15 — secondary / detail copy */
+  --font-size-ui: 0.875rem;         /* 14 — compact UI labels: nav links, buttons, meta */
+  --font-size-caption: 0.75rem;    /* 12 */
+  --font-size-label: 0.6875rem;    /* 11 */
+
+  /* Semantic heading roles — the shared fluid scale every section uses, so
+     headings are consistent site-wide instead of 40+ ad-hoc clamps.
+     -hero: page hero H1 · -section: section title · -lead: hero/section subcopy */
+  --font-size-hero:    clamp(2.5rem, 1.45rem + 5vw, 5.25rem);     /* 40 → 84 */
+  --font-size-section: clamp(2rem, 1.35rem + 3vw, 3.5rem);        /* 32 → 56 */
+  --font-size-lead:    clamp(1.0625rem, 0.95rem + 0.55vw, 1.375rem); /* 17 → 22 */
+
+  /* Measure — comfortable running-text line length (45–75ch ideal) */
+  --measure: 65ch;
+  --measure-narrow: 48ch;
 
   /* Typography - Font weights */
   --font-weight-regular: 400;
@@ -119,8 +148,8 @@
   --container-max-width: 1400px;
   --container-padding: 40px;
   --container-padding-mobile: 20px;
-  --section-padding: 112px;
-  --section-padding-lg: 160px;
+  --section-padding: 96px;
+  --section-padding-lg: 128px;
   --section-padding-mobile: 64px;
 
   /* Border radius */
@@ -138,11 +167,11 @@
   --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.08);
   --shadow-xl: 0 24px 48px rgba(0, 0, 0, 0.1);
-  --shadow-gold: 0 4px 12px rgba(253, 183, 20, 0.2);
-  --shadow-gold-md: 0 4px 20px rgba(253, 183, 20, 0.25);
-  --shadow-gold-lg: 0 8px 24px rgba(253, 183, 20, 0.3);
-  --shadow-gold-hover: 0 8px 32px rgba(253, 183, 20, 0.35);
-  --shadow-gold-xl: 0 8px 24px rgba(253, 183, 20, 0.2);
+  --shadow-gold: 0 4px 12px rgba(251, 211, 5, 0.2);
+  --shadow-gold-md: 0 4px 20px rgba(251, 211, 5, 0.25);
+  --shadow-gold-lg: 0 8px 24px rgba(251, 211, 5, 0.3);
+  --shadow-gold-hover: 0 8px 32px rgba(251, 211, 5, 0.35);
+  --shadow-gold-xl: 0 8px 24px rgba(251, 211, 5, 0.2);
 
   /* Transitions */
   --transition-fast: 150ms ease-in-out;
@@ -173,7 +202,7 @@ body {
   color: var(--paper);
   background: var(--ink);
   font-family: var(--font-body);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

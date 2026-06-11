@@ -67,7 +67,7 @@
   margin-bottom: var(--space-lg);
   width: 48px;
   height: 48px;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   transition: all var(--transition-slow);
   opacity: 0.8;
 }
@@ -101,7 +101,7 @@
   font-family: var(--font-body);
   font-size: var(--font-size-body-sm);
   font-weight: 500;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   margin-top: var(--space-md);
   opacity: 0;
   transform: translateX(-8px);
@@ -136,7 +136,7 @@
 }
 
 .transform {
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   font-weight: 600;
 }
 

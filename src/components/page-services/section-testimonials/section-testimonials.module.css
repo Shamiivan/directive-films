@@ -3,6 +3,7 @@
   background: var(--color-bg-light);
   position: relative;
   overflow: hidden;
+  --gold-on-surface: var(--gold-text-on-light);
 }
 
 .container {

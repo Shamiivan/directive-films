@@ -24,7 +24,7 @@
   font-size: var(--font-size-label);
   letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   margin-bottom: var(--space-md);
 }
 
@@ -131,7 +131,7 @@
 
 .cardArrow {
   font-size: var(--font-size-body-lg);
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   margin-top: var(--space-md);
   opacity: 0;
   transform: translateY(-4px);

@@ -18,8 +18,8 @@
   gap: 9px;
   color: var(--gold2);
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
 }
 
@@ -33,10 +33,10 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(40px, 6vw, 84px);
-  font-weight: 600;
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.04;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--letter-spacing-tight);
   margin-top: 18px;
   color: var(--paper);
 }
@@ -48,7 +48,8 @@
 
 .lead {
   color: var(--paper-dim);
-  font-size: 20px;
+  font-size: var(--font-size-lead);
+  line-height: var(--line-height-relaxed);
   max-width: 640px;
   margin-top: 22px;
 }

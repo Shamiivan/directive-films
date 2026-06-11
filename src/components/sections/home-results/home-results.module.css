@@ -1,6 +1,7 @@
 .section {
   padding: var(--section-padding) 0;
   background: var(--color-bg-light);
+  --gold-on-surface: var(--gold-text-on-light);
 }
 
 .container {
@@ -43,7 +44,7 @@
   font-size: var(--font-size-label);
   letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   padding: var(--space-xs) var(--space-md);
   border: 1px solid var(--color-border-on-light);
   border-radius: var(--radius-pill);

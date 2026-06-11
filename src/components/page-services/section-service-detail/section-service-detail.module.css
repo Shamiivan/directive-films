@@ -45,7 +45,7 @@
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
   letter-spacing: var(--letter-spacing-widest);
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   flex-shrink: 0;
 }
 
@@ -82,7 +82,7 @@
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   margin-bottom: var(--space-lg);
 }
 
@@ -98,7 +98,7 @@
 
 .titleItalic {
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
 }
 
 .subtitle {
@@ -149,7 +149,7 @@
 
 .blockLabelGold {
   composes: blockLabel;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
 }
 
 .blockTitle {
@@ -405,7 +405,7 @@
 
 .ctaButton {
   background: transparent;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   border: 1px solid var(--color-gold);
   padding: 14px 40px;
   border-radius: var(--radius-pill);

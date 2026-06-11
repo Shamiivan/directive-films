@@ -37,12 +37,12 @@
 .title {
   max-width: 920px;
   font-family: var(--font-display);
-  font-size: clamp(42px, 7vw, 88px);
+  font-size: var(--font-size-hero);
   line-height: 1;
   color: var(--color-text-on-dark);
 }
 
 .title em {
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
 }

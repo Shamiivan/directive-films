@@ -82,7 +82,7 @@
 /* Serif-italic gold accent for the highlighted word in a title. */
 .title em {
   font-style: italic;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
 }
 
 .lede {

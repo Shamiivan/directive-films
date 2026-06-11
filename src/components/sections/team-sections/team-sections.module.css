@@ -60,7 +60,7 @@
   font-size: var(--font-size-caption);
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   margin: 0 0 var(--space-sm);
 }
 
