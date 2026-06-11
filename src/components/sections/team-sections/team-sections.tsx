@@ -1,11 +1,8 @@
 import type { RefObject } from 'react';
 import { motion } from 'framer-motion';
 import SectionHeader from '@/components/shared/section-header/section-header';
-import {
-  staggerListContainer,
-  staggerListItem,
-  useParallax,
-} from '@/utils/animations';
+import { useParallax } from '@/utils/animations';
+import Reveal from '@/components/shared/reveal/reveal';
 import styles from './team-sections.module.css';
 
 type Leader = {
@@ -51,26 +48,12 @@ function LeaderRow({ leader, index }: { leader: Leader; index: number }) {
 
   return (
     <div className={rowClassName}>
-      <motion.div
-        className={styles.content}
-        variants={staggerListContainer}
-        initial="initial"
-        whileInView="whileInView"
-        viewport={staggerListContainer.viewport}
-      >
-        <motion.span className={styles.index} variants={staggerListItem}>
-          {String(index + 1).padStart(2, '0')}
-        </motion.span>
-        <motion.p className={styles.role} variants={staggerListItem}>
-          {leader.role}
-        </motion.p>
-        <motion.h3 className={styles.name} variants={staggerListItem}>
-          {leader.name}
-        </motion.h3>
-        <motion.p className={styles.focus} variants={staggerListItem}>
-          {leader.focus}
-        </motion.p>
-      </motion.div>
+      <Reveal className={styles.content} y={28}>
+        <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
+        <p className={styles.role}>{leader.role}</p>
+        <h3 className={styles.name}>{leader.name}</h3>
+        <p className={styles.focus}>{leader.focus}</p>
+      </Reveal>
 
       <div ref={ref as RefObject<HTMLDivElement>} className={styles.imageWrap}>
         <motion.div className={styles.imageDrift} style={{ y }}>

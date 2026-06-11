@@ -1,3 +1,4 @@
+import Reveal from "@/components/shared/reveal/reveal";
 import styles from "./home-faq.module.css";
 
 const faqs = [
@@ -41,8 +42,8 @@ export default function HomeFaqSection({ id = "faq" }: { id?: string } = {}) {
         </div>
 
         <ul className={styles.list}>
-          {faqs.map((item) => (
-            <li className={styles.item} key={item.q}>
+          {faqs.map((item, i) => (
+            <Reveal as="li" className={styles.item} key={item.q} delay={i * 0.05} y={20}>
               <details className={styles.details}>
                 <summary className={styles.summary}>
                   <span>{item.q}</span>
@@ -50,7 +51,7 @@ export default function HomeFaqSection({ id = "faq" }: { id?: string } = {}) {
                 </summary>
                 <p className={styles.answer}>{item.a}</p>
               </details>
-            </li>
+            </Reveal>
           ))}
         </ul>
       </div>
