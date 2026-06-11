@@ -1,5 +1,8 @@
+import { useEffect } from "react";
 import { Links, Meta, Outlet, Scripts, ScrollRestoration, useLocation } from "react-router";
 import { useTranslation } from "react-i18next";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 import "./i18n";
 
 // ... (imports remain same)
@@ -54,6 +57,31 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
+function useSmoothScroll() {
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    let frame = 0;
+    const raf = (time: number) => {
+      lenis.raf(time);
+      frame = requestAnimationFrame(raf);
+    };
+    frame = requestAnimationFrame(raf);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      lenis.destroy();
+    };
+  }, []);
+}
+
 export default function Root() {
+  useSmoothScroll();
   return <Outlet />;
 }
