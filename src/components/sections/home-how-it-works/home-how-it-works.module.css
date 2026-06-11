@@ -1,7 +1,8 @@
 .section {
-  padding: var(--section-padding) 0;
+  padding: var(--section-padding-lg) 0;
   background: var(--color-bg-dark);
   position: relative;
+  overflow: hidden;
 }
 
 .container {
@@ -11,108 +12,97 @@
 }
 
 .steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-lg);
-}
-
-.step {
-  background: var(--color-bg-dark-card);
-  border: 1px solid var(--color-border-dark-subtle);
-  border-radius: var(--radius-xl);
-  padding: var(--space-xl);
-  min-height: 300px;
-  position: relative;
-  overflow: hidden;
+  list-style: none;
+  margin: var(--space-4xl) 0 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  transition: border-color var(--transition-slow), transform var(--transition-slow);
 }
 
-.step::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--color-gold), transparent);
-  opacity: 0.9;
+/* Each step is a full-width cinematic row: oversized numeral + copy.
+   Rows fill their space edge-to-edge instead of floating in a card with a
+   dead bottom half. A hairline rule separates them for rhythm. */
+.step {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  align-items: center;
+  gap: clamp(var(--space-2xl), 6vw, 120px);
+  padding: clamp(var(--space-3xl), 5vw, var(--section-padding)) 0;
+  border-top: 1px solid var(--color-border-dark-subtle);
 }
 
-.step:hover {
-  border-color: var(--color-border-dark-medium);
-  transform: translateY(-2px);
+.step:last-child {
+  border-bottom: 1px solid var(--color-border-dark-subtle);
 }
 
+/* The big number — display serif, dramatic scale, gold-tinted so it reads as
+   a cinematic interlude rather than a label. */
 .number {
   display: block;
-  font-family: var(--font-body);
-  font-size: clamp(56px, 6vw, 88px);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  line-height: 0.82;
-  color: color-mix(in srgb, var(--color-gold) 28%, transparent);
-  margin-bottom: var(--space-xl);
+  font-family: var(--font-display);
+  font-size: clamp(96px, 18vw, 280px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 0.78;
+  color: color-mix(in srgb, var(--color-gold) 24%, transparent);
+  -webkit-text-stroke: 1px color-mix(in srgb, var(--color-gold) 45%, transparent);
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  max-width: 46ch;
 }
 
 .stepTitle {
-  font-family: var(--font-body);
-  font-size: var(--font-size-h3);
+  font-family: var(--font-display);
+  font-size: clamp(var(--font-size-h3), 3.5vw, var(--font-size-h2));
   font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.25;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
   color: var(--color-text-on-dark);
-  margin: 0 0 var(--space-md);
+  margin: 0;
 }
 
 .stepDescription {
   font-family: var(--font-body);
-  font-size: var(--font-size-body-sm);
+  font-size: var(--font-size-body);
   font-weight: 400;
   letter-spacing: 0.01em;
-  line-height: 1.65;
+  line-height: 1.7;
   color: var(--color-text-on-dark-secondary);
   margin: 0;
 }
 
-@media (max-width: 1200px) {
-  .steps {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 900px) {
+  .step {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+    align-items: start;
+  }
+
+  .number {
+    font-size: clamp(88px, 26vw, 180px);
   }
 }
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--section-padding-mobile) 0;
+    padding: var(--section-padding) 0;
   }
 
   .container {
     padding: 0 var(--container-padding-mobile);
   }
 
-  .step {
-    min-height: 240px;
-    padding: var(--space-lg);
-  }
-
-  .number {
-    margin-bottom: var(--space-lg);
-  }
-
-  .stepTitle {
-    font-size: var(--font-size-h4);
+  .steps {
+    margin-top: var(--space-3xl);
   }
 }
 
-@media (max-width: 600px) {
-  .steps {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
+@media (prefers-reduced-motion: reduce) {
   .step {
-    min-height: auto;
+    transform: none !important;
   }
 }
