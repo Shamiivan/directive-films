@@ -7,6 +7,7 @@ import HomeHowItWorksSection from "@/components/sections/home-how-it-works/home-
 import HomeServicesSection from "@/components/sections/home-services/home-services";
 import HomeVideoReelSection from "@/components/sections/home-video-reel/home-video-reel";
 import HomeTestimonialsSection from "@/components/sections/home-testimonials/home-testimonials";
+import HomeResultsSection from "@/components/sections/home-results/home-results";
 import TeamSections from "@/components/sections/team-sections/team-sections";
 import HomeCtaSection from "@/components/sections/home-cta/home-cta";
 import ScrollOver from "@/components/shared/scroll-over/scroll-over";
@@ -37,6 +38,7 @@ export default function SandboxHomePage() {
         }
         over={<HomeTestimonialsSection />}
       />
+      <HomeResultsSection />
       <TeamSections />
       <HomeCtaSection />
       <FooterSection />
