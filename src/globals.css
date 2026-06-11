@@ -119,8 +119,9 @@
   --container-max-width: 1400px;
   --container-padding: 40px;
   --container-padding-mobile: 20px;
-  --section-padding: 60px;
-  --section-padding-mobile: 40px;
+  --section-padding: 112px;
+  --section-padding-lg: 160px;
+  --section-padding-mobile: 64px;
 
   /* Border radius */
   --radius-sm: 4px;
@@ -153,7 +154,7 @@
 @media (max-width: 768px) {
   :root {
     --container-padding: 20px;
-    --section-padding: 40px;
+    --section-padding: 72px;
     --space-2xl: 32px;
     --space-3xl: 48px;
     --space-4xl: 56px;
@@ -163,7 +164,7 @@
 @media (max-width: 480px) {
   :root {
     --container-padding: 16px;
-    --section-padding: 32px;
+    --section-padding: 56px;
   }
 }
 

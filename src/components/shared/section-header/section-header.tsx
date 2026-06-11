@@ -25,6 +25,7 @@ export default function SectionHeader({
     <motion.div className={[styles.header, styles[align], styles[tone]].join(" ")} {...scrollReveal}>
       <SectionEyebrow label={eyebrow} description={eyebrowDescription} />
       <h2 className={styles.title}>{title}</h2>
+      <span className={styles.accent} aria-hidden="true" />
       {intro ? <p className={styles.intro}>{intro}</p> : null}
     </motion.div>
   );
