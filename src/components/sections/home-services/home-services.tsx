@@ -1,10 +1,9 @@
-import { motion } from 'framer-motion';
 import { Bot, ChartNoAxesCombined, Clapperboard, Handshake, Search, Settings2 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 import SectionEyebrow from '../../SectionEyebrow';
+import Reveal from '@/components/shared/reveal/reveal';
 import { EditableTranslation } from '@/cms/EditableTranslation';
 import { useIsEditing } from '@/cms/EditModeProvider';
-import { scrollReveal } from '../../../utils/animations';
 import styles from './home-services.module.css';
 
 const serviceMeta = [
@@ -29,10 +28,12 @@ function ServiceCard3D({ service, meta, index }: { service: Service; meta: (type
   const tag = service.tag ?? meta.tag;
 
   return (
-    <a
+    <Reveal
+      as="a"
       href={service.href}
+      delay={(index % 3) * 0.08}
       className={styles.serviceCard}
-      onClick={editMode ? (e) => e.preventDefault() : undefined}
+      onClick={editMode ? (e: React.MouseEvent) => e.preventDefault() : undefined}
     >
       {tag ? <span className={styles.tag}>{tag}</span> : null}
       <div className={styles.icon}>
@@ -64,7 +65,7 @@ function ServiceCard3D({ service, meta, index }: { service: Service; meta: (type
         />
         {' '}&rarr;
       </span>
-    </a>
+    </Reveal>
   );
 }
 
@@ -75,7 +76,7 @@ export default function HomeServicesSection({ id = 'services' }: { id?: string }
   return (
     <section className={styles.offerSection} id={id}>
       <div className={styles.container}>
-        <motion.div className={styles.header} {...scrollReveal}>
+        <Reveal className={styles.header}>
           <SectionEyebrow
             label={
               <EditableTranslation
@@ -96,7 +97,7 @@ export default function HomeServicesSection({ id = 'services' }: { id?: string }
           />
           <EditableTranslation pageSlug="home" namespace="home" path="offer.title" label="Offer title" as="h2" className={styles.title} />
           <EditableTranslation pageSlug="home" namespace="home" path="offer.subtitle" label="Offer subtitle" kind="text" as="p" className={styles.subtitle} />
-        </motion.div>
+        </Reveal>
 
         <div className={styles.servicesGrid}>
           {services.map((service, index) => (

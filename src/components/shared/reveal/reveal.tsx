@@ -10,7 +10,9 @@ type RevealProps = {
   /** seconds */
   delay?: number;
   duration?: number;
-  as?: "div" | "li" | "section" | "span";
+  as?: "div" | "li" | "section" | "span" | "a" | "p" | "ul" | "h2" | "h3";
+  /** passthrough props (href, onClick, etc.) for the rendered element */
+  [key: string]: unknown;
 };
 
 /**
@@ -26,6 +28,7 @@ export default function Reveal({
   delay = 0,
   duration = 0.65,
   as = "div",
+  ...rest
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
@@ -34,7 +37,11 @@ export default function Reveal({
 
   if (reduce) {
     const Tag = as;
-    return <Tag className={className}>{children}</Tag>;
+    return (
+      <Tag className={className} {...(rest as object)}>
+        {children}
+      </Tag>
+    );
   }
 
   return (
@@ -44,6 +51,7 @@ export default function Reveal({
       initial={{ opacity: 0, y }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y }}
       transition={{ duration, delay, ease: easings.premium as never }}
+      {...(rest as object)}
     >
       {children}
     </MotionTag>
