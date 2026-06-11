@@ -64,7 +64,7 @@
 }
 
 .active {
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
 }
 
 .active::after {

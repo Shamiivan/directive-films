@@ -51,7 +51,7 @@
   font-family: var(--font-body);
   font-size: clamp(36px, 4vw, 56px);
   font-weight: var(--font-weight-bold);
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   line-height: 1;
 }
 

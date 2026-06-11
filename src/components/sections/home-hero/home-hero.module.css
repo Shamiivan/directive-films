@@ -71,7 +71,7 @@
 .title {
   max-width: 16ch;
   font-family: var(--font-display);
-  font-size: clamp(38px, 7vw, 92px);
+  font-size: var(--font-size-hero);
   line-height: 0.98;
   letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text-on-dark);
@@ -82,7 +82,7 @@
 .lede {
   max-width: 60ch;
   color: var(--color-text-on-dark-secondary);
-  font-size: clamp(17px, 2vw, 22px);
+  font-size: var(--font-size-lead);
   line-height: var(--line-height-relaxed);
   text-shadow: 0 1px 18px color-mix(in srgb, var(--ink) 55%, transparent);
 }

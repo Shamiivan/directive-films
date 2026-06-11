@@ -1,6 +1,7 @@
 .section {
   background: var(--color-white);
   color: var(--color-text-on-light);
+  --gold-on-surface: var(--gold-text-on-light);
   box-sizing: border-box;
   padding: var(--space-4xl) 0;
 }
@@ -18,10 +19,10 @@
   box-sizing: border-box;
   color: var(--color-text-on-light);
   font-family: var(--font-display);
-  font-size: 32px;
-  font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-size: var(--font-size-section);
+  font-weight: var(--font-weight-bold);
+  line-height: 1.03;
+  letter-spacing: var(--letter-spacing-tight);
   margin: 0 0 var(--space-md);
 }
 
@@ -29,9 +30,9 @@
   box-sizing: border-box;
   color: var(--color-text-on-light-secondary);
   font-family: var(--font-body);
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
   margin: 0;
 }
 
@@ -62,12 +63,12 @@
 .stepNumber {
   box-sizing: border-box;
   margin-bottom: var(--space-sm);
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   font-family: var(--font-display);
   font-size: 38px;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .tag {
@@ -80,8 +81,8 @@
   border-radius: var(--radius-pill);
   color: var(--color-text-on-light-secondary);
   font-family: var(--font-mono);
-  font-size: 10px;
-  letter-spacing: 0.12em;
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-widest);
   line-height: 1;
   text-transform: uppercase;
 }
@@ -91,9 +92,9 @@
   color: var(--color-text-on-light);
   font-family: var(--font-display);
   font-size: 30px;
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  letter-spacing: var(--letter-spacing-tight);
   margin: var(--space-xs) 0 var(--space-md);
 }
 
@@ -102,9 +103,9 @@
   max-width: 46ch;
   color: var(--color-text-on-light-secondary);
   font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 1.6;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
   margin: 0 0 var(--space-lg);
 }
 
@@ -122,8 +123,8 @@
   gap: var(--space-md);
   color: var(--color-text-on-light);
   font-family: var(--font-body);
-  font-size: 17px;
-  font-weight: 400;
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
   line-height: 1.5;
   margin: 0 0 var(--space-md);
 }
@@ -134,7 +135,7 @@
   width: 26px;
   height: 26px;
   margin-top: 1px;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
 }
 
 .ctaWrap {
@@ -206,14 +207,6 @@
 }
 
 @media (min-width: 768px) {
-  .heading {
-    font-size: 48px;
-  }
-
-  .subheading {
-    font-size: 20px;
-  }
-
   /* Two halves side by side, each exactly 50%, full row height, no gap. */
   .row {
     flex-direction: row;

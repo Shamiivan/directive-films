@@ -35,7 +35,7 @@
   background: rgba(253, 183, 20, 0.08);
   border: 1px solid rgba(253, 183, 20, 0.2);
   border-radius: var(--radius-2xl);
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: uppercase;
@@ -54,7 +54,7 @@
 }
 
 .gold {
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   font-style: italic;
 }
 
@@ -97,7 +97,7 @@
   margin-bottom: var(--space-lg);
   width: 48px;
   height: 48px;
-  color: var(--color-gold);
+  color: var(--gold-on-surface);
   opacity: 0.9;
 }
 

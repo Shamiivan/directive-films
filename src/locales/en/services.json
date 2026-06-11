@@ -337,7 +337,7 @@
         "hoverText": "Let's Talk →"
       },
       {
-        "name": "Growth",
+        "name": "Scale",
         "headline": "The full setup, month to month.",
         "description": "Content, CRM, website. We keep it all moving. Monthly check-ins, real numbers.",
         "bestFor": "Businesses that want consistent content, a real sales system, and someone who owns it.",
@@ -355,12 +355,12 @@
         "hoverText": "Let's Talk →"
       },
       {
-        "name": "Scale",
+        "name": "Custom",
         "headline": "Your team, without the hiring.",
         "description": "We work alongside your people. Strategy, creative, and dev. As much or as little as you need.",
         "bestFor": "Companies that need a dedicated team without the overhead of hiring.",
         "includes": [
-          "Everything in Growth",
+          "Everything in Scale",
           "Dedicated creative & dev team",
           "Multi-platform campaign strategy",
           "Advanced analytics & A/B testing",

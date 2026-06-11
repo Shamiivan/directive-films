@@ -19,8 +19,8 @@
   gap: 9px;
   color: var(--gold2);
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
 }
 
@@ -34,10 +34,10 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(40px, 6vw, 84px);
-  font-weight: 600;
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-semibold);
   line-height: 1.04;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--letter-spacing-tight);
   margin-top: 18px;
   color: var(--paper);
 }
@@ -49,10 +49,10 @@
 
 .lead {
   color: var(--paper-dim);
-  font-size: 20px;
+  font-size: var(--font-size-lead);
   max-width: 640px;
   margin-top: 22px;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 /* ── Form + Info section ─────────────────────────────────── */
@@ -75,8 +75,8 @@
 
 .field label {
   display: block;
-  font-size: 12px;
-  letter-spacing: 0.12em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
   color: var(--muted);
   margin-bottom: 8px;
@@ -93,7 +93,7 @@
   padding: 14px 16px;
   color: var(--paper);
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   transition: border-color 0.2s;
   appearance: none;
 }
@@ -119,9 +119,9 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  font-weight: 700;
-  font-size: 13.5px;
-  letter-spacing: 0.06em;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-ui);
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
   padding: 15px 22px;
   border-radius: 999px;
@@ -163,15 +163,15 @@
 
 .item h3 {
   font-family: var(--font-display);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
   color: var(--paper);
   margin-bottom: 3px;
 }
 
 .item p {
   color: var(--paper-dim);
-  font-size: 14.5px;
+  font-size: var(--font-size-ui);
   margin: 0;
 }
 
@@ -187,7 +187,7 @@
 .metricBig {
   font-family: var(--font-display);
   font-size: 54px;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1;
   color: var(--gold2);
 }
@@ -195,7 +195,7 @@
 .metricCap {
   color: var(--paper-dim);
   margin-top: 10px;
-  font-size: 14.5px;
+  font-size: var(--font-size-ui);
 }
 
 @media (max-width: 920px) {
