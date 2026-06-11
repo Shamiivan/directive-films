@@ -1,6 +1,5 @@
-import { motion } from "framer-motion";
 import SectionHeader from "@/components/shared/section-header/section-header";
-import { gridStagger, scrollRevealDepth } from "@/utils/animations";
+import Reveal from "@/components/shared/reveal/reveal";
 import styles from "./home-how-it-works.module.css";
 
 const steps = [
@@ -35,9 +34,9 @@ export default function HomeHowItWorksSection({ id = "how-it-works" }: { id?: st
           title="Three steps. No jargon."
         />
 
-        <motion.ol className={styles.steps} {...gridStagger}>
+        <ol className={styles.steps}>
           {steps.map((step, index) => (
-            <motion.li className={styles.step} key={step.number} {...scrollRevealDepth(index)}>
+            <Reveal as="li" className={styles.step} key={step.number} delay={index * 0.1} y={40}>
               <span className={styles.number} aria-hidden="true">
                 {step.number}
               </span>
@@ -45,9 +44,9 @@ export default function HomeHowItWorksSection({ id = "how-it-works" }: { id?: st
                 <h3 className={styles.stepTitle}>{step.title}</h3>
                 <p className={styles.stepDescription}>{step.description}</p>
               </div>
-            </motion.li>
+            </Reveal>
           ))}
-        </motion.ol>
+        </ol>
       </div>
     </section>
   );
