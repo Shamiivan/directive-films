@@ -1,9 +1,19 @@
 .banner {
+  position: relative;
   background:
     radial-gradient(110% 120% at 20% -20%, rgba(61, 215, 192, 0.12), transparent 55%),
     radial-gradient(120% 120% at 90% 0%, rgba(232, 176, 75, 0.16), transparent 55%),
     var(--ink);
-  padding: 110px 0 70px;
+  padding: calc(var(--section-padding) + 32px) 0 var(--section-padding);
+  overflow: hidden;
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--line2), transparent);
 }
 
 .wrap {
@@ -56,8 +66,33 @@
 
 .ctarow {
   display: flex;
+  align-items: center;
+  flex-wrap: wrap;
   gap: 14px;
-  margin-top: 26px;
+  margin-top: 32px;
+}
+
+.btnGhost {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 13px 22px;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--paper-dim);
+  border: 1px solid var(--line2);
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+
+.btnGhost:hover {
+  color: var(--paper);
+  border-color: var(--gold2);
+  background: rgba(232, 176, 75, 0.06);
 }
 
 .btn {

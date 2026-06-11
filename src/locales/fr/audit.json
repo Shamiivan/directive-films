@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "label": "Audit de croissance gratuit",
+    "titleLine1": "Voyez exactement où",
+    "titleLine2": "votre croissance",
+    "accent": "fuit.",
+    "description": "Dites-nous où vous en êtes. Nous analysons votre offre, votre contenu et votre tunnel, puis nous vous envoyons un constat clair sur ce qui vous coûte des clients - et ce qu'il faut corriger en premier. Sans pitch, sans engagement.",
+    "form": {
+      "submit": "Obtenir mon audit gratuit",
+      "submitting": "Envoi...",
+      "privacy": "Utilisé uniquement pour réaliser votre audit. Aucun spam, aucune liste."
+    },
+    "thanks": {
+      "title": "Votre audit est en route.",
+      "body": "Merci - nous avons vos informations. Nous analysons votre offre, votre contenu et votre tunnel et revenons vers vous en moins d'un jour ouvrable avec ce qui vous fait perdre de l'argent et quoi faire en premier.",
+      "next": "La suite",
+      "steps": [
+        "Nous analysons votre offre, votre contenu et votre tunnel actuel.",
+        "Nous renvoyons un court constat écrit - les plus grosses fuites d'abord.",
+        "Si c'est un bon fit, on planifie un appel. Sinon, l'audit reste à vous."
+      ]
+    },
+    "panel": {
+      "heading": "Ce que vous obtenez",
+      "items": [
+        {
+          "title": "Où vous perdez de l'argent",
+          "text": "Un constat clair des fuites dans votre offre, votre contenu et votre tunnel - classées par ce qui vous coûte le plus."
+        },
+        {
+          "title": "Un plan à faire en premier",
+          "text": "Les un ou deux leviers qui feront bouger le revenu le plus vite, avec le pourquoi de chacun."
+        },
+        {
+          "title": "Sans engagement",
+          "text": "C'est gratuit et c'est à vous. Si nous ne sommes pas le bon fit, nous vous le dirons franchement."
+        }
+      ],
+      "metricBig": "100M$+",
+      "metricCap": "générés pour les entreprises avec lesquelles nous avons travaillé. La vôtre pourrait être la prochaine."
+    }
+  }
+}

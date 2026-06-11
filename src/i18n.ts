@@ -13,6 +13,8 @@ import careersEn from './locales/en/careers.json';
 import frCareers from './locales/fr/careers.json';
 import contactEn from './locales/en/contact.json';
 import frContact from './locales/fr/contact.json';
+import auditEn from './locales/en/audit.json';
+import frAudit from './locales/fr/audit.json';
 
 // Detect language synchronously from URL to prevent hydration flash
 let initialLng = 'en';
@@ -34,7 +36,8 @@ i18n
                 about: aboutEn,
                 services: servicesEn,
                 careers: careersEn,
-                contact: contactEn
+                contact: contactEn,
+                audit: auditEn
             },
             fr: {
                 common: frCommon,
@@ -43,13 +46,14 @@ i18n
                 services: frServices,
                 careers: frCareers
                 ,
-                contact: frContact
+                contact: frContact,
+                audit: frAudit
             },
         },
         lng: initialLng,
         fallbackLng: 'en',
         defaultNS: 'common',
-        ns: ['common', 'home', 'about', 'services', 'careers', 'contact'],
+        ns: ['common', 'home', 'about', 'services', 'careers', 'contact', 'audit'],
         interpolation: {
             escapeValue: false, // react already safes from xss
         },

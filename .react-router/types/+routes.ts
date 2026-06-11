@@ -39,6 +39,11 @@ type Pages = {
       "lang": string;
     };
   };
+  "/:lang/audit": {
+    params: {
+      "lang": string;
+    };
+  };
   "/:lang/privacy": {
     params: {
       "lang": string;
@@ -67,7 +72,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy" | "/design-system" | "/sandbox/home" | "/sandbox/services" | "/sandbox/team" | "/sandbox/careers" | "/sandbox/contact";
+    page: "/" | "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/audit" | "/:lang/privacy" | "/design-system" | "/sandbox/home" | "/sandbox/services" | "/sandbox/team" | "/sandbox/careers" | "/sandbox/contact";
   };
   "routes/root-redirect.tsx": {
     id: "routes/root-redirect";
@@ -75,7 +80,7 @@ type RouteFiles = {
   };
   "routes/locale-layout.tsx": {
     id: "routes/locale-layout";
-    page: "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/privacy";
+    page: "/:lang" | "/:lang/about" | "/:lang/careers" | "/:lang/contact" | "/:lang/services" | "/:lang/audit" | "/:lang/privacy";
   };
   "routes/home.tsx": {
     id: "routes/home";
@@ -96,6 +101,10 @@ type RouteFiles = {
   "routes/services.tsx": {
     id: "routes/services";
     page: "/:lang/services";
+  };
+  "routes/audit.tsx": {
+    id: "routes/audit";
+    page: "/:lang/audit";
   };
   "routes/privacy.tsx": {
     id: "routes/privacy";
@@ -136,6 +145,7 @@ type RouteModules = {
   "routes/careers": typeof import("./src/routes/careers.tsx");
   "routes/contact": typeof import("./src/routes/contact.tsx");
   "routes/services": typeof import("./src/routes/services.tsx");
+  "routes/audit": typeof import("./src/routes/audit.tsx");
   "routes/privacy": typeof import("./src/routes/privacy.tsx");
   "routes/design-system": typeof import("./src/routes/design-system.tsx");
   "routes/sandbox.home": typeof import("./src/routes/sandbox.home.tsx");
