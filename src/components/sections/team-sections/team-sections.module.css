@@ -1,123 +1,165 @@
 .section {
-  padding: clamp(64px, 8vw, 108px) 0;
+  box-sizing: border-box;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.035), transparent 28%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%),
     var(--color-bg-dark);
   color: var(--color-text-on-dark);
+  padding: var(--space-4xl) 0 0;
 }
 
-.container {
+.intro {
+  box-sizing: border-box;
+  width: 100%;
   max-width: var(--container-max-width);
-  margin: 0 auto;
+  margin: 0 auto var(--space-3xl);
   padding: 0 var(--container-padding);
 }
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(16px, 2.5vw, 28px);
-  max-width: 1120px;
+.rows {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
-.card {
+/* Each leader is a full-bleed 50/50 split row, alternating sides, echoing the
+   services rows. On mobile the portrait stacks above the story text. */
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-top: 1px solid var(--color-border-dark-subtle);
+}
+
+.content {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-3xl) var(--container-padding);
+}
+
+.index {
+  box-sizing: border-box;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
+  color: var(--color-text-on-dark-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.role {
+  box-sizing: border-box;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-caption);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin: 0 0 var(--space-sm);
+}
+
+.name {
+  box-sizing: border-box;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 76px);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  color: var(--color-text-on-dark);
+  margin: 0 0 var(--space-lg);
+}
+
+.focus {
+  box-sizing: border-box;
+  max-width: 42ch;
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-on-dark-secondary);
+  margin: 0;
+}
+
+/* Portrait half fills edge-to-edge — no padding, radius or gap. overflow:hidden
+   clips both the maskWipeIn clip-path reveal and the parallax drift so the
+   portrait always covers its half. A bottom scrim keeps it cinematic. */
+.imageWrap {
+  box-sizing: border-box;
   position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
   overflow: hidden;
-  border: 1px solid var(--color-border-dark-subtle);
-  border-radius: var(--radius-xl);
   background: var(--color-bg-dark-card);
 }
 
-.photo {
-  position: relative;
-  aspect-ratio: 4 / 5;
-  overflow: hidden;
-  background: var(--color-bg-tertiary);
-}
-
-.photo::after {
+.imageWrap::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.74));
+  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.55));
   pointer-events: none;
 }
 
-.photo img {
+.imageDrift {
+  box-sizing: border-box;
+  position: absolute;
+  inset: -8% 0;
+  width: 100%;
+  height: 116%;
+}
+
+.image {
+  box-sizing: border-box;
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: scale(1.01);
 }
 
-.photo span {
-  position: absolute;
-  right: var(--space-lg);
-  bottom: var(--space-lg);
-  z-index: 1;
-  color: var(--paper);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-caption);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.content {
-  display: grid;
-  gap: var(--space-sm);
-  padding: clamp(20px, 2.4vw, 28px);
-}
-
-.content h3 {
-  font-family: var(--font-display);
-  font-size: clamp(24px, 2.5vw, 34px);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tight);
-  line-height: var(--line-height-tight);
-}
-
-.content .role {
-  color: var(--color-gold);
-  font-family: var(--font-mono);
-  font-size: var(--font-size-caption);
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  margin: calc(-1 * var(--space-sm)) 0 var(--space-xs);
-}
-
-.content p {
-  max-width: 520px;
-  color: var(--color-text-on-dark-secondary);
-  font-size: var(--font-size-body);
-  line-height: var(--line-height-relaxed);
-}
-
-@media (max-width: 900px) {
-  .grid {
-    grid-template-columns: 1fr;
+@media (min-width: 768px) {
+  /* Two halves side by side, each exactly 50%, near-full-viewport height,
+     alternating which side the portrait sits on. */
+  .row {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: min(88vh, 820px);
   }
 
-  .photo {
-    aspect-ratio: 16 / 11;
+  .imageRight {
+    flex-direction: row;
+  }
+
+  .imageLeft {
+    flex-direction: row-reverse;
+  }
+
+  .content {
+    width: 50%;
+    padding: var(--space-4xl) clamp(48px, 7vw, 112px);
+  }
+
+  /* Portrait half stretches to the full height of the story half — no dead
+     space, mirroring the services full-bleed split. */
+  .imageWrap {
+    width: 50%;
+    aspect-ratio: auto;
+    align-self: stretch;
   }
 }
 
 @media (max-width: 640px) {
-  .section {
-    padding: var(--space-4xl) 0;
-  }
-
-  .container {
+  .intro {
     padding: 0 var(--container-padding-mobile);
   }
 
-  .photo {
-    aspect-ratio: 4 / 5;
+  .content {
+    padding: var(--space-2xl) var(--container-padding-mobile);
   }
+}
 
-  .photo span {
-    right: var(--space-md);
-    bottom: var(--space-md);
-    max-width: calc(100% - 32px);
+@media (prefers-reduced-motion: reduce) {
+  .imageDrift {
+    inset: 0;
+    height: 100%;
   }
 }

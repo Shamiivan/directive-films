@@ -1,16 +1,19 @@
+import { motion } from "framer-motion";
 import SectionHeader from "@/components/shared/section-header/section-header";
+import { gridStagger, scrollRevealDepth } from "@/utils/animations";
 import styles from "./offer.module.css";
+
+const featured = {
+  value: "$100M+",
+  label: "Revenue generated for clients",
+  detail: "Tracked, not guessed",
+};
 
 const metrics = [
   {
     value: "430+",
     label: "Businesses served",
     detail: "B2B and B2C, every industry",
-  },
-  {
-    value: "$100M+",
-    label: "Revenue generated for clients",
-    detail: "Tracked, not guessed",
   },
   {
     value: "10 yrs",
@@ -41,15 +44,32 @@ export default function OfferSection({ id = "offer" }: { id?: string } = {}) {
           intro="Pretty videos are easy. Ten years in, what we're actually measured on is the money that lands in your account — so that's what we build for."
         />
 
-        <div className={styles.metricsGrid}>
-          {metrics.map((metric) => (
-            <article className={styles.metricCard} key={metric.label}>
-              <strong className={styles.metricValue}>{metric.value}</strong>
-              <h3 className={styles.metricLabel}>{metric.label}</h3>
-              <p className={styles.metricDetail}>{metric.detail}</p>
-            </article>
-          ))}
-        </div>
+        <motion.div className={styles.proof} {...gridStagger}>
+          <motion.article
+            className={styles.featured}
+            {...scrollRevealDepth(0)}
+          >
+            <strong className={styles.featuredValue}>{featured.value}</strong>
+            <h3 className={styles.featuredLabel}>{featured.label}</h3>
+            <p className={styles.featuredDetail}>{featured.detail}</p>
+          </motion.article>
+
+          <div className={styles.supporting}>
+            {metrics.map((metric, index) => (
+              <motion.article
+                className={styles.metricCard}
+                key={metric.label}
+                {...scrollRevealDepth(index + 1)}
+              >
+                <strong className={styles.metricValue}>{metric.value}</strong>
+                <div className={styles.metricText}>
+                  <h3 className={styles.metricLabel}>{metric.label}</h3>
+                  <p className={styles.metricDetail}>{metric.detail}</p>
+                </div>
+              </motion.article>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
