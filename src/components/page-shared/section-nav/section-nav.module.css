@@ -10,9 +10,9 @@
 }
 
 .wrap {
-  max-width: var(--maxw);
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--container-padding);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -222,6 +222,10 @@
 
 /* ── Responsive ────────────────────────────────────────── */
 @media (max-width: 768px) {
+  .wrap {
+    padding: 0 var(--container-padding-mobile);
+  }
+
   .navList {
     display: none;
   }
