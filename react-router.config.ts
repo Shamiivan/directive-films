@@ -5,7 +5,7 @@ export default {
   appDirectory: "src",
   async prerender() {
     const locales = ["en", "fr"];
-    const pages = ["", "about", "careers", "contact", "services", "privacy"];
+    const pages = ["", "about", "careers", "contact", "services", "audit", "privacy"];
     return locales.flatMap((l) => pages.map((p) => `/${l}${p ? `/${p}` : ""}`));
   },
 } satisfies Config;

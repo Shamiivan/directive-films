@@ -1,4 +1,7 @@
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { staggerListContainer, staggerListItem } from '@/utils/animations';
 import styles from './section-open-positions.module.css';
 
 type Job = {
@@ -14,23 +17,40 @@ export default function OpenPositionsSection() {
   return (
     <section className={styles.section} id="apply">
       <div className={styles.wrap}>
-        <span className={styles.eyebrow}>{t('openRoles.eyebrow')}</span>
-        <div className={styles.jobs}>
-          {jobs.map((job) => (
-            <div key={job.title} className={styles.job}>
-              <div>
-                <h3>{job.title}</h3>
-                <div className={styles.meta}>{job.meta}</div>
-              </div>
-              <div className={styles.jobRight}>
-                <span className={styles.pill}>{job.tag}</span>
-                <a href="mailto:info@directivefilms.com" className={styles.btn}>{t('openRoles.apply')}</a>
-              </div>
-            </div>
-          ))}
+        <div className={styles.head}>
+          <span className={styles.eyebrow}>{t('openRoles.eyebrow')}</span>
+          <span className={styles.count}>
+            <strong>{jobs.length}</strong> open
+          </span>
         </div>
+
+        <motion.div
+          className={styles.jobs}
+          variants={staggerListContainer}
+          initial="initial"
+          whileInView="whileInView"
+          viewport={staggerListContainer.viewport}
+        >
+          {jobs.map((job) => (
+            <motion.a
+              key={job.title}
+              href="mailto:info@directivefilms.com"
+              className={styles.job}
+              variants={staggerListItem}
+            >
+              <span className={styles.tag}>{job.tag}</span>
+              <span className={styles.body}>
+                <span className={styles.title}>{job.title}</span>
+                <span className={styles.meta}>{job.meta}</span>
+              </span>
+              <span className={styles.apply}>
+                {t('openRoles.apply')}
+                <ArrowUpRight size={16} strokeWidth={2} />
+              </span>
+            </motion.a>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
 }
-

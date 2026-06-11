@@ -1,0 +1,43 @@
+{
+  "hero": {
+    "label": "Free Growth Audit",
+    "titleLine1": "See exactly where",
+    "titleLine2": "your growth",
+    "accent": "is leaking.",
+    "description": "Tell us where you're at. We'll review your offer, content and funnel, then send back a clear read on what's costing you customers - and what to fix first. No pitch, no commitment.",
+    "form": {
+      "submit": "Get my free audit",
+      "submitting": "Sending...",
+      "privacy": "We only use this to run your audit. No spam, no list."
+    },
+    "thanks": {
+      "title": "Your audit is on its way.",
+      "body": "Thanks - we've got your details. We'll review your offer, content and funnel and get back to you within one business day with where you're losing money and what to do first.",
+      "next": "What happens next",
+      "steps": [
+        "We review your offer, content and current funnel.",
+        "We send back a short written read - the biggest leaks first.",
+        "If it's a fit, we book a call. If not, the audit is still yours to keep."
+      ]
+    },
+    "panel": {
+      "heading": "What you get",
+      "items": [
+        {
+          "title": "Where you're losing money",
+          "text": "A clear read on the leaks in your offer, content and funnel - ranked by what's costing you the most."
+        },
+        {
+          "title": "A do-this-first plan",
+          "text": "The one or two moves that will move revenue fastest, with the why behind each."
+        },
+        {
+          "title": "No commitment",
+          "text": "It's free and yours to keep. If we're not the right fit, we'll tell you straight."
+        }
+      ],
+      "metricBig": "$100M+",
+      "metricCap": "generated for the businesses we've worked with. Yours could be next."
+    }
+  }
+}

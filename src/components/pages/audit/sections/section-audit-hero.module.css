@@ -1,0 +1,308 @@
+/* ── Banner ─────────────────────────────────────────────── */
+.banner {
+  background:
+    radial-gradient(110% 120% at 20% -20%, rgba(61, 215, 192, 0.12), transparent 55%),
+    radial-gradient(120% 120% at 90% 0%, rgba(232, 176, 75, 0.16), transparent 55%),
+    var(--ink);
+  padding: 110px 0 70px;
+}
+
+.wrap {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--gold2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 26px;
+  height: 1px;
+  background: var(--gold2);
+  display: inline-block;
+}
+
+.heading {
+  font-family: var(--font-display);
+  font-size: clamp(40px, 6vw, 84px);
+  font-weight: 600;
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  margin-top: 18px;
+  color: var(--paper);
+}
+
+.serifIt {
+  font-style: italic;
+  color: var(--gold2);
+}
+
+.lead {
+  color: var(--paper-dim);
+  font-size: 20px;
+  max-width: 640px;
+  margin-top: 22px;
+  line-height: 1.6;
+}
+
+/* ── Form + Panel section ────────────────────────────────── */
+.section {
+  padding: 96px 0;
+  background: var(--ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+/* Form */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-family: var(--font-mono);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  background: var(--ink2);
+  border: 1px solid var(--line2);
+  border-radius: 12px;
+  padding: 14px 16px;
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: border-color 0.2s;
+  appearance: none;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+  outline: none;
+  border-color: var(--gold2);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: var(--muted);
+}
+
+.submitBtn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-weight: 700;
+  font-size: 13.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 15px 22px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--gold2), var(--gold-deep));
+  color: #180f00;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submitBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 34px -10px rgba(232, 176, 75, 0.6);
+}
+
+.privacy {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 14px;
+  line-height: 1.5;
+}
+
+/* ── Thank-you state ─────────────────────────────────────── */
+.thanks {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--rad);
+  padding: 40px 34px;
+}
+
+.thanksIco {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(232, 176, 75, 0.13);
+  border: 1px solid rgba(232, 176, 75, 0.25);
+  display: grid;
+  place-items: center;
+  color: var(--gold2);
+  margin-bottom: 22px;
+}
+
+.thanksTitle {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 600;
+  line-height: 1.1;
+  color: var(--paper);
+}
+
+.thanksBody {
+  color: var(--paper-dim);
+  font-size: 16px;
+  line-height: 1.6;
+  margin-top: 14px;
+}
+
+.thanksNext {
+  color: var(--gold2);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 30px;
+}
+
+.thanksSteps {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+}
+
+.thanksSteps li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+  color: var(--paper-dim);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.thanksSteps li:last-child {
+  border-bottom: none;
+}
+
+.stepNum {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(232, 176, 75, 0.13);
+  border: 1px solid rgba(232, 176, 75, 0.25);
+  color: var(--gold2);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+/* ── "What you get" panel ────────────────────────────────── */
+.panelHeading {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--paper);
+  margin-bottom: 6px;
+}
+
+.item {
+  display: flex;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.item:first-of-type {
+  border-top: 1px solid var(--line);
+}
+
+.ico {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(232, 176, 75, 0.13);
+  border: 1px solid rgba(232, 176, 75, 0.25);
+  display: grid;
+  place-items: center;
+  color: var(--gold2);
+  flex-shrink: 0;
+}
+
+.item h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--paper);
+  margin-bottom: 3px;
+}
+
+.item p {
+  color: var(--paper-dim);
+  font-size: 14.5px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Metric card */
+.metricCard {
+  margin-top: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: var(--rad);
+  padding: 34px 28px;
+}
+
+.metricBig {
+  font-family: var(--font-display);
+  font-size: 54px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--gold2);
+}
+
+.metricCap {
+  color: var(--paper-dim);
+  margin-top: 10px;
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 920px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submitBtn {
+    transition: none;
+  }
+  .submitBtn:hover {
+    transform: none;
+  }
+}

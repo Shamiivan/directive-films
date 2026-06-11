@@ -24,23 +24,15 @@ export default function SandboxHomePage() {
       <OfferSection />
       <HomeHowItWorksSection />
       <HomeServicesSection />
-      <HomeVideoReelSection
-        id="ads"
-        eyebrow="Our work"
-        title="Some of the ads that we produced"
-        videoIds={adVideos}
-        cardTitle="Produced ad"
-        tone="light"
-      />
       <ScrollOver
         under={
           <HomeVideoReelSection
-            id="client-stories"
-            eyebrow="In their words"
-            title="What they say about us"
-            videoIds={testimonialVideos}
-            cardTitle="Client testimonial"
-            align="center"
+            id="work"
+            eyebrow="Our work"
+            title="Some of the ads that we produced"
+            videoIds={[...adVideos, ...testimonialVideos]}
+            cardTitle="Produced video"
+            tone="dark"
           />
         }
         over={<HomeTestimonialsSection />}
