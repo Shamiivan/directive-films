@@ -1,5 +1,3 @@
-import { useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { useLocalePath } from '../../../hooks/useLocalePath';
 import styles from './section-how-it-works.module.css';
@@ -7,8 +5,8 @@ import styles from './section-how-it-works.module.css';
 function CheckIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.checkIcon} aria-hidden="true">
-      <circle cx="9" cy="9" r="8.5" stroke="#999999" />
-      <path d="M5.5 9L7.8 11.5L12.5 6.5" stroke="#999999" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <circle cx="9" cy="9" r="8.5" stroke="currentColor" />
+      <path d="M5.5 9L7.8 11.5L12.5 6.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -41,14 +39,6 @@ const stepMeta = [
 
 function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: string }) {
   const l = useLocalePath();
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'start 0.35'],
-  });
-
-  const rawScaleX = useTransform(scrollYProgress, [0, 1], [0.84, 1]);
-  const scaleX = index === 0 ? 1 : rawScaleX;
 
   const cardClassName = [
     styles.card,
@@ -56,9 +46,9 @@ function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: str
   ].join(' ');
 
   return (
-    <motion.div ref={ref} className={cardClassName} style={{ scaleX, zIndex: index + 1 }}>
+    <div className={cardClassName} style={{ zIndex: index + 1 }}>
       <div className={styles.content}>
-        <div className={styles.stepNumber}>{step.marker}</div>
+        <div className={styles.stepNumber}>{step.marker.padStart(2, '0')}</div>
         {step.tag ? <span className={styles.tag}>{step.tag}</span> : null}
         <h4 className={styles.cardTitle}>{step.title}</h4>
         <p className={styles.cardDesc}>{step.description}</p>
@@ -93,7 +83,7 @@ function ProcessStep({ step, index, cta }: { step: Step; index: number; cta: str
           />
         </picture>
       </div>
-    </motion.div>
+    </div>
   );
 }
 
