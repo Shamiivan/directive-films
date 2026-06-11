@@ -9,6 +9,7 @@ import HomeVideoReelSection from "@/components/sections/home-video-reel/home-vid
 import HomeTestimonialsSection from "@/components/sections/home-testimonials/home-testimonials";
 import TeamSections from "@/components/sections/team-sections/team-sections";
 import HomeCtaSection from "@/components/sections/home-cta/home-cta";
+import ScrollOver from "@/components/shared/scroll-over/scroll-over";
 import styles from "./sandbox-home-page.module.css";
 
 const adVideos = ["1171040145", "1145069446", "1144141000", "1142037166", "1141935607", "1141924603"];
@@ -31,15 +32,19 @@ export default function SandboxHomePage() {
         cardTitle="Produced ad"
         tone="light"
       />
-      <HomeVideoReelSection
-        id="client-stories"
-        eyebrow="In their words"
-        title="What they say about us"
-        videoIds={testimonialVideos}
-        cardTitle="Client testimonial"
-        align="center"
+      <ScrollOver
+        under={
+          <HomeVideoReelSection
+            id="client-stories"
+            eyebrow="In their words"
+            title="What they say about us"
+            videoIds={testimonialVideos}
+            cardTitle="Client testimonial"
+            align="center"
+          />
+        }
+        over={<HomeTestimonialsSection />}
       />
-      <HomeTestimonialsSection />
       <TeamSections />
       <HomeCtaSection />
       <FooterSection />

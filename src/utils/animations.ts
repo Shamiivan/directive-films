@@ -2,6 +2,8 @@
  * Reusable Framer Motion animation variants
  * Premium animations with award-winning techniques
  */
+import { useRef } from "react";
+import { useScroll, useTransform, useReducedMotion } from "framer-motion";
 
 // Professional easing curves (setting the vibe/mood)
 export const easings = {
@@ -126,6 +128,57 @@ export const scrollRevealDepth = (index: number) => ({
     ease: [0.25, 0.1, 0.25, 1] as any,
   },
 });
+
+// --- Foundation: scroll-reveal helpers for the redesign (services rows, etc.) ---
+
+/**
+ * Masked image reveal — the image wipes up from behind a clip-path mask with a
+ * subtle settle from scale. Pair with a parallax drift for the full effect.
+ */
+export const maskWipeIn = {
+  initial: { clipPath: "inset(0 0 100% 0)", scale: 1.08, opacity: 0.5 },
+  whileInView: { clipPath: "inset(0 0 0% 0)", scale: 1, opacity: 1 },
+  viewport: { once: true, margin: "-80px" },
+  transition: { duration: 0.9, ease: easings.expo as any },
+};
+
+/**
+ * Checklist / list stagger. Apply `staggerListContainer` to the list element
+ * and `staggerListItem` to each child so items rise in one-by-one.
+ */
+export const staggerListContainer = {
+  initial: {},
+  whileInView: {
+    transition: { staggerChildren: 0.08, delayChildren: 0.15 },
+  },
+  viewport: { once: true, margin: "-80px" },
+};
+
+export const staggerListItem = {
+  initial: { opacity: 0, y: 14 },
+  whileInView: { opacity: 1, y: 0 },
+  transition: { duration: 0.5, ease: easings.premium as any },
+};
+
+/**
+ * Reduced-motion-aware parallax. Attach the returned `ref` to the scroll
+ * container and bind the `y` motion value to the element you want to drift.
+ * Returns y = 0 throughout when the user prefers reduced motion.
+ */
+export function useParallax(distance = 60) {
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(
+    scrollYProgress,
+    [0, 1],
+    reduce ? [0, 0] : [distance, -distance]
+  );
+  return { ref, y };
+}
 
 // Utility functions
 
