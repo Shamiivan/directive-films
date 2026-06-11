@@ -25,7 +25,7 @@ const leaders: Leader[] = [
   {
     name: 'Damon',
     role: 'CEO / Founder',
-    focus: 'Strategy, creative direction, and client outcomes.',
+    focus: 'Damon brings direct experience selling and building sales systems in live environments. He has scaled teams, created operating structure, and led performance-focused execution across French-speaking markets.',
     image: '/team/ceo.jpg',
     imageSide: 'left',
   },

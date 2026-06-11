@@ -410,7 +410,7 @@
   "howItWorks": {
     "heading": "How it works",
     "subheading": "From the first audit to a closed deal - one team, the whole journey.",
-    "cta": "Book a call",
+    "cta": "Get your free growth audit",
     "steps": [
       {
         "tag": "Free",
@@ -516,6 +516,6 @@
   "pageCta": {
     "title": "Don't know where to start?",
     "lead": "Tell us the goal. After 430+ businesses, we can usually spot the fastest path to revenue on the first call.",
-    "button": "Let's talk"
+    "button": "Get your free growth audit"
   }
 }

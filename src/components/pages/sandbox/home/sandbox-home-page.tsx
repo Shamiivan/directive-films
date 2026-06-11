@@ -9,6 +9,9 @@ import HomeVideoReelSection from "@/components/sections/home-video-reel/home-vid
 import HomeTestimonialsSection from "@/components/sections/home-testimonials/home-testimonials";
 import HomeResultsSection from "@/components/sections/home-results/home-results";
 import TeamSections from "@/components/sections/team-sections/team-sections";
+import PricingSection from "@/components/page-home/section-pricing/section-pricing";
+import HomeFaqSection from "@/components/sections/home-faq/home-faq";
+import HomeGuaranteeSection from "@/components/sections/home-guarantee/home-guarantee";
 import HomeCtaSection from "@/components/sections/home-cta/home-cta";
 import ScrollOver from "@/components/shared/scroll-over/scroll-over";
 import styles from "./sandbox-home-page.module.css";
@@ -40,6 +43,9 @@ export default function SandboxHomePage() {
       />
       <HomeResultsSection />
       <TeamSections />
+      <PricingSection />
+      <HomeFaqSection />
+      <HomeGuaranteeSection />
       <HomeCtaSection />
       <FooterSection />
     </main>

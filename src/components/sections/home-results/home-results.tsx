@@ -34,18 +34,16 @@ export default function HomeResultsSection({ id = "results" }: { id?: string } =
             <h3 className={styles.title}>$57.3M Generated for TELUS in 3.5 Years</h3>
             <div className={styles.body}>
               <p>
-                Over a 3.5-year partnership, we acted as TELUS&apos;s external sales
-                operation in Quebec — scaling the sales organization from 2 to 75
-                agents across in-person, phone, and digital channels.
+                For TELUS Quebec, the mandate was not activity. It was results.
               </p>
               <p>
-                The result: $57.3M in attributable revenue, generated through a
-                performance-aligned model focused on customer acquisition and
-                operational scale.
+                Over 3.5 years, we helped scale a 2-person operation into a 75-agent
+                acquisition engine across in-person, phone, and digital channels.
               </p>
               <p>
-                Executed under a performance-based partnership with fully aligned
-                incentives.
+                That system generated $57.3M in attributable revenue, delivered
+                through a performance-based partnership where incentives were tied
+                directly to outcomes.
               </p>
             </div>
           </motion.div>

@@ -410,7 +410,7 @@
   "howItWorks": {
     "heading": "Comment ça marche",
     "subheading": "Du premier audit au contrat signé - une seule équipe, tout le parcours.",
-    "cta": "Réserver un appel",
+    "cta": "Obtenez votre audit de croissance gratuit",
     "steps": [
       {
         "tag": "Gratuit",
@@ -545,6 +545,6 @@
   "pageCta": {
     "title": "Vous ne savez pas par où commencer?",
     "lead": "Dites-nous le but. Après 430+ entreprises, nous pouvons souvent repérer le chemin le plus rapide vers le revenu au premier appel.",
-    "button": "Parlons-en"
+    "button": "Obtenez votre audit de croissance gratuit"
   }
 }
