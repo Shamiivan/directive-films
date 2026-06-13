@@ -15,7 +15,8 @@
   border-start-start-radius: var(--radius-3xl);
   border-start-end-radius: var(--radius-3xl);
   overflow: hidden;
-  box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 calc(var(--space-lg) * -1) calc(var(--space-2xl) + 2px)
+    color-mix(in srgb, var(--ink) 22%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {

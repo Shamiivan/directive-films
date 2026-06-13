@@ -1,9 +1,9 @@
 .bigcta {
   background:
-    radial-gradient(120% 130% at 50% 0%, rgba(232, 176, 75, 0.2), transparent 60%),
+    radial-gradient(120% 130% at 50% 0%, var(--gold-a-20), transparent 60%),
     var(--ink2);
   border-top: 1px solid var(--line);
-  padding: 64px 0;
+  padding: var(--section-padding-compact) 0;
 }
 
 .wrap {
@@ -31,7 +31,7 @@
 
 .ctarow {
   display: flex;
-  gap: 14px;
+  gap: calc(var(--space-sm) + var(--space-xs) + 2px);
   justify-content: center;
   flex-wrap: wrap;
 }
@@ -39,23 +39,23 @@
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--button-gap);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-ui);
   letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
-  padding: 13px 22px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold2), var(--gold-deep));
-  color: #180f00;
+  padding: var(--button-padding);
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand-gold);
+  color: var(--gold-ink);
   transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border-glass);
   text-decoration: none;
 }
 
 .btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 34px -10px rgba(232, 176, 75, 0.6);
+  box-shadow: var(--shadow-gold-cta);
 }
 
 @media (max-width: 768px) {

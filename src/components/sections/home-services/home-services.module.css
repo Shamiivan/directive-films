@@ -73,10 +73,10 @@
   font-family: var(--font-mono);
   font-size: var(--font-size-label);
   letter-spacing: var(--letter-spacing-widest);
-  color: var(--gold2);
-  border: 1px solid rgba(232, 176, 75, 0.35);
-  padding: 5px 9px;
-  border-radius: 999px;
+  color: var(--color-gold);
+  border: 1px solid var(--gold-a-35);
+  padding: var(--badge-padding);
+  border-radius: var(--radius-full);
   text-transform: uppercase;
 }
 
@@ -193,7 +193,7 @@
 @media (max-width: 600px) {
   .servicesGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--space-lg);
   }
 
   .serviceCard {

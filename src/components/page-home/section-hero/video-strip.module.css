@@ -12,7 +12,7 @@
 
 .stripTrack {
   display: flex;
-  gap: 20px;
+  gap: var(--composition-gap-md);
   /* Start from middle of the set (-2160px) so images are visible on both sides immediately.
      Animate one full set width (4320px) from there. */
   animation: scroll 120s linear infinite;
@@ -24,10 +24,10 @@
 .slide {
   width: 250px;
   height: 80%;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   overflow: hidden;
   flex-shrink: 0;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-bg-glass-dark);
 }
 
 .slide img {
@@ -52,12 +52,12 @@
 
 .stripWrapper::before {
   left: 0;
-  background: linear-gradient(to right, #0a0a0a 0%, rgba(10, 10, 10, 0.85) 40%, transparent 100%);
+  background: linear-gradient(to right, var(--ink) 0%, color-mix(in srgb, var(--ink) 85%, transparent) 40%, transparent 100%);
 }
 
 .stripWrapper::after {
   right: 0;
-  background: linear-gradient(to left, #0a0a0a 0%, rgba(10, 10, 10, 0.85) 40%, transparent 100%);
+  background: linear-gradient(to left, var(--ink) 0%, color-mix(in srgb, var(--ink) 85%, transparent) 40%, transparent 100%);
 }
 
 /* 16 slides * (250px + 20px gap) = 4320px per set.

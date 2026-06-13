@@ -1,18 +1,18 @@
 .section {
-  background: #0c0c10;
-  padding: 64px 0;
+  background: var(--color-bg-dark-soft);
+  padding: var(--section-padding-compact) 0;
 }
 
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--button-gap);
   color: var(--gold2);
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
@@ -34,25 +34,25 @@
   font-weight: var(--font-weight-bold);
   line-height: 1.03;
   letter-spacing: var(--letter-spacing-tight);
-  margin: 14px 0 0;
+  margin: calc(var(--space-md) - 2px) 0 0;
   color: var(--paper);
 }
 
 .vals {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
+  gap: var(--composition-gap-sm);
   margin-top: 38px;
 }
 
 .val {
   border-left: 2px solid var(--gold2);
-  padding: 6px 0 6px 22px;
+  padding: calc(var(--space-sm) - 2px) 0 calc(var(--space-sm) - 2px) var(--button-padding-x);
 }
 
 .val h3 {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: var(--font-size-title-sm);
   font-weight: 600;
   color: var(--paper);
   margin-bottom: 8px;
@@ -60,7 +60,7 @@
 
 .val p {
   color: var(--paper-dim);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   margin: 0;
   line-height: 1.6;
 }

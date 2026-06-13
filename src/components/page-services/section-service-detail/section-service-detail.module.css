@@ -36,7 +36,7 @@
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(253, 183, 20, 0.25) 50%,
+    var(--gold2-a-25) 50%,
     transparent 100%
   );
 }
@@ -65,7 +65,7 @@
   font-weight: 700;
   line-height: 0.85;
   color: transparent;
-  -webkit-text-stroke: 1px rgba(253, 183, 20, 0.3);
+  -webkit-text-stroke: 1px var(--gold2-a-30);
   user-select: none;
   padding-top: 0.05em;
 }
@@ -88,7 +88,7 @@
 
 .title {
   font-family: var(--font-body);
-  font-size: clamp(32px, 3.5vw + 8px, 52px);
+  font-size: var(--font-size-section-lg);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   line-height: var(--line-height-tight);
@@ -123,7 +123,7 @@
 
 .solutionBlock {
   padding: var(--space-xl) var(--space-2xl);
-  border-left: 1px solid rgba(253, 183, 20, 0.2);
+  border-left: 1px solid var(--gold2-a-20);
   position: relative;
 }
 
@@ -183,10 +183,10 @@
   height: 1px;
   background: linear-gradient(
     90deg,
-    rgba(253, 183, 20, 0.08) 0%,
-    rgba(253, 183, 20, 0.2) 20%,
-    rgba(253, 183, 20, 0.2) 80%,
-    rgba(253, 183, 20, 0.08) 100%
+    var(--gold2-a-08) 0%,
+    var(--gold2-a-20) 20%,
+    var(--gold2-a-20) 80%,
+    var(--gold2-a-08) 100%
   );
 }
 
@@ -224,7 +224,7 @@
   height: 7px;
   border-radius: var(--radius-full);
   background: var(--color-gold);
-  box-shadow: 0 0 8px rgba(253, 183, 20, 0.4);
+  box-shadow: var(--shadow-gold-glow-md);
 }
 
 .processNum {
@@ -265,7 +265,7 @@
 
 .proofStat {
   font-family: var(--font-body);
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   line-height: 1;
@@ -314,8 +314,8 @@
   height: 3px;
   background: repeating-linear-gradient(
     90deg,
-    rgba(253, 183, 20, 0.12) 0px,
-    rgba(253, 183, 20, 0.12) 16px,
+    var(--gold2-a-12) 0px,
+    var(--gold2-a-12) 16px,
     transparent 16px,
     transparent 24px
   );
@@ -375,15 +375,15 @@
   left: 0;
   right: 0;
   padding: var(--space-lg) var(--space-md) var(--space-md);
-  background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.9) 100%);
+  background: linear-gradient(180deg, transparent 0%, color-mix(in srgb, var(--color-black) 90%, transparent) 100%);
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  gap: calc(var(--space-xs) * 0.5);
 }
 
 .galleryCategory {
   font-family: var(--font-mono);
-  font-size: 10px;
+  font-size: var(--font-size-micro);
   font-weight: var(--font-weight-regular);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-widest);
@@ -407,7 +407,7 @@
   background: transparent;
   color: var(--gold-on-surface);
   border: 1px solid var(--color-gold);
-  padding: 14px 40px;
+  padding: calc(var(--space-md) - 2px) calc(var(--space-xl) + var(--space-sm));
   border-radius: var(--radius-pill);
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-body);
@@ -433,7 +433,7 @@
   }
 
   .headerNumber {
-    font-size: 72px;
+    font-size: var(--font-size-display-2xl);
     line-height: 1;
   }
 
@@ -448,7 +448,7 @@
 
   .solutionBlock {
     border-left: none;
-    border-top: 1px solid rgba(253, 183, 20, 0.2);
+    border-top: 1px solid var(--gold2-a-20);
     padding: var(--space-xl) 0 0;
   }
 
@@ -474,7 +474,7 @@
   .processStep {
     padding-top: var(--space-md);
     padding-left: var(--space-md);
-    border-left: 1px solid rgba(253, 183, 20, 0.15);
+    border-left: 1px solid var(--gold2-a-15);
   }
 }
 
@@ -497,11 +497,11 @@
   }
 
   .headerNumber {
-    font-size: 56px;
+    font-size: var(--font-size-display-lg);
   }
 
   .title {
-    font-size: clamp(28px, 6vw, 40px);
+    font-size: var(--font-size-h1);
   }
 
   .processSteps {
@@ -515,7 +515,7 @@
   }
 
   .proofStat {
-    font-size: 40px;
+    font-size: var(--font-size-h1);
   }
 
   .galleryCard {

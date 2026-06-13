@@ -19,14 +19,14 @@
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-size: var(--font-size-display1);
   font-weight: 700;
   margin-bottom: 1rem;
   color: var(--color-text-primary);
 }
 
 .subtitle {
-  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-size: var(--font-size-lead);
   color: var(--color-text-tertiary);
   max-width: 600px;
   margin: 0 auto;
@@ -102,9 +102,9 @@
   height: 100%;
   background: linear-gradient(
     180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.7) 60%,
-    rgba(0, 0, 0, 0.95) 100%
+    transparent 0%,
+    color-mix(in srgb, var(--color-black) 70%, transparent) 60%,
+    color-mix(in srgb, var(--color-black) 95%, transparent) 100%
   );
   display: flex;
   align-items: flex-end;
@@ -123,7 +123,7 @@
 
 .category {
   display: block;
-  font-size: 0.875rem;
+  font-size: var(--font-size-ui);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -131,7 +131,7 @@
 }
 
 .workTitle {
-  font-size: 1.75rem;
+  font-size: calc(var(--font-size-h2) - var(--space-xs));
   font-weight: 700;
   color: var(--color-white);
   margin-bottom: 1rem;
@@ -143,7 +143,7 @@
   color: var(--gold-on-surface);
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius-md);
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   font-weight: 600;
   cursor: pointer;
   transition: all var(--transition-slow);
@@ -159,7 +159,7 @@
   text-align: center;
   margin-top: 2rem;
   color: var(--color-text-muted);
-  font-size: 0.875rem;
+  font-size: var(--font-size-ui);
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -192,6 +192,6 @@
   }
 
   .workTitle {
-    font-size: 1.25rem;
+    font-size: var(--font-size-body-lg);
   }
 }

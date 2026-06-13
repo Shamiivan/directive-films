@@ -5,8 +5,8 @@
   z-index: 40;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  background: rgba(10, 10, 13, 0.72);
-  border-bottom: 1px solid var(--line);
+  background: var(--color-bg-nav);
+  border-bottom: 1px solid var(--color-border-dark-subtle);
 }
 
 .wrap {
@@ -16,20 +16,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 74px;
+  height: var(--nav-height);
 }
 
 /* ── Brand mark ────────────────────────────────────────── */
 .logo {
   display: flex;
   align-items: center;
-  gap: 11px;
+  gap: calc(var(--space-sm) + 3px);
   font-family: var(--font-brand);
-  font-weight: 800;
-  font-size: 15px;
+  font-weight: var(--font-weight-extrabold);
+  font-size: var(--font-size-body-sm);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--paper);
+  color: var(--color-text-on-dark);
   text-decoration: none;
 }
 
@@ -44,7 +44,7 @@
 /* ── Desktop nav links ─────────────────────────────────── */
 .navList {
   display: flex;
-  gap: 30px;
+  gap: calc(var(--space-xl) - 2px);
   align-items: center;
   list-style: none;
   margin: 0;
@@ -52,41 +52,41 @@
 }
 
 .navList a {
-  font-size: 13px;
+  font-size: var(--font-size-caption);
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: var(--paper-dim);
-  font-weight: 600;
+  color: var(--color-text-on-dark-secondary);
+  font-weight: var(--font-weight-semibold);
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color var(--transition-fast);
 }
 
 .navList a:hover {
-  color: #fff;
+  color: var(--color-white);
 }
 
 /* ── CTA button ────────────────────────────────────────── */
 .navBtn {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  font-weight: 700;
-  font-size: 13.5px;
+  gap: calc(var(--space-sm) + 1px);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-ui);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 13px 22px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold2), var(--gold-deep));
-  color: #180f00;
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: calc(var(--space-md) - 3px) calc(var(--space-lg) - 2px);
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand-gold);
+  color: var(--gold-ink);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  border: 1px solid var(--color-border-glass);
   text-decoration: none;
   white-space: nowrap;
 }
 
 .navBtn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 34px -10px rgba(232, 176, 75, 0.6);
+  box-shadow: var(--shadow-gold-cta);
 }
 
 /* ── Lang switcher slot ────────────────────────────────── */
@@ -99,22 +99,22 @@
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 44px;
-  height: 44px;
+  width: var(--tap-target);
+  height: var(--tap-target);
   background: transparent;
   border: none;
   cursor: pointer;
-  padding: 10px;
+  padding: calc(var(--space-sm) + 2px);
   z-index: 1001;
 }
 
 .hamburger span {
   display: block;
-  width: 24px;
+  width: var(--space-lg);
   height: 2px;
-  background: var(--paper);
-  transition: all 0.3s ease;
-  border-radius: 2px;
+  background: var(--color-text-on-dark);
+  transition: all var(--transition-base);
+  border-radius: var(--radius-sm);
 }
 
 .hamburger span.hamburgerOpen:nth-child(1) {
@@ -133,7 +133,7 @@
 .mobileBackdrop {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--color-bg-backdrop);
   z-index: 1000;
   backdrop-filter: blur(4px);
 }
@@ -146,22 +146,22 @@
   bottom: 0;
   width: 80%;
   max-width: 360px;
-  background: var(--ink2);
-  border-left: 1px solid var(--line);
+  background: var(--color-bg-secondary);
+  border-left: 1px solid var(--color-border-dark-subtle);
   z-index: 1001;
   overflow-y: auto;
 }
 
 .closeButton {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
+  top: var(--container-padding-mobile);
+  right: var(--container-padding-mobile);
+  width: var(--tap-target);
+  height: var(--tap-target);
   background: transparent;
   border: none;
-  color: var(--paper);
-  font-size: 36px;
+  color: var(--color-text-on-dark);
+  font-size: var(--font-size-h1);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -169,7 +169,7 @@
 }
 
 .mobileNav {
-  padding: 90px 32px 40px;
+  padding: calc(var(--nav-height) + var(--space-md)) var(--space-xl) var(--container-padding);
 }
 
 .mobileNavList {
@@ -182,42 +182,42 @@
 
 .mobileNavList > li > a {
   display: block;
-  font-size: 13px;
+  font-size: var(--font-size-caption);
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  font-weight: 600;
-  color: var(--paper-dim);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-on-dark-secondary);
   text-decoration: none;
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
-  transition: color 0.2s;
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border-dark-subtle);
+  transition: color var(--transition-fast);
 }
 
 .mobileNavList > li > a:hover {
-  color: #fff;
+  color: var(--color-white);
 }
 
 .mobileLangSwitcher {
-  padding: 16px 0;
-  border-bottom: 1px solid var(--line);
+  padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border-dark-subtle);
 }
 
 .mobileContactItem {
-  margin-top: 24px;
+  margin-top: var(--space-lg);
 }
 
 .mobileContactBtn {
   display: flex;
   justify-content: center;
-  padding: 13px 22px !important;
-  border-radius: 999px;
-  background: linear-gradient(180deg, var(--gold2), var(--gold-deep)) !important;
-  color: #180f00 !important;
-  font-weight: 700;
-  font-size: 13.5px;
+  padding: calc(var(--space-md) - 3px) calc(var(--space-lg) - 2px) !important;
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand-gold) !important;
+  color: var(--gold-ink) !important;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-ui);
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--color-border-glass);
 }
 
 /* ── Responsive ────────────────────────────────────────── */

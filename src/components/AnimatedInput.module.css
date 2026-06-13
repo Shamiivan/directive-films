@@ -5,11 +5,11 @@
 
 .label {
   position: absolute;
-  left: 16px;
-  top: 16px;
+  left: var(--space-md);
+  top: var(--space-md);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   color: var(--color-text-tertiary);
   pointer-events: none;
   transform-origin: left center;
@@ -19,7 +19,7 @@
 
 .required {
   color: var(--gold-on-surface);
-  margin-left: 4px;
+  margin-left: var(--space-xs);
 }
 
 .input,
@@ -28,9 +28,9 @@
   padding: var(--space-md);
   font-family: var(--font-body);
   font-size: var(--font-size-body);
-  font-weight: 400;
+  font-weight: var(--font-weight-regular);
   letter-spacing: 0.01em;
-  color: var(--color-white);
+  color: var(--color-text-on-dark);
   background: var(--color-bg-secondary);
   border: 2px solid var(--color-border-light);
   border-radius: var(--radius-md);
@@ -39,7 +39,7 @@
 }
 
 .textarea {
-  min-height: 120px;
+  min-height: calc(var(--space-4xl) + var(--space-xl) + var(--space-sm));
   resize: vertical;
 }
 
@@ -55,18 +55,18 @@
 
 .checkmark {
   position: absolute;
-  right: 16px;
-  top: 16px;
-  width: 24px;
-  height: 24px;
+  right: var(--space-md);
+  top: var(--space-md);
+  width: var(--space-lg);
+  height: var(--space-lg);
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--color-gold);
-  color: var(--color-black);
+  color: var(--gold-ink);
   border-radius: var(--radius-full);
   font-size: var(--font-size-body-sm);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   pointer-events: none;
 }
 
@@ -75,7 +75,7 @@
   .input,
   .textarea {
     background: var(--color-white);
-    color: var(--color-black);
+    color: var(--color-text-on-light);
     border-color: var(--color-border-subtle);
   }
 

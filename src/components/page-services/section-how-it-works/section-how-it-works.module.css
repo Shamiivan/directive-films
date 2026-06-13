@@ -65,7 +65,7 @@
   margin-bottom: var(--space-sm);
   color: var(--gold-on-surface);
   font-family: var(--font-display);
-  font-size: 38px;
+  font-size: var(--font-size-title-xl);
   font-weight: var(--font-weight-semibold);
   line-height: 1;
   letter-spacing: var(--letter-spacing-tight);
@@ -76,7 +76,7 @@
   display: inline-flex;
   width: fit-content;
   margin-bottom: var(--space-sm);
-  padding: 5px 10px;
+  padding: calc(var(--space-xs) + 1px) calc(var(--space-sm) + 2px);
   border: 1px solid var(--color-border-on-light-strong);
   border-radius: var(--radius-pill);
   color: var(--color-text-on-light-secondary);
@@ -91,7 +91,7 @@
   box-sizing: border-box;
   color: var(--color-text-on-light);
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: var(--font-size-title-lg);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-snug);
   letter-spacing: var(--letter-spacing-tight);
@@ -170,7 +170,7 @@
   font-size: var(--font-size-body-sm);
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 12px 26px;
+  padding: calc(var(--space-sm) + var(--space-xs)) calc(var(--space-lg) + 2px);
 }
 
 /* The image half fills edge-to-edge with no padding, radius or floating gap.
@@ -224,15 +224,15 @@
 
   .content {
     width: 50%;
-    padding: var(--space-4xl) clamp(40px, 6vw, 96px);
+    padding: var(--space-4xl) clamp(var(--container-padding), 6vw, var(--section-padding));
   }
 
   .stepNumber {
-    font-size: 52px;
+    font-size: var(--font-size-section-lg);
   }
 
   .cardTitle {
-    font-size: 38px;
+    font-size: var(--font-size-title-xl);
   }
 
   /* Image half stretches to the full height of the text half — no dead space. */

@@ -10,15 +10,15 @@
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent,
-    #000 7%,
-    #000 93%,
+    var(--color-black) 7%,
+    var(--color-black) 93%,
     transparent
   );
   mask-image: linear-gradient(
     90deg,
     transparent,
-    #000 7%,
-    #000 93%,
+    var(--color-black) 7%,
+    var(--color-black) 93%,
     transparent
   );
 }
@@ -71,7 +71,7 @@
 .stars {
   color: var(--gold-on-surface);
   font-size: var(--font-size-body);
-  letter-spacing: 0.15em;
+  letter-spacing: var(--letter-spacing-widest);
   line-height: 1;
 }
 
@@ -80,7 +80,7 @@
   margin: 0;
   font-family: var(--font-body);
   font-size: var(--font-size-body);
-  line-height: 1.55;
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-on-light);
   text-wrap: pretty;
 }
@@ -88,7 +88,7 @@
 .author {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: calc(var(--space-md) - var(--space-xs));
 }
 
 .avatar {
@@ -97,9 +97,9 @@
   flex: 0 0 auto;
   display: grid;
   place-items: center;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--color-gold), var(--gold-deep));
-  color: var(--ink);
+  border-radius: var(--radius-full);
+  background: var(--gradient-brand-gold);
+  color: var(--gold-ink);
   font-size: var(--font-size-caption);
   font-weight: var(--font-weight-extrabold);
   letter-spacing: 0.04em;

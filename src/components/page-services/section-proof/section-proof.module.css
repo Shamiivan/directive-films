@@ -19,7 +19,7 @@
 
 .title {
   font-family: var(--font-body);
-  font-size: clamp(32px, 3.5vw + 8px, 48px);
+  font-size: var(--font-size-section-md);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
   line-height: var(--line-height-tight);
@@ -49,7 +49,7 @@
 
 .statValue {
   font-family: var(--font-body);
-  font-size: clamp(36px, 4vw, 56px);
+  font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
   color: var(--gold-on-surface);
   line-height: 1;
@@ -145,9 +145,9 @@
 
 .quoteIcon {
   display: block;
-  font-size: 4rem;
+  font-size: var(--font-size-display1);
   line-height: 1;
-  color: rgba(253, 183, 20, 0.15);
+  color: var(--gold2-a-15);
   font-family: Georgia, serif;
   margin-bottom: var(--space-sm);
   pointer-events: none;
@@ -171,7 +171,7 @@
   width: 3px;
   height: 16px;
   background: var(--color-gold);
-  border-radius: 2px;
+  border-radius: calc(var(--radius-sm) * 0.5);
   flex-shrink: 0;
 }
 

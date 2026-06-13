@@ -1,21 +1,21 @@
 .banner {
   background:
-    radial-gradient(110% 120% at 20% -20%, rgba(61, 215, 192, 0.12), transparent 55%),
-    radial-gradient(120% 120% at 90% 0%, rgba(232, 176, 75, 0.16), transparent 55%),
+    radial-gradient(110% 120% at 20% -20%, var(--accent-a-12), transparent 55%),
+    radial-gradient(120% 120% at 90% 0%, var(--gold-a-16), transparent 55%),
     var(--ink);
-  padding: 110px 0 70px;
+  padding: var(--hero-padding-y) 0 var(--hero-padding-bottom);
 }
 
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--button-gap);
   color: var(--gold2);
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);

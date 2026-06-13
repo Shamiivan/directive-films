@@ -65,7 +65,7 @@
   padding: var(--space-md) var(--space-xl);
   border-radius: var(--radius-pill);
   background: var(--color-gold);
-  color: var(--ink);
+  color: var(--gold-ink);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-body-sm);
   text-decoration: none;
@@ -119,7 +119,7 @@
 }
 
 .summary:hover {
-  color: var(--color-gold-deep, var(--gold-deep));
+  color: var(--gold-on-surface);
 }
 
 /* +/- marker built from two bars */

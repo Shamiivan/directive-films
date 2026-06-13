@@ -1,12 +1,12 @@
 .results {
-  background: linear-gradient(180deg, var(--ink), #0c0c10);
-  padding: 96px 0;
+  background: linear-gradient(180deg, var(--ink), var(--color-bg-dark-soft));
+  padding: var(--section-padding) 0;
 }
 
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 .sectionH { max-width: 720px; }
@@ -14,10 +14,10 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--button-gap);
   color: var(--gold2);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--font-size-caption);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -32,11 +32,11 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(30px, 4.4vw, 52px);
+  font-size: var(--font-size-section-lg);
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.01em;
-  margin: 18px 0 14px;
+  margin: var(--composition-gap-sm) 0 calc(var(--space-md) - 2px);
   color: var(--paper);
 }
 
@@ -47,14 +47,14 @@
 
 .lead {
   color: var(--paper-dim);
-  font-size: 20px;
+  font-size: var(--font-size-body-lg);
   max-width: 640px;
 }
 
 .metrics {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
+  gap: var(--space-hairline);
   background: var(--line);
   border: 1px solid var(--line);
   border-radius: var(--rad);
@@ -64,14 +64,14 @@
 
 .metric {
   background: var(--panel);
-  padding: 34px 28px;
+  padding: calc(var(--space-xl) + 2px) var(--card-padding-sm);
 }
 
 .big {
   font-family: var(--font-display);
-  font-size: 54px;
+  font-size: var(--font-size-stat);
   font-weight: 600;
-  color: #fff;
+  color: var(--color-white);
   line-height: 1;
 }
 
@@ -80,12 +80,12 @@
 .cap {
   color: var(--paper-dim);
   margin-top: 10px;
-  font-size: 14.5px;
+  font-size: var(--font-size-body-sm);
 }
 
 .sub {
   color: var(--muted);
-  font-size: 12.5px;
+  font-size: var(--font-size-caption-tight);
   margin-top: 4px;
 }
 

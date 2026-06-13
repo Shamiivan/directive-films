@@ -6,19 +6,19 @@
 }
 
 .gold {
-  background: var(--color-border-light, #e5e5e5);
+  background: var(--color-border-light);
 }
 
 .white {
-  background: var(--color-border-light, #e5e5e5);
+  background: var(--color-border-light);
 }
 
 .gradient {
-  background: var(--color-border-light, #e5e5e5);
+  background: var(--color-border-light);
 }
 
 @media (max-width: 768px) {
   .divider {
-    margin: 60px auto;
+    margin: calc(var(--section-padding-mobile) - var(--space-xs)) auto;
   }
 }

@@ -3,7 +3,7 @@
   aspect-ratio: 9 / 16;
   overflow: hidden;
   border-radius: var(--radius-xl);
-  background: var(--ink2);
+  background: var(--color-bg-dark-card);
 }
 
 .card iframe {

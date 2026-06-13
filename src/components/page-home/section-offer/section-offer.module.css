@@ -1,21 +1,21 @@
 .section {
-  padding: 96px 0;
+  padding: var(--section-padding) 0;
   background: var(--ink);
 }
 
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--button-gap);
   color: var(--gold2);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--font-size-caption);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -30,17 +30,17 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 46px);
+  font-size: var(--font-size-section-sm);
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.01em;
-  margin: 14px 0 0;
+  margin: calc(var(--space-md) - 2px) 0 0;
   color: var(--paper);
 }
 
 .lead {
   color: var(--paper-dim);
-  font-size: 20px;
+  font-size: var(--font-size-body-lg);
   max-width: 640px;
   margin-top: 14px;
 }
@@ -49,14 +49,14 @@
 .svc {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
+  gap: var(--composition-gap-sm);
   margin-top: 42px;
 }
 
 .card {
   border: 1px solid var(--line);
   border-radius: var(--rad);
-  padding: 32px;
+  padding: var(--space-xl);
   background: var(--ink2);
   transition: transform 0.25s, border-color 0.25s, background 0.25s;
   position: relative;
@@ -68,12 +68,12 @@
 .card:hover {
   transform: translateY(-4px);
   border-color: var(--line2);
-  background: #191a22;
+  background: var(--color-bg-dark-panel);
 }
 
 .cardFeature {
   grid-column: span 2;
-  background: radial-gradient(120% 130% at 100% 0%, rgba(232, 176, 75, 0.12), transparent 50%), var(--ink2);
+  background: radial-gradient(120% 130% at 100% 0%, var(--gold-a-12), transparent 50%), var(--ink2);
 }
 
 .tag {
@@ -81,29 +81,29 @@
   top: 22px;
   right: 22px;
   font-family: var(--font-mono);
-  font-size: 10.5px;
+  font-size: var(--font-size-badge);
   letter-spacing: 0.16em;
   color: var(--gold2);
-  border: 1px solid rgba(232, 176, 75, 0.35);
-  padding: 5px 9px;
-  border-radius: 999px;
+  border: 1px solid var(--gold-a-35);
+  padding: var(--badge-padding);
+  border-radius: var(--radius-full);
 }
 
 .ico {
   width: 46px;
   height: 46px;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   display: grid;
   place-items: center;
   color: var(--gold2);
-  background: rgba(232, 176, 75, 0.13);
-  border: 1px solid rgba(232, 176, 75, 0.25);
+  background: var(--gold-a-13);
+  border: 1px solid var(--gold-a-25);
   margin-bottom: 18px;
 }
 
 .card h3 {
   font-family: var(--font-display);
-  font-size: 23px;
+  font-size: var(--font-size-title-md);
   font-weight: 600;
   color: var(--paper);
   margin-bottom: 9px;
@@ -111,14 +111,14 @@
 
 .card p {
   color: var(--paper-dim);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   margin: 0 0 16px;
   line-height: 1.6;
 }
 
 .more {
   color: var(--gold2);
-  font-size: 13px;
+  font-size: var(--font-size-ui-xs);
   font-weight: 700;
   letter-spacing: 0.04em;
 }

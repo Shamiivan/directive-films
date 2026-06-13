@@ -4,7 +4,7 @@
   justify-content: center;
   gap: var(--space-sm);
   width: fit-content;
-  min-height: 48px;
+  min-height: calc(var(--tap-target) + var(--space-xs));
   padding: 0 var(--space-lg);
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
@@ -20,7 +20,7 @@
 
 .gold {
   background: var(--color-gold);
-  color: var(--ink);
+  color: var(--gold-ink);
   box-shadow: var(--shadow-gold);
 }
 
@@ -38,7 +38,7 @@
 
 .outline:hover {
   background: var(--color-gold);
-  color: var(--ink);
+  color: var(--gold-ink);
   transform: translateY(-2px);
 }
 

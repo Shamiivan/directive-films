@@ -1,19 +1,19 @@
 .section {
-  background: var(--ink);
+  background: var(--color-bg-deep);
   padding: var(--section-padding) 0 calc(var(--section-padding) + var(--space-xl));
 }
 
 .wrap {
-  max-width: var(--maxw);
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 .head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 20px;
+  gap: var(--space-lg);
   margin-bottom: var(--space-2xl);
   flex-wrap: wrap;
 }
@@ -21,11 +21,11 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: var(--gold2);
+  gap: var(--space-sm);
+  color: var(--color-gold);
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
 }
 
@@ -33,34 +33,34 @@
   content: "";
   width: 26px;
   height: 1px;
-  background: var(--gold2);
+  background: var(--color-gold);
   display: inline-block;
 }
 
 .count {
   font-family: var(--font-mono);
-  font-size: 13px;
-  letter-spacing: 0.08em;
+  font-size: var(--font-size-ui);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--color-text-on-dark-muted);
 }
 
 .count strong {
-  color: var(--paper);
-  font-weight: 700;
+  color: var(--color-text-on-dark);
+  font-weight: var(--font-weight-bold);
 }
 
 .jobs {
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-border-dark-subtle);
 }
 
 .job {
   display: grid;
   grid-template-columns: 140px 1fr auto;
   align-items: center;
-  gap: 28px;
-  padding: 28px 8px;
-  border-bottom: 1px solid var(--line);
+  gap: var(--card-padding-sm);
+  padding: var(--card-padding-sm) var(--space-sm);
+  border-bottom: 1px solid var(--color-border-dark-subtle);
   text-decoration: none;
   position: relative;
   transition: padding-left 0.3s var(--ease, ease), background 0.25s;
@@ -73,14 +73,14 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, var(--gold2), var(--gold-deep));
+  background: var(--gradient-brand-gold);
   transform: scaleY(0);
   transform-origin: top;
   transition: transform 0.3s ease;
 }
 
 .job:hover {
-  background: linear-gradient(90deg, rgba(232, 176, 75, 0.05), transparent 60%);
+  background: linear-gradient(90deg, var(--gold-a-05), transparent 60%);
   padding-left: 22px;
 }
 
@@ -91,48 +91,48 @@
 .tag {
   justify-self: start;
   font-family: var(--font-mono);
-  font-size: 11px;
-  letter-spacing: 0.12em;
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
-  color: var(--gold2);
-  border: 1px solid rgba(232, 176, 75, 0.3);
-  padding: 6px 11px;
-  border-radius: 999px;
+  color: var(--color-gold);
+  border: 1px solid var(--gold-a-30);
+  padding: calc(var(--space-sm) - 2px) calc(var(--space-sm) + 3px);
+  border-radius: var(--radius-full);
 }
 
 .body {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: calc(var(--space-xs) + 1px);
   min-width: 0;
 }
 
 .title {
   font-family: var(--font-display);
   font-size: clamp(20px, 2.4vw, 26px);
-  font-weight: 600;
-  color: var(--paper);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-on-dark);
   line-height: 1.1;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .meta {
-  color: var(--muted);
-  font-size: 13.5px;
+  color: var(--color-text-on-dark-muted);
+  font-size: var(--font-size-ui);
   line-height: 1.4;
 }
 
 .apply {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-weight: 700;
-  font-size: 13px;
-  letter-spacing: 0.06em;
+  gap: calc(var(--space-sm) - 1px);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-ui);
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
-  color: var(--paper-dim);
+  color: var(--color-text-on-dark-secondary);
   white-space: nowrap;
-  transition: color 0.2s, gap 0.2s;
+  transition: color var(--transition-base), gap var(--transition-base);
 }
 
 .apply svg {
@@ -140,8 +140,8 @@
 }
 
 .job:hover .apply {
-  color: var(--gold2);
-  gap: 10px;
+  color: var(--color-gold);
+  gap: calc(var(--space-sm) + 2px);
 }
 
 .job:hover .apply svg {
@@ -154,7 +154,7 @@
     grid-template-areas:
       "tag tag"
       "body apply";
-    gap: 12px 16px;
+    gap: calc(var(--space-sm) + var(--space-xs)) var(--space-md);
     align-items: end;
   }
 

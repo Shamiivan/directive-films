@@ -7,7 +7,7 @@
   justify-content: center;
   overflow: hidden;
   pointer-events: all;
-  background: #ffffff;
+  background: var(--color-white);
 }
 
 /* Center content layer */
@@ -21,11 +21,11 @@
 
 /* Brand wordmark */
 .wordmark {
-  font-family: var(--font-body, Inter, sans-serif);
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 700;
-  color: var(--color-black, #0d0d0d);
-  letter-spacing: -0.02em;
+  font-family: var(--font-body);
+  font-size: var(--font-size-display2);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+  letter-spacing: var(--letter-spacing-tight);
   line-height: 1;
   overflow: hidden;
   white-space: nowrap;
@@ -37,7 +37,7 @@
 }
 
 .letterGold {
-  color: var(--color-gold, #FDB714);
+  color: var(--color-gold);
 }
 
 /* Progress bar */
@@ -48,9 +48,9 @@
   transform: translateX(-50%);
   width: 120px;
   height: 2px;
-  background: var(--color-gold, #FDB714);
+  background: var(--color-gold);
   transform-origin: left;
-  border-radius: 1px;
+  border-radius: var(--radius-sm);
 }
 
 @media (max-width: 768px) {

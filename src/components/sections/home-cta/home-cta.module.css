@@ -14,7 +14,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: radial-gradient(circle, rgba(0, 0, 0, 0.1) 20%, var(--ink) 78%);
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-bg-deep) 10%, transparent) 20%, var(--color-bg-deep) 78%);
 }
 
 .cta video {

@@ -2,10 +2,10 @@
   position: relative;
   display: flex;
   align-items: flex-end;
-  min-height: clamp(560px, 92vh, 1040px);
-  padding: var(--space-4xl) clamp(20px, 5vw, 96px);
+  min-height: var(--media-hero-min-height);
+  padding: var(--space-4xl) var(--media-hero-inline-padding);
   overflow: hidden;
-  background: var(--ink);
+  background: var(--color-bg-deep);
   isolation: isolate;
 }
 
@@ -29,14 +29,7 @@
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--ink) 55%, transparent) 0%,
-      color-mix(in srgb, var(--ink) 30%, transparent) 38%,
-      color-mix(in srgb, var(--ink) 82%, transparent) 100%
-    ),
-    color-mix(in srgb, var(--ink) 28%, transparent);
+  background: var(--gradient-media-scrim);
 }
 
 /* --- Content --- */
@@ -57,11 +50,11 @@
 
 .tags span {
   border-radius: var(--radius-pill);
-  border: 1px solid color-mix(in srgb, var(--paper) 22%, transparent);
-  background: color-mix(in srgb, var(--ink) 50%, transparent);
+  border: 1px solid var(--color-border-glass);
+  background: var(--color-bg-glass-dark);
   backdrop-filter: blur(8px);
   color: var(--color-text-on-dark);
-  padding: 7px 14px;
+  padding: calc(var(--space-sm) - 1px) calc(var(--space-md) - 2px);
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
   text-transform: uppercase;
@@ -76,7 +69,7 @@
   letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text-on-dark);
   text-wrap: balance;
-  text-shadow: 0 2px 28px color-mix(in srgb, var(--ink) 60%, transparent);
+  text-shadow: var(--shadow-text-dark);
 }
 
 .lede {
@@ -84,7 +77,7 @@
   color: var(--color-text-on-dark-secondary);
   font-size: var(--font-size-lead);
   line-height: var(--line-height-relaxed);
-  text-shadow: 0 1px 18px color-mix(in srgb, var(--ink) 55%, transparent);
+  text-shadow: var(--shadow-text-soft);
 }
 
 .actions {
@@ -93,7 +86,7 @@
 
 @media (max-width: 980px) {
   .hero {
-    min-height: clamp(520px, 88vh, 820px);
+    min-height: var(--media-hero-min-height-mobile);
     align-items: center;
   }
 }

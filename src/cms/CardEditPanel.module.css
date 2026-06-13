@@ -1,13 +1,13 @@
 .overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: var(--color-bg-modal-backdrop);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
   z-index: 80;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 300ms cubic-bezier(0.25, 0.1, 0.25, 1);
+  transition: opacity var(--transition-base);
 }
 .overlay[data-open="true"] {
   opacity: 1;
@@ -21,77 +21,77 @@
   width: 440px;
   max-width: 100vw;
   height: 100vh;
-  background: #ffffff;
-  border-left: 1px solid var(--color-border-light, #e5e5e5);
+  background: var(--color-white);
+  border-left: 1px solid var(--color-border-on-light);
   z-index: 90;
-  transition: right 380ms cubic-bezier(0.25, 0.1, 0.25, 1);
-  padding: 32px;
+  transition: right var(--transition-premium);
+  padding: var(--space-xl);
   overflow-y: auto;
-  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.12);
+  box-shadow: var(--shadow-panel);
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  color: var(--color-text-primary, #111);
+  gap: var(--space-sm);
+  color: var(--color-text-on-light);
 }
 .panel[data-open="true"] {
   right: 0;
 }
 
 [data-theme="dark"] .panel {
-  background: #1a1a1a;
-  border-left-color: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  background: var(--color-bg-dark-panel);
+  border-left-color: var(--color-border-dark-subtle);
+  color: var(--color-text-on-dark);
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 24px;
+  gap: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .eyebrow {
-  font-family: var(--font-mono, "Space Mono", monospace);
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  color: var(--color-text-muted, #666);
+  color: var(--color-text-on-light-muted);
 }
 
 .title {
-  font-family: var(--font-display, "Playfair Display", serif);
-  font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  margin-top: 4px;
-  line-height: 1.2;
+  font-family: var(--font-display);
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-top: var(--space-xs);
+  line-height: var(--line-height-snug);
 }
 
 .closeBtn {
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--color-text-muted, #666);
-  padding: 4px;
+  color: var(--color-text-on-light-muted);
+  padding: var(--space-xs);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
-  transition: color 150ms, background 150ms;
+  border-radius: var(--radius-md);
+  transition: color var(--transition-fast), background var(--transition-fast);
 }
 .closeBtn:hover {
-  color: var(--color-text-primary, #111);
-  background: rgba(0, 0, 0, 0.04);
+  color: var(--color-text-on-light);
+  background: var(--color-bg-light-card);
 }
 [data-theme="dark"] .closeBtn:hover {
-  background: rgba(255, 255, 255, 0.06);
+  background: var(--color-bg-glass-dark);
 }
 
 .fields {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: calc(var(--space-md) + 2px);
   flex: 1;
 }
 
@@ -101,28 +101,28 @@
 }
 html[data-cms-edit="on"] .cardHoverable {
   cursor: pointer;
-  transition: outline-color 180ms;
+  transition: outline-color var(--transition-fast);
   outline: 2px dashed transparent;
-  outline-offset: 4px;
-  border-radius: 8px;
+  outline-offset: var(--space-xs);
+  border-radius: var(--radius-md);
 }
 html[data-cms-edit="on"] .cardHoverable:hover {
-  outline-color: var(--color-gold, #FDB714);
+  outline-color: var(--color-gold);
 }
 html[data-cms-edit="on"] .cardHoverable:hover::before {
   content: attr(data-edit-label);
   position: absolute;
-  top: 8px;
-  left: 8px;
-  font-family: var(--font-mono, "Space Mono", monospace);
-  font-size: 10px;
-  letter-spacing: 0.15em;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
-  font-weight: 500;
-  background: var(--color-gold, #FDB714);
-  color: #0d0d0d;
-  padding: 4px 10px;
-  border-radius: 3px;
+  font-weight: var(--font-weight-medium);
+  background: var(--color-gold);
+  color: var(--gold-ink);
+  padding: var(--space-xs) calc(var(--space-sm) + 2px);
+  border-radius: var(--radius-sm);
   pointer-events: none;
   z-index: 2;
 }

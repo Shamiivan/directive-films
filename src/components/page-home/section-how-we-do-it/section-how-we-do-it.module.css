@@ -1,21 +1,21 @@
 .section {
-  background: #0c0c10;
-  padding: 64px 0;
+  background: var(--color-bg-dark-soft);
+  padding: var(--section-padding-compact) 0;
 }
 
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
+  gap: var(--button-gap);
   color: var(--gold2);
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: var(--font-size-caption);
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -30,25 +30,25 @@
 
 .heading {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 46px);
+  font-size: var(--font-size-section-sm);
   font-weight: 600;
   line-height: 1.04;
   letter-spacing: -0.01em;
-  margin: 14px 0 0;
+  margin: calc(var(--space-md) - 2px) 0 0;
   color: var(--paper);
 }
 
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: var(--composition-gap-md);
   margin-top: 40px;
 }
 
 .step {
   border: 1px solid var(--line);
   border-radius: var(--rad);
-  padding: 30px;
+  padding: var(--card-padding);
   background: var(--ink2);
   position: relative;
   overflow: hidden;
@@ -65,22 +65,22 @@
 .num {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: 56px;
-  color: rgba(232, 176, 75, 0.28);
+  font-size: var(--font-size-display-lg);
+  color: var(--gold-a-28);
   line-height: 0.8;
 }
 
 .step h3 {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: var(--font-size-h3);
   font-weight: 600;
   color: var(--paper);
-  margin: 16px 0 10px;
+  margin: var(--space-md) 0 calc(var(--space-sm) + 2px);
 }
 
 .step p {
   color: var(--paper-dim);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   margin: 0;
   line-height: 1.6;
 }

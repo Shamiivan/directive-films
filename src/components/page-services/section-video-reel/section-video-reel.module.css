@@ -22,18 +22,18 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0) 23%);
+  background: linear-gradient(color-mix(in srgb, var(--color-black) 40%, transparent), transparent 23%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 30px;
+  padding: var(--card-padding);
   border-radius: var(--rad);
 }
 
 .quote {
   font-family: var(--font-display);
-  font-size: clamp(26px, 4.5vw, 45px);
+  font-size: var(--font-size-section-sm);
   font-weight: 300;
   font-style: italic;
   line-height: 1.3;

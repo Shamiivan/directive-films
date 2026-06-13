@@ -32,11 +32,11 @@
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(253, 183, 20, 0.08);
-  border: 1px solid rgba(253, 183, 20, 0.2);
+  background: var(--gold2-a-08);
+  border: 1px solid var(--gold2-a-20);
   border-radius: var(--radius-2xl);
   color: var(--gold-on-surface);
-  font-size: 0.875rem;
+  font-size: var(--font-size-ui);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -45,7 +45,7 @@
 
 .title {
   font-family: var(--font-body);
-  font-size: clamp(32px, 4vw + 12px, 52px);
+  font-size: var(--font-size-section-lg);
   font-weight: 700;
   letter-spacing: -0.01em;
   margin-bottom: var(--space-lg);
@@ -59,7 +59,7 @@
 }
 
 .subtitle {
-  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  font-size: var(--font-size-lead-sm);
   color: var(--color-text-secondary);
   line-height: 1.7;
   margin-bottom: var(--space-2xl);
@@ -73,7 +73,7 @@
   background: var(--color-gold);
   color: var(--color-black);
   padding: 1rem 2.5rem;
-  font-size: 1rem;
+  font-size: var(--font-size-body);
   font-weight: 700;
   border: none;
   border-radius: var(--radius-pill);
@@ -116,7 +116,7 @@
 }
 
 .statValue {
-  font-size: 36px;
+  font-size: var(--font-size-display2);
   font-weight: 700;
   line-height: 1;
   margin-bottom: 0.5rem;
@@ -124,7 +124,7 @@
 }
 
 .statLabel {
-  font-size: 13px;
+  font-size: var(--font-size-ui-xs);
   color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -165,7 +165,7 @@
   }
 
   .badge {
-    font-size: 0.75rem;
+    font-size: var(--font-size-caption);
     padding: 0.4rem 0.8rem;
     margin-bottom: 1.5rem;
   }
@@ -206,7 +206,7 @@
   }
 
   .statValue {
-    font-size: 28px;
+    font-size: var(--font-size-h2);
   }
 
   .reasonDescription {

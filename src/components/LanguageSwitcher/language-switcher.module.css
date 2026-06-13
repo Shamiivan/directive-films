@@ -1,27 +1,27 @@
 .switcher {
     background: none;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.6);
-    padding: 6px 12px;
-    border-radius: 100px;
+    border: 1px solid var(--color-border-glass);
+    color: var(--color-text-on-dark-muted);
+    padding: calc(var(--space-sm) - 2px) calc(var(--space-md) - var(--space-xs));
+    border-radius: var(--radius-full);
     cursor: pointer;
-    font-family: var(--font-space-mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
+    font-family: var(--font-mono);
+    font-size: var(--font-size-label);
+    letter-spacing: var(--letter-spacing-widest);
     display: flex;
     align-items: center;
-    gap: 4px;
-    transition: all 0.3s ease;
+    gap: var(--space-xs);
+    transition: all var(--transition-base);
 }
 
 .switcher:hover {
-    border-color: rgba(255, 255, 255, 0.5);
-    color: #ffffff;
+    border-color: var(--color-border-medium);
+    color: var(--color-text-on-dark);
 }
 
 .active {
-    color: #ffffff;
-    font-weight: 600;
+    color: var(--color-text-on-dark);
+    font-weight: var(--font-weight-semibold);
 }
 
 .divider {
@@ -30,7 +30,7 @@
 
 @media (max-width: 768px) {
     .switcher {
-        padding: 8px 16px;
-        font-size: 12px;
+        padding: var(--space-sm) var(--space-md);
+        font-size: var(--font-size-caption);
     }
 }

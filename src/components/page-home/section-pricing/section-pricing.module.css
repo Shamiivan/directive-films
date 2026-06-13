@@ -55,7 +55,7 @@
   background: var(--color-bg-dark-card);
   border: 1px solid var(--color-border-dark-subtle);
   border-radius: var(--radius-2xl);
-  padding: 40px var(--space-xl);
+  padding: calc(var(--space-xl) + var(--space-sm)) var(--space-xl);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@
 
 .packageCard:hover {
   border-color: var(--color-border-dark-medium);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--shadow-xl);
   transform: translateY(-4px);
 }
 
@@ -83,7 +83,7 @@
   font-family: var(--font-mono);
   background: var(--color-gold);
   color: var(--color-black);
-  padding: 6px var(--space-md);
+  padding: calc(var(--space-sm) - 2px) var(--space-md);
   border-radius: var(--radius-2xl);
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-regular);
@@ -148,7 +148,7 @@
 .feature {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: calc(var(--space-sm) + var(--space-xs));
   margin-bottom: var(--space-md);
   font-family: var(--font-body);
   font-size: var(--font-size-body-sm);
@@ -179,7 +179,7 @@
   background: transparent;
   color: var(--color-text-on-dark);
   border: 1px solid var(--color-gold);
-  padding: 14px var(--space-xl);
+  padding: calc(var(--space-md) - 2px) var(--space-xl);
   border-radius: var(--radius-3xl);
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-body);
@@ -194,7 +194,7 @@
   overflow: hidden;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: calc(var(--space-sm) - 2px);
 }
 
 .ctaArrow {

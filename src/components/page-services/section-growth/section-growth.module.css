@@ -18,7 +18,7 @@
 
 .title {
   font-family: var(--font-body);
-  font-size: clamp(32px, 4vw + 12px, 52px);
+  font-size: var(--font-size-section-lg);
   font-weight: 700;
   letter-spacing: -0.01em;
   line-height: 1.2;
@@ -117,7 +117,7 @@
 .ctaCard {
   background: var(--color-white);
   border-radius: var(--radius-2xl);
-  padding: 40px;
+  padding: calc(var(--space-xl) + var(--space-sm));
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -181,7 +181,7 @@
 
   .servicesGrid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: var(--composition-gap-md);
   }
 
   .serviceCard {

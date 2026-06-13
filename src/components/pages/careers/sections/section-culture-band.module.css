@@ -1,12 +1,12 @@
 .section {
-  background: var(--ink);
+  background: var(--color-bg-deep);
   padding: var(--section-padding) 0 calc(var(--section-padding) + var(--space-2xl));
 }
 
 .wrap {
-  max-width: var(--maxw);
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 .head {
@@ -17,11 +17,11 @@
 .eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: var(--gold2);
+  gap: var(--space-sm);
+  color: var(--color-gold);
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
 }
 
@@ -29,18 +29,18 @@
   content: "";
   width: 26px;
   height: 1px;
-  background: var(--gold2);
+  background: var(--color-gold);
   display: inline-block;
 }
 
 .title {
   font-family: var(--font-display);
   font-size: var(--font-size-section);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: 1.08;
-  letter-spacing: -0.01em;
+  letter-spacing: var(--letter-spacing-tight);
   margin-top: 16px;
-  color: var(--paper);
+  color: var(--color-text-on-dark);
   text-wrap: balance;
 }
 
@@ -49,7 +49,7 @@
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: var(--space-md);
 }
 
 .figure {
@@ -64,9 +64,9 @@
 .frame {
   position: relative;
   overflow: hidden;
-  border-radius: var(--rad);
-  border: 1px solid var(--line);
-  background: var(--ink2);
+  border-radius: var(--radius-2xl);
+  border: 1px solid var(--color-border-dark-subtle);
+  background: var(--color-bg-dark-card);
 }
 
 .wide .frame {
@@ -91,7 +91,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(10, 10, 13, 0.55));
+  background: var(--gradient-card-overlay);
   pointer-events: none;
 }
 
@@ -101,10 +101,10 @@
   bottom: 16px;
   z-index: 1;
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.1em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
-  color: var(--paper);
+  color: var(--color-text-on-dark);
 }
 
 @media (max-width: 720px) {

@@ -1,24 +1,24 @@
 .trust {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  padding: 26px 0;
+  padding: calc(var(--space-lg) + 2px) 0;
   background: var(--ink2);
 }
 
 .wrap {
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: var(--composition-gap-lg);
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .lbl {
   color: var(--muted);
-  font-size: 12px;
+  font-size: var(--font-size-caption);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   white-space: nowrap;
@@ -39,7 +39,7 @@
 
 @media (max-width: 768px) {
   .wrap {
-    gap: 24px;
+    gap: var(--space-lg);
   }
 
   .lbl {

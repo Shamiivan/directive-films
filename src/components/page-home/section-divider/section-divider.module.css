@@ -20,7 +20,7 @@
 /* Responsive */
 @media (max-width: 768px) {
   .dividerSection {
-    padding: 40px 0;
+    padding: calc(var(--space-xl) + var(--space-sm)) 0;
   }
 
   .container {

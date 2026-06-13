@@ -6,42 +6,42 @@
 export const colors = {
   // Brand Colors
   brand: {
-    gold: '#FDB714',
-    goldHover: '#e5a512',
-    black: '#0d0d0d',
+    gold: 'var(--color-gold)',
+    goldHover: 'var(--color-gold-hover)',
+    black: 'var(--color-black)',
   },
 
   // Background Colors
   bg: {
-    primary: '#ffffff',
-    secondary: '#f5f5f5',
-    tertiary: '#eeeeee',
-    dark: '#111111',
-    deep: '#0d0d0d',
-    darkCard: '#1a1a1a',
-    darkElevated: '#141414',
+    primary: 'var(--color-bg-light)',
+    secondary: 'var(--color-bg-light-card)',
+    tertiary: 'var(--color-bg-tertiary)',
+    dark: 'var(--color-bg-dark)',
+    deep: 'var(--color-bg-deep)',
+    darkCard: 'var(--color-bg-dark-card)',
+    darkElevated: 'var(--color-bg-dark-elevated)',
   },
 
   // Text Colors
   text: {
-    primary: '#111111',
-    secondary: '#333333',
-    tertiary: '#666666',
-    muted: '#999999',
-    onLight: '#111111',
-    onDark: '#ffffff',
-    onDarkSecondary: 'rgba(255, 255, 255, 0.7)',
-    onDarkMuted: 'rgba(255, 255, 255, 0.4)',
+    primary: 'var(--color-text-on-light)',
+    secondary: 'var(--color-text-on-light-secondary)',
+    tertiary: 'var(--color-text-on-light-muted)',
+    muted: 'var(--color-text-muted)',
+    onLight: 'var(--color-text-on-light)',
+    onDark: 'var(--color-text-on-dark)',
+    onDarkSecondary: 'var(--color-text-on-dark-secondary)',
+    onDarkMuted: 'var(--color-text-on-dark-muted)',
   },
 
   // Border Colors
   border: {
-    light: '#e5e5e5',
-    medium: '#d1d1d1',
-    dark: '#f3f3f3',
-    subtle: '#e5e5e5',
-    darkSubtle: 'rgba(255, 255, 255, 0.08)',
-    darkMedium: 'rgba(255, 255, 255, 0.15)',
+    light: 'var(--color-border-on-light)',
+    medium: 'var(--color-border-on-light-strong)',
+    dark: 'var(--color-border-dark)',
+    subtle: 'var(--color-border-subtle)',
+    darkSubtle: 'var(--color-border-dark-subtle)',
+    darkMedium: 'var(--color-border-dark-medium)',
   },
 };
 
@@ -56,17 +56,17 @@ export const typography = {
 
   // Font Sizes
   fontSize: {
-    display1: '64px',
-    display2: '52px',
-    h1: '40px',
-    h2: '32px',
-    h3: '24px',
-    h4: '20px',
-    bodyLg: '18px',
-    body: '16px',
-    bodySm: '14px',
-    caption: '12px',
-    label: '11px',
+    display1: 'var(--font-size-display1)',
+    display2: 'var(--font-size-display2)',
+    h1: 'var(--font-size-h1)',
+    h2: 'var(--font-size-h2)',
+    h3: 'var(--font-size-h3)',
+    h4: 'var(--font-size-h4)',
+    bodyLg: 'var(--font-size-body-lg)',
+    body: 'var(--font-size-body)',
+    bodySm: 'var(--font-size-body-sm)',
+    caption: 'var(--font-size-caption)',
+    label: 'var(--font-size-label)',
   },
 
   // Font Weights
@@ -98,40 +98,40 @@ export const typography = {
 };
 
 export const spacing = {
-  xs: '4px',
-  sm: '8px',
-  md: '16px',
-  lg: '24px',
-  xl: '32px',
-  '2xl': '48px',
-  '3xl': '64px',
-  '4xl': '80px',
+  xs: 'var(--space-xs)',
+  sm: 'var(--space-sm)',
+  md: 'var(--space-md)',
+  lg: 'var(--space-lg)',
+  xl: 'var(--space-xl)',
+  '2xl': 'var(--space-2xl)',
+  '3xl': 'var(--space-3xl)',
+  '4xl': 'var(--space-4xl)',
 };
 
 export const layout = {
-  containerMaxWidth: '1400px',
-  containerPadding: '40px',
-  containerPaddingMobile: '20px',
-  sectionPadding: '60px',
-  sectionPaddingMobile: '40px',
+  containerMaxWidth: 'var(--container-max-width)',
+  containerPadding: 'var(--container-padding)',
+  containerPaddingMobile: 'var(--container-padding-mobile)',
+  sectionPadding: 'var(--section-padding)',
+  sectionPaddingMobile: 'var(--section-padding-mobile)',
 };
 
 export const borderRadius = {
-  sm: '4px',
-  md: '8px',
-  lg: '12px',
-  xl: '16px',
-  full: '9999px',
+  sm: 'var(--radius-sm)',
+  md: 'var(--radius-md)',
+  lg: 'var(--radius-lg)',
+  xl: 'var(--radius-xl)',
+  full: 'var(--radius-full)',
 };
 
 export const shadows = {
-  sm: '0 1px 2px rgba(0, 0, 0, 0.04)',
-  md: '0 4px 12px rgba(0, 0, 0, 0.06)',
-  lg: '0 12px 24px rgba(0, 0, 0, 0.08)',
-  xl: '0 24px 48px rgba(0, 0, 0, 0.1)',
-  gold: '0 4px 12px rgba(253, 183, 20, 0.2)',
-  goldMd: '0 4px 20px rgba(253, 183, 20, 0.25)',
-  goldLg: '0 8px 24px rgba(253, 183, 20, 0.3)',
+  sm: 'var(--shadow-sm)',
+  md: 'var(--shadow-md)',
+  lg: 'var(--shadow-lg)',
+  xl: 'var(--shadow-xl)',
+  gold: 'var(--shadow-gold)',
+  goldMd: 'var(--shadow-gold-md)',
+  goldLg: 'var(--shadow-gold-lg)',
 };
 
 export const transitions = {

@@ -1,6 +1,6 @@
 .root {
   min-height: 100dvh;
-  background: var(--ink);
+  background: var(--color-bg-deep);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,7 +13,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(232, 176, 75, 0.08) 0%, transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 50% 40%, var(--gold-a-08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -24,8 +24,8 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--space-xl, 32px);
-  padding: var(--space-xl, 32px) var(--container-padding, 24px);
+  gap: var(--space-xl);
+  padding: var(--space-xl) var(--container-padding);
   max-width: 640px;
 }
 
@@ -36,49 +36,49 @@
 }
 
 .label {
-  font-family: var(--font-mono, "JetBrains Mono", monospace);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-family: var(--font-mono);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
-  color: var(--gold);
-  border: 1px solid rgba(232, 176, 75, 0.3);
-  border-radius: 999px;
-  padding: 6px 18px;
+  color: var(--gold-on-surface);
+  border: 1px solid var(--gold-a-30);
+  border-radius: var(--radius-full);
+  padding: var(--pill-padding);
 }
 
 .heading {
-  font-family: var(--font-display, "Fraunces", serif);
-  font-size: clamp(2.4rem, 6vw, 4rem);
-  font-weight: 600;
-  line-height: 1.15;
-  color: var(--paper);
+  font-family: var(--font-display);
+  font-size: var(--font-size-display1);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-snug);
+  color: var(--color-text-on-dark);
   margin: 0;
 }
 
 .heading em {
   font-style: italic;
-  color: var(--gold2);
+  color: var(--color-gold);
 }
 
 .sub {
-  font-family: var(--font-body, "Archivo", sans-serif);
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-on-dark-muted);
   margin: 0;
 }
 
 .email {
-  color: var(--gold2);
+  color: var(--color-gold);
   text-decoration: none;
-  border-bottom: 1px solid rgba(246, 200, 105, 0.4);
-  transition: color 0.2s ease, border-color 0.2s ease;
+  border-bottom: 1px solid var(--gold2-a-40);
+  transition: color var(--transition-base), border-color var(--transition-base);
 }
 
 .email:hover {
-  color: var(--gold);
-  border-color: var(--gold);
+  color: var(--gold-on-surface);
+  border-color: var(--gold-on-surface);
 }
 
 /* Film-grain overlay */

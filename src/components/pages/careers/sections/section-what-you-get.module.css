@@ -1,13 +1,13 @@
 .section {
   padding: var(--section-padding) 0 calc(var(--section-padding) + var(--space-xl));
-  background: var(--paper);
+  background: var(--color-bg-light);
   --gold-on-surface: var(--gold-text-on-light);
 }
 
 .wrap {
-  max-width: var(--maxw);
+  max-width: var(--container-max-width);
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 var(--legacy-container-padding);
 }
 
 /* ---- Comp model: Base OR Warm, as three space-filling cards ---- */
@@ -15,16 +15,16 @@
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: stretch;
-  gap: 16px;
+  gap: var(--space-md);
   margin-top: var(--space-2xl);
 }
 
 .compCard {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 36px 32px;
-  border-radius: var(--rad);
+  gap: var(--space-sm);
+  padding: calc(var(--space-xl) + var(--space-xs)) var(--space-xl);
+  border-radius: var(--radius-2xl);
   border: 1px solid var(--color-border-on-light);
   background: var(--color-bg-light-card);
   position: relative;
@@ -36,7 +36,7 @@
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, var(--gold2), var(--gold-deep));
+  background: var(--gradient-brand-gold);
 }
 
 /* The middle "OR" card is a connector — compact, gold, centered. */
@@ -44,8 +44,8 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 36px 28px;
-  background: linear-gradient(180deg, var(--gold2), var(--gold-deep));
+  padding: calc(var(--space-xl) + var(--space-xs)) var(--card-padding-sm);
+  background: var(--gradient-brand-gold);
   border-color: transparent;
 }
 
@@ -55,37 +55,37 @@
 
 .compIndex {
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.16em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-ultra);
   color: var(--color-text-on-light-muted);
 }
 
 .compJoin .compIndex {
-  color: rgba(24, 15, 0, 0.55);
+  color: color-mix(in srgb, var(--gold-ink) 55%, transparent);
 }
 
 .compValue {
   font-family: var(--font-display);
-  font-size: clamp(36px, 5vw, 56px);
-  font-weight: 700;
+  font-size: var(--font-size-section);
+  font-weight: var(--font-weight-bold);
   line-height: 1;
-  letter-spacing: -0.02em;
+  letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text-on-light);
 }
 
 .compJoin .compValue {
-  color: #180f00;
+  color: var(--gold-ink);
 }
 
 .compLabel {
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   line-height: 1.5;
   color: var(--color-text-on-light-secondary);
   margin-top: auto;
 }
 
 .compJoin .compLabel {
-  color: rgba(24, 15, 0, 0.8);
+  color: color-mix(in srgb, var(--gold-ink) 80%, transparent);
   margin-top: 0;
 }
 
@@ -97,11 +97,11 @@
 .perksEyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  color: var(--gold-deep);
+  gap: var(--space-sm);
+  color: var(--gold-on-surface);
   font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.14em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
 }
 
@@ -109,14 +109,14 @@
   content: "";
   width: 26px;
   height: 1px;
-  background: var(--gold-deep);
+  background: var(--gold-on-surface);
   display: inline-block;
 }
 
 .perks {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: var(--space-md);
   margin-top: var(--space-lg);
 }
 
@@ -125,15 +125,15 @@
   flex-direction: column;
   background: var(--color-bg-light-card);
   border: 1px solid var(--color-border-on-light);
-  border-radius: var(--rad);
-  padding: 30px;
+  border-radius: var(--radius-2xl);
+  padding: var(--card-padding);
   transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
 }
 
 .perk:hover {
   transform: translateY(-4px);
   border-color: var(--color-border-on-light-strong);
-  box-shadow: 0 24px 50px -28px rgba(24, 15, 0, 0.35);
+  box-shadow: var(--shadow-panel);
 }
 
 .perk .ico {
@@ -141,25 +141,25 @@
   place-items: center;
   width: 46px;
   height: 46px;
-  border-radius: 12px;
-  background: rgba(232, 176, 75, 0.16);
-  border: 1px solid rgba(185, 132, 43, 0.3);
-  color: var(--gold-deep);
+  border-radius: var(--radius-lg);
+  background: var(--gold-a-16);
+  border: 1px solid var(--gold-a-30);
+  color: var(--gold-on-surface);
   margin-bottom: 18px;
 }
 
 .perk h3 {
   font-family: var(--font-display);
-  font-size: 20px;
-  font-weight: 600;
+  font-size: var(--font-size-h4);
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-on-light);
   margin-bottom: 10px;
-  line-height: 1.2;
+  line-height: var(--line-height-snug);
 }
 
 .perk p {
   color: var(--color-text-on-light-secondary);
-  font-size: 15px;
+  font-size: var(--font-size-body-sm);
   margin: 0;
   line-height: 1.6;
 }
@@ -170,7 +170,7 @@
   width: 40px;
   margin-top: auto;
   border-radius: var(--radius-full);
-  background: linear-gradient(90deg, var(--gold2), var(--gold-deep));
+  background: var(--gradient-brand-gold);
   padding-top: 0;
 }
 

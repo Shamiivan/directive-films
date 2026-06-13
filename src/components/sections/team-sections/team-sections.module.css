@@ -1,7 +1,7 @@
 .section {
   box-sizing: border-box;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-text-on-dark) 4%, transparent), transparent 22%),
     var(--color-bg-dark);
   color: var(--color-text-on-dark);
   padding: var(--space-4xl) 0 0;
@@ -58,7 +58,7 @@
   box-sizing: border-box;
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
   color: var(--gold-on-surface);
   margin: 0 0 var(--space-sm);
@@ -67,7 +67,7 @@
 .name {
   box-sizing: border-box;
   font-family: var(--font-display);
-  font-size: clamp(40px, 6vw, 76px);
+  font-size: var(--font-size-hero-media);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
@@ -101,7 +101,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.55));
+  background: var(--gradient-card-overlay);
   pointer-events: none;
 }
 
