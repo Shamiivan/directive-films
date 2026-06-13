@@ -52,11 +52,12 @@
 }
 
 .navList a {
+  font-family: "Inter", var(--font-body);
   font-size: var(--font-size-caption);
   letter-spacing: 0.13em;
   text-transform: uppercase;
   color: var(--color-text-on-dark-secondary);
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   text-decoration: none;
   transition: color var(--transition-fast);
 }
@@ -70,6 +71,7 @@
   display: inline-flex;
   align-items: center;
   gap: calc(var(--space-sm) + 1px);
+  font-family: "Inter", var(--font-body);
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-ui);
   letter-spacing: 0.06em;
@@ -182,10 +184,11 @@
 
 .mobileNavList > li > a {
   display: block;
+  font-family: "Inter", var(--font-body);
   font-size: var(--font-size-caption);
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-on-dark-secondary);
   text-decoration: none;
   padding: var(--space-md) 0;
@@ -209,6 +212,7 @@
 .mobileContactBtn {
   display: flex;
   justify-content: center;
+  font-family: "Inter", var(--font-body);
   padding: calc(var(--space-md) - 3px) calc(var(--space-lg) - 2px) !important;
   border-radius: var(--radius-full);
   background: var(--gradient-brand-gold) !important;
