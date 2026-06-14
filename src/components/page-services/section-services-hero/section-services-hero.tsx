@@ -18,7 +18,7 @@ export default function ServicesHeroSection() {
       }
       lede={t('hero.description')}
       ctaHref={l('/audit')}
-      ctaLabel="Get your free growth audit"
+      ctaLabel={t('ctaFreeAudit', { ns: 'common' })}
     />
   );
 }

@@ -1,19 +1,22 @@
+import { useTranslation } from "react-i18next";
 import MediaHero from "@/components/shared/media-hero/media-hero";
 
 export default function HomeHeroSection() {
+  const { t } = useTranslation("home");
+
   return (
     <MediaHero
-      eyebrow="10 years · 430+ businesses · $100M+ generated"
+      eyebrow={t("homeHero.eyebrow")}
       title={
         <>
-          Driven By Purpose.
+          {t("homeHero.titleLine1")}
           <br />
-          Defined By Excellence.
+          {t("homeHero.titleLine2")}
         </>
       }
-      lede="Video, ads, AI and closers — wired into one engine that brings you customers. 430+ businesses, $100M+ generated, 10 years."
+      lede={t("homeHero.lede")}
       ctaHref="/audit"
-      ctaLabel="Get your free growth audit"
+      ctaLabel={t("ctaFreeAudit", { ns: "common" })}
     />
   );
 }

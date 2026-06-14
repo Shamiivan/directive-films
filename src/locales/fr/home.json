@@ -237,5 +237,43 @@
     "lead": "Le premier appel est gratuit et direct. Si nous ne sommes pas le bon partenaire, nous vous le dirons - et nous vous dirons vers qui aller.",
     "primary": "Réserver un appel",
     "secondary": "Voir nos services"
+  },
+  "homeHero": {
+    "eyebrow": "10 ans · 430+ entreprises · 100 M$+ générés",
+    "titleLine1": "Motivés par la mission.",
+    "titleLine2": "Définis par l'excellence.",
+    "lede": "Vidéo, publicités, IA et closers — connectés dans un seul moteur qui vous amène des clients. 430+ entreprises, 100 M$+ générés, 10 ans."
+  },
+  "homeFaq": {
+    "eyebrow": "FAQ",
+    "heading": "Des questions avant de réserver?",
+    "lead": "Les réponses courtes. L'audit couvre le reste.",
+    "items": [
+      {
+        "q": "Combien ça coûte?",
+        "a": "L'audit de croissance est gratuit. Ensuite, la majorité de notre travail repose sur un modèle aligné sur la performance — nous gagnons quand vous gagnez. Nous établissons le prix une fois que nous savons ce dont vous avez réellement besoin."
+      },
+      {
+        "q": "Dois-je m'engager à quoi que ce soit?",
+        "a": "Non. L'audit est sans engagement et le plan vous appartient dans tous les cas. Si une collaboration a du sens, nous en parlerons; sinon, vous repartez avec un portrait clair de l'endroit où vous perdez de l'argent."
+      },
+      {
+        "q": "En combien de temps voit-on des résultats?",
+        "a": "L'audit revient en quelques jours, pas en semaines. Une fois que nous bâtissons, vous voyez le pipeline et les revenus sur de vrais tableaux de bord — pas des likes et des impressions."
+      },
+      {
+        "q": "Qu'y a-t-il vraiment dans l'audit?",
+        "a": "Un portrait direct de votre offre, de votre contenu et de votre tunnel : où les leads fuient, quoi corriger en premier, et ce que ça vaut. Pas de remplissage, pas de présentation de 40 diapositives."
+      },
+      {
+        "q": "Peut-on commencer avec une seule pièce?",
+        "a": "Oui. Prenez un seul service ou confiez-nous toute la machine — audit, vidéo, publicités, CRM, IA et une équipe de vente à commission qui transforme les leads en contrats signés."
+      }
+    ]
+  },
+  "homeCta": {
+    "titlePrefix": "Faites croître ",
+    "titleEm": "vos revenus",
+    "titleSuffix": " maintenant"
   }
 }

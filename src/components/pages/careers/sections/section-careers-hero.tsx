@@ -28,7 +28,7 @@ export default function CareersHeroSection() {
         </motion.p>
         <motion.div className={styles.ctarow} variants={staggerListItem}>
           <CtaButton href="#apply">{t('hero.cta')}</CtaButton>
-          <CtaButton to="/audit" variant="outline">Get your free growth audit</CtaButton>
+          <CtaButton to="/audit" variant="outline">{t('ctaFreeAudit', { ns: 'common' })}</CtaButton>
         </motion.div>
       </motion.div>
     </section>

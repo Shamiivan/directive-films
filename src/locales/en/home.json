@@ -237,5 +237,43 @@
     "lead": "The first call is free and straight-talking. If we're not the right fit, we'll say so - and tell you who is.",
     "primary": "Book a call",
     "secondary": "See what we do"
+  },
+  "homeHero": {
+    "eyebrow": "10 years · 430+ businesses · $100M+ generated",
+    "titleLine1": "Driven By Purpose.",
+    "titleLine2": "Defined By Excellence.",
+    "lede": "Video, ads, AI and closers — wired into one engine that brings you customers. 430+ businesses, $100M+ generated, 10 years."
+  },
+  "homeFaq": {
+    "eyebrow": "FAQ",
+    "heading": "Questions before you book?",
+    "lead": "The short answers. The audit covers the rest.",
+    "items": [
+      {
+        "q": "What does it cost?",
+        "a": "The growth audit is free. After that, most of our work runs on a performance-aligned model — we win when you win. We scope pricing once we know what you actually need."
+      },
+      {
+        "q": "Do I have to commit to anything?",
+        "a": "No. The audit is no-commitment and you keep the plan either way. If it makes sense to work together we'll talk; if not, you still walk away with a clear read on where you're losing money."
+      },
+      {
+        "q": "How fast do we see results?",
+        "a": "The audit comes back in days, not weeks. Once we're building, you see pipeline and revenue on real dashboards — not likes and impressions."
+      },
+      {
+        "q": "What's actually in the audit?",
+        "a": "A straight read on your offer, content and funnel: where leads are leaking, what to fix first, and what it's worth. No fluff, no 40-slide deck."
+      },
+      {
+        "q": "Can we start with just one piece?",
+        "a": "Yes. Take a single service or hand us the whole machine — audit, video, ads, CRM, AI, and a commission sales team that turns leads into signed deals."
+      }
+    ]
+  },
+  "homeCta": {
+    "titlePrefix": "Grow your ",
+    "titleEm": "business revenue",
+    "titleSuffix": " now"
   }
 }

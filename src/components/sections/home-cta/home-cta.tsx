@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next";
 import CtaButton from "@/components/shared/cta-button/cta-button";
 import styles from "./home-cta.module.css";
 
 export default function HomeCtaSection({ id = "contact" }: { id?: string } = {}) {
+  const { t } = useTranslation("home");
+
   return (
     <section className={styles.cta} id={id}>
       <video
@@ -15,9 +18,11 @@ export default function HomeCtaSection({ id = "contact" }: { id?: string } = {})
       </video>
       <div className={styles.inner}>
         <h2 className={styles.title}>
-          Grow your <em>business revenue</em> now
+          {t("homeCta.titlePrefix")}
+          <em>{t("homeCta.titleEm")}</em>
+          {t("homeCta.titleSuffix")}
         </h2>
-        <CtaButton to="/audit">Get your free growth audit</CtaButton>
+        <CtaButton to="/audit">{t("ctaFreeAudit", { ns: "common" })}</CtaButton>
       </div>
     </section>
   );
