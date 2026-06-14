@@ -54,12 +54,13 @@ pnpm start
 
 ### Fonts
 
-Self-hosted via `@fontsource` (imported in `src/root.tsx`):
-- **Playfair Display** (700, 800, 900) — Display/heading font
-- **Inter** (400, 500, 600) — Body font
-- **Space Mono** (400) — Monospace font
+Loaded in `src/root.tsx` and exposed through `src/globals.css` variables:
+- **Fraunces** (400, 600, 700, italic variants) — Display/heading font
+- **Archivo** (400, 500, 600, 700, 800, 900) — Body font
+- **Archivo Expanded** (600, 700, 800) — Brand caps
+- **JetBrains Mono** (400, 500) — Monospace labels
 
-CSS variables: `--font-display`, `--font-body`, `--font-mono`
+CSS variables: `--font-display`, `--font-body`, `--font-brand`, `--font-mono`
 
 ### Design System
 

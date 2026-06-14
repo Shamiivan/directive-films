@@ -40,6 +40,10 @@
   animation: logo-marquee 46s linear infinite;
 }
 
+.overlay:hover .track {
+  animation-play-state: paused;
+}
+
 .row {
   box-sizing: border-box;
   display: flex;
@@ -57,6 +61,36 @@
   justify-content: center;
 }
 
+.logoItem:hover .logo,
+.logoItem:focus-within .logo,
+.logoItem:active .logo {
+  filter: none;
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.logoItem:hover .logoCaption,
+.logoItem:focus-within .logoCaption,
+.logoItem:active .logoCaption,
+.logoItem:hover .logoWordmark,
+.logoItem:focus-within .logoWordmark,
+.logoItem:active .logoWordmark {
+  color: var(--color-text-on-dark);
+  opacity: 1;
+}
+
+.logoItem:hover .logoWordmark,
+.logoItem:focus-within .logoWordmark,
+.logoItem:active .logoWordmark {
+  transform: translateY(-2px);
+}
+
+.logoWithCaption {
+  flex-direction: column;
+  gap: var(--space-xs);
+  width: 220px;
+}
+
 .logo {
   box-sizing: border-box;
   width: 200px;
@@ -64,10 +98,113 @@
   max-width: 100%;
   object-fit: contain;
   border-radius: var(--radius-xl);
+  filter: grayscale(1) saturate(0) contrast(0.86) brightness(1.18);
+  opacity: 0.58;
+  transform: translateY(0);
+  transition:
+    filter var(--transition-base),
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.logoFactoryDirect {
+  width: 230px;
+  height: 72px;
+}
+
+.logoMomentum {
+  width: 52px;
+  height: 52px;
+}
+
+.logoBudweiser {
+  width: 230px;
+  height: 74px;
+}
+
+.logoRode {
+  width: 150px;
+  height: 84px;
+}
+
+.logoPlate {
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+}
+
+.logoCaption {
+  color: var(--color-text-on-dark-muted);
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-solid);
+  text-align: center;
+  text-transform: uppercase;
+  opacity: 0.68;
+  transition:
+    color var(--transition-base),
+    opacity var(--transition-base);
+}
+
+.logoWordmark {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 220px;
+  height: 80px;
+  padding: 0 var(--space-md);
+  border-radius: var(--radius-xl);
+  color: var(--color-text-on-dark-muted);
+  font-family: var(--font-display);
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  text-align: center;
+  white-space: nowrap;
+  opacity: 0.62;
+  transition:
+    color var(--transition-base),
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.logoWordmark small {
+  margin-top: 3px;
+  color: var(--color-text-on-dark-muted);
+  font-family: var(--font-body);
+  font-size: var(--font-size-label);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+}
+
+.logoWordmarkStrong {
+  font-size: var(--font-size-h4);
+  text-transform: uppercase;
+}
+
+.logoWordmarkWide {
+  font-family: var(--font-body);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+}
+
+.logoWordmarkScript {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
 }
 
 .logoInvert {
   filter: brightness(0) invert(1) grayscale(1);
+}
+
+.logoItem:hover .logoInvert,
+.logoItem:focus-within .logoInvert,
+.logoItem:active .logoInvert {
+  filter: none;
 }
 
 .logoIcon {
@@ -101,6 +238,33 @@
 
   .container {
     height: 220px;
+  }
+
+  .logo,
+  .logoWordmark {
+    width: 170px;
+  }
+
+  .logoFactoryDirect,
+  .logoBudweiser {
+    width: 190px;
+  }
+
+  .logoMomentum {
+    width: 48px;
+  }
+
+  .logoRode {
+    width: 130px;
+  }
+
+  .logoWordmark {
+    font-size: var(--font-size-body);
+  }
+
+  .logoWordmarkStrong,
+  .logoWordmarkScript {
+    font-size: var(--font-size-body-lg);
   }
 }
 

@@ -1,9 +1,8 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
-import MagneticButton from '../../MagneticButton';
 import SectionEyebrow from '../../SectionEyebrow';
+import CtaButton from '../../shared/cta-button/cta-button';
 import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal } from '../../../utils/animations';
 import { useTilt } from '../../../hooks/useTilt';
@@ -17,23 +16,14 @@ interface OfferType {
   bestFor: string;
   includes: string[];
   ctaText: string;
-  hoverText: string;
 }
 
 function OfferCard({
-  offer,
   index,
-  isHovered,
-  onHoverStart,
-  onHoverEnd,
   children,
   highlight
 }: {
-  offer: OfferType;
   index: number;
-  isHovered: boolean;
-  onHoverStart: () => void;
-  onHoverEnd: () => void;
   children: React.ReactNode;
   highlight: boolean;
 }) {
@@ -47,11 +37,7 @@ function OfferCard({
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.4, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
       onMouseMove={onMouseMove}
-      onMouseLeave={() => {
-        onMouseLeave();
-        onHoverEnd();
-      }}
-      onMouseEnter={onHoverStart}
+      onMouseLeave={onMouseLeave}
       style={tiltStyle}
       whileHover={{ scale: 1.02 }}
     >
@@ -61,7 +47,6 @@ function OfferCard({
 }
 
 export default function PricingSection() {
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const { t } = useTranslation('services');
   const l = useLocalePath();
 
@@ -113,11 +98,7 @@ export default function PricingSection() {
             return (
               <OfferCard
                 key={index}
-                offer={offer}
                 index={index}
-                isHovered={hoveredCard === index}
-                onHoverStart={() => setHoveredCard(index)}
-                onHoverEnd={() => setHoveredCard(null)}
                 highlight={highlight}
               >
 
@@ -164,47 +145,9 @@ export default function PricingSection() {
                 </ul>
 
                 <div className={styles.ctaWrapper}>
-                  <MagneticButton
-                    className={`${styles.ctaButton} ${highlight ? styles.ctaHighlight : ''}`}
-                    href="/contact"
-                  >
-                    <span className={styles.ctaTextWrapper}>
-                      <AnimatePresence mode="wait">
-                        {hoveredCard === index ? (
-                          <motion.span
-                            key="hover"
-                            initial={{ y: 8, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -8, opacity: 0 }}
-                            transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                          >
-                            {offer.hoverText}
-                          </motion.span>
-                        ) : (
-                          <motion.span
-                            key="default"
-                            initial={{ y: 8, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            exit={{ y: -8, opacity: 0 }}
-                            transition={{ duration: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                          >
-                            {offer.ctaText}
-                          </motion.span>
-                        )}
-                      </AnimatePresence>
-                      <motion.span
-                        className={styles.ctaArrow}
-                        initial={false}
-                        animate={{
-                          x: hoveredCard === index ? 0 : -4,
-                          opacity: hoveredCard === index ? 1 : 0,
-                        }}
-                        transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
-                      >
-                        →
-                      </motion.span>
-                    </span>
-                  </MagneticButton>
+                  <CtaButton to="/contact" variant={highlight ? "gold" : "outline"} fullWidth arrow={false}>
+                    {offer.ctaText}
+                  </CtaButton>
                 </div>
               </OfferCard>
             );

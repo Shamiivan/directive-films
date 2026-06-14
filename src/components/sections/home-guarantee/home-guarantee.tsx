@@ -12,9 +12,6 @@ export default function HomeGuaranteeSection({ id = "guarantee" }: { id?: string
   return (
     <section className={styles.section} id={id}>
       <div className={styles.container}>
-        <Reveal as="p" className={styles.lead} y={20}>
-          Worst case, you leave with a plan.
-        </Reveal>
         <ul className={styles.points}>
           {points.map((point, i) => (
             <Reveal as="li" className={styles.point} key={point.label} delay={i * 0.08} y={20}>

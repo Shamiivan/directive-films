@@ -27,12 +27,12 @@ export const STATIC_LOCALE_BUNDLES = {
 } as const;
 
 export const STATIC_COMPANY_LOGOS = [
-  { slug: "momentum", name: "Momentum", src: "/logos/momentum.svg" },
-  { slug: "amazon", name: "Amazon", src: "/logos/amazon.svg" },
+  { slug: "red-bull", name: "Red Bull", src: "/logos/benjy-clients/14-group-11.png" },
+  { slug: "factory-direct", name: "Factory Direct", src: "/logos/factory-direct.jpg" },
+  { slug: "momentum-management", name: "Momentum Management", src: "/logos/momentum-management.webp" },
   { slug: "rogers", name: "Rogers", src: "/logos/rogers.svg" },
-  { slug: "shopify", name: "Shopify", src: "/logos/shopify.svg" },
-  { slug: "telus", name: "Telus", src: "/logos/telus.svg" },
-  { slug: "altitude", name: "Altitude", src: "/logos/altitude.png" },
+  { slug: "budweiser", name: "Budweiser", src: "/logos/budweiser.svg" },
+  { slug: "rode", name: "RODE Microphones", src: "/logos/rode.svg" },
 ] as const;
 
 export const STATIC_HOME_STRIP_IMAGES = [

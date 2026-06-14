@@ -8,7 +8,7 @@ interface TeamMemberCopy {
 
 const memberMeta = [
   { ini: 'D', role: 'CEO', image: '/team/ceo.jpg' },
-  { ini: 'C', role: 'COO', image: '/team/coo.jpeg' },
+  { ini: 'K', role: 'COO', image: '/team/coo.jpeg' },
 ];
 
 export default function TeamSection() {

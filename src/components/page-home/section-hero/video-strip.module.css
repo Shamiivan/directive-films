@@ -52,12 +52,12 @@
 
 .stripWrapper::before {
   left: 0;
-  background: linear-gradient(to right, var(--ink) 0%, color-mix(in srgb, var(--ink) 85%, transparent) 40%, transparent 100%);
+  background: linear-gradient(to right, var(--color-bg-deep) 0%, color-mix(in srgb, var(--color-bg-deep) 85%, transparent) 40%, transparent 100%);
 }
 
 .stripWrapper::after {
   right: 0;
-  background: linear-gradient(to left, var(--ink) 0%, color-mix(in srgb, var(--ink) 85%, transparent) 40%, transparent 100%);
+  background: linear-gradient(to left, var(--color-bg-deep) 0%, color-mix(in srgb, var(--color-bg-deep) 85%, transparent) 40%, transparent 100%);
 }
 
 /* 16 slides * (250px + 20px gap) = 4320px per set.

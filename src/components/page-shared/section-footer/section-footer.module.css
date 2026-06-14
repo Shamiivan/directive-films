@@ -24,7 +24,7 @@
   font-family: var(--font-brand);
   font-weight: var(--font-weight-extrabold);
   font-size: var(--font-size-body-sm);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
   color: var(--color-text-on-dark);
   text-decoration: none;
@@ -60,7 +60,7 @@
 .colTitle {
   font-family: var(--font-body);
   font-size: var(--font-size-caption);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
   color: var(--color-text-on-dark-muted);
   margin-bottom: var(--space-md);

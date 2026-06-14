@@ -13,10 +13,10 @@
   display: inline-flex;
   align-items: center;
   gap: var(--button-gap);
-  color: var(--gold2);
+  color: var(--color-gold);
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
 }
 
@@ -24,18 +24,18 @@
   content: "";
   width: 26px;
   height: 1px;
-  background: var(--gold2);
+  background: var(--color-gold);
   display: inline-block;
 }
 
 .heading {
   font-family: var(--font-display);
   font-size: var(--font-size-section-sm);
-  font-weight: 600;
-  line-height: 1.04;
-  letter-spacing: -0.01em;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-tight);
   margin: calc(var(--space-md) - 2px) 0 0;
-  color: var(--paper);
+  color: var(--color-text-on-dark);
 }
 
 .steps {
@@ -46,10 +46,10 @@
 }
 
 .step {
-  border: 1px solid var(--line);
+  border: 1px solid var(--color-border-dark-subtle);
   border-radius: var(--rad);
   padding: var(--card-padding);
-  background: var(--ink2);
+  background: var(--color-bg-dark);
   position: relative;
   overflow: hidden;
 }
@@ -59,7 +59,7 @@
   position: absolute;
   inset: auto 0 0 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--gold2), transparent);
+  background: linear-gradient(90deg, var(--color-gold), transparent);
 }
 
 .num {
@@ -67,22 +67,22 @@
   font-style: italic;
   font-size: var(--font-size-display-lg);
   color: var(--gold-a-28);
-  line-height: 0.8;
+  line-height: var(--line-height-compressed);
 }
 
 .step h3 {
   font-family: var(--font-display);
   font-size: var(--font-size-h3);
-  font-weight: 600;
-  color: var(--paper);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-on-dark);
   margin: var(--space-md) 0 calc(var(--space-sm) + 2px);
 }
 
 .step p {
-  color: var(--paper-dim);
+  color: var(--color-text-on-dark-secondary);
   font-size: var(--font-size-body-sm);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 @media (max-width: 920px) {

@@ -39,10 +39,10 @@
 .featuredValue {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(88px, 11vw, 176px);
+  font-size: var(--font-size-poster);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
-  line-height: 0.88;
+  line-height: var(--line-height-poster);
   color: var(--gold-on-surface);
   margin-bottom: var(--space-xl);
 }
@@ -60,8 +60,8 @@
 .featuredDetail {
   font-family: var(--font-body);
   font-size: var(--font-size-body);
-  letter-spacing: 0.01em;
-  line-height: 1.55;
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-on-light-secondary);
   margin: 0;
 }
@@ -92,10 +92,10 @@
 .metricValue {
   flex: 0 0 auto;
   font-family: var(--font-display);
-  font-size: clamp(40px, 4.5vw, 64px);
+  font-size: var(--font-size-display1);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
-  line-height: 0.95;
+  line-height: var(--line-height-display);
   color: var(--gold-on-surface);
 }
 
@@ -118,8 +118,8 @@
 .metricDetail {
   font-family: var(--font-body);
   font-size: var(--font-size-body-sm);
-  letter-spacing: 0.01em;
-  line-height: 1.5;
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-on-light-secondary);
   margin: 0;
 }
@@ -134,7 +134,7 @@
   }
 
   .featuredValue {
-    font-size: clamp(72px, 18vw, 140px);
+    font-size: var(--font-size-poster-md);
   }
 }
 

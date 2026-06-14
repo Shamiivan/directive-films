@@ -53,7 +53,7 @@ export default function AnimatedInput({
         animate={{
           y: isLabelFloating ? -24 : 0,
           scale: isLabelFloating ? 0.85 : 1,
-          color: isFocused ? '#FDB714' : '#999',
+          color: isFocused ? 'var(--color-gold)' : 'var(--color-text-muted)',
         }}
         transition={{ duration: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
       >
@@ -73,10 +73,10 @@ export default function AnimatedInput({
           onFocus={handleFocus}
           onBlur={handleBlur}
           animate={{
-            borderColor: isFocused ? '#FDB714' : '#333',
+            borderColor: isFocused ? 'var(--color-gold)' : 'var(--color-border-light)',
             boxShadow: isFocused
-              ? '0 0 0 2px rgba(253, 183, 20, 0.2)'
-              : '0 0 0 0px rgba(253, 183, 20, 0)',
+              ? '0 0 0 2px var(--gold2-a-20)'
+              : '0 0 0 0 var(--gold2-a-20)',
           }}
           transition={{ duration: 0.2 }}
         />
@@ -93,10 +93,10 @@ export default function AnimatedInput({
           onFocus={handleFocus}
           onBlur={handleBlur}
           animate={{
-            borderColor: isFocused ? '#FDB714' : '#333',
+            borderColor: isFocused ? 'var(--color-gold)' : 'var(--color-border-light)',
             boxShadow: isFocused
-              ? '0 0 0 2px rgba(253, 183, 20, 0.2)'
-              : '0 0 0 0px rgba(253, 183, 20, 0)',
+              ? '0 0 0 2px var(--gold2-a-20)'
+              : '0 0 0 0 var(--gold2-a-20)',
           }}
           transition={{ duration: 0.2 }}
         />

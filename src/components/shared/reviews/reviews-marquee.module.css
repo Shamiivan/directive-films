@@ -72,7 +72,7 @@
   color: var(--gold-on-surface);
   font-size: var(--font-size-body);
   letter-spacing: var(--letter-spacing-widest);
-  line-height: 1;
+  line-height: var(--line-height-solid);
 }
 
 .quote {
@@ -102,7 +102,7 @@
   color: var(--gold-ink);
   font-size: var(--font-size-caption);
   font-weight: var(--font-weight-extrabold);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--letter-spacing-wider);
 }
 
 .meta {
@@ -113,13 +113,13 @@
 .meta strong {
   font-size: var(--font-size-body-sm);
   font-weight: var(--font-weight-bold);
-  line-height: 1.25;
+  line-height: var(--line-height-normal);
   color: var(--color-text-on-light);
 }
 
 .meta span {
   font-size: var(--font-size-caption);
-  line-height: 1.35;
+  line-height: var(--line-height-normal);
   color: var(--color-text-on-light-secondary);
 }
 

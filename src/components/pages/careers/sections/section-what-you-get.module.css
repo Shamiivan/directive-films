@@ -68,7 +68,7 @@
   font-family: var(--font-display);
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text-on-light);
 }
@@ -79,7 +79,7 @@
 
 .compLabel {
   font-size: var(--font-size-body-sm);
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
   color: var(--color-text-on-light-secondary);
   margin-top: auto;
 }
@@ -161,7 +161,7 @@
   color: var(--color-text-on-light-secondary);
   font-size: var(--font-size-body-sm);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 .perkRule {

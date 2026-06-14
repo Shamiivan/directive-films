@@ -62,7 +62,7 @@
         "title": "Chef de la direction"
       },
       {
-        "name": "COO",
+        "name": "Karine Gazeryan",
         "title": "Chef des opérations"
       },
       {
@@ -88,6 +88,45 @@
       {
         "name": "...et 63 autres",
         "title": "Dans 6 villes"
+      }
+    ]
+  },
+  "selectedWork": {
+    "eyebrow": "Projets sélectionnés",
+    "title": "Ce que nous créons",
+    "accent": "pour nos clients.",
+    "subtitle": "Un aperçu de projets récents en vidéo, marque et croissance.",
+    "viewProject": "Voir le projet →",
+    "items": [
+      {
+        "title": "Lancement de startup tech",
+        "category": "Histoire de marque",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Croissance e-commerce",
+        "category": "Présentation produit",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Innovation en santé",
+        "category": "Vidéo explicative",
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Services financiers",
+        "category": "Témoignage client",
+        "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Agence immobilière",
+        "category": "Visites de propriétés",
+        "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Plateforme SaaS",
+        "category": "Vidéo de démo",
+        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
       }
     ]
   }

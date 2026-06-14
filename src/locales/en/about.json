@@ -62,7 +62,7 @@
         "title": "Chief Executive Officer"
       },
       {
-        "name": "COO",
+        "name": "Karine Gazeryan",
         "title": "Chief Operating Officer"
       },
       {
@@ -88,6 +88,45 @@
       {
         "name": "...and 63 more",
         "title": "Across 6 cities"
+      }
+    ]
+  },
+  "selectedWork": {
+    "eyebrow": "Selected Work",
+    "title": "What we make",
+    "accent": "for clients.",
+    "subtitle": "A sample of recent projects across video, brand, and growth.",
+    "viewProject": "View project →",
+    "items": [
+      {
+        "title": "Tech Startup Launch",
+        "category": "Brand Story",
+        "image": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "E-commerce Growth",
+        "category": "Product Showcase",
+        "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Healthcare Innovation",
+        "category": "Explainer Video",
+        "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Financial Services",
+        "category": "Client Testimonial",
+        "image": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "Real Estate Agency",
+        "category": "Property Tours",
+        "image": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop"
+      },
+      {
+        "title": "SaaS Platform",
+        "category": "Demo Video",
+        "image": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop"
       }
     ]
   }

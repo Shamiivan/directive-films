@@ -100,7 +100,7 @@
   font-weight: var(--font-weight-bold);
   color: transparent;
   -webkit-text-stroke: 1px var(--gold2-a-20);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   margin-bottom: var(--space-md);
 }
 

@@ -32,6 +32,9 @@
       }
     ]
   },
+  "clientLogos": {
+    "ariaLabel": "Client logos"
+  },
   "offer": {
     "eyebrow": "Services",
     "tagline": "What we do",

@@ -1,5 +1,5 @@
 .section {
-  background: var(--color-bg-dark-soft);
+  background: var(--color-bg-light);
   padding: var(--section-padding-compact) 0;
 }
 
@@ -13,7 +13,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--button-gap);
-  color: var(--gold2);
+  color: var(--gold-on-surface);
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
   letter-spacing: var(--letter-spacing-widest);
@@ -24,7 +24,7 @@
   content: "";
   width: 26px;
   height: 1px;
-  background: var(--gold2);
+  background: var(--gold-on-surface);
   display: inline-block;
 }
 
@@ -32,10 +32,10 @@
   font-family: var(--font-display);
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
-  line-height: 1.03;
+  line-height: var(--line-height-display);
   letter-spacing: var(--letter-spacing-tight);
   margin: calc(var(--space-md) - 2px) 0 0;
-  color: var(--paper);
+  color: var(--color-text-on-light);
 }
 
 .vals {
@@ -46,23 +46,23 @@
 }
 
 .val {
-  border-left: 2px solid var(--gold2);
+  border-left: 2px solid var(--gold-on-surface);
   padding: calc(var(--space-sm) - 2px) 0 calc(var(--space-sm) - 2px) var(--button-padding-x);
 }
 
 .val h3 {
   font-family: var(--font-display);
   font-size: var(--font-size-title-sm);
-  font-weight: 600;
-  color: var(--paper);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-on-light);
   margin-bottom: 8px;
 }
 
 .val p {
-  color: var(--paper-dim);
+  color: var(--color-text-on-light-secondary);
   font-size: var(--font-size-body-sm);
   margin: 0;
-  line-height: 1.6;
+  line-height: var(--line-height-relaxed);
 }
 
 @media (max-width: 920px) {

@@ -15,17 +15,6 @@ interface WorkItem {
   image: string;
 }
 
-const accentColors = [
-  '#3b82f6',
-  '#8b5cf6',
-  '#10b981',
-  '#f59e0b',
-  '#ef4444',
-  '#06b6d4',
-  '#8b5cf6',
-  '#f59e0b',
-];
-
 export default function WorkGallerySection() {
   const sectionRef = useRef(null);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -70,7 +59,6 @@ export default function WorkGallerySection() {
         <div className={styles.scrollContainer}>
           <motion.div ref={containerRef} className={styles.gallery} style={{ x }}>
             {workItems.map((item, index) => {
-              const accent = accentColors[index % accentColors.length];
               const cardInner = (
                 <div className={styles.imageContainer}>
                   <motion.img
@@ -87,7 +75,7 @@ export default function WorkGallerySection() {
                       whileHover={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.3 }}
                     >
-                      <span className={styles.category} style={{ color: accent }}>
+                      <span className={styles.category}>
                         {item.category}
                       </span>
                       <h3 className={styles.workTitle}>{item.title}</h3>
@@ -109,7 +97,7 @@ export default function WorkGallerySection() {
                     whileHover={{
                       y: -10,
                       scale: 1.02,
-                      boxShadow: `0 20px 60px ${accent}40`,
+                      boxShadow: 'var(--shadow-gold-lg)',
                     }}
                   >
                     {cardInner}

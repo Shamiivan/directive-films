@@ -1,8 +1,8 @@
 .trust {
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  border-top: 1px solid var(--color-border-dark-subtle);
+  border-bottom: 1px solid var(--color-border-dark-subtle);
   padding: calc(var(--space-lg) + 2px) 0;
-  background: var(--ink2);
+  background: var(--color-bg-dark);
 }
 
 .wrap {
@@ -17,9 +17,9 @@
 }
 
 .lbl {
-  color: var(--muted);
+  color: var(--color-text-on-dark-muted);
   font-size: var(--font-size-caption);
-  letter-spacing: 0.16em;
+  letter-spacing: var(--letter-spacing-ultra);
   text-transform: uppercase;
   white-space: nowrap;
 }

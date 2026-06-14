@@ -2,7 +2,7 @@
   background:
     radial-gradient(110% 120% at 20% -20%, var(--accent-a-12), transparent 55%),
     radial-gradient(120% 120% at 90% 0%, var(--gold-a-16), transparent 55%),
-    var(--ink);
+    var(--color-bg-deep);
   padding: var(--hero-padding-y) 0 var(--hero-padding-bottom);
 }
 
@@ -16,7 +16,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--button-gap);
-  color: var(--gold2);
+  color: var(--color-gold);
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
   letter-spacing: var(--letter-spacing-widest);
@@ -27,7 +27,7 @@
   content: "";
   width: 26px;
   height: 1px;
-  background: var(--gold2);
+  background: var(--color-gold);
   display: inline-block;
 }
 
@@ -35,19 +35,19 @@
   font-family: var(--font-display);
   font-size: var(--font-size-hero);
   font-weight: var(--font-weight-semibold);
-  line-height: 1.04;
+  line-height: var(--line-height-display);
   letter-spacing: var(--letter-spacing-tight);
   margin-top: 18px;
-  color: var(--paper);
+  color: var(--color-text-on-dark);
 }
 
 .serifIt {
   font-style: italic;
-  color: var(--gold2);
+  color: var(--color-gold);
 }
 
 .lead {
-  color: var(--paper-dim);
+  color: var(--color-text-on-dark-secondary);
   font-size: var(--font-size-lead);
   line-height: var(--line-height-relaxed);
   max-width: 640px;

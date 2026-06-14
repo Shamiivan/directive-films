@@ -185,6 +185,12 @@
   --font-size-display-lg: 3.5rem;
   --font-size-display-xl: 3.75rem;
   --font-size-display-2xl: 4.5rem;
+  --font-size-display-number: clamp(5rem, 10vw, 8.75rem);
+  --font-size-poster: clamp(5.5rem, 11vw, 11rem);
+  --font-size-poster-lg: clamp(6rem, 18vw, 17.5rem);
+  --font-size-poster-md: clamp(4.5rem, 18vw, 8.75rem);
+  --font-size-poster-mobile: clamp(5.5rem, 26vw, 11.25rem);
+  --font-size-feature-heading: clamp(var(--font-size-h3), 3.5vw, var(--font-size-h2));
 
   /* Measure — comfortable running-text line length (45–75ch ideal) */
   --measure: 65ch;
@@ -198,6 +204,10 @@
   --font-weight-extrabold: 800;
 
   /* Typography - Line heights */
+  --line-height-compressed: 0.8;
+  --line-height-poster: 0.88;
+  --line-height-display: 0.98;
+  --line-height-solid: 1;
   --line-height-tight: 1.1;
   --line-height-snug: 1.2;
   --line-height-normal: 1.4;

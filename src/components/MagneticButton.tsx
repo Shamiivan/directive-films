@@ -110,7 +110,7 @@ export default function MagneticButton({ children, className = '', onClick, href
             width: 100,
             height: 100,
             borderRadius: '50%',
-            backgroundColor: 'rgba(255, 255, 255, 0.6)',
+            backgroundColor: 'color-mix(in srgb, var(--color-white) 60%, transparent)',
             pointerEvents: 'none',
             transform: 'translate(-50%, -50%)',
           }}

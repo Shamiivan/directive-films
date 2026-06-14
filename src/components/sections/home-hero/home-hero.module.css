@@ -65,7 +65,7 @@
   max-width: 16ch;
   font-family: var(--font-display);
   font-size: var(--font-size-hero);
-  line-height: 0.98;
+  line-height: var(--line-height-display);
   letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text-on-dark);
   text-wrap: balance;

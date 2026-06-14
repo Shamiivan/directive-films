@@ -52,7 +52,7 @@
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
   color: var(--gold-on-surface);
-  line-height: 1;
+  line-height: var(--line-height-solid);
 }
 
 .statLabel {
@@ -146,9 +146,9 @@
 .quoteIcon {
   display: block;
   font-size: var(--font-size-display1);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   color: var(--gold2-a-15);
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   margin-bottom: var(--space-sm);
   pointer-events: none;
 }

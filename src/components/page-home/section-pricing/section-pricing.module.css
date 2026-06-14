@@ -22,7 +22,7 @@
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
-  line-height: 1.03;
+  line-height: var(--line-height-display);
   color: var(--color-text-on-dark);
   margin-bottom: var(--space-lg);
 }
@@ -134,7 +134,7 @@
   font-size: var(--font-size-body-sm);
   font-weight: var(--font-weight-regular);
   color: var(--color-text-on-dark-muted);
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
 }
 
 /* Features List */
@@ -155,7 +155,7 @@
   font-weight: var(--font-weight-regular);
   letter-spacing: var(--letter-spacing-wide);
   color: var(--color-text-on-dark-secondary);
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
 }
 
 .checkIcon {
@@ -172,50 +172,6 @@
 /* CTA */
 .ctaWrapper {
   margin-top: auto;
-}
-
-.ctaButton {
-  width: 100%;
-  background: transparent;
-  color: var(--color-text-on-dark);
-  border: 1px solid var(--color-gold);
-  padding: calc(var(--space-md) - 2px) var(--space-xl);
-  border-radius: var(--radius-3xl);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-body);
-  cursor: pointer;
-  transition: all var(--transition-slow);
-  text-align: center;
-}
-
-/* CTA Text Animation */
-.ctaTextWrapper {
-  position: relative;
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  gap: calc(var(--space-sm) - 2px);
-}
-
-.ctaArrow {
-  display: inline-block;
-}
-
-.ctaButton:hover {
-  background: var(--color-gold);
-  color: var(--color-black);
-}
-
-.ctaButton.ctaHighlight {
-  background: var(--color-gold);
-  color: var(--color-black);
-  border-color: var(--gold-on-surface);
-}
-
-.ctaButton.ctaHighlight:hover {
-  background: var(--color-gold-hover);
-  border-color: var(--color-gold-hover);
-  transform: scale(1.02);
 }
 
 /* Bottom CTA */

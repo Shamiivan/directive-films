@@ -18,7 +18,7 @@
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
-  line-height: 1.03;
+  line-height: var(--line-height-display);
   text-wrap: balance;
 }
 

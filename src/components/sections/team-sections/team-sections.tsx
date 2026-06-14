@@ -27,7 +27,7 @@ const leaders: Leader[] = [
     imageSide: 'left',
   },
   {
-    name: 'Elizabeth',
+    name: 'Karine Gazeryan',
     role: 'COO',
     focus: 'Operations, delivery rhythm, and production excellence.',
     image: '/team/coo.jpeg',
@@ -70,17 +70,19 @@ function LeaderRow({ leader, index }: { leader: Leader; index: number }) {
   );
 }
 
-export default function TeamSections() {
+export default function TeamSections({ showHeader = true }: { showHeader?: boolean } = {}) {
   return (
     <section className={styles.section} id="team">
-      <div className={styles.intro}>
-        <SectionHeader
-          eyebrow="Leadership"
-          title="The people behind the results"
-          intro="Two operators leading the strategy, production, and systems that move each project from idea to measurable growth."
-          tone="dark"
-        />
-      </div>
+      {showHeader && (
+        <div className={styles.intro}>
+          <SectionHeader
+            eyebrow="Leadership"
+            title="The people behind the results"
+            intro="Two operators leading the strategy, production, and systems that move each project from idea to measurable growth."
+            tone="dark"
+          />
+        </div>
+      )}
 
       <div className={styles.rows}>
         {leaders.map((leader, index) => (

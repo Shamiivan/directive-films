@@ -29,7 +29,7 @@
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
-  letter-spacing: 0.01em;
+  letter-spacing: var(--letter-spacing-wide);
   color: var(--color-text-on-dark);
   background: var(--color-bg-secondary);
   border: 2px solid var(--color-border-light);

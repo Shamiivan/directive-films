@@ -9,9 +9,9 @@ export default function HomeCtaSection({ id = "contact" }: { id?: string } = {})
         muted
         loop
         playsInline
-        poster="https://c.animaapp.com/mq5pf53jFiTmD6/assets/Screenshot_2025-07-21_at_10.40.10_PM_1-min.jpg"
+        poster="/images/cta-broll-pexels-poster.jpg"
       >
-        <source type="video/mp4" src="https://benjyfilms.b-cdn.net/wingsuit - end 30.mp4" />
+        <source type="video/mp4" src="/videos/cta-broll-pexels.mp4" />
       </video>
       <div className={styles.inner}>
         <h2 className={styles.title}>

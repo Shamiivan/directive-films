@@ -61,9 +61,9 @@
 
 .headerNumber {
   font-family: var(--font-body);
-  font-size: clamp(80px, 10vw, 140px);
-  font-weight: 700;
-  line-height: 0.85;
+  font-size: var(--font-size-display-number);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-poster);
   color: transparent;
   -webkit-text-stroke: 1px var(--gold2-a-30);
   user-select: none;
@@ -268,7 +268,7 @@
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
   color: var(--color-text-primary);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   letter-spacing: var(--letter-spacing-tight);
   margin-bottom: 4px;
 }
@@ -434,7 +434,7 @@
 
   .headerNumber {
     font-size: var(--font-size-display-2xl);
-    line-height: 1;
+    line-height: var(--line-height-solid);
   }
 
   .headerContent {

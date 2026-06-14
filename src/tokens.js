@@ -46,12 +46,12 @@ export const colors = {
 };
 
 export const typography = {
-  // Font Families - Clean sans-serif (Inter + Space Mono)
+  // Font Families
   fontFamily: {
-    display: 'var(--font-display, Inter, sans-serif)',
-    body: 'var(--font-body, Inter, sans-serif)',
-    mono: 'var(--font-mono, "Space Mono", monospace)',
-    primary: 'var(--font-body, Inter, sans-serif)',
+    display: 'var(--font-display, Fraunces, Georgia, serif)',
+    body: 'var(--font-body, Archivo, sans-serif)',
+    mono: 'var(--font-mono, "JetBrains Mono", monospace)',
+    primary: 'var(--font-body, Archivo, sans-serif)',
   },
 
   // Font Sizes
@@ -65,6 +65,7 @@ export const typography = {
     bodyLg: 'var(--font-size-body-lg)',
     body: 'var(--font-size-body)',
     bodySm: 'var(--font-size-body-sm)',
+    ui: 'var(--font-size-ui)',
     caption: 'var(--font-size-caption)',
     label: 'var(--font-size-label)',
   },
@@ -81,6 +82,7 @@ export const typography = {
   // Line Heights
   lineHeight: {
     tight: 1.1,
+    snug: 1.2,
     normal: 1.4,
     relaxed: 1.6,
     loose: 1.8,

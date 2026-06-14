@@ -38,7 +38,7 @@
   max-width: 920px;
   font-family: var(--font-display);
   font-size: var(--font-size-hero);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   color: var(--color-text-on-dark);
 }
 

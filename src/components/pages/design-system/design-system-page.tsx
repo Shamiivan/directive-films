@@ -21,7 +21,7 @@ export default function DesignSystemPage() {
       left: 0,
       right: 0,
       zIndex: 1000,
-      background: 'rgba(0, 0, 0, 0.95)',
+      background: 'var(--color-bg-nav-solid)',
       backdropFilter: 'blur(10px)',
     },
 
@@ -138,7 +138,7 @@ export default function DesignSystemPage() {
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontFamily: "'Courier New', monospace",
+      fontFamily: typography.fontFamily.mono,
       fontWeight: typography.fontWeight.semibold,
     },
 
@@ -153,7 +153,7 @@ export default function DesignSystemPage() {
     },
 
     colorValues: {
-      fontFamily: "'Courier New', monospace",
+      fontFamily: typography.fontFamily.mono,
       fontSize: typography.fontSize.bodySm,
       color: colors.text.secondary,
       marginBottom: spacing.md,
@@ -185,13 +185,13 @@ export default function DesignSystemPage() {
       fontSize: typography.fontSize.caption,
       color: colors.brand.gold,
       textTransform: 'uppercase' as const,
-      letterSpacing: '1px',
+      letterSpacing: typography.letterSpacing.wider,
       marginBottom: spacing.md,
       fontWeight: typography.fontWeight.semibold,
     },
 
     typeSpecs: {
-      fontFamily: "'Courier New', monospace",
+      fontFamily: typography.fontFamily.mono,
       fontSize: typography.fontSize.bodySm,
       color: colors.text.tertiary,
       marginTop: spacing.md,
@@ -262,7 +262,7 @@ export default function DesignSystemPage() {
     },
 
     spacingLabel: {
-      fontFamily: "'Courier New', monospace",
+      fontFamily: typography.fontFamily.mono,
       fontWeight: typography.fontWeight.semibold,
       minWidth: '100px',
       color: colors.brand.gold,
@@ -274,21 +274,65 @@ export default function DesignSystemPage() {
   };
 
   const colorPalette = [
-    { name: 'Black', hex: '#000000', token: '--color-bg-primary', rgb: '0, 0, 0', usage: ['Primary BG'] },
-    { name: 'Gold', hex: '#FDB714', token: '--color-brand-gold', rgb: '253, 183, 20', usage: ['Brand', 'CTAs'] },
-    { name: 'White', hex: '#FFFFFF', token: '--color-text-primary', rgb: '255, 255, 255', usage: ['Primary Text'] },
-    { name: 'Charcoal', hex: '#1A1A1A', token: '--color-bg-secondary', rgb: '26, 26, 26', usage: ['Cards'] },
-    { name: 'Light Gray', hex: '#CCCCCC', token: '--color-text-secondary', rgb: '204, 204, 204', usage: ['Secondary Text'] },
-    { name: 'Dark Gray', hex: '#666666', token: '--color-text-muted', rgb: '102, 102, 102', usage: ['Muted Text'] },
+    {
+      name: 'Ink',
+      value: 'var(--color-bg-deep)',
+      token: '--color-bg-deep',
+      rgb: '10 10 13',
+      usage: ['Deep BG'],
+      textColor: colors.text.onDark,
+    },
+    {
+      name: 'Gold',
+      value: 'var(--color-gold)',
+      token: '--color-gold',
+      rgb: '251 211 5',
+      usage: ['Brand', 'CTAs'],
+      textColor: 'var(--gold-ink)',
+    },
+    {
+      name: 'Paper',
+      value: 'var(--color-bg-light)',
+      token: '--color-bg-light',
+      rgb: '245 241 232',
+      usage: ['Light BG'],
+      textColor: colors.text.onLight,
+      bordered: true,
+    },
+    {
+      name: 'Panel',
+      value: 'var(--color-bg-tertiary)',
+      token: '--color-bg-tertiary',
+      rgb: '22 23 31',
+      usage: ['Cards'],
+      textColor: colors.text.onDark,
+    },
+    {
+      name: 'Paper Dim',
+      value: 'var(--color-text-on-dark-secondary)',
+      token: '--color-text-on-dark-secondary',
+      rgb: '207 201 186',
+      usage: ['Secondary Text'],
+      textColor: colors.text.onLight,
+      bordered: true,
+    },
+    {
+      name: 'Muted',
+      value: 'var(--color-text-muted)',
+      token: '--color-text-muted',
+      rgb: '139 141 153',
+      usage: ['Muted Text'],
+      textColor: colors.text.onDark,
+    },
   ];
 
   const typeExamples = [
-    { label: 'Display 1', text: 'Driven by Purpose', size: '56px', weight: '700', lineHeight: '1.2', token: '--font-size-display-1' },
-    { label: 'Display 2', text: 'Define by Excellence', size: '48px', weight: '600', lineHeight: '1.2', token: '--font-size-display-2' },
-    { label: 'Heading 1', text: 'Strategic Growth Planning', size: '40px', weight: '600', lineHeight: '1.4', token: '--font-size-h1' },
-    { label: 'Heading 2', text: 'Expert Consultation', size: '32px', weight: '600', lineHeight: '1.4', token: '--font-size-h2' },
-    { label: 'Body Large', text: 'If your goal is to generate leads we have the perspective, passion, and talent to make it happen.', size: '18px', weight: '400', lineHeight: '1.6', token: '--font-size-body-lg' },
-    { label: 'Body Regular', text: 'Our team combines strategic thinking with creative execution.', size: '16px', weight: '400', lineHeight: '1.6', token: '--font-size-body' },
+    { label: 'Display 1', text: 'Driven by Purpose', size: typography.fontSize.display1, weight: typography.fontWeight.bold, lineHeight: typography.lineHeight.snug, token: '--font-size-display1' },
+    { label: 'Display 2', text: 'Define by Excellence', size: typography.fontSize.display2, weight: typography.fontWeight.semibold, lineHeight: typography.lineHeight.snug, token: '--font-size-display2' },
+    { label: 'Heading 1', text: 'Strategic Growth Planning', size: typography.fontSize.h1, weight: typography.fontWeight.semibold, lineHeight: typography.lineHeight.normal, token: '--font-size-h1' },
+    { label: 'Heading 2', text: 'Expert Consultation', size: typography.fontSize.h2, weight: typography.fontWeight.semibold, lineHeight: typography.lineHeight.normal, token: '--font-size-h2' },
+    { label: 'Body Large', text: 'If your goal is to generate leads we have the perspective, passion, and talent to make it happen.', size: typography.fontSize.bodyLg, weight: typography.fontWeight.regular, lineHeight: typography.lineHeight.relaxed, token: '--font-size-body-lg' },
+    { label: 'Body Regular', text: 'Our team combines strategic thinking with creative execution.', size: typography.fontSize.body, weight: typography.fontWeight.regular, lineHeight: typography.lineHeight.relaxed, token: '--font-size-body' },
   ];
 
   const spacingScale = [
@@ -345,11 +389,11 @@ export default function DesignSystemPage() {
             <div key={index} style={styles.colorCard}>
               <div style={{
                 ...styles.colorSwatch,
-                background: color.hex,
-                color: color.hex === '#FFFFFF' || color.hex === '#CCCCCC' ? '#000' : '#fff',
-                border: color.hex === '#FFFFFF' ? '1px solid #333' : 'none'
+                background: color.value,
+                color: color.textColor,
+                border: color.bordered ? `1px solid ${colors.border.light}` : 'none'
               }}>
-                {color.hex}
+                {color.value}
               </div>
               <div style={styles.colorInfo}>
                 <div style={styles.colorName}>{color.name}</div>
@@ -399,7 +443,7 @@ export default function DesignSystemPage() {
         <div style={styles.buttonGrid}>
           <div style={styles.buttonExample}>
             <h4 style={{marginBottom: spacing.md}}>Primary Button</h4>
-            <p style={{color: colors.text.secondary, marginBottom: '20px', fontSize: '14px'}}>
+            <p style={{color: colors.text.secondary, marginBottom: '20px', fontSize: typography.fontSize.ui}}>
               Main call-to-action
             </p>
             <button style={{...styles.btn, ...styles.btnPrimary}}>
@@ -409,7 +453,7 @@ export default function DesignSystemPage() {
 
           <div style={styles.buttonExample}>
             <h4 style={{marginBottom: spacing.md}}>Secondary Button</h4>
-            <p style={{color: colors.text.secondary, marginBottom: '20px', fontSize: '14px'}}>
+            <p style={{color: colors.text.secondary, marginBottom: '20px', fontSize: typography.fontSize.ui}}>
               Secondary actions
             </p>
             <button style={{...styles.btn, ...styles.btnSecondary}}>
@@ -419,7 +463,7 @@ export default function DesignSystemPage() {
 
           <div style={styles.buttonExample}>
             <h4 style={{marginBottom: spacing.md}}>Outline Button</h4>
-            <p style={{color: colors.text.secondary, marginBottom: '20px', fontSize: '14px'}}>
+            <p style={{color: colors.text.secondary, marginBottom: '20px', fontSize: typography.fontSize.ui}}>
               Tertiary actions
             </p>
             <button style={{...styles.btn, ...styles.btnOutline}}>

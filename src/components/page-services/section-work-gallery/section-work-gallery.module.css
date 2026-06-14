@@ -20,7 +20,7 @@
 
 .title {
   font-size: var(--font-size-display1);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   margin-bottom: 1rem;
   color: var(--color-text-primary);
 }
@@ -124,15 +124,15 @@
 .category {
   display: block;
   font-size: var(--font-size-ui);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 1.5px;
+  letter-spacing: var(--letter-spacing-widest);
   margin-bottom: 0.5rem;
 }
 
 .workTitle {
-  font-size: calc(var(--font-size-h2) - var(--space-xs));
-  font-weight: 700;
+  font-size: var(--font-size-title-lg);
+  font-weight: var(--font-weight-bold);
   color: var(--color-white);
   margin-bottom: 1rem;
 }
@@ -144,7 +144,7 @@
   padding: 0.75rem 1.5rem;
   border-radius: var(--radius-md);
   font-size: var(--font-size-body);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   cursor: pointer;
   transition: all var(--transition-slow);
 }
@@ -161,7 +161,7 @@
   color: var(--color-text-muted);
   font-size: var(--font-size-ui);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: var(--letter-spacing-ultra);
 }
 
 @media (max-width: 768px) {

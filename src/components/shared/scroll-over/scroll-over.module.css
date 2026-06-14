@@ -16,7 +16,7 @@
   border-start-end-radius: var(--radius-3xl);
   overflow: hidden;
   box-shadow: 0 calc(var(--space-lg) * -1) calc(var(--space-2xl) + 2px)
-    color-mix(in srgb, var(--ink) 22%, transparent);
+    color-mix(in srgb, var(--color-bg-deep) 22%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {

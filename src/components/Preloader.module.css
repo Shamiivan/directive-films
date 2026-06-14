@@ -26,7 +26,7 @@
   font-weight: var(--font-weight-bold);
   color: var(--color-black);
   letter-spacing: var(--letter-spacing-tight);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   overflow: hidden;
   white-space: nowrap;
 }
