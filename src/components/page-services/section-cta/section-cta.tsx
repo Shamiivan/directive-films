@@ -1,10 +1,8 @@
-import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import { useLocalePath } from '../../../hooks/useLocalePath';
+import CtaButton from '@/components/shared/cta-button/cta-button';
 import styles from './section-cta.module.css';
 
 export default function ServicesCta() {
-  const l = useLocalePath();
   const { t } = useTranslation('services');
 
   return (
@@ -13,10 +11,9 @@ export default function ServicesCta() {
         <h2 className={styles.heading}>{t('pageCta.title')}</h2>
         <p className={styles.lead}>{t('pageCta.lead')}</p>
         <div className={styles.ctarow}>
-          <Link to={l('/audit')} className={styles.btn}>{t('pageCta.button')}</Link>
+          <CtaButton to="/audit">{t('pageCta.button')}</CtaButton>
         </div>
       </div>
     </section>
   );
 }
-

@@ -37,20 +37,20 @@
   border-radius: var(--radius-2xl);
   color: var(--gold-on-surface);
   font-size: var(--font-size-ui);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: var(--letter-spacing-wider);
   margin-bottom: 2rem;
 }
 
 .title {
   font-family: var(--font-body);
   font-size: var(--font-size-section-lg);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
   margin-bottom: var(--space-lg);
   color: var(--color-text-primary);
-  line-height: 1.2;
+  line-height: var(--line-height-snug);
 }
 
 .gold {
@@ -61,23 +61,12 @@
 .subtitle {
   font-size: var(--font-size-lead-sm);
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: var(--line-height-relaxed);
   margin-bottom: var(--space-2xl);
 }
 
 .ctaWrapper {
   margin-top: 2.5rem;
-}
-
-.ctaButton {
-  background: var(--color-gold);
-  color: var(--color-black);
-  padding: 1rem 2.5rem;
-  font-size: var(--font-size-body);
-  font-weight: 700;
-  border: none;
-  border-radius: var(--radius-pill);
-  cursor: pointer;
 }
 
 /* Right Scrolling Cards */
@@ -104,10 +93,10 @@
 /* Reason Title */
 .reasonTitle {
   font-size: var(--font-size-h2);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--color-text-primary);
   margin-bottom: 1rem;
-  line-height: 1.2;
+  line-height: var(--line-height-snug);
 }
 
 /* Stat Box */
@@ -117,8 +106,8 @@
 
 .statValue {
   font-size: var(--font-size-display2);
-  font-weight: 700;
-  line-height: 1;
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-solid);
   margin-bottom: 0.5rem;
   color: var(--color-text-primary);
 }
@@ -127,14 +116,14 @@
   font-size: var(--font-size-ui-xs);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: var(--letter-spacing-wider);
 }
 
 /* Reason Description */
 .reasonDescription {
   font-size: var(--font-size-body);
   color: var(--color-text-secondary);
-  line-height: 1.7;
+  line-height: var(--line-height-relaxed);
   max-width: 500px;
 }
 
@@ -180,11 +169,6 @@
 
   .ctaWrapper {
     margin-top: 2rem;
-  }
-
-  .ctaButton {
-    width: 100%;
-    padding: 0.875rem 2rem;
   }
 
   .icon {

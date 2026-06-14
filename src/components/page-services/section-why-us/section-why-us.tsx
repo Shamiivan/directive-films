@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Heart, BarChart3, Rocket } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import MagneticButton from '../../MagneticButton';
+import CtaButton from '@/components/shared/cta-button/cta-button';
 import { EditableTranslation } from '@/cms/EditableTranslation';
 import { CardEditPanel } from '@/cms/CardEditPanel';
 import { PanelTextField, PanelTextareaField } from '@/cms/PanelField';
@@ -77,14 +77,14 @@ export default function WhyUsSection() {
                 className={styles.subtitle}
               />
               <div className={styles.ctaWrapper}>
-                <MagneticButton className={styles.ctaButton}>
+                <CtaButton to="/audit">
                   <EditableTranslation
                     pageSlug="services"
                     namespace="services"
                     path="whyUs.cta"
                     label="Why-us CTA"
                   />
-                </MagneticButton>
+                </CtaButton>
               </div>
             </motion.div>
           </div>

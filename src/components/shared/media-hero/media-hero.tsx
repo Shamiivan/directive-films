@@ -4,10 +4,9 @@ import CtaButton from "@/components/shared/cta-button/cta-button";
 import { easings } from "@/utils/animations";
 import styles from "./media-hero.module.css";
 
-// TODO(asset): replace with the real client showreel montage.
 const DEFAULT_POSTER =
-  "https://c.animaapp.com/mq5pf53jFiTmD6/assets/Screenshot_2025-07-21_at_10.32.15_PM_1-min.jpg";
-const DEFAULT_VIDEO = "https://benjyfilms.b-cdn.net/video website background.mp4";
+  "/images/website_landing_bg.jpg";
+const DEFAULT_VIDEO = "/videos/show_reel.mp4";
 
 type MediaHeroProps = {
   eyebrow?: ReactNode;
@@ -80,7 +79,7 @@ export default function MediaHero({
           {lede}
         </motion.p>
         <motion.div className={styles.actions} variants={item}>
-          <CtaButton href={ctaHref}>{ctaLabel}</CtaButton>
+          <CtaButton to={ctaHref}>{ctaLabel}</CtaButton>
         </motion.div>
       </motion.div>
     </section>

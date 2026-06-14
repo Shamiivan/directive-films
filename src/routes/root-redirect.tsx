@@ -1,5 +1,5 @@
-import ComingSoonPage from "../components/pages/coming-soon/coming-soon-page";
+import { Navigate } from "react-router";
 
 export default function RootRoute() {
-  return <ComingSoonPage />;
+  return <Navigate to="/en" replace />;
 }

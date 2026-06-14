@@ -1,16 +1,16 @@
 import type { Route } from "./+types/sandbox.home";
-import SandboxHomePage from "@/components/pages/sandbox/home/sandbox-home-page";
+import { Navigate } from "react-router";
 
 export function meta(_args: Route.MetaArgs) {
   return [
-    { title: "Sandbox Home - DirectiveFilms" },
+    { title: "DirectiveFilms - Home" },
     {
       name: "description",
-      content: "Sandbox port of the Benjy home structure inside DirectiveFilms.",
+      content: "DirectiveFilms home now lives on the production route.",
     },
   ];
 }
 
 export default function SandboxHome() {
-  return <SandboxHomePage />;
+  return <Navigate to="/en" replace />;
 }

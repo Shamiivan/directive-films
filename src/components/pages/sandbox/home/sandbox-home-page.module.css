@@ -1,7 +1,0 @@
-.page {
-  min-height: 100vh;
-  background: var(--color-bg-deep);
-  color: var(--color-text-on-dark);
-  font-family: var(--font-body);
-  overflow-x: hidden;
-}

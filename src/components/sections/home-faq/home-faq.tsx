@@ -1,4 +1,5 @@
 import Reveal from "@/components/shared/reveal/reveal";
+import CtaButton from "@/components/shared/cta-button/cta-button";
 import styles from "./home-faq.module.css";
 
 const faqs = [
@@ -35,10 +36,7 @@ export default function HomeFaqSection({ id = "faq" }: { id?: string } = {}) {
           <p className={styles.lead}>
             The short answers. The audit covers the rest.
           </p>
-          <a className={styles.cta} href="/audit">
-            <span>Get your free growth audit</span>
-            <span aria-hidden="true">→</span>
-          </a>
+          <CtaButton to="/audit">Get your free growth audit</CtaButton>
         </div>
 
         <ul className={styles.list}>

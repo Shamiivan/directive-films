@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TrendingDown, ListChecks, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import CtaButton from '@/components/shared/cta-button/cta-button';
 import styles from './section-audit-hero.module.css';
 
 type PanelItem = {
@@ -107,9 +108,9 @@ export default function AuditHeroSection() {
                     placeholder={tc('hero.form.fields.goal.placeholder')}
                   />
                 </div>
-                <button type="submit" className={styles.submitBtn}>
+                <CtaButton type="submit" fullWidth arrow={false}>
                   {t('hero.form.submit')}
-                </button>
+                </CtaButton>
                 <p className={styles.privacy}>{t('hero.form.privacy')}</p>
               </form>
             )}

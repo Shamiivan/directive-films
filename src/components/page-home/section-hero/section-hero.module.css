@@ -14,6 +14,15 @@
   background: var(--color-bg-dark-deep);
 }
 
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
 .hbLayer {
   position: absolute;
   inset: -20%;
@@ -89,8 +98,8 @@
   z-index: 1;
   pointer-events: none;
   background:
-    linear-gradient(90deg, color-mix(in srgb, var(--ink) 95%, transparent) 0%, color-mix(in srgb, var(--ink) 82%, transparent) 40%, color-mix(in srgb, var(--ink) 50%, transparent) 78%, color-mix(in srgb, var(--ink) 65%, transparent) 100%),
-    linear-gradient(180deg, transparent 58%, var(--ink) 100%);
+    linear-gradient(90deg, color-mix(in srgb, var(--color-bg-deep) 95%, transparent) 0%, color-mix(in srgb, var(--color-bg-deep) 82%, transparent) 40%, color-mix(in srgb, var(--color-bg-deep) 50%, transparent) 78%, color-mix(in srgb, var(--color-bg-deep) 65%, transparent) 100%),
+    linear-gradient(180deg, transparent 58%, var(--color-bg-deep) 100%);
 }
 
 .grain {
@@ -124,10 +133,10 @@
   display: inline-flex;
   align-items: center;
   gap: var(--button-gap);
-  color: var(--gold2);
+  color: var(--color-gold);
   font-family: var(--font-mono);
   font-size: var(--font-size-caption);
-  letter-spacing: 0.14em;
+  letter-spacing: var(--letter-spacing-widest);
   text-transform: uppercase;
 }
 
@@ -135,34 +144,34 @@
   content: "";
   width: 26px;
   height: 1px;
-  background: var(--gold2);
+  background: var(--color-gold);
   display: inline-block;
 }
 
 .heroTitle {
   font-family: var(--font-display);
   font-size: var(--font-size-hero-xl);
-  font-weight: 600;
-  line-height: 1.04;
-  letter-spacing: -0.01em;
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-tight);
   margin: var(--button-padding-x) 0 0;
-  color: var(--paper);
+  color: var(--color-text-on-dark);
 }
 
 .exSerif {
   font-style: italic;
-  color: var(--gold2);
+  color: var(--color-gold);
 }
 
 .lead {
-  color: var(--paper-dim);
+  color: var(--color-text-on-dark-secondary);
   font-size: var(--font-size-body-lg);
   max-width: 640px;
   margin-top: 24px;
 }
 
 .lead b {
-  color: var(--gold2);
+  color: var(--color-gold);
 }
 
 .herocta {
@@ -170,51 +179,6 @@
   gap: calc(var(--space-sm) + var(--space-xs) + 2px);
   flex-wrap: wrap;
   margin-top: 32px;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--button-gap);
-  font-weight: 700;
-  font-size: var(--font-size-ui-compact);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: var(--button-padding);
-  border-radius: var(--radius-full);
-  background: var(--gradient-brand-gold);
-  color: var(--gold-ink);
-  transition: transform 0.2s, box-shadow 0.2s;
-  border: 1px solid var(--color-border-glass);
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-cta);
-}
-
-.btnGhost {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--button-gap);
-  font-weight: 700;
-  font-size: var(--font-size-ui-compact);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  padding: var(--button-padding);
-  border-radius: var(--radius-full);
-  background: transparent;
-  color: var(--paper);
-  border: 1px solid var(--line2);
-  transition: background 0.2s;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.btnGhost:hover {
-  background: var(--color-bg-glass-dark);
 }
 
 /* ── Right column — stats ───────────────────────────────── */
@@ -228,7 +192,7 @@
   display: flex;
   gap: var(--card-padding);
   flex-wrap: wrap;
-  border-top: 1px solid var(--line);
+  border-top: 1px solid var(--color-border-dark-subtle);
   padding-top: 26px;
 }
 
@@ -240,21 +204,21 @@
 
 .statN {
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-h1);
   color: var(--color-white);
-  line-height: 1;
+  line-height: var(--line-height-solid);
 }
 
 .statL {
-  color: var(--muted);
+  color: var(--color-text-on-dark-muted);
   font-size: var(--font-size-ui-xs);
-  letter-spacing: 0.04em;
+  letter-spacing: var(--letter-spacing-wider);
   margin-top: 4px;
 }
 
 .gold {
-  color: var(--gold2);
+  color: var(--color-gold);
 }
 
 /* ── Responsive ─────────────────────────────────────────── */

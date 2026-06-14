@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import CtaButton from '@/components/shared/cta-button/cta-button';
 import { staggerListContainer, staggerListItem } from '@/utils/animations';
 import styles from './section-careers-hero.module.css';
 
@@ -26,8 +27,8 @@ export default function CareersHeroSection() {
           {t('hero.description')}
         </motion.p>
         <motion.div className={styles.ctarow} variants={staggerListItem}>
-          <a href="#apply" className={styles.btn}>{t('hero.cta')}</a>
-          <a href="/audit" className={styles.btnGhost}>Get your free growth audit</a>
+          <CtaButton href="#apply">{t('hero.cta')}</CtaButton>
+          <CtaButton to="/audit" variant="outline">Get your free growth audit</CtaButton>
         </motion.div>
       </motion.div>
     </section>

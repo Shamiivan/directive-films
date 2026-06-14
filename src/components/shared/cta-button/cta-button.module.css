@@ -2,44 +2,68 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--space-sm);
+  gap: var(--button-gap);
   width: fit-content;
-  min-height: calc(var(--tap-target) + var(--space-xs));
-  padding: 0 var(--space-lg);
-  border-radius: var(--radius-pill);
+  min-height: var(--tap-target);
+  padding: var(--button-padding);
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
   font-family: var(--font-body);
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-ui-compact);
   font-weight: var(--font-weight-bold);
-  letter-spacing: 0.01em;
-  line-height: 1;
+  letter-spacing: var(--letter-spacing-wider);
+  line-height: var(--line-height-solid);
+  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
-  transition: transform var(--transition-fast), box-shadow var(--transition-slow),
-    background var(--transition-fast);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base),
+    background var(--transition-base),
+    border-color var(--transition-base),
+    color var(--transition-base);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+}
+
+.fullWidth {
+  width: 100%;
 }
 
 .gold {
-  background: var(--color-gold);
+  background: var(--gradient-brand-gold);
   color: var(--gold-ink);
-  box-shadow: var(--shadow-gold);
+  border-color: var(--color-border-glass);
 }
 
 .gold:hover {
-  background: var(--color-gold-hover);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-md);
+  box-shadow: var(--shadow-gold-cta);
 }
 
 .outline {
   background: transparent;
-  color: var(--gold-on-surface);
-  border: 1px solid var(--color-gold);
+  color: var(--color-text-on-dark);
+  border-color: var(--color-border-dark-medium);
 }
 
 .outline:hover {
-  background: var(--color-gold);
-  color: var(--gold-ink);
+  background: var(--color-bg-glass-dark);
   transform: translateY(-2px);
+}
+
+.dark {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.dark:hover {
+  background: color-mix(in srgb, var(--color-black) 84%, var(--color-white));
+  transform: translateY(-1px);
 }
 
 .arrow {

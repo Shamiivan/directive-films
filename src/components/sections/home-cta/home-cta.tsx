@@ -17,7 +17,7 @@ export default function HomeCtaSection({ id = "contact" }: { id?: string } = {})
         <h2 className={styles.title}>
           Grow your <em>business revenue</em> now
         </h2>
-        <CtaButton href="/audit">Get your free growth audit</CtaButton>
+        <CtaButton to="/audit">Get your free growth audit</CtaButton>
       </div>
     </section>
   );

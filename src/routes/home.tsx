@@ -1,17 +1,17 @@
 import type { Route } from "./+types/home";
-import ComingSoonPage from "@/components/pages/coming-soon/coming-soon-page";
+import HomePage from "@/components/pages/home/home-page";
 
 export function meta({ params }: Route.MetaArgs) {
   const lang = params.lang || "en";
 
   const translations = {
     en: {
-      title: "DirectiveFilms - Coming Soon",
-      description: "DirectiveFilms is putting the finishing touches on something great.",
+      title: "DirectiveFilms - Performance video ads for ambitious brands",
+      description: "DirectiveFilms produces cinematic direct-response video ads designed to turn attention into revenue.",
     },
     fr: {
-      title: "DirectiveFilms - Bientôt disponible",
-      description: "DirectiveFilms met la touche finale à quelque chose de grand.",
+      title: "DirectiveFilms - Publicites video performantes pour marques ambitieuses",
+      description: "DirectiveFilms produit des publicites video cinematographiques concues pour transformer l'attention en revenus.",
     }
   };
 
@@ -27,5 +27,5 @@ export function meta({ params }: Route.MetaArgs) {
 }
 
 export default function Home() {
-  return <ComingSoonPage />;
+  return <HomePage />;
 }

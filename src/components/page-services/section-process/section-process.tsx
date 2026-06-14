@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { Search, Lightbulb, Video, TrendingUp } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-import MagneticButton from '../../MagneticButton';
+import CtaButton from '@/components/shared/cta-button/cta-button';
 import { EditableTranslation } from '@/cms/EditableTranslation';
 import { scrollReveal, gridStagger } from '../../../utils/animations';
 import styles from './section-process.module.css';
@@ -120,14 +120,14 @@ export default function ProcessSection() {
                 label="CTA subtitle"
               />
             </p>
-            <MagneticButton className={styles.ctaButton}>
+            <CtaButton to="/audit">
               <EditableTranslation
                 pageSlug="services"
                 namespace="services"
                 path="processSection.ctaButton"
                 label="CTA button"
               />
-            </MagneticButton>
+            </CtaButton>
           </motion.div>
         </motion.div>
       </div>

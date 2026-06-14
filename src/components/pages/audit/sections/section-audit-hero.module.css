@@ -114,33 +114,11 @@
   color: var(--color-text-on-dark-muted);
 }
 
-.submitBtn {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-ui);
-  letter-spacing: var(--letter-spacing-wider);
-  text-transform: uppercase;
-  padding: calc(var(--space-md) - 1px) var(--button-padding-x);
-  border-radius: var(--radius-full);
-  background: var(--gradient-brand-gold);
-  color: var(--gold-ink);
-  border: 1px solid var(--color-border-glass);
-  cursor: pointer;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.submitBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-cta);
-}
-
 .privacy {
   color: var(--color-text-on-dark-muted);
   font-size: var(--font-size-ui);
   margin-top: 14px;
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
 }
 
 /* ── Thank-you state ─────────────────────────────────────── */
@@ -165,7 +143,7 @@
 
 .thanksTitle {
   font-family: var(--font-display);
-  font-size: clamp(26px, 3vw, 34px);
+  font-size: var(--font-size-card-title);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
   color: var(--color-text-on-dark);
@@ -201,7 +179,7 @@
   border-bottom: 1px solid var(--color-border-dark-subtle);
   color: var(--color-text-on-dark-secondary);
   font-size: var(--font-size-body-sm);
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
 }
 
 .thanksSteps li:last-child {
@@ -266,7 +244,7 @@
   color: var(--color-text-on-dark-secondary);
   font-size: var(--font-size-ui);
   margin: 0;
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
 }
 
 /* Metric card */
@@ -282,7 +260,7 @@
   font-family: var(--font-display);
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   color: var(--color-gold);
 }
 
@@ -290,18 +268,9 @@
   color: var(--color-text-on-dark-secondary);
   margin-top: 10px;
   font-size: var(--font-size-ui);
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
 }
 
 @media (max-width: 920px) {
   .grid { grid-template-columns: 1fr; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .submitBtn {
-    transition: none;
-  }
-  .submitBtn:hover {
-    transform: none;
-  }
 }

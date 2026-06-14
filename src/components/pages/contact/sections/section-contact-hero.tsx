@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { MapPin, Globe, Mail, Zap } from 'lucide-react';
+import CtaButton from '@/components/shared/cta-button/cta-button';
 import styles from './section-contact-hero.module.css';
 
 type ContactInfo = {
@@ -59,9 +60,9 @@ export default function ContactHeroSection() {
                 <label>{t('hero.form.fields.goal.label')}</label>
                 <textarea placeholder={t('hero.form.fields.goal.placeholder')} />
               </div>
-              <button type="submit" className={styles.submitBtn}>
+              <CtaButton type="submit" fullWidth arrow={false}>
                 {submitted ? t('hero.form.submitted') : t('hero.form.submit')}
-              </button>
+              </CtaButton>
             </form>
 
             <div>
@@ -89,4 +90,3 @@ export default function ContactHeroSection() {
     </>
   );
 }
-

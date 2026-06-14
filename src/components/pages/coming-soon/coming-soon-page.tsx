@@ -3,6 +3,20 @@ import styles from "./coming-soon-page.module.css";
 export default function ComingSoonPage() {
   return (
     <main className={styles.root}>
+      <video
+        className={styles.backgroundVideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        poster="/images/website_landing_bg.jpg"
+        aria-hidden="true"
+      >
+        <source src="/videos/show_reel.mp4" type="video/mp4" />
+      </video>
+      <div className={styles.scrim} aria-hidden />
+
       <div className={styles.inner}>
         <img
           src="/logos/logo-icon.svg"

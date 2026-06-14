@@ -35,7 +35,7 @@
   font-family: var(--font-display);
   font-size: var(--font-size-section);
   font-weight: var(--font-weight-bold);
-  line-height: 1.05;
+  line-height: var(--line-height-tight);
   letter-spacing: var(--letter-spacing-tight);
   color: var(--color-text-on-light);
   text-wrap: balance;
@@ -55,34 +55,6 @@
   font-size: var(--font-size-body);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-on-light-secondary);
-}
-
-.cta {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-sm);
-  padding: var(--space-md) var(--space-xl);
-  border-radius: var(--radius-pill);
-  background: var(--color-gold);
-  color: var(--gold-ink);
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-body-sm);
-  text-decoration: none;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
-}
-
-.cta:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-gold-md);
-}
-
-.cta span:last-child {
-  transition: transform var(--transition-base);
-}
-
-.cta:hover span:last-child {
-  transform: translateX(4px);
 }
 
 .list {

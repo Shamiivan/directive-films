@@ -1,9 +1,9 @@
-import type { RefObject } from 'react';
-import { motion, useReducedMotion } from 'framer-motion';
+import { useEffect, useRef, useState, type RefObject } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-import { useLocalePath } from '../../../hooks/useLocalePath';
+import CtaButton from '@/components/shared/cta-button/cta-button';
+import SectionHeader from '@/components/shared/section-header/section-header';
 import {
-  maskWipeIn,
   staggerListContainer,
   staggerListItem,
   useParallax,
@@ -62,20 +62,41 @@ const stepMeta = [
   { marker: '10', imageSrc: '/images/svc/svc-sales-team.jpg', imageSide: 'left' as const },
 ];
 
-function ProcessRow({ step, cta }: { step: Step; cta: string }) {
-  const l = useLocalePath();
-  const reduce = useReducedMotion();
-  const { ref, y } = useParallax(48);
+// Card scaling only runs on desktop (where cards are sticky/stacked) and when
+// the user hasn't asked for reduced motion. Below 768px cards are a plain list.
+function useStackScaleEnabled() {
+  const [enabled, setEnabled] = useState(false);
 
-  // Reduced motion: skip the clip-path wipe + scale settle, just fade the image in.
-  const imageReveal = reduce
-    ? {
-        initial: { opacity: 0 },
-        whileInView: { opacity: 1 },
-        viewport: maskWipeIn.viewport,
-        transition: { duration: 0.4 },
-      }
-    : maskWipeIn;
+  useEffect(() => {
+    const motionOk = window.matchMedia('(min-width: 768px)');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const update = () => setEnabled(motionOk.matches && !reduced.matches);
+    update();
+    motionOk.addEventListener('change', update);
+    reduced.addEventListener('change', update);
+    return () => {
+      motionOk.removeEventListener('change', update);
+      reduced.removeEventListener('change', update);
+    };
+  }, []);
+
+  return enabled;
+}
+
+function ProcessRow({ step, cta }: { step: Step; cta: string }) {
+  const { ref, y } = useParallax(40);
+
+  // Benjy-style growth: each card rises from 0.85 to full size as its top
+  // travels from the bottom of the viewport up into the active sticky zone,
+  // then freezes at scale(1) once pinned. transform-origin: top anchors the
+  // growth to the sticky top so the card never jumps.
+  const rowRef = useRef<HTMLDivElement>(null);
+  const scaleEnabled = useStackScaleEnabled();
+  const { scrollYProgress } = useScroll({
+    target: rowRef,
+    offset: ['start end', 'start 25%'],
+  });
+  const scale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
 
   const rowClassName = [
     styles.row,
@@ -85,7 +106,11 @@ function ProcessRow({ step, cta }: { step: Step; cta: string }) {
   const webpSrcSet = `${step.imageSrc.replace('.jpg', '-720.webp')} 720w, ${step.imageSrc.replace('.jpg', '-1100.webp')} 1100w`;
 
   return (
-    <div className={rowClassName}>
+    <motion.div
+      ref={rowRef}
+      className={rowClassName}
+      style={scaleEnabled ? { scale } : undefined}
+    >
       <div className={styles.content}>
         <div className={styles.stepNumber}>{step.marker.padStart(2, '0')}</div>
         {step.tag ? <span className={styles.tag}>{step.tag}</span> : null}
@@ -106,21 +131,16 @@ function ProcessRow({ step, cta }: { step: Step; cta: string }) {
           ))}
         </motion.ul>
         <div className={styles.ctaWrap}>
-          <a href={l('/audit')} className={styles.cta}>
-            <span>{cta}</span>
-          </a>
+          <CtaButton to="/audit" variant="dark">{cta}</CtaButton>
         </div>
       </div>
 
-      <motion.div
-        ref={ref as RefObject<HTMLDivElement>}
-        className={styles.imageWrap}
-        variants={imageReveal}
-        initial="initial"
-        whileInView="whileInView"
-        viewport={imageReveal.viewport}
-      >
-        <motion.div className={styles.imageDrift} style={{ y }}>
+      <div className={styles.imageWrap}>
+        <motion.div
+          ref={ref as RefObject<HTMLDivElement>}
+          className={styles.imageDrift}
+          style={{ y }}
+        >
           <picture>
             <source
               type="image/webp"
@@ -137,8 +157,8 @@ function ProcessRow({ step, cta }: { step: Step; cta: string }) {
             />
           </picture>
         </motion.div>
-      </motion.div>
-    </div>
+      </div>
+    </motion.div>
   );
 }
 
@@ -153,8 +173,13 @@ export default function HowItWorksSection() {
   return (
     <section className={styles.section}>
       <div className={styles.intro}>
-        <h2 className={styles.heading}>{t('howItWorks.heading')}</h2>
-        <p className={styles.subheading}>{t('howItWorks.subheading')}</p>
+        <SectionHeader
+          tone="light"
+          align="center"
+          eyebrow={t('howItWorks.eyebrow')}
+          title={t('howItWorks.heading')}
+          intro={t('howItWorks.subheading')}
+        />
       </div>
       <div className={styles.steps}>
         {steps.map((step) => (

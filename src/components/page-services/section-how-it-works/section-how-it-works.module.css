@@ -2,53 +2,49 @@
   background: var(--color-white);
   color: var(--color-text-on-light);
   --gold-on-surface: var(--gold-text-on-light);
+  /* Warm off-white card on a pure-white section — softer than gold-on-white. */
+  --card-surface: var(--color-bg-light-card);
+  --card-border: var(--color-border-on-light);
+  --card-top: clamp(72px, 9vh, 104px);
   box-sizing: border-box;
-  padding: var(--space-4xl) 0;
+  padding: var(--section-padding) 0;
 }
 
+/* Constrains the shared SectionHeader to a centered, readable measure so the
+   intro sits quietly above the heavy card stack. */
 .intro {
   box-sizing: border-box;
   width: 100%;
-  max-width: 760px;
+  max-width: 640px;
   margin: 0 auto var(--space-3xl);
   padding: 0 var(--space-lg);
-  text-align: center;
 }
 
-.heading {
-  box-sizing: border-box;
-  color: var(--color-text-on-light);
-  font-family: var(--font-display);
-  font-size: var(--font-size-section);
-  font-weight: var(--font-weight-bold);
-  line-height: 1.03;
-  letter-spacing: var(--letter-spacing-tight);
-  margin: 0 0 var(--space-md);
-}
-
-.subheading {
-  box-sizing: border-box;
-  color: var(--color-text-on-light-secondary);
-  font-family: var(--font-body);
-  font-size: var(--font-size-body-lg);
-  font-weight: var(--font-weight-regular);
-  line-height: var(--line-height-relaxed);
-  margin: 0;
-}
-
+/* Tall scroll region. On desktop each card is sticky, so the next card slides
+   up and stacks over the previous one — one card stays dominant at a time. */
 .steps {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  gap: var(--space-2xl);
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
 }
 
-/* Each row is a full-bleed 50/50 split. On mobile the image stacks above the
-   text; on desktop the two halves sit edge-to-edge and alternate side. */
+/* The card shell: large editorial panel, soft warm surface + hairline border,
+   rounded, clipped. Solid background so stacked cards cover cleanly. */
 .row {
   box-sizing: border-box;
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
+  background: var(--card-surface);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
 }
 
 .content {
@@ -56,8 +52,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 0;
   width: 100%;
-  padding: var(--space-3xl) var(--space-lg);
+  padding: clamp(var(--space-xl), 5vw, var(--space-4xl));
 }
 
 .stepNumber {
@@ -65,9 +62,9 @@
   margin-bottom: var(--space-sm);
   color: var(--gold-on-surface);
   font-family: var(--font-display);
-  font-size: var(--font-size-title-xl);
+  font-size: var(--font-size-title-lg);
   font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   letter-spacing: var(--letter-spacing-tight);
 }
 
@@ -83,7 +80,7 @@
   font-family: var(--font-mono);
   font-size: var(--font-size-label);
   letter-spacing: var(--letter-spacing-widest);
-  line-height: 1;
+  line-height: var(--line-height-solid);
   text-transform: uppercase;
 }
 
@@ -91,7 +88,7 @@
   box-sizing: border-box;
   color: var(--color-text-on-light);
   font-family: var(--font-display);
-  font-size: var(--font-size-title-lg);
+  font-size: var(--font-size-section-sm);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-snug);
   letter-spacing: var(--letter-spacing-tight);
@@ -100,10 +97,10 @@
 
 .cardDesc {
   box-sizing: border-box;
-  max-width: 46ch;
+  max-width: 48ch;
   color: var(--color-text-on-light-secondary);
   font-family: var(--font-body);
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-body-lg);
   font-weight: var(--font-weight-regular);
   line-height: var(--line-height-relaxed);
   margin: 0 0 var(--space-lg);
@@ -125,15 +122,15 @@
   font-family: var(--font-body);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-regular);
-  line-height: 1.5;
+  line-height: var(--line-height-relaxed);
   margin: 0 0 var(--space-md);
 }
 
 .checkIcon {
   box-sizing: border-box;
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   margin-top: 1px;
   color: var(--gold-on-surface);
 }
@@ -144,43 +141,15 @@
   margin-top: var(--space-lg);
 }
 
-.cta {
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  max-width: 100%;
-  overflow: hidden;
-  background: var(--color-gold);
-  border-radius: var(--radius-pill);
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-.cta:hover {
-  background: var(--color-gold-hover);
-}
-
-.cta span {
-  box-sizing: border-box;
-  display: block;
-  color: var(--color-black);
-  font-family: var(--font-body);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-body-sm);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: calc(var(--space-sm) + var(--space-xs)) calc(var(--space-lg) + 2px);
-}
-
-/* The image half fills edge-to-edge with no padding, radius or floating gap.
-   overflow:hidden clips both the maskWipeIn clip-path reveal and the parallax
-   drift so the image always covers its half. */
+/* Media panel: inset slightly from the card edge with its own rounded corners,
+   so the photo reads as a framed still inside the slide (not full-bleed). */
 .imageWrap {
   box-sizing: border-box;
   position: relative;
   width: 100%;
   aspect-ratio: 4 / 3;
+  margin: var(--space-sm);
+  border-radius: var(--radius-lg);
   overflow: hidden;
 }
 
@@ -207,39 +176,69 @@
 }
 
 @media (min-width: 768px) {
-  /* Two halves side by side, each exactly 50%, full row height, no gap. */
+  /* 50/50 editorial card; copy and media each own one half. min-width:0 on the
+     grid children kills the flex/grid overflow that caused the page scrollbar. */
   .row {
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: stretch;
-    min-height: 560px;
-  }
-
-  .imageRight {
-    flex-direction: row;
-  }
-
-  .imageLeft {
-    flex-direction: row-reverse;
+    min-height: clamp(600px, 68vh, 700px);
+    /* Plain vertical flow — cards no longer pin/stack, so the next card never
+       overlaps the previous one. Each still grows from scale(0.85) to 1 as it
+       scrolls into view; anchoring the origin to the top keeps that reveal calm. */
+    transform-origin: top center;
+    will-change: transform;
   }
 
   .content {
-    width: 50%;
-    padding: var(--space-4xl) clamp(var(--container-padding), 6vw, var(--section-padding));
+    padding: clamp(var(--space-2xl), 4.5vw, var(--space-4xl));
+  }
+
+  .content > * {
+    max-width: 540px;
+  }
+
+  /* Alternate which side the media sits on. Pin both cells to row 1 — content
+     comes first in the DOM, so on imageLeft (media in column 1) sparse
+     auto-placement would otherwise push the media into a collapsed 2nd row. */
+  .imageRight .content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .imageRight .imageWrap {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .imageLeft .content {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .imageLeft .imageWrap {
+    grid-column: 1;
+    grid-row: 1;
   }
 
   .stepNumber {
-    font-size: var(--font-size-section-lg);
-  }
-
-  .cardTitle {
     font-size: var(--font-size-title-xl);
   }
 
-  /* Image half stretches to the full height of the text half — no dead space. */
+  /* Media fills its half edge-to-edge of the inset frame, full card height. */
   .imageWrap {
-    width: 50%;
+    width: auto;
     aspect-ratio: auto;
     align-self: stretch;
+    margin: var(--space-md);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile: no sticky stacking — plain vertical flow, media above the copy. */
+  .row {
+    flex-direction: column;
+  }
+
+  .imageWrap {
+    order: -1;
   }
 }
 
