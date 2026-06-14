@@ -126,12 +126,18 @@
     radial-gradient(120% 120% at 90% 0%, var(--gold-a-16), transparent 55%);
   --gradient-media-scrim:
     linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--ink) 55%, transparent) 0%,
-      color-mix(in srgb, var(--ink) 30%, transparent) 38%,
-      color-mix(in srgb, var(--ink) 82%, transparent) 100%
+      90deg,
+      color-mix(in srgb, var(--ink) 78%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 45%, transparent) 42%,
+      transparent 78%
     ),
-    color-mix(in srgb, var(--ink) 28%, transparent);
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--ink) 50%, transparent) 0%,
+      color-mix(in srgb, var(--ink) 32%, transparent) 38%,
+      color-mix(in srgb, var(--ink) 85%, transparent) 100%
+    ),
+    color-mix(in srgb, var(--ink) 30%, transparent);
   --gradient-card-overlay: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.55));
   --gradient-image-overlay: linear-gradient(to top, rgba(0, 0, 0, 0.58), transparent 42%);
 
