@@ -28,7 +28,7 @@
   flex-direction: column;
   gap: var(--space-2xl);
   width: 100%;
-  max-width: 1340px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
 }
@@ -195,7 +195,7 @@
   }
 
   .content > * {
-    max-width: 540px;
+    max-width: 600px;
   }
 
   /* Alternate which side the media sits on. Pin both cells to row 1 — content
