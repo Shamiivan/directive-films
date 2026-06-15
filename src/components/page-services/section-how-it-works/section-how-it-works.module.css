@@ -16,7 +16,7 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 640px;
-  margin: 0 auto var(--space-3xl);
+  margin: 0 auto;
   padding: 0 var(--space-lg);
 }
 
@@ -28,9 +28,11 @@
   flex-direction: column;
   gap: var(--space-2xl);
   width: 100%;
-  max-width: var(--container-max-width);
+  /* Wider than the standard container so the heavy editorial cards fill the
+     page on large screens instead of floating in white margin. */
+  max-width: 1680px;
   margin: 0 auto;
-  padding: 0 var(--container-padding);
+  padding: 0 var(--space-lg);
 }
 
 /* The card shell: large editorial panel, soft warm surface + hairline border,
@@ -183,11 +185,6 @@
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
     min-height: clamp(600px, 68vh, 700px);
-    /* Plain vertical flow — cards no longer pin/stack, so the next card never
-       overlaps the previous one. Each still grows from scale(0.85) to 1 as it
-       scrolls into view; anchoring the origin to the top keeps that reveal calm. */
-    transform-origin: top center;
-    will-change: transform;
   }
 
   .content {
