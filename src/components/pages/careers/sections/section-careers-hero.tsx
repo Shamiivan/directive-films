@@ -16,9 +16,6 @@ export default function CareersHeroSection() {
         whileInView="whileInView"
         viewport={staggerListContainer.viewport}
       >
-        <motion.span className={styles.eyebrow} variants={staggerListItem}>
-          {t('hero.eyebrow')}
-        </motion.span>
         <motion.h1 className={styles.heading} variants={staggerListItem}>
           {t('hero.titleLine1')}<br />
           {t('hero.titleLine2')} <span className={styles.serifIt}>{t('hero.accent')}</span>

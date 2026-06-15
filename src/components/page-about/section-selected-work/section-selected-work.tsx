@@ -20,7 +20,6 @@ export default function SelectedWorkSection() {
     <section className={styles.section}>
       <div className={styles.wrap}>
         <header className={styles.head}>
-          <span className={styles.eyebrow}>{t('selectedWork.eyebrow')}</span>
           <h2 className={styles.heading}>
             {t('selectedWork.title')}{' '}
             <em className={styles.accent}>{t('selectedWork.accent')}</em>

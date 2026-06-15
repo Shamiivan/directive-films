@@ -20,7 +20,6 @@ export default function OfferSection() {
   return (
     <section className={styles.section} id="services-preview">
       <div className={styles.wrap}>
-        <span className={styles.eyebrow}>{t('offerPreview.eyebrow')}</span>
         <h2 className={styles.heading}>{t('offerPreview.title')}</h2>
         <p className={styles.lead}>{t('offerPreview.lead')}</p>
 
@@ -42,4 +41,3 @@ export default function OfferSection() {
     </section>
   );
 }
-

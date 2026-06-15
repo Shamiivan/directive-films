@@ -23,7 +23,6 @@ type MediaHeroProps = {
  * landing heroes have identical design; only the copy/CTA differ.
  */
 export default function MediaHero({
-  eyebrow,
   title,
   lede,
   ctaHref,
@@ -67,11 +66,6 @@ export default function MediaHero({
         initial="hidden"
         animate="show"
       >
-        {eyebrow ? (
-          <motion.div className={styles.tags} variants={item}>
-            <span>{eyebrow}</span>
-          </motion.div>
-        ) : null}
         <motion.h1 className={styles.title} variants={item}>
           {title}
         </motion.h1>

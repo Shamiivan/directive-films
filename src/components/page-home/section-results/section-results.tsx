@@ -17,7 +17,6 @@ export default function ResultsSection() {
     <section className={styles.results}>
       <div className={styles.wrap}>
         <div className={styles.sectionH}>
-          <span className={styles.eyebrow}>{t('results.eyebrow')}</span>
           <h2 className={styles.heading}>
             {t('results.headingLine1')}<br />
             {t('results.headingLine2')} <span className={styles.serifIt}>{t('results.headingAccent')}</span>
@@ -41,4 +40,3 @@ export default function ResultsSection() {
     </section>
   );
 }
-

@@ -18,14 +18,6 @@ export default function ServiceMapSection() {
     <section className={styles.section}>
       <div className={styles.container}>
         <motion.div className={styles.header} {...scrollReveal}>
-          <EditableTranslation
-            pageSlug="services"
-            namespace="services"
-            path="serviceMap.systemLabel"
-            label="System label"
-            as="span"
-            className={styles.label}
-          />
           <h2 className={styles.title}>
             <EditableTranslation
               pageSlug="services"

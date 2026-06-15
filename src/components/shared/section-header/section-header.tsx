@@ -1,11 +1,10 @@
 import type { ReactNode } from "react";
 import { motion } from "framer-motion";
-import SectionEyebrow from "@/components/SectionEyebrow";
 import { scrollReveal } from "@/utils/animations";
 import styles from "./section-header.module.css";
 
 interface SectionHeaderProps {
-  eyebrow: ReactNode;
+  eyebrow?: ReactNode;
   eyebrowDescription?: ReactNode;
   title: ReactNode;
   intro?: ReactNode;
@@ -14,8 +13,6 @@ interface SectionHeaderProps {
 }
 
 export default function SectionHeader({
-  eyebrow,
-  eyebrowDescription,
   title,
   intro,
   align = "left",
@@ -23,7 +20,6 @@ export default function SectionHeader({
 }: SectionHeaderProps) {
   return (
     <motion.div className={[styles.header, styles[align], styles[tone]].join(" ")} {...scrollReveal}>
-      <SectionEyebrow label={eyebrow} description={eyebrowDescription} />
       <h2 className={styles.title}>{title}</h2>
       <span className={styles.accent} aria-hidden="true" />
       {intro ? <p className={styles.intro}>{intro}</p> : null}

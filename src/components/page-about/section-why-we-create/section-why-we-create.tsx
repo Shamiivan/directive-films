@@ -13,7 +13,6 @@ export default function WhyWeCreateSection() {
   return (
     <section className={styles.section}>
       <div className={styles.wrap}>
-        <span className={styles.eyebrow}>{t('why.eyebrow')}</span>
         <h2 className={styles.heading}>{t('why.title')}</h2>
 
         <div className={styles.vals}>

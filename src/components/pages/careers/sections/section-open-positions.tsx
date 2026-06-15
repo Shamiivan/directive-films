@@ -18,7 +18,6 @@ export default function OpenPositionsSection() {
     <section className={styles.section} id="apply">
       <div className={styles.wrap}>
         <div className={styles.head}>
-          <span className={styles.eyebrow}>{t('openRoles.eyebrow')}</span>
           <span className={styles.count}>
             <strong>{jobs.length}</strong> open
           </span>

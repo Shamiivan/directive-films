@@ -34,7 +34,6 @@ export default function HeroSection() {
       <div className={styles.wrap}>
         <div className={styles.heroflex}>
           <div>
-            <span className={styles.eyebrow}>{t('hero.eyebrow')}</span>
             <h1 className={styles.heroTitle}>
               {t('hero.title.line1')}<br />
               <span className={styles.exSerif}>{t('hero.title.accent')}</span> {t('hero.title.line2')}

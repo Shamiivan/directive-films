@@ -13,7 +13,6 @@ export default function HowWeDoItSection() {
   return (
     <section className={styles.section}>
       <div className={styles.wrap}>
-        <span className={styles.eyebrow}>{t('process.eyebrow')}</span>
         <h2 className={styles.heading}>{t('process.title')}</h2>
 
         <div className={styles.steps}>
@@ -29,4 +28,3 @@ export default function HowWeDoItSection() {
     </section>
   );
 }
-

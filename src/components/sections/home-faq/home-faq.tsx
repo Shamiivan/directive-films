@@ -13,7 +13,6 @@ export default function HomeFaqSection({ id = "faq" }: { id?: string } = {}) {
     <section className={styles.section} id={id}>
       <div className={styles.container}>
         <div className={styles.aside}>
-          <span className={styles.eyebrow}>{t("homeFaq.eyebrow")}</span>
           <h2 className={styles.heading}>{t("homeFaq.heading")}</h2>
           <span className={styles.accent} aria-hidden="true" />
           <p className={styles.lead}>{t("homeFaq.lead")}</p>

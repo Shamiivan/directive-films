@@ -11,17 +11,6 @@ export default function SectionProblem() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <motion.div className={styles.header} {...scrollReveal}>
-          <EditableTranslation
-            pageSlug="services"
-            namespace="services"
-            path="problem.label"
-            label="Problem label"
-            as="span"
-            className={styles.label}
-          />
-        </motion.div>
-
         <div className={styles.grid}>
           <div className={styles.symptomsCol}>
             {symptoms.map((_symptom, i) => (
