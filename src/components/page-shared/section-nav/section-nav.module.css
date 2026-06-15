@@ -53,8 +53,8 @@
 
 .navList a {
   font-family: var(--font-body);
-  font-size: var(--font-size-caption);
-  letter-spacing: var(--letter-spacing-widest);
+  font-size: var(--font-size-ui);
+  letter-spacing: var(--letter-spacing-wider);
   text-transform: uppercase;
   color: var(--color-text-on-dark-secondary);
   font-weight: var(--font-weight-bold);
