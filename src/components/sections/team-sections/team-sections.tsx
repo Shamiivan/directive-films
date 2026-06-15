@@ -14,8 +14,6 @@ type Leader = {
 };
 
 // ASSET DEP: both portraits need a proper, consistently-shot studio photo.
-// TODO(asset): /team/ceo.jpg is a low-res 640x640 square crop — replace with a
-// proper studio portrait at portrait aspect ratio.
 // TODO(asset): /team/coo.jpeg is the off-brand webcam headshot — replace with a
 // studio portrait matching Damon's so the two leaders read as a consistent set.
 const leaders: Leader[] = [
@@ -23,7 +21,7 @@ const leaders: Leader[] = [
     name: 'Damon',
     role: 'CEO / Founder',
     focus: 'Damon brings direct experience selling and building sales systems in live environments. He has scaled teams, created operating structure, and led performance-focused execution across French-speaking markets.',
-    image: '/team/ceo.jpg',
+    image: '/team/ceo_no_bg.png',
     imageSide: 'left',
   },
   {

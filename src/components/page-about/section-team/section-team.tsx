@@ -7,7 +7,7 @@ interface TeamMemberCopy {
 }
 
 const memberMeta = [
-  { ini: 'D', role: 'CEO', image: '/team/ceo.jpg' },
+  { ini: 'D', role: 'CEO', image: '/team/ceo_no_bg.png' },
   { ini: 'K', role: 'COO', image: '/team/coo.jpeg' },
 ];
 
