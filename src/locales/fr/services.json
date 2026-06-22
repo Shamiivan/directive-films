@@ -519,6 +519,10 @@
       }
     ]
   },
+  "adProof": {
+    "heading": "De vraies pubs, de vrais résultats",
+    "intro": "Un aperçu des campagnes Meta que nous menons pour nos clients, la création derrière chaque lead."
+  },
   "testimonials": {
     "eyebrow": "Ce que disent les clients",
     "title": "Ne nous croyez pas sur parole.",

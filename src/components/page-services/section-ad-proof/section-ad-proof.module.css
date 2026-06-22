@@ -1,0 +1,168 @@
+.section {
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  background: var(--color-bg-deep);
+  padding: var(--section-padding) 0;
+}
+
+/* Constrain the header to a calm, centered measure above the moving strip. */
+.intro {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto var(--space-3xl);
+  padding: 0 var(--space-lg);
+}
+
+/* Full-bleed marquee viewport. Edges dissolve into the deep background and a
+   surgical gold glow pools beneath the cards so they read as floating. */
+.strip {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 7%,
+    #000 93%,
+    transparent
+  );
+  mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent);
+}
+
+.strip::before {
+  content: "";
+  position: absolute;
+  bottom: -12%;
+  left: 50%;
+  z-index: 0;
+  width: 72%;
+  height: 62%;
+  background: radial-gradient(
+    ellipse 60% 80% at 50% 50%,
+    color-mix(in srgb, var(--color-gold) 16%, transparent),
+    transparent 70%
+  );
+  filter: blur(40px);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.track {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  width: max-content;
+  padding: var(--space-3xl) 0;
+  animation: ad-marquee 64s linear infinite;
+}
+
+.strip:hover .track {
+  animation-play-state: paused;
+}
+
+.row {
+  box-sizing: border-box;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: var(--space-xl);
+  /* Trailing gap matches the inner gap so the duplicated row joins seamlessly
+     at the -50% loop point. */
+  padding-right: var(--space-xl);
+  min-width: max-content;
+}
+
+.card {
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  overflow: hidden;
+  border: 1px solid var(--color-border-glass);
+  border-radius: var(--radius-lg);
+  background: var(--color-bg-dark-card);
+  box-shadow: var(--shadow-xl);
+  transition:
+    transform var(--transition-premium),
+    box-shadow var(--transition-premium);
+}
+
+/* Landscape ad-manager cards: width is fixed, height flows from the image's
+   natural ratio so nothing is ever cropped. Varied widths give the mixed-size,
+   staggered rhythm against the center-aligned row. */
+.cardImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tall {
+  width: 400px;
+}
+
+.mid {
+  width: 350px;
+}
+
+.short {
+  width: 300px;
+}
+
+.tiltLeft {
+  transform: rotate(-2.2deg) translateY(8px);
+}
+
+.tiltRight {
+  transform: rotate(2.2deg) translateY(-8px);
+}
+
+.card:hover,
+.card:focus-within {
+  z-index: 2;
+  transform: rotate(0deg) translateY(-10px) scale(1.02);
+  box-shadow:
+    var(--shadow-panel),
+    var(--shadow-gold-glow-lg);
+}
+
+@keyframes ad-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 640px) {
+  .intro {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .tall {
+    width: 280px;
+  }
+
+  .mid {
+    width: 248px;
+  }
+
+  .short {
+    width: 216px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .track {
+    animation: none;
+    transform: translateX(0);
+  }
+
+  .card {
+    transition: none;
+  }
+}

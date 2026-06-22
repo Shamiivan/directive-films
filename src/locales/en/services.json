@@ -490,6 +490,10 @@
       }
     ]
   },
+  "adProof": {
+    "heading": "Real ads, real numbers",
+    "intro": "A slice of the Meta campaigns we run for clients, the creative behind every lead."
+  },
   "testimonials": {
     "eyebrow": "What clients say",
     "title": "Don't take our word for it.",
