@@ -6,7 +6,7 @@ export default function VideoReelSection() {
       <div className={styles.container}>
         <video
           className={styles.video}
-          src="/showcase_reel.mp4"
+          src="/showcase_reel-hero-1080.mp4"
           autoPlay
           muted
           loop

@@ -5,7 +5,7 @@ import LogoMarqueeSection from "@/components/shared/logo-row/logo-row";
 import OfferSection from "@/components/sections/offer/offer";
 import HomeHowItWorksSection from "@/components/sections/home-how-it-works/home-how-it-works";
 import HomeServicesSection from "@/components/sections/home-services/home-services";
-// import HomeVideoReelSection from "@/components/sections/home-video-reel/home-video-reel"; // hidden: "Our work" reel not ready
+import HomeVideoReelSection from "@/components/sections/home-video-reel/home-video-reel";
 import HomeTestimonialsSection from "@/components/sections/home-testimonials/home-testimonials";
 import HomeResultsSection from "@/components/sections/home-results/home-results";
 import TeamSections from "@/components/sections/team-sections/team-sections";
@@ -13,12 +13,28 @@ import PricingSection from "@/components/page-home/section-pricing/section-prici
 import HomeFaqSection from "@/components/sections/home-faq/home-faq";
 import HomeGuaranteeSection from "@/components/sections/home-guarantee/home-guarantee";
 import HomeCtaSection from "@/components/sections/home-cta/home-cta";
-// import ScrollOver from "@/components/shared/scroll-over/scroll-over"; // hidden: "Our work" reel not ready
+import ScrollOver from "@/components/shared/scroll-over/scroll-over";
 import styles from "./home-page.module.css";
 
-// Restore alongside the "Our work" reel when it's ready to show.
-// const adVideos = ["1171040145", "1145069446", "1144141000", "1142037166", "1141935607", "1141924603"];
-// const testimonialVideos = ["1199097531", "1196985086", "1196080273", "1194874494", "1192024292", "1186532088"];
+// Flip this on when the proof reel is ready to show.
+const showWorkReel = true;
+const proofVideos = [
+  {
+    id: "ad2-sale-before-pitch",
+    title: "The sale is done before you even pitch",
+    src: "/proof/videos/ad2-sale-before-pitch-720.mp4",
+  },
+  {
+    id: "boosting-posts-makes-you-poor",
+    title: "Why boosting posts makes you poor",
+    src: "/proof/videos/boosting-posts-makes-you-poor-720.mp4",
+  },
+  {
+    id: "ton-entreprise-perd-du-cash",
+    title: "Ton entreprise perd du cash",
+    src: "/proof/videos/ton-entreprise-perd-du-cash-720.mp4",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -29,23 +45,23 @@ export default function HomePage() {
       <OfferSection />
       <HomeHowItWorksSection />
       <HomeServicesSection />
-      {/* "Our work" video reel hidden for now - not ready to show.
-          Restore by wrapping HomeTestimonialsSection back in <ScrollOver>
-          with this as the `under` layer. */}
-      {/* <ScrollOver
-        under={
-          <HomeVideoReelSection
-            id="work"
-            eyebrow="Our work"
-            title="Some of the ads that we produced"
-            videoIds={[...adVideos, ...testimonialVideos]}
-            cardTitle="Produced video"
-            tone="dark"
-          />
-        }
-        over={<HomeTestimonialsSection />}
-      /> */}
-      <HomeTestimonialsSection />
+      {showWorkReel ? (
+        <ScrollOver
+          under={
+            <HomeVideoReelSection
+              id="work"
+              eyebrow="Our work"
+              title="Some of the ads that we produced"
+              videos={proofVideos}
+              cardTitle="Produced video"
+              tone="dark"
+            />
+          }
+          over={<HomeTestimonialsSection />}
+        />
+      ) : (
+        <HomeTestimonialsSection />
+      )}
       <HomeResultsSection />
       <TeamSections />
       <PricingSection />

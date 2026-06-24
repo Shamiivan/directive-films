@@ -1,70 +1,35 @@
-import type { RefObject } from 'react';
-import { motion } from 'framer-motion';
 import SectionHeader from '@/components/shared/section-header/section-header';
-import { useParallax } from '@/utils/animations';
 import Reveal from '@/components/shared/reveal/reveal';
 import styles from './team-sections.module.css';
 
-type Leader = {
+type Member = {
   name: string;
   role: string;
-  focus: string;
   image: string;
-  imageSide: 'left' | 'right';
 };
 
-// ASSET DEP: both portraits need a proper, consistently-shot studio photo.
-// TODO(asset): /team/coo.jpeg is the off-brand webcam headshot — replace with a
-// studio portrait matching Damon's so the two leaders read as a consistent set.
-const leaders: Leader[] = [
-  {
-    name: 'Damon',
-    role: 'CEO / Founder',
-    focus: 'Damon brings direct experience selling and building sales systems in live environments. He has scaled teams, created operating structure, and led performance-focused execution across French-speaking markets.',
-    image: '/team/ceo_no_bg.png',
-    imageSide: 'left',
-  },
-  {
-    name: 'Karine Gazeryan',
-    role: 'COO',
-    focus: 'Operations, delivery rhythm, and production excellence.',
-    image: '/team/coo.jpeg',
-    imageSide: 'right',
-  },
+const team: Member[] = [
+  { name: 'Damon', role: 'CEO / Founder', image: '/team/ceo.jpg' },
+  { name: 'Karine', role: 'COO', image: '/team/coo.jpeg' },
+  { name: 'Gabriel', role: 'CMO', image: '/team/Gabriel_CMO.png' },
+  { name: 'Odelin', role: 'Head of Editing', image: '/team/odelin_chef_monteur.webp' },
 ];
 
-function LeaderRow({ leader, index }: { leader: Leader; index: number }) {
-  // Parallax target lives on the image wrap; the portrait stays visible and just
-  // drifts. (whileInView + useScroll on the same element conflict, which left the
-  // clip-mask reveal stuck closed — so we keep the image shown and drift only.)
-  const { ref, y } = useParallax(56);
-
-  const rowClassName = [
-    styles.row,
-    leader.imageSide === 'left' ? styles.imageLeft : styles.imageRight,
-  ].join(' ');
-
+function MemberCard({ member, index }: { member: Member; index: number }) {
   return (
-    <div className={rowClassName}>
-      <Reveal className={styles.content} y={28}>
-        <span className={styles.index}>{String(index + 1).padStart(2, '0')}</span>
-        <p className={styles.role}>{leader.role}</p>
-        <h3 className={styles.name}>{leader.name}</h3>
-        <p className={styles.focus}>{leader.focus}</p>
-      </Reveal>
-
-      <div ref={ref as RefObject<HTMLDivElement>} className={styles.imageWrap}>
-        <motion.div className={styles.imageDrift} style={{ y }}>
-          <img
-            src={leader.image}
-            alt={`${leader.name}, ${leader.role}`}
-            className={styles.image}
-            loading="lazy"
-            decoding="async"
-          />
-        </motion.div>
+    <Reveal className={styles.card} y={28} delay={index * 0.08}>
+      <div className={styles.imageWrap}>
+        <img
+          src={member.image}
+          alt={`${member.name}, ${member.role}`}
+          className={styles.image}
+          loading="lazy"
+          decoding="async"
+        />
       </div>
-    </div>
+      <h3 className={styles.name}>{member.name}</h3>
+      <p className={styles.role}>{member.role}</p>
+    </Reveal>
   );
 }
 
@@ -74,17 +39,17 @@ export default function TeamSections({ showHeader = true }: { showHeader?: boole
       {showHeader && (
         <div className={styles.intro}>
           <SectionHeader
-            eyebrow="Leadership"
+            eyebrow="The Team"
             title="The people behind the results"
-            intro="Two operators leading the strategy, production, and systems that move each project from idea to measurable growth."
+            intro="The operators leading the strategy, production, and creative that move each project from idea to measurable growth."
             tone="dark"
           />
         </div>
       )}
 
-      <div className={styles.rows}>
-        {leaders.map((leader, index) => (
-          <LeaderRow key={leader.name} leader={leader} index={index} />
+      <div className={styles.grid}>
+        {team.map((member, index) => (
+          <MemberCard key={member.name} member={member} index={index} />
         ))}
       </div>
     </section>

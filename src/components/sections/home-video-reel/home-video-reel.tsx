@@ -6,7 +6,12 @@ interface HomeVideoReelProps {
   id: string;
   eyebrow: string;
   title: string;
-  videoIds: string[];
+  videos: Array<{
+    id: string;
+    title: string;
+    src?: string;
+    vimeoId?: string;
+  }>;
   cardTitle: string;
   align?: "left" | "center";
   tone?: "dark" | "light";
@@ -16,7 +21,7 @@ export default function HomeVideoReelSection({
   id,
   eyebrow,
   title,
-  videoIds,
+  videos,
   cardTitle,
   align = "left",
   tone = "dark",
@@ -26,8 +31,13 @@ export default function HomeVideoReelSection({
       <div className={styles.container}>
         <SectionHeader eyebrow={eyebrow} title={title} align={align} tone={tone} />
         <div className={styles.rail}>
-          {videoIds.map((vid) => (
-            <VideoCard id={vid} title={`${cardTitle} ${vid}`} key={vid} />
+          {videos.map((video) => (
+            <VideoCard
+              id={video.vimeoId}
+              src={video.src}
+              title={`${cardTitle}: ${video.title}`}
+              key={video.id}
+            />
           ))}
         </div>
       </div>

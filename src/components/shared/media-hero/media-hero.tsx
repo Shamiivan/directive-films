@@ -6,7 +6,8 @@ import styles from "./media-hero.module.css";
 
 const DEFAULT_POSTER =
   "/images/website_landing_bg.jpg";
-const DEFAULT_VIDEO = "/videos/show_reel.mp4";
+const DEFAULT_VIDEO = "/showcase_reel-hero-1080.mp4";
+const DEFAULT_MOBILE_VIDEO = "/showcase_reel-hero-720.mp4";
 
 type MediaHeroProps = {
   eyebrow?: ReactNode;
@@ -16,6 +17,7 @@ type MediaHeroProps = {
   ctaLabel: string;
   poster?: string;
   videoSrc?: string;
+  mobileVideoSrc?: string;
 };
 
 /**
@@ -29,6 +31,7 @@ export default function MediaHero({
   ctaLabel,
   poster = DEFAULT_POSTER,
   videoSrc = DEFAULT_VIDEO,
+  mobileVideoSrc = DEFAULT_MOBILE_VIDEO,
 }: MediaHeroProps) {
   const reduce = useReducedMotion();
 
@@ -54,9 +57,18 @@ export default function MediaHero({
   return (
     <section className={styles.hero}>
       <div className={styles.media} aria-hidden="true">
-        <video autoPlay muted loop playsInline poster={poster}>
-          <source type="video/mp4" src={videoSrc} />
-        </video>
+        {reduce ? (
+          <img src={poster} alt="" />
+        ) : (
+          <video autoPlay muted loop playsInline preload="metadata" poster={poster}>
+            <source
+              media="(max-width: 767px)"
+              type="video/mp4"
+              src={mobileVideoSrc}
+            />
+            <source type="video/mp4" src={videoSrc} />
+          </video>
+        )}
         <div className={styles.scrim} />
       </div>
 
