@@ -54,6 +54,7 @@ docs/Momentum Management Privacy Policy.docx
 .playwright-mcp/
 skills-lock.json
 *.png
+!public/team/*.png
 !public/logos/benjy-clients/*.png
 directive-films-mockups.html
 reference/
