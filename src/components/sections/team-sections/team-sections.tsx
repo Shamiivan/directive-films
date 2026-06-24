@@ -1,6 +1,6 @@
-import SectionHeader from '@/components/shared/section-header/section-header';
-import Reveal from '@/components/shared/reveal/reveal';
-import styles from './team-sections.module.css';
+import SectionHeader from "@/components/shared/section-header/section-header";
+import Reveal from "@/components/shared/reveal/reveal";
+import styles from "./team-sections.module.css";
 
 type Member = {
   name: string;
@@ -9,10 +9,14 @@ type Member = {
 };
 
 const team: Member[] = [
-  { name: 'Damon', role: 'CEO / Founder', image: '/team/ceo.jpg' },
-  { name: 'Karine', role: 'COO', image: '/team/coo.jpeg' },
-  { name: 'Gabriel', role: 'CMO', image: '/team/Gabriel_CMO.png' },
-  { name: 'Odelin', role: 'Head of Editing', image: '/team/odelin_chef_monteur.webp' },
+  { name: "Damon", role: "CEO / Founder", image: "/team/ceo_no_bg.png" },
+  { name: "Karine", role: "COO", image: "/team/coo.jpeg" },
+  { name: "Gabriel", role: "CMO", image: "/team/cmo_no_bg.png" },
+  {
+    name: "Odelin",
+    role: "Head of Editing",
+    image: "/team/odelin_chef_monteur.webp",
+  },
 ];
 
 function MemberCard({ member, index }: { member: Member; index: number }) {
@@ -33,7 +37,9 @@ function MemberCard({ member, index }: { member: Member; index: number }) {
   );
 }
 
-export default function TeamSections({ showHeader = true }: { showHeader?: boolean } = {}) {
+export default function TeamSections({
+  showHeader = true,
+}: { showHeader?: boolean } = {}) {
   return (
     <section className={styles.section} id="team">
       {showHeader && (
