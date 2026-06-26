@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import CtaButton from "@/components/shared/cta-button/cta-button";
 import { easings } from "@/utils/animations";
+import { useBackgroundVideoAutoplay } from "@/components/shared/use-background-video-autoplay";
 import styles from "./media-hero.module.css";
 
 const DEFAULT_POSTER =
@@ -34,6 +35,7 @@ export default function MediaHero({
   mobileVideoSrc = DEFAULT_MOBILE_VIDEO,
 }: MediaHeroProps) {
   const reduce = useReducedMotion();
+  const videoRef = useBackgroundVideoAutoplay();
 
   const container = {
     hidden: {},
@@ -60,7 +62,16 @@ export default function MediaHero({
         {reduce ? (
           <img src={poster} alt="" />
         ) : (
-          <video autoPlay muted loop playsInline preload="metadata" poster={poster}>
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={poster}
+            {...{ "webkit-playsinline": "" }}
+          >
             <source
               media="(max-width: 767px)"
               type="video/mp4"
