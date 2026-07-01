@@ -49,6 +49,16 @@ const proofVideos = [
     title: "A website video is like a car without wheels",
     src: "/proof/videos/07-a website video is like a car without wheels.mp4",
   },
+  {
+    id: "ads-fabrique-au-quebec",
+    title: "Ads fabriquées au Québec",
+    src: "/proof/videos/ads_fabrique_au_quebec.mp4",
+  },
+  {
+    id: "fabric-cta",
+    title: "Fabric CTA",
+    src: "/proof/videos/fabric_cta.mp4",
+  },
 ];
 
 export default function HomePage() {
