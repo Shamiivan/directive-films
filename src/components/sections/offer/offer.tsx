@@ -41,7 +41,7 @@ export default function OfferSection({ id = "offer" }: { id?: string } = {}) {
               We get paid for results.
             </>
           }
-          intro="Pretty videos are easy. Ten years in, what we're actually measured on is the money that lands in your account — so that's what we build for."
+          intro="Pretty videos are easy. Ten years in, what we're actually measured on is the money that lands in your account. That's what we build for."
         />
 
         <motion.div className={styles.proof} {...gridStagger}>

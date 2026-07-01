@@ -11,7 +11,7 @@ export default function SectionServices() {
             <span className={styles.tag}>Free</span>
             <div className={styles.ico}><Search size={22} strokeWidth={1.5} /></div>
             <h3>Growth Audit</h3>
-            <p>Straight talk on what's holding you back — at no charge.</p>
+            <p>Straight talk on what's holding you back, at no charge.</p>
             <ul>
               <li>We pull apart your funnel</li>
               <li>Show where rivals beat you</li>
@@ -91,7 +91,7 @@ export default function SectionServices() {
             <ul>
               <li>Trained, vetted, ready</li>
               <li>They work your inbound leads</li>
-              <li>Performance-based — no retainer risk</li>
+              <li>Performance-based, no retainer risk</li>
               <li>Wired straight into your CRM</li>
             </ul>
           </div>

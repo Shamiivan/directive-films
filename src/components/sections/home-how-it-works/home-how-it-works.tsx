@@ -13,7 +13,7 @@ const steps = [
     number: "02",
     title: "We plug it",
     description:
-      "Video, website, CRM, AI and ads — built and wired together so each one feeds the next instead of sitting in its own silo.",
+      "Video, website, CRM, AI and ads, built and wired together so each one feeds the next instead of sitting in its own silo.",
   },
   {
     number: "03",
