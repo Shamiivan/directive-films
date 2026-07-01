@@ -35,6 +35,11 @@ const proofVideos = [
     src: "/proof/videos/ton-entreprise-perd-du-cash-720.mp4",
   },
   {
+    id: "abc",
+    title: "ABC",
+    src: "/proof/videos/abc.mp4",
+  },
+  {
     id: "hooks",
     title: "Hooks that stop the scroll",
     src: "/proof/videos/hooks.mp4",
