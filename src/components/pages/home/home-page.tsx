@@ -34,6 +34,21 @@ const proofVideos = [
     title: "Ton entreprise perd du cash",
     src: "/proof/videos/ton-entreprise-perd-du-cash-720.mp4",
   },
+  {
+    id: "hooks",
+    title: "Hooks that stop the scroll",
+    src: "/proof/videos/hooks.mp4",
+  },
+  {
+    id: "organic-and-paid",
+    title: "Organic and paid, pulling in the same direction",
+    src: "/proof/videos/organic_and_paid.mp4",
+  },
+  {
+    id: "website-video-car-without-wheels",
+    title: "A website video is like a car without wheels",
+    src: "/proof/videos/07-a website video is like a car without wheels.mp4",
+  },
 ];
 
 export default function HomePage() {
