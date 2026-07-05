@@ -26,6 +26,7 @@ const logos: Logo[] = [
   { src: '/logos/budweiser.svg', label: 'Budweiser', className: styles.logoBudweiser },
   { src: '/logos/rode.svg', label: 'RODE Microphones', className: styles.logoRode, itemClassName: styles.logoPlate },
   { src: '/logos/mercedes-benz.svg', label: 'Mercedes-Benz', className: styles.logoInvert },
+  { src: '/logos/remax.png', label: 'RE/MAX' },
 ];
 
 function LogoRow() {

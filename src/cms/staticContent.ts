@@ -33,6 +33,7 @@ export const STATIC_COMPANY_LOGOS = [
   { slug: "rogers", name: "Rogers", src: "/logos/rogers.svg" },
   { slug: "budweiser", name: "Budweiser", src: "/logos/budweiser.svg" },
   { slug: "rode", name: "RODE Microphones", src: "/logos/rode.svg" },
+  { slug: "remax", name: "RE/MAX", src: "/logos/remax.png" },
 ] as const;
 
 export const STATIC_HOME_STRIP_IMAGES = [
