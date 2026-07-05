@@ -68,7 +68,7 @@ export default function MediaHero({
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             poster={poster}
             {...{ "webkit-playsinline": "" }}
           >

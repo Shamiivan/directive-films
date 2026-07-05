@@ -23,12 +23,35 @@ export function useBackgroundVideoAutoplay() {
       });
     };
 
-    play();
-    video.addEventListener("loadedmetadata", play, { once: true });
+    // Only start (and download) the video once it scrolls into view. Above-fold
+    // heroes intersect immediately; below-fold videos defer their download.
+    if (typeof IntersectionObserver === "undefined") {
+      play();
+      video.addEventListener("loadedmetadata", play, { once: true });
+      video.addEventListener("canplay", play, { once: true });
+      return () => {
+        video.removeEventListener("loadedmetadata", play);
+        video.removeEventListener("canplay", play);
+      };
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            play();
+          } else {
+            video.pause();
+          }
+        }
+      },
+      { rootMargin: "200px" },
+    );
+    observer.observe(video);
     video.addEventListener("canplay", play, { once: true });
 
     return () => {
-      video.removeEventListener("loadedmetadata", play);
+      observer.disconnect();
       video.removeEventListener("canplay", play);
     };
   }, []);

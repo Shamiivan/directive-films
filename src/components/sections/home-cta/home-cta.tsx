@@ -15,7 +15,7 @@ export default function HomeCtaSection({ id = "contact" }: { id?: string } = {})
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         poster="/images/cta-broll-pexels-poster.jpg"
         {...{ "webkit-playsinline": "" }}
       >

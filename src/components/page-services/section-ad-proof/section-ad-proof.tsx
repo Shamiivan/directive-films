@@ -19,7 +19,7 @@ const VARIANTS = [
 const ads = Array.from({ length: AD_COUNT }, (_, i) => {
   const n = String(i + 1).padStart(2, '0');
   const variant = VARIANTS[i % VARIANTS.length];
-  return { src: `/ads/meta-ad-${n}.png`, ...variant };
+  return { src: `/ads/meta-ad-${n}.webp`, ...variant };
 });
 
 type Ad = (typeof ads)[number];
