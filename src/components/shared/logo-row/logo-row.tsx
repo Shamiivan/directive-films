@@ -22,7 +22,7 @@ const logos: Logo[] = [
     label: 'Momentum Management',
     className: `${styles.logoMomentum} ${styles.logoInvert}`,
   },
-  { label: 'Paquin Renovation' },
+  { label: 'Paquin Renovations' },
   { src: '/logos/budweiser.svg', label: 'Budweiser', className: styles.logoBudweiser },
   { src: '/logos/rode.svg', label: 'RODE Microphones', className: styles.logoRode, itemClassName: styles.logoPlate },
   { src: '/logos/mercedes-benz.svg', label: 'Mercedes-Benz', className: styles.logoInvert },
