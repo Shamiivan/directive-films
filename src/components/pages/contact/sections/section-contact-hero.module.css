@@ -146,6 +146,15 @@
   margin-bottom: 3px;
 }
 
+.item h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.item h3 a:hover {
+  color: var(--color-gold);
+}
+
 .item p {
   color: var(--color-text-on-dark-secondary);
   font-size: var(--font-size-ui);

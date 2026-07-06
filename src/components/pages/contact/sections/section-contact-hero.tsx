@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { MapPin, Globe, Mail, Zap } from 'lucide-react';
+import { MapPin, Globe, Mail, Phone, Zap } from 'lucide-react';
 import CtaButton from '@/components/shared/cta-button/cta-button';
 import styles from './section-contact-hero.module.css';
 
 type ContactInfo = {
   title: string;
   text: string;
+  href?: string;
 };
 
 export default function ContactHeroSection() {
@@ -14,7 +15,7 @@ export default function ContactHeroSection() {
   const { t } = useTranslation('contact');
   const needs = t('hero.form.needs.options', { returnObjects: true }) as string[];
   const info = t('hero.infoCards', { returnObjects: true }) as ContactInfo[];
-  const icons = [MapPin, Globe, Mail, Zap];
+  const icons = [MapPin, Globe, Mail, Phone, Zap];
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -71,7 +72,9 @@ export default function ContactHeroSection() {
                   <div className={styles.item} key={item.title}>
                     <div className={styles.ico}><Icon size={20} strokeWidth={1.5} /></div>
                     <div>
-                      <h3>{item.title}</h3>
+                      <h3>
+                        {item.href ? <a href={item.href}>{item.title}</a> : item.title}
+                      </h3>
                       <p>{item.text}</p>
                     </div>
                   </div>
