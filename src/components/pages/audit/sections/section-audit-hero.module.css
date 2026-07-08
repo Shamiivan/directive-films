@@ -121,6 +121,12 @@
   line-height: var(--line-height-relaxed);
 }
 
+.error {
+  color: var(--color-gold);
+  font-size: var(--font-size-ui);
+  margin-top: var(--space-md);
+}
+
 /* ── Thank-you state ─────────────────────────────────────── */
 .thanks {
   background: var(--color-bg-dark-elevated);

@@ -12,14 +12,46 @@ type ContactInfo = {
 
 export default function ContactHeroSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   const { t } = useTranslation('contact');
   const needs = t('hero.form.needs.options', { returnObjects: true }) as string[];
   const info = t('hero.infoCards', { returnObjects: true }) as ContactInfo[];
   const icons = [MapPin, Globe, Mail, Phone, Zap];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("/api/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Contact",
+          name: formData.get("name"),
+          email: formData.get("email"),
+          companyRevenue: formData.get("companyRevenue"),
+          needs: formData.get("needs"),
+          goal: formData.get("goal"),
+          page: window.location.href,
+        }),
+      });
+
+      if (!response.ok) {
+        setError(t('hero.form.error'));
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(t('hero.form.error'));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -39,30 +71,31 @@ export default function ContactHeroSection() {
           <div className={styles.grid}>
             <form onSubmit={handleSubmit}>
               <div className={styles.field}>
-                <label>{t('hero.form.fields.name.label')}</label>
-                <input type="text" placeholder={t('hero.form.fields.name.placeholder')} required />
+                <label htmlFor="contact-name">{t('hero.form.fields.name.label')}</label>
+                <input id="contact-name" name="name" type="text" placeholder={t('hero.form.fields.name.placeholder')} required />
               </div>
               <div className={styles.field}>
-                <label>{t('hero.form.fields.email.label')}</label>
-                <input type="email" placeholder={t('hero.form.fields.email.placeholder')} required />
+                <label htmlFor="contact-email">{t('hero.form.fields.email.label')}</label>
+                <input id="contact-email" name="email" type="email" placeholder={t('hero.form.fields.email.placeholder')} required />
               </div>
               <div className={styles.field}>
-                <label>{t('hero.form.fields.companyRevenue.label')}</label>
-                <input type="text" placeholder={t('hero.form.fields.companyRevenue.placeholder')} />
+                <label htmlFor="contact-revenue">{t('hero.form.fields.companyRevenue.label')}</label>
+                <input id="contact-revenue" name="companyRevenue" type="text" placeholder={t('hero.form.fields.companyRevenue.placeholder')} />
               </div>
               <div className={styles.field}>
-                <label>{t('hero.form.needs.label')}</label>
-                <select>
+                <label htmlFor="contact-needs">{t('hero.form.needs.label')}</label>
+                <select id="contact-needs" name="needs" defaultValue={needs[0]}>
                   {needs.map((need) => <option key={need}>{need}</option>)}
                 </select>
               </div>
               <div className={styles.field}>
-                <label>{t('hero.form.fields.goal.label')}</label>
-                <textarea placeholder={t('hero.form.fields.goal.placeholder')} />
+                <label htmlFor="contact-goal">{t('hero.form.fields.goal.label')}</label>
+                <textarea id="contact-goal" name="goal" placeholder={t('hero.form.fields.goal.placeholder')} />
               </div>
-              <CtaButton type="submit" fullWidth arrow={false}>
-                {submitted ? t('hero.form.submitted') : t('hero.form.submit')}
+              <CtaButton type="submit" fullWidth arrow={false} disabled={submitting || submitted}>
+                {submitted ? t('hero.form.submitted') : submitting ? t('hero.form.submitting') : t('hero.form.submit')}
               </CtaButton>
+              {error ? <p className={styles.error} role="alert">{error}</p> : null}
             </form>
 
             <div>

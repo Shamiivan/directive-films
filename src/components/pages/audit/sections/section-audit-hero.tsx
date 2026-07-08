@@ -11,6 +11,8 @@ type PanelItem = {
 
 export default function AuditHeroSection() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
   // Audit-specific copy.
   const { t } = useTranslation('audit');
   // Reuse the existing contact intake form fields (name/email/revenue/needs/goal).
@@ -21,13 +23,39 @@ export default function AuditHeroSection() {
   const thanksSteps = t('hero.thanks.steps', { returnObjects: true }) as string[];
   const panelIcons = [TrendingDown, ListChecks, ShieldCheck];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO(delivery): POST to a Vercel serverless fn using Resend (needs RESEND_API_KEY)
-    // Collect the form fields and send the lead to hello@directivefilms.com.
-    // The site is static (ssr:false/prerender) so this must be an external API route,
-    // not a loader/action. No real email is wired yet.
-    setSubmitted(true);
+    setSubmitting(true);
+    setError("");
+
+    const formData = new FormData(e.currentTarget);
+
+    try {
+      const response = await fetch("/api/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          formType: "Audit",
+          name: formData.get("name"),
+          email: formData.get("email"),
+          companyRevenue: formData.get("companyRevenue"),
+          needs: formData.get("needs"),
+          goal: formData.get("goal"),
+          page: window.location.href,
+        }),
+      });
+
+      if (!response.ok) {
+        setError(t('hero.form.error'));
+        return;
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError(t('hero.form.error'));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -107,9 +135,10 @@ export default function AuditHeroSection() {
                     placeholder={tc('hero.form.fields.goal.placeholder')}
                   />
                 </div>
-                <CtaButton type="submit" fullWidth arrow={false}>
-                  {t('hero.form.submit')}
+                <CtaButton type="submit" fullWidth arrow={false} disabled={submitting}>
+                  {submitting ? t('hero.form.submitting') : t('hero.form.submit')}
                 </CtaButton>
+                {error ? <p className={styles.error} role="alert">{error}</p> : null}
                 <p className={styles.privacy}>{t('hero.form.privacy')}</p>
               </form>
             )}

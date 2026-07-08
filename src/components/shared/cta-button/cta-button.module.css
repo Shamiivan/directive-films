@@ -44,6 +44,13 @@
   box-shadow: var(--shadow-gold-cta);
 }
 
+.button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+  transform: none;
+  box-shadow: none;
+}
+
 .outline {
   background: transparent;
   color: var(--color-text-on-dark);

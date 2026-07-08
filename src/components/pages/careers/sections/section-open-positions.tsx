@@ -33,7 +33,7 @@ export default function OpenPositionsSection() {
           {jobs.map((job) => (
             <motion.a
               key={job.title}
-              href="mailto:info@directivefilms.com"
+              href="mailto:damon@directivefilms.com"
               className={styles.job}
               variants={staggerListItem}
             >

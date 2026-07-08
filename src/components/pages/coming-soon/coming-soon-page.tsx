@@ -34,8 +34,8 @@ export default function ComingSoonPage() {
           We're putting the finishing touches on something great.
           <br />
           In the meantime, reach us at{" "}
-          <a href="mailto:hello@directivefilms.com" className={styles.email}>
-            hello@directivefilms.com
+          <a href="mailto:damon@directivefilms.com" className={styles.email}>
+            damon@directivefilms.com
           </a>
         </p>
       </div>

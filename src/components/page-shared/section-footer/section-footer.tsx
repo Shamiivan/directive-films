@@ -14,7 +14,7 @@ export default function FooterSection() {
   const year = new Date().getFullYear();
   const services = t('footer.serviceLinks', { returnObjects: true }) as FooterLink[];
   const company = t('footer.companyLinks', { returnObjects: true }) as FooterLink[];
-  const connect = t('footer.connectLinks', { returnObjects: true }) as string[];
+  const connect = t('footer.connectLinks', { returnObjects: true }) as FooterLink[];
 
   return (
     <footer className={styles.footer}>
@@ -27,6 +27,10 @@ export default function FooterSection() {
             </Link>
             <p className={styles.tagline}>{t('footer.tagline')}</p>
             <div className={styles.loc}>{t('footer.locations')}</div>
+            <div className={styles.contact}>
+              <a href={t('footer.emailHref')} className={styles.contactLink}>{t('footer.email')}</a>
+              <a href={t('footer.phoneHref')} className={styles.contactLink}>{t('footer.phone')}</a>
+            </div>
           </div>
 
           <div>
@@ -46,7 +50,15 @@ export default function FooterSection() {
           <div>
             <h4 className={styles.colTitle}>{t('footer.connect')}</h4>
             {connect.map((item) => (
-              <a key={item} href="#" className={styles.colLink}>{item}</a>
+              <a
+                key={item.label}
+                href={item.href}
+                className={styles.colLink}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                {item.label}
+              </a>
             ))}
           </div>
         </div>

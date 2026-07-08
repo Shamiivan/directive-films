@@ -15,6 +15,7 @@ type CtaButtonProps = {
   to?: string;
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
   onClick?: ButtonHTMLAttributes<HTMLButtonElement>["onClick"];
+  disabled?: ButtonHTMLAttributes<HTMLButtonElement>["disabled"];
 } & Pick<AnchorHTMLAttributes<HTMLAnchorElement>, "target" | "rel" | "download">;
 
 export default function CtaButton({
@@ -27,6 +28,7 @@ export default function CtaButton({
   fullWidth = false,
   type = "button",
   onClick,
+  disabled,
   target,
   rel,
   download,
@@ -72,7 +74,7 @@ export default function CtaButton({
   }
 
   return (
-    <button type={type} className={buttonClassName} onClick={onClick}>
+    <button type={type} className={buttonClassName} onClick={onClick} disabled={disabled}>
       {content}
     </button>
   );
