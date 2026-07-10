@@ -1,5 +1,50 @@
 {
   "ctaFreeAudit": "Obtenez votre audit de croissance gratuit",
+  "a11y": {
+    "ratedFiveOfFive": "Noté 5 sur 5",
+    "openMobileMenu": "Ouvrir le menu mobile",
+    "closeMobileMenu": "Fermer le menu mobile"
+  },
+  "reviews": {
+    "items": [
+      {
+        "quote": "Ils étaient tout simplement parfaits.",
+        "role": "V.-p. marketing"
+      },
+      {
+        "quote": "Ils prennent tous le temps de fournir des réponses bien réfléchies.",
+        "role": "V.-p."
+      },
+      {
+        "quote": "Ils étaient très sympathiques et professionnels.",
+        "role": "Coordonnatrice communications et développement"
+      },
+      {
+        "quote": "Ils ont été réactifs et efficaces pour communiquer leurs idées et nous guider afin d'assurer le meilleur résultat.",
+        "role": "Propriétaire"
+      },
+      {
+        "quote": "J'ai reçu d'excellents conseils de l'équipe concernant la promotion de mon festival.",
+        "role": "Directrice marketing"
+      },
+      {
+        "quote": "Nous avons connu une belle croissance au cours des 10 derniers mois et nous sommes très satisfaits.",
+        "role": "PDG"
+      },
+      {
+        "quote": "Leur approche proactive, leurs excellents rapports et leur disponibilité constante rendent la collaboration très agréable.",
+        "role": "PDG et fondateur"
+      },
+      {
+        "quote": "Un partenaire stratégique qui comprenait parfaitement notre industrie et qui en faisait toujours plus pour nous aider à croître.",
+        "role": "Cofondateur et PDG"
+      },
+      {
+        "quote": "Ils sont très compétents et proposent toujours des suggestions qui fonctionnent.",
+        "role": "Responsable administrative"
+      }
+    ]
+  },
   "nav": {
     "home": "ACCUEIL",
     "services": "SERVICES",
@@ -16,6 +61,10 @@
     "privacy": "Politique de confidentialité",
     "terms": "Conditions d'utilisation",
     "locations": "Montréal - Toronto - Vancouver - Miami - New York - London",
+    "email": "info@directivefilms.com",
+    "emailHref": "mailto:info@directivefilms.com",
+    "phone": "+1 514-600-3987",
+    "phoneHref": "tel:+15146003987",
     "copyright": "© {{year}} DirectiveFilms. Tous droits réservés.",
     "serviceLinks": [
       {

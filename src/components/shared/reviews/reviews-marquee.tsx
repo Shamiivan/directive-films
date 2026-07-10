@@ -1,10 +1,12 @@
-import { reviews, type Review } from "./reviews-data";
+import { useTranslation } from "react-i18next";
+import { reviewsBase, type Review } from "./reviews-data";
 import styles from "./reviews-marquee.module.css";
 
 function ReviewCard({ review }: { review: Review }) {
+  const { t } = useTranslation("common");
   return (
     <article className={styles.card}>
-      <div className={styles.stars} aria-label="Rated 5 out of 5">
+      <div className={styles.stars} aria-label={t("a11y.ratedFiveOfFive")}>
         <span aria-hidden="true">★★★★★</span>
       </div>
       <p className={styles.quote}>&ldquo;{review.quote}&rdquo;</p>
@@ -39,6 +41,16 @@ function Row({ items, reverse }: { items: Review[]; reverse?: boolean }) {
 }
 
 export default function ReviewsMarquee() {
+  const { t } = useTranslation("common");
+  const items = t("reviews.items", { returnObjects: true }) as {
+    quote: string;
+    role: string;
+  }[];
+  const reviews: Review[] = reviewsBase.map((base, i) => ({
+    ...base,
+    quote: items[i]?.quote ?? "",
+    role: items[i]?.role ?? "",
+  }));
   const half = Math.ceil(reviews.length / 2);
   const rowA = reviews.slice(0, half);
   const rowB = reviews.slice(half);

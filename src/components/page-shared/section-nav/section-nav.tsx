@@ -145,7 +145,7 @@ export default function NavSection() {
         <button
           className={styles.hamburger}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          aria-label="Toggle mobile menu"
+          aria-label={mobileMenuOpen ? t('a11y.closeMobileMenu') : t('a11y.openMobileMenu')}
           aria-expanded={mobileMenuOpen}
         >
           <motion.span className={mobileMenuOpen ? styles.hamburgerOpen : ''} />
@@ -180,7 +180,7 @@ export default function NavSection() {
               <button
                 className={styles.closeButton}
                 onClick={() => setMobileMenuOpen(false)}
-                aria-label="Close mobile menu"
+                aria-label={t('a11y.closeMobileMenu')}
               >
                 <span>&times;</span>
               </button>

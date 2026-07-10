@@ -275,5 +275,84 @@
     "titlePrefix": "Faites croître ",
     "titleEm": "vos revenus",
     "titleSuffix": " maintenant"
+  },
+  "homeOffer": {
+    "eyebrow": "Les chiffres",
+    "titleLine1": "Nous ne sommes pas payés pour des images.",
+    "titleLine2": "Nous sommes payés pour des résultats.",
+    "intro": "Les belles vidéos sont faciles. Après dix ans, ce sur quoi nous sommes vraiment mesurés, c'est l'argent qui arrive dans votre compte. C'est pour ça que nous construisons.",
+    "featured": {
+      "value": "100 M$+",
+      "label": "Revenus générés pour les clients",
+      "detail": "Suivis, pas estimés"
+    },
+    "metrics": [
+      {
+        "value": "430+",
+        "label": "Entreprises accompagnées",
+        "detail": "B2B et B2C, tous secteurs"
+      },
+      {
+        "value": "10 ans",
+        "label": "À ne faire que ça",
+        "detail": "Une décennie composée"
+      },
+      {
+        "value": "4,2×",
+        "label": "Retour moyen sur dépenses publicitaires",
+        "detail": "Sur les campagnes actives"
+      }
+    ]
+  },
+  "homeHowItWorks": {
+    "eyebrow": "Comment ça marche",
+    "eyebrowDescription": "Trois étapes, de la fuite au revenu",
+    "title": "Trois étapes. Sans jargon.",
+    "steps": [
+      {
+        "title": "Nous trouvons la fuite",
+        "description": "Nous analysons votre contenu, votre tunnel et votre processus de vente pour vous montrer exactement où vous perdez de l'argent. Pas de remplissage, pas de deck de 40 slides."
+      },
+      {
+        "title": "Nous la bouchons",
+        "description": "Vidéo, site web, CRM, IA et publicités, construits et reliés pour que chaque pièce alimente la suivante au lieu de rester isolée."
+      },
+      {
+        "title": "Vous regardez les résultats arriver",
+        "description": "Des tableaux de bord qui montrent le pipeline et le revenu, pas les likes. Et une équipe de vente qui transforme les leads en contrats signés."
+      }
+    ]
+  },
+  "homeWork": {
+    "eyebrow": "Notre travail",
+    "title": "Quelques-unes des publicités que nous avons produites",
+    "cardTitle": "Vidéo produite",
+    "videoTitles": [
+      "La vente est conclue avant même votre pitch",
+      "Pourquoi booster vos publications vous appauvrit",
+      "Ton entreprise perd du cash",
+      "ABC",
+      "Des accroches qui arrêtent le défilement",
+      "Organique et payant, dans la même direction",
+      "Une vidéo de site web, c'est comme une voiture sans roues",
+      "Ads fabriquées au Québec",
+      "Fabric CTA"
+    ]
+  },
+  "homeTestimonials": {
+    "eyebrow": "Ce que disent nos clients",
+    "title": "Ne nous croyez pas sur parole."
+  },
+  "homeResults": {
+    "eyebrow": "Étude de cas",
+    "title": "Ce que ça donne concrètement.",
+    "imageAlt": "Croissance des ventes de TELUS au cours du partenariat",
+    "tag": "TELUS",
+    "caseTitle": "57,3 M$ générés pour TELUS en 3,5 ans",
+    "paragraphs": [
+      "Pour TELUS Québec, le mandat était clair : des résultats, pas de l'activité.",
+      "En 3,5 ans, nous avons aidé à transformer une opération de 2 personnes en un moteur d'acquisition de 75 agents, couvrant les canaux en personne, téléphoniques et numériques.",
+      "Ce système a généré 57,3 M$ de revenus attribuables, dans le cadre d'un partenariat à la performance où les incitatifs étaient directement liés aux résultats."
+    ]
   }
 }

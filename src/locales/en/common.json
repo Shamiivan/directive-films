@@ -1,5 +1,50 @@
 {
   "ctaFreeAudit": "Get your free growth audit",
+  "a11y": {
+    "ratedFiveOfFive": "Rated 5 out of 5",
+    "openMobileMenu": "Open mobile menu",
+    "closeMobileMenu": "Close mobile menu"
+  },
+  "reviews": {
+    "items": [
+      {
+        "quote": "They were just perfect.",
+        "role": "VP of Marketing"
+      },
+      {
+        "quote": "They all take the time to provide well-thought-out answers.",
+        "role": "VP"
+      },
+      {
+        "quote": "They were super friendly and professional.",
+        "role": "Communications & Development Coordinator"
+      },
+      {
+        "quote": "They were responsive and efficient in communicating ideas or guiding us to ensure the best result.",
+        "role": "Owner"
+      },
+      {
+        "quote": "I received excellent advice from the team regarding the promotion of my Festival.",
+        "role": "Marketing Director"
+      },
+      {
+        "quote": "We've had slick growth over the past 10 months, and we're very happy.",
+        "role": "CEO"
+      },
+      {
+        "quote": "Their proactive approach, excellent reporting, and constant availability make them a pleasure to work with.",
+        "role": "CEO & Founder"
+      },
+      {
+        "quote": "They were a strategic partner who deeply understood our industry and consistently went the extra mile to help us grow.",
+        "role": "Co-Founder & CEO"
+      },
+      {
+        "quote": "They are very knowledgeable and always make suggestions which always seem to work.",
+        "role": "Administrative Manager"
+      }
+    ]
+  },
   "nav": {
     "home": "HOME",
     "services": "SERVICES",
@@ -16,6 +61,10 @@
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
     "locations": "Montreal - Toronto - Vancouver - Miami - New York - London",
+    "email": "info@directivefilms.com",
+    "emailHref": "mailto:info@directivefilms.com",
+    "phone": "+1 514-600-3987",
+    "phoneHref": "tel:+15146003987",
     "copyright": "© {{year}} DirectiveFilms. All rights reserved.",
     "serviceLinks": [
       {

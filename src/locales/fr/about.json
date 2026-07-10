@@ -91,6 +91,17 @@
       }
     ]
   },
+  "teamSection": {
+    "eyebrow": "L'équipe",
+    "title": "Les personnes derrière les résultats",
+    "intro": "Les opérateurs qui dirigent la stratégie, la production et la création, et qui font passer chaque projet de l'idée à une croissance mesurable.",
+    "members": [
+      { "role": "Chef de la direction / Fondateur" },
+      { "role": "Chef des opérations" },
+      { "role": "Chef du marketing" },
+      { "role": "Chef monteur" }
+    ]
+  },
   "selectedWork": {
     "eyebrow": "Projets sélectionnés",
     "title": "Ce que nous créons",
