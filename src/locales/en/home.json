@@ -275,5 +275,84 @@
     "titlePrefix": "Grow your ",
     "titleEm": "business revenue",
     "titleSuffix": " now"
+  },
+  "homeOffer": {
+    "eyebrow": "The numbers",
+    "titleLine1": "We don't get paid for footage.",
+    "titleLine2": "We get paid for results.",
+    "intro": "Pretty videos are easy. Ten years in, what we're actually measured on is the money that lands in your account. That's what we build for.",
+    "featured": {
+      "value": "$100M+",
+      "label": "Revenue generated for clients",
+      "detail": "Tracked, not guessed"
+    },
+    "metrics": [
+      {
+        "value": "430+",
+        "label": "Businesses served",
+        "detail": "B2B and B2C, every industry"
+      },
+      {
+        "value": "10 yrs",
+        "label": "Doing only this",
+        "detail": "A decade, compounded"
+      },
+      {
+        "value": "4.2×",
+        "label": "Average return on ad spend",
+        "detail": "Across active campaigns"
+      }
+    ]
+  },
+  "homeHowItWorks": {
+    "eyebrow": "How it works",
+    "eyebrowDescription": "Three steps from leak to revenue",
+    "title": "Three steps. No jargon.",
+    "steps": [
+      {
+        "title": "We find the leak",
+        "description": "We go through your content, funnel and sales process and show you exactly where you're losing money. No fluff, no 40-slide deck."
+      },
+      {
+        "title": "We plug it",
+        "description": "Video, website, CRM, AI and ads, built and wired together so each one feeds the next instead of sitting in its own silo."
+      },
+      {
+        "title": "You watch it pay off",
+        "description": "Dashboards that show pipeline and revenue, not likes. And a sales team that turns the leads into signed deals."
+      }
+    ]
+  },
+  "homeWork": {
+    "eyebrow": "Our work",
+    "title": "Some of the ads that we produced",
+    "cardTitle": "Produced video",
+    "videoTitles": [
+      "The sale is done before you even pitch",
+      "Why boosting posts makes you poor",
+      "Ton entreprise perd du cash",
+      "ABC",
+      "Hooks that stop the scroll",
+      "Organic and paid, pulling in the same direction",
+      "A website video is like a car without wheels",
+      "Ads fabriquées au Québec",
+      "Fabric CTA"
+    ]
+  },
+  "homeTestimonials": {
+    "eyebrow": "What clients say",
+    "title": "Don't take our word for it."
+  },
+  "homeResults": {
+    "eyebrow": "Case study",
+    "title": "What this looks like in practice.",
+    "imageAlt": "TELUS sales growth over the partnership",
+    "tag": "TELUS",
+    "caseTitle": "$57.3M Generated for TELUS in 3.5 Years",
+    "paragraphs": [
+      "For TELUS Quebec, the mandate was not activity. It was results.",
+      "Over 3.5 years, we helped scale a 2-person operation into a 75-agent acquisition engine across in-person, phone, and digital channels.",
+      "That system generated $57.3M in attributable revenue, delivered through a performance-based partnership where incentives were tied directly to outcomes."
+    ]
   }
 }

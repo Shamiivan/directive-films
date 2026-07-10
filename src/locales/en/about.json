@@ -91,6 +91,17 @@
       }
     ]
   },
+  "teamSection": {
+    "eyebrow": "The Team",
+    "title": "The people behind the results",
+    "intro": "The operators leading the strategy, production, and creative that move each project from idea to measurable growth.",
+    "members": [
+      { "role": "CEO / Founder" },
+      { "role": "COO" },
+      { "role": "CMO" },
+      { "role": "Head of Editing" }
+    ]
+  },
   "selectedWork": {
     "eyebrow": "Selected Work",
     "title": "What we make",

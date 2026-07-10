@@ -1,47 +1,34 @@
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import SectionHeader from "@/components/shared/section-header/section-header";
 import { gridStagger, scrollRevealDepth } from "@/utils/animations";
 import styles from "./offer.module.css";
 
-const featured = {
-  value: "$100M+",
-  label: "Revenue generated for clients",
-  detail: "Tracked, not guessed",
-};
-
-const metrics = [
-  {
-    value: "430+",
-    label: "Businesses served",
-    detail: "B2B and B2C, every industry",
-  },
-  {
-    value: "10 yrs",
-    label: "Doing only this",
-    detail: "A decade, compounded",
-  },
-  {
-    value: "4.2×",
-    label: "Average return on ad spend",
-    detail: "Across active campaigns",
-  },
-];
+interface Metric {
+  value: string;
+  label: string;
+  detail: string;
+}
 
 export default function OfferSection({ id = "offer" }: { id?: string } = {}) {
+  const { t } = useTranslation("home");
+  const featured = t("homeOffer.featured", { returnObjects: true }) as Metric;
+  const metrics = t("homeOffer.metrics", { returnObjects: true }) as Metric[];
+
   return (
     <section className={styles.offerSection} id={id}>
       <div className={styles.container}>
         <SectionHeader
           tone="light"
-          eyebrow="The numbers"
+          eyebrow={t("homeOffer.eyebrow")}
           title={
             <>
-              We don&apos;t get paid for footage.
+              {t("homeOffer.titleLine1")}
               <br />
-              We get paid for results.
+              {t("homeOffer.titleLine2")}
             </>
           }
-          intro="Pretty videos are easy. Ten years in, what we're actually measured on is the money that lands in your account. That's what we build for."
+          intro={t("homeOffer.intro")}
         />
 
         <motion.div className={styles.proof} {...gridStagger}>

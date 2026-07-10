@@ -490,6 +490,85 @@
       }
     ]
   },
+  "servicesGrid": {
+    "cards": [
+      {
+        "tag": "Free",
+        "title": "Growth Audit",
+        "description": "Straight talk on what's holding you back, at no charge.",
+        "features": [
+          "We pull apart your funnel",
+          "Show where rivals beat you",
+          "Ranked, do-this-first plan",
+          "Costs you nothing"
+        ]
+      },
+      {
+        "title": "Offer Validation",
+        "description": "We make sure the offer sells before we spend a dollar on it.",
+        "features": [
+          "Test it against the market",
+          "Reshape pricing & promise",
+          "Kill what doesn't land",
+          "Lock in what converts"
+        ]
+      },
+      {
+        "title": "Scripting, Shooting & Editing",
+        "description": "Scripts, production, coaching, and edits built to sell across ads and organic.",
+        "features": [
+          "Hooks that stop the scroll",
+          "Cinema-camera shooting",
+          "On-camera coaching when needed",
+          "Ad-ready and short-form edits",
+          "Multiple variants to test",
+          "Fast turnarounds"
+        ]
+      },
+      {
+        "title": "Ad Campaigns & Organic Content",
+        "description": "Paid and organic, pulling in the same direction.",
+        "features": [
+          "Meta & Google, managed daily",
+          "Organic content that compounds",
+          "Creative tested fast",
+          "Reporting in dollars"
+        ]
+      },
+      {
+        "title": "CRM & Sales Systems",
+        "description": "So no lead ever slips through the cracks again.",
+        "features": [
+          "Built around your workflow",
+          "Auto follow-ups & reminders",
+          "Revenue you can actually see",
+          "We train your team to run it"
+        ]
+      },
+      {
+        "tag": "AI",
+        "title": "AI & Automation",
+        "description": "The work your team dreads, handled around the clock.",
+        "features": [
+          "Leads answered 24/7",
+          "Follow-ups written for you",
+          "Pipeline scored automatically",
+          "Hours of admin, gone"
+        ]
+      },
+      {
+        "tag": "Performance-based",
+        "title": "Commission Sales Team",
+        "description": "Closers who only earn when you do.",
+        "features": [
+          "Trained, vetted, ready",
+          "They work your inbound leads",
+          "Performance-based, no retainer risk",
+          "Wired straight into your CRM"
+        ]
+      }
+    ]
+  },
   "adProof": {
     "heading": "Real ads, real numbers",
     "intro": "A slice of the Meta campaigns we run for clients, the creative behind every lead."

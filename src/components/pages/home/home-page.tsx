@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import NavSection from "@/components/page-shared/section-nav/section-nav";
 import FooterSection from "@/components/page-shared/section-footer/section-footer";
 import HomeHeroSection from "@/components/sections/home-hero/home-hero";
@@ -18,55 +19,55 @@ import styles from "./home-page.module.css";
 
 // Flip this on when the proof reel is ready to show.
 const showWorkReel = true;
+// Titles live in the "home" locale namespace under homeWork.videoTitles,
+// in the same order as this array.
 const proofVideos = [
   {
     id: "ad2-sale-before-pitch",
-    title: "The sale is done before you even pitch",
     src: "/proof/videos/ad2-sale-before-pitch-720.mp4",
   },
   {
     id: "boosting-posts-makes-you-poor",
-    title: "Why boosting posts makes you poor",
     src: "/proof/videos/boosting-posts-makes-you-poor-720.mp4",
   },
   {
     id: "ton-entreprise-perd-du-cash",
-    title: "Ton entreprise perd du cash",
     src: "/proof/videos/ton-entreprise-perd-du-cash-720.mp4",
   },
   {
     id: "abc",
-    title: "ABC",
     src: "/proof/videos/abc.mp4",
   },
   {
     id: "hooks",
-    title: "Hooks that stop the scroll",
     src: "/proof/videos/hooks.mp4",
   },
   {
     id: "organic-and-paid",
-    title: "Organic and paid, pulling in the same direction",
     src: "/proof/videos/organic_and_paid.mp4",
   },
   {
     id: "website-video-car-without-wheels",
-    title: "A website video is like a car without wheels",
     src: "/proof/videos/07-a website video is like a car without wheels.mp4",
   },
   {
     id: "ads-fabrique-au-quebec",
-    title: "Ads fabriquées au Québec",
     src: "/proof/videos/ads_fabrique_au_quebec.mp4",
   },
   {
     id: "fabric-cta",
-    title: "Fabric CTA",
     src: "/proof/videos/fabric_cta.mp4",
   },
 ];
 
 export default function HomePage() {
+  const { t } = useTranslation("home");
+  const videoTitles = t("homeWork.videoTitles", { returnObjects: true }) as string[];
+  const videos = proofVideos.map((video, index) => ({
+    ...video,
+    title: videoTitles[index] ?? video.id,
+  }));
+
   return (
     <main className={styles.page}>
       <NavSection />
@@ -80,10 +81,10 @@ export default function HomePage() {
           under={
             <HomeVideoReelSection
               id="work"
-              eyebrow="Our work"
-              title="Some of the ads that we produced"
-              videos={proofVideos}
-              cardTitle="Produced video"
+              eyebrow={t("homeWork.eyebrow")}
+              title={t("homeWork.title")}
+              videos={videos}
+              cardTitle={t("homeWork.cardTitle")}
               tone="dark"
             />
           }

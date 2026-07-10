@@ -435,32 +435,13 @@
         ]
       },
       {
-        "title": "Script",
-        "description": "Des mots écrits pour vendre, pas pour sonner intelligents.",
+        "title": "Scénarisation, tournage et montage",
+        "description": "Scripts, production, coaching et montages conçus pour vendre, en publicité comme en organique.",
         "features": [
           "Accroches qui arrêtent le scroll",
-          "Construit autour de votre façon de conclure",
-          "Pour les pubs et le contenu organique",
-          "Vous validez avant le lancement"
-        ]
-      },
-      {
-        "tag": "Principal",
-        "title": "Tournage et coaching caméra",
-        "description": "Nous tournons avec des caméras cinéma - et vous coachons pour que vous ayez une présence naturelle et solide à caméra.",
-        "features": [
-          "Équipes avec caméras cinéma",
-          "Coaching caméra pour vous et votre équipe",
-          "Sur le plateau en quelques jours, pas des mois",
-          "Livraison naturelle et confiante"
-        ]
-      },
-      {
-        "title": "Montage",
-        "description": "Coupé pour capter l'attention et pour la plateforme où le contenu vit.",
-        "features": [
+          "Tournage avec caméras cinéma",
+          "Coaching caméra au besoin",
           "Versions prêtes pour pubs et formats courts",
-          "Sous-titres, motion, son",
           "Plusieurs variantes à tester",
           "Délais rapides"
         ]
@@ -473,16 +454,6 @@
           "Contenu organique qui compose",
           "Créatifs testés rapidement",
           "Rapports en dollars"
-        ]
-      },
-      {
-        "title": "Publication sur toutes les plateformes",
-        "description": "Nous gérons le calendrier et publions partout.",
-        "features": [
-          "Instagram, TikTok, YouTube, LinkedIn et plus",
-          "Calendrier de publication constant",
-          "Format adapté à chaque plateforme",
-          "Rien sur votre plaque"
         ]
       },
       {
@@ -514,6 +485,85 @@
           "Formés, vérifiés, prêts",
           "Ils travaillent vos leads entrants",
           "Base performance - pas de risque de retainer",
+          "Connectés directement à votre CRM"
+        ]
+      }
+    ]
+  },
+  "servicesGrid": {
+    "cards": [
+      {
+        "tag": "Gratuit",
+        "title": "Audit de croissance",
+        "description": "Un diagnostic direct de ce qui vous bloque, sans frais.",
+        "features": [
+          "Nous démontons votre tunnel",
+          "Nous montrons où vos concurrents vous battent",
+          "Plan priorisé, action par action",
+          "Ça ne vous coûte rien"
+        ]
+      },
+      {
+        "title": "Validation de l'offre",
+        "description": "Nous nous assurons que l'offre vend avant de dépenser un dollar dessus.",
+        "features": [
+          "Testée face au marché",
+          "Prix et promesse retravaillés",
+          "On élimine ce qui ne fonctionne pas",
+          "On verrouille ce qui convertit"
+        ]
+      },
+      {
+        "title": "Scénarisation, tournage et montage",
+        "description": "Scripts, production, coaching et montages conçus pour vendre, en publicité comme en organique.",
+        "features": [
+          "Accroches qui arrêtent le scroll",
+          "Tournage avec caméras cinéma",
+          "Coaching caméra au besoin",
+          "Versions prêtes pour pubs et formats courts",
+          "Plusieurs variantes à tester",
+          "Délais rapides"
+        ]
+      },
+      {
+        "title": "Campagnes publicitaires et contenu organique",
+        "description": "Le payant et l'organique tirent dans la même direction.",
+        "features": [
+          "Meta et Google gérés chaque jour",
+          "Contenu organique qui compose",
+          "Créatifs testés rapidement",
+          "Rapports en dollars"
+        ]
+      },
+      {
+        "title": "CRM et systèmes de vente",
+        "description": "Pour qu'aucun lead ne passe entre les mailles.",
+        "features": [
+          "Construit autour de votre flux de travail",
+          "Suivis et rappels automatiques",
+          "Revenu que vous pouvez vraiment voir",
+          "Nous formons votre équipe à le gérer"
+        ]
+      },
+      {
+        "tag": "IA",
+        "title": "IA et automatisation",
+        "description": "Le travail que votre équipe redoute, géré en continu.",
+        "features": [
+          "Leads répondus 24/7",
+          "Suivis écrits pour vous",
+          "Pipeline scoré automatiquement",
+          "Des heures d'admin éliminées"
+        ]
+      },
+      {
+        "tag": "Base performance",
+        "title": "Équipe de vente à commission",
+        "description": "Des closers qui gagnent seulement quand vous gagnez.",
+        "features": [
+          "Formés, vérifiés, prêts",
+          "Ils travaillent vos leads entrants",
+          "Base performance, pas de risque de retainer",
           "Connectés directement à votre CRM"
         ]
       }

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import SectionHeader from "@/components/shared/section-header/section-header";
 import Reveal from "@/components/shared/reveal/reveal";
 import styles from "./team-sections.module.css";
@@ -8,15 +9,11 @@ type Member = {
   image: string;
 };
 
-const team: Member[] = [
-  { name: "Damon", role: "CEO / Founder", image: "/team/ceo_no_bg.png" },
-  { name: "Karine", role: "COO", image: "/team/coo.jpeg" },
-  { name: "Gabriel", role: "CMO", image: "/team/cmo_no_bg.png" },
-  {
-    name: "Odelin",
-    role: "Head of Editing",
-    image: "/team/odelin_chef_monteur.webp",
-  },
+const teamBase = [
+  { name: "Damon", image: "/team/ceo_no_bg.png" },
+  { name: "Karine", image: "/team/coo.jpeg" },
+  { name: "Gabriel", image: "/team/cmo_no_bg.png" },
+  { name: "Odelin", image: "/team/odelin_chef_monteur.webp" },
 ];
 
 function MemberCard({ member, index }: { member: Member; index: number }) {
@@ -40,14 +37,24 @@ function MemberCard({ member, index }: { member: Member; index: number }) {
 export default function TeamSections({
   showHeader = true,
 }: { showHeader?: boolean } = {}) {
+  const { t } = useTranslation("about");
+  const localizedMembers = t("teamSection.members", {
+    returnObjects: true,
+  }) as { role: string }[];
+
+  const team: Member[] = teamBase.map((member, i) => ({
+    ...member,
+    role: localizedMembers[i]?.role ?? "",
+  }));
+
   return (
     <section className={styles.section} id="team">
       {showHeader && (
         <div className={styles.intro}>
           <SectionHeader
-            eyebrow="The Team"
-            title="The people behind the results"
-            intro="The operators leading the strategy, production, and creative that move each project from idea to measurable growth."
+            eyebrow={t("teamSection.eyebrow")}
+            title={t("teamSection.title")}
+            intro={t("teamSection.intro")}
             tone="dark"
           />
         </div>

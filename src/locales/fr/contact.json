@@ -9,11 +9,11 @@
       "fields": {
         "name": {
           "label": "Nom complet",
-          "placeholder": "Jane Doe"
+          "placeholder": "Marie Tremblay"
         },
         "email": {
           "label": "Courriel professionnel",
-          "placeholder": "jane@entreprise.com"
+          "placeholder": "marie@entreprise.com"
         },
         "companyRevenue": {
           "label": "Entreprise et revenu mensuel",
@@ -29,10 +29,8 @@
         "options": [
           "Audit de croissance gratuit",
           "Validation et restructuration de l'offre",
-          "Script, tournage et coaching",
-          "Montage",
+          "Scénarisation, tournage et montage",
           "Campagnes publicitaires et contenu organique",
-          "Publication sur toutes les plateformes",
           "CRM et systèmes de vente",
           "IA et automatisation",
           "Équipe de vente à commission",
