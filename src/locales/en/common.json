@@ -117,7 +117,11 @@
       },
       {
         "label": "TikTok",
+<<<<<<< HEAD
         "href": "https://www.tiktok.com/@directive.films.mt?is_from_webapp=1&sender_device=pc"
+=======
+        "href": "https://www.tiktok.com/@directive.films.mt"
+>>>>>>> 9a3831bb8a51689eef5a60287aaa10470177386e
       },
       {
         "label": "YouTube",
