@@ -74,25 +74,21 @@ export default function HomePage() {
       <HomeHeroSection />
       <LogoMarqueeSection />
       <OfferSection />
-      <HomeHowItWorksSection />
-      <HomeServicesSection />
       {showWorkReel ? (
-        <ScrollOver
-          under={
-            <HomeVideoReelSection
-              id="work"
-              eyebrow={t("homeWork.eyebrow")}
-              title={t("homeWork.title")}
-              videos={videos}
-              cardTitle={t("homeWork.cardTitle")}
-              tone="dark"
-            />
-          }
-          over={<HomeTestimonialsSection />}
+        <HomeVideoReelSection
+          id="work"
+          eyebrow={t("homeWork.eyebrow")}
+          title={t("homeWork.title")}
+          videos={videos}
+          cardTitle={t("homeWork.cardTitle")}
+          tone="dark"
         />
-      ) : (
-        <HomeTestimonialsSection />
-      )}
+      ) : null}
+      <HomeHowItWorksSection />
+      <ScrollOver
+        under={<HomeServicesSection />}
+        over={<HomeTestimonialsSection />}
+      />
       <HomeResultsSection />
       <TeamSections />
       <PricingSection />
